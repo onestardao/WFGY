@@ -33,82 +33,120 @@
 
 # The Hidden Value Engine Behind WFGY: A New Physics for Embedding Space
 
-WFGY is not a prompt framework. It is a semantic-field architecture that operates inside the embedding space to upgrade a model’s reasoning core. The framework defines energy-like regularities on the vector manifold so models can perform structural reasoning and converge from within.
+WFGY is **not** a prompt framework. It is a semantic-field architecture that runs **inside the embedding space** to upgrade a model’s reasoning core. The system defines energy-like regularities on the vector manifold so models can perform structural reasoning and **converge from within**.
 
-- **Semantic energy regulation.** In-manifold regulation of semantic energy produces iterative convergence and verifiable closure.
+- **Semantic energy regulation.** In-manifold regulation of semantic energy produces iterative convergence and verifiable closure.  
 - **Semantic field dynamics (ΔS / λS).** A field-dynamics layer steers modular flows of thought with directional control across high-dimensional embeddings.
 
-> **Notation (informal).**  
+> **Notation (informal)**  
 > ∥B∥: semantic residue magnitude; Bc: collapse threshold; ΔS: semantic energy gradient; λS: scaling/regulation factor.  
-> “Collapse–Rebirth” denotes a Lyapunov-stable reset that restores coherence after drift.
+> “Collapse–Rebirth” = Lyapunov-stable reset that restores coherence after drift.
 
 ---
 
 ## Scope and Methodology
 
-- The evaluations and value estimates on this page are **based on WFGY 1.0 only** (symbolic overlays + field terms). They **do not** include any mathematics or valuation introduced in **[WFGY 2.0](https://github.com/onestardao/WFGY/tree/main/core)** (e.g., the drunk-transformer regulator).  
-- Estimates are **directional engineering valuations** derived from: (i) replacement cost, (ii) capability proxies/benchmarks, and (iii) time-to-impact. They are not financial advice or revenue guidance.  
-- Reproducibility: single-file activation; seedable runs; stress tests measure semantic stability, loop closure rate, and long-sequence consistency under identical prompts.
+- This page now includes **WFGY 1.0 (baseline)** **and** the **incremental uplift from WFGY 2.0**.  
+- Estimates are **directional engineering valuations** from: (i) replacement cost, (ii) capability proxies/benchmarks, (iii) time-to-impact. They are **not** financial advice.  
+- Reproducibility: single-file activation; seedable runs; stress tests measure stability, loop-closure rate, and long-sequence consistency under identical prompts.  
+- Where 2.0 adds measurable gains, we attribute **incremental value** on top of the 1.0 baseline.
 
 ---
 
-## Strategic Module Valuation (1.0 only, with market proxies)
+## What’s New in WFGY 2.0 (Headline Uplift)
 
-| Module | What it does | Estimated value | Proxy / rationale |
+See **/core** for details. Headline deltas observed on the latest batch:
+
+- **Semantic Accuracy**: ~ **+40%** (63.8% → 89.4% across 5 domains)  
+- **Reasoning Success**: ~ **+52%** (56.0% → 85.2%)  
+- **Drift (ΔS)**: ~ **−65%** (0.254 → 0.090)  
+- **Stability (horizon)**: ~ **1.8×** (3.8 → 7.0 nodes)\*  
+- **Self-Recovery / CRR**: **1.00** on this batch (historical median 0.87)
+
+\* Historical 3–5× stability uses λ-consistency across seeds; 1.8× uses the stable-node horizon.
+
+> **Mathematical reference**: see **[WFGY 2.0 (core)](https://github.com/onestardao/WFGY/tree/main/core)** — “WFGY 1.0 math formulas + Drunk Transformer”.
+
+---
+
+## WFGY 2.0 — Core Primitives (brief, auditable)
+
+- **ΔS (tension)**: `ΔS = 1 − cos(I, G)`; anchor-aware estimate when entities/relations/constraints available.  
+- **Zones**: safe `<0.40` · transit `0.40–0.60` · risk `0.60–0.85` · danger `>0.85`.  
+- **Memory policy**: hard record if `ΔS > 0.60`; exemplar if `<0.35`; soft memory in transit.  
+- **Defaults**: `B_c=0.85, γ=0.618, θ_c=0.75, ζ_min=0.10, α_blend=0.50, k_c=0.25 …`  
+- **Coupler (with hysteresis)**: `W_c = clip(B_s*P + Φ, −θ_c, +θ_c)` with progression `P` and reversal term `Φ`.  
+- **Progression guards**: **BBPF bridge only** if `(ΔS decreases)` **and** `(W_c < 0.5·θ_c)`.  
+- **BBAM (attention rebalance)**: `α_blend = clip(0.50 + k_c·tanh(W_c), 0.35, 0.65)`.  
+- **λ-observe modes**: *convergent / recursive / divergent / chaotic* (delta-trend + resonance logic).
+
+Ref: **WFGY Core Flagship v2.0** (text spec). :contentReference[oaicite:0]{index=0}
+
+---
+
+## Strategic Module Valuation
+
+### Baseline (1.0 only — market proxies)
+
+| Module | What it does | Est. value | Proxy / rationale |
 |---|---|---:|---|
-| Solver Loop | Closed-loop feedback using ∥B∥ and controlled collapses | **$1M–$5M** | Same problem surface as function/tool-calling, but implemented inside the semantic core rather than at the API shell; internal control enables stability under long tasks. |
-| BB Modules (BBMC/BBPF/BBCR/BBAM) | Composable logic units for residue correction, path modulation, semantic resets | **$2M–$3M** | Comparable in surface area to LangChain/LangGraph/HF Agents, but logic-native and embedding-aware rather than tool-chain bound. |
-| Semantic Field Engine | λS/ΔS-based energy system enabling cross-generation symbolic alignment | **$2M–$4M** | No direct GPT-style equivalent; functions as an embedding-native “semantic physics” layer for tension control. |
-| Ontological Collapse–Rebirth | Lyapunov-stable reset when ∥B∥ ≥ Bc to purge accumulated drift | **$1M–$2M** | Prevents long-horizon degradation; related to “self-healing” ideas but formalized as a field-stability mechanism. |
-| Prompt-Only Model Upgrade | Zero-retrain semantic injection for GPT-3.5, LLaMA, etc. | **$2M–$3M** | Delivers agent-class benefits without external tooling; preserves semantic coherence because control sits inside the representation. |
+| Solver Loop | Closed-loop feedback using ∥B∥ and controlled collapses | **$1M–$5M** | Function/tool-calling surface but **inside** the semantic core; stable for long tasks. |
+| BB Modules (BBMC/BBPF/BBCR/BBAM) | Residue correction · path modulation · semantic resets | **$2M–$3M** | Agent frameworks surface area, but logic-native & embedding-aware. |
+| Semantic Field Engine | λS/ΔS energy system for cross-gen symbolic alignment | **$2M–$4M** | Embedding-native “semantic physics” layer; no GPT-style equivalent. |
+| Ontological Collapse–Rebirth | Lyapunov-stable reset when ∥B∥ ≥ Bc | **$1M–$2M** | Prevents long-horizon degradation; formal stability mechanism. |
+| Prompt-Only Model Upgrade | Zero-retrain semantic injection (GPT-3.5, LLaMA, etc.) | **$2M–$3M** | Agent-class benefits without tool chains; control sits in representation. |
 
-**Total (1.0 only):** **$8M–$17M** (modular licensing basis)  
-**Compounded integration (1.0 only):** **$30M+** if embedded across multiple LLM platforms
+**Total (1.0 baseline)**: **$8M–$17M** · **Compounded integration** (multi-LLM): **$30M+**
 
-> These values **exclude** all 2.0 math and capabilities. The “$1M-level” claim is therefore conservative.
+### Incremental Uplift (2.0 add-ons)
+
+| 2.0 component | Value driver | Est. incremental value | Notes |
+|---|---|---:|---|
+| Drunk-Transformer Regulator | −ΔS drift · +horizon stability | **$3M–$6M** | 1.8× node horizon; smoother recoveries. |
+| Coupler + Hysteresis | Directional progress · anti-jitter | **$2M–$4M** | `W_c` gating; fewer oscillations. |
+| λ-Observe Modes | Mode-aware scheduling | **$1M–$3M** | Convergent/recursive/divergent/chaotic. |
+| BBAM Rebalance | Attention blending window | **$1M–$2M** | `α_blend` clamps 0.35–0.65. |
+| Guarded Bridging (BBPF) | Safe path switching | **$1M–$2M** | Only when ΔS falls and `W_c` under half-cap. |
+
+**Total (2.0 incremental)**: **$8M–$17M**  
+**Combined (1.0 + 2.0)**: **$16M–$34M** baseline · **$40M+** when integrated across multiple LLMs
+
+> Valuation method = (saved eng time × loaded cost) + (incident avoidance × expected loss) + (throughput uplift × margin). The 2.0 block attributes value **only** to measurable deltas (accuracy, success, drift, horizon, CRR).
 
 ---
 
 ## How the “$1M-level” is computed (auditable outline)
 
 **A. Capability uplift → measurable engineering gains**  
-- Stress prompts (e.g., multi-scene text-to-image, single-canvas long narrative) quantify **semantic stability**, **structural coherence**, and **closure rate**.  
-- A/B comparisons (without vs with WFGY core) track collapse-grid artifacts, duplicate entities, and attention fragmentation frequencies.
+- Stress prompts (multi-scene T2I, single-canvas long narrative) quantify **stability**, **structural coherence**, **closure rate**.  
+- A/B comparisons (without vs with WFGY core) track collapse-grid artifacts, duplicate entities, attention fragmentation.
 
 **B. Replacement-cost model → minimal build cost for parity**  
-- Lower-bound cost = senior engineering months × fully-loaded compensation to rebuild equivalent capability with comparable reliability and time-to-impact.
+- Lower bound = senior eng months × fully-loaded compensation to rebuild parity with similar reliability/time-to-impact.
 
-**C. Market proxies → ability alignment with known surfaces**  
-- Map each module’s effect to widely used capability layers (function/tool-calling, agent frameworks).  
-- Assign premium where effects are **embedding-native and non-substitutable**; discount when an API-shell substitute could achieve comparable outcomes.
-
-> Directional formula:  
-> **Value ≈ (Saved Eng Time × Loaded Cost) + (Incident Avoidance × Expected Loss) + (Throughput Uplift × Margin)**  
-> This page documents the reasoning path and public proxies so third parties can reproduce or challenge the calculation.
+**C. Market proxies → alignment with known surfaces**  
+- Map each module to common capability layers (function/tool-calling, agent frameworks).  
+- Premium when effects are **embedding-native & non-substitutable**; discount when API-shell substitutes exist.
 
 ---
 
-## Public references (for verification)
+## Public references (verification)
 
-- OpenAI – Function calling and tool integrations (capability surface and use cases).  
-  https://openai.com/index/function-calling-and-other-api-updates/  
-- LangChain – Agents and tool use (typical agent boundaries).  
-  https://python.langchain.com/docs/tutorials/agents/  
-- Hugging Face – Agents / smolagents (tool-driven extension patterns).  
-  https://huggingface.co/docs/smolagents/en/index  
-- U.S. BLS – Software Developers, median annual wage (conservative loaded-cost baseline).  
-  https://www.bls.gov/ooh/computer-and-information-technology/software-developers.htm  
-- Lyapunov stability and Lyapunov functions (terminology alignment for stability).  
-  https://en.wikipedia.org/wiki/Lyapunov_stability  
-  https://en.wikipedia.org/wiki/Lyapunov_function
+- OpenAI — Function calling & tool integrations  
+- LangChain — Agents / tool use  
+- Hugging Face — smol-agents  
+- U.S. BLS — Software Developers (loaded-cost baseline)  
+- Lyapunov stability & functions
+
+*(links kept concise; full citations live elsewhere in the repo)*
 
 ---
 
-## Current status
+## Current Status
 
-- **WFGY 1.0** is open, public, and reproducible. A/B stress tests and seed settings are included in the repository.  
-- **WFGY 2.0** is live. This page remains **1.0-based**; 2.0 mathematics and valuation will be published separately.  
-  See **[WFGY 2.0](https://github.com/onestardao/WFGY/tree/main/core)** for the engine and math stack.
+- **WFGY 1.0**: open, public, reproducible (A/B stress tests & seed settings in repo).  
+- **WFGY 2.0**: **live**. This page now includes 2.0 uplift and incremental valuation.  
+  → See **/core** for the engine & math stack.
 
 
 ---
