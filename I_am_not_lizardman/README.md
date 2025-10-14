@@ -3,14 +3,12 @@
 Welcome to the official dataset and evaluation archive for PSBigBig's *WFGY 1.0* project.  
 This repo includes **8+1 groundbreaking papers** evaluated by SciSpace AI and organized for peer testing, semantic research, and reasoning games.
 
-> ⚠️ **Note on DOIs (Aug 2025)**  
-> The DOIs listed in the images and papers were originally registered via Zenodo.  
-> At the moment, these links may appear inactive due to Zenodo marking our uploads as "spam/abuse"  
-> (likely triggered by high traffic and rapid growth).  
->
-> We have already filed an appeal, and the case is under review.  
-> Once the situation is resolved — whether through restoration or replacement
-> all DOI information will be updated here to ensure persistent scholarly access. In the meantime, all papers remain fully available and verifiable through this GitHub repository.  
+> **Note on DOIs (Aug 2025)**  
+> Our DOIs have been updated and consolidated on **Figshare**.  
+> Some older screenshots or PDFs may still display earlier identifiers.  
+> If any link appears inactive, please refer to the Figshare DOI listed here.  
+> This page will remain updated to ensure stable citation.  
+> All papers are fully accessible and verifiable within this GitHub repository.
 
 
 
