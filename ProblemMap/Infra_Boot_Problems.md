@@ -17,6 +17,13 @@ TXT OS detects and prevents these infra-time logic gaps.
 | #15  | Deployment Deadlock         | Circular waits or step mismatch prevent components from initializing     | [deployment-deadlock.md](./deployment-deadlock.md)         |
 | #16  | Pre‑Deploy Collapse         | Pipeline assumes components exist before actual deployment occurs        | [predeploy-collapse.md](./predeploy-collapse.md)           |
 
+
+### 🆕 Related Practical Guides
+- [Hosting Performance Slowness](./hosting-performance-slowness.md) — Railway, Vercel, cloud deployment optimization
+- [Vector Store RAG Troubleshooting](./vectorstore-rag-troubleshooting.md) — Index errors, dimension mismatches
+- [Large PDF Processing](./large-pdf-processing.md) — Streaming, chunking, memory management
+
+
 ---
 
 ## 🔍 Example Symptoms
