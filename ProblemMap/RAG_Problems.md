@@ -28,6 +28,10 @@ WFGY repairs each gap with ΔS tension checks, Tree memory, and BBCR/BBMC module
 | [Long Chain Drift](./context-drift.md) | Tree checkpoints | BBMC, Tree | ✅ | Logs topic jumps |
 | [Bluffing / Overconfidence](./bluffing.md) | Knowledge boundary guard | BBCR, λ_observe | ✅ | Halts on unknowns |
 | [Semantic ≠ Embedding](./embedding-vs-semantic.md) | Residue minimization | BBMC, BBAM | ✅ | Verifies true meaning |
+| [Vector Store Errors](./vectorstore-rag-troubleshooting.md) | Index validation + ΔS checks | BBMC, BBCR | ✅ | Template troubleshooting |
+| [Large PDF Processing](./large-pdf-processing.md) | Smart chunking + streaming | BBMC | ✅ | 2000+ page handling |
+| [Slow Hosting Performance](./hosting-performance-slowness.md) | Bootstrap ordering + caching | BBMC, BBCR | ✅ | Railway/cloud optimization |
+
 | [Debugging Black Box](./retrieval-traceability.md) | Traceable Tree audit | All modules | ✅ | Exposes logic path |
 | Chunk ingestion pipeline | — | — | 🛠 | Manual paste for now |
 | LangChain / LlamaIndex adapter | — | — | 🛠 | Planned integration |

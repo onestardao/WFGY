@@ -276,6 +276,11 @@ you’ll get a diagnosis and exact fix steps — no infra changes required.
 - **TXT OS directory:** [browse the OS repo →](../OS/README.md)
 - **MVP demos:** [Minimal WFGY examples →](./mvp_demo/README.md)
 
+### 🆕 Common Issues (LangFlow, Hosting, RAG)
+- **Slow on Railway/Cloud hosting:** [Performance troubleshooting →](./hosting-performance-slowness.md)
+- **2000-page PDF splitting:** [Large PDF processing guide →](./large-pdf-processing.md)
+- **Vector Store RAG errors:** [Template troubleshooting →](./vectorstore-rag-troubleshooting.md)
+
 > tip: if you’re new, skip scrolling — use the **minimal quick-start** below.
 
 
