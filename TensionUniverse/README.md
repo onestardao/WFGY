@@ -2,87 +2,44 @@
 
 ![08a638cc-4d7f-413e-8ef6-1c18ec0d5d80](https://github.com/user-attachments/assets/779bae6b-7438-4d6a-95b9-ed5c92cad634)
 
-## Status: Internal Testing Phase
+## Status: Internal Testing
 
-**Tension Universe (TU)** is currently in an internal testing phase.
+Tension Universe (TU) is currently in an internal testing phase.
 
-What is public at this stage is **only the effective-layer language and the challenge process**.
-This repository is not a full release of the theory, nor a disclosure of its underlying axioms or construction rules.
+What is public at this stage is intentionally limited:
+only the Effective Layer language, the public archives, and the rerun friendly process.
+This is not a final scientific claim and not a full release of foundations.
 
-The purpose of this stage is limited and explicit:
-to pressure-test whether the effective-layer explanations remain
-**internally consistent, reproducible, and structurally coherent**
-when challenged with serious questions.
-
----
-
-## Global Open Challenge (MVP)
-
-This folder serves as the public archive for an ongoing open challenge around **Tension Universe (candidate)**.
-
-The goal is simple:
-
-Challenge the framework with structural questions and observe whether the **Effective Layer**
-remains stable under independent verification and reruns.
-
-This is a testing ground, not a finished scientific claim.
-
-If you find the challenge process valuable, you are welcome to star the repository.
+If you want the longer narrative, scope boundaries, and the public challenge documents, read:
+[Overview_LongForm.md](./Overview_LongForm.md)
 
 ---
 
-## What is public (and what is not)
+## What you can do here (MVP)
 
-**Public:**
-- The effective-layer language
-- Challenge questions and responses
-- Reproducible rerun procedures
-- Archived challenge records
+If you are skeptical about scaling only progress, or you care about structural consistency, you can:
 
-**Not public:**
-- Foundational axioms
-- Internal construction rules
-- Full derivation paths
-- Implementation-level details
+- challenge the Effective Layer with serious questions
+- rerun the same question under the same definitions and compare stability
+- check whether the responses remain coherent across independent reruns
 
-Requests to extract unreleased foundations may be declined.
-
----
-
-## How the challenge works (short version)
-
-- Challenges must be **reproducible** under the same version and definitions.
-- Arbitration is based on **full reruns in a new chat window**, preferably via share links.
-- Screenshots or paraphrases do not count as evidence.
-- The official arbitration language is **Chinese**.
-
-For the complete rules, see the manifestos below.
-
----
-
-## Challenge manifestos
-
-- Chinese version (official for arbitration):  
-  [TensionUniverse_Challenge_Manifesto_cn.md](./TensionUniverse_Challenge_Manifesto_cn.md)
-
-- English version:  
-  [TensionUniverse_Challenge_Manifesto_en.md](./TensionUniverse_Challenge_Manifesto_en.md)
+This repository aims to stay reproducible and testable at the surface level.
 
 ---
 
 ## Response archives (public record)
 
-All accepted challenges and responses are archived here:
+Accepted challenges and responses are archived here:
 
 - [challenge_responses/](./challenge_responses/)
 
-Each entry is assigned a unique ID and preserved as a permanent reference.
+Each entry is stored as a permalink style record for future reference.
 
 ---
 
 ## Main arena (Discord)
 
-For higher-frequency challenges and deeper follow-up discussions:
+For higher frequency challenges and follow ups, join the Discord:
 
 https://discord.gg/wvueqkFsp7
 
@@ -90,6 +47,7 @@ https://discord.gg/wvueqkFsp7
 
 ## Notes
 
-- This archive focuses strictly on the **Effective Layer**.
-- Safety-boundary questions (weapons, illegal instructions, or harm) will be declined and do not count as challenge wins.
-- The scope and openness of future releases are intentionally undecided at this stage.
+- This archive focuses on the Effective Layer only.
+- Requests to extract unreleased axioms, internal construction rules, or implementation details may be refused.
+- Safety boundary questions (weapons, illegal instructions, harm) will be declined and do not count as challenge wins.
+- Openness of future releases is intentionally undecided at this stage.
