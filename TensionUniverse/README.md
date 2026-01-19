@@ -1,25 +1,51 @@
-# Tension Universe (candidate)  
+# Tension Universe (candidate)
 
 ![08a638cc-4d7f-413e-8ef6-1c18ec0d5d80](https://github.com/user-attachments/assets/779bae6b-7438-4d6a-95b9-ed5c92cad634)
 
-## Global Open Challenge (MVP)
+## Status: Internal Testing Phase
 
-This folder is the public archive for an ongoing open challenge around **Tension Universe (candidate)**.
+**Tension Universe (TU)** is currently in an internal testing phase.
 
-The goal is simple:  
-challenge the framework with serious, structural questions and see whether the **Effective Layer** explanations remain reproducible and internally consistent.
+What is public at this stage is **only the effective-layer language and the challenge process**.
+This repository is not a full release of the theory, nor a disclosure of its underlying axioms or construction rules.
 
-If you enjoy this work, please consider giving the repo a star.
-
+The purpose of this stage is limited and explicit:
+to pressure-test whether the effective-layer explanations remain
+**internally consistent, reproducible, and structurally coherent**
+when challenged with serious questions.
 
 ---
 
-## Status
+## Global Open Challenge (MVP)
 
-**This is an unreleased work in progress.**  
-The framework is still in testing. Nothing here should be treated as a final scientific claim.
+This folder serves as the public archive for an ongoing open challenge around **Tension Universe (candidate)**.
 
-What is public right now is the challenge process and its archives.
+The goal is simple:
+
+Challenge the framework with structural questions and observe whether the **Effective Layer**
+remains stable under independent verification and reruns.
+
+This is a testing ground, not a finished scientific claim.
+
+If you find the challenge process valuable, you are welcome to star the repository.
+
+---
+
+## What is public (and what is not)
+
+**Public:**
+- The effective-layer language
+- Challenge questions and responses
+- Reproducible rerun procedures
+- Archived challenge records
+
+**Not public:**
+- Foundational axioms
+- Internal construction rules
+- Full derivation paths
+- Implementation-level details
+
+Requests to extract unreleased foundations may be declined.
 
 ---
 
@@ -30,7 +56,7 @@ What is public right now is the challenge process and its archives.
 - Screenshots or paraphrases do not count as evidence.
 - The official arbitration language is **Chinese**.
 
-For the full rules, read the manifestos below.
+For the complete rules, see the manifestos below.
 
 ---
 
@@ -46,17 +72,17 @@ For the full rules, read the manifestos below.
 
 ## Response archives (public record)
 
-All accepted challenges and responses will be permanently archived here:
+All accepted challenges and responses are archived here:
 
 - [challenge_responses/](./challenge_responses/)
 
-Each entry is assigned a unique ID and stored as a permalink for future reference.
+Each entry is assigned a unique ID and preserved as a permanent reference.
 
 ---
 
 ## Main arena (Discord)
 
-If you want a higher-frequency challenge flow and deeper follow-ups, join the Discord:
+For higher-frequency challenges and deeper follow-up discussions:
 
 https://discord.gg/wvueqkFsp7
 
@@ -64,6 +90,6 @@ https://discord.gg/wvueqkFsp7
 
 ## Notes
 
-- This archive focuses on the **Effective Layer** only.  
-- Requests to extract unreleased axioms, internal construction rules, or implementation details may be refused.
-- Safety-boundary questions (weapons, illegal instructions, harm) will be declined and do not count as challenge wins.
+- This archive focuses strictly on the **Effective Layer**.
+- Safety-boundary questions (weapons, illegal instructions, or harm) will be declined and do not count as challenge wins.
+- The scope and openness of future releases are intentionally undecided at this stage.
