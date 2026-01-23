@@ -1,38 +1,30 @@
-# Q041 Nature of dark matter (TU effective entry)
+# Q041 Nature of dark matter (effective layer)
+
+Filename: `Q041_dark_matter_effective_layer_run2.md`
 
 ## 0. Metadata and effective layer disclaimer
 
 ### 0.1 Metadata
 
-- Problem ID: Q041  
-- Title: Nature of dark matter  
-- BH Code: BH_COSMO_DARKMATTER_L1_041  
-- Domain: Cosmology  
-- Family: Dark sector  
-- Rank: S  
-- Model semantics: continuous manifold semantics  
-- Field type: matter and gravitational fields on a spacetime manifold  
-- Tension type: spectral and geometric tension between mass distribution and observables  
-- Projection dominance: P primary, I and C secondary, M auxiliary  
+1. Problem ID: Q041
+2. Title: Nature of dark matter
+3. BH Code: `BH_COSMO_DARKMATTER_L1_041`
+4. Domain: Cosmology
+5. Family: Dark sector
+6. Rank: S
+7. Model semantics: continuous manifold semantics (implemented as grid sampled fields when computing tests)
+8. Field type: matter and gravitational fields on spacetime
+9. Tension type: geometric mismatch tension between inferred mass distribution and visible mass distribution
+10. Projection dominance: P primary, I secondary, C secondary, M auxiliary
 
-### 0.2 Model semantics declaration
+### 0.2 Effective layer disclaimer
 
-- Spacetime is modeled as a four dimensional differentiable manifold S with metric g_mu_nu compatible with standard cosmology.  
-- Spatial slices at fixed cosmological time are modeled as a three dimensional Riemannian manifold (Sigma, h_ij).  
-- All continuous fields below are defined on Sigma or on S with appropriate restrictions.  
-- Gradients, divergences, and Laplacians are understood in the Riemannian sense on (Sigma, h_ij).  
-- Time derivatives d/dt are interpreted as finite differences Delta/Delta t unless explicitly stated as smooth limits.
+This entry is strictly effective layer only.
 
-### 0.3 Effective layer disclaimer
-
-All statements in this entry are made strictly at the effective layer.
-
-- Only observables, effective fields, constraints, tension indices, and extremality patterns are specified.  
-- No underlying axiom system, no generative rules, and no constructive mapping from raw data into internal TU fields are given.  
-- Whenever a mapping or a model is mentioned, it is stated in existence form, not constructed explicitly.  
-- No unique microscopic mechanism for dark matter is claimed in this document.
-
-This is a semantic tension description of the dark matter problem, not a constructive proof or a unique fundamental theory.
+1. Only observables, constraints, tension indices, functionals, and falsifiable tests are specified.
+2. No TU Deep axioms, no generators, no constructive rules, and no explicit mapping from raw data into TU internal fields is provided.
+3. When a mapping is referenced, it is in existence form only: assume there exists a model, assume there exists a mapping with stated properties.
+4. Falsifying the TU encoding in this entry is not the same as solving the underlying dark matter problem.
 
 ---
 
@@ -40,277 +32,245 @@ This is a semantic tension description of the dark matter problem, not a constru
 
 ### 1.1 Canonical formulation
 
-Let g_mu_nu be a spacetime metric solving Einstein field equations with total energy momentum tensor T_tot_mu_nu. Let T_vis_mu_nu denote the contribution from observed baryonic matter and radiation, constructed from luminous and baryonic tracers.
+Multiple independent observations imply a persistent discrepancy between gravitational effects and the mass that can be accounted for by luminous and baryonic tracers.
 
-Canonical dark matter problem:
+The canonical question: what additional component or modification is required so that one unified description simultaneously matches robust observations across scales (galaxies, clusters, and cosmological large scale structure).
 
-Explain the persistent discrepancy between
+We express the standard bookkeeping as:
 
-- gravitational effects inferred from g_mu_nu through galaxy rotation curves, gravitational lensing, cluster dynamics, and large scale structure, and  
-- the contribution that can be accounted for by T_vis_mu_nu,
+```txt
+[Eq 1] T_tot = T_vis + T_dm + T_mod
+```
 
-by finding a physically well defined additional component or modification such that
+Meaning:
 
-$$
-T_tot_mu_nu = T_vis_mu_nu + T_dm_mu_nu + T_mod_mu_nu
-$$
+1. `T_tot` is the effective source that reproduces the observed gravitational field in the chosen effective description.
+2. `T_vis` is the contribution from observed baryons and radiation (as reconstructed from visible tracers).
+3. `T_dm` is an additional non luminous component (dark matter type contribution).
+4. `T_mod` is an effective term capturing modified dynamics, if used.
 
-with
+This entry does not choose between `T_dm` and `T_mod`. It encodes the effective tension structure that any acceptable explanation must satisfy.
 
-- T_dm_mu_nu a non luminous component, and / or  
-- T_mod_mu_nu an effective term encoding modified dynamics,
+### 1.2 Status summary
 
-that simultaneously matches all robust dark matter phenomenology across relevant scales.
-
-### 1.2 Current status
-
-- Multiple independent observational channels support the existence of a missing component or of a modification of gravity at galactic, cluster, and cosmological scales.  
-- Cold dark matter within LambdaCDM provides a successful global fit to many observables, but small scale tensions and alternative frameworks remain under active investigation.  
-- No single microphysical model is universally accepted as the final answer for the nature of dark matter.
-
-This entry does not attempt to resolve the microphysical nature. It encodes the effective tension structure of the problem.
-
-### 1.3 Authoritative sources
-
-Examples of authoritative sources include:
-
-- Standard cosmology textbooks covering LambdaCDM and dark matter phenomenology.  
-- Review articles on galaxy rotation curves, gravitational lensing, cluster dynamics, and large scale structure formation.  
-- Precision cosmology reports based on CMB and large scale structure surveys.
-
-Concrete bibliographic details can be added in a later revision. The effective layer construction below does not depend on a particular choice of review.
+1. A global cosmological fit (often discussed under LambdaCDM) explains many large scale observations with high accuracy, but the microphysical nature of the dark component remains unresolved.
+2. Alternative frameworks exist (modified gravity classes, self interacting dark matter, warm dark matter, multi component dark sectors).
+3. There is no universally accepted final answer for what dark matter is.
 
 ---
 
 ## 2. Position in the BlackHole graph
 
-### 2.1 Local neighborhood
+### 2.1 Local neighborhood inside BlackHole
 
-Within the BlackHole set of S problems, Q041 is located in the cosmology and dark sector cluster and is directly related to:
+This entry couples strongly to:
 
-- Q042 Nature of dark energy  
-- Q043 Origin of cosmic inflation  
-- Q045 Large scale structure formation  
-- Q046 Cosmic microwave background anomalies  
-- Q048 Hubble constant tension  
-- Q049 Missing baryons problem  
-
-These problems share observables, data sets, or large scale dynamical structures with Q041.
+1. Q042 Nature of dark energy
+2. Q043 Origin of cosmic inflation
+3. Q045 Large scale structure formation
+4. Q046 CMB anomalies
+5. Q048 Hubble constant tension
+6. Q049 Missing baryons problem
 
 ### 2.2 Cross domain links
 
-Q041 has structural connections to:
-
-- problems where effective potentials and spectral gaps appear as emergent fields in the tension formalism,  
-- information theoretic questions involving compressed descriptions of large scale cosmological data sets,  
-- AI problems dealing with global consistency of field like internal representations.
-
-Cross problem transfer is detailed in Section 8.
+1. Information theory: compressed descriptions of multi channel cosmological data sets and parameter efficiency.
+2. AI evaluation: global consistency of a field like internal representation under multiple observational channels.
 
 ---
 
-## 3. Tension Universe encoding at the effective layer
+## 3. TU encoding at the effective layer
 
-### 3.1 State space and fields
+### 3.1 State space, variables, and observables
 
-We introduce the following effective level objects.
+We assume there exists an effective physical model where:
 
-- Physical spacetime manifold S with metric g_mu_nu.  
-- Semantic state space M containing high level semantic states X that encode macroscopic configurations of matter, observers, and modeling assumptions.  
-- On a spatial slice Sigma:
+1. `S` is a spacetime domain, and `Sigma(t)` is a spatial slice at time `t`.
+2. `x` denotes a point on a spatial slice `Sigma(t)`.
+3. `rho_vis(x)` is a visible sector mass density proxy (from luminous and baryonic tracers).
+4. `rho_dyn(x)` is an effective dynamical mass density proxy inferred from gravitational observables.
+5. `rho_dm(x)` is an effective dark sector density proxy when a dark component description is used.
+6. `O_k` are measurable observables. Typical examples:
 
-  - visible matter density field rho_vis(x), derived from luminous tracers,  
-  - total dynamical mass density field rho_dyn(x), inferred from gravitational observables,  
-  - an effective dark sector field rho_dm(x) or, more generally, a dark sector stress energy contribution T_dm_mu_nu(x).
+   * `v_rot(r)` rotation curve profile in galaxies
+   * `kappa_lens(theta)` lensing convergence or equivalent lensing map features
+   * `sigma_v` cluster velocity dispersion statistics
+   * `P_k(k)` large scale power spectrum summaries
 
-- Observables O_k(x) that represent measurable quantities, including for example:
+We also assume a semantic state space `M` exists (TU Core contract) where high level semantic states `X` encode macroscopic model choices, context, and hidden assumptions. We do not specify how raw data maps into `X`.
 
-  - rotation velocity profiles v_rot(r),  
-  - lensing convergence maps kappa_lens(theta),  
-  - cluster velocity dispersions,  
-  - large scale structure statistics.
+### 3.2 Effective layer TU statement
 
-We treat M as a semantic manifold equipped with a metric g_ij that supports both distance and energy geometry roles, consistent with the TU Core contract.
+Assume there exists a family of TU compatible models such that for each semantic state `X`:
 
-### 3.2 TU effective statement for Q041
+1. There exist fields `rho_vis(x; X)` and `rho_dyn(x; X)` defined on the relevant domain where the observables `O_k(X)` can be predicted and compared with measurements.
+2. There exists either:
 
-At the effective layer, the dark matter problem is encoded as the existence and structure of a low tension configuration that links
+   * an effective dark sector contribution `rho_dm(x; X)` (or `T_dm` in a stress energy representation), or
+   * an effective modification contribution `T_mod`,
+     such that the model reduces the cross channel mismatch across scales.
+3. There exists an effective tension functional `T_dm_func` that is minimized (or kept within a controlled band) by configurations compatible with observations.
 
-- visible sector fields rho_vis and related observables, and  
-- dark sector contributions T_dm_mu_nu or effective modifications,
-
-such that all robust gravitational observables belong to a single TU consistent family.
-
-TU effective statement:
-
-Assume there exists a family of TU compatible models in which:
-
-1. There is a mapping that associates to each semantic state X in M
-
-   - a visible mass density field rho_vis(x; X),  
-   - a total dynamical mass density field rho_dyn(x; X),  
-   - a dark sector contribution T_dm_mu_nu(x; X) or effective modification T_mod_mu_nu(x; X), and  
-   - a set of observables O_k(X),
-
-   satisfying standard consistency conditions of cosmology.
-
-2. There exists an effective tension functional T_dm_total on pairs (rho_vis, rho_dyn) such that observed configurations minimize T_dm_total within admissible uncertainty classes, when T_dm_mu_nu is appropriately included.
-
-3. Any TU compatible encoding of dark matter must preserve specified invariants of the gravitational field and large scale structure across the data sets considered.
-
-The explicit mapping from raw observational data into M and into the fields above is not constructed here. Only existence and consistency conditions at the effective level are stated.
+No explicit construction is given. Only existence plus measurable consequences are asserted.
 
 ### 3.3 Four projections P, I, M, C
 
-#### 3.3.1 Physical projection P
+#### 3.3.1 P projection (physical)
 
-- Focus: gravitational dynamics in galaxies, clusters, and the cosmic web.  
-- Objects: g_mu_nu, rho_vis, rho_dyn, and T_dm_mu_nu.  
-- Key observable tension: mismatch between the gravitational potential implied by rho_vis and the one reconstructed from rotation curves and lensing, integrated over relevant scales.
+Goal: reconcile gravitational observables with visible sector tracers.
 
-#### 3.3.2 Information projection I
+Key measurable mismatch sources include:
 
-- Focus: description length and information content of the universe under different modeling choices.  
-- Objects: compressed encodings of large data sets such as CMB maps, galaxy surveys, and lensing catalogs.  
-- Key observable tension: difference in information complexity between models with and without a unified dark matter description that fits all robust data.
+1. rotation curves vs visible mass distribution
+2. lensing maps vs visible mass distribution
+3. cluster dynamics vs visible mass distribution
+4. large scale structure statistics vs visible mass distribution
 
-#### 3.3.3 Mind projection M
+#### 3.3.2 I projection (information)
 
-- Focus: cognitive load for an idealized model building mind that maintains a globally consistent picture of cosmic structure.  
-- Objects: semantic states X representing modeling schemes and parameterizations.  
-- Key observable tension: cognitive and structural cost of tracking a patchwork of unrelated phenomenological fixes compared to a unified dark sector.
+Goal: quantify how efficiently a single model family compresses multi channel data.
 
-#### 3.3.4 Civilisational projection C
+A unified dark sector description should reduce the number of independent ad hoc degrees of freedom needed to fit all channels, while preserving predictive performance.
 
-- Focus: long horizon bets made by a scientific civilisation that treats the dark sector as a real component in its physical ontology.  
-- Objects: research programs, experimental infrastructure, and resource allocation patterns.  
-- Key observable tension: stability of such programs under changing data as a function of how unified the dark matter description is.
+#### 3.3.3 M projection (mind)
 
-### 3.4 Projection coherence note
+Goal: measure the structural cost for an agent that must maintain a globally consistent internal representation.
 
-In the TU encoding, these projections are different readings of the same underlying tension field.
+A patchwork of unrelated local rules increases internal tension and maintenance cost, relative to a single coherent field like description.
 
-- Projection P describes the gravitational mismatch in terms of field level quantities.  
-- Projection I describes the compression structure of the same data sets.  
-- Projection M describes the internal cost for a model building agent to track these structures.  
-- Projection C describes the long term stability of scientific and technological commitments based on specific dark sector hypotheses.
+#### 3.3.4 C projection (civilisational)
 
-TU compatible models for Q041 must maintain coherence across these projections. A proposal that removes tension in P but produces unbounded or highly irregular tension in I or M is treated as incomplete at the effective layer.
+Goal: assess long horizon stability of scientific and engineering commitments.
+
+A coherent low tension model supports stable program design. High tension fragmentation forces frequent retooling.
+
+### 3.4 Projection coherence constraint
+
+A TU compatible encoding must keep these projections mutually coherent.
+
+If a proposed encoding reduces mismatch in P but produces uncontrolled complexity in I or unstable representation in M, it is treated as incomplete at the effective layer.
 
 ---
 
 ## 4. Tension principle for Q041
 
-### 4.1 Tension indices and functionals
+### 4.1 Local mismatch tension index
 
-We introduce an effective scalar tension index on Sigma:
+Define a nonnegative mismatch index `DeltaS_grav(x)` that measures the discrepancy between the gravitationally inferred field and the visible sector implied field.
 
-$$
-DeltaS_grav(x) >= 0
-$$
+One generic definition is based on a difference of inferred densities:
 
-that measures local mismatch between gravitational observables and predictions from visible matter alone. At each spatial point x,
+```txt
+[Eq 2] DeltaS_grav(x) = f( rho_dyn(x) - rho_vis(x) )
+[Eq 3] DeltaS_grav(x) >= 0
+```
 
-$$
-DeltaS_grav(x) = f(rho_dyn(x) - rho_vis(x))
-$$
+Where:
 
-for a suitable nonnegative function f, or more generally a combination of differences in derived quantities such as circular velocities or lensing convergence.
+1. `f(u)` is a chosen nonnegative function such as `f(u) = abs(u)` or a squared error.
+2. The definition may also be expressed through derived observables such as rotation curves or lensing maps, as long as it is measurable and nonnegative.
 
-A global spectral geometric tension functional is defined by
+### 4.2 Global tension functional (grid sampled form)
 
-$$
-T_dm_total[rho_vis, rho_dyn]
-= \int_Omega w(x) DeltaS_grav(x) dV(x)
-$$
+To obey implementability without continuous integral notation, define a sampled domain `Omega` with grid points `x_n` and weights `w_n`:
 
-with a weight function w(x) that encodes observational reliability and scale selection, and with Omega a subset of Sigma defined in Section 6.
+```txt
+[Eq 4] T_dm_func = (1 / W) * sum_{n=1..N} w_n * DeltaS_grav(x_n)
+[Eq 5] W = sum_{n=1..N} w_n
+[Eq 6] w_n >= 0
+```
 
-In the TU Core notation, this functional is compatible with a canonical stress tensor of the form
+Meaning:
 
-$$
-T_ij = S_i C_j DeltaS lambda kappa
-$$
+1. `Omega` is the evaluation domain excluding singular or undefined regions.
+2. `w_n` encodes observational reliability and scale selection.
+3. `T_dm_func` is a scale comparable global mismatch score.
 
-where indices i, j range over appropriate directions in the semantic state space, and DeltaS is associated with DeltaS_grav at the effective level.
+### 4.3 Extremality principle (effective)
 
-### 4.2 Extremality principle
+The effective dark matter tension principle is:
 
-The effective dark matter tension principle for Q041 is:
+1. For admissible model configurations, the observed universe lies near a low tension region where `T_dm_func` is minimized or kept within a controlled band.
+2. A unified description is one that keeps `T_dm_func` small across many systems and scales using a shared family of parameters.
 
-- admissible configurations of rho_vis, rho_dyn, and dark sector contributions are compared via T_dm_total, and  
-- observed configurations are close to low tension extremal points of T_dm_total within declared uncertainty sets.
-
-Configurations requiring many unrelated local fixes to match data correspond to high T_dm_total. Configurations where a single coherent dark sector contribution brings T_dm_total into a controlled band are preferred at the effective layer.
-
-This is an extremality statement about tension, not a microphysical claim about the underlying dark sector.
+This is a statement about tension patterns, not a claim that any specific microphysical model is true.
 
 ---
 
 ## 5. Counterfactual tension worlds
 
-### 5.1 World T: unified low tension dark sector
+### 5.1 World T (unified low tension)
 
-Assume there exists a family of TU compatible models U_T where:
+Assume there exists a single coherent dark sector family such that across a wide class of systems:
 
-- a single class of dark sector fields T_dm_mu_nu with a stable effective equation of state explains all robust dark matter phenomenology across scales, and  
-- for each observed system, the corresponding configuration is a low tension extremal point of T_dm_total in the admissible set.
+1. `T_dm_func` remains within a narrow and predictable band.
+2. The functional behavior of `DeltaS_grav(x)` across scales is consistent under the same family, up to declared uncertainties.
 
-In this world:
+Expected patterns:
 
-- Projection P exhibits a consistent pattern of gravitational potentials derived from a unique dark sector law.  
-- Projection I shows that data sets can be compressed using a relatively simple parameterization of the dark sector, with controlled residuals.  
-- Projection M shows reduced cognitive tension for an idealized modeller, since a single scheme covers many systems.  
-- Projection C supports stable long term research and engineering programs based on unified dark sector assumptions.
+1. P: consistent residual structure across galaxies and clusters after adding a single dark sector family.
+2. I: fewer degrees of freedom needed to fit multi channel data jointly.
+3. M: a stable field like internal representation exists with low maintenance cost.
+4. C: long horizon research commitments remain stable as new surveys refine parameters.
 
-### 5.2 World F: no unified low tension dark sector
+### 5.2 World F (no unified low tension)
 
-Assume there is no TU compatible model with a unified dark sector class that keeps T_dm_total in a controlled band across all robust data sets. Instead, explaining observations requires a patchwork of system dependent corrections.
+Assume no single family can keep `T_dm_func` controlled across systems, and success requires system dependent fixes.
 
-In this world:
+Expected patterns:
 
-- Projection P exhibits system specific effective modifications that do not fit into a single dark sector field class.  
-- Projection I shows that compression of the combined data requires many additional parameters and ad hoc structures.  
-- Projection M shows high cognitive load for an idealized modeller that needs to maintain many local rules.  
-- Projection C shows unstable scientific commitments, with frequent large revisions of dark sector assumptions as new data accumulate.
+1. P: residual mismatch patterns differ qualitatively across systems and scales.
+2. I: compression requires many additional parameters and exceptions.
+3. M: representation fragments, forcing frequent context dependent rule switching.
+4. C: high program churn as each new dataset pushes model family changes.
 
-This counterfactual analysis does not decide which world is actual. It encodes how tension patterns would differ if the canonical unification view fails at the effective layer.
+This section encodes what failure of unification would look like in tension variables, without claiming logical impossibility.
 
 ---
 
-## 6. Falsifiability and discriminating experiments
+## 6. Falsifiability and discriminating tests
 
-### 6.1 Singularity and exceptional sets
+### 6.1 Singularity and exceptional set rule
 
-Define S_sing as the subset of Sigma where gravitational observables are presently too uncertain or non regular for DeltaS_grav to be well defined. We adopt option (a) from the TU contract:
+Define `S_sing` as the set of regions where the mismatch index cannot be reliably defined due to missing data, severe systematics, or non regular reconstructions.
 
-- work on Omega = Sigma \ S_sing, where observables and densities are sufficiently regular and bounded for the definitions above, and  
-- explicitly track the dependence of results on the choice of Omega.
+We choose domain restriction:
 
-### 6.2 Discriminating test for the TU encoding
+1. `Omega = Domain \ S_sing`
+2. All computations of `DeltaS_grav` and `T_dm_func` are only evaluated on `Omega`
+3. Sensitivity to the choice of `Omega` must be reported
 
-We require at least one discriminating test that targets the TU encoding of Q041, not the full microphysical resolution of dark matter.
+### 6.2 Discriminating test for the TU encoding (not the underlying physics)
 
-Test DM_TU_1: scale coherent tension band.
+Test name: `DM_TU_TEST_1_SCALE_COHERENCE`
 
-1. Choose a set of systems {X_i} spanning galaxy, group, and cluster scales where both rho_vis and rho_dyn can be reconstructed to declared accuracy.  
-2. For each system, compute an effective DeltaS_grav(x; X_i) on Omega_i.  
-3. For a given TU encoding, predict a band [L_i, U_i] for the spatially averaged tension index
+Goal: falsify the claimed TU tension structure even if the microphysical nature of dark matter remains unknown.
 
-$$
-DeltaS_bar_grav(X_i)
-=
-(1 / V(Omega_i)) \int_Omega_i DeltaS_grav(x; X_i) dV(x)
-$$
+Protocol:
 
-as a function of a small parameter set shared by the family.  
-4. If observed values of DeltaS_bar_grav(X_i) systematically fall outside the predicted bands across several scales, the TU encoding of Q041 is falsified at the effective layer, independent of whether dark matter is ultimately particle like or a modification of gravity.
+1. Choose a set of systems `X_i` spanning galaxies, groups, and clusters, each with:
 
-This test is implementable in principle using continuous manifold semantics and standard gravitational reconstructions. It is a test of the tension structure and its claimed scale coherence, not of a specific particle model.
+   * visible sector reconstructions adequate for `rho_vis`
+   * gravitational reconstructions adequate for `rho_dyn`
+2. For each `X_i`, compute `DeltaS_grav(x_n; X_i)` on `Omega_i` and then compute:
 
-### 6.3 Relation to the underlying problem
+```txt
+[Eq 7] T_dm_func(X_i) = (1 / W_i) * sum_{n=1..N_i} w_{i,n} * DeltaS_grav(x_{i,n}; X_i)
+[Eq 8] W_i = sum_{n=1..N_i} w_{i,n}
+```
 
-Falsifying a particular TU encoding of Q041 means that the chosen tension functional T_dm_total and its extremality claims are incompatible with data. It does not solve the dark matter problem and does not rule out all possible dark sector theories. It only rules out that specific effective tension structure.
+3. A TU encoding claims scale coherence if there exists a shared parameter set `theta` and predicted bands:
+
+```txt
+[Eq 9] L_i(theta) <= T_dm_func(X_i) <= U_i(theta)
+```
+
+4. Falsification criterion:
+
+   * if for many systems across multiple scales, the observed `T_dm_func(X_i)` values cannot be placed into any shared band family without introducing system specific exceptions, then the TU encoding of Q041 is falsified at the effective layer.
+
+Important note:
+Falsifying this encoding does not solve the dark matter problem. It only rejects this specific tension structure.
 
 ---
 
@@ -318,121 +278,98 @@ Falsifying a particular TU encoding of Q041 means that the chosen tension functi
 
 ### 7.1 Training signals
 
-Q041 induces tension based training or regularization signals for AI systems.
+Define a model that predicts `rho_dyn_hat(x)` from inputs derived from visible sector and context.
 
-- Define a model output field rho_dyn_hat(x) predicted from visible sector inputs and internal representations.  
-- Construct a tension based loss
+Define an effective training objective that penalizes mismatch tension:
 
-$$
-L_dm = \int_Omega w(x) DeltaS_grav_model(x) dV(x)
-$$
+```txt
+[Eq 10] L_dm = (1 / W) * sum_{n=1..N} w_n * f( rho_dyn_hat(x_n) - rho_dyn_obs(x_n) )
+```
 
-with
+Where:
 
-$$
-DeltaS_grav_model(x)
-=
-f(rho_dyn_hat(x) - rho_dyn_obs(x))
-$$
-
-where rho_dyn_obs(x) is the reconstructed dynamical density.  
-- Combine with standard data fitting losses to produce a WFGY compatible training objective that penalizes high tension configurations.
-
-These signals are defined at the effective layer and do not require access to any TU Deep structure.
+1. `rho_dyn_obs` is the reconstructed dynamical proxy used as supervision.
+2. `f` is the same nonnegative mismatch function used in `DeltaS_grav`.
+3. This loss can be combined with standard likelihood or prediction losses, but the tension term must remain explicit.
 
 ### 7.2 Architectural patterns
 
-Q041 suggests that useful AI architectures for cosmology and related tasks include:
+A TU compatible architecture for this problem often needs:
 
-- field based memory representations that store rho_vis, inferred potentials, and associated uncertainties on grids or graphs,  
-- modules that enforce or check global consistency of gravitational fields across multiple systems,  
-- mechanisms that implement a form of low tension search in the space of dark sector parameterizations.
-
-The precise design of these modules is an engineering choice. The TU encoding provides constraints and evaluation criteria rather than a fixed architecture.
+1. Field memory modules that store spatially indexed representations (grid or graph) of visible and inferred fields.
+2. Cross channel consistency checkers that compare predictions across rotation, lensing, and clustering summaries.
+3. A global low tension search mechanism over model hypotheses, using `T_dm_func` or its surrogates.
 
 ### 7.3 Evaluation harness
 
-A Q041 based evaluation harness for AI and WFGY systems can be constructed as follows.
+Benchmark harness outline:
 
-- Input: catalogues of galaxies, clusters, and lensing systems with visible tracers and reconstructed dynamical mass profiles.  
-- Task: given visible sector information, reconstruct dynamical profiles and predict tension indices DeltaS_grav and global T_dm_total.  
-- Metrics:
-  - accuracy of reconstructed dynamical fields,  
-  - distribution of tension indices compared to observed values,  
-  - stability of performance under synthetic perturbations of visible sector data.
+1. Inputs:
 
-This harness tests the ability of AI systems to internalize and manipulate field level structures in a tension aware manner.
+   * multi channel datasets per system `X_i`
+2. Tasks:
+
+   * infer `rho_dyn_hat` and compute predicted `T_dm_func` profiles
+3. Metrics:
+
+   * prediction error of reconstructed profiles
+   * distributional stability of `T_dm_func` under perturbations
+   * failure localization: where `DeltaS_grav(x)` spikes and whether the model predicts it
 
 ---
 
 ## 8. Cross problem transfer template
 
-### 8.1 Reusable components
+### 8.1 Reusable components produced by Q041
 
-From the Q041 encoding, we obtain reusable components:
+1. A general mismatch tension index pattern `DeltaS_channel(x)` defined from differences between two reconstruction pathways.
+2. A global functional pattern `T_func = weighted_mean(DeltaS)` that supports scale comparison.
+3. A falsification pattern: shared band coherence across heterogeneous systems.
 
-- a gravitational tension index DeltaS_grav(x) based on mismatch between different ways to infer fields,  
-- a global functional T_dm_total integrating local tension with weights,  
-- a pattern where a unified low tension extremal configuration is contrasted with patchwork high tension configurations,  
-- an evaluation harness template where field reconstructions are judged by their tension profile.
+### 8.2 Transfer targets inside BlackHole
 
-These components can be imported into other BlackHole problems that involve field mismatches or multiple observational channels.
+Direct reuse targets include:
 
-### 8.2 Target problems for transfer
-
-Direct transfer targets include:
-
-- Q042 dark energy, where similar tension indices can be defined between expansion history and gravitational field reconstructions,  
-- Q045 large scale structure, where tension indices compare clustering statistics under different modeling assumptions,  
-- Q048 Hubble constant tension, where multiple measurements of a single parameter induce an effective tension functional in parameter space,  
-- Q049 missing baryons, where tension indices compare baryon census predictions and observations.
-
-The same pattern extends to non cosmological domains where fields and observables can be compared through tension indices.
+1. Q042 dark energy
+2. Q045 large scale structure formation
+3. Q048 Hubble constant tension
+4. Q049 missing baryons problem
 
 ---
 
 ## 9. TU roadmap and verification levels
 
-### 9.1 TU penetration level
+### 9.1 TU penetration level (E scale)
 
-For Q041, the current document is assigned:
+Current level: `E1`
 
-- TU penetration level E1:
+Reason:
 
-  - state space and effective fields are defined,  
-  - tension indices and functionals are specified at an abstract level,  
-  - qualitative extremality principles are given.
+1. state variables, observables, and a tension functional are defined
+2. a falsifiable test protocol exists
+3. no concrete numerical deployment is included in this run2 text
 
-The target progression is:
+Target upgrades:
 
-- E2:
-  - concretize DeltaS_grav and T_dm_total for explicit data sets,  
-  - produce numerical predictions for tension band distributions under candidate encodings.  
-- E3:
-  - implement PDE or agent based models that use these tension structures and demonstrate empirical advantages in reconstructing dark matter related fields compared to baseline methods.
+1. `E2`: implement `DM_TU_TEST_1_SCALE_COHERENCE` on real survey data and publish results
+2. `E3`: deploy PDE or agent based models that use the tension signal and demonstrate measurable improvement over baselines
 
-### 9.2 Internal maturity level
+### 9.2 Internal maturity level (N scale)
 
-For the present entry:
+Current maturity: `N1`
 
-- internal maturity level N1:
+Reason:
 
-  - conceptual mapping and structural definitions are present,  
-  - no concrete data pipeline or public implementation is attached yet.
-
-Future revisions may raise the level to N2 or higher as numerical experiments and implementations are added.
+1. skeleton is complete and consistent
+2. numerical instantiation and third party reproduction are not yet attached
 
 ---
 
 ## 10. Elementary but precise explanation
 
-This section is for a reader with basic scientific literacy.
-
-- Observations of galaxies and clusters show that visible matter is not enough to explain the way things move and the way light bends. Something else or some change in the rules is needed.  
-- In this document, the problem is rewritten using a language of tension. There is a quantity DeltaS_grav that measures how badly visible matter alone fails to match the gravitational effects we see.  
-- A global tension index T_dm_total is defined by adding up these mismatches over space. Configurations that need many unrelated fixes to match data have high T_dm_total. Configurations where a single dark sector description brings T_dm_total down into a narrow band are low tension.  
-- Two effective worlds are considered. In one world, a unified dark sector makes the tension index small and regular across many systems. In the other world, no such unified description exists, and the tension index is irregular and large.  
-- The document proposes a concrete way to test whether a given tension based encoding is compatible with data. This test can in principle falsify the encoding even if the ultimate nature of dark matter remains unknown.  
-- For AI and WFGY, this problem becomes a training and evaluation ground. Systems are asked to reconstruct gravitational fields and dark sector effects in a way that reduces the tension index while remaining consistent with observations.
-
-This is an effective level description. It does not specify what dark matter is made of. It specifies how a consistent picture should behave when viewed through the lens of tension.
+1. We see how galaxies rotate and how gravity bends light. Visible matter alone cannot explain it.
+2. We define a mismatch score `DeltaS_grav(x)` that measures how badly visible matter fails to match gravitational reconstructions at location `x`.
+3. We summarize the overall mismatch by `T_dm_func`, a weighted average of that mismatch over the reliable domain.
+4. A unified solution should keep `T_dm_func` consistently low across many systems using one coherent family of assumptions.
+5. If you can only fix each system with a different special rule, the tension stays high and the encoding fails the scale coherence test.
+6. This entry proposes a concrete falsification test for the tension encoding itself. Failing that test means this TU encoding is wrong, even if the dark matter question remains open.
