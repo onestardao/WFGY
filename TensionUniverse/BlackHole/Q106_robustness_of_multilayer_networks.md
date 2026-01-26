@@ -1,4 +1,3 @@
-````markdown
 # Q106 · Robustness of multilayer networks
 
 ## 0. Header metadata
