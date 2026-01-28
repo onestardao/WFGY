@@ -13,14 +13,14 @@ Field_type: analytic_field
 Tension_type: spectral_tension
 Status: Open
 Semantics: hybrid
-E_level: E1
+E_level: E2
 N_level: N2
-Last_updated: 2026-01-23
-```
+Last_updated: 2026-01-28
+````
 
 All statements in this entry are made strictly at the effective layer of the Tension Universe (TU) framework.
 
-* We only describe state spaces, observables, mismatch measures, tension functionals, singular sets, and falsifiable experiments.
+* We only describe state spaces, observables, mismatch measures, tension functionals, singular sets, falsifiable experiments, and cross-node consistency conditions.
 * We do not specify any TU axioms, deep generative rules, or constructive derivations.
 * We do not give any explicit mapping from raw numerical or algebraic data to internal TU fields.
 * We treat all effective quantities as already encoded inside admissible TU states, without explaining how those states are constructed.
@@ -51,7 +51,7 @@ rank_alg(E) = rank of the abelian group E(Q)
 
 The Birch and Swinnerton-Dyer Conjecture (BSD) has two closely related parts.
 
-1. **Rank equality**
+1. Rank equality
 
    ```txt
    rank_an(E) = rank_alg(E)
@@ -59,7 +59,7 @@ The Birch and Swinnerton-Dyer Conjecture (BSD) has two closely related parts.
 
    for every elliptic curve `E` over `Q`.
 
-2. **Leading term formula**
+2. Leading term formula
 
    Let `r = rank_alg(E) = rank_an(E)`. Consider the leading term of `L(E, s)` at `s = 1`:
 
@@ -82,35 +82,35 @@ The Birch and Swinnerton-Dyer Conjecture (BSD) has two closely related parts.
    * `E(Q)_tors` is the torsion subgroup of `E(Q)`,
    * `Omega(E)` is a real period factor.
 
-All of the objects above can be defined precisely in standard arithmetic geometry. In this TU document they are treated as external mathematical entities that feed into effective observables.
+All of these objects are defined in standard arithmetic geometry. In this TU document they are treated as external mathematical entities that feed into effective observables.
 
 ### 1.2 Status and difficulty
 
 BSD is a central open problem in number theory and arithmetic geometry.
 
-* The rank equality part is known in many special cases. For example, for elliptic curves of analytic rank zero or one over `Q` there are deep results that prove the equality under mild extra conditions.
+* The rank equality part is known in many special cases. For example, for elliptic curves of analytic rank zero or one over `Q` there are deep results that prove the equality under additional hypotheses.
 * The full conjecture for all elliptic curves over `Q` remains open.
 * The leading term formula is known in many cases under modularity and other hypotheses, with significant partial progress for special families of curves.
 * BSD is strongly connected to the theory of modular forms, Galois representations, Iwasawa theory, and the structure of `Sha(E)`.
 
-BSD appears in lists of fundamental unsolved problems and is widely considered a benchmark S-level problem in modern mathematics.
+BSD appears in standard lists of fundamental unsolved problems and is widely considered a benchmark S-level problem in modern mathematics.
 
 ### 1.3 Role in the BlackHole project
 
 Within the BlackHole S-problem collection, Q003 plays several roles.
 
-1. It is the flagship example of a problem that couples:
+1. It is the flagship example of a problem that couples
 
-   * a spectral side (family of elliptic curve L-functions and their behaviour at `s = 1`), and
+   * a spectral side (families of elliptic curve L-functions and their behaviour at `s = 1`), and
    * an arithmetic side (ranks, regulators, Tate–Shafarevich groups, and related invariants).
 
 2. It extends the spectral_tension ideas from Q001 (Riemann Hypothesis) and Q002 (Generalized Riemann Hypothesis) into a mixed discrete and continuous setting.
 
-3. It provides a test bed for TU encodings where:
+3. It provides a test bed for TU encodings where
 
    * families of objects `E_BSD(k)` are selected by explicit external criteria,
    * mismatch measures between analytic and algebraic data are averaged over these families,
-   * fairness rules and fixed weights prevent hidden parameter tuning.
+   * fairness rules and fixed weights prevent hidden parameter tuning or data selection by tension.
 
 BSD is therefore the canonical S-level example of a spectral_tension problem where arithmetic geometry enters explicitly.
 
@@ -119,7 +119,7 @@ BSD is therefore the canonical S-level example of a spectral_tension problem whe
 1. Clay Mathematics Institute, “The Birch and Swinnerton-Dyer Conjecture”, official problem description, Millennium Prize Problems, 2000.
 2. J. W. S. Cassels and A. Fröhlich (editors), “Algebraic Number Theory”, Academic Press, 1967, especially the chapter on elliptic curves and L-functions.
 3. J. H. Silverman, “The Arithmetic of Elliptic Curves”, Graduate Texts in Mathematics 106, Springer, 1986 (second edition 2009).
-4. B. Mazur, “Modular curves and the Eisenstein ideal”, Publications Mathématiques de l’IHÉS 47 (1977), 33–186, for the broader context of modularity and its relation to BSD.
+4. B. Mazur, “Modular curves and the Eisenstein ideal”, Publications Mathématiques de l’IHÉS 47 (1977), 33–186.
 
 ---
 
@@ -186,9 +186,11 @@ Cross-domain edges connect Q003 to non-mathematical problems that can reuse its 
 
 ## 3. Tension Universe encoding (effective layer)
 
-This block describes the effective TU encoding of Q003. It defines state spaces, fields, mismatch measures, and singular sets, but not any deep generative rule.
+This block describes the effective TU encoding of Q003. It defines state spaces, fields, mismatch measures, weights, aggregators, and singular sets, but not any deep generative rule.
 
-### 3.1 State space and admissible families
+All mismatch terms and tension functionals are treated as dimensionless or normalized quantities, up to a fixed monotone rescaling specified in the TU Tension Scale Charter.
+
+### 3.1 State space and admissible families (family fairness and freeze lock)
 
 We assume a BSD state space
 
@@ -208,15 +210,33 @@ for integers `k >= 1`, with the following properties.
 
 1. Each `E_BSD(k)` is a finite set of elliptic curves over `Q`.
 
-2. Membership in `E_BSD(k)` is determined only by:
+2. Membership in `E_BSD(k)` is determined only by externally auditable conditions, such as:
 
-   * an explicit bound on the conductor, such as `N(E) <= N_max(k)`,
-   * the requirement that external data sources provide sufficiently complete analytic and arithmetic information on `E`,
-   * simple structural conditions such as minimality and field of definition.
+   * a bound on the conductor, for example `N(E) <= N_max(k)` for a fixed increasing function `N_max(k)`,
+   * the requirement that specified external data sources provide a fixed white list of fields for `E` (for example analytic rank, algebraic rank, and a minimum set of invariants),
+   * simple structural conditions such as minimality and field of definition over `Q`.
 
-3. The family `E_BSD(k+1)` extends `E_BSD(k)` by relaxing external bounds (for example allowing larger conductor), never by removing curves solely because they give high tension.
+3. None of the following may be used as membership criteria:
 
-We do not explain how the curves or their invariants are computed. We only assume that for each admissible `k` there exist states `m` that encode coherent summaries for all `E` in `E_BSD(k)`.
+   * current or expected values of any mismatch terms,
+   * current or expected values of any tension functional,
+   * any function of those values.
+
+4. Family freeze lock:
+
+   * For each `k`, once `E_BSD(k)` is defined for a given TU encoding version, it is treated as frozen for that version.
+
+   * For all `k`, there is a monotone extension property:
+
+     ```txt
+     E_BSD(k) subset of E_BSD(k+1)
+     ```
+
+     up to curves that enter only because `N_max(k+1)` is larger and the data white list is satisfied.
+
+   * Curves are never removed from `E_BSD(k)` solely because they contribute large mismatch or tension.
+
+We do not explain how curves or their invariants are computed. We only assume that for each admissible `k` there exist states `m` that encode coherent summaries for all `E` in `E_BSD(k)`.
 
 ### 3.2 Per curve observables
 
@@ -240,84 +260,211 @@ Interpretation at the effective layer:
 * `rank_alg(E; m)` is the encoded rank of the Mordell–Weil group `E(Q)`.
 * `L_star(E; m)` is the encoded leading term of `L(E, s)` at `s = 1`.
 * `Reg(E; m)`, `Sha_size_est(E; m)`, `Tors_size(E; m)`, `C_tamagawa(E; m)`, and `Omega(E; m)` are the encoded versions of the corresponding arithmetic invariants.
-* `data_quality_flags(E; m)` indicates whether the encoded values for `E` are precise enough to participate in BSD tension evaluation.
+* `data_quality_flags(E; m)` indicates which parts of the encoded data pass predefined quality checklists.
 
 We do not specify how these quantities are obtained.
 
-### 3.3 Per curve mismatch measures
+### 3.3 Data quality checklists and gating (quality lock)
+
+To avoid using data quality as a hidden tuning knob, we require that `data_quality_flags(E; m)` be derived from explicit checklists.
+
+At minimum, for each curve `E` in each state `m`, the following boolean fields must be defined:
+
+```txt
+q_rank_an_reliable(E; m)      in {true, false}
+q_rank_alg_reliable(E; m)     in {true, false}
+q_L_star_reliable(E; m)       in {true, false}
+q_regulator_reliable(E; m)    in {true, false}
+q_shae_est_type(E; m)         in {unknown, lower_bound, upper_bound, point_estimate}
+q_torsion_reliable(E; m)      in {true, false}
+q_tamagawa_reliable(E; m)     in {true, false}
+q_period_reliable(E; m)       in {true, false}
+q_local_data_reliable(E; m)   in {true, false}
+```
+
+Each of these is determined by a fixed checklist specified at the charter level. For example:
+
+* numerical procedures used and their certified error bounds,
+* completeness of searches for rational points,
+* availability of local factor data for primes up to a fixed bound.
+
+The following constraints hold.
+
+* None of the `q_*` flags may depend on any mismatch term (`Delta_*`) or tension functional.
+* For any `E` and `m`, if `q_X_reliable(E; m)` is `false`, then the corresponding observable is allowed to be present but is not used in mismatch computations that claim to be at E2 level.
+* `data_quality_flags(E; m)` may bundle these booleans into composite quality labels, but must preserve a mapping back to the individual `q_*` flags so that exclusion from a good set can be audited.
+
+### 3.4 Per curve mismatch measures (error model lock and local factor metric lock)
 
 We define three primary mismatch indicators per curve.
 
-1. Rank mismatch
+#### 3.4.1 Rank mismatch
 
-   ```txt
-   Delta_rank(E; m) =
-     |rank_an(E; m) - rank_alg(E; m)|
-   ```
+```txt
+Delta_rank(E; m) =
+  |rank_an(E; m) - rank_alg(E; m)|
+```
 
-   when both ranks are encoded as known nonnegative integers.
+when both `rank_an(E; m)` and `rank_alg(E; m)` are known nonnegative integers and
 
-   If either rank is marked `unknown`, then `Delta_rank(E; m)` is not defined.
+```txt
+q_rank_an_reliable(E; m)  = true
+q_rank_alg_reliable(E; m) = true
+```
 
-2. Leading term mismatch
+If either rank is marked `unknown` or the corresponding `q_*` flag is `false`, then `Delta_rank(E; m)` is treated as undefined and the curve is excluded from rank mismatch statistics.
 
-   First define an effective right hand side quantity:
+#### 3.4.2 Leading term mismatch with capped log model
 
-   ```txt
-   BSD_rhs(E; m) =
-     (Reg(E; m) * Sha_size_est(E; m) * C_tamagawa(E; m)) /
-     (Tors_size(E; m)^2 * Omega(E; m))
-   ```
+We introduce an error model constant
 
-   whenever all factors are positive real numbers and finite.
+```txt
+x_min_BSD > 0
+```
 
-   Then define a logarithmic mismatch
+fixed at the charter level and shared across all Q003 encodings.
 
-   ```txt
-   Delta_value(E; m) =
-     |log(L_star(E; m)) - log(BSD_rhs(E; m))|
-   ```
+We define an effective right hand side quantity:
 
-   when both sides are positive and defined.
+```txt
+BSD_rhs(E; m) =
+  (Reg(E; m) * Sha_size_eff(E; m) * C_tamagawa(E; m)) /
+  (Tors_size(E; m)^2 * Omega(E; m))
+```
 
-   If any input to `BSD_rhs(E; m)` or `L_star(E; m)` is undefined, then `Delta_value(E; m)` is not defined.
+where `Sha_size_eff(E; m)` is an effective scalar derived from `Sha_size_est(E; m)` and `q_shae_est_type(E; m)` as follows.
 
-3. Local data mismatch
+* If `q_shae_est_type(E; m) = point_estimate`, then `Sha_size_eff(E; m)` is that estimate.
+* If `q_shae_est_type(E; m)` is `lower_bound` or `upper_bound`, then `Sha_size_eff(E; m)` is defined by a fixed rule (for example mid point in log scale) specified in the charters.
+* If `q_shae_est_type(E; m) = unknown`, then `Sha_size_eff(E; m)` is treated as undefined and `E` does not contribute to leading term mismatch statistics.
 
-   We assume an encoded summarised local comparison function
+We require that `Reg(E; m)`, `Tors_size(E; m)`, `C_tamagawa(E; m)`, and `Omega(E; m)` be positive and have their corresponding `q_*` flags set to `true` when `BSD_rhs(E; m)` is used.
 
-   ```txt
-   Delta_local(E; m) >= 0
-   ```
+We then define a capped logarithmic mismatch
 
-   that aggregates local factor discrepancies between the analytic L-function and the arithmetic data of `E` across relevant primes.
+```txt
+Delta_value(E; m) =
+  |log(max(L_star(E; m),  x_min_BSD)) -
+   log(max(BSD_rhs(E; m), x_min_BSD))|
+```
 
-   The exact construction of `Delta_local` is not specified. We only require that it exists as a nonnegative real quantity whenever the local data are sufficiently complete.
+when
 
-### 3.4 Family level aggregators
+* `L_star(E; m)` is defined and `q_L_star_reliable(E; m) = true`,
+* `BSD_rhs(E; m)` is defined and all relevant `q_*` flags are `true`.
+
+If any required quantity is undefined or its reliability flag is `false`, then `Delta_value(E; m)` is treated as undefined.
+
+This capped log model prevents arbitrarily large mismatch values that arise purely from extremely small or noisy estimates, while keeping the error model fixed and auditable.
+
+#### 3.4.3 Local data mismatch with fixed prime window
+
+We define for each family index `k` a prime window upper bound
+
+```txt
+P_max(k)
+```
+
+with the following properties.
+
+* `P_max(k)` is a fixed increasing function of `k`, specified at the charter level.
+* For each `k`, one has `P_max(k) >= N_max(k)` so that all primes dividing the conductor of any curve in `E_BSD(k)` lie within the window.
+
+For each curve `E` in `E_BSD(k)` we define a deterministic prime set
+
+```txt
+P(E, k)
+```
+
+consisting of primes `p` with `p <= P_max(k)`, selected by a fixed rule that does not depend on any mismatch or tension values. For example:
+
+* all primes `p` with `p <= P_max(k)`, possibly filtered by simple congruence conditions specified in advance.
+
+We assume the existence of encoded local analytic and arithmetic factors for these primes, and define a per prime discrepancy
+
+```txt
+Delta_p(E; m) >= 0
+```
+
+for each `p` in `P(E, k)` whenever
+
+```txt
+q_local_data_reliable(E; m) = true
+```
+
+A minimal example is
+
+```txt
+Delta_p(E; m) =
+  |log(c_p^analytic(E; m)) - log(c_p^arith(E; m))|
+```
+
+where `c_p^analytic` and `c_p^arith` are the analytic and arithmetic local factors or suitable proxies.
+
+We then define the local mismatch
+
+```txt
+Delta_local(E; m) =
+  mean over p in P(E, k) of Delta_p(E; m)
+```
+
+whenever all `Delta_p(E; m)` are defined on `P(E, k)`.
+
+If `q_local_data_reliable(E; m) = false` or if the window `P(E, k)` contains primes without usable data, `Delta_local(E; m)` is treated as undefined.
+
+### 3.5 Family level index sets and aggregators (robust aggregator lock)
 
 For each `k` and each state `m` in `M_BSD`, we define the following index sets.
 
-* `good_rank(k; m)` is the subset of `E_BSD(k)` where `Delta_rank(E; m)` is defined and `data_quality_flags(E; m)` indicate that both ranks are reliable for tension evaluation.
-* `good_value(k; m)` is the subset where `Delta_value(E; m)` is defined and the relevant invariants meet quality requirements.
-* `good_local(k; m)` is the subset where `Delta_local(E; m)` is defined and the local data are marked as sufficient.
+* `good_rank(k; m)` is the subset of `E_BSD(k)` where `Delta_rank(E; m)` is defined and all required rank reliability flags are `true`.
+* `good_value(k; m)` is the subset where `Delta_value(E; m)` is defined and the required reliability flags are `true`.
+* `good_local(k; m)` is the subset where `Delta_local(E; m)` is defined and `q_local_data_reliable(E; m) = true`.
 
-We then define family level averages:
+Membership in these sets depends only on the observable values and the `q_*` flags, not on any function of mismatch or tension values beyond the well definedness of each `Delta_*`.
+
+We then define per family mean and tail statistics.
+
+For any mismatch quantity `Delta_X(E; m)` and its corresponding good index set `good_X(k; m)` we set
+
+```txt
+mean_Delta_X(m; k) =
+  average over E in good_X(k; m) of Delta_X(E; m)
+
+q90_Delta_X(m; k)  =
+  90th percentile of { Delta_X(E; m) : E in good_X(k; m) }
+```
+
+when `good_X(k; m)` is non empty. If `good_X(k; m)` is empty, both quantities are treated as undefined.
+
+We introduce a fixed tail mixing parameter
+
+```txt
+eta_tail_BSD in [0, 1)
+```
+
+specified at the charter level and shared across all Q003 encodings.
+
+We then define combined family level mismatches
 
 ```txt
 Delta_BSD_rank(m; k) =
-  average over E in good_rank(k; m) of Delta_rank(E; m)
+  (1 - eta_tail_BSD) * mean_Delta_rank(m; k) +
+  eta_tail_BSD       * q90_Delta_rank(m; k)
 
 Delta_BSD_value(m; k) =
-  average over E in good_value(k; m) of Delta_value(E; m)
+  (1 - eta_tail_BSD) * mean_Delta_value(m; k) +
+  eta_tail_BSD       * q90_Delta_value(m; k)
 
 Delta_BSD_local(m; k) =
-  average over E in good_local(k; m) of Delta_local(E; m)
+  (1 - eta_tail_BSD) * mean_Delta_local(m; k) +
+  eta_tail_BSD       * q90_Delta_local(m; k)
 ```
 
-Each average is taken over a finite set. If the corresponding index set is empty, the family level quantity is treated as undefined.
+whenever the corresponding means and percentiles are defined and finite.
 
-### 3.5 Fixed weights and combined mismatch
+This mixed aggregator ensures that a small fraction of high mismatch curves cannot be completely washed out by averaging.
+
+### 3.6 Fixed weights and combined mismatch
 
 We fix positive weights
 
@@ -328,9 +475,9 @@ w_local  > 0
 w_rank + w_value + w_local = 1
 ```
 
-These weights are part of the Q003 encoding and do not depend on the state `m`, the family index `k`, or any data driven tuning.
+These weights are part of the Q003 encoding and do not depend on the state `m`, the family index `k`, or any data driven tuning. They are set at the charter level for this problem and may only be changed through a documented encoding update.
 
-We define the combined BSD mismatch:
+We define the combined BSD mismatch
 
 ```txt
 Delta_BSD(m; k) =
@@ -341,7 +488,7 @@ Delta_BSD(m; k) =
 
 whenever all three terms are defined and finite.
 
-### 3.6 Effective tension tensor and coupling constant
+### 3.7 Effective tension tensor and coupling constant
 
 We assume an effective BSD tension tensor over `M_BSD`:
 
@@ -360,7 +507,7 @@ where:
 
 The index sets for `i` and `j` are not specified in this effective description.
 
-### 3.7 Singular set and domain restriction
+### 3.8 Singular set and domain restriction
 
 We define the BSD singular set
 
@@ -393,7 +540,7 @@ This block expresses BSD as a tension principle at the effective layer.
 
 ### 4.1 Family level tension functional
 
-For each `k` and for each `m` in `M_BSD_reg` where `Delta_BSD(m; k)` is defined, we define the BSD family tension functional:
+For each `k` and for each `m` in `M_BSD_reg` where `Delta_BSD_rank(m; k)`, `Delta_BSD_value(m; k)`, and `Delta_BSD_local(m; k)` are defined, we define the BSD family tension functional
 
 ```txt
 Tension_BSD(m; k) =
@@ -410,13 +557,13 @@ beta_BSD  > 0
 gamma_BSD > 0
 ```
 
-These constants are part of the Q003 encoding. They do not depend on `m` or `k`.
+These constants are part of the Q003 encoding. They do not depend on `m` or `k` and are set together with `w_rank`, `w_value`, `w_local`, and `eta_tail_BSD` at the charter level.
 
 The functional satisfies:
 
 * `Tension_BSD(m; k) >= 0` whenever it is defined.
-* `Tension_BSD(m; k)` is small when all three averaged mismatches are small.
-* `Tension_BSD(m; k)` grows when any of the averaged mismatches grows.
+* `Tension_BSD(m; k)` is small when all three combined mismatches are small.
+* `Tension_BSD(m; k)` grows when any of the combined mismatches grows.
 
 ### 4.2 BSD as a low tension principle
 
@@ -424,11 +571,11 @@ At the effective layer, BSD is encoded as the claim that the actual universe bel
 
 Formally, there exists:
 
-* a family selector `E_BSD(k)` satisfying the fairness conditions, and
-* a sequence of states `m_true(k)` in `M_BSD_reg` that represent the actual world at resolution level `k`, and
+* a family selector `E_BSD(k)` satisfying the fairness conditions in Section 3.1,
+* a sequence of states `m_true(k)` in `M_BSD_reg` that represent the actual world at resolution level `k`,
 * a sequence of thresholds `epsilon_BSD(k)`,
 
-such that:
+such that
 
 ```txt
 Tension_BSD(m_true(k); k) <= epsilon_BSD(k)
@@ -436,17 +583,17 @@ Tension_BSD(m_true(k); k) <= epsilon_BSD(k)
 
 for all sufficiently large `k`, with `epsilon_BSD(k)` not growing without bound as the resolution increases.
 
-The sequence `epsilon_BSD(k)` may depend on computational and data limitations but is not allowed to be tuned after observing the tension values.
+The sequence `epsilon_BSD(k)` may depend on computational and data limitations but is not allowed to be tuned after observing tension values. Any tuning of `epsilon_BSD(k)` must be done at the encoding level before experiments, not based on post hoc inspection.
 
 ### 4.3 BSD failure as persistent high tension
 
 If BSD is false in a strong family sense, then the universe belongs to a persistent high tension regime.
 
-More precisely, for any encoding that is:
+More precisely, for any encoding that is
 
 * faithful to the true analytic behaviour of `L(E, s)` at `s = 1`,
 * faithful to the actual arithmetic invariants of `E`, whenever they are well defined,
-* compliant with the family fairness rules and fixed weights,
+* compliant with the family fairness rules, quality gating, and fixed weights described in Section 3,
 
 there exists a positive constant `delta_BSD` and an index `k_0` such that for all `k >= k_0`:
 
@@ -456,16 +603,24 @@ Tension_BSD(m_false(k); k) >= delta_BSD
 
 for any state `m_false(k)` in `M_BSD_reg` that accurately encodes the relevant data for `E_BSD(k)`.
 
-### 4.4 Compatibility with GRH based encodings
+### 4.4 Compatibility with GRH based encodings (cross-node consistency lock)
 
 Q002 provides a family level spectral_tension encoding for L-functions under generalized Riemann type assumptions.
 
-A BSD encoding as in this block is considered acceptable only if, for elliptic curve L-functions:
+A BSD encoding as in this block is considered acceptable only if, for elliptic curve L-functions,
 
-* whenever the Q002 encoding is in a low tension regime on the trivial character specialisations that correspond to `L(E, s)`,
-* the Q003 encoding does not force unavoidable persistent high tension on the same family purely because of internal inconsistencies.
+* whenever the Q002 encoding is in a stable low tension regime on the trivial character specialisations corresponding to `L(E, s)` for curves in `E_BSD(k)`,
+* the Q003 encoding does not force unavoidable persistent high tension on the same family purely because of internal inconsistencies of the Q003 encoding.
 
 If such a conflict appears, it is treated as evidence that the TU encodings for Q002 and Q003 are misaligned, not as evidence for or against the canonical mathematics.
+
+At the charter level, a cross-node consistency threshold `eta_consistency_BSD` is specified. If on overlapping families one observes
+
+```txt
+Tension_BSD(m; k) - Tension_Q002(m; k) > eta_consistency_BSD
+```
+
+persistently for states that are otherwise well aligned, the Q003 encoding is flagged for revision or retirement.
 
 ---
 
@@ -484,33 +639,33 @@ In World T_BSD:
 
 1. Rank alignment
 
-   * For large `k`, in states `m_T(k)` representing the actual world, most curves in `E_BSD(k)` that meet quality standards satisfy:
+   * For large `k`, in states `m_T(k)` representing the actual world, most curves in `E_BSD(k)` that meet quality standards satisfy
 
      ```txt
      Delta_rank(E; m_T(k)) = 0
      ```
 
-   * The family average `Delta_BSD_rank(m_T(k); k)` stays small and does not grow with `k`.
+   * The family combined rank mismatch `Delta_BSD_rank(m_T(k); k)` stays small and does not grow with `k`.
 
 2. Leading term alignment
 
    * For curves where both sides of the leading term comparison are defined, the values of `Delta_value(E; m_T(k))` remain within a controlled band.
-   * The family average `Delta_BSD_value(m_T(k); k)` remains bounded by thresholds compatible with BSD based expectations.
+   * The family combined leading term mismatch `Delta_BSD_value(m_T(k); k)` remains bounded by thresholds compatible with BSD based expectations.
 
 3. Local data alignment
 
-   * Local factor mismatches measured by `Delta_local(E; m_T(k))` are small for most curves in the family.
-   * The average `Delta_BSD_local(m_T(k); k)` remains stable as `k` grows.
+   * Local factor mismatches measured by `Delta_local(E; m_T(k))` are small for most curves in the family, with occasional outliers handled by the tail component in `Delta_BSD_local`.
+   * The family combined local mismatch `Delta_BSD_local(m_T(k); k)` remains stable as `k` grows.
 
 4. Global family tension
 
-   * As `k` increases, the combined tension satisfies:
+   * As `k` increases, the combined tension satisfies
 
      ```txt
      Tension_BSD(m_T(k); k) <= epsilon_BSD(k)
      ```
 
-     with `epsilon_BSD(k)` controlled as described in Block 4.
+     with `epsilon_BSD(k)` controlled as described in Section 4.2.
 
 ### 5.2 World F_BSD (BSD false, persistent family tension)
 
@@ -519,21 +674,21 @@ In World F_BSD:
 1. Rank misalignment
 
    * There exists a large subfamily of curves where analytic and algebraic ranks systematically disagree in the encoded data.
-   * For sufficiently large `k`, the average `Delta_BSD_rank(m_F(k); k)` remains bounded away from zero.
+   * For sufficiently large `k`, the combined rank mismatch `Delta_BSD_rank(m_F(k); k)` remains bounded away from zero.
 
 2. Leading term misalignment
 
-   * For a significant number of curves in `E_BSD(k)`, the difference between `log(L_star(E; m_F(k)))` and `log(BSD_rhs(E; m_F(k)))` remains large.
-   * The average `Delta_BSD_value(m_F(k); k)` does not drop into a low band as `k` grows.
+   * For a significant number of curves in `E_BSD(k)`, the difference between `log(L_star(E; m_F(k)))` and `log(BSD_rhs(E; m_F(k)))` remains large even with the capped error model.
+   * The combined leading term mismatch `Delta_BSD_value(m_F(k); k)` does not drop into a low band as `k` grows.
 
 3. Local pattern misalignment
 
-   * Local factor discrepancies fail to reconcile with any plausible BSD style coupling, and `Delta_local(E; m_F(k))` is often large.
-   * The average `Delta_BSD_local(m_F(k); k)` remains at a high level over the family.
+   * Local factor discrepancies fail to reconcile with any plausible BSD style coupling, and `Delta_local(E; m_F(k))` is often large on the fixed prime window.
+   * The combined local mismatch `Delta_BSD_local(m_F(k); k)` remains at a high level over the family.
 
 4. Global family tension
 
-   * For some fixed `delta_BSD > 0` and all sufficiently large `k`, one has:
+   * For some fixed `delta_BSD > 0` and all sufficiently large `k`, one has
 
      ```txt
      Tension_BSD(m_F(k); k) >= delta_BSD
@@ -551,89 +706,90 @@ They specify how a TU encoding would observe different family level patterns of 
 
 ## 6. Falsifiability and discriminating experiments
 
-This block describes experiments and protocols that can falsify specific Q003 encodings. They do not solve BSD. They only test whether given choices of families, weights, and mismatch definitions behave coherently.
+This block describes experiments and protocols that can falsify specific Q003 encodings. They do not solve BSD. They only test whether given choices of families, weights, and mismatch definitions behave coherently under the TU charters.
 
 ### Experiment 1: Tension profile on public elliptic curve data
 
-*Goal:*
+Goal:
 Test whether the chosen BSD mismatch measures and weights give a stable, low tension profile on standard elliptic curve data sets that are widely used in arithmetic geometry.
 
-*Setup:*
+Setup:
 
-* Use a public database of elliptic curves, such as curves over `Q` with conductor up to a chosen bound (`N_max(k)`), for which both analytic and algebraic data are available.
+* Use a public database of elliptic curves, such as curves over `Q` with conductor up to a chosen bound `N_max(k)`, for which both analytic and algebraic data are available.
 * Fix an admissible `E_BSD(k)` defined by conductor bounds and data availability, without looking at tension values.
-* Fix weights `w_rank`, `w_value`, `w_local` and constants `alpha_BSD`, `beta_BSD`, `gamma_BSD` before any statistics are computed.
+* Fix weights `w_rank`, `w_value`, `w_local`, constants `alpha_BSD`, `beta_BSD`, `gamma_BSD`, the tail parameter `eta_tail_BSD`, and the error model constant `x_min_BSD` before any statistics are computed.
 
-*Protocol:*
+Protocol:
 
-1. Construct a state `m_data(k)` in `M_BSD_reg` that encodes the necessary observables for all curves in `E_BSD(k)` at the given resolution, without specifying how this encoding is implemented.
+1. Construct a state `m_data(k)` in `M_BSD_reg` that encodes the necessary observables and quality flags for all curves in `E_BSD(k)` at the given resolution, without specifying how this encoding is implemented.
 2. For each curve `E` in `E_BSD(k)`, determine whether it belongs to `good_rank(k; m_data(k))`, `good_value(k; m_data(k))`, and `good_local(k; m_data(k))`.
-3. Compute `Delta_BSD_rank(m_data(k); k)`, `Delta_BSD_value(m_data(k); k)`, `Delta_BSD_local(m_data(k); k)`, and `Delta_BSD(m_data(k); k)`.
-4. Compute `Tension_BSD(m_data(k); k)` using the fixed constants.
-5. Repeat the procedure for several increasing values of `k` with larger conductor bounds.
+3. Compute `mean_Delta_rank(m_data(k); k)`, `q90_Delta_rank(m_data(k); k)`, and the analogous quantities for value and local mismatches.
+4. Compute `Delta_BSD_rank(m_data(k); k)`, `Delta_BSD_value(m_data(k); k)`, `Delta_BSD_local(m_data(k); k)`, and `Delta_BSD(m_data(k); k)`.
+5. Compute `Tension_BSD(m_data(k); k)` using the fixed constants.
+6. Repeat the procedure for several increasing values of `k` with larger conductor bounds.
 
-*Metrics:*
+Metrics:
 
-* For each `k`:
+* For each `k`, record
 
-  * the values of `Delta_BSD_rank(m_data(k); k)`, `Delta_BSD_value(m_data(k); k)`, `Delta_BSD_local(m_data(k); k)`, and `Tension_BSD(m_data(k); k)`,
+  * `Delta_BSD_rank(m_data(k); k)`, `Delta_BSD_value(m_data(k); k)`, `Delta_BSD_local(m_data(k); k)`, and `Tension_BSD(m_data(k); k)`,
   * the sizes of `good_rank(k; m_data(k))`, `good_value(k; m_data(k))`, and `good_local(k; m_data(k))`.
 
-* Behaviour of these quantities as functions of `k`.
+* Study the behaviour of these quantities as functions of `k`.
 
-*Falsification conditions:*
+Falsification conditions:
 
 * If, for all reasonable choices of fixed constants consistent with known analytic number theory bounds, the quantity `Tension_BSD(m_data(k); k)` grows rapidly with `k` and exceeds any plausible `epsilon_BSD(k)` band motivated by BSD based heuristics, then the current Q003 encoding is considered falsified at the effective layer.
 * If small changes in the definitions of `Delta_rank`, `Delta_value`, or `Delta_local` result in violent, uncontrolled swings in `Tension_BSD(m_data(k); k)` without clear mathematical reasons, the encoding is considered unstable and rejected.
 
-*Semantics implementation note:*
+Semantics implementation note:
 All quantities in this experiment are treated in a mixed discrete and real valued framework consistent with the hybrid setting in the metadata. The details of representation are external to TU.
 
-*Boundary note:*
-Falsifying TU encoding != solving canonical statement. This experiment can reject specific Q003 encodings, not the underlying Birch and Swinnerton-Dyer Conjecture itself.
+Boundary note:
+Falsifying a TU encoding is not the same as solving the canonical statement. This experiment can reject specific Q003 encodings, not the underlying Birch and Swinnerton-Dyer Conjecture itself.
 
 ---
 
 ### Experiment 2: Synthetic BSD consistent and BSD breaking model families
 
-*Goal:*
+Goal:
 Check whether the Q003 tension encoding can reliably distinguish between artificially constructed families that satisfy BSD type relations and families that explicitly violate them.
 
-*Setup:*
+Setup:
 
 * Design a model family `Family_T` of synthetic elliptic curve like objects with data tuples that satisfy exact or approximate BSD type relations at the effective level.
 * Design another model family `Family_F` where the encoded ranks and leading terms are deliberately mismatched so that BSD type relations fail in a controlled way.
-* For both families, construct states that play the role of `M_BSD_reg` elements, with all relevant observables defined.
+* For both families, construct states that play the role of `M_BSD_reg` elements, with all relevant observables and quality flags defined.
 
-*Protocol:*
+Protocol:
 
-1. For each object in `Family_T`, construct a state `m_T_model` that encodes its rank, leading term, and arithmetic invariants.
-2. For each object in `Family_F`, construct a state `m_F_model` with the mismatched data.
-3. Place the objects into synthetic families `E_BSD_T(k)` and `E_BSD_F(k)` at various scales, and compute `Delta_BSD_rank`, `Delta_BSD_value`, `Delta_BSD_local`, and `Tension_BSD` as in Block 4.
+1. For each object in `Family_T`, construct a state `m_T_model` that encodes its rank, leading term, and arithmetic invariants with flags approximating the high quality regime.
+2. For each object in `Family_F`, construct a state `m_F_model` with the mismatched data and corresponding quality flags.
+3. Place the objects into synthetic families `E_BSD_T(k)` and `E_BSD_F(k)` at various scales, and compute `Delta_BSD_rank`, `Delta_BSD_value`, `Delta_BSD_local`, and `Tension_BSD` as in Section 4.
 4. Compare the distribution of `Tension_BSD` for `Family_T` and `Family_F` across several choices of `k`.
 
-*Metrics:*
+Metrics:
 
 * Mean and variance of `Tension_BSD` on `Family_T` and on `Family_F`.
 * Separation between the two distributions according to a simple distance measure in the tension axis.
 * Stability of this separation under moderate changes in family size and parameter ranges.
 
-*Falsification conditions:*
+Falsification conditions:
 
-* If the encoding cannot produce a consistent separation between `Family_T` and `Family_F` in terms of typical `Tension_BSD` values, then the encoding is considered ineffective for BSD style problems.
+* If the encoding cannot produce a consistent separation between `Family_T` and `Family_F` in terms of typical `Tension_BSD` values under the fixed parameter choices, then the encoding is considered ineffective for BSD style problems.
 * If the encoding often assigns lower tension to obviously BSD breaking model data than to BSD consistent data, it is considered misaligned with the intended BSD principle.
 
-*Semantics implementation note:*
-The synthetic families are treated using the same effective observables and mismatch formulas as real elliptic curves, but their construction is external to TU.
+Semantics implementation note:
+The synthetic families are treated using the same effective observables, quality flags, and mismatch formulas as real elliptic curves, but their construction is external to TU.
 
-*Boundary note:*
-Falsifying TU encoding != solving canonical statement. This experiment only evaluates whether Q003 encodings respect the intended BSD tension patterns.
+Boundary note:
+Falsifying a TU encoding is not the same as solving the canonical statement. This experiment only evaluates whether Q003 encodings respect the intended BSD tension patterns.
 
 ---
 
 ## 7. AI and WFGY engineering spec
 
-This block explains how Q003 can be used as an engineering module for AI systems within the WFGY framework.
+This block explains how Q003 can be used as an engineering module for AI systems within the WFGY framework, at the effective layer.
 
 ### 7.1 Training signals
 
@@ -641,7 +797,7 @@ We define training signals that can be used as auxiliary objectives in AI models
 
 1. `signal_BSD_rank_consistency`
 
-   * Definition: a penalty proportional to `Delta_rank(E; m)` aggregated over curves that appear in the current context.
+   * Definition: a penalty proportional to `Delta_rank(E; m)` aggregated over curves that appear in the current context and satisfy the reliability flags.
    * Purpose: encourage internal states that do not implicitly claim rank disagreements when the context assumes BSD rank equality.
 
 2. `signal_BSD_value_consistency`
@@ -649,12 +805,17 @@ We define training signals that can be used as auxiliary objectives in AI models
    * Definition: a penalty based on `Delta_value(E; m)` for curves where enough data are encoded to form a leading term comparison.
    * Purpose: align internal representations with the idea that analytic and arithmetic invariants belong to a single coherent relation.
 
-3. `signal_BSD_family_tension`
+3. `signal_BSD_local_consistency`
+
+   * Definition: a penalty derived from `Delta_local(E; m)` on the fixed prime window for curves with reliable local data.
+   * Purpose: encourage internal states in which local analytic and arithmetic patterns fit together under BSD style couplings.
+
+4. `signal_BSD_family_tension`
 
    * Definition: a scalar derived from `Tension_BSD(m; k)` in contexts where a whole family of elliptic curves is under discussion.
    * Purpose: guide the model to keep its global picture of BSD related families in a low tension regime when such assumptions are declared.
 
-4. `signal_BSD_world_switch_clarity`
+5. `signal_BSD_world_switch_clarity`
 
    * Definition: measures the change in answers when the prompt explicitly assumes a BSD true world versus a BSD false world, at the effective layer.
    * Purpose: encourage the model to keep these counterfactual regimes separate, rather than blending them into ambiguous statements.
@@ -703,29 +864,29 @@ A simple evaluation harness for AI models augmented with Q003 modules:
 
 A minimal protocol for external users to experience the effect of Q003 informed reasoning.
 
-* Baseline setup
+Baseline setup:
 
-  * Prompt: ask an AI system to explain what BSD says and why it connects analytic ranks and algebraic ranks, without mentioning WFGY or tension.
-  * Observation: note how clearly the explanation separates analytic and algebraic sides, and whether the role of families is stated.
+* Prompt: ask an AI system to explain what BSD says and why it connects analytic ranks and algebraic ranks, without mentioning WFGY or tension.
+* Observation: note how clearly the explanation separates analytic and arithmetic sides, and whether the role of families is stated.
 
-* TU encoded setup
+TU encoded setup:
 
-  * Prompt: ask the same questions, but additionally instruct the AI to structure the explanation around:
+* Prompt: ask the same questions, but additionally instruct the AI to structure the explanation around
 
-    * per curve mismatches `Delta_rank`, `Delta_value`, `Delta_local`, and
-    * family level tension `Tension_BSD(m; k)` in a mixed discrete and continuous setting.
+  * per curve mismatches `Delta_rank`, `Delta_value`, `Delta_local`, and
+  * family level tension `Tension_BSD(m; k)` in a mixed discrete and continuous setting.
 
-  * Observation: check whether the explanation becomes more systematic, explicitly connecting family behaviour, per curve invariants, and counterfactual worlds.
+* Observation: check whether the explanation becomes more systematic, explicitly connecting family behaviour, per curve invariants, and counterfactual worlds.
 
-* Comparison metric
+Comparison metric:
 
-  * Use a rubric that scores internal consistency, clarity of the analytic versus arithmetic split, and faithfulness to standard BSD formulations.
-  * Compare scores between the baseline and TU encoded outputs.
+* Use a rubric that scores internal consistency, clarity of the analytic versus arithmetic split, and faithfulness to standard BSD formulations.
+* Compare scores between the baseline and TU encoded outputs.
 
-* What to log
+What to log:
 
-  * Prompts, full responses, and any Q003 related tension scores.
-  * Logs can be used later to verify that differences in behaviour came from the Q003 encoding and not from hidden tuning.
+* Prompts, full responses, and any Q003 related tension scores.
+* Logs can be used later to verify that differences in behaviour came from the Q003 encoding and not from hidden tuning.
 
 ---
 
@@ -742,9 +903,9 @@ This block identifies reusable components produced by Q003 and records where the
    * Minimal interface:
 
      * Inputs: a finite family of objects with per element observables analogous to `rank_an`, `rank_alg`, `L_star`, and arithmetic invariants, plus quality flags.
-     * Output: a scalar `family_tension_value` derived from averages of per element mismatches.
+     * Output: a scalar `family_tension_value` derived from mixed mean and tail averages of per element mismatches.
 
-   * Preconditions: the inputs must encode a coherent finite family and supply enough data to form defined mismatch measures.
+   * Preconditions: the inputs must encode a coherent finite family and supply enough data to form defined mismatch measures and quality flags.
 
 2. ComponentName: `EllipticCurve_ArithmeticDescriptor`
 
@@ -753,7 +914,7 @@ This block identifies reusable components produced by Q003 and records where the
    * Minimal interface:
 
      * Inputs: an identifier for an elliptic curve in a selected family.
-     * Output: a descriptor vector containing encoded values for `rank_an`, `rank_alg`, `L_star`, regulator, torsion size, Tate–Shafarevich size estimate, Tamagawa product, and period factor.
+     * Output: a descriptor vector containing encoded values for `rank_an`, `rank_alg`, `L_star`, regulator, torsion size, Tate–Shafarevich size estimate, Tamagawa product, period factor, and quality flags.
 
    * Preconditions: external mathematical data must provide these invariants or reliable approximations.
 
@@ -796,37 +957,36 @@ This block records the current verification level and suggests next steps.
 
 ### 9.1 Current levels
 
-* E_level: E1
+* E_level: E2
 
   * A coherent effective encoding of BSD as a family level tension principle has been specified.
-  * Basic mismatch measures and family level functionals are defined, along with singular sets and fairness rules.
+  * Mismatch measures, error models, quality gates, robust aggregators, and singular sets are defined together with family fairness rules and cross-node consistency conditions.
 
 * N_level: N2
 
   * The narrative linking analytic and algebraic sides through tension is explicit.
   * Counterfactual worlds and cross problem transfers are described at the effective layer.
 
-### 9.2 Next measurable step toward E2 and E3
+### 9.2 Next measurable step toward E3
 
-To move from E1 to E2:
+To move from E2 to E3:
 
-* Implement an external tool that:
+* Implement an external tool that
 
   * consumes public elliptic curve data sets,
   * constructs effective states `m_data(k)`,
   * computes `Delta_BSD_rank`, `Delta_BSD_value`, `Delta_BSD_local`, `Delta_BSD`, and `Tension_BSD`,
   * publishes family tension profiles together with enough metadata to allow independent replication.
 
-To move from E2 to E3:
-
 * Coordinate an independent replication where a separate group applies the same encoding rules and reproduces the main tension profiles on different data sets.
-* Verify cross node consistency with Q002 encodings in the overlapping part of the L-function space.
 
-Both steps rely only on observable summaries, not on any deep TU generative rule.
+* Verify cross node consistency with Q002 encodings in the overlapping part of the L-function space, using the explicit consistency threshold.
+
+These steps rely only on observable summaries and encodings at the effective layer, not on any deep TU generative rule.
 
 ### 9.3 Long term role in the TU program
 
-In the broader TU program, Q003 is expected to serve as:
+In the broader TU program, Q003 is expected to serve as
 
 * the main S-level template for problems where discrete rank like invariants and continuous spectral data must fit into a single relation,
 * a benchmark for testing whether TU style encodings can support reasoning about world class open conjectures without claiming proofs,
@@ -838,7 +998,7 @@ In the broader TU program, Q003 is expected to serve as:
 
 This block explains Q003 for non specialists while staying faithful to the effective layer description.
 
-Classically, the Birch and Swinnerton-Dyer Conjecture says that for an elliptic curve there are two very different ways to measure “how many rational solutions it has”.
+Classically, the Birch and Swinnerton-Dyer Conjecture says that for an elliptic curve there are two very different ways to measure how many rational solutions it has.
 
 * One way counts how many independent rational points there are on the curve. This gives an integer called the algebraic rank.
 * The other way looks at a complex analytic function `L(E, s)`, built from data about the curve, and measures how fast it vanishes at a special point `s = 1`. This gives another integer called the analytic rank.
@@ -847,29 +1007,92 @@ BSD says these two integers should always agree. It also says that the size of t
 
 In the Tension Universe view we do not try to prove this statement. Instead we ask what it would mean to measure how well the analytic side and the arithmetic side fit together, curve by curve and family by family.
 
-We imagine:
+We imagine
 
-* a family of elliptic curves chosen by clear rules,
+* a family of elliptic curves chosen by clear, tension independent rules,
 * for each curve an encoded pair of numbers that represent its analytic rank and algebraic rank,
-* for each curve an encoded comparison of the leading term of `L(E, s)` at `s = 1` with the expected arithmetic expression.
+* for each curve an encoded comparison of the leading term of `L(E, s)` at `s = 1` with the expected arithmetic expression,
+* for each curve an encoded summary of how local factors compare.
 
 From these we build mismatch quantities:
 
 * `Delta_rank` measures how far the two ranks disagree,
-* `Delta_value` measures how far the leading term is from the expected arithmetic side,
-* `Delta_local` measures how far local data disagree with their analytic counterparts.
+* `Delta_value` measures how far the leading term is from the expected arithmetic side, in a capped log scale,
+* `Delta_local` measures how far local data disagree with their analytic counterparts on a fixed prime window.
 
-We then average these mismatches across a finite family, forming a combined tension `Tension_BSD`.
+We then average these mismatches across a finite family, with an extra weight on the high mismatch tail, forming a combined tension `Tension_BSD`.
 
 Two scenarios appear.
 
-* In a BSD true world, as we look at larger and larger families with better data, these average mismatches and the combined tension stay small and stable.
-* In a BSD false world, no matter how far we go, some of these averages stay large and the combined tension never drops into a genuinely low band.
+* In a BSD true world, as we look at larger and larger families with better data, these combined mismatches and the overall tension stay small and stable.
+* In a BSD false world, no matter how far we go, some of these combined mismatches stay large and the overall tension never drops into a genuinely low band.
 
-This does not tell us which world we live in. It does not give a proof. It gives instead:
+This does not tell us which world we live in. It does not give a proof. It gives instead
 
 * a precise way to talk about BSD as a low tension principle,
 * a set of observables and experiments that can falsify specific ways of encoding that principle,
 * a pattern that can be reused in other problems where discrete structure and continuous spectra must obey a shared relation.
 
 Q003 is therefore the family level counterpart of Q001 and Q002, and it anchors the spectral_tension view of elliptic curves inside the Tension Universe framework without revealing any deep TU generative rule.
+
+---
+
+## Tension Universe effective-layer footer
+
+This page is part of the **WFGY / Tension Universe** S-problem collection.
+
+### Scope of claims
+
+* The goal of this document is to specify an effective-layer encoding of the named problem.
+* It does not claim to prove or disprove the canonical statement in Section 1.
+* It does not introduce any new theorem beyond what is already established in the cited literature.
+* It should not be cited as evidence that the corresponding open problem has been solved.
+* Any quantitative examples or engineering suggestions here are to be read as encoding proposals, not as performance guarantees.
+
+### Effective-layer boundary
+
+* All objects used here (state spaces `M`, observables, invariants, tension scores, counterfactual worlds) live at the effective layer.
+* No step in this file gives a constructive mapping from raw experimental, numerical, or simulation data into internal TU fields.
+* No step exposes any deep TU generative rule or any first-principle axiom system.
+* If an implementation appears to require such rules, this document should be read as an abstract specification, not as a disclosure of those rules.
+
+### Encoding and fairness
+
+* Admissible encoding classes, reference profiles, and weight families used in this page are constrained by shared Tension Universe charters:
+
+  * [TU Effective Layer Charter](../Charters/TU_EFFECTIVE_LAYER_CHARTER.md)
+  * [TU Encoding and Fairness Charter](../Charters/TU_ENCODING_AND_FAIRNESS_CHARTER.md)
+  * [TU Tension Scale Charter](../Charters/TU_TENSION_SCALE_CHARTER.md)
+
+* For every encoding class referenced here:
+
+  * its definition, parameter ranges, quality gates, and reference families are fixed at the charter level before any problem-specific tuning;
+  * these choices may depend on general physical or mathematical considerations and on public benchmark selections, but not on the unknown truth value of this specific problem;
+  * no encoding is allowed to hide the canonical answer as an uninterpreted field, label, or parameter;
+  * membership rules for families and good sets must be auditable without access to mismatch or tension outputs.
+
+### Tension scale and thresholds
+
+* All mismatch terms `DeltaS_*`, `Delta_*`, and tension functionals in this file are treated as dimensionless or normalized quantities, defined up to a fixed monotone rescaling specified in the TU Tension Scale Charter.
+* Thresholds such as `epsilon_*`, `delta_*`, and experiment cutoffs are always interpreted relative to that fixed scale.
+* Changing the tension scale requires an explicit update of the TU Tension Scale Charter, not an edit of individual problem files.
+* When example values for thresholds are mentioned, they are illustrations within that scale, not hidden claims about the underlying mathematics.
+
+### Falsifiability and experiments
+
+* Experiments described in this document are tests of TU encodings, not tests of the underlying canonical problem itself.
+* The rule “falsifying a TU encoding is not the same as solving the canonical statement” applies globally, even where it is not restated.
+* When required observables cannot be reliably estimated in practice, the outcome of the corresponding experiment is recorded as “inconclusive”, not as confirmation.
+* Negative results on a specific encoding should trigger revisions of the encoding under the charters, rather than claims about the truth or falsity of the underlying conjecture.
+
+### Interaction with established results
+
+* All encodings and counterfactual worlds described here are required to respect known theorems and hard constraints in the relevant field.
+* If a later analysis finds a concrete conflict with established results, the correct procedure is to update or retire the encoding under the TU charters, not to reinterpret those results.
+* When known conditional results exist (for example results assuming GRH), encodings should record these dependencies explicitly where they are used.
+
+### Program note
+
+* This page is an experimental specification within the ongoing WFGY / Tension Universe research program.
+* All structures and parameter choices are provisional and may be revised in future versions, subject to the constraints above.
+* Earlier simplified TU per-problem footers are considered subsumed by this footer together with the TU charters; any additional constraints from those versions should be interpreted through the same effective-layer and fairness principles stated here.
