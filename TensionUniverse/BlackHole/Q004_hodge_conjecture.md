@@ -15,8 +15,22 @@ Status: Open
 Semantics: hybrid
 E_level: E2
 N_level: N1
-Last_updated: 2026-01-28
-````
+Last_updated: 2026-01-30
+```
+
+---
+
+## 0. Effective layer disclaimer
+
+All statements in this entry are made strictly at the effective layer of the Tension Universe (TU) framework.
+
+* We only specify observable state spaces, fields, mismatch quantities, tension scores, and experimental harnesses.
+* We do not specify any underlying TU axiom system, any internal generating rules, or any constructive derivation of TU itself.
+* We do not provide any explicit mapping from raw arithmetic, geometric, or cohomological data into internal TU fields. We only assume that TU compatible models exist that reproduce the observables defined here.
+* Nothing in this file should be read as a proof or disproof of the Hodge Conjecture. At most it encodes how a world where the conjecture is true or false would look from the tension viewpoint.
+* All encoding choices and thresholds are constrained by shared TU charters and are intended to be falsifiable at the encoding level.
+
+The footer at the end of this file restates these rules in a problem independent, charter aligned form.
 
 ---
 
@@ -59,15 +73,18 @@ For this problem, we lock the following principles.
      * `Lib_weight_pairs`
      * `Lib_indicator_modes`
      * `Lib_aggregation_schemes`
+
    * Any concrete encoding is specified by picking one element from each library and a refinement schedule, and freezing those choices before evaluation.
 
 3. **Countable refinement and determinism**
 
    * Refinement is indexed by a discrete parameter `r` in a countable set, with `r` increasing meaning strictly more detailed summaries.
+
    * Any supremum, infimum, or aggregation across `(X, k)` or refinement levels is taken over:
 
      * a finite set, or
      * an explicitly defined countable set, constructed by a deterministic rule declared in the spec.
+
    * No construction in this file depends on uncountable choices or on ad hoc, data dependent region selection.
 
 4. **Singular sets and out of domain**
@@ -79,10 +96,12 @@ For this problem, we lock the following principles.
 5. **Tension scale and dimensionless normalization**
 
    * All mismatch quantities `DeltaS_*` and tension functionals for Q004 are defined as dimensionless numbers in `[0, 1]` or in a bounded interval.
+
    * Raw quantities such as dimension differences are normalized by explicit denominators so that:
 
      * there is no hidden dependence on arbitrary unit choices,
      * thresholds can be interpreted relative to a common Tension Universe scale as specified in the TU Tension Scale Charter.
+
    * Any rescaling of the tension scale must be implemented via an explicit charter update, not by editing this file.
 
 6. **Fairness and anti cheat**
@@ -95,7 +114,9 @@ For this problem, we lock the following principles.
      * weight pairs,
      * aggregation schemes,
      * refinement schedules,
-       are frozen and published before running experiments or evaluations on a given dataset.
+
+     are frozen and published before running experiments or evaluations on a given dataset.
+
    * These choices may depend on general mathematical considerations and public benchmark selections, but never on the unknown truth value of HC or on detailed results for the same batch of data.
 
 7. **Falsifiability boundary**
@@ -107,8 +128,6 @@ For this problem, we lock the following principles.
 
    * Within this file version, definitions of state spaces, observables, mismatch quantities, and tension functionals are frozen.
    * Any substantial change requires a new versioned file or an explicit changelog entry, and must not silently alter prior definitions.
-
-The footer at the end of this file restates these rules in a problem independent, charter aligned form.
 
 ---
 
@@ -148,17 +167,20 @@ No proof or disproof is known in full generality. The conjecture is widely belie
 
 ### 1.3 Role in the BlackHole project
 
-Within the BlackHole S problem collection, Q004 plays several roles:
+Within the BlackHole S problem collection, Q004 plays several roles.
 
 1. It is the canonical example of a **consistency_tension** problem between two descriptions of the same cohomological structure:
 
    * analytic Hodge decomposition into `H^{p,q}` pieces,
    * algebraic cycle classes in cohomology.
+
 2. It extends the pattern of Q003 (BSD) from curves and elliptic curves to higher dimensional varieties, where cohomology is richer and cycles are more complicated.
+
 3. It provides a geometric and cohomological counterpart to Q001 (Riemann Hypothesis), since both express the idea that:
 
    * a certain analytic structure and a certain arithmetic or geometric structure should match,
    * failure of this match would show up as a persistent tension between two subspaces or two types of data.
+
 4. It supplies a template for tension encodings on:
 
    * hybrid spaces that combine continuous data (harmonic forms, metrics) and discrete data (integral classes, intersection numbers),
@@ -266,9 +288,13 @@ The state carries finite summaries of:
 
   * Hodge numbers,
   * basic intersection data needed to distinguish candidates,
+
 * the Hodge decomposition structure on `H^{2k}(X, C)`,
+
 * the subspace of `H^{2k}(X, Q)` generated by algebraic cycles of codimension `k`,
+
 * a finite library of test cohomology class summaries for each `(X, k)`,
+
 * metadata that records:
 
   * which variety profile in `Lib_variety_profiles` is used for each `(X, k)`,
@@ -331,11 +357,15 @@ Lib_class_tests(X, k) = { v_1, v_2, ..., v_R }
 where:
 
 * each `v_j` is a label for a test cohomology class or a test pattern,
+
 * the construction rule for `Lib_class_tests(X, k)` is fixed globally at the charter level, for example:
 
   * sort candidate classes by a canonical index,
   * apply a fixed pseudorandom hash to select the first `R` that satisfy basic consistency checks,
+
 * the selection does not depend on the unknown truth of HC and does not depend on detailed tension results for this `(X, k)`.
+
+The deterministic construction rule, including the hash function and any selection thresholds, is defined at the charter or global configuration level and is not tuned per experiment or per dataset in response to observed tension values.
 
 The deterministic construction rule is part of the Q004 encoding and is shared across all states that include `(X, k)`.
 
@@ -345,21 +375,21 @@ On `M_HC` we define the following effective observables.
 
 1. **Hodge subspace dimension**
 
-```txt
-Hodge_space_dim(m; X, k) >= 0
-```
+   ```txt
+   Hodge_space_dim(m; X, k) >= 0
+   ```
 
-* Input: state `m`, variety label `X`, degree index `k`.
-* Output: a nonnegative integer giving the dimension of the encoded Hodge `(k, k)` subspace inside `H^{2k}(X, Q) tensor C` as represented in `m`, obtained from `HodgeDim_source(m; X, k)`.
+   * Input: state `m`, variety label `X`, degree index `k`.
+   * Output: a nonnegative integer giving the dimension of the encoded Hodge `(k, k)` subspace inside `H^{2k}(X, Q) tensor C` as represented in `m`, obtained from `HodgeDim_source(m; X, k)`.
 
 2. **Algebraic cycle span dimension**
 
-```txt
-Alg_cycle_span_dim(m; X, k) >= 0
-```
+   ```txt
+   Alg_cycle_span_dim(m; X, k) >= 0
+   ```
 
-* Input: state `m`, variety label `X`, degree index `k`.
-* Output: a nonnegative integer giving the dimension of the subspace of `H^{2k}(X, Q)` generated by encoded algebraic cycle classes of codimension `k`, obtained from `CycleDim_source(m; X, k)`.
+   * Input: state `m`, variety label `X`, degree index `k`.
+   * Output: a nonnegative integer giving the dimension of the subspace of `H^{2k}(X, Q)` generated by encoded algebraic cycle classes of codimension `k`, obtained from `CycleDim_source(m; X, k)`.
 
 3. **Hodge like class score and indicator**
 
@@ -481,7 +511,7 @@ Lib_eff(X, k, m) =
   }
 ```
 
-That is, we discard all `v` for which at least one indicator is `unknown`. If `Lib_eff(X, k, m)` is empty, the state is treated as singular for this `(X, k)` as described in 3.7.
+That is, we discard all `v` for which at least one indicator is `unknown`. If `Lib_eff(X, k, m)` is empty, the state is treated as singular for this `(X, k)` as described in 3.9.
 
 Define:
 
@@ -528,7 +558,7 @@ alpha_j > 0, beta_j > 0, alpha_j + beta_j = 1
 
 For each state `m`, one pair `(alpha, beta)` is chosen from `Lib_weight_pairs` and recorded in the metadata.
 
-For each admissible `(X, k)` and state `m` in the regular domain (see 3.7), the local Hodge tension is:
+For each admissible `(X, k)` and state `m` in the regular domain (see 3.9), the local Hodge tension is:
 
 ```txt
 Tension_HC(m; X, k) =
@@ -608,7 +638,7 @@ The choice is frozen for a given experiment or benchmark before tension values a
 
 ### 3.8 Admissible encoding class and fairness constraints
 
-An **encoding tuple** for Q004 is a record:
+An encoding tuple for Q004 is a record:
 
 ```txt
 Enc_HC_tuple =
@@ -633,14 +663,16 @@ where:
 * `Aggregation_scheme_choice` is a member of `Lib_aggregation_schemes`,
 * `Refinement_schedule` is a countable increasing sequence of refinement levels `r`.
 
-Fairness constraints:
+Fairness constraints.
 
 * For any batch of experiments or evaluations, one must:
 
   * choose an `Enc_HC_tuple`,
   * publish its full description or a stable hash,
   * then run all computations under that fixed tuple.
+
 * The tuple cannot be adapted in response to detailed tension results for the same batch.
+
 * Different tuples may be explored across independent experiments, but each experiment must be auditable from its published tuple.
 
 The admissible encoding class `Enc_HC` consists of all encoding tuples that respect:
@@ -700,6 +732,7 @@ In the tension viewpoint, this becomes a statement that:
 
   * one coming from analytic Hodge theory,
   * one coming from algebraic cycles,
+
 * and the conjecture claims that these descriptions are perfectly consistent in the sense that there is no persistent, scale stable gap between them.
 
 ### 4.2 Hodge consistency as low tension
@@ -718,7 +751,7 @@ for some small threshold `epsilon_HC(X, k)` in `[0, 1]` that depends on:
 
 but does not grow unbounded as refinement increases or as more detailed data are incorporated.
 
-In this view, the Hodge Conjecture becomes a low tension principle:
+In this view, the Hodge Conjecture becomes a low tension principle.
 
 > For every admissible variety and degree, there exist encodings of the real world within `Enc_HC` where the Hodge tension remains in a stable low band across refinements.
 
@@ -746,7 +779,7 @@ At the effective layer, Q004 is therefore represented as the choice between:
 We now outline two counterfactual worlds, described entirely at the level of observables and tension functionals.
 
 * World T: Hodge Conjecture true (low and stable Hodge tension).
-* World F: Hodge Conjecture false (persistent high Hodge tension for some `(X, k)`).
+* World F: Hodge Conjecture false (persistent high Hodge tension for some `(X, k)`.
 
 These scenarios do not construct internal TU fields from raw data. They only state patterns that observables and tension scores would follow in each case.
 
@@ -754,7 +787,7 @@ These scenarios do not construct internal TU fields from raw data. They only sta
 
 In World T we assume that the Hodge Conjecture is true for all admissible varieties and degrees.
 
-Effective layer behavior:
+Effective layer behavior.
 
 1. **Subspace agreement**
 
@@ -778,7 +811,7 @@ Effective layer behavior:
 
 3. **Stable tension under refinement**
 
-   For a fixed choice of `(alpha, beta)` from `Lib_weight_pairs` and a fixed `Enc_HC_tuple`, the sequence:
+   For a fixed choice of `(alpha, beta)` from `Lib_weight_pairs` and a fixed `Enc_HC_tuple`, the sequence
 
    ```txt
    Tension_HC(m_T(r); X, k)
@@ -794,7 +827,7 @@ Effective layer behavior:
 
 In World F we assume that the Hodge Conjecture is false for at least one admissible `(X, k)`.
 
-Effective layer behavior:
+Effective layer behavior.
 
 1. **Subspace gap persists**
 
@@ -857,7 +890,7 @@ These experiments do not prove or disprove the Hodge Conjecture. They can only f
 ### Experiment 1: Encoding stability on benchmark varieties (E2 harness)
 
 **Goal**
-Test whether a fixed `Enc_HC_tuple` produces stable, low Hodge tension across a benchmark library of varieties where Hodge structures and algebraic cycles are well studied, and define a reproducible harness that others can rerun.
+Test whether a fixed `Enc_HC_tuple` produces stable, low Hodge tension across a benchmark library of varieties where Hodge structures and algebraic cycles are well studied, and define a reproducible harness that others can rerun. This experiment defines the E2 harness for Q004; implementations should log `E_level = E2` together with the encoding tuple hash in their metadata.
 
 **Setup**
 
@@ -865,6 +898,7 @@ Test whether a fixed `Enc_HC_tuple` produces stable, low Hodge tension across a 
 
   * `k = 1`,
   * varieties for which the Lefschetz `(1,1)` theorem applies and both Hodge and algebraic cycle data are well documented.
+
 * Before looking at any detailed tension values, fix an `Enc_HC_tuple`:
 
   * a subset of `Lib_variety_profiles` that includes all profiles used in `Lib_bench`,
@@ -873,6 +907,7 @@ Test whether a fixed `Enc_HC_tuple` produces stable, low Hodge tension across a 
   * one weight pair `(alpha, beta)` from `Lib_weight_pairs`,
   * one aggregation scheme (for example `Profile_stratified_mean`),
   * a discrete sequence of refinement levels `r_1 < r_2 < ... < r_R`.
+
 * Publish:
 
   * the full tuple, or
@@ -886,17 +921,21 @@ Test whether a fixed `Enc_HC_tuple` produces stable, low Hodge tension across a 
    * approximate algebraic cycle span dimensions derived from `CycleDim_source_choice`,
    * a fixed test library `Lib_class_tests(X_i, k_i)` constructed by the declared rule,
    * stable soft scores and indicators for all `v` in `Lib_class_tests(X_i, k_i)` under the chosen indicator mode.
+
 2. For each `m_i(r_j)` compute:
 
    * `DeltaS_space(m_i(r_j); X_i, k_i)`,
    * `DeltaS_class(m_i(r_j); X_i, k_i)`,
    * `Tension_HC(m_i(r_j); X_i, k_i)` using the fixed `(alpha, beta)`.
+
 3. For each `m_i(r_j)` compute the aggregate `Tension_HC_total(m_i(r_j))` using `Agg_scheme(m_i(r_j))`.
+
 4. Record the sequences:
 
    * `Tension_HC(m_i(r_j); X_i, k_i)` as a function of `r_j`,
    * `Tension_HC_total(m_i(r_j))` as a function of `r_j`,
-     together with all metadata and the encoding tuple hash.
+
+   together with all metadata and the encoding tuple hash.
 
 **Metrics**
 
@@ -904,6 +943,7 @@ Test whether a fixed `Enc_HC_tuple` produces stable, low Hodge tension across a 
 
   * behavior of `Tension_HC(m_i(r_j); X_i, k_i)` as a function of `r_j`,
   * whether the sequence appears bounded and stabilizing inside a low tension band.
+
 * Across `Lib_bench`:
 
   * distribution of local tensions at each refinement level,
@@ -916,7 +956,9 @@ Test whether a fixed `Enc_HC_tuple` produces stable, low Hodge tension across a 
 
   * oscillate wildly without converging to a low band, or
   * exhibit growth that cannot be explained by known approximation errors,
-    then the current choice of observables or the functional form of `Tension_HC` is considered falsified at the encoding level.
+
+  then the current choice of observables or the functional form of `Tension_HC` is considered falsified at the encoding level.
+
 * If small variations within the same finite libraries (for example minor changes in `Lib_class_tests` construction) produce arbitrarily large swings in tension for the same benchmark objects, the encoding is considered ill posed and rejected.
 
 **Semantics implementation note**
@@ -938,9 +980,10 @@ Assess whether Q004 encodings supply useful signals for an AI system to distingu
 
   * for each model variety `X_model` and degree `k_model` there is a known ground truth about which classes are algebraic,
   * Hodge type structures and cycle spans can be simulated consistently with a chosen `Enc_HC_tuple`.
+
 * Prepare two versions of an AI model:
 
-  * Baseline model without Q004 tension signals.
+  * baseline model without Q004 tension signals,
   * TU augmented model that receives `DeltaS_space`, `DeltaS_class`, and `Tension_HC` based signals during training or evaluation.
 
 **Protocol**
@@ -951,14 +994,17 @@ Assess whether Q004 encodings supply useful signals for an AI system to distingu
    * compute `DeltaS_space(m_model; X_model, k_model)`,
    * compute `DeltaS_class(m_model; X_model, k_model)`,
    * compute `Tension_HC(m_model; X_model, k_model)`.
+
 2. Provide the baseline model with:
 
    * textual descriptions of `X_model`, `k_model`, and class `v`,
    * labels indicating whether `v` is algebraic in the synthetic ground truth.
+
 3. Provide the TU augmented model with:
 
    * the same inputs as the baseline,
    * plus one or more of the tension related signals.
+
 4. Train or evaluate both models on the same classification task:
 
    * predict whether `v` is algebraic or not.
@@ -966,9 +1012,11 @@ Assess whether Q004 encodings supply useful signals for an AI system to distingu
 **Metrics**
 
 * Classification accuracy on held out synthetic data.
+
 * Calibration measures such as:
 
   * alignment between confidence scores and actual correctness.
+
 * Robustness under variation of synthetic families.
 
 **Falsification conditions**
@@ -976,6 +1024,7 @@ Assess whether Q004 encodings supply useful signals for an AI system to distingu
 * If the TU augmented model does not improve classification accuracy or calibration compared to the baseline across a variety of synthetic families, then:
 
   * the Q004 encoding is considered ineffective for this type of task and may need to be revised.
+
 * If the TU augmented model systematically assigns lower tension to classes that the synthetic ground truth marks as non algebraic, while giving higher tension to classes that are algebraic, the encoding is misaligned and must be rejected or redesigned.
 
 **Boundary note**
@@ -1008,7 +1057,7 @@ We outline several training signals that can be derived from Q004 observables.
 
 4. `signal_counterfactual_split_HC`
 
-   * Definition: a measure of how well the model separates reasoning under Hodge true vs Hodge false assumptions, based on differences in tension signals across carefully paired prompts.
+   * Definition: a measure of how well the model separates reasoning under Hodge true versus Hodge false assumptions, based on differences in tension signals across carefully paired prompts.
    * Use: encourages the model to keep track of which world assumption it is using and to avoid mixing them.
 
 ### 7.2 Architectural patterns
@@ -1059,10 +1108,12 @@ To assess the impact of Q004 modules in an AI system, we can define an evaluatio
 3. **Metrics**
 
    * Accuracy on structured questions about Hodge theory and algebraic cycles.
+
    * Internal consistency across multi step explanations:
 
      * number of contradictions detected by checking whether the claims remain in a low tension band.
-   * Stability under counterfactual prompts that explicitly toggle “assume Hodge Conjecture” vs “assume Hodge Conjecture fails”.
+
+   * Stability under counterfactual prompts that explicitly toggle “assume Hodge Conjecture” versus “assume Hodge Conjecture fails”.
 
 ### 7.4 60 second reproduction protocol
 
@@ -1073,6 +1124,7 @@ A minimal protocol that external users can run to experience the effect of Q004 
   * Prompt the AI with:
 
     * “Explain the Hodge Conjecture and how it relates algebraic cycles and Hodge classes. Describe what would count as evidence for or against it.”
+
   * Record the explanation and note:
 
     * how clearly algebraic cycles and Hodge classes are distinguished,
@@ -1083,6 +1135,7 @@ A minimal protocol that external users can run to experience the effect of Q004 
   * Prompt the same AI system with:
 
     * “Using the idea of a tension between algebraic cycles and Hodge cohomology classes, explain the Hodge Conjecture. Describe how one could measure this tension and what patterns a ‘Hodge true’ world would show compared to a ‘Hodge false’ world.”
+
   * Record the explanation and:
 
     * any auxiliary tension scores provided by Q004 modules.
@@ -1114,10 +1167,12 @@ This block describes the reusable components produced by Q004 and how they trans
 1. ComponentName: `HodgeTensionFunctional_HC`
 
    * Type: functional
+
    * Minimal interface:
 
      * Inputs: `cohomology_summary`, `cycle_summary`
      * Output: `tension_value` in `[0, 1]` representing a combined measure of normalized subspace and class level mismatch.
+
    * Preconditions:
 
      * The summaries refer to the same variety and degree index and are compatible in the sense that a Hodge decomposition and cycle span are both encoded.
@@ -1125,10 +1180,12 @@ This block describes the reusable components produced by Q004 and how they trans
 2. ComponentName: `CohomologyCycleDescriptor`
 
    * Type: field
+
    * Minimal interface:
 
      * Inputs: description of a geometric or cohomological context (for example variety type and degree).
      * Output: finite vector of features encoding Hodge numbers, algebraic cycle span dimensions, and basic intersection data.
+
    * Preconditions:
 
      * The input context lies in the admissible variety profile library.
@@ -1136,6 +1193,7 @@ This block describes the reusable components produced by Q004 and how they trans
 3. ComponentName: `HC_Counterfactual_Template`
 
    * Type: experiment_pattern
+
    * Minimal interface:
 
      * Inputs: model class of geometric or cohomological objects.
@@ -1143,6 +1201,7 @@ This block describes the reusable components produced by Q004 and how they trans
 
        * a “Hodge true” world where one attempts to enforce low Hodge tension,
        * a “Hodge false” world where tension is allowed and monitored.
+
    * Preconditions:
 
      * The model class supports coherent encoding of cohomology and cycle summaries.
@@ -1152,20 +1211,24 @@ This block describes the reusable components produced by Q004 and how they trans
 1. Q003 (BH_MATH_BSD_L3_003)
 
    * Reused components: `CohomologyCycleDescriptor`, `HC_Counterfactual_Template`.
+
    * Why it transfers:
 
      * BSD involves cohomology of elliptic curves and the relationship between analytic L functions and algebraic ranks, which can be seen as a low dimensional instance of Hodge like consistency.
+
    * What changes:
 
-     * The cohomology summaries focus on rank and torsion structures rather than general Hodge numbers,
-     * the cycle summaries focus on rational points and divisors.
+     * The cohomology summaries focus on rank and torsion structures rather than general Hodge numbers.
+     * The cycle summaries focus on rational points and divisors.
 
 2. Q013 (BH_MATH_LANG_L3_013)
 
    * Reused component: `HodgeTensionFunctional_HC`.
+
    * Why it transfers:
 
      * Langlands type correspondences relate motives and automorphic representations. The Hodge tension functional measures how well geometric realizations of motives line up with their expected cohomological profiles.
+
    * What changes:
 
      * The input summaries are expanded to include representation theoretic data in addition to geometric and cohomological data.
@@ -1173,9 +1236,11 @@ This block describes the reusable components produced by Q004 and how they trans
 3. Q059 (BH_CS_INFO_THERMODYN_L3_059)
 
    * Reused component: `HC_Counterfactual_Template`.
+
    * Why it transfers:
 
-     * Information theoretic systems can be decomposed into structured “cycle generated” parts and ambient noise. The Hodge style world T vs world F comparison translates into low vs high tension between these parts.
+     * Information theoretic systems can be decomposed into structured “cycle generated” parts and ambient noise. The Hodge style world T versus world F comparison translates into low versus high tension between these parts.
+
    * What changes:
 
      * The underlying “cohomology” becomes an information space, and “cycles” become structured recurrent patterns rather than algebraic subvarieties.
@@ -1211,7 +1276,7 @@ This block explains where Q004 sits on the TU verification ladder and what the n
 
 ### 9.2 Next measurable step toward higher E levels
 
-To move Q004 further up the E ladder, at least one of the following should be implemented and published:
+To move Q004 further up the E ladder, at least one of the following should be implemented and published.
 
 1. A concrete prototype pipeline that:
 
@@ -1238,14 +1303,16 @@ In the longer term, Q004 is expected to serve as:
 
   * analytic structures (Hodge decomposition),
   * algebraic structures (cycle classes),
+
 * a template for encoding other standard conjectures involving cohomology and cycles, such as:
 
   * Grothendieck standard conjectures,
-  * variants of Bloch–Beilinson conjectures in a tension setting,
+  * variants of Bloch and Beilinson type conjectures in a tension setting,
+
 * a bridge between:
 
   * purely mathematical problems in algebraic geometry,
-  * physical and information theoretic problems with similar “cycle vs ambient” structure.
+  * physical and information theoretic problems with similar “cycle versus ambient” structure.
 
 As other problems reach higher E and N levels, their interactions with Q004 will refine the libraries and fairness constraints, while keeping the effective layer boundary intact.
 
@@ -1269,6 +1336,7 @@ In the Tension Universe view we do not try to build those structures from scratc
 
   * the Hodge `(k, k)` part,
   * the part generated by algebraic cycles,
+
 * define numbers that measure:
 
   * how far the normalized dimensions of these two parts differ,
@@ -1296,6 +1364,12 @@ while remaining strictly at the effective layer and leaving deep generative rule
 
 ## Tension Universe effective layer footer
 
+This page should be read together with the following charters:
+
+* [TU Effective Layer Charter](../Charters/TU_EFFECTIVE_LAYER_CHARTER.md)
+* [TU Encoding and Fairness Charter](../Charters/TU_ENCODING_AND_FAIRNESS_CHARTER.md)
+* [TU Tension Scale Charter](../Charters/TU_TENSION_SCALE_CHARTER.md)
+
 ### Scope of claims
 
 * The goal of this document is to specify an effective layer encoding of the named problem.
@@ -1311,11 +1385,7 @@ while remaining strictly at the effective layer and leaving deep generative rule
 
 ### Encoding and fairness
 
-* Admissible encoding classes, reference profiles and weight families used in this page are constrained by shared Tension Universe charters:
-
-  * [TU Effective Layer Charter](../Charters/TU_EFFECTIVE_LAYER_CHARTER.md)
-  * [TU Encoding and Fairness Charter](../Charters/TU_ENCODING_AND_FAIRNESS_CHARTER.md)
-  * [TU Tension Scale Charter](../Charters/TU_TENSION_SCALE_CHARTER.md)
+* Admissible encoding classes, reference profiles and weight families used in this page are constrained by the charters listed above.
 * For every encoding class referenced here:
 
   * its definition, parameter ranges and reference families are fixed at the charter level before any problem specific tuning,
@@ -1326,11 +1396,14 @@ while remaining strictly at the effective layer and leaving deep generative rule
 ### Tension scale and thresholds
 
 * All mismatch terms `DeltaS_*` and tension functionals in this file are treated as dimensionless or normalized quantities, defined up to a fixed monotone rescaling specified in the TU Tension Scale Charter.
+
 * For Q004 this includes explicit normalization of:
 
   * subspace gaps by Hodge dimensions,
   * class level mismatches by the number of effective Hodge like test classes.
+
 * Thresholds such as `epsilon_HC`, `delta_HC`, and experiment cutoffs are always interpreted relative to that fixed scale.
+
 * Changing the tension scale requires an explicit update of the TU Tension Scale Charter, not an edit of individual problem files.
 
 ### Falsifiability and experiments
@@ -1355,4 +1428,5 @@ while remaining strictly at the effective layer and leaving deep generative rule
   * explicit state spaces and observables,
   * normalized tension scores,
   * reproducible, falsifiable experimental harnesses,
-    while keeping deep generative rules and any candidate first principles outside the scope of public S problem files.
+
+  while keeping deep generative rules and any candidate first principles outside the scope of public S problem files.
