@@ -15,8 +15,17 @@ Status: Open
 Semantics: continuous
 E_level: E1
 N_level: N1
-Last_updated: 2026-01-24
+Last_updated: 2026-01-29
 ```
+
+### 0.1 Effective-layer disclaimer
+
+All content in this entry is written strictly at the effective layer of the Tension Universe (TU) framework.
+
+* The goal is to specify how the **initial conditions of the universe** are encoded as a tension problem in terms of state spaces, observables, mismatch quantities, and experiment templates.
+* This page does **not** claim to solve the Past Hypothesis or to derive initial conditions from first principles.
+* No TU axioms, deep generative rules, or hidden construction procedures are exposed. All references to state spaces, measures, and tension functionals are abstract devices at the effective layer.
+* Nothing in this document should be cited as evidence that the initial condition problem has been resolved in physics or cosmology.
 
 ---
 
@@ -43,7 +52,7 @@ The canonical problem for Q044 can be stated as:
 
 This includes related questions:
 
-* How should phase space and measures over cosmological states be defined.
+* How phase space and measures over cosmological states should be defined.
 * Whether inflation or other dynamical mechanisms can make such initial conditions natural.
 * How the arrow of time and low entropy past fit together.
 
@@ -72,7 +81,7 @@ Within the BlackHole S problem collection, Q044 has three main roles:
 
 1. It is the anchor node for thermodynamic_tension at cosmological scale, where low entropy and smoothness compete with naive typicality.
 
-2. It serves as the main interface between cosmological models and abstract phase space reasoning from statistical mechanics and set theory (for example how measures over infinite dimensional state spaces are treated).
+2. It serves as the main interface between cosmological models and abstract phase space reasoning from statistical mechanics and set theory, including how measures over infinite dimensional state spaces are treated.
 
 3. It provides a test bed for Tension Universe encodings that must keep a strict boundary between:
 
@@ -103,14 +112,14 @@ This block records the graph position of Q044 through upstream, downstream, para
 
 These nodes provide prerequisites or tools that Q044 uses at the effective layer.
 
-* Q041 (BH_COSMO_DM_L3_041: Dark matter and cosmic structure)
+* Q041 (BH_COSMO_DARKMATTER_L3_041: Dark matter and cosmic structure)
   Reason: supplies matter content and structure formation context that any initial condition state must evolve into.
 
-* Q042 (BH_COSMO_INFLATION_L3_042: Origin and role of inflation)
-  Reason: provides the main dynamical ingredient often invoked to explain early smoothness and flatness.
+* Q042 (BH_COSMO_DARKENERGY_L3_042: Dark energy and late-time acceleration)
+  Reason: provides late-time expansion behavior that constrains which initial condition trajectories are compatible with current observations.
 
-* Q043 (BH_COSMO_ZEROS_STATE_L3_043: Origin of cosmic inflation state or zero state)
-  Reason: encodes candidate mechanisms for pre inflation or onset conditions that directly shape which initial macrostates are realized.
+* Q043 (BH_COSMO_INFLATION_L3_043: Origin of cosmic inflation)
+  Reason: encodes candidate mechanisms for early accelerated expansion that can transform certain low entropy initial macrostates into our observed universe.
 
 * Q016 (BH_MATH_ZFC_CH_L3_016: Foundations of continuum and measure)
   Reason: gives background on measure, typicality, and infinite dimensional state spaces, which Q044 uses in its phase space definitions.
@@ -119,11 +128,14 @@ These nodes provide prerequisites or tools that Q044 uses at the effective layer
 
 These nodes reuse Q044 components or depend on its tension structure.
 
-* Q045 (BH_COSMO_H0_TENSION_L3_045)
-  Reason: reuses initial condition phase space templates when exploring whether H0 tension reflects selection or trajectory issues.
+* Q045 (BH_COSMO_LSS_L3_045: Large-scale structure formation)
+  Reason: reuses initial condition phase space templates when relating early low entropy states to later clustering patterns.
 
-* Q046 (BH_COSMO_DE_DYNAMICS_L3_046: Dark energy dynamics)
-  Reason: uses Q044’s notion of allowed trajectories from initial low entropy states to constrain late time acceleration scenarios.
+* Q046 (BH_COSMO_CMB_ANOMALY_L3_046: CMB anomalies and large scale irregularities)
+  Reason: uses Q044’s notion of allowed initial condition ensembles to distinguish genuine anomalies from rare but admissible low entropy patterns.
+
+* Q048 (BH_COSMO_H0_TENSION_L3_048: H0 tension and early / late convergence)
+  Reason: reuses Q044’s initial condition template when exploring whether H0 tension reflects selection in initial conditions versus late-time physics.
 
 * Q059 (BH_CS_INFO_THERMODYN_L3_059)
   Reason: transfers Q044’s low entropy and typicality framing into information theoretic contexts.
@@ -181,9 +193,9 @@ where each element `m` in `M_IC` represents an effective cosmological initial co
 
 Each `m` encodes, at some coarse initial time slice:
 
-* large scale spatial geometry on a Cauchy like hypersurface (for example spatial curvature and volume),
-* coarse matter and radiation content (for example total energy density and composition fractions),
-* early perturbation spectrum summaries (for example amplitude and tilt parameters),
+* large scale spatial geometry on a Cauchy like hypersurface, for example spatial curvature and volume,
+* coarse matter and radiation content, for example total energy density and composition fractions,
+* early perturbation spectrum summaries, for example amplitude and tilt parameters,
 * global entropy indicators and smoothness indicators.
 
 We do not specify the microstate level structure. We only assume that for each `m` the following observables are well defined as finite real numbers or tuples.
@@ -223,7 +235,7 @@ Smoothness(m; R) in [0, 1]
 Curvature_profile(m) in R^k
 ```
 
-* Encodes coarse curvature invariants, such as spatial curvature parameter, plus a small set of derived quantities that track flatness and isotropy.
+* Encodes coarse curvature invariants, such as a spatial curvature parameter, plus a small set of derived quantities that track flatness and isotropy.
 
 5. Perturbation spectrum summary
 
@@ -245,8 +257,8 @@ We define mismatch quantities that compare a given state `m` with reference patt
 DeltaS_thermo(m) >= 0
 ```
 
-* Measures how far `S_tot(m)` lies from an effective typical high entropy macrostate compatible with the same coarse constraints (for example total energy density and volume).
-* `DeltaS_thermo(m) = 0` when the state is maximally high entropy for the constraints.
+* Measures how far `S_tot(m)` lies from an effective typical high entropy macrostate compatible with the same coarse constraints, for example total energy density and volume.
+* `DeltaS_thermo(m) = 0` for macrostates that are already maximally high entropy for the constraints.
 * `DeltaS_thermo(m)` is large when the state is very low entropy compared to those maxima.
 
 2. Smoothness mismatch
@@ -266,7 +278,7 @@ DeltaS_arrow(m) >= 0
 ```
 
 * Represents how inconsistent the implied arrow of time is with expectations from generic microstates.
-* `DeltaS_arrow(m)` is small when the macrostate allows a clear time direction with entropy rising toward the future and low entropy past.
+* `DeltaS_arrow(m)` is small when the macrostate allows a clear time direction with entropy rising toward the future from a lower level in the past.
 * `DeltaS_arrow(m)` is large when there is no coherent arrow or when arrows differ in different regions.
 
 We also define a simple invariant that summarizes low entropy initial conditions.
@@ -277,32 +289,38 @@ I_low_entropy(m) = DeltaS_thermo(m)
 
 This makes the thermodynamic mismatch directly visible as an invariant quantity attached to each state.
 
-### 3.4 Effective tension tensor components
+### 3.4 Admissible encoding class and fairness constraints
 
-We assume an effective tension tensor over `M_IC` given by
+Q044 uses an **encoding class** rather than a single fixed numerical recipe. An encoding in this class consists of:
 
-```txt
-T_ij(m) = S_i(m) * C_j(m) * DeltaS_IC(m) * lambda(m) * kappa
-```
+* a choice of coarse graining that maps physical cosmological models and data into states of `M_IC`,
+* a reference ensemble of high entropy macrostates compatible with given coarse constraints,
+* a set of rules for computing `S_tot`, `S_grav`, `Smoothness`, `Perturbation_spectrum`, and derived mismatch quantities.
 
-with:
+The following constraints hold for any admissible encoding in the class.
 
-* `S_i(m)` a source like factor representing contributions from different physical components or subsystems,
-* `C_j(m)` a receptivity factor representing how sensitive different cognitive or downstream channels are to initial condition specialness,
-* `DeltaS_IC(m)` a combined mismatch quantity for Q044,
-* `lambda(m)` a factor encoding local convergence state of reasoning about this macrostate, within a fixed bounded range,
-* `kappa` a coupling constant that sets the overall scale of Q044 tension.
+1. **Shared state space**
 
-The combined mismatch is defined by
+   * All admissible encodings use the same abstract state space `M_IC` and the same notion of a regular domain `M_IC_reg`.
+   * Different encodings correspond to different but clearly documented ways of mapping physical models into elements of `M_IC`.
 
-```txt
-DeltaS_IC(m) =
-    a * DeltaS_thermo(m)
-  + b * DeltaS_smooth(m)
-  + c * DeltaS_arrow(m)
-```
+2. **Fixed coefficient schemes**
 
-with fixed coefficients `a`, `b`, `c` greater than zero. These coefficients are chosen once per encoding family and held fixed across experiments.
+   * For a given encoding family, the coefficients that combine mismatch quantities into a scalar tension are fixed once and do not vary between models or experiments.
+   * In particular, the triples `(alpha, beta, gamma)` used in the tension functional are part of the encoding specification and cannot be tuned per proposal or dataset.
+
+3. **Admissible variation**
+
+   * Encodings are allowed to vary in resolution, in coarse graining of perturbation spectra, and in the exact numerical form of entropy proxies, as long as they preserve the same qualitative ordering of high entropy and low entropy macrostates.
+   * Changes in encoding that are purely notational or that correspond to equivalent statistics are admissible.
+   * Changes that systematically reclassify obviously high entropy configurations as low entropy, or the reverse, are not admissible inside the same encoding class.
+
+4. **Fairness across proposals**
+
+   * When Q044 is used to compare different initial condition proposals or model families, all of them must be mapped into `M_IC` and evaluated with the same encoding instance from the class.
+   * It is not permitted to select one encoding for a proposal that favors low tension and a different encoding for a competing proposal.
+
+Experiments in Section 6 quantify falsification and robustness always **relative to a fixed admissible encoding** chosen from this class, and robustness checks range over nearby encodings within the same class rather than arbitrary redefinitions.
 
 ### 3.5 Singular set and domain restrictions
 
@@ -314,7 +332,8 @@ S_sing_IC =
       S_tot(m) undefined or infinite
       or S_grav(m) undefined or infinite
       or Smoothness(m; R) undefined for some relevant region R
-      or Curvature_profile(m) undefined }
+      or Curvature_profile(m) undefined
+      or Perturbation_spectrum(m) undefined }
 ```
 
 We define the regular domain
@@ -342,7 +361,7 @@ Tension_IC(m) =
   + gamma * DeltaS_arrow(m)
 ```
 
-with constants `alpha`, `beta`, `gamma` greater than zero, fixed for a given encoding class.
+with constants `alpha`, `beta`, `gamma` greater than zero, fixed for a given encoding instance in the class described in Section 3.4.
 
 Properties:
 
@@ -350,43 +369,43 @@ Properties:
 * `Tension_IC(m)` is small when the state is thermodynamically typical, not unusually smooth, and has a clear and generic arrow of time.
 * `Tension_IC(m)` is large when the state is low entropy, unusually smooth, or has a non generic or problematic arrow of time.
 
-### 4.2 Low tension principle for actual initial conditions
+The tension functional does not declare which values are physically acceptable. It makes the level of specialness and arrow alignment explicit and comparable across states and proposals.
 
-At the effective layer the guiding principle is:
+### 4.2 How Q044 uses the tension scale
 
-> The actual early universe state must lie in a thin low tension band of `M_IC_reg` when encoded with a physically reasonable measure and set of constraints.
+For any admissible encoding, the actual early universe is represented by a state `m_real` in `M_IC_reg`, together with a value `Tension_IC(m_real)`.
 
-More concretely, suppose:
+Q044 does not assume in advance that `Tension_IC(m_real)` must be small. Instead it uses the TU tension scale to track which **band** `m_real` falls into for a given encoding:
 
-* a class of admissible encodings of `M_IC` and its reference ensembles is fixed,
-* a state `m_real` in `M_IC_reg` represents the effective initial condition of our universe.
+* In naive encodings that use simple high entropy ensembles and measures, low entropy and high smoothness of our universe typically produce **high** values of `Tension_IC(m_real)`.
+* In alternative encodings or proposals, for example Past Hypothesis style measures, the same `m_real` might lie in a lower tension band if low entropy macrostates receive non negligible weight.
 
-Then the low tension principle demands:
+The TU Tension Scale Charter provides qualitative bands that separate low, moderate, high, and extreme tension levels for E1 encodings. Q044 adopts thresholds such as `epsilon_IC` or `delta_IC` as markers of these bands, but it does not decree which band is correct. Instead it requires that:
 
-```txt
-Tension_IC(m_real) <= epsilon_IC
-```
+* For a given encoding, small refinements in resolution and data do not move `m_real` across multiple bands in an uncontrolled way.
+* When `m_real` moves between bands because the measure or ensemble has changed, that shift is traceable to explicit changes in the encoding rather than hidden adjustments.
 
-for some small threshold `epsilon_IC` that does not blow up when resolution in the encoding is refined or when observed data are improved.
-
-If every admissible encoding forced `Tension_IC(m_real)` to be extremely large, that would signal a deep mismatch between our understanding of typicality and the actual early universe.
+The main purpose is to make the tradeoff between **special initial conditions** and **modified typicality assumptions** visible in tension space.
 
 ### 4.3 High tension interpretation for generic initial states
 
 For generic initial condition states in `M_IC_reg` drawn from naive measures over phase space, we expect:
 
-* `DeltaS_thermo(m_generic)` near zero,
-* `DeltaS_smooth(m_generic)` near zero,
-* `DeltaS_arrow(m_generic)` possibly large or ill defined.
+* `DeltaS_thermo(m_generic)` near zero, since entropy is already close to maximal under the constraints,
+* `DeltaS_smooth(m_generic)` near zero, since typical states are not especially smooth,
+* `DeltaS_arrow(m_generic)` possibly small in magnitude if arrows are not well defined or if entropy gradients are weak.
 
 This implies small `Tension_IC(m_generic)` under naive assumptions, but the resulting universes usually do not resemble ours.
 
 Q044 uses this situation to encode a tension:
 
-* Either the early universe is extremely special in phase space, occupying a very small region with `Tension_IC` much larger than typical,
-* Or our measure and typicality assumptions are incorrect or incomplete, in which case we must revise how we define reference ensembles and mismatch quantities.
+* Under naive measures, typical initial states are low tension by construction but do not evolve toward worlds like ours.
+* States that do evolve toward a universe like ours occupy regions of `M_IC_reg` with high `DeltaS_thermo` and `DeltaS_smooth`, hence high `Tension_IC`, unless the measure or reference ensembles are revised.
 
-The problem is therefore framed as choosing between low probability special initial conditions and revisions to our probabilistic framework.
+The problem is therefore framed as a controlled choice between:
+
+* keeping naive typicality and accepting that our universe arises from a high tension corner of phase space, or
+* revising measures and reference ensembles so that realistic states move into lower tension bands, with all such revisions recorded explicitly at the effective layer.
 
 ---
 
@@ -405,11 +424,11 @@ In World T:
 
 2. For representative states `m_T` in `R_T`:
 
-   * `DeltaS_thermo(m_T)` and `DeltaS_smooth(m_T)` are small compared to the spread of values over `M_IC_reg`,
+   * `DeltaS_thermo(m_T)` and `DeltaS_smooth(m_T)` are moderate relative to the spread of values over `M_IC_reg`,
    * the evolution from `m_T` produces universes with large scale properties similar to ours, including observed cosmic microwave background and structure,
    * the arrow of time emerges naturally as entropy increases from a low value in the past toward higher values in the future.
 
-3. Under refinement of the encoding and inclusion of more observational data, the band of `m_T` states with low `Tension_IC(m_T)` remains stable rather than collapsing or shifting in an ad hoc way.
+3. Under refinement of the encoding and inclusion of more observational data, the band of `m_T` states with relatively low `Tension_IC(m_T)` remains stable rather than collapsing or shifting in an ad hoc way.
 
 ### 5.2 World F (generic high entropy initial condition world)
 
@@ -417,20 +436,20 @@ In World F:
 
 1. The measure or selection rules strongly favor states with high `S_tot(m)` and low `Smoothness(m; R)` for typical regions `R`, so that almost all states in `M_IC_reg` have:
 
-   * `DeltaS_thermo(m_F)` near zero (already high entropy),
-   * `DeltaS_smooth(m_F)` near zero (typical roughness).
+   * `DeltaS_thermo(m_F)` near zero,
+   * `DeltaS_smooth(m_F)` near zero.
 
 2. For representative states `m_F`:
 
    * resulting universes lack a clear global arrow of time or have arrows pointing in different directions in different regions,
-   * large scale properties look nothing like our observed universe, or resemble high entropy equilibrium configurations.
+   * large scale properties look nothing like our observed universe or resemble high entropy equilibrium configurations.
 
 3. States that resemble our actual universe, with low entropy and high smoothness, exist only as extremely rare exceptions, with:
 
    * very large `DeltaS_thermo(m)` and `DeltaS_smooth(m)` relative to typical values,
    * very small measure under the adopted rules.
 
-4. For any encoding that remains faithful to these measure assignments, the band of `m` with low `Tension_IC(m)` does not contain realistic states, so a realistic universe must come from a high tension band.
+4. For any encoding that remains faithful to these measure assignments, realistic states remain in a high tension band of `Tension_IC`, while typical high entropy states occupy low tension bands.
 
 ### 5.3 Interpretive note
 
@@ -452,18 +471,20 @@ This block describes experiments and protocols that can:
 * compare different initial condition proposals,
 * and falsify specific combinations of mismatch definitions, measures, and parameter choices.
 
-They do not prove or disprove the canonical statement, but they can reject ineffective encodings.
+They do not prove or disprove the canonical statement, but they can reject ineffective encodings inside the admissible class.
+
+All references to encodings below are understood to refer to **admissible encodings in the class defined in Section 3.4**.
 
 ### Experiment 1: CMB and large scale structure tension profiling
 
 *Goal:*
-Test whether the Q044 tension functional can remain low for states that match observed cosmic microwave background and large scale structure, under reasonable reference ensembles and measures.
+Test whether a given Q044 tension functional can assign stable and interpretable tension values to states that match observed cosmic microwave background and large scale structure, under reasonable reference ensembles and measures from the admissible class.
 
 *Setup:*
 
 * Input data: a set of cosmological parameter chains and maps from a mission like Planck, including temperature anisotropy levels, spectral index, curvature constraints, and large scale structure summaries.
 * Choose a coarse grained representation that maps these data into effective states `m_data` in `M_IC_reg`.
-* Choose a reference ensemble of macrostate models consistent with late time constraints but using naive high entropy initial conditions.
+* Choose a reference ensemble of macrostate models, also in `M_IC_reg`, consistent with late time constraints but built from naive high entropy initial conditions, all within a single admissible encoding instance.
 
 *Protocol:*
 
@@ -471,37 +492,37 @@ Test whether the Q044 tension functional can remain low for states that match ob
 
 2. For the reference ensemble, generate a family of macrostates `m_ref` that share broad late time constraints but start in high entropy, less smooth initial conditions.
 
-3. Evaluate `DeltaS_thermo`, `DeltaS_smooth`, and `DeltaS_arrow` for each `m_data` and each `m_ref`, using the definitions in Block 3.
+3. Evaluate `DeltaS_thermo(m)`, `DeltaS_smooth(m)`, and `DeltaS_arrow(m)` for each `m_data` and each `m_ref` using the definitions in Section 3.
 
 4. Compute `Tension_IC(m_data)` and `Tension_IC(m_ref)`.
 
-5. Compare the distributions of `Tension_IC` between the data aligned states and reference ensemble.
+5. Compare the distributions of `Tension_IC` between the data aligned states and the reference ensemble, and check stability under small variations of the encoding that remain within the admissible class.
 
 *Metrics:*
 
 * Mean and variance of `Tension_IC` over the data aligned states.
 * Mean and variance of `Tension_IC` over the reference ensemble.
 * Separation between the two distributions, for example through simple distance measures in tension space.
-* Stability of results under reasonable changes in coarse graining or parameterization.
+* Stability of results under reasonable changes in coarse graining or parameterization that remain within the same encoding class.
 
 *Falsification conditions:*
 
-* If no choice of reasonable reference ensemble and parameter values for `alpha`, `beta`, `gamma` can keep `Tension_IC(m_data)` within a low band while also assigning realistic low weights to obviously non realistic high entropy initial states, then the current encoding of `DeltaS_thermo`, `DeltaS_smooth`, and `DeltaS_arrow`, combined with the chosen measure, is considered falsified at the effective layer.
+* If, for all admissible encodings in the class, `Tension_IC(m_data)` either jumps across multiple tension bands under small encoding changes or cannot be made stable for realistic states while keeping obviously non realistic high entropy initial states in different bands, then that encoding class is considered falsified at the effective layer.
 
-* If small, physically unmotivated tweaks of the encoding can arbitrarily invert the ordering between realistic and non realistic states in terms of `Tension_IC`, then the encoding is considered unstable and rejected.
+* If small, physically unmotivated tweaks of the encoding inside the same class can arbitrarily invert the ordering between realistic and non realistic states in terms of `Tension_IC`, then the class is considered too fragile and rejected or refined.
 
 *Semantics implementation note:*
 All quantities in this experiment are treated in a continuous field style representation consistent with the metadata setting. No discrete or hybrid representation is introduced inside this block.
 
 *Boundary note:*
-Falsifying TU encoding != solving canonical statement. This experiment can reject specific tension encodings and measure choices, but it does not, by itself, explain why the universe started in a low entropy state.
+Falsifying a TU encoding class in this sense does not solve the canonical problem. This experiment can reject specific tension encodings and measure choices, but it does not, by itself, explain why the universe started in a low entropy state.
 
 ---
 
 ### Experiment 2: Ensemble comparison of initial condition proposals
 
 *Goal:*
-Compare several theoretical proposals for initial conditions by their ability to produce low tension initial states without extreme fine tuning.
+Compare several theoretical proposals for initial conditions by their ability to produce realistic low entropy states and by how those states sit in the tension bands defined by `Tension_IC`.
 
 *Setup:*
 
@@ -511,7 +532,7 @@ Compare several theoretical proposals for initial conditions by their ability to
   * an inflation based proposal that selects patches likely to inflate,
   * a cyclic or bounce style proposal.
 
-* For each proposal, define a model ensemble of effective initial macrostates with associated entropy and smoothness summaries.
+* For each proposal, define a model ensemble of effective initial macrostates with associated entropy and smoothness summaries. All proposals must be encoded using the same admissible encoding instance.
 
 *Protocol:*
 
@@ -524,31 +545,32 @@ Compare several theoretical proposals for initial conditions by their ability to
 4. Compare:
 
    * the density of `m_P_k_realistic` states in each ensemble,
-   * the distribution of `Tension_IC` over those realistic subsets.
+   * the distribution of `Tension_IC` over those realistic subsets,
+   * the locations of these values on the tension bands defined in the TU Tension Scale Charter for E1 encodings.
 
 *Metrics:*
 
-* Fraction of each ensemble that lies within a low tension band for realistic states.
+* Fraction of each ensemble that lies within a specified tension band for realistic states.
 * Median and percentile values of `Tension_IC` for realistic states under each proposal.
-* Sensitivity of these figures to reasonable variations in mismatch definitions.
+* Sensitivity of these figures to reasonable variations in mismatch definitions that stay inside the admissible encoding class.
 
 *Falsification conditions:*
 
-* If a proposal requires extremely narrow parameter ranges or implausible measure choices in order to place realistic states in a low tension band, while other proposals achieve this without comparable tuning, then the combination of that proposal with the current Q044 encoding is considered disfavored.
+* If a proposal requires extremely narrow parameter ranges or implausible measure choices in order to place realistic states in a tension band that is claimed to be low or moderate, while other proposals achieve this without comparable tuning under the same encoding, then the combination of that proposal with the current Q044 encoding is considered disfavored.
 
-* If a proposal produces ensembles where realistic states systematically have higher `Tension_IC` than obviously non realistic states, and this persists under variation of reasonable encoding choices, then that proposal is considered misaligned with the Q044 tension structure.
+* If a proposal produces ensembles where realistic states systematically have higher `Tension_IC` than obviously non realistic states, and this persists under variation of reasonable encoding choices inside the class, then that proposal is considered misaligned with the Q044 tension structure.
 
 *Semantics implementation note:*
 All ensembles are represented using the same continuous style as the main Q044 encoding, so that comparisons of `Tension_IC` across proposals remain meaningful.
 
 *Boundary note:*
-Falsifying TU encoding != solving canonical statement. Even a proposal that works well with one encoding may fail under another, and success in this sense does not by itself derive the initial state from deeper theory.
+Falsifying or favoring a proposal in this experiment does not settle the canonical statement. Even a proposal that looks good under one encoding class may fail under another, and success in this sense does not derive the initial state from deeper theory.
 
 ---
 
 ## 7. AI and WFGY engineering spec
 
-This block describes how Q044 can be used as an engineering module for AI systems in the WFGY framework.
+This block describes how Q044 can be used as an engineering module for AI systems in the WFGY framework. All constructions remain at the effective layer.
 
 ### 7.1 Training signals
 
@@ -562,7 +584,7 @@ We define several training signals based on Q044 observables.
 2. `signal_smoothness_awareness`
 
    * Definition: a signal derived from `DeltaS_smooth(m)` when the model discusses spatial homogeneity and isotropy.
-   * Purpose: encourage explicit recognition that very smooth initial conditions are special rather than generic.
+   * Purpose: encourage explicit recognition that very smooth initial conditions are special relative to naive high entropy ensembles.
 
 3. `signal_arrow_time_clarity`
 
@@ -593,6 +615,8 @@ We outline module patterns that reuse Q044 structures.
    * Role: detect when a narrative mixes up dynamical laws with initial conditions.
    * Interface: given model explanations, outputs labels indicating which parts are boundary conditions and which are claimed laws.
 
+These modules are optional engineering patterns. Any implementation that exposes compatible observables and tension estimates can be described as “using Q044 encoding” for AI purposes, even if internal architecture differs.
+
 ### 7.3 Evaluation harness
 
 We propose an evaluation harness to measure the impact of Q044 modules.
@@ -617,25 +641,31 @@ We propose an evaluation harness to measure the impact of Q044 modules.
 
 A short protocol for external users to see Q044 style effects in an AI system.
 
-* Baseline setup:
+*Baseline setup:*
 
-  * Prompt: “Explain why the universe started in a low entropy state, and how this relates to the arrow of time.”
-  * Observation: record whether the answer clearly addresses phase space, special initial conditions, and the role of probability, or whether it remains vague.
+* Prompt:
+  “Explain why the universe started in a low entropy state, and how this relates to the arrow of time.”
 
-* Q044 guided setup:
+* Observation:
+  record whether the answer clearly addresses phase space, special initial conditions, and the role of probability, or whether it remains vague.
 
-  * Prompt: same as baseline, but add: “Use the idea of initial condition tension, comparing low entropy special states with generic high entropy states.”
-  * Observation: record whether the answer now introduces explicit tension between special and typical states, and whether it distinguishes laws from boundary conditions.
+*Q044 guided setup:*
 
-* Comparison metric:
+* Prompt:
+  “Explain why the universe started in a low entropy state, and how this relates to the arrow of time. Use the idea of initial condition tension, comparing low entropy special states with generic high entropy states.”
 
-  * A simple rubric with scores for clarity about entropy, clarity about typicality, and clarity about the law versus boundary condition distinction.
-  * Optionally ask independent readers which answer gives a more precise understanding of the puzzle.
+* Observation:
+  record whether the answer now introduces explicit tension between special and typical states, and whether it distinguishes laws from boundary conditions.
 
-* What to log:
+*Comparison metric:*
 
-  * Prompts, outputs, and any internal estimates of `Tension_IC(m)` or related signals.
-  * This enables later inspection of how Q044 components influenced behavior, without exposing deeper internal rules.
+* A simple rubric with scores for clarity about entropy, clarity about typicality, and clarity about the law versus boundary condition distinction.
+* Optionally ask independent readers which answer gives a more precise understanding of the puzzle.
+
+*What to log:*
+
+* Prompts, outputs, and any internal estimates of `Tension_IC(m)` or related signals.
+* This enables later inspection of how Q044 components influenced behavior, without exposing any deeper TU rules.
 
 ---
 
@@ -686,11 +716,11 @@ This block describes reusable components from Q044 and how they transfer to othe
 
 ### 8.2 Direct reuse targets
 
-1. Q045 (BH_COSMO_H0_TENSION_L3_045)
+1. Q045 (BH_COSMO_LSS_L3_045)
 
    * Reused component: `PhaseSpaceMeasure_Template`.
-   * Why it transfers: Q045 involves questions about how typical our expansion history is, which can be expressed using similar measure choices over possible cosmic trajectories.
-   * What changes: the state space now emphasizes late time expansion and distance ladder parameters instead of initial entropy details.
+   * Why it transfers: Q045 involves questions about how typical given large-scale structure outcomes are, which can be expressed using similar measure choices over possible cosmic trajectories.
+   * What changes: the state space now emphasizes late time clustering and matter power spectra instead of initial entropy details.
 
 2. Q058 (BH_PHYS_MACRO_ARROW_L3_058)
 
@@ -720,8 +750,8 @@ This block describes the current verification levels for Q044 and the next measu
 
 * E_level: E1
 
-  * A coherent effective encoding has been specified, including state space `M_IC`, observables, mismatch quantities, and a core tension functional.
-  * At least two discriminating experiment designs have been sketched with falsification conditions.
+  * A coherent effective encoding has been specified, including state space `M_IC`, observables, mismatch quantities, and a core tension functional `Tension_IC`.
+  * At least two discriminating experiment designs have been sketched with falsification conditions, all tied to the admissible encoding class in Section 3.4 and the tension bands from the TU Tension Scale Charter.
 
 * N_level: N1
 
@@ -736,14 +766,14 @@ To move from E1 toward E2, the following steps are proposed:
 
    * maps a small set of cosmological parameter samples to effective states in `M_IC_reg`,
    * computes `DeltaS_thermo`, `DeltaS_smooth`, `DeltaS_arrow`,
-   * outputs `Tension_IC(m)` profiles.
+   * outputs `Tension_IC(m)` profiles and classifies them into tension bands according to the TU Tension Scale Charter.
 
 2. Construct minimal toy ensembles for two or three initial condition proposals and run an instance of Experiment 2, publishing all assumptions and tension profiles.
 
 Concrete criteria for E2 upgrade:
 
-* There exists code and a public description of how `Tension_IC` is computed from data or model outputs.
-* At least one external group can reproduce the tension profiles for the toy ensembles or simple data based cases.
+* There exists code and a public description of how `Tension_IC` is computed from data or model outputs under at least one admissible encoding instance.
+* At least one external group can reproduce the tension profiles for the toy ensembles or simple data based cases, including band assignments on the shared tension scale.
 
 ### 9.3 Long term role
 
@@ -767,14 +797,14 @@ The visible universe seems to have started off very smooth and very orderly. At 
 * space looks nearly flat,
 * there are only tiny ripples where galaxies will later form.
 
-From the point of view of statistical mechanics this looks strange. If you were allowed to pick any arrangement of the universe that fits the same big constraints (for example total energy), most choices would be messy and high entropy, not smooth and low entropy.
+From the point of view of statistical mechanics this looks strange. If you were allowed to pick any arrangement of the universe that fits the same big constraints, for example total energy, most choices would be messy and high entropy, not smooth and low entropy.
 
 So there is a puzzle:
 
 * Why did the universe begin in a special, low entropy, very smooth state.
 * Why is the arrow of time aligned so that entropy was lower in the past and higher in the future.
 
-In the Tension Universe view we do not try to compute the exact microstate of the Big Bang. Instead we do three things:
+In the Tension Universe view we do not try to compute the exact microstate of the Big Bang. Instead we do three things.
 
 1. We define a space of possible large scale starting points for the universe, and for each such starting point we assign numbers:
 
@@ -784,15 +814,42 @@ In the Tension Universe view we do not try to compute the exact microstate of th
 
 2. We combine these numbers into a single tension value. This value is small for states that look like generic high entropy beginnings, and large for states that look like our very special low entropy start.
 
-3. We then compare two pictures:
+3. We compare different pictures.
 
-   * a picture where low entropy starting points are natural under the rules we use,
-   * a picture where low entropy starting points are incredibly rare and only a tiny corner of the allowed possibilities.
+   * One picture keeps naive ideas about probability and says that high entropy states are typical. In that picture our universe sits in a high tension corner because it started with low entropy.
+   * Another picture changes the way we talk about probability or adds a rule like the Past Hypothesis that simply says the universe began in a low entropy region. In that picture low entropy states can move into lower tension bands.
 
-This does not answer the question of why our universe started the way it did. It does something more modest and more controlled:
+This does not answer the question of why our universe started the way it did. It does something more modest and more controlled.
 
 * It makes the specialness of the initial state precise.
 * It makes the clash between “generic” expectations and the actual universe visible as a tension in well defined quantities.
 * It provides tools that can be reused to judge different cosmological theories and to build AI systems that talk about these issues in a structured way.
 
-Q044 is therefore the node where the low entropy beginning and the arrow of time are represented as a controlled tension problem rather than as vague mystery.
+Q044 is therefore the node where the low entropy beginning and the arrow of time are represented as a controlled tension problem rather than as a vague mystery.
+
+---
+
+## Tension Universe effective-layer footer
+
+This page is part of the **WFGY / Tension Universe** S-problem collection.
+
+### Scope of claims
+
+* The goal of this document is to specify an **effective-layer encoding** of the named problem.
+* It does not claim to prove or disprove the canonical statement in Section 1.
+* It does not introduce any new theorem beyond what is already established in the cited literature.
+* It should not be cited as evidence that the corresponding open problem has been solved.
+
+### Effective-layer boundary
+
+* All objects used here, including state spaces like `M_IC`, observables, invariants, tension scores, and counterfactual “worlds”, live at the effective layer of the TU framework.
+* No assumptions are made public about the existence or uniqueness of deeper TU models that generate these effective encodings.
+* Any change in encoding, measure choice, or tension functional must be documented at this layer and evaluated through experiments of the kind described in Section 6.
+
+### Charter references
+
+The construction and evaluation of this page follow the TU charters:
+
+* [TU Effective Layer Charter](../Charters/TU_EFFECTIVE_LAYER_CHARTER.md)
+* [TU Encoding and Fairness Charter](../Charters/TU_ENCODING_AND_FAIRNESS_CHARTER.md)
+* [TU Tension Scale Charter](../Charters/TU_TENSION_SCALE_CHARTER.md)
