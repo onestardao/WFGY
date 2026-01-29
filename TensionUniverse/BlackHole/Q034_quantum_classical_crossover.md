@@ -1,5 +1,20 @@
 # Q034 · Crossover between quantum and classical regimes
 
+## 0. Effective layer disclaimer
+
+All claims in this entry are made strictly at the effective layer of the Tension Universe (TU) framework.
+
+- The goal of this document is to specify an effective-layer encoding of the canonical quantum-to-classical crossover problem.
+- It does not claim to prove or disprove any foundational statement in quantum theory, decoherence theory or classical mechanics.
+- It does not introduce new theorems beyond what is already established in the cited literature.
+- It should not be cited as evidence that the canonical problem has been solved or that any specific physical scenario has been fully classified.
+
+All TU specific objects in this file (state spaces `M_QC`, encoding libraries `L_QC`, tension functionals, invariants, counterfactual worlds, and AI modules) are effective-layer constructs. They are bookkeeping devices for observable summaries and model comparisons. They are not microscopic ontologies and they do not reveal any hidden TU core dynamics.
+
+Rejection of a particular Q034 encoding or implementation is not equivalent to solving the underlying physics problem. It only means that the rejected encoding is misaligned with the intended effective-layer semantics for this node.
+
+---
+
 ## 0. Header metadata
 
 ```txt
@@ -11,12 +26,14 @@ Rank: S
 Projection_dominance: P
 Field_type: dynamical_field
 Tension_type: thermodynamic_tension
-Status: Reframed_only
-Semantics: continuous
+Status: Encoded_E1
+Semantics: hybrid
 E_level: E1
 N_level: N2
-Last_updated: 2026-01-24
-```
+Last_updated: 2026-01-29
+````
+
+This entry treats the underlying physical fields as continuous, while the TU encoding uses finite and discrete libraries of summaries, resolution levels and encodings. The term "hybrid" in `Semantics` records this combination.
 
 ---
 
@@ -28,21 +45,21 @@ In standard quantum theory, microscopic systems are described by wavefunctions o
 
 The conceptual and technical problem addressed in Q034 is:
 
-> Under what physical, environmental, and informational conditions does the description of a system admit a faithful classical approximation, rather than requiring a fully quantum description, and how does this change across scales?
+> Under what physical, environmental and informational conditions does the description of a system admit a faithful classical approximation, rather than requiring a fully quantum description, and how does this change across scales?
 
 More concretely, Q034 asks for an effective description of the following questions.
 
 1. Given a quantum system coupled to an environment, how does the joint dynamics lead to states that can be approximated by classical probability distributions over a set of preferred variables, often called pointer states or classical observables.
 
-2. Is there a meaningful notion of a crossover scale or set of scales where quantum coherence becomes operationally irrelevant for macroscopic observables. This can be a sharp crossover or a gradual one.
+2. Is there a meaningful notion of a crossover scale or set of scales where quantum coherence becomes operationally irrelevant for macroscopic observables. This crossover may be sharp or gradual.
 
-3. How should the crossover be quantified, in terms of observable quantities such as interference visibility, decoherence times, entropy production, and information flow between system and environment.
+3. How should the crossover be quantified in terms of observable quantities such as interference visibility, decoherence times, entropy production and information flow between system and environment.
 
-Q034 does not modify the axioms of quantum theory. It focuses on the effective description of when classical reasoning is adequate and how this depends on coupling to an environment, coarse graining, and scale.
+Q034 does not modify the axioms of quantum theory. It focuses on the effective description of when classical reasoning is adequate and how this depends on coupling to an environment, coarse graining and scale.
 
 ### 1.2 Status and difficulty
 
-The basic mechanisms of decoherence and environment induced superselection are well understood in many models, and there is a large literature on how classical behavior emerges from quantum dynamics in open systems. However, there is no single universally accepted quantitative definition of a crossover scale from quantum to classical behavior that works across all domains.
+The basic mechanisms of decoherence and environment induced superselection are well understood in many models, and there is a large literature on how classical behavior emerges from quantum dynamics in open systems. However there is no single universally accepted quantitative definition of a crossover scale from quantum to classical behavior that works across all domains.
 
 Known facts and partial results include:
 
@@ -51,7 +68,7 @@ Known facts and partial results include:
 * In macroscopic condensed matter systems, some degrees of freedom retain quantum coherence, while others behave classically. The criteria for this split are still the subject of active research.
 * There are ongoing experiments that probe quantum coherence in increasingly massive and complex systems, such as levitated nanoparticles and mechanical resonators, which test the limits of classicality.
 
-The difficulty in Q034 arises from the need to unify these phenomena into a single effective framework that treats system, environment, scale, and information flow in a coherent way, without claiming a new underlying microscopic theory.
+The difficulty in Q034 arises from the need to unify these phenomena into a single effective framework that treats system, environment, scale and information flow in a coherent way, without claiming a new underlying microscopic theory.
 
 ### 1.3 Role in the BlackHole project
 
@@ -60,11 +77,12 @@ Within the BlackHole S-problem collection, Q034 plays several roles.
 1. It is the canonical node for problems where microscopic quantum dynamics and macroscopic classical observables must be related through open system dynamics and coarse graining.
 
 2. It provides the main template for using tension between two descriptions of the same system:
+
    * a microscopic quantum description, and
    * a macroscopic classical description,
-   both coupled to an explicit environment.
+     both coupled to an explicit environment.
 
-3. It connects to problems in quantum thermodynamics, quantum measurement, macroscopic coherence, and information processing. Many other nodes reuse the tools and observables defined here.
+3. It connects to problems in quantum thermodynamics, quantum measurement, macroscopic coherence and information processing. Many other nodes reuse the tools and observables defined here.
 
 ### References
 
@@ -73,66 +91,68 @@ Within the BlackHole S-problem collection, Q034 plays several roles.
 3. M. Schlosshauer, "Decoherence and the Quantum-To-Classical Transition", Springer, 2007.
 4. A. J. Leggett, "Macroscopic quantum systems and the quantum theory of measurement", Progress of Theoretical Physics Supplement, 69, 80–100, 1980.
 
+Citations in this entry are indicative and not exhaustive. Detailed bibliographic choices are handled at the project level.
+
 ---
 
 ## 2. Position in the BlackHole graph
 
-This block records how Q034 sits in the BlackHole graph. Edges are listed with one line reasons that point to concrete components or tension types.
+This block records how Q034 sits in the BlackHole graph. Edges are listed with one line reasons that point to concrete components or tension types at the effective layer.
 
 ### 2.1 Upstream problems
 
 These nodes supply prerequisites and tools at the effective layer.
 
-* Q032 (BH_PHYS_QTHERMO_L3_032)  
+* Q032 (BH_PHYS_QTHERMO_L3_032)
   Reason: Provides dynamical and thermodynamic field structure for open quantum systems and heat flow, which Q034 reuses to describe system environment interactions during crossover.
 
-* Q039 (BH_PHYS_QTURBULENCE_L3_039)  
+* Q039 (BH_PHYS_QTURBULENCE_L3_039)
   Reason: Supplies examples of complex multi scale quantum fields that motivate how crossover may depend on scale and environment structure.
 
-* Q016 (BH_MATH_ZFC_CH_L3_016)  
-  Reason: Anchors the continuum and probability structures used to encode dynamical fields, decoherence maps, and coarse grained distributions.
+* Q016 (BH_MATH_ZFC_CH_L3_016)
+  Reason: Anchors the continuum and probability structures used to encode dynamical fields, decoherence maps and coarse grained distributions.
 
 ### 2.2 Downstream problems
 
 These nodes directly reuse Q034 components.
 
-* Q035 (BH_PHYS_QMETROLOGY_LIMIT_L3_035)  
+* Q035 (BH_PHYS_QMETROLOGY_LIMIT_L3_035)
   Reason: Reuses Q034 tension functionals to define when quantum advantages survive at mesoscopic and macroscopic scales in precision measurements.
 
-* Q036 (BH_PHYS_HIGH_TC_MECH_L3_036)  
+* Q036 (BH_PHYS_HIGH_TC_MECH_L3_036)
   Reason: Uses Q034 crossover maps to describe when collective excitations retain quantum coherence in macroscopic phases and when they can be treated classically.
 
-* Q040 (BH_PHYS_QBLACKHOLE_INFO_L3_040)  
+* Q040 (BH_PHYS_QBLACKHOLE_INFO_L3_040)
   Reason: Reuses open system tension tools from Q034 to study when near horizon physics behaves classically and when quantum coherence and information flow must be tracked explicitly.
 
 ### 2.3 Parallel problems
 
 Parallel nodes share similar tension types but do not reuse components directly.
 
-* Q032 (BH_PHYS_QTHERMO_L3_032)  
+* Q032 (BH_PHYS_QTHERMO_L3_032)
   Reason: Both Q032 and Q034 involve thermodynamic_tension in open systems, although Q032 focuses on heat and work while Q034 focuses on emergence of classical trajectories.
 
-* Q031 (BH_PHYS_EFT_GRAVITY_L3_031)  
-  Reason: Both require scale dependent effective descriptions, where microscopic quantum degrees of freedom are replaced by classical fields at large scales.
+* Q031 (BH_PHYS_EFT_GRAVITY_L3_031)
+  Reason: Both require scale dependent effective descriptions where microscopic quantum degrees of freedom are replaced by classical fields at large scales.
 
 ### 2.4 Cross domain edges
 
 Cross domain edges connect Q034 to nodes in other domains that can reuse its components.
 
-* Q059 (BH_CS_INFO_THERMODYN_L3_059)  
+* Q059 (BH_CS_INFO_THERMODYN_L3_059)
   Reason: Reuses Q034 style tension between microscopic stochastic dynamics and macroscopic information flow constraints to describe crossover from detailed dynamics to coarse thermodynamic descriptions.
 
-* Q123 (BH_AI_INTERP_L3_123)  
+* Q123 (BH_AI_INTERP_L3_123)
   Reason: Adapts the Q034 crossover template to interpret when internal AI states can be treated as classical variables versus superposed hypotheses.
 
-* Q001 (BH_MATH_NUM_L3_001)  
+* Q001 (BH_MATH_NUM_L3_001)
   Reason: Uses the conceptual pattern of tension between microscopic structure and macroscopic observables to frame spectral versus prime distribution crossover, by analogy with quantum classical transitions.
 
 ---
 
 ## 3. Tension Universe encoding (effective layer)
 
-All content in this block is at the effective layer. We describe state spaces, observables, functionals, invariants, and singular sets. We do not describe any hidden generative rules or mappings from raw data to internal fields.
+All content in this block is at the effective layer. We describe state spaces, observables, functionals, invariants and singular sets. We do not describe any hidden generative rules or mappings from raw experimental data to internal TU fields. Those mappings live in project level implementations that follow the TU Effective Layer Charter.
 
 ### 3.1 State space and finite encoding library
 
@@ -142,15 +162,18 @@ We postulate a state space
 M_QC
 ```
 
-where each element `m` in `M_QC` is a coherent configuration describing a quantum system, its environment, and a chosen coarse graining.
+where each element `m` in `M_QC` is a coherent configuration describing a quantum system, its environment and a chosen coarse graining.
 
 At the effective layer, each `m` contains:
 
 * System summary:
-  * A small set of variables that identify the system type and relevant degrees of freedom, for example mass, size, relevant modes.
+
+  * A small set of variables that identify the system type and relevant degrees of freedom, for example mass, size and relevant modes.
 * Environment summary:
-  * A small set of variables that capture effective temperature, coupling strength, and correlation properties of the environment.
+
+  * A small set of variables that capture effective temperature, coupling strength and correlation properties of the environment.
 * Resolution summary:
+
   * A finite list of resolution levels that indicate how finely system and environment are being described.
 
 We introduce a finite library of encodings:
@@ -167,15 +190,25 @@ Each encoding `E_k` specifies:
   R_k = { r_k(1), r_k(2), ..., r_k(J_k) }
   ```
 
-  where `r_k(j)` labels a resolution level, for example in time, length, or energy.
+  where `r_k(j)` labels a resolution level, for example in time, length or energy.
 
 * A fixed set of summary maps for each resolution level. These maps take microscopic descriptions (not specified here) to effective observables.
 
+We denote by
+
+```txt
+Enc_QC
+```
+
+the admissible encoding class for Q034. It is the subset of TU encodings that use `L_QC`, the resolution sets `R_k` and the fixed catalogue of functionals described in this section. `Enc_QC` is constrained by the TU Encoding and Fairness Charter and does not include any project specific tricks that depend on particular datasets.
+
 Fairness rule:
 
-* For a given experimental or theoretical setup, the choice of encoding `E_k` from `L_QC` must be fixed before looking at detailed outcomes.
+* For a given experimental or theoretical setup, the choice of encoding `E_k` in `L_QC` must be fixed before looking at detailed outcomes.
 * No encoding is allowed to depend on the observed pattern of decoherence or interference in a way that is tuned per dataset.
 * All encodings in `L_QC` and all resolution levels in each `R_k` are defined in advance and are part of the problem specification.
+
+The hybrid nature of Q034 is reflected here. The underlying physical fields are treated as continuous, but all encodings and libraries are finite and discrete.
 
 ### 3.2 Effective fields and observables
 
@@ -190,7 +223,7 @@ Q_struct(m; k, r)
 ```
 
 * Input: state `m`, encoding index `k`, resolution level `r`.
-* Output: a finite vector of summary statistics that capture quantum features at that scale, such as coherence between selected basis states, entanglement indicators between subsystems, and spectral features of the reduced density operator.
+* Output: a finite vector of summary statistics that capture quantum features at that scale, such as coherence between selected basis states, entanglement indicators between subsystems and spectral features of the reduced density operator.
 * Nonnegativity or boundedness is assumed where relevant. Exact ranges are not needed for this effective description.
 
 2. Classical structure observable
@@ -200,7 +233,7 @@ C_struct(m; k, r)
 ```
 
 * Input: state `m`, encoding index `k`, resolution level `r`.
-* Output: a finite vector that summarises approximate classical features at that scale, such as approximate phase space distributions, stable pointer states, or effective trajectories.
+* Output: a finite vector that summarises approximate classical features at that scale, such as approximate phase space distributions, stable pointer states or effective trajectories.
 
 3. Environment coupling observable
 
@@ -209,7 +242,7 @@ Env_coupling(m; k, r)
 ```
 
 * Input: state `m`, encoding index `k`, resolution level `r`.
-* Output: a finite vector of parameters describing effective coupling between system and environment, such as decoherence rate estimates, spectral densities, or correlation times.
+* Output: a finite vector of parameters describing effective coupling between system and environment, such as decoherence rate estimates, spectral densities or correlation times.
 
 4. Quantum mismatch observable
 
@@ -267,9 +300,13 @@ DeltaS_QC(m; k, r) =
 
 This combined mismatch is nonnegative and reflects the joint effect of quantum coherence loss and environment mismatch at scale `r` under encoding `E_k`.
 
+The catalogue of functionals that define `Q_struct`, `C_struct`, `Env_coupling`, `DeltaS_Q` and `DeltaS_env` is finite and is attached to `L_QC`. The mathematical details of this catalogue are fixed at project level and are not unfolded in this file. No new functional may be introduced after observing experimental outcomes in order to reduce tension.
+
 ### 3.3 Effective tension tensor components
 
-We reuse the TU core pattern for constructing an effective tension tensor. For each state `m` in `M_QC`, encoding `E_k`, and resolution level `r` in `R_k`, we define:
+We now construct an effective tension tensor that follows a generic TU tension pattern without exposing any TU core dynamics.
+
+For each state `m` in `M_QC`, encoding `E_k` and resolution level `r` in `R_k`, we define:
 
 ```txt
 T_ij(m; k, r) =
@@ -282,17 +319,15 @@ T_ij(m; k, r) =
 
 where:
 
-* `S_i(m; k, r)` is a source factor representing how strongly the ith semantic or physical source demands accurate quantum or classical behavior at that scale. For example, some tasks are highly sensitive to phase information, others are not.
-
-* `C_j(m; k, r)` is a receptivity factor describing how sensitive the jth observer, measurement device, or downstream process is to mismatches between quantum and classical descriptions at that scale.
-
+* `S_i(m; k, r)` is a source factor that represents how strongly the ith semantic or physical source demands accurate quantum or classical behavior at that scale. Some tasks are highly sensitive to phase information, others are not.
+* `C_j(m; k, r)` is a receptivity factor that describes how sensitive the jth observer, measurement device or downstream process is to mismatches between quantum and classical descriptions at that scale.
 * `DeltaS_QC(m; k, r)` is the combined mismatch defined above.
+* `lambda_QC(m; k, r)` is a convergence state indicator that lies in a fixed bounded interval and encodes whether the quantum classical description at that scale is converging, marginal or diverging.
+* `kappa_QC` is a fixed coupling constant for Q034, chosen as part of the encoding. It sets the overall scale of quantum classical tension for this node and is not tuned per dataset.
 
-* `lambda_QC(m; k, r)` is a convergence state indicator that lies in a fixed bounded interval and encodes whether the quantum classical description at that scale is converging, marginal, or diverging.
+The index ranges for `i` and `j` are finite and part of the encoding specification. For any fixed encoding and resolution, `T_ij(m; k, r)` is well defined and finite for all relevant indices.
 
-* `kappa_QC` is a fixed coupling constant for Q034, chosen as part of the encoding. It sets the overall scale of quantum classical tension and is not tuned per dataset.
-
-The exact index sets for `i` and `j` are not specified here. It is sufficient that for any fixed encoding and resolution, `T_ij(m; k, r)` is well defined and finite for all relevant indices.
+At scalar level, Q034 uses a thermodynamic_tension functional `Tension_QC` which can be seen as a contraction of `T_ij` against fixed source and observer selectors specified in the TU Tension Scale Charter. This scalar form is defined in Section 4.
 
 ### 3.4 Invariants and effective constraints
 
@@ -329,7 +364,7 @@ This invariant measures how much tension remains at the most classical resolutio
 
 We expect:
 
-* In scenarios where a classical description is adequate at macroscopic scales, there exist encodings for which `I_macro(m; k)` lies in a low band, and the profile shows a pattern consistent with a crossover.
+* In scenarios where a classical description is adequate at macroscopic scales, there exist encodings for which `I_macro(m; k)` lies in a low band and the profile shows a pattern consistent with a crossover.
 * In scenarios where quantum effects remain operationally important even at large scales, `I_macro(m; k)` cannot be made small for any reasonable encoding that respects the fairness constraints.
 
 ### 3.5 Singular set and domain restrictions
@@ -354,17 +389,17 @@ M_QC_reg = M_QC \ S_sing_QC
 Rules:
 
 * When an experiment or protocol attempts to evaluate `DeltaS_QC(m; k, r)` for a state in `S_sing_QC`, the outcome is labelled "out of domain".
-* Out of domain results are not counted as evidence for or against any specific crossover scenario. They are used instead to refine the encoding library or exclude inappropriate state descriptions.
+* Out of domain results are not counted as evidence for or against any specific crossover scenario. They are used instead to refine the encoding library or exclude inappropriate state descriptions, in line with the TU Effective Layer Charter.
 
 ---
 
 ## 4. Tension principle for this problem
 
-This block states how Q034 is characterised as a tension problem.
+This block states how Q034 is characterised as a tension problem. At scalar level the relevant thermodynamic_tension functional is `Tension_QC`.
 
 ### 4.1 Core tension functional and fairness constraints
 
-For each state `m` in `M_QC_reg`, encoding index `k`, and resolution level `r` in `R_k`, we define the core quantum classical tension:
+For each state `m` in `M_QC_reg`, encoding index `k` and resolution level `r` in `R_k`, we define the core quantum classical tension:
 
 ```txt
 Tension_QC(m; k, r) =
@@ -372,7 +407,7 @@ Tension_QC(m; k, r) =
   a_env(k) * DeltaS_env(m; k, r)
 ```
 
-The constraints on weights are:
+with weight constraints:
 
 ```txt
 a_Q(k) > 0
@@ -383,10 +418,12 @@ a_Q(k) + a_env(k) = 1
 Fairness constraints:
 
 * The weights `a_Q(k)` and `a_env(k)` are part of the encoding `E_k`. They are fixed in advance and are not tuned per dataset.
-* The functionals used to build `DeltaS_Q` and `DeltaS_env` come from a finite catalogue attached to `L_QC`. The catalogue is part of the problem definition.
-* No new functionals may be introduced after observing the outcomes of experiments or simulations in order to artificially reduce tension.
+* The functionals used to build `DeltaS_Q` and `DeltaS_env` come from a finite catalogue attached to `L_QC`. This catalogue is part of the problem definition and is not expanded after seeing data.
+* No new functional may be introduced after observing the outcomes of experiments or simulations in order to artificially reduce tension.
 
-Under these rules, `Tension_QC` is a nonnegative scalar that rates the internal consistency between quantum dynamics, environment statistics, and the existence of an approximate classical description at scale `r` for encoding `E_k`.
+Under these rules, `Tension_QC` is a nonnegative scalar that rates the internal consistency between quantum dynamics, environment statistics and the existence of an approximate classical description at scale `r` for encoding `E_k`. These constraints implement the general TU Encoding and Fairness Charter for Q034.
+
+At tensor level, `Tension_QC` can be viewed as the contraction of `T_ij` against a fixed choice of source and observer selectors, as described in the TU Tension Scale Charter, but this contraction is not unfolded further in this file.
 
 ### 4.2 Crossover scenarios in tension language
 
@@ -407,11 +444,11 @@ There exist encodings `E_k` and states `m` such that:
 * `Tension_QC(m; k, r)` decreases slowly across many resolution levels, with no single scale where a dramatic change occurs.
 * The sharpness indicator `I_sharp(m; k)` remains modest across all adjacent resolution pairs, while `I_macro(m; k)` still drops into a low band at the most classical resolutions.
 
-Q034 does not assert that only one of these scenarios exists in the universe. Instead, it frames the problem of identifying which physical systems, environments, and tasks follow which tension pattern, and how to express this in terms of observable quantities.
+Q034 does not assert that only one of these scenarios exists in the universe. Instead, it frames the problem of identifying which physical systems, environments and tasks follow which tension pattern and how to express this in terms of observable quantities.
 
 ### 4.3 Refinement order and stability under increased resolution
 
-We encode refinement across a discrete index `n` as follows. For a given encoding `E_k`, consider a sequence of enlarged data sets or improved models indexed by `n = 1, 2, 3, ...`. Each step in `n` refines the summaries entering `Q_struct`, `C_struct`, and `Env_coupling`.
+We encode refinement across a discrete index `n` as follows. For a given encoding `E_k`, consider a sequence of enlarged data sets or improved models indexed by `n = 1, 2, 3, ...`. Each step in `n` refines the summaries entering `Q_struct`, `C_struct` and `Env_coupling`.
 
 We denote the refined states by:
 
@@ -427,13 +464,13 @@ We require that for each fixed resolution level `r` in `R_k`:
 limsup as n -> infinity of Tension_QC(m(n); k, r)
 ```
 
-exists and is finite, or diverges in a controlled way that can be identified as a sign of inconsistency. This constraint ensures that the notion of a crossover pattern is not an artefact of a particular low resolution model, and that tension profiles remain interpretable as resolution improves.
+exists and is finite, or diverges in a controlled way that can be identified as a sign of inconsistency. This constraint ensures that the notion of a crossover pattern is not an artefact of a particular low resolution model and that tension profiles remain interpretable as resolution improves.
 
 ---
 
 ## 5. Counterfactual tension worlds
 
-We now describe counterfactual worlds at the effective layer. They differ in how tension behaves, not in any microscopic theory.
+We now describe counterfactual worlds at the effective layer. They differ in how tension behaves, not in any microscopic theory or ontology. The labels used here are local to Q034 and do not define global TU world types.
 
 ### 5.1 World S: sharp crossover world
 
@@ -476,71 +513,74 @@ In World A:
 
 3. The invariants `I_sharp` and `I_macro` are not sufficient to describe the crossover. Additional pattern measures would be needed to capture the anomalous behavior.
 
-World A serves as an effective layer reminder that real quantum classical transitions may involve more complex patterns than simple sharp or gradual scenarios, and that encodings must be tested against such possibilities.
+World S, World G and World A are effective-layer conceptual tools for reading tension patterns. They do not assert any particular microscopic ontology or commit Q034 to a specific world type in real physics.
 
 ---
 
 ## 6. Falsifiability and discriminating experiments
 
-This block specifies experiments and protocols that can test the Q034 encoding. They can falsify specific choices of encodings and functionals, but they do not prove or disprove quantum theory.
+This block specifies experiments and protocols that can test the Q034 encoding. They can falsify specific choices of encodings and functionals in `Enc_QC`, but they do not prove or disprove quantum theory and they do not decide which counterfactual world label best describes the actual universe.
 
 ### Experiment 1: Mesoscopic interference under controlled decoherence
 
-*Goal:*  
-Test whether a given encoding library `L_QC` and the associated `Tension_QC` functional can correctly track the disappearance of interference as environment coupling is increased for mesoscopic objects.
+*Goal:*
+Test whether a given encoding library `L_QC` and the associated `Tension_QC` functional can correctly track the disappearance of interference as environment coupling is increased for mesoscopic objects. This experiment probes the behaviour of Q034 encodings and does not attempt to solve the canonical crossover problem itself.
 
 *Setup:*
 
 * Select a family of mesoscopic systems, for example fullerene interference or small mechanical resonators.
-* For each system, design an interference experiment with a tunable environment parameter, such as gas pressure, temperature, or electromagnetic noise.
+* For each system, design an interference experiment with a tunable environment parameter, such as gas pressure, temperature or electromagnetic noise.
 * Fix in advance:
+
   * an encoding `E_k` in `L_QC`,
   * the weights `a_Q(k)` and `a_env(k)`,
-  * the functionals that define `DeltaS_Q` and `DeltaS_env`.
+  * the functionals that define `DeltaS_Q` and `DeltaS_env` from observed summaries.
 
 *Protocol:*
 
 1. Prepare the mesoscopic system in a superposition that can produce a clear interference pattern at low environment coupling.
 2. For a sequence of environment settings, perform the interference experiment and record:
+
    * visibility of the interference pattern,
    * decoherence time estimates,
    * environment characteristics.
 3. For each environment setting, construct a state `m_data` in `M_QC_reg` that encodes the observed summary statistics at a fixed set of resolution levels `R_k`.
 4. Compute `DeltaS_Q(m_data; k, r)` and `DeltaS_env(m_data; k, r)` for all `r` in `R_k`, then `Tension_QC(m_data; k, r)`.
 5. Plot the tension profile `Profile_QC(m_data; k)` as environment coupling increases.
-6. Compare the observed profile to the expectations of World S and World G.
+6. Compare the observed profile to the expectations of World S, World G and World A as pattern templates.
 
 *Metrics:*
 
 * Correlation between interference visibility and `Tension_QC` at the most relevant resolution levels.
 * Shape of `Profile_QC` as a function of environment parameter.
-* Whether the sharpness indicator `I_sharp(m_data; k)` increases in a way consistent with a crossover.
+* Whether the sharpness indicator `I_sharp(m_data; k)` increases in a way consistent with a crossover, and whether `I_macro(m_data; k)` behaves as expected.
 
 *Falsification conditions:*
 
-* If, over a wide range of environment parameters, `Tension_QC(m_data; k, r)` fails to track the disappearance of interference in any coherent way, and small modifications of the encoding within the fixed catalogue do not improve this, then the chosen encoding `E_k` and functional family are considered falsified.
+* If, over a wide range of environment parameters, `Tension_QC(m_data; k, r)` fails to track the disappearance of interference in any coherent way, and small modifications of the encoding within the fixed catalogue do not improve this, then the chosen encoding `E_k` and functional family are considered falsified for Q034.
 * If `Tension_QC` remains low even when interference visibility has clearly vanished, for all plausible choices of summary statistics allowed by the encoding, the encoding is judged misaligned with the intended physical content of Q034.
 
-*Semantics implementation note:*  
-All observables in this experiment are implemented using continuous time and continuous configuration space models, approximated numerically where necessary. The implementation uses discretisations only as numerical devices, not as changes in the underlying field type.
+*Semantics implementation note:*
+All observables in this experiment are implemented using continuous time and continuous configuration space models, approximated numerically where necessary. The implementation uses discretisations only as numerical devices. They do not alter the underlying field type declared in the metadata.
 
-*Boundary note:*  
-Falsifying TU encoding != solving canonical statement. This experiment can reject specific Q034 encodings but does not resolve whether the universe is closer to World S, World G, or World A in all regimes.
+*Boundary note:*
+Falsifying a particular Q034 encoding in this experiment does not solve the canonical problem and does not show that the universe is in any specific counterfactual world. It only indicates that the tested encoding is not an adequate effective-layer representation for this node.
 
 ---
 
 ### Experiment 2: Macroscopic superposition tests with optomechanical systems
 
-*Goal:*  
-Assess whether Q034 encodings can distinguish between scenarios where macroscopic superpositions are practically forbidden and scenarios where they remain, in principle, observable.
+*Goal:*
+Assess whether Q034 encodings can distinguish between scenarios where macroscopic superpositions are practically forbidden and scenarios where they remain in principle observable. As in Experiment 1, the goal is to test encodings and pattern sensitivity rather than to decide the final physical status of macroscopic superpositions.
 
 *Setup:*
 
 * Consider an optomechanical system such as a levitated nanoparticle or a mechanical mirror capable of being placed in a spatial superposition.
 * Design a protocol to generate and test such superpositions under different isolation and cooling conditions.
 * Fix in advance:
+
   * an encoding `E_k` that includes resolution levels covering the scale of the optomechanical device,
-  * weights and functionals for `DeltaS_Q`, `DeltaS_env`, and `Tension_QC`.
+  * weights and functionals for `DeltaS_Q`, `DeltaS_env` and `Tension_QC`.
 
 *Protocol:*
 
@@ -559,20 +599,20 @@ Assess whether Q034 encodings can distinguish between scenarios where macroscopi
 
 *Falsification conditions:*
 
-* If there exist conditions where strong coherence signatures are observed but the encoding predicts high `Tension_QC` at all relevant scales, then the encoding is misaligned.
+* If there exist conditions where strong coherence signatures are observed but the encoding predicts high `Tension_QC` at all relevant scales, then the encoding is misaligned with the intended semantics of Q034.
 * If the encoding predicts very low `Tension_QC` at macroscopic scales for systems where experimental protocols show no possibility of superposition even under extreme isolation, then the encoding is judged incomplete or misleading.
 
-*Semantics implementation note:*  
-The same continuous field type used in the metadata is applied here. Numerical discretisations and approximations are only used to compute observable summaries; they do not alter the conceptual status of the fields.
+*Semantics implementation note:*
+The same continuous field type used in the metadata is applied here. Numerical discretisations and approximations are used only to compute observable summaries. They do not alter the conceptual status of the fields.
 
-*Boundary note:*  
-Falsifying TU encoding != solving canonical statement. This experiment tests the usefulness of Q034 encodings; it does not establish a universal limit on macroscopic quantum behavior.
+*Boundary note:*
+Falsifying or refining a Q034 encoding based on this experiment does not prove or disprove quantum theory. It does not establish a universal limit on macroscopic quantum behavior. It only tests the usefulness and robustness of the Q034 effective-layer encoding.
 
 ---
 
 ## 7. AI and WFGY engineering spec
 
-This block describes how Q034 enters AI and WFGY systems as an engineering module.
+This block describes how Q034 enters AI and WFGY systems as an engineering module, still at the effective layer. All signals and modules described here are functions of effective summaries such as `Tension_QC` and do not expose any TU core dynamics or claim new physical laws.
 
 ### 7.1 Training signals
 
@@ -590,7 +630,7 @@ We define several training signals that use Q034 tension concepts.
 
 3. `signal_crossover_consistency`
 
-   * Definition: a penalty for inconsistent descriptions of the same physical scenario when prompts switch between "fully quantum", "effective classical", and "intermediate" descriptions.
+   * Definition: a penalty for inconsistent descriptions of the same physical scenario when prompts switch between "fully quantum", "effective classical" and "intermediate" descriptions.
    * Purpose: enforce a coherent internal tension profile across prompts that differ in wording but describe the same physical setup.
 
 4. `signal_mode_selection_clarity`
@@ -604,15 +644,17 @@ We outline patterns that reuse Q034 components.
 
 1. `QC_Mode_Switcher`
 
-   * Role: given a description of a physical system and environment, output a soft decision indicating whether the downstream reasoning should treat the system in a quantum mode, classical mode, or mixed mode.
+   * Role: given a description of a physical system and environment, output a soft decision indicating whether the downstream reasoning should treat the system in a quantum mode, classical mode or mixed mode.
    * Interface:
-     * Inputs: text or structured description embeddings that include system type, scale, environment, and task sensitivity.
+
+     * Inputs: text or structured description embeddings that include system type, scale, environment and task sensitivity.
      * Outputs: a small vector of mode weights, for example `[p_quantum, p_classical, p_mixed]`, and an internal estimate of `Tension_QC`.
 
 2. `QC_Tension_Head`
 
    * Role: provide an auxiliary head on top of an AI model that estimates `Tension_QC(m; k, r)` at one or more conceptual scales from the internal representation.
    * Interface:
+
      * Inputs: intermediate model states and optional scale indicators.
      * Outputs: estimated tension values and decomposed contributions from `DeltaS_Q` and `DeltaS_env`.
 
@@ -620,6 +662,7 @@ We outline patterns that reuse Q034 components.
 
    * Role: post process candidate explanations about quantum experiments to ensure that statements about classicality are compatible with the tension profile produced by `QC_Tension_Head`.
    * Interface:
+
      * Inputs: candidate explanation text and associated tension estimates.
      * Outputs: filtered or annotated explanations indicating where assumptions about classical behaviour are consistent or inconsistent.
 
@@ -630,6 +673,7 @@ We propose an evaluation harness for AI models that incorporate Q034 components.
 1. Task selection
 
    * Include questions and scenarios from:
+
      * decoherence experiments,
      * quantum measurement discussions,
      * macroscopic quantum phenomena,
@@ -638,9 +682,11 @@ We propose an evaluation harness for AI models that incorporate Q034 components.
 2. Conditions
 
    * Baseline condition:
+
      * The model operates without explicit Q034 modules or training signals.
    * TU condition:
-     * The model uses `QC_Mode_Switcher` and `QC_Tension_Head`, with training signals described above.
+
+     * The model uses `QC_Mode_Switcher` and `QC_Tension_Head` with training signals described above.
 
 3. Metrics
 
@@ -649,6 +695,8 @@ We propose an evaluation harness for AI models that incorporate Q034 components.
    * Frequency of self consistent explanations of why classical approximations are adequate or inadequate in each scenario.
    * Reduction in contradictions when the model is asked to reason both from a "quantum first" and a "classical first" perspective about the same system.
 
+These metrics evaluate internal consistency, clarity and robustness in model explanations. They do not certify discovery of new physical principles about the quantum classical crossover.
+
 ### 7.4 60 second reproduction protocol
 
 This protocol allows external users to experience Q034 style improvements without access to internal implementation details.
@@ -656,6 +704,7 @@ This protocol allows external users to experience Q034 style improvements withou
 *Baseline setup:*
 
 * Prompt an AI system with questions such as:
+
   * "Explain why a thrown baseball behaves classically but an electron does not."
   * "Explain why interference is hard to observe for large objects."
 * The model answers without any explicit mention of tension scores or crossovers.
@@ -663,6 +712,7 @@ This protocol allows external users to experience Q034 style improvements withou
 *TU encoded setup:*
 
 * Use similar prompts, but ask the model to:
+
   * identify the relevant system and environment scales,
   * state whether it is using a quantum or classical description,
   * mention a qualitative tension measure between the two descriptions.
@@ -670,6 +720,7 @@ This protocol allows external users to experience Q034 style improvements withou
 *Comparison metric:*
 
 * Human evaluators rate:
+
   * clarity of when classical approximations are used,
   * explicitness of environment roles,
   * internal consistency across related prompts.
@@ -677,8 +728,10 @@ This protocol allows external users to experience Q034 style improvements withou
 
 *What to log:*
 
-* Prompts, answers, and, when accessible, auxiliary tension estimates.
-* This log can be shared without exposing any hidden generative rules of the Tension Universe.
+* Prompts, answers and, when accessible, auxiliary tension estimates.
+* This log can be shared without exposing any hidden TU generative mechanism.
+
+This protocol is an illustration tool. It helps users see how Q034 style encodings change explanations, but it does not claim that the AI system has gained new physical insight beyond its training data and explicit encodings.
 
 ---
 
@@ -692,15 +745,19 @@ This block describes reusable components produced by Q034 and how they transfer.
 
    * Type: functional
    * Minimal interface:
+
      * Inputs:
+
        * `Q_struct_summary`
        * `C_struct_summary`
        * `Env_coupling_summary`
        * encoding identifier `k`
        * resolution level `r`
      * Output:
+
        * `tension_value_QC` (nonnegative scalar)
    * Preconditions:
+
      * Inputs are derived from a state in `M_QC_reg` under an encoding `E_k` in `L_QC`.
      * The resolution level `r` is in `R_k`.
 
@@ -708,13 +765,17 @@ This block describes reusable components produced by Q034 and how they transfer.
 
    * Type: observable
    * Minimal interface:
+
      * Inputs:
+
        * a state in `M_QC_reg`,
        * encoding identifier `k`,
        * a finite ordered list of resolution levels from `R_k`.
      * Output:
+
        * a finite list of pairs `(r, Tension_QC_value)` forming a tension profile.
    * Preconditions:
+
      * All requested resolution levels are allowed by the encoding.
      * The state provides enough summary data to compute `Tension_QC` at each level.
 
@@ -722,13 +783,17 @@ This block describes reusable components produced by Q034 and how they transfer.
 
    * Type: ai_module
    * Minimal interface:
+
      * Inputs:
+
        * task description,
        * system and environment descriptors,
        * optional partial tension profile.
      * Outputs:
+
        * a soft mode decision vector `[p_quantum, p_classical, p_mixed]`.
    * Preconditions:
+
      * The task description and descriptors are sufficient to map the scenario to a state in `M_QC_reg` under some encoding.
 
 ### 8.2 Direct reuse targets
@@ -736,52 +801,62 @@ This block describes reusable components produced by Q034 and how they transfer.
 1. Q035 (Quantum metrology limits)
 
    * Reused components:
+
      * `QC_Tension_Functional`
      * `QC_Scale_Profile`
    * Why it transfers:
+
      * Quantum metrology performance depends on the preservation of quantum coherence and on environment induced noise at relevant scales. Q034 tension profiles can be used to determine which degrees of freedom still exhibit low tension and can support quantum advantages.
    * What changes:
+
      * The summary inputs emphasise sensitivity to phase and entanglement relevant to estimation tasks, and resolution levels are chosen around operating frequencies and probe sizes.
 
 2. Q036 (High temperature superconductivity mechanism)
 
    * Reused components:
+
      * `QC_Scale_Profile`
    * Why it transfers:
+
      * Collective excitations in superconductors move from quantum dominated behaviour at microscopic scales to more classical or incoherent behaviour at higher temperatures and larger length scales. The Q034 scale profile can describe this transition.
    * What changes:
-     * System descriptors are now lattice, pairing, and many body parameters rather than simple mesoscopic particles, and environment descriptors capture phonons and other excitations.
+
+     * System descriptors focus on lattice, pairing and many body parameters rather than simple mesoscopic particles. Environment descriptors capture phonons and other excitations.
 
 3. Q059 (Information thermodynamics)
 
    * Reused components:
+
      * `QC_Tension_Functional`
      * `QC_Mode_Selector`
    * Why it transfers:
+
      * In information thermodynamics, it is important to know when information processing can be modelled classically and when genuinely quantum features such as superposition and entanglement are essential. Q034 modules can act as a gate between classical and quantum thermodynamic descriptions.
    * What changes:
-     * The environment summaries include feedback control and measurement channels, and tension scores focus on consistency between information flow models and physical constraints.
+
+     * Environment summaries include feedback control and measurement channels, and tension scores focus on consistency between information flow models and physical constraints.
 
 ---
 
 ## 9. TU roadmap and verification levels
 
-This block explains the current verification levels and next steps.
+This block explains the current verification levels and next steps. All steps are framed at the effective layer and do not introduce any new microscopic assumptions beyond those in the cited literature.
 
 ### 9.1 Current levels
 
 * E_level: E1
 
   * There is a coherent effective encoding of quantum classical crossover in terms of:
+
     * a finite encoding library `L_QC`,
     * well defined mismatch observables `DeltaS_Q` and `DeltaS_env`,
-    * a core tension functional `Tension_QC`,
+    * a core thermodynamic_tension functional `Tension_QC`,
     * invariants that summarise crossover behaviour.
 
 * N_level: N2
 
-  * The narrative about how quantum systems, environments, and classical approximations interact is explicit and internally coherent at the effective layer.
-  * Counterfactual worlds S, G, and A illustrate different tension patterns.
+  * The narrative about how quantum systems, environments and classical approximations interact is explicit and internally coherent at the effective layer.
+  * Counterfactual worlds S, G and A illustrate different tension patterns.
 
 ### 9.2 Next measurable step toward E2
 
@@ -790,11 +865,12 @@ To move Q034 from E1 to E2, at least the following steps should be carried out.
 1. Implement one or more concrete encoding libraries `L_QC` for specific physical platforms, such as matter wave interferometers or optomechanical systems, with all functionals specified in enough detail that `Tension_QC` can be computed from experimental data.
 
 2. Publish open datasets and code that:
+
    * map interference and decoherence experiments to states in `M_QC_reg`,
-   * compute `DeltaS_Q`, `DeltaS_env`, and `Tension_QC` under the fixed encodings,
+   * compute `DeltaS_Q`, `DeltaS_env` and `Tension_QC` under the fixed encodings,
    * show the resulting tension profiles across scales and environment parameters.
 
-3. Compare the resulting tension profiles to the expectations of Worlds S, G, and A, and document which aspects of the Q034 encoding survive these tests and which require refinement.
+3. Compare the resulting tension profiles to the expectations of Worlds S, G and A, and document which aspects of the Q034 encoding survive these tests and which require refinement.
 
 These steps remain within the effective layer, since they operate only on observable summaries and fixed functionals.
 
@@ -803,8 +879,8 @@ These steps remain within the effective layer, since they operate only on observ
 In the longer term, Q034 is expected to serve as:
 
 * The central node for all problems that ask when a classical description is legitimate for systems that are fundamentally quantum.
-* A pattern template reused in domains as diverse as cosmology, condensed matter, and information processing, whenever similar crossover issues are present.
-* A bridge between physics, information theory, and AI interpretability, by providing a common language for tension between fine grained and coarse grained descriptions.
+* A pattern template reused in domains as diverse as cosmology, condensed matter and information processing, whenever similar crossover issues are present.
+* A bridge between physics, information theory and AI interpretability, by providing a common language for tension between fine grained and coarse grained descriptions.
 
 ---
 
@@ -812,13 +888,13 @@ In the longer term, Q034 is expected to serve as:
 
 This block provides an explanation for non specialists, consistent with the effective layer description.
 
-A small particle, such as an electron, behaves in ways that require quantum mechanics. It can be in superpositions, it can interfere with itself, and its behaviour is described by wave like objects. A thrown baseball does not show visible interference patterns. It follows a trajectory that classical mechanics predicts very well.
+A small particle such as an electron behaves in ways that require quantum mechanics. It can be in superpositions, it can interfere with itself and its behaviour is described by wave like objects. A thrown baseball does not show visible interference patterns. It follows a trajectory that classical mechanics predicts very well.
 
 Q034 asks, in a precise way:
 
-* When do we really need the full quantum description.
-* When is a classical description good enough.
-* How does this change as we look at larger systems or different environments.
+* When we really need the full quantum description.
+* When a classical description is good enough.
+* How this changes as we look at larger systems or different environments.
 
 In the Tension Universe language, we imagine a space of states. Each state summarises:
 
@@ -840,4 +916,36 @@ By looking at how this tension number changes as we move from very fine descript
 * In a gradual crossover world, tension fades slowly across many scales. Quantum effects never truly disappear, although they may become very hard to detect.
 * There can also be anomalous patterns where quantum coherence reappears at unexpected scales because of special environments or preparations.
 
-Q034 does not try to replace quantum mechanics. It does not claim a new theory. Instead, it offers a precise way to talk about when and how classical behaviour emerges from quantum behaviour, by treating the mismatch between the two descriptions as a measurable kind of tension. This same pattern can then be reused in other problems where fine grained and coarse grained descriptions must be related in a careful way.
+Q034 does not try to replace quantum mechanics and does not claim a new theory. Instead, it offers a precise way to talk about when and how classical behaviour emerges from quantum behaviour, by treating the mismatch between the two descriptions as a measurable kind of tension. The same pattern can then be reused in other problems where fine grained and coarse grained descriptions must be related in a careful way.
+
+---
+
+## Tension Universe effective-layer footer
+
+This page is part of the WFGY / Tension Universe S-problem collection.
+
+### Scope of claims
+
+* The goal of this document is to specify an effective-layer encoding of the problem labelled Q034 · Crossover between quantum and classical regimes.
+* It does not claim to prove or disprove the canonical statement in Section 1.
+* It does not introduce any new theorem beyond what is already established in the cited literature.
+* It should not be cited as evidence that the corresponding open problem has been solved or that any specific physical theory has been confirmed or ruled out.
+
+### Effective-layer boundary
+
+* All objects used here (state spaces `M_QC`, encodings, observables, invariants, tension scores, counterfactual worlds and AI modules) live at the effective layer.
+* None of these objects specify or expose TU core axioms or generative rules.
+* Any mapping from raw experimental or observational data to the summaries used in this file is handled at project level and follows the TU Effective Layer Charter. Those mappings are not part of this document.
+* Rejection or revision of a specific Q034 encoding instance does not solve the canonical problem and does not imply any claim about the true microscopic ontology of the universe.
+
+### Encoding, fairness and tension scale
+
+* All encodings in `Enc_QC` follow the TU Encoding and Fairness Charter. In particular, weights and functionals are fixed in advance for a given study and are not tuned per dataset after the fact.
+* The scalar functional `Tension_QC` is treated as a thermodynamic_tension quantity in the sense of the TU Tension Scale Charter. It is an abstract measure of mismatch between descriptions, not a claim about physical energy or stress in spacetime.
+* Counterfactual worlds S, G and A are pattern labels over effective-layer tension profiles. They are tools for interpretation, not statements about global physical reality.
+
+### Charter links
+
+* [TU Effective Layer Charter](../Charters/TU_EFFECTIVE_LAYER_CHARTER.md)
+* [TU Encoding and Fairness Charter](../Charters/TU_ENCODING_AND_FAIRNESS_CHARTER.md)
+* [TU Tension Scale Charter](../Charters/TU_TENSION_SCALE_CHARTER.md)
