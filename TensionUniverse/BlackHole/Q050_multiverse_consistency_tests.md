@@ -15,8 +15,38 @@ Status: Reframed_only
 Semantics: hybrid
 E_level: E1
 N_level: N1
-Last_updated: 2026-01-24
+Last_updated: 2026-01-29
 ````
+
+---
+
+## 0. Effective layer disclaimer
+
+All Tension Universe (TU) objects introduced in this entry, including:
+
+* state spaces `M`,
+* observables, mismatch scores, and tension functionals,
+* counterfactual "worlds" and ensemble configurations,
+* AI and WFGY engineering patterns,
+
+are defined strictly at the **effective layer** of the TU program.
+
+This entry:
+
+* encodes how multiverse style reasoning is audited as a **consistency_tension node**,
+* does not claim that any multiverse model exists in nature,
+* does not assert that any concrete multiverse theory is true or empirically confirmed,
+* does not claim to solve any canonical cosmological or philosophical problem.
+
+All mappings from physical theories, simulations, or data into TU objects are treated here as **black box summaries** within an admissible encoding class. No TU axioms, deep generative rules, or internal field constructions are exposed in this file.
+
+This page should be read together with the TU charters for:
+
+* effective layer semantics,
+* encoding and fairness,
+* tension scales and bands.
+
+These charters fix the global rules that this entry must obey.
 
 ---
 
@@ -38,6 +68,8 @@ At the effective layer we do not ask "does the multiverse exist". We ask a narro
 
 > Given an ensemble description of parameter space and observer weighting, does our observed parameter vector look reasonably typical, or does tension remain high or simply reappear as measure pathologies?
 
+This entry does **not** claim that any multiverse model actually solves the canonical fine tuning or cosmic inventory problems. It only specifies how such claims are to be encoded and audited at the TU effective layer.
+
 ### 1.2 Problem context and difficulty
 
 Several features of our cosmic inventory appear finely tuned when considered under simple single universe models, for example:
@@ -50,9 +82,9 @@ Multiverse scenarios often claim to explain at least some of these by placing ou
 
 However, there are serious difficulties:
 
-* measure problem: different ways to define the probability measure over branches can produce very different "typicality" predictions,
-* selection problem: observer weighting can be implemented in many ways, some of which are not clearly grounded in physics,
-* cross tension: ensembles that fix one tension may worsen others or create new inconsistencies.
+* **measure problem**: different ways to define the probability measure over branches can produce very different "typicality" predictions,
+* **selection problem**: observer weighting can be implemented in many ways, some of which are not clearly grounded in physics,
+* **cross tension**: ensembles that fix one tension may worsen others or create new inconsistencies.
 
 These issues make the problem structurally difficult. Even before debating fundamental theory, we lack a clean way to ask "does this ensemble really lower tension, or is it just moving the problem around".
 
@@ -60,7 +92,7 @@ These issues make the problem structurally difficult. Even before debating funda
 
 Within the BlackHole S collection, Q050 is not a claim that any concrete multiverse theory is correct. Instead, its goal is to:
 
-1. Provide an effective layer language for ensemble based explanations of cosmic inventory and fine tuning.
+1. Provide an **effective layer language** for ensemble based explanations of cosmic inventory and fine tuning.
 
 2. Define tension measures that capture:
 
@@ -68,9 +100,9 @@ Within the BlackHole S collection, Q050 is not a claim that any concrete multive
    * internal consistency of the ensemble measure and selection rules,
    * compatibility with other cosmological tension nodes.
 
-3. Specify discriminating experiments on toy ensembles and model families that can falsify particular encodings of "multiverse solves tension" without relying on statements about fundamental ontology.
+3. Specify **discriminating experiments** on toy ensembles and model families that can falsify particular encodings of "multiverse solves tension" without relying on statements about fundamental ontology.
 
-In this sense Q050 is a consistency and audit node for multiverse reasoning, not a proof or disproof node.
+In this sense Q050 is a **consistency and audit node** for multiverse reasoning, not a proof or disproof node.
 
 ### References
 
@@ -159,7 +191,12 @@ M
 
 where each element `m` in `M` is an ensemble configuration. At the effective layer:
 
-* `m` encodes a discrete index set of branches `B(m)`.
+* `m` encodes a discrete index set of branches
+
+  ```txt
+  B(m)
+  ```
+
 * For each branch `b` in `B(m)` the configuration includes:
 
   * a parameter vector
@@ -188,98 +225,131 @@ where each element `m` in `M` is an ensemble configuration. At the effective lay
 
 We do not specify how such ensembles arise from any underlying theory. We only assume that for each admissible configuration, `B(m)` is countable or effectively parameterized, and the encoded summaries are well defined.
 
+**Semantics note (hybrid stochastic field).**
+The branch index is treated as a discrete component. The parameter vectors `theta(b)` live in a continuous parameter space. Effective measures on `M` therefore combine:
+
+* sums over discrete branch indices, and
+* integrals over continuous parameter spaces.
+
+This is why the metadata declares `Field_type: stochastic_field` and `Semantics: hybrid` for Q050.
+
 ### 3.2 Effective measures and distributions
 
 On each ensemble configuration `m` we define:
 
-1. Prior weight over parameter vectors
+1. **Prior weight over parameter vectors**
 
-```txt
-P_prior(m; theta)
-```
+   ```txt
+   P_prior(m; theta)
+   ```
 
-* For any measurable set of parameter vectors `A`, the integral or sum of `P_prior(m; theta)` over `theta` in `A` gives the prior weight assigned to universes with parameters in `A`.
+   For any measurable set of parameter vectors `A`, the integral or sum of `P_prior(m; theta)` over `theta` in `A` gives the prior weight assigned to universes with parameters in `A`.
 
-2. Observer weighted distribution
+2. **Observer weighted distribution**
 
-```txt
-P_obs(m; theta)
-```
+   ```txt
+   P_obs(m; theta)
+   ```
 
-* Defined informally as proportional to `P_prior(m; theta) * W_obs_eff(m; theta)`, where `W_obs_eff` is an effective observer weighting function induced by the branch weights `W_obs(b)`.
-* After normalization, `P_obs(m; theta)` is interpreted as the distribution of parameter vectors as seen by typical observers in configuration `m`.
+   This is defined informally as proportional to
 
-3. Observed parameter vector
+   ```txt
+   P_prior(m; theta) * W_obs_eff(m; theta)
+   ```
 
-```txt
-theta_our
-```
+   where `W_obs_eff` is an effective observer weighting function induced by the branch weights `W_obs(b)`. After normalization, `P_obs(m; theta)` is interpreted as the distribution of parameter vectors as seen by typical observers in configuration `m`.
 
-* Represents our own observed parameter vector, for example best fit values for dark energy fraction, matter fraction, and primordial fluctuation amplitude.
-* At the effective layer we treat `theta_our` as given by observational cosmology and do not model its derivation inside TU.
+3. **Observed parameter vector**
+
+   ```txt
+   theta_our
+   ```
+
+   This represents our own observed parameter vector, for example best fit values for dark energy fraction, matter fraction, and primordial fluctuation amplitude. At the effective layer we treat `theta_our` as given by observational cosmology and do not model its derivation inside TU.
 
 ### 3.3 Mismatch observables
 
 We define three main mismatch observables on `M`.
 
-1. Typicality mismatch
+1. **Typicality mismatch**
 
-```txt
-DeltaS_typicality(m) >= 0
-```
+   ```txt
+   DeltaS_typicality(m) >= 0
+   ```
 
-* Measures how atypical `theta_our` is under `P_obs(m; theta)`.
-* For example, `DeltaS_typicality(m)` can be defined in terms of tail probabilities or distance from high probability regions.
-* Small values indicate that `theta_our` lies in a typical region; large values indicate strong typicality tension.
+   This measures how atypical `theta_our` is under `P_obs(m; theta)`. For example, `DeltaS_typicality(m)` can be defined in terms of tail probabilities or distance from high probability regions. Small values indicate that `theta_our` lies in a typical region; large values indicate strong typicality tension.
 
-2. Internal ensemble mismatch
+2. **Internal ensemble mismatch**
 
-```txt
-DeltaS_internal(m) >= 0
-```
+   ```txt
+   DeltaS_internal(m) >= 0
+   ```
 
-* Measures internal defects of the ensemble, such as:
+   This measures internal defects of the ensemble, such as:
 
-  * failure of normalization for `P_prior` or `P_obs`,
-  * divergent or undefined total observer weight,
-  * strong measure dependence where small changes in regulators produce large changes in predictions.
+   * failure of normalization for `P_prior` or `P_obs`,
+   * divergent or undefined total observer weight,
+   * strong measure dependence where small changes in regulators produce large changes in predictions.
 
-* Small values indicate a clean, well defined ensemble; large values indicate serious measure or regularity problems.
+   Small values indicate a clean, well defined ensemble; large values indicate serious measure or regularity problems.
 
-3. Cross node mismatch
+3. **Cross node mismatch**
 
-```txt
-DeltaS_cross(m) >= 0
-```
+   ```txt
+   DeltaS_cross(m) >= 0
+   ```
 
-* Measures mismatch between predictions of ensemble configurations in `m` and tension functionals from other nodes, for example DarkEnergy_Tension from Q042, H0_Consistency_Tension from Q048, and BaryonBudget_Tension from Q049.
-* Small values indicate compatibility with constraints imported from upstream nodes; large values signal that ensemble based explanations cause new or stronger tensions.
+   This measures mismatch between predictions of ensemble configurations in `m` and tension functionals from other nodes, for example DarkEnergy_Tension from Q042, H0_Consistency_Tension from Q048, and BaryonBudget_Tension from Q049. Small values indicate compatibility with constraints imported from upstream nodes; large values signal that ensemble based explanations cause new or stronger tensions.
 
 All three mismatch observables are defined so that they are finite and well defined for regular configurations.
 
 ### 3.4 Admissible encoding class and fairness constraints
 
-To avoid arbitrary tuning, we restrict attention to an admissible class of ensemble encodings. For each configuration `m` in `M` we require:
+To avoid arbitrary tuning, we restrict attention to an **admissible class of ensemble encodings**. For each configuration `m` in `M` we require:
 
-1. Prior structure:
+1. **Prior structure**
 
-   * `P_prior(m; theta)` belongs to a specified family of densities or mass functions `F_prior` defined before conditioning on `theta_our`.
-   * Parameters of `F_prior` are chosen without access to our specific measured parameter vector, although they may depend on general structural features of the theory.
+   * `P_prior(m; theta)` belongs to a specified family of densities or mass functions
 
-2. Observer weighting structure:
+     ```txt
+     F_prior
+     ```
 
-   * `W_obs_eff(m; theta)` belongs to a specified family `F_obs` of observer weighting rules.
-   * Parameters of `F_obs` are fixed using physical or model considerations, not tuned after seeing `theta_our`.
+     that is defined **at design time**, before conditioning on `theta_our` or inspecting any tension values.
 
-3. Fairness constraint:
+   * Parameters of `F_prior` are chosen without access to our specific measured parameter vector. They may depend on general structural features of the underlying theory, but not on the goal of making `theta_our` typical.
+
+2. **Observer weighting structure**
+
+   * `W_obs_eff(m; theta)` belongs to a specified family
+
+     ```txt
+     F_obs
+     ```
+
+     of observer weighting rules.
+
+   * Parameters of `F_obs` are fixed using physical or model considerations and are also chosen at design time, not tuned after seeing `theta_our` or `Tension_MV`.
+
+3. **Fairness constraint**
 
    * It is not allowed to choose `P_prior` or `W_obs_eff` in a way that depends directly on `theta_our` with the explicit goal of making `theta_our` typical.
-   * In particular, rules of the form "tilt the measure so that our branch is highly weighted" are excluded.
 
-4. Refinement parameter:
+   * Rules of the form "tilt the measure so that our branch is highly weighted" are excluded from the admissible class.
 
-   * Each admissible encoding is indexed by a refinement parameter `k_refine` that controls the resolution of parameter bins or the complexity of the ensemble model.
+4. **Refinement parameter**
+
+   * Each admissible encoding is indexed by a refinement parameter
+
+     ```txt
+     k_refine
+     ```
+
+     that controls the resolution of parameter bins or the complexity of the ensemble model.
+
    * As `k_refine` increases, the encoding is refined in a way that preserves earlier coarse predictions where they are well defined.
+
+   * The refinement schedule and ranges of `k_refine` are fixed at design time and cannot be adjusted after observing tension outcomes.
 
 We write:
 
@@ -310,6 +380,24 @@ M_reg = Enc_adm \ S_sing
 
 All Q050 tension analysis is restricted to `M_reg`. When a proposed ensemble encoding falls into `S_sing`, it is treated as out of domain for Q050, and the failure is attributed to the encoding rather than to any property of the universe.
 
+### 3.6 Effective tension tensor components
+
+To embed Q050 into the global TU tension tensor, we define for each `m` in `M_reg` an effective tensor:
+
+```txt
+T_ij(m) = S_i(m) * C_j(m) * Tension_MV(m) * lambda(m) * kappa
+```
+
+where:
+
+* `Tension_MV(m)` is the scalar multiverse tension functional defined in Section 4.
+* `S_i(m)` represents the strength of the i-th semantic or physical source component that depends on the ensemble configuration (for example which parameter blocks or model families are active).
+* `C_j(m)` represents the sensitivity of the j-th cognitive or downstream component to multiverse style reasoning (for example which AI modules or decision processes are affected).
+* `lambda(m)` is a convergence-state factor indicating whether local reasoning or modeling around this ensemble is convergent, recursive, divergent, or chaotic.
+* `kappa` is a coupling constant that sets the overall scale of multiverse consistency_tension within this encoding.
+
+The indexing sets for `i` and `j` are not specified at the effective layer. It is sufficient that for each `m` in `M_reg`, `T_ij(m)` is well defined and finite for all relevant indices. This tensor does not introduce new physics; it only embeds the scalar tension of Q050 into the common TU tension tensor structure.
+
 ---
 
 ## 4. Tension principle for this problem
@@ -329,8 +417,23 @@ Tension_MV(m) =
 
 where:
 
-* `alpha`, `beta`, `gamma` are positive constants that satisfy `alpha + beta + gamma = 1`,
-* the triple `(alpha, beta, gamma)` is chosen once for a given encoding family and not tuned after seeing `theta_our`.
+* `alpha`, `beta`, `gamma` are positive constants that satisfy
+
+  ```txt
+  alpha + beta + gamma = 1
+  ```
+
+* the triple `(alpha, beta, gamma)` is chosen once **at design time** for a given encoding family,
+
+* none of `alpha`, `beta`, `gamma` is allowed to be arbitrarily close to zero; each has a fixed lower bound
+
+  ```txt
+  alpha >= alpha_min > 0
+  beta  >= beta_min  > 0
+  gamma >= gamma_min > 0
+  ```
+
+The weights and their lower bounds are part of the encoding design and are not tuned after seeing `theta_our` or any particular `Tension_MV(m)` values.
 
 Properties:
 
@@ -349,6 +452,8 @@ At the effective layer, the claim "a multiverse style ensemble helps with cosmic
 > ```
 >
 > for some small threshold `epsilon_MV`, and this inequality remains valid when the encoding is refined within the admissible class.
+
+The value of `epsilon_MV` is fixed at design time as part of the Tension Scale Charter. It marks the upper edge of a low tension band for Q050 and is not adjusted after inspecting results.
 
 More concretely, for a given encoding family and refinement sequence `{m_k}` with increasing `k_refine`, multiverse assistance requires:
 
@@ -372,7 +477,7 @@ Formally, multiverse failure corresponds to the existence of a strictly positive
 liminf over k of Tension_MV(m_k) >= delta_MV > 0
 ```
 
-At the effective layer we do not claim to know whether low tension or high tension holds in the real universe. We only insist that arguments claiming multiverse assistance must demonstrate a pathway to low `Tension_MV` inside `M_reg`.
+The threshold `delta_MV` is also fixed at design time as a high tension baseline for Q050. At the effective layer we do not claim to know whether low tension or high tension holds in the real universe. We only insist that arguments claiming multiverse assistance must demonstrate a pathway to low `Tension_MV` inside `M_reg`.
 
 ---
 
@@ -393,7 +498,7 @@ In World T we imagine that:
    Tension_MV(m_T) <= epsilon_MV
    ```
 
-   with `epsilon_MV` small.
+   with `epsilon_MV` in the low tension band defined by the Tension Scale Charter.
 
 2. Typicality:
 
@@ -444,12 +549,12 @@ This block specifies experiments and protocols at the effective layer that can f
 
 ### Experiment 1: Toy parameter ensemble typicality test
 
-*Goal:*
+**Goal**
 Test whether a given family of ensemble encodings can make our observed parameter vector look typically placed while remaining internally healthy and stable under refinement.
 
-*Setup:*
+**Setup**
 
-* Choose a low dimensional parameter subspace, for example
+* Choose a low dimensional parameter subspace, for example:
 
   ```txt
   theta = (Omega_Lambda, Omega_m, Q_amp)
@@ -457,15 +562,15 @@ Test whether a given family of ensemble encodings can make our observed paramete
 
   where `Omega_Lambda` is the dark energy fraction, `Omega_m` is the matter fraction, and `Q_amp` is a fluctuation amplitude scale.
 
-* Specify an admissible prior family `F_prior` with a small number of shape parameters.
+* Specify an admissible prior family `F_prior` with a small number of shape parameters, fixed at design time.
 
-* Specify an admissible observer weighting family `F_obs` that depends on physically motivated conditions, not on `theta_our`.
+* Specify an admissible observer weighting family `F_obs` that depends on physically motivated conditions and is also fixed at design time, not tuned after observing `theta_our`.
 
 * Record `theta_our` and its observational uncertainties as a region in parameter space.
 
-*Protocol:*
+**Protocol**
 
-1. Sample a set of ensemble configurations `{m_j}` from the admissible class by varying parameters in `F_prior` and `F_obs` within pre agreed ranges.
+1. Sample a set of ensemble configurations `{m_j}` from the admissible class by varying parameters in `F_prior` and `F_obs` within pre specified ranges.
 
 2. For each configuration `m_j`:
 
@@ -476,42 +581,44 @@ Test whether a given family of ensemble encodings can make our observed paramete
 
 3. Compute `Tension_MV(m_j)` for each configuration.
 
-4. Repeat the analysis at a higher refinement level (finer discretization or more detailed modeling) for a representative subset of configurations.
+4. Repeat the analysis at a higher refinement level (finer discretization or more detailed modeling) for a representative subset of configurations, using the same pre specified parameter ranges.
 
-*Metrics:*
+**Metrics**
 
 * Fraction of configurations where `Tension_MV(m_j)` lies below a specified low threshold `epsilon_MV_toy`.
 * Change in `Tension_MV(m_j)` when moving from coarse to fine refinement.
 * Spread of `DeltaS_typicality` across the configuration set.
 
-*Falsification conditions:*
+**Falsification conditions**
 
-* If for all configurations in the sampled admissible class we have
+* At design time, choose `epsilon_MV_toy` to represent an acceptable typicality and internal health band for this toy setting.
+
+* If for all configurations in the sampled admissible class we have:
 
   ```txt
   Tension_MV(m_j) > epsilon_MV_toy
   ```
 
-  with `epsilon_MV_toy` chosen to represent an acceptable typicality and internal health band, then this toy encoding family is rejected for Q050.
+  then this toy encoding family is rejected for Q050.
 
 * If for a significant subset of configurations `Tension_MV(m_j)` changes drastically when refinement is increased, without a clear physical reason, the encoding is considered unstable and rejected.
 
 * If configurations that make `DeltaS_typicality` small do so only by driving `DeltaS_internal` very large, the encoding is considered to fail at the effective layer, since it trades typicality for pathologies.
 
-*Semantics implementation note:*
+**Semantics implementation note**
 The branch index is treated as a discrete component, and the parameter vectors are treated as continuous components. Effective probabilities are implemented using sums over discrete indices and integrals over parameter space in a hybrid way that is consistent with the hybrid setting in the metadata.
 
-*Boundary note:*
-Falsifying TU encoding != solving canonical statement. This experiment can reject particular choices of prior and observer weighting families, but it does not confirm or deny any fundamental multiverse theory.
+**Boundary note**
+Falsifying TU encoding does not mean solving the canonical statement. This experiment can reject particular choices of prior and observer weighting families, but it does not confirm or deny any fundamental multiverse theory.
 
 ---
 
 ### Experiment 2: Cross node compatibility test with imported tensions
 
-*Goal:*
+**Goal**
 Check whether ensemble encodings that reduce typicality tension for one parameter, such as the cosmological constant, inevitably worsen cross node tensions, such as H0 tension or baryon budget tension.
 
-*Setup:*
+**Setup**
 
 * Import effective tension bands from:
 
@@ -519,9 +626,9 @@ Check whether ensemble encodings that reduce typicality tension for one paramete
   * Q048 (H0_Consistency_Tension),
   * Q049 (BaryonBudget_Tension).
 
-* For each ensemble configuration `m` we assume that it induces predicted ranges for the effective parameters used in those nodes.
+* For each ensemble configuration `m` we assume that it induces predicted ranges for the effective parameters used in those nodes, via summary mappings defined at design time.
 
-*Protocol:*
+**Protocol**
 
 1. For each configuration `m` in a sampled admissible set:
 
@@ -533,11 +640,11 @@ Check whether ensemble encodings that reduce typicality tension for one paramete
 
    * compute `Tension_MV(m)`.
 
-2. Identify configurations that achieve low `DeltaS_typicality(m)` for cosmic inventory parameters while also keeping imported tensions within their low bands.
+2. Identify configurations that achieve low `DeltaS_typicality(m)` for cosmic inventory parameters while also keeping imported tensions within their pre defined low bands.
 
-3. Repeat for different choices of priors and selection rules within the admissible class to test robustness.
+3. Repeat for different choices of priors and selection rules within the admissible class to test robustness, using only parameter ranges and families that were fixed at design time.
 
-*Metrics:*
+**Metrics**
 
 * Number or fraction of configurations where all three are simultaneously small:
 
@@ -549,19 +656,19 @@ Check whether ensemble encodings that reduce typicality tension for one paramete
 
 * Trade off curves showing how much improvement in typicality costs in terms of increased cross node tensions.
 
-* Sensitivity of these trade offs to changes in prior and observer weighting families.
+* Sensitivity of these trade offs to changes in prior and observer weighting families within the admissible class.
 
-*Falsification conditions:*
+**Falsification conditions**
 
-* If in all sampled admissible configurations any significant reduction in `DeltaS_typicality` is accompanied by a large increase in `DeltaS_cross` or `DeltaS_internal`, such that `Tension_MV(m)` remains above a fixed threshold, then the claim that "this class of ensembles reduces overall tension" is rejected for Q050.
+* If in all sampled admissible configurations any significant reduction in `DeltaS_typicality` is accompanied by a large increase in `DeltaS_cross` or `DeltaS_internal`, such that `Tension_MV(m)` remains above a fixed high tension threshold, then the claim that "this class of ensembles reduces overall tension" is rejected for Q050.
 
 * If there exist configurations that keep `Tension_MV(m)` low but only by shifting tension into parameters that are effectively unconstrained or unobservable, the encoding is flagged as incomplete and fails Q050 until those hidden tensions are brought into the observable domain.
 
-*Semantics implementation note:*
+**Semantics implementation note**
 All imported tension scores are treated as effective scalars. The ensemble predictions are mapped into the parameter spaces used in Q042, Q048, and Q049 by summary functions only, without exposing any deep mapping from raw data to internal TU fields.
 
-*Boundary note:*
-Falsifying TU encoding != solving canonical statement. This experiment tests whether specific ensemble based explanations meaningfully reduce total tension; it does not establish which cosmic model is fundamentally correct.
+**Boundary note**
+Falsifying TU encoding does not mean solving the canonical statement. This experiment tests whether specific ensemble based explanations meaningfully reduce total tension; it does not establish which cosmic model is fundamentally correct.
 
 ---
 
@@ -592,6 +699,8 @@ We define several training signals for AI models that need to reason about cosmi
 
    * Definition: a composite signal that rewards explicit mention of trade offs among `DeltaS_typicality`, `DeltaS_internal`, and `DeltaS_cross` rather than vague statements that "the multiverse explains it".
    * Use: encourage models to spell out where tension goes when multiverse style reasoning is invoked.
+
+All these signals are computed from effective layer summaries only and do not expose any TU deep generative rules.
 
 ### 7.2 Architectural patterns
 
@@ -625,7 +734,7 @@ We outline module patterns that can reuse Q050 structures.
 
 We propose an evaluation harness to test the impact of Q050 modules on AI reasoning.
 
-1. Benchmark construction:
+1. **Benchmark construction**
 
    * Create a set of questions where AI models are likely to invoke multiverse or anthropic reasoning, including:
 
@@ -633,12 +742,12 @@ We propose an evaluation harness to test the impact of Q050 modules on AI reason
      * apparent fine tuning in fluctuation amplitudes,
      * generic questions about "why these parameters".
 
-2. Conditions:
+2. **Conditions**
 
    * Baseline: model without Q050 modules, asked to answer freely.
    * Q050 augmented: model with `MultiverseTensionHead` and `AnthropicFilterModule` active, trained with the signals in 7.1.
 
-3. Metrics:
+3. **Metrics**
 
    * Frequency of unsupported "multiverse explains it" answers that do not quantify typicality or address measure issues.
    * Degree of explicitness about trade offs among different tension components.
@@ -648,17 +757,17 @@ We propose an evaluation harness to test the impact of Q050 modules on AI reason
 
 A minimal protocol to let external users experience Q050 effects within an AI system.
 
-* Baseline setup:
+* **Baseline setup**
 
   * Prompt: ask the AI "Does the multiverse solve the fine tuning of our universe's parameters?" without mentioning Q050 or tension.
   * Observation: record whether the model gives vague or overconfident claims that multiverse reasoning solves fine tuning.
 
-* Q050 encoded setup:
+* **Q050 encoded setup**
 
   * Prompt: similar question, but with an instruction to explicitly discuss typicality of our parameters under an ensemble, internal consistency of the measure, and cross tension with other cosmological constraints.
   * Observation: record whether the answer introduces concepts analogous to `DeltaS_typicality`, `DeltaS_internal`, and `DeltaS_cross`.
 
-* Comparison metric:
+* **Comparison metric**
 
   * Use a rubric that rewards:
 
@@ -666,7 +775,7 @@ A minimal protocol to let external users experience Q050 effects within an AI sy
     * recognition of cross constraints,
     * honest admission of residual tension.
 
-* What to log:
+* **What to log**
 
   * Prompts, responses, any estimated tension scores from Q050 modules, and which parts of the explanation were modified by attention to `Tension_MV`.
 
@@ -678,7 +787,7 @@ This block lists reusable components from Q050 and how they transfer to other no
 
 ### 8.1 Reusable components produced by this problem
 
-1. ComponentName: `MultiverseTensionScore_MV`
+1. **ComponentName: `MultiverseTensionScore_MV`**
 
    * Type: functional
 
@@ -691,7 +800,7 @@ This block lists reusable components from Q050 and how they transfer to other no
 
      * Inputs must define an admissible ensemble in `M_reg` or clearly signal when the configuration lies in `S_sing`.
 
-2. ComponentName: `TypicalityFieldDescriptor`
+2. **ComponentName: `TypicalityFieldDescriptor`**
 
    * Type: field
 
@@ -704,7 +813,7 @@ This block lists reusable components from Q050 and how they transfer to other no
 
      * `P_obs(m; theta)` is normalizable and represented at some finite resolution.
 
-3. ComponentName: `SelectionFilterPattern`
+3. **ComponentName: `SelectionFilterPattern`**
 
    * Type: experiment_pattern
 
@@ -719,25 +828,25 @@ This block lists reusable components from Q050 and how they transfer to other no
 
 ### 8.2 Direct reuse targets
 
-1. Q051 (cosmological constant coincidence)
+1. **Q051 (cosmological constant coincidence)**
 
    * Reused component: `MultiverseTensionScore_MV`, `TypicalityFieldDescriptor`.
    * Why it transfers: Q051 focuses on the cosmological constant; Q050 provides the ensemble typicality machinery needed to decide whether anthropic arguments based on ensembles really lower its tension.
    * What changes: the parameter vector `theta` is restricted or weighted toward vacuum energy, but the structure of the tension functional remains.
 
-2. Q052 (general fine tuning problems)
+2. **Q052 (general fine tuning problems)**
 
    * Reused component: `SelectionFilterPattern`.
    * Why it transfers: general fine tuning arguments often invoke selection effects over parameter space; Q050 provides a standard pattern to encode and test such effects.
    * What changes: the list of parameters and observer relevance conditions are customized to each fine tuning problem.
 
-3. Q091 (climate ensemble reasoning)
+3. **Q091 (climate ensemble reasoning)**
 
    * Reused component: `SelectionFilterPattern`, `TypicalityFieldDescriptor`.
    * Why it transfers: climate ensembles and scenario mixes can be treated as an ensemble over parameter trajectories; the same typicality and selection logic applies.
    * What changes: parameters describe climate sensitivity and forcing trajectories rather than cosmic inventories.
 
-4. Q120 (philosophical anthropic principle)
+4. **Q120 (philosophical anthropic principle)**
 
    * Reused component: `TypicalityFieldDescriptor`.
    * Why it transfers: philosophical analysis can use Q050’s field descriptor to keep talk of "typical observers" grounded in explicit distributions rather than vague ideas.
@@ -751,13 +860,13 @@ This block explains the current verification status of Q050 and the next measura
 
 ### 9.1 Current levels
 
-* E_level: E1
+* **E_level: E1**
 
   * A coherent effective layer encoding for multiverse consistency tension has been specified.
-  * State space, mismatch observables, admissible class, and singular set are defined.
+  * State space, mismatch observables, admissible class, singular set, and an embedding into the global tension tensor are defined.
   * Discriminating experiment patterns exist but have not yet been implemented as working tools.
 
-* N_level: N1
+* **N_level: N1**
 
   * The narrative about multiverse assistance versus failure is explicitly framed in terms of tension functionals.
   * Links to other cosmological nodes and to AI engineering applications are clear at the conceptual level.
@@ -766,17 +875,17 @@ This block explains the current verification status of Q050 and the next measura
 
 To progress from E1 to E2 for Q050, the following concrete steps are proposed:
 
-1. Implement toy ensembles:
+1. **Implement toy ensembles**
 
-   * Build simple parameter ensembles and compute `DeltaS_typicality`, `DeltaS_internal`, and `DeltaS_cross` for published cosmological parameter estimates.
+   * Build simple parameter ensembles and compute `DeltaS_typicality`, `DeltaS_internal`, `DeltaS_cross`, and `Tension_MV` for published cosmological parameter estimates.
    * Release `Tension_MV` profiles and code as open artifacts.
 
-2. Carry out cross node experiments:
+2. **Carry out cross node experiments**
 
    * Combine Q050 with Q042, Q048, Q049 in a concrete study of whether certain ensemble families reduce or worsen total tension.
    * Publish qualitative trade off diagrams showing which regions of parameter space support low `Tension_MV`.
 
-3. Integrate into an AI evaluation track:
+3. **Integrate into an AI evaluation track**
 
    * Embed Q050 signals and modules into an AI benchmark for cosmology explanations and measure changes in anthropic reasoning quality.
 
@@ -822,3 +931,36 @@ Then we ask two questions:
 If the first case holds, multiverse reasoning really helps with tension in an effective layer sense. If the second case holds, then invoking a multiverse does not actually solve the problem; it just hides the tension in hard to check assumptions.
 
 Q050 therefore acts as a kind of audit checklist for multiverse explanations. It does not say what reality must be. It says that if we want to use multiverse ideas as part of a scientific story about why our universe looks the way it does, then that story should pass the tension tests defined here.
+
+---
+
+## Tension Universe effective-layer footer
+
+This page is part of the **WFGY / Tension Universe** S-problem collection.
+
+### Scope of claims
+
+* The goal of this document is to specify an **effective-layer encoding** of the named problem.
+* It does not claim to prove or disprove the canonical statement in Section 1.
+* It does not introduce any new theorem beyond what is already established in the cited literature.
+* It should not be cited as evidence that the corresponding open problem has been solved.
+
+### Effective-layer boundary
+
+* All objects used here (state spaces `M`, observables, invariants, tension scores, counterfactual "worlds") live entirely at the effective layer of the TU program.
+* No TU axioms, deep generative rules, or construction of internal fields from raw data are exposed in this file.
+* Any mention of "worlds", "ensembles", or "tension tensors" refers to effective summaries, not to metaphysical commitments.
+
+### Encoding and fairness
+
+* All encoding choices (admissible families, weights, thresholds, refinement schemes) are intended to be fixed at design time, before inspecting any particular tension outcome.
+* Encodings that depend on our observed parameters in order to lower tension are outside the admissible class and are treated as out of scope for this entry.
+* Falsifying a specific encoding or tension functional here does not falsify the underlying physical theory or the canonical problem; it only rejects that encoding as a valid TU effective-layer model.
+
+### Relation to TU charters
+
+This page should be read together with the following charters:
+
+* [TU Effective Layer Charter](../Charters/TU_EFFECTIVE_LAYER_CHARTER.md)
+* [TU Encoding and Fairness Charter](../Charters/TU_ENCODING_AND_FAIRNESS_CHARTER.md)
+* [TU Tension Scale Charter](../Charters/TU_TENSION_SCALE_CHARTER.md)
