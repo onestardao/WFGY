@@ -15,8 +15,21 @@ Status: Open
 Semantics: continuous
 E_level: E1
 N_level: N1
-Last_updated: 2026-01-24
+Last_updated: 2026-01-29
 ```
+
+---
+
+## 0. Effective-layer disclaimer
+
+All statements in this entry are made strictly at the **effective layer** of the Tension Universe (TU) program.
+
+* We only specify **encodings, observables, mismatch functionals, counterfactual worlds, and experiment templates** that sit on top of existing cosmological and inflationary modelling practice.
+* We do **not** propose or select any deep TU axiom system or generative rules, and we do not claim to derive standard cosmology or any specific inflationary model from such rules.
+* We do **not** prove or disprove the canonical origin-of-inflation problem in any logical or mathematical sense. We only describe how a specific family of effective encodings can be tested, compared, and, if necessary, falsified.
+* Whenever this page speaks about “worlds”, “universes”, or “mechanisms”, it refers to **effective descriptions** that can be replaced or upgraded in future TU versions without changing the canonical problem in Section 1.
+
+Nothing in this document should be cited as evidence that the origin of cosmic inflation has been solved, nor as a proposal of a new fundamental inflationary theory. It is an **engineering-style specification** for how to encode and audit tension patterns around inflation at the effective layer.
 
 ---
 
@@ -175,7 +188,7 @@ All content in this block is strictly at the effective layer. We only define:
 * a singular set and domain restrictions,
 * simple invariants.
 
-We do not describe any deep TU axioms, generating rules, or explicit mappings from raw data or fundamental Lagrangians to internal TU fields.
+We do not describe any deep TU axioms, generating rules, or explicit mappings from raw data or fundamental Lagrangians to internal TU fields. The objects defined here are **effective summaries**, not commitments to any particular microphysical theory of inflation.
 
 ### 3.1 State space
 
@@ -194,6 +207,8 @@ We do not specify how `M` is constructed from fundamental theories or numerical 
 
 * for any specified resolution and k-range of interest, there exist states in `M` encoding the corresponding coarse-grained summaries,
 * all observables defined below are well-defined real-valued maps on a regular subset of `M`.
+
+The state space `M` should be read as a **bookkeeping device** for effective inflationary summaries. It is not a claim that there exists a unique underlying configuration space with the same structure at the microphysical level.
 
 ### 3.2 Effective fields and observables
 
@@ -221,7 +236,7 @@ PhiProfile(m)
   * field excursion range,
   * presence or absence of graceful exit behavior.
 
-We treat PhiProfile as an effective summarizer, not a fundamental field.
+We treat PhiProfile as an **effective summarizer**, not a fundamental field definition or Lagrangian.
 
 3. Primordial scalar and tensor spectra
 
@@ -289,7 +304,7 @@ where:
 a + b + c = 1
 ```
 
-* The coefficients are not tuned separately for each model or dataset; they are part of the encoding specification.
+* The coefficients are not tuned separately for each model or dataset; they are part of the encoding specification and are set **before** any evaluation of Tension_INFL on the target data.
 * For all `m` in the regular domain, we require:
 
 ```txt
@@ -297,6 +312,8 @@ Tension_INFL(m) >= 0
 ```
 
 and interpret lower values as better overall consistency between initial conditions, mechanism, and data.
+
+Any change to the triplet `(a, b, c)` after inspecting Tension_INFL values for a given study is treated as a **new encoding version**. Such changes must be logged with updated `Last_updated` metadata and, if experiments in Section 6 are rerun, their results must be stored as belonging to the revised encoding.
 
 ### 3.4 Singular set and domain restrictions
 
@@ -317,7 +334,7 @@ We then restrict attention to the regular subset:
 M_reg = M \ S_sing
 ```
 
-All statements about Tension_INFL, DeltaS_IC, DeltaS_INFL, and DeltaS_DATA are made only for states in `M_reg`. Any attempt to evaluate these observables on states in `S_sing` is treated as “out of domain” and does not count as evidence for or against inflation.
+All statements about Tension_INFL, DeltaS_IC, DeltaS_INFL, and DeltaS_DATA are made only for states in `M_reg`. Any attempt to evaluate these observables on states in `S_sing` is treated as “out of domain” and does not count as evidence for or against inflation, nor for or against any specific TU encoding.
 
 ### 3.5 Invariants and effective constraints
 
@@ -339,7 +356,15 @@ I_DATA(m) = DeltaS_DATA(m)
 
 * For states consistent with current CMB and LSS data, we expect `I_DATA(m)` to lie below a threshold defined by observational error bars and systematics.
 
-These invariants are not used to prove or disprove any fundamental statement; they only structure the space of effective encodings.
+These invariants are not used to prove or disprove any fundamental statement. They only structure the space of effective encodings and support audit trails when encodings are revised.
+
+### 3.6 Semantics and resolution
+
+The metadata label `Semantics: continuous` is implemented as follows.
+
+* All observables in this block are treated as **continuous functions** of coarse-grained summaries (for example expansion parameters, spectrum features) at a declared resolution.
+* Changing the resolution, binning scheme, or compression method without changing the physical content of the underlying models is treated as a controlled variation of the encoding and must be documented if it materially affects Tension_INFL distributions.
+* Discrete model choices, such as selecting a specific inflationary potential family, enter only through the construction of states in `M` and not through any discrete semantics attached to the observables themselves.
 
 ---
 
@@ -403,10 +428,10 @@ Tension_INFL(m_F) >= delta_INFL
 
 for some strictly positive `delta_INFL` that cannot be made arbitrarily small without introducing new mechanisms equivalent in effect to inflation.
 
-The problem Q043 is not to decide which world is realized, but to:
+The problem Q043 is not to decide which world is realized. It is to:
 
 * formalize these tension tradeoffs,
-* design observables and experiments that can falsify particular inflation encodings.
+* design observables and experiments that can falsify particular inflation encodings at the effective layer.
 
 ---
 
@@ -416,6 +441,8 @@ We now describe two counterfactual worlds, both strictly at the effective layer:
 
 * World T: a world with a successful inflation-like mechanism,
 * World F: a world without such a mechanism, relying on alternatives or fine tuning.
+
+These worlds are **templates for tension patterns**, not claims about what actually happened in our universe.
 
 ### 5.1 World T (inflation-like world, low inflation tension)
 
@@ -521,7 +548,7 @@ This block specifies experiments and protocols that can:
 * discriminate between different inflation encodings,
 * potentially falsify specific choices of mismatch observables and tension functionals.
 
-They do not prove or disprove the existence of inflation itself.
+They do not prove or disprove the existence of inflation itself. Falsifying a TU encoding in this block means that **this particular effective-layer design** is judged misaligned with its stated purpose and should be revised, not that inflation is ruled out.
 
 ### Experiment 1: CMB-based inflation tension profile
 
@@ -626,7 +653,7 @@ Falsifying TU encoding != solving canonical statement. This experiment tests the
 
 ## 7. AI and WFGY engineering spec
 
-This block describes how Q043 can be turned into engineering modules for AI systems within WFGY, at the effective layer.
+This block describes how Q043 can be turned into engineering modules for AI systems within WFGY, at the effective layer. None of these modules require access to or reveal any deep TU axioms; they only consume and produce effective-layer summaries and tension scores.
 
 ### 7.1 Training signals
 
@@ -930,3 +957,37 @@ Q043 does not decide which story nature chose. It provides a way to:
 * express the origin-of-inflation problem in terms of observable tension,
 * design tests that can rule out bad encodings,
 * and build AI tools that explain the tradeoffs between mechanisms, fine tuning, and data in a transparent and consistent way.
+
+---
+
+## Tension Universe effective-layer footer
+
+This page is part of the **WFGY / Tension Universe** S-problem collection.
+
+### Scope of claims
+
+* The goal of this document is to specify an **effective-layer encoding** of the named problem.
+* It does not claim to prove or disprove the canonical statement in Section 1.
+* It does not introduce any new theorem beyond what is already established in the cited literature.
+* It should not be cited as evidence that the corresponding open problem has been solved.
+
+### Effective-layer boundary
+
+* All objects used here (state spaces `M`, observables, invariants, tension scores, counterfactual "worlds") live entirely at the effective layer of the Tension Universe program.
+* No assumption is made about which, if any, effective encoding corresponds to the true microphysical description of the universe.
+* Any effective encoding described here may be replaced by a later Tension Universe version, as long as it respects the same canonical problem and falsifiability constraints.
+
+### Falsifiability and versioning
+
+* Each encoding is designed to be testable and, in principle, falsifiable by experiments of the type described in Section 6.
+* Rejecting an encoding under those experiments does not invalidate the canonical problem or standard cosmology. It only shows that the specific Tension Universe encoding needs revision.
+* Updates to this page should be tracked with clear `Last_updated` metadata and with references to the experiments and data that motivated the change.
+
+### Program-level references
+
+For the full Tension Universe effective-layer rules and fairness constraints, see the Tension Universe charters:
+
+* TU Effective Layer Charter: `../Charters/TU_EFFECTIVE_LAYER_CHARTER.md`
+* TU Encoding and Fairness Charter: `../Charters/TU_ENCODING_AND_FAIRNESS_CHARTER.md`
+* TU Tension Scale Charter: `../Charters/TU_TENSION_SCALE_CHARTER.md`
+
