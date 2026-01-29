@@ -15,8 +15,10 @@ Status: Open
 Semantics: hybrid
 E_level: E2
 N_level: N2
-Last_updated: 2026-01-28
-````
+Last_updated: 2026-01-30
+```
+
+## 0. Effective layer disclaimer
 
 All statements in this entry are made strictly at the effective layer of the Tension Universe (TU) framework.
 
@@ -567,7 +569,7 @@ The functional satisfies:
 
 ### 4.2 BSD as a low tension principle
 
-At the effective layer, BSD is encoded as the claim that the actual universe belongs to a low tension regime for BSD consistent families.
+At the effective layer, BSD is encoded as the claim that the actual universe belongs to a low tension regime for BSD consistent families, as seen through this encoding.
 
 Formally, there exists:
 
@@ -583,11 +585,11 @@ Tension_BSD(m_true(k); k) <= epsilon_BSD(k)
 
 for all sufficiently large `k`, with `epsilon_BSD(k)` not growing without bound as the resolution increases.
 
-The sequence `epsilon_BSD(k)` may depend on computational and data limitations but is not allowed to be tuned after observing tension values. Any tuning of `epsilon_BSD(k)` must be done at the encoding level before experiments, not based on post hoc inspection.
+The sequence `epsilon_BSD(k)` may depend on computational and data limitations but is not allowed to be tuned after observing tension values. Any tuning of `epsilon_BSD(k)` must be done at the encoding level before experiments, not based on post hoc inspection, and it is always interpreted as a property of the encoding, not as a law about the external universe.
 
 ### 4.3 BSD failure as persistent high tension
 
-If BSD is false in a strong family sense, then the universe belongs to a persistent high tension regime.
+If BSD is false in a strong family sense, then the universe belongs to a persistent high tension regime, as seen through encodings that respect the TU charters.
 
 More precisely, for any encoding that is
 
@@ -698,7 +700,7 @@ In World F_BSD:
 
 ### 5.3 Interpretive note
 
-These counterfactual worlds do not attempt to prove or disprove BSD.
+These counterfactual worlds do not attempt to prove or disprove BSD. They live entirely inside the TU effective layer and are not ontological claims about reality.
 
 They specify how a TU encoding would observe different family level patterns of rank, leading term, and local behaviour in scenarios where BSD is true or false, while staying strictly at the level of effective observables and tension.
 
@@ -1041,6 +1043,12 @@ Q003 is therefore the family level counterpart of Q001 and Q002, and it anchors 
 
 This page is part of the **WFGY / Tension Universe** S-problem collection.
 
+This page should be read together with the following charters:
+
+* [TU Effective Layer Charter](../Charters/TU_EFFECTIVE_LAYER_CHARTER.md)
+* [TU Encoding and Fairness Charter](../Charters/TU_ENCODING_AND_FAIRNESS_CHARTER.md)
+* [TU Tension Scale Charter](../Charters/TU_TENSION_SCALE_CHARTER.md)
+
 ### Scope of claims
 
 * The goal of this document is to specify an effective-layer encoding of the named problem.
@@ -1058,12 +1066,7 @@ This page is part of the **WFGY / Tension Universe** S-problem collection.
 
 ### Encoding and fairness
 
-* Admissible encoding classes, reference profiles, and weight families used in this page are constrained by shared Tension Universe charters:
-
-  * [TU Effective Layer Charter](../Charters/TU_EFFECTIVE_LAYER_CHARTER.md)
-  * [TU Encoding and Fairness Charter](../Charters/TU_ENCODING_AND_FAIRNESS_CHARTER.md)
-  * [TU Tension Scale Charter](../Charters/TU_TENSION_SCALE_CHARTER.md)
-
+* Admissible encoding classes, reference profiles, and weight families used in this page are constrained by the shared Tension Universe charters listed above.
 * For every encoding class referenced here:
 
   * its definition, parameter ranges, quality gates, and reference families are fixed at the charter level before any problem-specific tuning;
