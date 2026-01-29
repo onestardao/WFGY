@@ -1,20 +1,5 @@
 # Q034 · Crossover between quantum and classical regimes
 
-## 0. Effective layer disclaimer
-
-All claims in this entry are made strictly at the effective layer of the Tension Universe (TU) framework.
-
-- The goal of this document is to specify an effective-layer encoding of the canonical quantum-to-classical crossover problem.
-- It does not claim to prove or disprove any foundational statement in quantum theory, decoherence theory or classical mechanics.
-- It does not introduce new theorems beyond what is already established in the cited literature.
-- It should not be cited as evidence that the canonical problem has been solved or that any specific physical scenario has been fully classified.
-
-All TU specific objects in this file (state spaces `M_QC`, encoding libraries `L_QC`, tension functionals, invariants, counterfactual worlds, and AI modules) are effective-layer constructs. They are bookkeeping devices for observable summaries and model comparisons. They are not microscopic ontologies and they do not reveal any hidden TU core dynamics.
-
-Rejection of a particular Q034 encoding or implementation is not equivalent to solving the underlying physics problem. It only means that the rejected encoding is misaligned with the intended effective-layer semantics for this node.
-
----
-
 ## 0. Header metadata
 
 ```txt
@@ -32,8 +17,22 @@ E_level: E1
 N_level: N2
 Last_updated: 2026-01-29
 ````
+---
 
 This entry treats the underlying physical fields as continuous, while the TU encoding uses finite and discrete libraries of summaries, resolution levels and encodings. The term "hybrid" in `Semantics` records this combination.
+
+## 0. Effective layer disclaimer
+
+All claims in this entry are made strictly at the effective layer of the Tension Universe (TU) framework.
+
+- The goal of this document is to specify an effective-layer encoding of the canonical quantum-to-classical crossover problem.
+- It does not claim to prove or disprove any foundational statement in quantum theory, decoherence theory or classical mechanics.
+- It does not introduce new theorems beyond what is already established in the cited literature.
+- It should not be cited as evidence that the canonical problem has been solved or that any specific physical scenario has been fully classified.
+
+All TU specific objects in this file (state spaces `M_QC`, encoding libraries `L_QC`, tension functionals, invariants, counterfactual worlds, and AI modules) are effective-layer constructs. They are bookkeeping devices for observable summaries and model comparisons. They are not microscopic ontologies and they do not reveal any hidden TU core dynamics.
+
+Rejection of a particular Q034 encoding or implementation is not equivalent to solving the underlying physics problem. It only means that the rejected encoding is misaligned with the intended effective-layer semantics for this node.
 
 ---
 
