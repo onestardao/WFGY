@@ -15,8 +15,28 @@ Status: Open
 Semantics: hybrid
 E_level: E1
 N_level: N1
-Last_updated: 2026-01-24
+Last_updated: 2026-01-29
 ```
+
+---
+
+## 0. Effective layer disclaimer
+
+All statements in this entry are made strictly at the effective layer of the Tension Universe (TU) framework.
+
+* We only describe state spaces, observables, mismatch functionals, tension scores, counterfactual worlds, and experiment patterns.
+* We do not specify any underlying TU axiom system, deep generative rules, or constructive derivations of TU itself.
+* We do not define any explicit mapping from raw observational catalogs or simulations to TU state spaces. We only assume that there exist TU compatible models that can reproduce the listed observables.
+* We do not introduce any new theorem beyond what is already established in the cited literature for early supermassive black holes.
+* We do not claim to have solved the canonical astrophysical problem of supermassive black hole origin.
+
+All falsifiability and experiment statements in this entry apply only to concrete combinations of:
+
+* baseline cosmological models,
+* encoding choices in the admissible class Enc_047,
+* and specified data or model families.
+
+They do not, by themselves, prove or disprove any fundamental cosmological theory.
 
 ---
 
@@ -43,9 +63,11 @@ There is no single accepted formation channel that explains all known early SMBH
 * Light seeds:
 
   * Remnants of Population III stars with initial masses around `10^2` to `10^3` solar masses, growing through accretion and mergers.
+
 * Heavy seeds:
 
   * Direct collapse black holes (DCBHs) formed from massive gas clouds with suppressed fragmentation, giving initial masses around `10^4` to `10^6` solar masses.
+
 * Dense stellar cluster collapse:
 
   * Core collapse of very dense clusters leading to massive black hole seeds.
@@ -67,15 +89,15 @@ The problem is classified here as S rank because:
 
 Within the BlackHole S problem collection, Q047 plays three roles:
 
-1. It is the primary example of a cosmological **consistency_tension** problem, where formation channels and growth budgets must jointly explain an extreme population within finite time.
-2. It anchors the family of early universe anomalies that stress standard structure formation (together with H0 tension, CMB anomalies, and related nodes).
+1. It is the primary example of a cosmological consistency_tension problem, where formation channels and growth budgets must jointly explain an extreme population within finite time.
+2. It anchors the family of early universe anomalies that stress standard structure formation together with H0 tension, CMB anomalies, and related nodes.
 3. It provides a concrete test bed for Tension Universe encodings that mix continuous cosmic fields with discrete object counts in a single hybrid description.
 
 ### References
 
-1. M. Volonteri, 2010, “Formation of supermassive black holes”, Astronomy and Astrophysics Review, 18, 279–315.
-2. K. Inayoshi, E. Visbal, Z. Haiman, 2020, “The Assembly of the First Massive Black Holes”, Annual Review of Astronomy and Astrophysics, 58, 27–97.
-3. X. Fan, C. L. Carilli, B. Keating, 2006, “Observational constraints on quasar growth at high redshift”, Annual Review of Astronomy and Astrophysics, 44, 415–462.
+1. M. Volonteri, 2010, “Formation of supermassive black holes”, Astronomy and Astrophysics Review, 18, 279 to 315.
+2. K. Inayoshi, E. Visbal, Z. Haiman, 2020, “The Assembly of the First Massive Black Holes”, Annual Review of Astronomy and Astrophysics, 58, 27 to 97.
+3. X. Fan, C. L. Carilli, B. Keating, 2006, “Observational constraints on quasar growth at high redshift”, Annual Review of Astronomy and Astrophysics, 44, 415 to 462.
 4. Representative JWST and ground based survey papers on high redshift quasars and early SMBHs, providing updated mass and number density estimates.
 
 ---
@@ -95,7 +117,7 @@ These nodes provide foundations and tools that Q047 depends on at the effective 
   Reason: Supplies primordial fluctuation spectra and initial condition models that set the halo mass function relevant for early SMBH seeds.
 
 * Q045
-  Reason: Encodes large scale structure formation timelines and halo growth histories against which SMBH growth budgets are evaluated.
+  Reason: Encodes large scale structure formation timelines and halo growth histories used when early SMBH growth budgets are evaluated.
 
 ### 2.2 Downstream problems
 
@@ -115,7 +137,7 @@ These nodes reuse Q047 components or depend on its tension structure.
 Parallel nodes have similar tension types but no direct component dependence.
 
 * Q046
-  Reason: Both Q046 and Q047 analyze early universe anomalies where standard structure formation timelines are stretched by observations.
+  Reason: Both Q046 and Q047 analyze early universe anomalies where standard structure formation timelines are stressed by observations.
 
 * Q048
   Reason: Both encode consistency_tension between early and late time cosmological inferences, expressed through multiple independent observables.
@@ -125,10 +147,10 @@ Parallel nodes have similar tension types but no direct component dependence.
 Cross domain edges connect Q047 to problems in other domains that can reuse its patterns.
 
 * Q036
-  Reason: Can reuse multi scale growth and energy channel budget patterns to structure microscopic versus macroscopic constraint matching.
+  Reason: Can reuse multiscale growth and energy channel budget patterns to structure microscopic and macroscopic constraint matching.
 
 * Q121
-  Reason: Uses early SMBH origin as a constrained physical testbed for reasoning about extreme tail events and long horizon planning in AI alignment.
+  Reason: Uses early SMBH origin as a constrained physical test bed for reasoning about extreme tail events and long horizon planning in AI alignment.
 
 ---
 
@@ -151,7 +173,7 @@ We posit an effective semantic state space
 M_047
 ```
 
-Each element `m` in `M_047` represents a coherent “early SMBH cosmos configuration”, which includes:
+Each element `m` in `M_047` represents a coherent early SMBH cosmos configuration, which includes:
 
 * a summary of the cosmic expansion history over a redshift window of interest,
 * halo mass and number density summaries over a range of masses and redshifts,
@@ -176,6 +198,7 @@ n_halo(m; z_bin, k_halo) >= 0
   * a state `m`,
   * a discrete redshift bin label `z_bin`,
   * a discrete halo mass bin label `k_halo`.
+
 * Output:
 
   * an effective number density of halos in that bin.
@@ -190,7 +213,8 @@ n_seed(m; z_bin, k_seed, channel) >= 0
 
   * `z_bin`: redshift bin,
   * `k_seed`: seed mass bin,
-  * `channel`: a finite label set for formation channels (for example, PopIII, DCBH, cluster).
+  * `channel`: a finite label set for formation channels for example PopIII, DCBH, cluster.
+
 * Output:
 
   * effective number density of seeds in that bin and channel.
@@ -204,7 +228,8 @@ n_SMBH(m; z_bin, k_BH) >= 0
 * Input:
 
   * `z_bin`: redshift bin,
-  * `k_BH`: SMBH mass bin (for example, ranges like 10^8 to 10^9 solar masses).
+  * `k_BH`: SMBH mass bin for example ranges like 10^8 to 10^9 solar masses.
+
 * Output:
 
   * effective number density of SMBHs in that bin.
@@ -217,9 +242,10 @@ G_budget(m; z_seed_bin, z_target_bin, k_seed, k_BH)
 
 * Input:
 
-  * a pair of redshift bins `(z_seed_bin, z_target_bin)` with `z_seed_bin > z_target_bin` in cosmic time ordering,
+  * a pair of redshift bins `(z_seed_bin, z_target_bin)` with `z_seed_bin` earlier than `z_target_bin` in cosmic time ordering,
   * a seed mass bin label `k_seed`,
   * a target SMBH mass bin label `k_BH`.
+
 * Output:
 
   * an effective scalar summarizing whether it is physically possible for a seed in `k_seed` at `z_seed_bin` to grow into an SMBH in `k_BH` at `z_target_bin` using allowed channels in the encoding.
@@ -242,6 +268,7 @@ F_mix(m; z_range, k_BH)
 
   * a redshift range label `z_range`,
   * a target SMBH mass bin label `k_BH`.
+
 * Output:
 
   * a finite dimensional vector whose components give the fraction of total SMBH mass density in that `k_BH` bin contributed by each seed and growth channel.
@@ -298,7 +325,7 @@ The weights are part of the encoding class and will be fixed globally before any
 
 To obtain a scalar tension per state, we choose a finite index set `K` of pairs `(z_target_bin, k_BH)` that represent:
 
-* the redshift and mass bins where early SMBH tension is most pronounced.
+* the redshift and mass bins where early SMBH tension is most pronounced based on survey design and known selection functions.
 
 We then define:
 
@@ -307,7 +334,7 @@ Tension_EBH(m) = max over (z_target_bin, k_BH) in K
                  of DeltaS_EBH(m; z_target_bin, k_BH)
 ```
 
-This is a maximum over a finite index set, not a supremum over a continuous domain. The composition of `K` will be part of the admissible encoding class.
+This is a maximum over a finite index set, not a supremum over a continuous domain. The composition of `K` is part of the admissible encoding class and is fixed before any application of Q047 to a concrete data set.
 
 ### 3.5 Singular set and domain restriction
 
@@ -326,7 +353,7 @@ We then define the regular domain:
 M_reg_047 = M_047 \ S_sing_047
 ```
 
-All tension statements for Q047 are restricted to `M_reg_047`. If an experiment would require evaluating a quantity at a state in `S_sing_047`, that evaluation is treated as “out of domain” rather than as evidence about the physical world.
+All tension statements for Q047 are restricted to `M_reg_047`. If an experiment would require evaluating a quantity at a state in `S_sing_047`, that evaluation is treated as out of domain rather than as evidence about the physical world.
 
 ### 3.6 Admissible encoding class and fairness constraints
 
@@ -342,7 +369,8 @@ An encoding in `Enc_047` specifies:
 * the construction of halo, seed, and SMBH summaries,
 * the ingredients used in `G_budget`,
 * the index set `K` used in `Tension_EBH`,
-* the global weights `w_consist`, `w_pop`.
+* the global weights `w_consist`, `w_pop`,
+* a discrete refinement parameter `k` and the corresponding map `refine(k)`.
 
 Encodings in `Enc_047` must satisfy:
 
@@ -356,10 +384,10 @@ Encodings in `Enc_047` must satisfy:
 
 2. Reference independence:
 
-   * The choice of bins, weights, and physical limits used in `G_budget` must not depend on the detailed properties of particular extreme observed SMBHs.
-   * They may depend on broad survey characteristics and known global constraints.
+   * The choice of bins, weights, physical limits used in `G_budget`, and the index set `K` must not depend on the detailed properties of particular extreme observed SMBHs.
+   * They may depend on broad survey characteristics and known global constraints, but they must be chosen and documented before Q047 is applied to any specific catalog that is used for tension evaluation.
 
-3. Refinement parameter:
+3. Refinement behavior:
 
    * There exists a discrete refinement parameter `k` in the positive integers and a map:
 
@@ -367,13 +395,23 @@ Encodings in `Enc_047` must satisfy:
      refine(k)
      ```
 
-     which, for increasing `k`, performs a finer binning in redshift and mass, and possibly includes more objects. The encoding for a given `k` may be denoted `enc_k`.
+     which, for increasing `k`, performs finer binning in redshift and mass and may include more objects in a controlled way.
+
+   * Across a refinement sequence `enc_k`, physical growth limits, accretion prescriptions, and uncertainty models are held fixed. Refinement can add resolution and sample size, but it cannot quietly introduce new physical assumptions.
 
 4. Stability requirement:
 
-   * For any fixed physical universe representation, the sequence `Tension_EBH(m_k)` for a compatible sequence of states `m_k` under `enc_k` must not oscillate wildly purely due to refinements that keep physical content similar. If such oscillations occur, the encoding is considered unstable and rejected.
+   * For any fixed physical universe representation, the sequence `Tension_EBH^(k)(m_k)` for a compatible sequence of states `m_k` under `enc_k` must not oscillate wildly purely due to refinements that keep physical content similar.
 
-Enc_047 contains only encodings that meet these constraints.
+   * If such oscillations occur without a clear physical reason such as a qualitative change in the survey window, the encoding is considered unstable and rejected.
+
+5. Family T and Family F independence:
+
+   * When Q047 is used together with model families such as Family T and Family F in Experiment 2, membership in these families must be specified by physical design choices such as seed channel activation and growth constraints, not by the resulting `Tension_EBH` values.
+
+   * In particular, Family T and Family F cannot be defined by thresholding `Tension_EBH`. Otherwise the separation test would become circular.
+
+Only encodings that satisfy these constraints are members of `Enc_047`.
 
 ---
 
@@ -404,9 +442,9 @@ Tension_EBH^(k)(m) = Tension_EBH(m under enc_k)
 
 to emphasize the dependence on refinement.
 
-### 4.2 Low tension principle (World T pattern)
+### 4.2 Low tension principle World T pattern
 
-At the effective layer, a “low tension early SMBH universe” is one for which there exist:
+At the effective layer, a low tension early SMBH universe is one for which there exist:
 
 * an encoding sequence `enc_k` in `Enc_047`,
 * a corresponding sequence of states `m_k` in `M_reg_047`,
@@ -419,16 +457,16 @@ Tension_EBH^(k)(m_k) <= epsilon_EBH
 
 for all sufficiently large `k`, where:
 
-* `epsilon_EBH > 0` is a small threshold fixed in advance, and
+* `epsilon_EBH > 0` is a small threshold fixed in advance,
 * the inequality is understood in a coarse sense compatible with observational uncertainties and modeling errors.
 
 In words:
 
-* as we refine our description of the early universe and include more detailed halo and SMBH information, the tension associated with early SMBH formation remains within a stable, low band.
+* as we refine our description of the early universe and include more detailed halo and SMBH information, the tension associated with early SMBH formation remains within a stable low band.
 
-### 4.3 Persistent high tension principle (World F pattern)
+### 4.3 Persistent high tension principle World F pattern
 
-A “persistent high tension early SMBH universe” is one for which, for every encoding sequence `enc_k` in `Enc_047` that respects physical constraints, and for every compatible sequence of states `m_k` in `M_reg_047` representing that universe, there exists `delta_EBH > 0` such that:
+A persistent high tension early SMBH universe is one for which, for every encoding sequence `enc_k` in `Enc_047` that respects physical constraints, and for every compatible sequence of states `m_k` in `M_reg_047` representing that universe, there exists `delta_EBH > 0` such that:
 
 ```txt
 Tension_EBH^(k)(m_k) >= delta_EBH
@@ -452,7 +490,7 @@ The canonical statement of Q047 in TU terms is therefore:
 
 > Does there exist at least one physically realistic encoding in `Enc_047` and a compatible representation of our universe such that the sequence `Tension_EBH^(k)` remains in a low band across refinements, or does every such encoding show persistent high tension?
 
-We are not asserting the answer, only structuring the question.
+Q047 does not assert which answer holds in our universe. It only structures the question in a way that is compatible with TU effective layer rules and with explicit falsifiability for specific encoding choices.
 
 ---
 
@@ -509,7 +547,7 @@ World F represents universes where early SMBHs of the observed type are effectiv
 These world templates are used to:
 
 * build model families for experiments,
-* define what it means for an encoding to “separate” plausible from implausible universes in terms of tension.
+* define what it means for an encoding to separate plausible from implausible universes in terms of tension.
 
 They do not construct internal TU fields from raw data and do not assert which world our universe belongs to.
 
@@ -522,38 +560,41 @@ This block defines experiments at the effective layer that can:
 * falsify specific choices in `Enc_047`,
 * test whether the Q047 encoding behaves in a stable, interpretable way.
 
-They cannot solve the canonical astrophysical open problem. They only accept or reject particular encodings.
+These experiments cannot solve the canonical astrophysical open problem. They only accept or reject particular encodings.
 
 ### Experiment 1: Observational tension band test
 
 *Goal:*
-Test whether a given encoding in `Enc_047` can keep `Tension_EBH` within a pre defined low band when confronted with current and future early SMBH observations.
+Test whether a given encoding in `Enc_047` can keep `Tension_EBH` within a predefined low band when confronted with current and future early SMBH observations.
 
 *Setup:*
 
 * Inputs:
 
-  * A catalog of high redshift SMBHs with estimated masses and redshifts (for example, from SDSS, HSC, JWST and other surveys).
+  * A catalog of high redshift SMBHs with estimated masses and redshifts for example from SDSS, HSC, JWST, and other surveys.
   * A set of cosmological parameters and halo mass function constraints consistent with upstream problems.
 
 * Pre fixed parameters:
 
-  * A global choice of bins and weights defining an encoding `enc_k` in `Enc_047`.
-  * A threshold band `[0, tau_max]` for `Tension_EBH`, with `tau_max` chosen before seeing the detailed distribution for the test catalog.
-  * A tolerance fraction `eta` in `(0, 1)` indicating what fraction of catalog objects may exceed the tension band while still being acceptable.
+  * A global choice of bins and weights defining an encoding sequence `enc_k` in `Enc_047`, selected and documented before detailed catalog analysis.
+  * A threshold band `[0, tau_max]` for `Tension_EBH`, with `tau_max` chosen before computing tension values for the test catalog.
+  * A tolerance fraction `eta` in `(0, 1)` indicating what fraction of catalog objects may exceed the tension band while still being acceptable. The value of `eta` is chosen in advance based on methodological considerations, not tuned to the catalog at hand.
 
 *Protocol:*
 
-1. Choose a refinement level `k` and construct `enc_k` in `Enc_047` together with compatible states `m_k_data` that encode the halo, seed, and SMBH summaries for the catalog, without describing the construction algorithm in TU terms.
-2. For each object in the catalog that falls into the index set `K`, compute its contribution to `DeltaS_consist` and `DeltaS_pop`, and therefore to `Tension_EBH^(k)(m_k_data)`.
+1. Choose a refinement level `k` and take the corresponding `enc_k` in `Enc_047` together with compatible states `m_k_data` that encode the halo, seed, and SMBH summaries for the catalog. The construction of `m_k_data` is not described in TU terms.
+
+2. For each object in the catalog that falls into the index set `K`, compute its contribution to `DeltaS_consist` and `DeltaS_pop`, and therefore to `DeltaS_EBH` and `Tension_EBH^(k)(m_k_data)`.
+
 3. Compute the fraction `f_k` of catalog objects for which `Tension_EBH^(k)(m_k_data)` exceeds `tau_max`.
-4. Repeat for several higher refinement levels `k`, updating `m_k_data` and recomputing `f_k`.
+
+4. Repeat for several higher refinement levels `k`, updating `m_k_data` and recomputing `f_k` while keeping the encoding class and global parameters fixed.
 
 *Metrics:*
 
 * The sequence `(f_k)` across refinements.
 * The distribution of `Tension_EBH^(k)(m_k_data)` for each `k`.
-* Stability of these distributions under modest variations of encoding choices within `Enc_047`.
+* Stability of these distributions under modest variations of encoding choices that remain within `Enc_047`.
 
 *Falsification conditions:*
 
@@ -565,13 +606,13 @@ Test whether a given encoding in `Enc_047` can keep `Tension_EBH` within a pre d
 
   then that encoding class is considered falsified as a low tension explanation of early SMBHs.
 
-* If small adjustments of non critical encoding details (for example slight changes in bin edges) produce large swings in `Tension_EBH` distributions without clear physical justification, the encoding is considered unstable and rejected.
+* If small adjustments of non critical encoding details for example slight changes in bin edges produce large swings in `Tension_EBH` distributions without clear physical justification, the encoding is considered unstable and rejected.
 
 *Semantics implementation note:*
-All continuous quantities (for example cosmic time, redshift, masses) are represented through binned fields, and all object counts are treated as discrete observables. This matches the hybrid description given in the metadata.
+All continuous quantities for example cosmic time, redshift, masses are represented through binned fields, and all object counts are treated as discrete observables. This matches the hybrid description given in the metadata.
 
 *Boundary note:*
-Falsifying TU encoding != solving canonical statement. Rejecting an encoding does not by itself prove that early SMBHs cannot be explained or that any particular cosmological model is wrong.
+Falsifying a TU encoding in this sense does not solve the canonical problem of early SMBH origin. Rejecting an encoding does not by itself prove that early SMBHs cannot be explained or that any particular cosmological model is wrong.
 
 ---
 
@@ -587,11 +628,12 @@ Check whether the Q047 encoding can reliably distinguish between model universes
   * Family T models:
 
     * Cosmological simulations or semi analytic models in which early SMBH formation has been intentionally made efficient but still within stated physical assumptions.
+
   * Family F models:
 
-    * Models in which early SMBH formation channels are suppressed or restricted, leading to far fewer or no high mass black holes at the relevant redshifts.
+    * Models in which early SMBH formation channels are suppressed or restricted in physically motivated ways, leading to far fewer or no high mass black holes at the relevant redshifts.
 
-* For each model and refinement level `k`, construct a state `m_k_T` or `m_k_F` in `M_reg_047` under an encoding `enc_k` in `Enc_047`.
+* For each model and refinement level `k`, construct a state `m_k_T` or `m_k_F` in `M_reg_047` under an encoding `enc_k` in `Enc_047`. The definition of Family T and Family F must be fixed by model construction choices before any `Tension_EBH` values are examined.
 
 *Protocol:*
 
@@ -616,15 +658,17 @@ Check whether the Q047 encoding can reliably distinguish between model universes
 
 *Falsification conditions:*
 
-* If for all reasonable parameter choices in `Enc_047` and all sufficiently large `k`, the separation score `S_sep(k)` remains below a pre fixed threshold indicating poor separation, the Q047 encoding is considered ineffective and rejected for use as a diagnostic of early SMBH viability.
+* Before running the experiment, fix a threshold `S_sep_thres > 0` that quantifies the minimum acceptable separation between the two distributions.
 
-* If the encoding assigns systematically lower `Tension_EBH` values to Family F (designed to suppress early SMBHs) than to Family T (designed to produce them), the encoding is misaligned with its intended interpretation and is rejected.
+* If for all reasonable parameter choices in `Enc_047` and all sufficiently large `k`, the separation score `S_sep(k)` remains below `S_sep_thres`, the Q047 encoding is considered ineffective and rejected for use as a diagnostic of early SMBH viability.
+
+* If the encoding assigns systematically lower `Tension_EBH` values to Family F for which early SMBHs are designed to be rare than to Family T where they are designed to be common, the encoding is misaligned with its intended interpretation and is rejected.
 
 *Semantics implementation note:*
 Both Family T and Family F models are mapped into the same hybrid representation with binned fields for continuous quantities and discrete counts for objects, as specified in the metadata, so that tension comparisons are meaningful.
 
 *Boundary note:*
-Falsifying TU encoding != solving canonical statement. Success or failure in separating model families only tests the quality of the encoding, not the actual origin of early SMBHs in our universe.
+Falsifying a TU encoding or failing to separate model families only tests the quality of the encoding. It does not by itself settle the actual origin of early SMBHs in our universe.
 
 ---
 
@@ -639,6 +683,7 @@ This block describes how Q047 can be used as an engineering module for AI system
    * Definition:
 
      * A nonnegative signal derived from `DeltaS_consist(m; z_target_bin, k_BH)` aggregated over the index set `K`.
+
    * Purpose:
 
      * Penalize internal representations that imply SMBH growth histories incompatible with physically allowed budgets when the context assumes standard physics.
@@ -648,6 +693,7 @@ This block describes how Q047 can be used as an engineering module for AI system
    * Definition:
 
      * A signal based on `DeltaS_pop(m; z_target_bin, k_BH)` aggregated over `K`.
+
    * Purpose:
 
      * Encourage consistency between modeled SMBH population statistics and observationally based reference profiles when such profiles are part of the assumed background.
@@ -657,6 +703,7 @@ This block describes how Q047 can be used as an engineering module for AI system
    * Definition:
 
      * Directly equal to `Tension_EBH(m)` for the state associated with the current context.
+
    * Purpose:
 
      * Provide a scalar consistency indicator that a model can learn to keep low in scenarios where a low tension early SMBH explanation is assumed.
@@ -666,9 +713,10 @@ This block describes how Q047 can be used as an engineering module for AI system
    * Definition:
 
      * A signal that penalizes answers that fail to distinguish clearly between World T and World F style assumptions when the user explicitly asks for separate scenarios.
+
    * Purpose:
 
-     * Help models maintain clean separation between “early SMBHs are easy” and “early SMBHs are hard” assumptions, instead of mixing them.
+     * Help models maintain clean separation between worlds where early SMBHs are easy and worlds where they are hard, instead of mixing them.
 
 ### 7.2 Architectural patterns
 
@@ -677,6 +725,7 @@ This block describes how Q047 can be used as an engineering module for AI system
    * Role:
 
      * A model head that, given an internal representation of a cosmological context, outputs an estimate of `Tension_EBH(m)` and optionally the decomposed components `DeltaS_consist` and `DeltaS_pop`.
+
    * Interface:
 
      * Input: internal context embeddings.
@@ -686,7 +735,8 @@ This block describes how Q047 can be used as an engineering module for AI system
 
    * Role:
 
-     * A filtering module that examines proposed narratives about early SMBH formation (for example, “from PopIII seeds at z = 30 to SMBHs at z = 7”) and checks for gross violations of encoded growth budgets.
+     * A filtering module that examines proposed narratives about early SMBH formation for example from PopIII seeds at high redshift to SMBHs at lower redshift and checks for gross violations of encoded growth budgets.
+
    * Interface:
 
      * Input: structured representation of proposed timeline and growth channels.
@@ -696,10 +746,11 @@ This block describes how Q047 can be used as an engineering module for AI system
 
    * Role:
 
-     * A controller that toggles between World T and World F assumptions in reasoning chains when requested, and ensures that downstream conclusions are consistent with the chosen world.
+     * A controller that toggles between World T and World F assumptions in reasoning chains when requested and ensures that downstream conclusions are consistent with the chosen world.
+
    * Interface:
 
-     * Input: world selection signal, internal state.
+     * Input: world selection signal and internal state.
      * Output: modified internal state with appropriately adjusted tension expectations.
 
 ### 7.3 Evaluation harness
@@ -711,15 +762,17 @@ We outline an evaluation harness to test AI models using Q047 components.
    * Analytical tasks:
 
      * Questions about whether particular SMBH growth histories are plausible under standard physics.
+
    * Explanatory tasks:
 
-     * Requests to explain the challenges of early SMBH formation, and to compare different seed channels.
+     * Requests to explain the challenges of early SMBH formation and to compare different seed channels.
 
 2. Conditions:
 
    * Baseline:
 
      * The model answers without explicit use of `EarlyBHConsistencyHead` or other Q047 modules.
+
    * TU enhanced:
 
      * The model uses Q047 signals and modules during inference.
@@ -729,9 +782,11 @@ We outline an evaluation harness to test AI models using Q047 components.
    * Consistency:
 
      * Fraction of answers that avoid obvious violations of growth budgets or cosmic time constraints.
+
    * Clarity:
 
      * Degree to which answers explicitly identify where tension arises instead of glossing over it.
+
    * Stability:
 
      * Whether the model maintains coherent narratives when prompts are rephrased or extended.
@@ -745,17 +800,17 @@ A minimal protocol for external users to experience Q047 encoding effects.
   * Prompt:
 
     * Ask the AI to explain how astronomers think early SMBHs might form and what the main challenges are.
+
   * Observation:
 
-    * Note whether the answer lists channels but fails to clearly articulate where time and growth constraints bite.
+    * Note whether the answer lists channels but fails to clearly articulate where time and growth constraints become critical.
 
 * TU encoded setup:
 
   * Prompt:
 
-    * Ask the same question, but add instructions to:
+    * Ask the same question, but add instructions to organize the explanation around growth budgets and a consistency tension between formation channels and observed SMBH masses at high redshift.
 
-      * “organize the explanation around growth budgets and a consistency tension between formation channels and observed SMBH masses at high redshift”.
   * Observation:
 
     * Note whether the answer introduces notions similar to `DeltaS_consist`, `DeltaS_pop`, and `Tension_EBH`, even if those names are not shown, and whether tension hot spots are clearly highlighted.
@@ -771,7 +826,7 @@ A minimal protocol for external users to experience Q047 encoding effects.
 * What to log:
 
   * Prompts and responses for both setups.
-  * Any auxiliary tension estimates produced by the Q047 modules (if exposed).
+  * Any auxiliary tension estimates produced by the Q047 modules if exposed.
   * This allows later inspection of how Q047 encoding affected the reasoning.
 
 ---
@@ -783,6 +838,7 @@ A minimal protocol for external users to experience Q047 encoding effects.
 1. ComponentName: `EBH_GrowthBudget_Functional`
 
    * Type: functional
+
    * Minimal interface:
 
      * Inputs:
@@ -790,9 +846,11 @@ A minimal protocol for external users to experience Q047 encoding effects.
        * `halo_summary` for relevant redshift bins,
        * `seed_summary` by channel,
        * `accretion_constraints` and merger time scale summaries.
+
      * Output:
 
        * `consistency_score` in the interval `[0, 1]` interpreted as how close the growth budget is to being sufficient.
+
    * Preconditions:
 
      * Inputs must be constructed under an encoding in `Enc_047` and represent mutually consistent summaries for the same cosmological model.
@@ -800,15 +858,18 @@ A minimal protocol for external users to experience Q047 encoding effects.
 2. ComponentName: `EBH_TensionProfile_Field`
 
    * Type: field
+
    * Minimal interface:
 
      * Inputs:
 
        * `z_target_bin`,
        * `k_BH`.
+
      * Output:
 
        * `tension_value` equal to `DeltaS_EBH(m; z_target_bin, k_BH)`.
+
    * Preconditions:
 
      * A state `m` in `M_reg_047` must be available for the cosmological model considered.
@@ -816,18 +877,22 @@ A minimal protocol for external users to experience Q047 encoding effects.
 3. ComponentName: `EBH_WorldTemplate`
 
    * Type: experiment_pattern
+
    * Minimal interface:
 
      * Inputs:
 
        * `model_class` describing a family of cosmological or physical models that can be mapped into `M_047`.
+
      * Output:
 
        * two experiment designs:
 
          * a World T variant where early SMBHs are made easy,
          * a World F variant where early SMBHs are made hard,
-         * each with an associated procedure for computing `Tension_EBH`.
+
+         each with an associated procedure for computing `Tension_EBH`.
+
    * Preconditions:
 
      * The model class must provide enough information to define halo, seed, and SMBH summaries at the effective layer.
@@ -839,9 +904,11 @@ A minimal protocol for external users to experience Q047 encoding effects.
    * Reused components:
 
      * `EBH_TensionProfile_Field`.
+
    * Why it transfers:
 
-     * Q048 studies H0 and related cosmological tensions; early SMBH tension profiles provide an independent constraint on expansion history and structure growth.
+     * Q048 studies H0 and related cosmological tensions. Early SMBH tension profiles provide an independent constraint on expansion history and structure growth.
+
    * What changes:
 
      * The field is interpreted as a function of H0 and other cosmological parameters, not only of halos and black holes.
@@ -851,9 +918,11 @@ A minimal protocol for external users to experience Q047 encoding effects.
    * Reused components:
 
      * `EBH_GrowthBudget_Functional`.
+
    * Why it transfers:
 
-     * Realistic black hole information histories need formation and growth budgets as boundary conditions; Q047 provides these budgets for early SMBHs.
+     * Realistic black hole information histories need formation and growth budgets as boundary conditions. Q047 provides these budgets for early SMBHs.
+
    * What changes:
 
      * The focus shifts from feasibility of formation to how these budgets constrain later information flow and evaporation scenarios.
@@ -863,9 +932,11 @@ A minimal protocol for external users to experience Q047 encoding effects.
    * Reused components:
 
      * `EBH_WorldTemplate`.
+
    * Why it transfers:
 
      * Information thermodynamics of extreme systems can use early SMBH origin as a case where tail event modeling and growth constraints are tightly coupled.
+
    * What changes:
 
      * The emphasis is on entropy and information flow metrics, while the underlying World T and World F constructions remain similar.
@@ -898,6 +969,7 @@ To move from E1 to E2, the following measurable steps are envisioned:
      * halo mass function approximations,
      * seed channel recipes,
      * accretion and merger constraints.
+
    * Implement a concrete subset of `Enc_047` where all elements are fully specified.
 
 2. Refinement behavior study:
@@ -930,21 +1002,21 @@ This block explains Q047 in simpler language while staying faithful to the effec
 
 Astronomers see very bright quasars in the distant universe. These objects are powered by black holes that are hundreds of millions or even billions of times more massive than the Sun. The surprising part is that some of them appear when the universe was still very young.
 
-To make a supermassive black hole, you need:
+To make a supermassive black hole, several ingredients are needed:
 
 * a starting seed black hole,
 * gas to feed it,
 * time for it to grow through accretion and mergers,
-* and a surrounding environment that lets this happen.
+* and a surrounding environment that lets this happen without shutting the process down too soon.
 
-If you try to grow these black holes from typical stellar mass seeds, and if you respect limits on how fast they can swallow matter without breaking basic physics, the time can be very tight. In many simple calculations, it seems too tight.
+If we try to grow these black holes from typical stellar mass seeds and we respect limits on how fast they can swallow matter without breaking basic physics, the available time can be very tight. In many simple calculations, it seems too tight.
 
 In Tension Universe language, we do not try to solve this formation problem outright. Instead we:
 
-1. Describe each possible universe with early black holes as a “state” that summarizes:
+1. Describe each possible universe with early black holes as a state that summarizes:
 
    * how many halos exist,
-   * how many seeds there are,
+   * how many seeds there are, and how massive they are,
    * how big and how numerous the supermassive black holes are,
    * and how fast they are allowed to grow.
 
@@ -953,7 +1025,7 @@ In Tension Universe language, we do not try to solve this formation problem outr
    * one between what the seeds and growth channels can plausibly produce and what is actually needed,
    * one between predicted and observed numbers of supermassive black holes.
 
-3. We combine these mismatches into a single “tension” number. If this number is small, the early black holes are easy to explain. If it is large, they are hard to explain.
+3. We combine these mismatches into a single tension number. If this number is small, the early black holes are easy to explain in that encoding. If it is large, they are hard to explain.
 
 Then we consider two kinds of hypothetical worlds:
 
@@ -964,6 +1036,31 @@ Q047 does not claim we know which kind of world we live in. It gives us:
 
 * a language to talk about why early supermassive black holes are a problem,
 * clear quantities to compute from simulations and observations,
-* a way to test whether a given description of the early universe is making the problem better or worse.
+* a way to test whether a given description of the early universe makes the problem better or worse.
 
-The same tools can then be reused in other questions where “something very big appears surprisingly early” and we need to see whether our models can honestly support it without hidden cheating.
+The same tools can then be reused in other questions where something very massive appears surprisingly early and we need to see whether our models can honestly support it without hidden cheating.
+
+---
+
+## Tension Universe effective-layer footer
+
+This page is part of the **WFGY / Tension Universe** S-problem collection.
+
+### Scope of claims
+
+* The goal of this document is to specify an effective-layer encoding of the named problem.
+* It does not claim to prove or disprove the canonical statement in Section 1.
+* It does not introduce any new theorem beyond what is already established in the cited literature.
+* It should not be cited as evidence that the corresponding open problem has been solved.
+
+### Effective-layer boundary
+
+* All objects used here state spaces, observables, invariants, tension scores, counterfactual worlds, experiment patterns live strictly at the effective layer of the Tension Universe framework.
+* None of these objects should be interpreted as a direct statement about fundamental ontology or dynamics.
+* Any concrete numerical implementation requires a separate, explicit source pack and code base, which are outside the scope of this document.
+
+This page should be read together with the following charters:
+
+* [TU Effective Layer Charter](../Charters/TU_EFFECTIVE_LAYER_CHARTER.md)
+* [TU Encoding and Fairness Charter](../Charters/TU_ENCODING_AND_FAIRNESS_CHARTER.md)
+* [TU Tension Scale Charter](../Charters/TU_TENSION_SCALE_CHARTER.md)
