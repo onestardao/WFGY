@@ -20,7 +20,7 @@ Last_updated: 2026-01-29
 
 ---
 
-## 0. Effective-layer scope
+## 0. Effective layer disclaimer
 
 All statements in this file are made at the effective layer of the Tension Universe (TU) framework.
 
@@ -410,7 +410,7 @@ We are interested in the qualitative behavior of `Tension_BL(m; k)` as `k` incre
 
 ### 3.6 Singular set and domain restrictions
 
-Some states may have incomplete or inconsistent data. Examples.
+Some states may have incomplete or inconsistent data. Examples:
 
 * geometric invariants that do not uniquely classify a general type variety
 * height profiles that are not consistent across refinement levels
@@ -493,9 +493,11 @@ The functional must satisfy:
 
 ### 4.2 Bombieri-Lang as a low-tension principle
 
-At the effective layer, and for a fixed `Enc_j` in `Encoding_BL_Class`, we express the Bombieri-Lang conjecture as a low-tension principle.
+At the effective layer, and for a fixed `Enc_j` in `Encoding_BL_Class`, Bombieri-Lang can be expressed as a low-tension principle.
 
-> For varieties of general type in the actual arithmetic universe, there exist regular states that represent them inside TU and that keep Bombieri-Lang tension in a small, stable band across refinements for the chosen encoding `Enc_j`.
+If there exist TU style models of the arithmetic universe that admit `Enc_j`, and if those models provide world-representing states for varieties of general type, then in such models Bombieri-Lang corresponds to the following statement:
+
+> There exist regular states that represent general type varieties inside TU and that keep Bombieri-Lang tension in a small, stable band across refinements for the chosen encoding `Enc_j`.
 
 More concretely, for a given `Enc_j` there exist world-representing states `m_BL_true^(j)` and positive constants `epsilon_BL^(j)` and `k_0^(j)` such that for all `k >= k_0^(j)`:
 
@@ -510,23 +512,25 @@ where:
 
 The low-tension principle does not claim that `Tension_BL` is exactly zero, only that scarcity compatible worlds remain in a controlled low-tension regime for each admissible encoding choice.
 
+This statement is conditional on the existence of TU models and on their adoption of `Enc_j`. It does not assert that such models exist or that the conjecture holds in the actual universe.
+
 ### 4.3 Failure as persistent high tension
 
 If Bombieri-Lang is false, then in the actual universe there would exist general type varieties whose rational points are too abundant or too evenly spread to be reconciled with any admissible scarcity references inside the class `Encoding_BL_Class`.
 
-In that case, we would expect the following. For every `Enc_j` in `Encoding_BL_Class` that satisfies the fairness constraints, and for any world-representing states `m_BL_false^(j)` for those varieties, there is a strictly positive constant `delta_BL^(j)` and an index `k_1^(j)` such that for all `k >= k_1^(j)`:
+In that case, one would expect the following pattern in any TU model that admits `Enc_j` and world-representing states for those varieties. For every `Enc_j` in `Encoding_BL_Class` that satisfies the fairness constraints, and for any such states `m_BL_false^(j)`, there is a strictly positive constant `delta_BL^(j)` and an index `k_1^(j)` such that for all `k >= k_1^(j)`:
 
 ```txt
 Tension_BL(m_BL_false^(j); k) >= delta_BL^(j)
 ```
 
-with `delta_BL^(j) > 0` that cannot be driven arbitrarily close to zero without violating at least one of the following.
+with `delta_BL^(j) > 0` that cannot be driven arbitrarily close to zero without violating at least one of the following:
 
-* The classification of the variety as general type in `Geom_profile(m_BL_false^(j))`.
-* The fairness constraints on reference libraries in Section 3.3.
-* The fairness constraints on weights and coefficients associated with `Enc_j`.
+* the classification of the variety as general type in `Geom_profile(m_BL_false^(j))`
+* the fairness constraints on reference libraries in Section 3.3
+* the fairness constraints on weights and coefficients associated with `Enc_j`
 
-This expresses Bombieri-Lang as a boundary between low tension consistency worlds and high tension inconsistency worlds, inside the fixed finite encoding class.
+This expresses Bombieri-Lang as a boundary between low tension consistency worlds and high tension inconsistency worlds, inside the fixed finite encoding class, conditional on the existence of TU models that implement these encodings.
 
 ---
 
@@ -605,6 +609,8 @@ These counterfactual worlds do not claim any proof of Bombieri-Lang or any const
 * and if they treat general type geometry and rational points in the way described under some `Enc_j` in `Encoding_BL_Class`
 
 then World T and World F would exhibit qualitatively different tension behavior as refinement increases.
+
+The file remains at the effective layer and does not require exposing any deeper TU generative rule or axiom.
 
 ---
 
@@ -1017,7 +1023,7 @@ This block explains Q014's position in the TU verification ladder and the next m
 
 * E_level: E1
 
-  * A coherent effective encoding for Bombieri-Lang has been specified.
+  * A coherent effective encoding for Bombieri-Lang has been specified:
 
     * state space structure
     * observables for geometry and rational points
@@ -1128,15 +1134,8 @@ This page is part of the WFGY / Tension Universe BlackHole S-problem collection.
 
 ### Charter references
 
-This file is intended to be read together with the TU charter documents in the WFGY repository, in particular:
+This page should be read together with the following charters:
 
-* TU Effective Layer Charter
-  [https://github.com/onestardao/WFGY/blob/main/TensionUniverse/Charters/TU_EFFECTIVE_LAYER_CHARTER.md](https://github.com/onestardao/WFGY/blob/main/TensionUniverse/Charters/TU_EFFECTIVE_LAYER_CHARTER.md)
-
-* TU Encoding and Fairness Charter
-  [https://github.com/onestardao/WFGY/blob/main/TensionUniverse/Charters/TU_ENCODING_AND_FAIRNESS_CHARTER.md](https://github.com/onestardao/WFGY/blob/main/TensionUniverse/Charters/TU_ENCODING_AND_FAIRNESS_CHARTER.md)
-
-* TU Tension Scale Charter
-  [https://github.com/onestardao/WFGY/blob/main/TensionUniverse/Charters/TU_TENSION_SCALE_CHARTER.md](https://github.com/onestardao/WFGY/blob/main/TensionUniverse/Charters/TU_TENSION_SCALE_CHARTER.md)
-
-These charters define the global rules that Q014 must follow as an effective-layer S-problem inside the Tension Universe program.
+* [TU Effective Layer Charter](../Charters/TU_EFFECTIVE_LAYER_CHARTER.md)
+* [TU Encoding and Fairness Charter](../Charters/TU_ENCODING_AND_FAIRNESS_CHARTER.md)
+* [TU Tension Scale Charter](../Charters/TU_TENSION_SCALE_CHARTER.md)
