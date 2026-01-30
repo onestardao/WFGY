@@ -1,3 +1,4 @@
+<!-- QUESTION_ID: TU-Q006 -->
 # Q006 · Goldbach conjecture
 
 ## 0. Header metadata
