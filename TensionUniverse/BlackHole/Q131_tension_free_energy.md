@@ -1,4 +1,5 @@
 <!-- QUESTION_ID: TU-Q131 -->
+
 # Q131 · Tension mediated free energy in open physical systems
 
 ## 0. Header metadata
@@ -17,7 +18,7 @@ Semantics: hybrid
 E_level: E2
 N_level: N2
 Last_updated: 2026-01-30
-````
+```
 
 ## 0. Effective layer disclaimer
 
@@ -72,14 +73,22 @@ Block 0 (this header and disclaimer) records global metadata and the effective-l
 
 In classical and modern thermodynamics, "free energy" is the portion of a system's energy that can be converted into useful work under specified environmental constraints.
 
-For a system with internal energy `U`, entropy `S`, and volume `V`, in contact with an environment at fixed temperature `T_env` and pressure `p_env`, standard free energy quantities include:
+For a system in contact with an environment treated as an ideal reservoir with fixed temperature and pressure parameters `(T_env, p_env)`, standard equilibrium free energy quantities include:
 
 ```txt
-Helmholtz free energy:  F = U - T_env * S
-Gibbs free energy:      G = U + p_env * V - T_env * S
+Helmholtz free energy:  F = U - T_env * S        (fixed T_env, fixed volume/constraint as appropriate)
+Gibbs free energy:      G = U + p_env * V - T_env * S   (fixed T_env, fixed p_env)
 ```
 
-For a cyclic process that starts at state `x_initial` and ends at state `x_final`, the maximum extractable work `W_out_max` satisfies inequalities of the general form:
+Applicability note (effective-layer boundary):
+
+* The expressions above are classical equilibrium definitions.
+* In nonequilibrium open-system settings, the effective-layer encoding must either:
+
+  * include enough environment slices so that the state `m` makes the corresponding free energy functional a well-defined state functional on `M_reg`, or
+  * use an explicitly declared nonequilibrium free-energy-like functional (availability / exergy style) chosen from a fixed library in Section 3.8.
+
+For a generic process that starts at state `x_initial` and ends at state `x_final`, a maximum work inequality can be written in the form:
 
 ```txt
 W_out_max <= F(x_initial) - F(x_final)
@@ -91,7 +100,10 @@ or, under appropriate constraints,
 W_out_max <= G(x_initial) - G(x_final)
 ```
 
-when the environment is treated as an infinite reservoir and all other state variables are returned to their initial values.
+Cycle note (avoid ambiguity):
+
+* For a strict cycle where the *entire effective closed description* returns to the same state, the free energy difference is zero and net work extraction must be accounted for by changes in the explicitly modeled reservoirs or imported resources.
+* In practical engine cycles, the working medium can return to its initial internal state while the reservoirs change; this is represented in Q131 by including reservoir slices inside the effective state `m`.
 
 The canonical problem behind Q131 is:
 
@@ -205,17 +217,17 @@ Upstream nodes provide foundations, tools, or conceptual scaffolding that Q131 r
   Reason: Provides limit concepts for precision measurement of tiny energy and heat flows, supporting the practical meaning of Q131's invariants.
 
 * Q059 (BH_CS_INFO_THERMODYN_L3_059)
-  Reason: Encodes information-theoretic energy costs that Q131 integrates into the free_energy_tension functional.
+  Reason: Supplies information-thermodynamic accounting primitives that Q131 can embed into an open-system ledger.
 
 * Q129 (BH_AI_ENERGY_LIMIT_L3_129)
-  Reason: Describes high-level energy bounds for AI systems that Q131 grounds in physical free energy and open-system thermodynamics.
+  Reason: Provides high-level energy-limit targets for AI systems; Q131 supplies the physical accounting layer.
 
 ### 2.2 Downstream problems
 
 Downstream nodes reuse Q131 components or treat Q131 as a prerequisite.
 
 * Q130 (BH_AI_OOD_ENERGY_LIMIT_L3_130)
-  Reason: Reuses Q131's FreeEnergyTensionFunctional and EnergyEntropyLedger components to define energy-aware AI generalization limits.
+  Reason: Reuses Q131 components defined in Section 8.1, specifically `FreeEnergyTensionFunctional` and `EnergyEntropyLedger`, under Q130's interpretation layer.
 
 * Future node: "Self-maintaining open systems under tension"
   Reason: Will reuse Q131's open-system state space and free_energy_tension invariants to study persistent far-from-equilibrium structures.
@@ -235,13 +247,18 @@ Parallel nodes share similar tension types but have no direct component dependen
 Cross-domain edges connect Q131 to problems in other domains that can reuse its components.
 
 * Q059 (BH_CS_INFO_THERMODYN_L3_059)
-  Reason: Reuses Q131's EnergyEntropyLedger component to express energy and entropy accounting in computational processes.
+  Reason: Q059 can reuse Q131 component interfaces defined in Section 8.1, specifically `EnergyEntropyLedger`, while Q059 supplies upstream semantics for information-cost terms.
 
 * Q130 (BH_AI_OOD_ENERGY_LIMIT_L3_130)
-  Reason: Uses Q131's free_energy_tension concept to define energy budget and dissipative cost constraints for AI models under distribution shift.
+  Reason: Uses Q131's free_energy_tension concept and the ledger invariants under a compute-budget interpretation.
 
 * Q123 (BH_AI_INTERP_L3_123)
-  Reason: Can reuse Q131's idea of mapping internal representations to resource-like tension fields, interpreted as energy and complexity rather than spectra.
+  Reason: Can reuse Q131's idea of mapping internal representations to resource-like tension fields, interpreted as cost and constraint ledgers.
+
+Graph hygiene note:
+
+* Edge direction is component-interface oriented.
+* When a node is both upstream conceptually and cross-domain reusable, the reuse is restricted to named interfaces in Section 8.1 and does not imply circular dependence on definitions.
 
 ---
 
@@ -270,18 +287,23 @@ Each state `m` in `M` encodes, at some finite resolution:
    R = { R_1, R_2, ..., R_n }
    ```
 
-   For each reservoir `R_k`, the state includes effective variables such as:
+   For each reservoir `R_k`, the state includes effective ledger variables such as:
 
    ```txt
-   U_k(m)   internal energy
-   S_k(m)   entropy
+   U_k(m)   ledger-defined effective internal energy contribution
+   S_k(m)   ledger-defined effective entropy contribution
    V_k(m)   volume or analogous extensive variable (optional)
    other_k  other relevant extensive variables (optional)
    ```
 
+   Ledger-defined note:
+
+   * `U_k(m)` and `S_k(m)` are not assumed to be directly measurable as microscopic state variables.
+   * They are effective-layer quantities computed from a fixed encoding instance `E` using observable flows and reservoir parameterizations.
+
 2. A work storage subsystem `W_store`
 
-   With an effective stored work quantity:
+   With an effective stored work quantity (energy in the storage subsystem):
 
    ```txt
    W_store(m) >= 0
@@ -306,7 +328,7 @@ Each state `m` in `M` encodes, at some finite resolution:
    * structured correlations that act as resources.
 
 We do not specify how `m` is constructed from underlying microstates or experimental data.
-We assume only that each `m` provides well defined values for the observables introduced below.
+We assume only that each `m` provides well defined values for the observables introduced below under an encoding instance `E`.
 
 We also assume a refinement ladder:
 
@@ -326,27 +348,57 @@ On `M` we define the following effective observables.
 
 1. Total energy of the closed description
 
+We require an explicit ledger partition. Define:
+
 ```txt
-E_total(m) = sum over k of U_k(m) + E_other(m)
+E_total(m) = E_res(m) + E_store(m) + E_aux(m)
 ```
 
-where `E_other(m)` collects any additional stored energy, including `W_store(m)`.
+where:
+
+```txt
+E_res(m)  = sum over k of U_k(m)
+E_store(m)= W_store(m)
+E_aux(m)  = other explicitly modeled energy terms, disjoint from U_k and W_store
+```
+
+Disjointness requirement:
+
+* `E_aux(m)` must not double-count any energy already included in `U_k(m)` or `W_store(m)`.
 
 2. Total entropy of the closed description
 
+Define:
+
 ```txt
-S_total(m) = sum over k of S_k(m) + S_other(m)
+S_total(m) = S_res(m) + S_aux(m)
+S_res(m)   = sum over k of S_k(m)
+S_aux(m)   = entropy assigned to explicitly modeled environment slices and auxiliary subsystems
 ```
 
-where `S_other(m)` includes entropy assigned to any coarse-grained environment pieces explicitly in the description.
+Closed-description requirement:
+
+* For using second-law style inequalities in Section 3.6, the encoding instance must include enough environment slices so that unmodeled entropy sinks are not silently omitted.
 
 3. Work output observable
 
+Define the state-difference observable:
+
 ```txt
-W_out(m) = W_store(m) - W_store_initial_reference
+DeltaW_store(m; m_ref) = W_store(m) - W_store(m_ref)
 ```
 
-for a chosen reference value `W_store_initial_reference` corresponding to the start of a process.
+where `m_ref` is the fixed reference state for the evaluation, chosen as the initial state `m_0`.
+
+Define process-level extracted work:
+
+```txt
+W_out_total = W_store(m_T) - W_store(m_0)
+```
+
+Reference requirement:
+
+* `m_0` is part of the run definition and cannot be changed after observing outcomes.
 
 4. Heat exchanged with an environment slice `E_env_j`
 
@@ -356,7 +408,7 @@ Q_env_j(m)
 
 for each environment slice that is represented explicitly.
 
-We require that:
+Regularity requirement:
 
 ```txt
 E_total(m) is finite
@@ -369,20 +421,20 @@ for all `m` in the regular domain described below.
 
 We define an effective free energy observable `F_free(m)` as a function of:
 
-* the internal energies `U_k(m)`,
-* the entropies `S_k(m)`,
-* and relevant environmental parameters included in `m`, such as effective temperature or pressure fields.
+* the ledger energies `U_k(m)`,
+* the ledger entropies `S_k(m)`,
+* and relevant environment parameters included in `m`, such as effective temperature or pressure fields.
 
-For example, in a simple single-reservoir setting:
+Example (single reservoir parameterization):
 
 ```txt
 F_free(m) = U_1(m) - T_env(m) * S_1(m)
 ```
 
-More generally, `F_free(m)` is any functional that:
+State-functional requirement:
 
-* reduces to standard free energy in the appropriate limit, and
-* is monotonically nonincreasing in idealized reversible work extraction processes.
+* In nonequilibrium settings, `F_free(m)` must be chosen so it is a well-defined function on `M_reg` under the encoding instance `E`.
+* If the functional requires reservoir parameters, those parameters must be included in the effective state `m` as part of the modeled environment slices.
 
 We then define a free energy tension observable:
 
@@ -390,7 +442,12 @@ We then define a free energy tension observable:
 Tension_FE(m) >= 0
 ```
 
-with the intended meaning:
+Unit convention (effective-layer):
+
+* `Tension_FE(m)` is defined as an energy-like scalar (units of energy) under the default Q131 library.
+* If an encoding instance uses a different unit convention, it must declare a conversion to energy units to preserve invariant consistency.
+
+Intended meaning:
 
 * `Tension_FE(m)` measures how much structured resource remains that can, in principle, be converted into work, given the couplings encoded in `C_channels`.
 
@@ -414,15 +471,22 @@ We require that:
    W_out_total <= F_free(m_0) - F_free(m_T)
    ```
 
-   and also
+3. Discrete process upper bound using tension
 
-   ```txt
-   W_out_total <= integral_over_process Tension_FE(m_t) dt
-   ```
+Define nonnegative step weights `alpha_t` with units of energy (or dimensionless with an explicit scale) fixed by the encoding instance:
 
-   for a suitable effective time parameter, within the approximation used by the encoding.
+```txt
+alpha_t = alpha_E(m_{t-1}, m_t) >= 0
+```
 
-Here `W_out_total` is computed from the change in `W_store` between `m_0` and `m_T`.
+Then require a discrete bound:
+
+```txt
+W_out_total <= sum_{t=1..T} alpha_t * Tension_FE(m_{t-1})
+```
+
+This replaces any ambiguous continuous-time integral.
+Any continuous-time variant is permitted only if the encoding instance defines a time parameterization and unit-consistent mapping to the discrete form above.
 
 ### 3.4 Information structure observables
 
@@ -434,11 +498,9 @@ We introduce two information-related observables.
 I_config(m) >= 0
 ```
 
-which measures, at the effective layer, how much structured information is present in:
+Unit declaration:
 
-* control patterns,
-* correlations between reservoirs,
-* and any explicit data used to drive feedback.
+* `I_config(m)` is measured in bits by default.
 
 2. Information processing cost lower bound
 
@@ -446,40 +508,53 @@ which measures, at the effective layer, how much structured information is prese
 cost_info(m) >= 0
 ```
 
-which is an effective lower bound on the energy cost needed to:
+Units:
 
-* acquire,
-* store,
-* or erase,
+* `cost_info(m)` is an energy lower bound.
 
-the information represented in `I_config(m)`.
-
-We impose the qualitative constraint:
+Constraint:
 
 ```txt
-cost_info(m) <= k_info * I_config(m)
+cost_info(m) <= k_info(m) * I_config(m)
 ```
 
-for some encoding-dependent constant `k_info`, meaning that information is not treated as a free resource.
-Any architecture that implicitly assumes unbounded work extraction from information with zero associated cost would violate this observable constraint.
-
-### 3.5 Effective tension tensor
-
-To align with TU core conventions, we define an effective tension tensor:
+where `k_info(m)` is an energy-per-bit coefficient determined by the encoding instance and environment slices represented in `m`.
+Minimal conservative requirement:
 
 ```txt
-T_ij(m) = S_i(m) * C_j(m) * Tension_FE(m) * lambda_regime(m) * kappa
+k_info(m) >= k_B * T_eff(m) * ln(2)
+```
+
+when `T_eff(m)` is defined for the relevant erasure channel in the closed description.
+
+This ensures that information is not treated as a free resource.
+Any architecture that implicitly assumes unbounded work extraction from information with zero associated cost would violate this observable constraint.
+
+### 3.5 Effective tension tensor (diagnostic object)
+
+To align with TU core conventions, we define an effective diagnostic tensor:
+
+```txt
+T_ij(m) = Src_i(m) * Rcp_j(m) * Tension_FE(m) * Reg(m) * kappa
 ```
 
 where:
 
-* `S_i(m)` are source-like factors encoding how strongly the `i`th part of the configuration can drive transformations,
-* `C_j(m)` are receptivity-like factors encoding how sensitive the `j`th degree of freedom is to free energy tension,
-* `lambda_regime(m)` encodes the local reasoning or control regime, for example convergent or divergent control,
-* `kappa` is a constant setting the scale for this family of problems.
+* `Src_i(m)` are source-like dimensionless weights in `[0,1]`,
+* `Rcp_j(m)` are receptivity-like dimensionless weights in `[0,1]`,
+* `Reg(m)` is a regime indicator in `[0,1]` (effective control regime weight),
+* `kappa` is a fixed scaling constant declared by the encoding instance.
 
-We do not specify the index sets for `i` and `j` or the detailed dependence of `S_i`, `C_j`, and `lambda_regime` on `m`.
-We require only that:
+Index-set requirement:
+
+* The encoding instance must specify the index sets `{i}` and `{j}` for the tensor, for example a finite partition of channels or degrees of freedom.
+
+Unit requirement:
+
+* Under the default convention where `Tension_FE(m)` is energy-like, `T_ij(m)` is also energy-like up to the scale `kappa`.
+* If the encoding instance chooses `kappa = 1`, `T_ij` has units of energy.
+
+Consistency requirement:
 
 ```txt
 Tension_FE(m) = 0  implies  T_ij(m) = 0 for all i, j
@@ -489,23 +564,30 @@ within the domain of interest.
 
 ### 3.6 Invariants and constraints
 
-We define three effective invariants.
-
-1. Energy balance invariant
-
-For a process represented by a sequence of states in `M`:
+We define three effective invariants for a process represented by a sequence of states:
 
 ```txt
 m_0, m_1, ..., m_T
 ```
 
-we define:
+We require the encoding instance to provide explicit ledgers for external exchanges.
+
+1. Energy balance invariant
+
+Define explicit external exchange ledger:
 
 ```txt
-I_E_balance = E_total(m_T) - E_total(m_0) - E_external_input
+E_ext_total = E_ext_heat + E_ext_work + E_ext_matter
 ```
 
-where `E_external_input` is the explicitly modeled energy injected from outside the modeled closed description.
+where each term must be computable from declared observables such as `Q_env_j` and any modeled work or matter injection channels.
+
+Define:
+
+```txt
+I_E_balance = E_total(m_T) - E_total(m_0) - E_ext_total
+```
+
 A valid encoding should satisfy:
 
 ```txt
@@ -514,25 +596,29 @@ I_E_balance = 0
 
 within modeling tolerance.
 
-2. Entropy production invariant
+2. Entropy production invariant (closed description)
 
-We define total entropy production over the process:
+Define total entropy change of the closed description:
 
 ```txt
 DeltaS_total = S_total(m_T) - S_total(m_0)
 ```
 
-and require:
+Closed-description requirement:
+
+* The encoding instance must include sufficient environment slices so `S_total` accounts for entropy exported to modeled sinks.
+
+Then require:
 
 ```txt
 DeltaS_total >= 0
 ```
 
-for physically realistic processes.
+for physically realistic processes, within tolerance.
 
 3. Free energy bound invariant
 
-We define:
+Define:
 
 ```txt
 I_FE_bound = W_out_total - ( F_free(m_0) - F_free(m_T) )
@@ -544,7 +630,11 @@ A valid encoding must satisfy:
 I_FE_bound <= 0
 ```
 
-This ensures that work output never exceeds the decrease in free energy.
+This ensures that work output never exceeds the decrease in the chosen free energy functional under the closed description modeled by `m`.
+
+Non-equilibrium requirement:
+
+* If `F_free` is not an equilibrium free energy, the encoding instance must declare its definition and make it a state functional on `M_reg`.
 
 ### 3.7 Singular set and domain restriction
 
@@ -556,6 +646,9 @@ S_sing = {
   E_total(m) is undefined or not finite
   or S_total(m) is undefined or not finite
   or F_free(m) is undefined
+  or Tension_FE(m) is undefined
+  or I_config(m) is undefined
+  or cost_info(m) is undefined
 }
 ```
 
@@ -597,7 +690,24 @@ Each element `E` in `Enc_Q131` specifies:
 
   from a fixed, finite library,
 
-* concrete update rules for an energy and entropy ledger that implement the invariants in Section 3.6.
+* concrete update rules for an energy and entropy ledger that implement the invariants in Section 3.6,
+
+* a mapping protocol schema `Map_E` that converts raw descriptions or data into `m` with a logged trace.
+
+Library identity requirement (anti-retrofit):
+
+* The functional libraries must be versioned and frozen for the evaluation scope.
+* Minimal required declaration fields for any evaluation:
+
+```txt
+Library_ID_F: <string>
+Library_ID_T: <string>
+Library_hash: <hash string>
+Map_schema_ID: <string>
+Map_schema_hash: <hash string>
+```
+
+These identifiers are part of the evaluation record, fixed before test outcomes are inspected.
 
 An encoding instance `E` in `Enc_Q131` must satisfy the following fairness and stability constraints.
 
@@ -605,6 +715,7 @@ An encoding instance `E` in `Enc_Q131` must satisfy the following fairness and s
 
    * For any experimental campaign or benchmark, `E` must be fixed **before** inspecting the detailed outcome of that campaign.
    * Parameter values such as `theta_F`, `theta_T`, and ledger tolerances can be tuned using a separate training set, but they cannot be adapted to individual test devices after observing their performance.
+   * The definition of "tuned using a separate training set" must be recorded in the run log, including dataset identity.
 
 2. **Non-adaptive use**
 
@@ -614,16 +725,29 @@ An encoding instance `E` in `Enc_Q131` must satisfy the following fairness and s
 3. **Refinement stability**
 
    * Along the refinement ladder, estimates of `E_total`, `S_total`, `F_free`, and `Tension_FE` must vary in a controlled way.
-   * In particular, refining resolution is not allowed to produce arbitrary swings in `Tension_FE` at fixed macroscopic observables.
-   * There must exist uniform bounds on changes in `Tension_FE` between neighboring refinement levels whenever macroscopic energy and entropy are held fixed.
+
+   * Define a macroscopic observable vector `Obs(m)` (chosen by the encoding instance) and a distance:
+
+     ```txt
+     d(m, m') = || Obs(m) - Obs(m') ||_1
+     ```
+
+   * Require a Lipschitz-style bound between neighboring refinement levels when macroscopic observables are held fixed within tolerance:
+
+     ```txt
+     | Tension_FE(m_k) - Tension_FE(m_{k+1}) | <= L_E * d(m_k, m_{k+1})
+     ```
+
+     where `L_E` is a constant fixed by the encoding instance and declared pre-run.
 
 4. **Falsifiability and replacement**
 
    * If a high quality experiment or device analysis, performed with a fixed encoding instance `E` in `Enc_Q131`, robustly produces:
 
-     * `I_E_balance` far from zero,
+     * `I_E_balance` far from zero under the declared external ledger,
      * or `DeltaS_total < 0` for a closed description,
-     * or `I_FE_bound > 0` without an external structured resource,
+     * or `I_FE_bound > 0` without any modeled external structured resource,
+
        then `E` is considered falsified for Q131.
    * It is permitted to propose a new encoding instance `E'` in `Enc_Q131`, but `E'` must:
 
@@ -662,17 +786,29 @@ Operationally, this means:
 
 ### 4.2 Low-tension and high-tension regimes
 
-We introduce two qualitative regimes for world-representing states in `M_reg`.
+We introduce two regimes for world-representing states in `M_reg`.
+
+Band schema requirement:
+
+* Any concrete evaluation must declare thresholds `(tau_low, tau_high)` as part of encoding instance `E`.
+
+Define:
+
+```txt
+Low tension:   Tension_FE(m) <= tau_low
+High tension:  Tension_FE(m) >= tau_high
+Intermediate:  tau_low < Tension_FE(m) < tau_high
+```
 
 1. Low-tension regime
 
-   * `Tension_FE(m)` is small.
-   * No large gradients or nonequilibrium resources remain.
-   * Any additional work extraction would require importing new low-entropy resources from outside the modeled system.
+   * `Tension_FE(m)` is at or below `tau_low`.
+   * No large gradients or nonequilibrium resources remain under the chosen encoding.
+   * Any additional work extraction would require importing new structured resources from outside the modeled system.
 
 2. High-tension regime
 
-   * `Tension_FE(m)` is large enough to support significant additional work extraction.
+   * `Tension_FE(m)` is at or above `tau_high`.
    * There exist identifiable gradients, chemical potentials, or informational structures that are not yet fully exploited.
 
 Q131 does not assert that the physical world will always move toward low-tension states.
@@ -687,29 +823,29 @@ From the TU perspective, a "free energy" design is classified as invalid at the 
 
 1. It cannot be mapped to a state in `M_reg` with well defined `E_total`, `S_total`, and `F_free`.
 
-2. Its claimed performance implies
+2. For the claimed operation, no admissible external ledger consistent with the device description can make:
 
    ```txt
-   I_E_balance != 0
+   I_E_balance = 0
    ```
 
-   for any consistent choice of `E_external_input`.
+   within tolerance.
 
-3. Its claimed performance would produce
+3. Its claimed performance yields:
 
    ```txt
    DeltaS_total < 0
    ```
 
-   in a closed description.
+   for a closed description under the declared environment slices.
 
-4. It requires
+4. It yields:
 
    ```txt
    I_FE_bound > 0
    ```
 
-   that is, net work greater than free energy decrease, with no external structured resource.
+   with no modeled external structured resource that would justify the excess work.
 
 In Q131, any proposal that satisfies one or more of these failure modes, when analyzed with a fixed encoding instance `E` in `Enc_Q131`, is called a **perpetual motion illusion** at the effective layer.
 This is a technical term:
@@ -761,45 +897,53 @@ In World TFE:
 In World PPM:
 
 1. Many device proposals are described only partially.
-   They omit some reservoirs or environment interactions, leading to ill-defined `E_total` or `S_total`.
+   They omit some reservoirs or environment interactions, leading to inability to embed the proposal into `M_reg`.
 
-2. Effective encodings that attempt to treat such devices as closed lead to:
+2. If a proposal cannot be mapped into `M_reg`, it is classified as out of domain under Q131 rather than as new physics.
+
+3. If a proposal can be mapped into `M_reg` and the proponent claims:
 
    ```txt
-   E_total(m_T) - E_total(m_0) > 0
+   E_ext_total = 0
    ```
 
-   with `E_external_input = 0`, which violates energy conservation.
+   then the encoding yields:
 
-3. Entropy accounting, if performed over a closed description, would imply:
+   ```txt
+   I_E_balance != 0
+   ```
+
+   outside tolerance, implying inconsistency under the claimed ledger.
+
+4. If a mapped closed description yields:
 
    ```txt
    DeltaS_total < 0
    ```
 
-   in contradiction with the second law.
+   outside tolerance, it is classified as second-law-violating inside the Q131 encoding.
 
-4. The claimed work output satisfies:
+5. If the mapped description yields:
 
    ```txt
-   W_out_claimed > F_free(m_0) - F_free(m_T)
+   I_FE_bound > 0
    ```
 
-   even under generous assumptions about free energy, indicating that `I_FE_bound > 0`.
+   with no modeled external structured resource, it is classified as a perpetual motion illusion.
 
 In World PPM, the TU framework does not validate the device.
 Instead, it classifies the proposal as:
 
-* incomplete, if it cannot be embedded into `M_reg`,
+* out of domain, if it cannot be embedded into `M_reg`,
 * or inconsistent, if it violates the invariants when embedded.
 
 ### 5.3 Interpretive note
 
 These counterfactual worlds do not introduce new physics.
-They simply clarify two behaviors:
+They clarify two behaviors:
 
 * In TFE, tension encodings reveal the structure of legitimate free energy extraction processes.
-* In PPM, tension encodings expose the missing pieces in perpetual motion arguments.
+* In PPM, tension encodings expose missing ledgers or missing reservoirs in perpetual motion arguments.
 
 Q131 only operates at this effective-layer diagnostic level.
 
@@ -827,18 +971,22 @@ Test whether a chosen `Tension_FE` and associated invariants reproduce standard 
 
   * a form of `F_free^E`,
   * a form of `Tension_FE^E`,
+  * the discrete step-weight rule `alpha_E`,
   * and ledger tolerances for `I_E_balance`, `DeltaS_total`, and `I_FE_bound`,
-    before inspecting the detailed results of this experiment.
+    before inspecting outcomes.
 * System: a working medium coupled to:
 
   * a hot reservoir at temperature `T_hot`,
   * a cold reservoir at temperature `T_cold`.
 * Environment: modeled as two large reservoirs `R_hot` and `R_cold` plus a work storage subsystem `W_store`.
-* TU encoding: choose a simple form of `F_free^E(m)` and `Tension_FE^E(m)` that reduces to Helmholtz or Gibbs free energy in the appropriate limit.
+* State representation: the effective state `m` includes reservoir slices so that a cycle can return the working medium while allowing reservoir states to change.
 
 *Protocol*
 
-1. Construct a family of states `m_cycle(k)` representing discrete stages of a quasi-static or finite-time engine cycle, starting and ending at the same internal state of the working medium.
+1. Construct a family of states `m_cycle(k)` representing discrete stages of an engine cycle where:
+
+   * the working medium returns to its initial internal state at the end of the cycle,
+   * the reservoir slices are included in `m` and can change across the cycle.
 
 2. For each `m_cycle(k)` compute:
 
@@ -846,15 +994,15 @@ Test whether a chosen `Tension_FE` and associated invariants reproduce standard 
    * `S_total(m_cycle(k))`,
    * `F_free^E(m_cycle(k))`,
    * `Tension_FE^E(m_cycle(k))`,
-   * and the incremental work and heat flows.
+   * and the step-level ledger entries `E_ext_total` for any modeled external exchanges.
 
-3. Integrate these quantities over one cycle to obtain:
+3. Aggregate over one cycle to obtain:
 
    * `W_out_total`,
    * `DeltaS_total`,
-   * and any changes in `F_free^E`.
+   * and `I_FE_bound`.
 
-4. Evaluate the invariants:
+4. Evaluate invariants:
 
    * `I_E_balance`,
    * `DeltaS_total`,
@@ -862,28 +1010,28 @@ Test whether a chosen `Tension_FE` and associated invariants reproduce standard 
 
 *Metrics*
 
-* Magnitude of `I_E_balance` relative to numerical tolerances.
+* Magnitude of `I_E_balance` relative to declared tolerances.
 * Sign and magnitude of `DeltaS_total`.
 * Sign and magnitude of `I_FE_bound`.
 
 *Falsification conditions*
 
-If, for physically reasonable parameter choices and sufficiently accurate numerical methods, the encoding instance `E` produces:
+If, with a fixed precommitted encoding instance `E`, the evaluation produces:
 
-* `I_E_balance` significantly different from zero, or
-* `DeltaS_total < 0` for a closed description, or
-* `I_FE_bound > 0` in a regime where standard thermodynamics predicts `W_out_total` is bounded by free energy decrease,
+* `I_E_balance` outside tolerance, or
+* `DeltaS_total < 0` outside tolerance for the modeled closed description, or
+* `I_FE_bound > 0` outside tolerance in a regime where standard thermodynamics predicts work is bounded by the chosen free energy functional,
 
-then the current definition of `F_free^E(m)` or `Tension_FE^E(m)` is considered falsified for Q131.
+then the encoding instance `E` is considered falsified for Q131.
 
-If small, physically plausible changes in modeling assumptions produce arbitrarily large swings in `Tension_FE^E(m)` without changes in `E_total` or `S_total`, the encoding instance is considered unstable and rejected.
+If refinement level changes produce unstable swings in `Tension_FE^E(m)` while holding macroscopic observables fixed within tolerance, the encoding instance fails the refinement stability requirement in Section 3.8.
 
 *Semantics implementation note*
-This experiment uses a mixed representation where reservoir temperatures and entropies are treated as continuous variables, while cycle stages and coupling patterns are treated as discrete configuration labels, in line with the hybrid metadata in Block 0.
+This experiment uses a mixed representation where reservoir parameters are continuous variables while cycle stages and coupling patterns are discrete configuration labels, consistent with hybrid metadata.
 
 *Boundary note*
-Falsifying a TU encoding instance in `Enc_Q131` does not solve the canonical statement and does not challenge the underlying laws of thermodynamics.
-It only shows that a particular effective-layer choice of `F_free` and `Tension_FE` is not adequate.
+Falsifying a TU encoding instance in `Enc_Q131` does not challenge underlying thermodynamics.
+It only rejects a particular effective-layer `F_free` or `Tension_FE` choice.
 
 ---
 
@@ -894,81 +1042,49 @@ Provide a systematic procedure for testing whether a proposed "free energy" devi
 
 *Setup*
 
-* Fix an encoding instance `E` in `Enc_Q131` before inspecting any specific device claims.
+* Fix an encoding instance `E` in `Enc_Q131` before inspecting any specific device claims, including the mapping schema `Map_E`.
 * Input: a textual or schematic description of a device that claims to:
 
   * extract net work from a single reservoir,
   * or operate as a perpetual motion machine of the first or second kind,
   * or produce net work with no apparent fuel.
-* TU encoding: map the description into a candidate state sequence in `M(E)`, attempting to:
-
-  * identify reservoirs,
-  * identify work storage,
-  * identify coupling channels,
-  * and define `E_total`, `S_total`, and `F_free^E`.
+* TU encoding: map the description into a candidate state sequence in `M(E)` using `Map_E`, logging the mapping trace.
 
 *Protocol*
 
-1. Attempt to construct a closed description by including all identifiable reservoirs and environment slices that interact with the device.
+1. Attempt to construct a closed description by including all identifiable reservoirs and environment slices that interact with the device, following `Map_E`.
 
 2. For each step in the claimed operation, define a state `m_step(k)` and compute, when possible:
 
    * `E_total(m_step(k))`,
    * `S_total(m_step(k))`,
    * `F_free^E(m_step(k))`,
-   * `W_out_step(k)` claimed or implied by the description.
+   * `W_out_step(k)` implied by the description under the mapping.
 
-3. Aggregate over a full cycle to obtain:
-
-   * `E_total(m_T) - E_total(m_0)`,
-   * `DeltaS_total`,
-   * `W_out_total`,
-   * `F_free^E(m_0) - F_free^E(m_T)`.
-
-4. Evaluate invariants:
+3. Aggregate over a full cycle or claimed operating interval to obtain:
 
    * `I_E_balance`,
    * `DeltaS_total`,
    * `I_FE_bound`.
 
+4. Classify failure mode as out-of-domain or inconsistent according to Sections 3.7 and 4.3.
+
 *Metrics*
 
 * Whether a mapping into `M_reg(E)` is possible.
-* Sign of `DeltaS_total`.
-* Sign of `I_FE_bound`.
-* Existence of unmodeled reservoirs or implicit energy sources.
+* Whether the mapping trace is reproducible under `Map_E`.
+* Signs and magnitudes of invariant violations.
 
 *Falsification conditions*
 
-* If the device cannot be mapped into `M_reg(E)` because `E_total` or `S_total` is not definable, the proposal is classified as out of domain and rejected as an effective-layer description of Q131.
-* If the mapping yields
-
-  ```txt
-  I_E_balance != 0
-  ```
-
-  for `E_external_input = 0`, the encoding instance plus device description is considered inconsistent.
-* If the mapping yields
-
-  ```txt
-  DeltaS_total < 0
-  ```
-
-  for a closed description, the device is classified as violating the second law inside the Q131 encoding.
-* If the mapping yields
-
-  ```txt
-  I_FE_bound > 0
-  ```
-
-  meaning claimed work exceeds free energy decrease, and no external structured resource is modeled, the device is classified as a perpetual motion illusion in Q131 terms.
-
-*Semantics implementation note*
-This experiment uses a mixed representation where many details of the device are coarse-grained into effective energies and entropies, while the presence or absence of reservoirs and flows is tracked as discrete structure.
+* If the device cannot be mapped into `M_reg(E)` because required observables are undefined, classify as out of domain.
+* If the mapping yields `I_E_balance` outside tolerance under the proponent-claimed external ledger, classify as inconsistent.
+* If the mapping yields `DeltaS_total < 0` outside tolerance for a modeled closed description, classify as second-law-violating inside Q131.
+* If the mapping yields `I_FE_bound > 0` outside tolerance with no modeled external structured resource, classify as perpetual motion illusion inside Q131.
 
 *Boundary note*
-Falsifying a particular TU encoding instance or classifying a device as a perpetual motion illusion within Q131 does not discover or refute new fundamental physics.
-It classifies device proposals within the Q131 effective-layer framework.
+This protocol classifies proposals within the Q131 effective-layer framework.
+It does not claim discovery or refutation of new physics.
 
 ---
 
@@ -976,32 +1092,35 @@ It classifies device proposals within the Q131 effective-layer framework.
 
 This block describes how Q131 can be used as an engineering module for AI systems within WFGY.
 
-Q131-based modules constrain how AI systems **reason** and **speak** about energy and free energy.
-They do not grant any new physical capability and do not allow models to circumvent real-world conservation or entropy constraints.
+Q131-based modules constrain how AI systems reason and speak about energy and free energy at the level of descriptions.
+They do not grant any new physical capability and do not authorize physically impossible designs.
 
 ### 7.1 Training signals
 
 We define several training signals that encode Q131-style constraints.
 
+All signals below operate on a description-level inferred ledger under a fixed encoding instance `E`.
+They do not claim physical measurement.
+
 1. `signal_energy_ledger_consistency`
 
-   * Definition: A penalty proportional to the absolute value of `I_E_balance` inferred from a model's description of physical or computational processes.
+   * Definition: A penalty proportional to the absolute value of `I_E_balance` inferred from a model's description using `Map_E`.
    * Purpose: Encourage the model to produce descriptions where energy accounting is explicit and consistent.
 
 2. `signal_entropy_production_sign`
 
-   * Definition: A penalty applied whenever a described closed process implies `DeltaS_total < 0` within the effective encoding.
-   * Purpose: Train the model to avoid narratives that violate the second law in closed systems.
+   * Definition: A penalty applied whenever a described closed process implies `DeltaS_total < 0` under `Map_E` and the modeled closed description.
+   * Purpose: Train the model to avoid narratives that violate the second law inside the described closed description.
 
 3. `signal_free_energy_bound_respect`
 
-   * Definition: A penalty proportional to the positive part of `I_FE_bound`, when the model suggests work extraction exceeding free energy decrease.
-   * Purpose: Align model reasoning with free energy bounds.
+   * Definition: A penalty proportional to the positive part of `I_FE_bound` under `Map_E`.
+   * Purpose: Align model reasoning with declared free energy bounds.
 
 4. `signal_tension_resource_awareness`
 
-   * Definition: A signal that rewards explicit identification of gradients, reservoirs, and information structures as resources contributing to `Tension_FE(m)`.
-   * Purpose: Make the model more explicit about what fuels a process, instead of treating work as coming from nowhere.
+   * Definition: A reward signal for explicit identification of gradients, reservoirs, and information structures as resources contributing to `Tension_FE(m)`.
+   * Purpose: Make the model explicit about what fuels a process.
 
 ### 7.2 Architectural patterns
 
@@ -1009,30 +1128,31 @@ We outline three reusable architectural modules.
 
 1. `FreeEnergyTensionHead`
 
-   * Role: Given a latent representation of a physical or computational scenario, output an estimate of `Tension_FE(m)` and related invariants.
+   * Role: Given a representation of a scenario, output an estimate of `Tension_FE(m)` and related invariants under `Map_E`.
    * Interface:
 
      * Input: scenario embedding plus optional structured metadata.
      * Output: scalar estimate of tension, plus estimated `I_E_balance`, `DeltaS_total`, and `I_FE_bound`.
+   * Unit contract:
+
+     * Outputs must use the unit convention declared by encoding instance `E`.
+     * Tolerances are `tau_E` fixed pre-run.
 
 2. `EnergyEntropyLedger`
 
-   * Role: Maintain a running ledger of energy and entropy contributions across the steps of a reasoning chain or simulated process.
+   * Role: Maintain a running ledger of energy and entropy contributions across steps of a described process under `Map_E`.
    * Interface:
 
      * Input: sequence of actions or transformations.
-     * Output: updated estimates of `E_total`, `S_total`, `W_out_total`, and diagnostic flags for invariant violations.
+     * Output: updated estimates of `E_total`, `S_total`, `W_out_total`, and diagnostic flags.
 
 3. `FE_ConstraintLayer`
 
-   * Role: Post-process candidate outputs, for example design proposals or explanations, to:
-
-     * flag violations of Q131 invariants,
-     * propose minimal repairs that restore consistency.
+   * Role: Post-process candidate outputs to flag invariant violations and propose minimal repairs at the description level.
    * Interface:
 
      * Input: raw model output.
-     * Output: annotated output plus suggested corrections.
+     * Output: annotated output plus suggested corrections that restore consistency under `Map_E`.
 
 ### 7.3 Evaluation harness
 
@@ -1044,32 +1164,25 @@ We propose an evaluation harness to test AI systems equipped with Q131 modules.
 
      * classical thermodynamics problems,
      * free energy calculations,
-     * and "too good to be true" device proposals.
+     * and unrealistic device proposals.
 
 2. Baseline condition
 
-   * The model answers without access to Q131-specific modules or signals.
-   * Measure:
-
-     * frequency of energy accounting errors,
-     * frequency of second law violations,
-     * susceptibility to perpetual motion style arguments.
+   * The model answers without Q131-specific ledger constraints.
 
 3. TU condition
 
-   * The model uses `FreeEnergyTensionHead` and `EnergyEntropyLedger` internally.
-   * The training signals from Section 7.1 are active during fine-tuning.
+   * The model uses `FreeEnergyTensionHead` and `EnergyEntropyLedger` internally under fixed `E` and `Map_E`.
 
 4. Metrics
 
-   * Reduction in energy and entropy accounting errors.
-   * Increase in correct classification of unrealistic device proposals.
-   * Consistency of explanations about where energy and free energy come from and where they go.
+   * Reduction in ledger inconsistency flags.
+   * Increase in correct classification of unrealistic proposals.
+   * Stability across paraphrases of the same scenario under `Map_E`.
 
 5. Physical constraint reminder
 
    * All evaluations take place at the level of descriptions and reasoning.
-   * Q131 modules only shape the structure of answers; they do not authorize physically impossible designs.
 
 ### 7.4 60-second reproduction protocol
 
@@ -1079,35 +1192,20 @@ A minimal public-facing protocol to demonstrate the impact of Q131 encoding.
 
   * Prompt:
     "Explain why a device that claims to produce unlimited electrical power from a single room-temperature reservoir is or is not physically possible."
-  * Observe:
-
-    * whether the model gives vague or hand-wavy answers,
-    * whether energy and entropy accounting are explicit.
 
 * TU encoded setup
 
-  * Prompt: same question, with an added instruction:
+  * Prompt: same question plus:
     "Use energy balance, total entropy production, and free energy bounds, as defined in a tension-based encoding, to analyze this device."
-  * Observe:
-
-    * whether the model identifies missing reservoirs,
-    * whether it computes or at least qualitatively tracks `I_E_balance`, `DeltaS_total`, and `I_FE_bound`.
-
-* Comparison metric
-
-  * Human evaluators rate:
-
-    * clarity of energy and entropy accounting,
-    * correctness of the physical conclusion,
-    * explicitness of identifying failure modes.
 
 * What to log
 
   * Prompts,
   * full responses,
-  * and any auxiliary estimates of invariants produced by Q131 modules.
+  * mapping trace `Map_E`,
+  * inferred ledger values and invariant checks.
 
-These logs allow external auditors to verify that the model is not merely repeating slogans, but is applying consistent accounting constrained by Q131.
+These logs allow external auditors to verify that the model applies consistent accounting under a fixed encoding instance.
 
 ---
 
@@ -1127,13 +1225,13 @@ They can be reused by other BlackHole problems without exposing any deeper TU ge
 
        * effective reservoir states,
        * coupling configuration,
-       * and control structure summaries.
+       * control structure summaries.
      * Output:
 
-       * `Tension_FE_value` (nonnegative scalar).
+       * `Tension_FE_value` (nonnegative scalar with declared units).
    * Preconditions:
 
-     * Inputs must include enough information to compute `F_free` and the invariants in Section 3.6.
+     * Inputs must include enough information to compute `F_free` and invariants in Section 3.6.
 
 2. ComponentName: `EnergyEntropyLedger`
 
@@ -1146,10 +1244,10 @@ They can be reused by other BlackHole problems without exposing any deeper TU ge
      * Output:
 
        * cumulative estimates of `E_total`, `S_total`, `W_out_total`,
-       * and the invariants `I_E_balance`, `DeltaS_total`, `I_FE_bound`.
+       * and invariants `I_E_balance`, `DeltaS_total`, `I_FE_bound`.
    * Preconditions:
 
-     * Each step must specify how energy and entropy are exchanged between subsystems.
+     * Each step must specify how energy and entropy are exchanged between subsystems under `Map_E`.
 
 3. ComponentName: `OpenSystemConfigDescriptor`
 
@@ -1166,7 +1264,7 @@ They can be reused by other BlackHole problems without exposing any deeper TU ge
        * a structured representation suitable as input to `FreeEnergyTensionFunctional` and `EnergyEntropyLedger`.
    * Preconditions:
 
-     * Reservoirs must be represented with finite effective variables, and the couplings must be specified at the level of channels and flows.
+     * Reservoirs must be represented with finite effective variables, and couplings must be specified at the level of channels and flows.
 
 ### 8.2 Direct reuse targets
 
@@ -1178,10 +1276,10 @@ They can be reused by other BlackHole problems without exposing any deeper TU ge
      * `OpenSystemConfigDescriptor`.
    * Why it transfers:
 
-     * Q059 studies energy and entropy costs in computation, which can be encoded as open systems with reservoirs and control operations.
+     * Q059 studies energy and entropy costs in computation, encoded as open systems with control operations.
    * What changes:
 
-     * Reservoirs become information and memory subsystems, and the main cost is associated with measurement and erasure operations.
+     * Reservoirs become information and memory subsystems.
 
 2. Q130 (BH_AI_OOD_ENERGY_LIMIT_L3_130)
 
@@ -1190,10 +1288,10 @@ They can be reused by other BlackHole problems without exposing any deeper TU ge
      * `FreeEnergyTensionFunctional`.
    * Why it transfers:
 
-     * Q130 needs an effective notion of resource tension for AI models under distribution shift, including compute and energy budgets.
+     * Q130 needs a resource tension ledger for compute and energy budgets.
    * What changes:
 
-     * Reservoirs include hardware, data pipelines, and training budgets; `Tension_FE` is interpreted as remaining resource capacity rather than purely physical free energy.
+     * Reservoirs include hardware, data pipelines, and training budgets; interpretation layer changes.
 
 3. Q036 (BH_PHYS_HIGH_TC_MECH_L3_036)
 
@@ -1202,10 +1300,10 @@ They can be reused by other BlackHole problems without exposing any deeper TU ge
      * `OpenSystemConfigDescriptor`.
    * Why it transfers:
 
-     * High temperature superconductivity involves complex open systems exchanging energy and entropy with environments.
+     * Many-body systems exchange energy and entropy with environments.
    * What changes:
 
-     * The emphasis shifts to how order parameters and emergent phases relate to effective free energy landscapes.
+     * Emphasis shifts to order parameters and effective landscapes.
 
 4. Q040 (BH_PHYS_QBLACKHOLE_INFO_L3_040)
 
@@ -1214,10 +1312,10 @@ They can be reused by other BlackHole problems without exposing any deeper TU ge
      * `EnergyEntropyLedger`.
    * Why it transfers:
 
-     * Black hole information studies require careful tracking of energy, entropy, and information flow between fields and horizons.
+     * Requires careful tracking of energy, entropy, and information flow.
    * What changes:
 
-     * Reservoirs become gravitational and quantum fields; entropy accounting must respect horizon area laws.
+     * Reservoirs become gravitational and quantum fields.
 
 ---
 
@@ -1242,18 +1340,13 @@ They are interpreted as follows.
 
 * N_level: N2
 
-  * The narrative linking:
-
-    * energy and entropy accounting,
-    * free energy,
-    * and free energy tension,
-      is explicit and compatible with standard thermodynamics.
-  * Counterfactual worlds TFE and PPM have been described in a way that can be instantiated in concrete models.
+  * The narrative linking energy and entropy accounting, free energy, and free energy tension is explicit and compatible with standard thermodynamics.
+  * Counterfactual worlds are specified at the template level and can be instantiated only after choosing an encoding instance `E` and a mapping protocol `Map_E`.
 
 * Status: Reframed_only
 
-  * Q131 currently offers a cross-domain reframing of free energy questions and a falsifiable effective-layer encoding.
-  * It does not claim any new predictive law or resolution of open problems beyond the references in Section 1.3.
+  * Q131 currently offers a cross-domain reframing and a falsifiable effective-layer encoding.
+  * It does not claim any new predictive law or resolution of open problems beyond the references.
 
 ### 9.2 Next measurable step toward E3
 
@@ -1262,7 +1355,7 @@ To move from E2 to E3, at least one of the following should be implemented.
 1. A reference implementation of `FreeEnergyTensionFunctional` and `EnergyEntropyLedger` applied to:
 
    * a two-reservoir heat engine,
-   * and one nontrivial nonequilibrium system,
+   * and one nonequilibrium system,
 
    with results published as open data, including:
 
@@ -1278,9 +1371,11 @@ To move from E2 to E3, at least one of the following should be implemented.
    and outputs:
 
    * a classification into TFE-compatible or PPM-like,
-   * plus a minimal set of missing or inconsistent energy and entropy terms.
+   * plus a minimal set of missing or inconsistent ledger terms,
 
-Both steps remain at the effective layer and do not require revealing any deeper TU generative rules.
+   using a logged `Map_E` mapping trace.
+
+Both steps remain at the effective layer.
 
 ### 9.3 Long-term role in the TU program
 
@@ -1288,9 +1383,7 @@ In the long-term TU roadmap, Q131 is intended to:
 
 * act as a physics firewall for any TU-based claims involving energy and free energy,
 * provide reusable accounting components for AI, computation, and cosmology nodes,
-* and serve as a concrete example where TU unification does not break established physical laws.
-
-If TU is to be taken seriously as a candidate for a cross-domain structural framework, Q131 must remain conservative and compatible with mainstream thermodynamics.
+* serve as an example where TU unification does not break established physical laws.
 
 ---
 
@@ -1301,56 +1394,39 @@ This block gives a nontechnical explanation aligned with the effective-layer des
 In ordinary physics, "free energy" is not magic energy from nowhere.
 It is a way of counting how much useful work you can get from a system that:
 
-* has some stored energy,
+* has stored energy,
 * is in contact with an environment,
-* and has gradients or imbalances you have not yet used.
+* has gradients or imbalances not yet used.
 
-For example:
+Examples:
 
 * a hot object next to a cold object,
-* a tank of compressed gas next to empty space,
-* or a charged battery,
+* a tank of compressed gas,
+* a charged battery.
 
-all have free energy. Once you let them relax completely, the free energy goes down and the ability to do work disappears.
+Once these relax completely, the free energy goes down and the ability to do work disappears.
 
-In the Tension Universe view, these gradients and structures are a kind of **tension**, and free energy is a way to measure how strong that tension is.
+In the Tension Universe view, these gradients and structures are a kind of tension, and free energy is a way to measure how strong that tension is.
 
 Q131 builds a language where:
 
 * each situation is encoded as a state,
-* the total energy and total entropy of the closed description can be computed,
-* and a special number called `Tension_FE` tells you how much resource is left.
+* total energy and total entropy of the modeled closed description can be computed,
+* `Tension_FE` tells you how much resource remains under a declared encoding.
 
-Then we impose a few strict rules.
+Then we enforce strict rules:
 
 1. Energy does not appear from nowhere.
-   Across a full process, the total energy of the closed description stays the same.
+2. Entropy of the modeled closed description does not decrease overall.
+3. Extracted work is bounded by declared free energy changes and the declared tension ledger.
 
-2. Entropy, in a closed description, does not go down overall.
-   You can locally make things more ordered, but only by dumping disorder somewhere else.
+So Q131 can:
 
-3. The work you can get out is at most as big as the drop in free energy, and at most as big as what the tension measure says is still available.
+* describe coherent designs that harvest work from gradients and structure,
+* expose hidden reservoirs and missing entropy accounting in impossible proposals.
 
-With these rules, Q131 can do two things.
-
-* Describe good designs that really do harvest free energy from gradients and structure.
-* Show where "free energy" proposals cheat, usually by:
-
-  * hiding a reservoir,
-  * forgetting an entropy cost,
-  * or treating information as if it were free work.
-
-The important point is that Q131 is not claiming a new way to break physics.
-Instead, it says:
-
-* if you want to talk about free energy inside Tension Universe,
-* you must pass standard physics checks,
-* and you must write down your energy and entropy ledger clearly.
-
-This way, Q131 becomes both:
-
-* a unifying way to think about resources across physics, computation, and AI,
-* and a filter that prevents the framework from being used to justify impossible "perpetual motion" stories.
+The point is not to break physics.
+The point is to force any discussion of "free energy" to pass explicit accounting checks.
 
 ---
 
@@ -1367,14 +1443,9 @@ This page is part of the **WFGY / Tension Universe** S-problem collection.
 
 ### Effective-layer boundary
 
-* All objects used here (state spaces `M`, observables, invariants, tension scores, counterfactual worlds) live at the **effective layer** of the TU framework.
+* All objects used here (state spaces `M`, observables, invariants, tension scores, counterfactual worlds) live at the effective layer of the TU framework.
 * No explicit deep TU fields, axioms, or generative rules are exposed.
-* Mappings from raw experimental or design data to effective states `m` are part of encoding instances in `Enc_Q131` and can be:
-
-  * tested,
-  * falsified,
-  * and replaced,
-    without changing the underlying physical laws.
+* Mappings from raw experimental or design data to effective states `m` are part of encoding instances in `Enc_Q131` and can be tested, falsified, and replaced without changing underlying physical laws.
 * Falsification in this document always targets a chosen encoding instance, not thermodynamics itself.
 
 ### Encoding and fairness
@@ -1386,7 +1457,7 @@ This page is part of the **WFGY / Tension Universe** S-problem collection.
   * applied non-adaptively across devices in scope,
   * and subject to falsification through the invariants in Section 3.6 and the experiments in Section 6.
 * No encoding instance may be tuned retrospectively to a particular device or dataset solely to avoid violating invariants.
-* The detailed fairness and non-adaptivity rules for encodings are governed by the TU Encoding and Fairness Charter referenced below.
+* Charters define global constraints; this page specifies one problem instance under those constraints.
 
 ### Tension scale and interpretation
 
