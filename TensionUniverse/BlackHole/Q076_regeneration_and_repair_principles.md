@@ -1,3 +1,4 @@
+<!-- QUESTION_ID: TU-Q076 -->
 # Q076 · Regeneration and repair principles
 
 ## 0. Header metadata
