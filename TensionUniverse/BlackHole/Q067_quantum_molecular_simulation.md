@@ -1,3 +1,4 @@
+<!-- QUESTION_ID: TU-Q067 -->
 # Q067 · Exact quantum simulation of complex molecules
 
 ## 0. Header metadata
