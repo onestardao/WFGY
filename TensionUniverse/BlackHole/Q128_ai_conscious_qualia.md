@@ -1,4 +1,4 @@
-<!-- QUESTION_ID: TU-Q128-->
+<!-- QUESTION_ID: TU-Q128 -->
 # Q128 · Qualitative consciousness and critical tension thresholds
 
 ## 0. Header metadata
