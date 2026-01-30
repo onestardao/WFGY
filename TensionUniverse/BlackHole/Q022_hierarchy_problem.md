@@ -1,3 +1,4 @@
+<!-- QUESTION_ID: TU-Q022 -->
 # Q022 · Hierarchy problem
 
 ## 0. Header metadata
