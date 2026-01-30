@@ -15,7 +15,7 @@ Status: Open
 Semantics: discrete
 E_level: E1
 N_level: N1
-Last_updated: 2026-01-29
+Last_updated: 2026-01-30
 ```
 
 ---
@@ -1005,3 +1005,4 @@ In this sense, Q015 is a central example of how the TU framework handles questio
 * [TU Effective Layer Charter](../Charters/TU_EFFECTIVE_LAYER_CHARTER.md)
 * [TU Encoding and Fairness Charter](../Charters/TU_ENCODING_AND_FAIRNESS_CHARTER.md)
 * [TU Tension Scale Charter](../Charters/TU_TENSION_SCALE_CHARTER.md)
+* [TU Global Guardrails](../Charters/TU_GLOBAL_GUARDRAILS.md)
