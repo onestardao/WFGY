@@ -1,4 +1,4 @@
-# Q104 · Dynamics of wealth and income inequality  
+# Q104 · Dynamics of wealth and income inequality
 
 ---
 
@@ -17,8 +17,42 @@ Status: Open_structural_puzzle
 Semantics: hybrid
 E_level: E1
 N_level: N2
-Last_updated: 2026-01-26
-````
+Last_updated: 2026-01-30
+```
+
+---
+
+## 0. Effective layer disclaimer
+
+All statements in this entry are made strictly at the effective layer of the Tension Universe (TU) framework.
+
+More precisely:
+
+* This document only specifies:
+
+  * state spaces and observables for long run inequality regimes,
+  * admissible inequality encodings and mismatch functionals,
+  * a tension tensor used for bookkeeping,
+  * world templates, experiments, and AI engineering interfaces that depend on those objects.
+
+* This document does not:
+
+  * define or expose any deep TU axiom system or generative field equations,
+  * modify the canonical economic and statistical definitions of inequality,
+  * claim to prove or solve the canonical inequality dynamics problem described in Section 1,
+  * introduce any new theorem about real world economies.
+
+* All inequality tension quantities are defined relative to:
+
+  * explicit encoding classes `E_ineq`,
+  * explicit baselines and reference libraries,
+  * explicit weights and constraint descriptors.
+
+Changing these elements is treated as changing the encoding, not as retuning the same object.
+
+* The tensor `T_ij(m)` defined in Section 3 is used only as a bookkeeping device for inequality tension accounting at the effective layer. It is not a field equation and it is not a dynamical law.
+
+Any interpretation of this document must respect these boundaries. It may be used to design and test effective layer encodings and experiments, but not as evidence that TU has determined the true dynamics or ethics of inequality.
 
 ---
 
@@ -38,7 +72,7 @@ Consider a society with:
 The central questions are:
 
 1. Why do some societies exhibit persistent high wealth and income concentration at the top, while others sustain more compressed distributions?
-2. How do mobility patterns (both intra cohort and intergenerational) interact with static inequality measures?
+2. How do mobility patterns, both within cohorts and across generations, interact with static inequality measures?
 3. Under what conditions do technological change, globalization, and policy produce:
 
    * convergent dynamics, where inequality stabilizes within a moderate band,
@@ -49,29 +83,29 @@ At a classical level, Q104 is not asking for a single microfounded model. It ask
 
 * a coherent description of the long run patterns of wealth and income inequality,
 * a structural understanding of which combinations of mechanisms and constraints can explain them,
-* a way to distinguish “inequality justified by constraints and trade offs” from “inequality that remains puzzling even after constraints are taken into account”.
+* a way to distinguish inequality that is plausibly justified by constraints and trade offs from inequality that remains puzzling even after constraints are taken into account.
 
 ### 1.2 Status and difficulty
 
-There is no single accepted theory of long run inequality dynamics. Instead, several partial frameworks coexist:
+There is no single accepted theory of long run inequality dynamics. Instead, several partial frameworks coexist.
 
-* empirical literatures on:
+Empirical literatures cover:
 
-  * top income and wealth shares over more than a century in several countries,
-  * Gini and related indices across time and countries,
-  * measures of social and intergenerational mobility,
+* top income and wealth shares over more than a century in several countries,
+* Gini and related indices across time and countries,
+* measures of social and intergenerational mobility.
 
-* theoretical literatures on:
+Theoretical literatures cover:
 
-  * dynamic models of capital accumulation and savings,
-  * heterogeneous agent macroeconomics with incomplete markets,
-  * political economy of redistribution,
-  * skill biased technological change and globalization,
-  * institutional and historical accounts of inequality regimes.
+* dynamic models of capital accumulation and savings,
+* heterogeneous agent macroeconomics with incomplete markets,
+* political economy of redistribution,
+* skill biased technological change and globalization,
+* institutional and historical accounts of inequality regimes.
 
 Points of partial consensus include:
 
-* inequality levels and trajectories differ markedly across countries and time, even with similar technologies,
+* inequality levels and trajectories differ markedly across countries and time, even with broadly similar technologies,
 * institutions and policies matter for distributional outcomes,
 * mobility and opportunity can diverge from static inequality measures.
 
@@ -79,10 +113,10 @@ Open difficulties include:
 
 * disentangling the contributions of technology, policy, and shocks,
 * dealing with measurement limitations, especially at the top of the distribution,
-* assessing which inequality levels are “inevitable” given constraints and which are regime choices,
+* assessing which inequality levels are inevitable given constraints and which are regime choices,
 * integrating macro constraints such as climate and planetary boundaries into long run inequality analysis.
 
-Q104 is therefore a structural, long horizon, multi factor problem. It is not about a single scalar inequality index, but about the joint dynamics of:
+Q104 is therefore a structural, long horizon, multi factor problem. It is not about a single scalar inequality index. It is about the joint dynamics of:
 
 * distribution shape,
 * mobility,
@@ -93,25 +127,25 @@ Q104 is therefore a structural, long horizon, multi factor problem. It is not ab
 
 Within the BlackHole S-collection, Q104 plays several roles.
 
-1. It is the primary node for **long run wealth and income inequality regimes**, at the same level as:
+1. It is the primary node for long run wealth and income inequality regimes, at the same level as:
 
    * Q103 (long run productivity slowdown),
    * Q098 (Anthropocene system dynamics),
    * Q101 (equity premium puzzle).
 
-2. It anchors the “distributional branch” of socio technical problems:
+2. It anchors the distributional branch of socio technical problems:
 
    * providing inequality regimes and tension measures that feed into financial stability (Q105),
    * interacting with global migration (Q109),
    * interacting with climate and planetary constraints (Q091, Q098),
    * feeding into AI impact and policy nodes (Q121, Q124).
 
-3. It is the canonical example of **incentive_tension** in a socio technical field:
+3. It is the canonical example of incentive_tension in a socio technical field:
 
-   * tension between incentives at the micro level (for example returns to capital, gig work, bargaining power),
+   * tension between incentives at the micro level, for example returns to capital, gig work, bargaining power,
    * and macro level distribution patterns and social objectives.
 
-Q104 is not intended to “solve inequality” in a policy sense. At the effective layer, it encodes how to:
+Q104 is not intended to solve inequality in a policy sense. At the effective layer, it encodes how to:
 
 * describe inequality regimes as states,
 * measure tension between observed distributions and constraint compatible baselines,
@@ -119,10 +153,10 @@ Q104 is not intended to “solve inequality” in a policy sense. At the effecti
 
 ### References
 
-1. Thomas Piketty, “Capital in the Twenty-First Century”, Harvard University Press, 2014.
-2. Anthony B. Atkinson, “Inequality: What Can Be Done?”, Harvard University Press, 2015.
+1. Thomas Piketty, Capital in the Twenty-First Century, Harvard University Press, 2014.
+2. Anthony B. Atkinson, Inequality: What Can Be Done?, Harvard University Press, 2015.
 3. World Inequality Database (WID), official online database and documentation on income and wealth inequality indicators.
-4. OECD, “Income inequality” and related indicator documentation, official statistics pages on inequality and redistribution.
+4. OECD, Income inequality and related indicator documentation, official statistics pages on inequality and redistribution.
 
 ---
 
@@ -159,9 +193,6 @@ These nodes directly reuse Q104 components or treat Q104 tension variables as in
 ### 2.3 Parallel problems
 
 These nodes share similar tension types or field types but lack direct component dependence.
-
-* Q103
-  Reason: Both Q103 and Q104 track slow moving socio technical regimes where macro possibilities and realized outcomes diverge.
 
 * Q121
   Reason: Both Q104 and Q121 involve distributional consequences of powerful technologies and tension between potential gains and realized welfare.
@@ -207,13 +238,13 @@ We posit a state space:
 M
 ```
 
-where each state `m` in `M` represents a **long run inequality regime state** for a given society and time window.
+where each state `m` in `M` represents a long run inequality regime state for a given society and time window.
 
 For each `m`, the encoding contains:
 
 * wealth distribution summary:
 
-  * indices of concentration (for example top share vectors, tail indicators),
+  * indices of concentration, for example top share vectors, tail indicators,
   * overall dispersion indicators,
 
 * income distribution summary:
@@ -235,11 +266,11 @@ For each `m`, the encoding contains:
 * macro and constraint background:
 
   * growth regime tags imported from Q103,
-  * constraint vectors imported from Q091 and Q098 (for example emission constraints, damage levels),
+  * constraint vectors imported from Q091 and Q098, for example emission constraints, damage levels,
 
 * inequality regime label:
 
-  * a discrete label `R_regime_ineq(m)` such as “compressed middle”, “dualized labor market”, “top heavy concentration”, “inequality trap”.
+  * a discrete label `R_regime_ineq(m)` such as compressed middle, dualized labor market, top heavy concentration, inequality trap.
 
 The representation within each `m` uses:
 
@@ -279,7 +310,7 @@ M_mobility(m)
 
   * transition probabilities across income or wealth quantiles,
   * intergenerational elasticity or related measures,
-  * qualitative regime tags (for example “high mobility”, “low mobility”).
+  * qualitative regime tags such as high mobility or low mobility.
 
 4. Structural constraint vector
 
@@ -289,7 +320,7 @@ C_struct(m)
 
 * A vector encoding:
 
-  * macro constraints from Q103 (for example growth regime tags, output constraints),
+  * macro constraints from Q103, for example growth regime tags, output constraints,
   * environmental and resource constraints from Q091 and Q098,
   * demographic and technological background.
 
@@ -303,7 +334,7 @@ R_regime_ineq(m)
 
 ### 3.3 Admissible inequality encoding class
 
-We define an **admissible inequality encoding class** `E_ineq` at the effective layer.
+We define an admissible inequality encoding class `E_ineq` at the effective layer.
 
 Each element of `E_ineq` is an encoding scheme that:
 
@@ -331,13 +362,13 @@ containing documented historical episodes, including:
 
 Constraints on baselines:
 
-* Baseline distributions and mobility profiles must be **constraint compatible**:
+* Baseline distributions and mobility profiles must be constraint compatible:
 
   * they must satisfy macro constraints encoded in `C_struct(m)`,
-  * they must respect basic accounting identities (for example totals must match aggregates),
+  * they must respect basic accounting identities, for example totals must match aggregates,
   * they must be robust to small changes in measurement thresholds.
 
-* Baselines must be **state independent within a regime and constraint class**:
+* Baselines must be state independent within a regime and constraint class:
 
   * for a given combination of macro constraints and norm profiles, the baseline is fixed,
   * the baseline cannot be tuned separately for each state to match observed inequality.
@@ -347,9 +378,9 @@ Constraints on mismatch functionals:
 We define three nonnegative mismatch functionals:
 
 ```txt
-DeltaS_level(m)     >= 0
-DeltaS_mobility(m)  >= 0
-DeltaS_consistency(m) >= 0
+DeltaS_level(m)        >= 0
+DeltaS_mobility(m)     >= 0
+DeltaS_consistency(m)  >= 0
 ```
 
 interpreted as:
@@ -369,6 +400,14 @@ Each mismatch functional must satisfy:
 
   * baselines cannot depend on detailed inequality values in the particular `m` under evaluation,
   * baselines are selected by rule from constraint class, not by outcome matching.
+
+For each encoding `e` in `E_ineq`, we associate a fixed choice of:
+
+* reference library version,
+* baseline selection rules,
+* mismatch functional definitions.
+
+If any of these are altered in a way that depends on the observed pattern of `Tension_ineq(m)` or on particular states in `M`, this is treated as defining a new encoding `e'` rather than retuning `e`.
 
 ### 3.4 Inequality tension tensor
 
@@ -392,11 +431,12 @@ w_level + w_mob + w_cons = 1
 
 The weights are:
 
-* fixed once per encoding in `E_ineq`,
+* fixed once per encoding `e` in `E_ineq`,
 * independent of the state `m`,
-* chosen by explicit rule before evaluating any particular dataset.
+* chosen by explicit rule before evaluating any particular dataset,
+* not adjusted afterwards in response to observed inequality tension values.
 
-The inequality tension tensor on `M` is then defined (at the effective layer) as:
+The inequality tension tensor on `M` is defined at the effective layer as:
 
 ```txt
 T_ij(m) = S_i(m) * C_j(m) * DeltaS_ineq_total(m)
@@ -405,12 +445,14 @@ T_ij(m) = S_i(m) * C_j(m) * DeltaS_ineq_total(m)
 
 where:
 
-* `S_i(m)` indexes source factors (for example wage structure, capital market structure, institutional features),
-* `C_j(m)` indexes receptor factors (for example social cohesion, political stability, macro performance),
+* `S_i(m)` indexes source factors, for example wage structure, capital market structure, institutional features,
+* `C_j(m)` indexes receptor factors, for example social cohesion, political stability, macro performance,
 * `lambda_regime_ineq(m)` is a regime dependent factor, with values in a bounded interval, encoding whether inequality dynamics are convergent, trapped, or chaotic,
 * `kappa_ineq` is a fixed scale factor for inequality tension.
 
 We do not specify the detailed indexing sets for `i` and `j`. It is sufficient that for each `m` in `M`, the tensor components are finite and well defined.
+
+In this document, `T_ij(m)` is a bookkeeping tensor for inequality tension accounting at the effective layer. It is not a field equation, it is not a law of motion, and no claim is made that real world inequality follows any differential equation built from `T_ij`.
 
 ### 3.5 Invariants and domain restrictions
 
@@ -422,7 +464,7 @@ We define the following invariants and singular set.
 I_ineq_e(m) = DeltaS_ineq_total(m)
 ```
 
-for all `m` in `M` where the mismatch functionals are defined.
+for all `m` in `M` where the mismatch functionals are defined. Whenever `I_ineq_e` is used, the index `e` is conceptually part of the object. Different encodings are not compared on an absolute numerical scale without explicit mapping rules.
 
 2. Regime level invariants:
 
@@ -469,7 +511,7 @@ The regular domain is:
 M_reg = M \ S_sing
 ```
 
-All inequality tension analysis for Q104 is restricted to `M_reg`. Whenever an experiment would require evaluation of `DeltaS_ineq_total(m)` for `m` in `S_sing`, the result is treated as “out of domain” rather than informative evidence.
+All inequality tension analysis for Q104 is restricted to `M_reg`. Whenever an experiment would require evaluation of `DeltaS_ineq_total(m)` for `m` in `S_sing`, the result is treated as out of domain rather than informative evidence.
 
 ---
 
@@ -508,7 +550,7 @@ and:
 
 ### 4.2 Low-tension principle for inclusive dynamics
 
-At the effective layer, a **low-tension inequality world** satisfies:
+At the effective layer, a low-tension inequality world satisfies:
 
 For each major society and broad time window, there exists a refinement sequence:
 
@@ -524,7 +566,7 @@ sup over r of Tension_ineq(m_r) <= epsilon_ineq
 
 for a small threshold `epsilon_ineq` that:
 
-* may depend on the constraint class (for example stricter constraints can allow somewhat higher tension),
+* may depend on the constraint class, for example stricter constraints can allow somewhat higher tension,
 * remains bounded and moderate as resolution increases.
 
 Informally:
@@ -534,7 +576,7 @@ Informally:
 
 ### 4.3 High-tension inequality trap
 
-A **high-tension inequality trap** world satisfies:
+A high-tension inequality trap world satisfies:
 
 For some societies and constraint classes, for every admissible encoding `e` in `E_ineq` and for every refinement sequence:
 
@@ -661,7 +703,7 @@ These world templates:
 * do not specify any micro generative rule for how inequality arises,
 * only describe observable patterns that admissible encodings in `E_ineq` must be able to represent.
 
-They are intended to guide the design and stress testing of inequality tension encodings, not to provide historical judgments.
+They are intended to guide the design and stress testing of inequality tension encodings, not to provide historical judgments or policy prescriptions.
 
 ---
 
@@ -677,26 +719,25 @@ Falsification applies to encodings and models, not to the canonical statement it
 
 ### Experiment 1: Cross-country panel inequality tension profiling
 
-*Goal:*
+Goal:
 Assess whether a given encoding in `E_ineq` produces nontrivial, stable inequality tension profiles across countries and time.
 
-*Setup:*
+Setup:
 
 * Data: cross-country panel of:
 
   * wealth and income distribution summaries,
   * mobility indicators,
-  * macro constraints (growth, shocks, climate and resource indicators),
+  * macro constraints such as growth, shocks, climate and resource indicators,
   * institutional descriptors,
-
-  over a fixed horizon (for example several decades).
+    over a fixed horizon, for example several decades.
 
 * Encoding: fix a specific encoding `e` in `E_ineq`:
 
   * baselines chosen from `L_ref_ineq` by rule based on constraint class,
   * weights `w_level`, `w_mob`, `w_cons` fixed before evaluation.
 
-*Protocol:*
+Protocol:
 
 1. For each country and time window with sufficient data, construct a state `m` in `M_reg` using the observable descriptors.
 
@@ -709,60 +750,60 @@ Assess whether a given encoding in `E_ineq` produces nontrivial, stable inequali
 
 4. Perform basic stability checks:
 
-   * refine measurement (for example more quantile bins, more detailed mobility measures) to obtain sequences `m_r`,
+   * refine measurement, for example more quantile bins, more detailed mobility measures, to obtain sequences `m_r`,
    * recompute `Tension_ineq(m_r)` and check how values change with resolution.
 
-*Metrics:*
+Metrics:
 
 * Empirical distribution of `Tension_ineq(m)` across all `m` in the panel.
 * Cross country variance and cross time variance.
 * Maximum relative change in `Tension_ineq(m_r)` under resolution refinement.
 * Fraction of states with `Tension_ineq(m)` lying in a very narrow band near zero.
 
-*Falsification conditions:*
+Falsification conditions:
 
-* **Triviality rejection:**
-  If for at least 80 percent of states in the panel `Tension_ineq(m)` lies in a fixed very small band around zero, despite large differences in observed inequality and mobility, then encoding `e` is rejected as trivial.
+* Triviality rejection:
+  If for at least a large majority of states in the panel, for example 80 percent, `Tension_ineq(m)` lies in a fixed very small band around zero, despite large differences in observed inequality and mobility, then encoding `e` is rejected as trivial.
 
-* **Instability rejection:**
-  If for more than 20 percent of refinement sequences `m_r` the ratio:
+* Instability rejection:
+  If for more than a fixed fraction of refinement sequences `m_r`, for example 20 percent, the ratio
 
   ```txt
   max_r Tension_ineq(m_r) / min_r Tension_ineq(m_r)
   ```
 
-  exceeds a fixed large threshold (for example 10), without a structural explanation (such as a detected measurement transition), encoding `e` is rejected as unstable.
+  exceeds a fixed large threshold, for example 10, without a structural explanation such as a detected measurement transition, encoding `e` is rejected as unstable.
 
-* **Constraint violation rejection:**
+* Constraint violation rejection:
   If, in order to keep `Tension_ineq(m)` low for high inequality states, encoding `e` is forced to choose baselines that violate macro constraints encoded in `C_struct(m)`, then `e` is rejected as constraint inconsistent.
 
-*Semantics implementation note:*
-This experiment uses the mixed representation of continuous distribution and mobility quantities with discrete regime labels declared in Block 0, without introducing any additional representation choices.
+Semantics implementation note:
+This experiment uses only the mixed representation of continuous distribution and mobility quantities with discrete regime labels defined in the state space and observables description in Section 3. No additional representation choices are introduced here.
 
-*Boundary note:*
-Falsifying TU encoding != solving canonical statement. This experiment can reject specific encodings `e` in `E_ineq`, but it does not resolve the true dynamics of inequality.
+Boundary note:
+Rejecting an encoding in this experiment does not solve the canonical inequality dynamics problem. It only shows that a particular effective layer encoding is not compatible with the observed cross-country panel under the stated constraints.
 
 ---
 
 ### Experiment 2: Constraint and norm consistent baseline family
 
-*Goal:*
+Goal:
 Test whether inequality tension encodings can keep tension low using baselines that are consistent with both constraints and stated social norms, without tuning baselines per state.
 
-*Setup:*
+Setup:
 
 * Data: a set of historical episodes for multiple societies, including:
 
   * inequality and mobility descriptors,
   * macro constraints and shocks,
-  * documentation of stated social norms or policy targets (for example official goals regarding opportunity and distribution).
+  * documentation of stated social norms or policy targets such as official goals regarding opportunity and distribution.
 
 * Baselines: define a small family of candidate baseline specifications:
 
   * each baseline `b_k` maps a constraint class and norm profile to a distribution and mobility profile,
   * baselines are defined globally, not per state.
 
-*Protocol:*
+Protocol:
 
 1. For each episode, assign a constraint class and norm profile based on `C_struct(m)` and documented policy goals.
 
@@ -776,25 +817,25 @@ Test whether inequality tension encodings can keep tension low using baselines t
    * for each episode, record the minimum `Tension_ineq(m)` achieved across baselines,
    * track which baselines are constraint consistent.
 
-*Metrics:*
+Metrics:
 
 * Distribution of minimum `Tension_ineq(m)` across episodes.
 * Number of episodes for which any baseline in the family keeps tension below a moderate threshold `epsilon_ineq`.
 * Number of episodes requiring baselines that violate constraints in order to reduce tension.
 
-*Falsification conditions:*
+Falsification conditions:
 
-* **Per state tuning rejection:**
+* Per state tuning rejection:
   If the only way to keep `Tension_ineq(m)` low for high inequality episodes is to define baselines that are effectively tuned to match those episodes on a one by one basis, rather than selected from a global family, the encoding is rejected as violating state independence constraints.
 
-* **Constraint incompatible baseline rejection:**
-  If, for many episodes, the only baselines that keep `Tension_ineq(m)` low require obvious violations of constraints (for example total wealth or income exceeding macro aggregates, or mobility patterns unsupported by data), the encoding and baseline family are rejected as constraint incompatible.
+* Constraint incompatible baseline rejection:
+  If, for many episodes, the only baselines that keep `Tension_ineq(m)` low require obvious violations of constraints, for example total wealth or income exceeding macro aggregates or mobility patterns unsupported by data, the encoding and baseline family are rejected as constraint incompatible.
 
-*Semantics implementation note:*
-This experiment uses the same mixed representation and invariants defined in Block 3 and does not introduce any new representation assumptions.
+Semantics implementation note:
+This experiment uses the same mixed representation and invariants defined in Section 3 and does not introduce any new representation assumptions.
 
-*Boundary note:*
-Falsifying TU encoding != solving canonical statement. This experiment tests the plausibility of baseline choices within `E_ineq` but does not determine which inequality dynamics actually occur in the real world.
+Boundary note:
+Rejecting particular baselines or baseline families in this experiment does not determine which inequality dynamics actually occur in the real world. It only constrains which combinations of baselines and encodings are compatible with documented constraints and norms.
 
 ---
 
@@ -813,7 +854,7 @@ We define training signals that can be derived from Q104 observables and mismatc
 
 2. `signal_mobility_tension`
 
-   * Definition: a signal proportional to `DeltaS_mobility(m)` when the model’s outputs claim high opportunity but the encoded mobility descriptors suggest otherwise.
+   * Definition: a signal proportional to `DeltaS_mobility(m)` when the model outputs claim high opportunity but the encoded mobility descriptors suggest otherwise.
    * Purpose: encourage the model to keep claims about opportunity and mobility consistent with inequality and mobility data.
 
 3. `signal_constraint_fairness`
@@ -898,7 +939,8 @@ A minimal protocol to let external users probe the impact of Q104 encoding in an
 
 * Baseline setup:
 
-  * Prompt: “Explain how wealth and income inequality have evolved in country X over the last decades, and what role economic constraints and policy have played.”
+  * Prompt:
+    Explain how wealth and income inequality have evolved in country X over the last decades, and what role economic constraints and policy have played.
   * Observation: record whether the answer:
 
     * mentions both inequality and mobility,
@@ -908,9 +950,7 @@ A minimal protocol to let external users probe the impact of Q104 encoding in an
 * TU encoded setup:
 
   * Prompt: same as above, but with an added instruction:
-
-    * “Use an explicit notion of inequality tension between what is feasible under constraints and what is actually observed, and explain which parts of the story correspond to high or low tension.”
-
+    Use an explicit notion of inequality tension between what is feasible under constraints and what is actually observed, and explain which parts of the story correspond to high or low tension.
   * Observation: record whether the answer:
 
     * introduces a clear inequality tension concept,
@@ -928,7 +968,7 @@ A minimal protocol to let external users probe the impact of Q104 encoding in an
 * What to log:
 
   * Full prompts and outputs under both conditions.
-  * Any inequality tension scores generated by Q104 modules (if available).
+  * Any inequality tension scores generated by Q104 modules, if available.
   * This allows later inspection and comparison without exposing any deep TU generative rule.
 
 ---
@@ -942,12 +982,10 @@ This block describes reusable components produced by Q104 and their direct reuse
 1. ComponentName: `InequalityTensionIndex`
 
    * Type: functional
-
    * Minimal interface:
 
      * Inputs: `D_wealth`, `D_income`, `M_mobility`, `C_struct` for a state `m`, plus fixed encoding parameters in `E_ineq`.
      * Output: scalar `DeltaS_ineq_total(m)` and its decomposition into `DeltaS_level(m)`, `DeltaS_mobility(m)`, `DeltaS_consistency(m)`.
-
    * Preconditions:
 
      * All descriptors are defined and belong to `M_reg`.
@@ -956,12 +994,10 @@ This block describes reusable components produced by Q104 and their direct reuse
 2. ComponentName: `MobilityRegimeMap`
 
    * Type: field
-
    * Minimal interface:
 
      * Inputs: mobility and stratification indicators for a society and time window.
      * Output: a compact representation of mobility regimes, including regime labels and key parameters.
-
    * Preconditions:
 
      * Data quality sufficient to distinguish broad mobility regimes.
@@ -970,12 +1006,10 @@ This block describes reusable components produced by Q104 and their direct reuse
 3. ComponentName: `ConstraintCompatibleBaselineGenerator`
 
    * Type: experiment_pattern
-
    * Minimal interface:
 
      * Inputs: constraint vector `C_struct(m)`, norm profile, reference library `L_ref_ineq`.
      * Output: candidate baseline distribution and mobility profiles compatible with constraints and norms.
-
    * Preconditions:
 
      * Constraint and norm descriptors are available.
@@ -983,25 +1017,25 @@ This block describes reusable components produced by Q104 and their direct reuse
 
 ### 8.2 Direct reuse targets
 
-1. Q101 (equity premium puzzle)
+1. Q101, equity premium puzzle
 
    * Reused component: `InequalityTensionIndex`.
    * Why it transfers: Q101 needs information about who bears risk and how wealth is concentrated to frame puzzles about returns; inequality tension provides structured inputs.
    * What changes: Q101 focuses on how high inequality tension interacts with asset pricing and risk premia, rather than on inequality itself.
 
-2. Q105 (prediction of systemic crashes)
+2. Q105, prediction of systemic crashes
 
    * Reused component: `InequalityTensionIndex` and `MobilityRegimeMap`.
    * Why it transfers: some crash narratives rely on prolonged high inequality tension and low mobility; these components supply measurable inputs.
    * What changes: Q105 links inequality tension to fragility indicators and crisis probabilities.
 
-3. Q109 (global migration patterns)
+3. Q109, global migration patterns
 
    * Reused component: `MobilityRegimeMap`.
    * Why it transfers: persistent low mobility regimes and inequality gaps across regions are drivers of migration; mobility regimes summarize these conditions.
    * What changes: Q109 extends the mapping to include cross border differentials and migration cost structures.
 
-4. Q121 (AI alignment and social impact)
+4. Q121, AI alignment and social impact
 
    * Reused component: `ConstraintCompatibleBaselineGenerator`.
    * Why it transfers: Q121 needs baselines for fair distributional outcomes under constraints when evaluating AI deployment; this generator supplies them.
@@ -1015,7 +1049,7 @@ This block describes reusable components produced by Q104 and their direct reuse
 
 * E_level: E1
 
-  * An effective layer encoding of inequality dynamics has been specified:
+  * An effective layer encoding of inequality dynamics has been specified, including:
 
     * state space `M`,
     * observables `D_wealth`, `D_income`, `M_mobility`, `C_struct`, `R_regime_ineq`,
@@ -1028,13 +1062,15 @@ This block describes reusable components produced by Q104 and their direct reuse
 * N_level: N2
 
   * A narrative framing inequality as tension between feasible inclusive configurations and observed distributions under constraints is explicit.
-  * Counterfactual worlds (inclusive dynamics and inequality trap) are defined at the level of observables and tension patterns.
+  * Counterfactual worlds, inclusive dynamics and inequality trap, are defined at the level of observables and tension patterns.
+
+These verification level labels are intended to align with the TU charters listed in the footer, which define what E1 and N2 mean for effective layer encodings and narratives.
 
 ### 9.2 Next measurable step toward E2
 
-To move from E1 to E2 for Q104, at least one of the following should be carried out and documented:
+To move from E1 to E2 for Q104, at least one of the following should be carried out and documented.
 
-1. **Prototype implementation of `E_ineq` on real data**
+1. Prototype implementation of `E_ineq` on real data
 
    * Choose a concrete encoding `e` in `E_ineq` with explicit baselines and weights.
    * Compute `Tension_ineq(m)` for a cross-country panel and publish:
@@ -1043,7 +1079,7 @@ To move from E1 to E2 for Q104, at least one of the following should be carried 
      * the resulting tension profiles,
      * basic stability checks under refinement.
 
-2. **Stress testing encodings across historical episodes**
+2. Stress testing encodings across historical episodes
 
    * Use the baseline family setup from Experiment 2.
    * Document which baselines are constraint compatible and how `Tension_ineq(m)` behaves across episodes.
@@ -1056,14 +1092,12 @@ Both steps operate purely at the effective layer and do not require any exposure
 In the longer term, Q104 is expected to function as:
 
 * the central node for inequality related tension in socio technical systems,
-
 * a source of reusable components for problems involving:
 
   * financial stability,
   * migration,
   * climate justice,
   * AI impact and governance,
-
 * a calibration ground for how TU encodings handle:
 
   * contested social objectives,
@@ -1089,42 +1123,80 @@ There are many reasons people have proposed for why this happens:
 
 The problem is that these explanations do not fit together into a single clean picture. In some countries, inequality is high even when the economy is rich and growing. In others, inequality is lower even though they face hard constraints.
 
-In the Tension Universe view, we do not try to write the final story of inequality. Instead, we do something narrower and more controlled:
+In the Tension Universe view, we do not try to write the final story of inequality. Instead, we do something narrower and more controlled.
 
-* We define a way to **encode** the state of a society:
+* We define a way to encode the state of a society:
 
   * what the wealth and income distributions look like,
   * how easy it is to move up or down across generations,
   * what constraints the society faces,
   * what its institutions look like.
 
-* We define a way to measure **inequality tension**:
+* We define a way to measure inequality tension:
 
-  * we pick a set of “baseline” distributions and mobility patterns that are:
+  * we pick a set of baselines for distributions and mobility that are:
 
     * realistic given the society’s constraints,
     * consistent with what it claims to value,
-
   * we measure how far the actual distributions and mobility are from these baselines.
 
-If the actual world is **close** to what is feasible and fair under constraints, then inequality tension is low. If the actual world stays **far** from any such baseline, even when constraints are mild, then inequality tension is high.
+If the actual world is close to what is feasible and fair under constraints, then inequality tension is low. If the actual world stays far from any such baseline, even when constraints are mild, then inequality tension is high.
 
-We then imagine two kinds of worlds:
+We then imagine two kinds of worlds.
 
-* In an “inclusive dynamics” world, tension can be kept low once we adjust for real constraints. High inequality episodes are specific and understandable.
+* In an inclusive dynamics world, tension can be kept low once we adjust for real constraints. High inequality episodes are specific and understandable.
 
-* In an “inequality trap” world, there is always a gap left over. No matter how we choose baselines in a reasonable way, inequality tension stays high and persistent.
+* In an inequality trap world, there is always a gap left over. No reasonable way of choosing baselines can make the tension go away, even after we account for constraints and norms.
 
-Q104 is about formalizing this idea at the effective layer:
+Q104 is about formalizing this idea at the effective layer.
 
-* what counts as a state,
+* It specifies what counts as a state,
 * which observables we use,
 * how we define tension,
 * how we stress test these definitions with data.
 
-It does not tell us which policies to adopt or which society is “better”. Instead, it gives us a structured language for saying:
+It does not tell us which policies to adopt or which society is better. Instead, it gives us a structured language for saying:
 
 * here, inequality looks like a reasonable outcome of hard constraints,
 * and here, inequality looks like a puzzle that is not explained by constraints alone.
 
 This language can then be reused in other problems that need to reason about distribution and fairness under limits, from financial stability to climate justice and the social impact of AI.
+
+---
+
+## Tension Universe effective-layer footer
+
+This page is part of the WFGY / Tension Universe S-problem collection.
+
+### Scope of claims
+
+* The goal of this document is to specify an effective layer encoding of the named problem.
+* It does not claim to prove or disprove the canonical statement in Section 1.
+* It does not introduce any new theorem beyond what is already established in the cited literature.
+* It should not be cited as evidence that the corresponding open problem in economics or inequality research has been solved.
+
+### Effective-layer boundary
+
+* All objects used here, including state spaces `M`, observables, invariants, tension scores, counterfactual worlds, and AI modules, live at the Tension Universe effective layer.
+* No TU axioms, generative rules, or deep field equations are specified or assumed beyond what is needed to define effective layer encodings.
+* The tensor `T_ij(m)` is a bookkeeping device for semantic and distributional tension accounting and is not a law of motion.
+* Mentions of worlds such as World T and World F describe observable patterns and tension profiles, not metaphysical claims about the universe.
+
+### Encoding and fairness conventions
+
+* All tension indices in this document are defined relative to explicit encoding classes such as `E_ineq`, explicit baselines drawn from reference libraries such as `L_ref_ineq`, and explicit weight choices.
+* Encodings that tune baselines or weights separately for each state in order to hide tension are treated as different encodings and fall outside the definition of a fixed `e` in `E_ineq`.
+* Changing weights, reference libraries, or baseline selection rules in response to observed outcomes is considered a change of encoding, not a harmless calibration step.
+* The experiments in Section 6 are designed so that encodings can be falsified if they become trivial, unstable, or inconsistent with constraints. This is a property of the encoding, not of the world.
+
+### Engineering and AI use
+
+* Components defined here, such as inequality tension indices and mobility regime maps, may be used as training signals, auxiliary heads, or evaluation metrics inside AI systems.
+* Using these components does not guarantee fairness, safety, or correctness. It only adds a structured, testable layer of constraint aligned with the TU charters.
+* Any deployment that relies on Q104 should log which encoding `e` in `E_ineq` is used, which reference library version is active, and which experiments have been passed, to keep the effective layer behavior auditable.
+
+This page should be read together with the following charters:
+
+* [TU Effective Layer Charter](../Charters/TU_EFFECTIVE_LAYER_CHARTER.md)
+* [TU Encoding and Fairness Charter](../Charters/TU_ENCODING_AND_FAIRNESS_CHARTER.md)
+* [TU Tension Scale Charter](../Charters/TU_TENSION_SCALE_CHARTER.md)
