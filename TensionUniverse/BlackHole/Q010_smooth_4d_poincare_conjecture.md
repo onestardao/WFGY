@@ -1,3 +1,4 @@
+<!-- QUESTION_ID: TU-Q010 -->
 # Q010 · Smooth 4 dimensional Poincaré conjecture
 
 ## 0. Header metadata
