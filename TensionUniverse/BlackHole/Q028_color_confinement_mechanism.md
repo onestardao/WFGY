@@ -1,3 +1,4 @@
+<!-- QUESTION_ID: TU-Q028 -->
 # Q028 · Color confinement mechanism in QCD
 
 ## 0. Header metadata
