@@ -16,8 +16,7 @@ Semantics: hybrid
 E_level: E1
 N_level: N1
 Encoding_class: encoding_class_TP_E2_proto
-Last_updated: 2026-01-28
-Run: 2
+Last_updated: 2026-01-30
 ```
 
 ---
@@ -963,6 +962,7 @@ This page should be read together with the following charters:
 * [TU Effective Layer Charter](../Charters/TU_EFFECTIVE_LAYER_CHARTER.md)
 * [TU Encoding and Fairness Charter](../Charters/TU_ENCODING_AND_FAIRNESS_CHARTER.md)
 * [TU Tension Scale Charter](../Charters/TU_TENSION_SCALE_CHARTER.md)
+* [TU Global Guardrails](../Charters/TU_GLOBAL_GUARDRAILS.md)
 
 ### Scope of claims
 
