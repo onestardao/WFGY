@@ -1,3 +1,4 @@
+<!-- QUESTION_ID: TU-Q101 -->
 # Q101 · Equity premium puzzle
 
 ## 0. Header metadata
