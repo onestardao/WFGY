@@ -1,4 +1,4 @@
-<!-- QUESTION_ID: TU-Q127-->
+<!-- QUESTION_ID: TU-Q127 -->
 # Q127 · Data entropy and truth extraction from synthetic worlds
 
 ## 0. Header metadata
