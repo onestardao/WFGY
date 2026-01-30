@@ -1,4 +1,4 @@
-<!-- QUESTION_ID: TU-Q130-->
+<!-- QUESTION_ID: TU-Q130 -->
 # Q130 · Out-of-distribution generalization and common-sense grounding
 
 ## 0. Header metadata
