@@ -1,3 +1,4 @@
+<!-- QUESTION_ID: TU-Q004 -->
 # Q004 · Hodge Conjecture
 
 ## 0. Header metadata
