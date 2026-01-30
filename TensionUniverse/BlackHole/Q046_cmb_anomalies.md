@@ -1,3 +1,4 @@
+<!-- QUESTION_ID: TU-Q046 -->
 # Q046 · Cosmic microwave background anomalies
 
 ## 0. Header metadata
