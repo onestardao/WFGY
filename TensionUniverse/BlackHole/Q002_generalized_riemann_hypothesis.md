@@ -1,3 +1,4 @@
+<!-- QUESTION_ID: TU-Q002 -->
 # Q002 · Generalized Riemann Hypothesis
 
 ## 0. Header metadata
