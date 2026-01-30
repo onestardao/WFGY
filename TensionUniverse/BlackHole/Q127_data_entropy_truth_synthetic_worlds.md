@@ -5,7 +5,7 @@
 ```txt
 ID: Q127
 Code: BH_AI_DATA_TRUTH_L3_127
-Domain: AI
+Domain: Artificial intelligence
 Family: data_truth
 Rank: S
 Projection_dominance: M
@@ -15,8 +15,26 @@ Status: Reframed_only
 Semantics: hybrid
 E_level: E1
 N_level: N1
-Last_updated: 2026-01-27
+Last_updated: 2026-01-30
 ```
+
+---
+
+## 0. Effective layer disclaimer
+
+All statements in this entry are made strictly at the effective layer of the Tension Universe (TU) framework.
+
+* We only specify state spaces, observables, invariants, tension scores, and experimental protocols that operate on finite summaries of synthetic training ecosystems.
+* We do not specify any deep TU axiom system, any constructive generative rules for TU itself, or any mapping from physical reality into TU internal fields.
+* We do not attempt to define metaphysical truth. We only introduce an effective notion of truth-like backbone structures inside synthetic data ecosystems.
+* We do not claim to solve the canonical open problem “truth from synthetic data” in any final sense. We only provide an encoding that can be tested, falsified, or refined.
+* We assume that, for any concrete system under study, TU compatible models exist that reproduce the observables defined in this file. We do not describe how such models are constructed.
+
+All encoding choices in this file belong to a fixed admissible encoding class for Q127. That class is constrained by the TU Effective Layer Charter, the TU Encoding and Fairness Charter, and the TU Tension Scale Charter. In particular:
+
+* all libraries, thresholds, and metric forms are finite,
+* all parameters are specified at the level of the encoding and versioned,
+* no parameter may be tuned after inspecting a particular synthetic ecosystem in order to force a desired conclusion.
 
 ---
 
@@ -62,7 +80,7 @@ However, there is no canonical, widely accepted theory that:
 The difficulty is partly conceptual and partly technical:
 
 * Conceptual, because the usual anchor of external labels or physical measurement is deliberately weak or missing.
-* Technical, because the synthetic ecosystem can be high dimensional, non stationary and tightly coupled.
+* Technical, because the synthetic ecosystem can be high dimensional, non stationary, and tightly coupled.
 
 Q127 therefore remains in a “reframed only” status. The goal here is to create a precise tension based framing that is falsifiable at the effective layer.
 
@@ -90,7 +108,7 @@ Within the BlackHole collection, Q127:
 
 ## 2. Position in the BlackHole graph
 
-This block records how Q127 is situated among Q001–Q125 and a small number of additional nodes, using only effective layer relations.
+This block records how Q127 is situated among other S problems, using only effective layer relations.
 
 ### 2.1 Upstream problems
 
@@ -160,6 +178,22 @@ All content in this block is at the effective layer. We only describe:
 
 We do not describe any hidden generative rules or explicit mappings from raw data or code to TU internal fields.
 
+We fix an admissible encoding class for Q127. An encoding in this class consists of:
+
+* the state space `M_synth`,
+* admissible generator and model libraries,
+* a finite context family `C_set` and generator intervention sets `J_set`,
+* observable families `H_data`, `R_pattern`, `A_agree`, `I_intervene`,
+* derived invariants `Inv_truth_core`, `Inv_illusion`,
+* a tension functional `Tension_truth`,
+* and, in Section 3.7, a derived tension tensor.
+
+All such choices must satisfy the TU Encoding and Fairness Charter:
+
+* libraries, context families, and intervention sets are finite;
+* thresholds, weights, and functional forms are specified as part of the encoding and are versioned;
+* no parameter in this block may be tuned after observing particular ecosystems in order to force low or high tension.
+
 ### 3.1 State space
 
 We assume a state space
@@ -178,11 +212,13 @@ Interpretation:
 
 We do not specify how any of these summaries are computed from raw samples or model parameters. We only assume:
 
-* For any concrete training pipeline, there exist states `m` that encode a faithful finite summary of:
+* for any concrete training pipeline, there exist states `m` that encode a faithful finite summary of:
 
   * which generators are active,
   * which models are trained,
   * how they interact through synthetic data.
+
+We treat `M_synth` as a stochastic field at the effective layer. Each state carries both discrete configuration information (which generators and models are present) and continuous statistics (entropy, agreement rates, intervention responses) that describe the random synthetic data flows inside the ecosystem.
 
 ### 3.2 Admissible generator and model libraries
 
@@ -196,9 +232,9 @@ G_lib(m) = { g_1, g_2, ..., g_K }
 
 for some finite integer `K >= 1` associated with the state `m`. We assume:
 
-* Each `g_k` is a synthetic data generator indexed at the effective layer.
-* The set `G_lib(m)` is fixed before any evaluation of the Q127 observables.
-* Generators may evolve over time, but for a given state `m` used in tension evaluation, the library is treated as fixed.
+* each `g_k` is a synthetic data generator indexed at the effective layer;
+* the set `G_lib(m)` is determined by the underlying training setup and is fixed before any evaluation of the Q127 observables at that state;
+* generators may evolve over time, but for a given state `m` used in tension evaluation, the library is treated as fixed.
 
 2. Model ensemble
 
@@ -208,10 +244,10 @@ F_ensemble(m) = { f_1, f_2, ..., f_L }
 
 for some finite integer `L >= 1`. We assume:
 
-* Each `f_l` is a model trained, possibly partially, on synthetic data produced from `G_lib(m)`.
-* The ensemble is fixed when we evaluate observables at `m`.
+* each `f_l` is a model trained, possibly partially, on synthetic data produced from `G_lib(m)`;
+* the ensemble is fixed when we evaluate observables at `m`.
 
-No observable in this block is allowed to depend on future modifications of `G_lib(m)` or `F_ensemble(m)` chosen after seeing current tension values.
+No observable in this block is allowed to depend on future modifications of `G_lib(m)` or `F_ensemble(m)` chosen after seeing current tension values. The mapping from underlying generators and models to the indices used here is part of the encoding and must respect the TU Encoding and Fairness Charter.
 
 ### 3.3 Core observables and fields
 
@@ -227,8 +263,8 @@ H_data(m; C)
 * Output: a nonnegative scalar estimating the entropy of the synthetic data distribution restricted to context `C`.
 * Properties:
 
-  * `H_data(m; C) >= 0` for all admissible states and contexts.
-  * Lower values indicate more regular or compressible synthetic data in that context.
+  * `H_data(m; C) >= 0` for all admissible states and contexts;
+  * lower values indicate more regular or compressible synthetic data in that context.
 
 2. Redundancy and compressibility observable
 
@@ -240,8 +276,8 @@ R_pattern(m; C)
 * Output: a scalar in a fixed range, for example `[0, 1]`, measuring pattern redundancy in synthetic data for context `C`.
 * Interpretation:
 
-  * Higher `R_pattern` means many synthetic samples in `C` share repeated structures.
-  * The mapping from raw data to this score is not specified, only its existence and range.
+  * higher `R_pattern` means many synthetic samples in `C` share repeated structures;
+  * the mapping from raw data to this score is not specified, only its existence and range.
 
 3. Cross model agreement observable
 
@@ -253,7 +289,7 @@ A_agree(m; C)
 * Output: a scalar in `[0, 1]` measuring the fraction of contexts or queries in `C` where the models in `F_ensemble(m)` agree on their outputs.
 * Interpretation:
 
-  * `A_agree` near `1` indicates strong consensus among models on that context.
+  * `A_agree` near `1` indicates strong consensus among models on that context;
   * `A_agree` near `0` indicates high disagreement.
 
 4. Intervention response observable
@@ -270,8 +306,10 @@ I_intervene(m; C, J)
 * Output: a scalar summarizing how much key observables change when synthetic data is restricted to generators indexed by `J`.
 * Properties:
 
-  * Larger values indicate that key statistics are sensitive to which generators are active.
-  * The exact formula is left abstract, but it must be well defined for all admissible `J`.
+  * larger values indicate that key statistics are sensitive to which generators are active;
+  * the exact formula is left abstract, but it must be well defined for all admissible `J` in a fixed finite family `J_set` chosen at the encoding level.
+
+The families `C_set` and `J_set` are part of the encoding and must be specified in advance for a given Q127 encoding version.
 
 ### 3.4 Truth backbone and illusion invariants
 
@@ -288,14 +326,14 @@ Inv_truth_core(m)
 
 We require that `Inv_truth_core(m)` be constructed from the following ingredients:
 
-* For many contexts `C` in `C_set`:
+* for many contexts `C` in `C_set`:
 
-  * `H_data(m; C)` is below a fixed threshold `H_star`.
-  * `R_pattern(m; C)` is above a fixed threshold `R_star`.
-  * `A_agree(m; C)` is above a fixed threshold `A_star`.
-  * For many generator subsets `J`, `I_intervene(m; C, J)` is below a fixed threshold `I_star`.
+  * `H_data(m; C)` is below a fixed threshold `H_star`,
+  * `R_pattern(m; C)` is above a fixed threshold `R_star`,
+  * `A_agree(m; C)` is above a fixed threshold `A_star`,
+  * for many generator subsets `J` in `J_set`, `I_intervene(m; C, J)` is below a fixed threshold `I_star`.
 
-All thresholds `H_star`, `R_star`, `A_star`, `I_star` are fixed at the level of the encoding, not tuned per state.
+All thresholds `H_star`, `R_star`, `A_star`, `I_star` are fixed at the level of the encoding, versioned, and shared across all states and all ecosystems evaluated under that encoding. They may not be tuned after seeing particular systems or data.
 
 2. Illusion intensity indicator
 
@@ -314,6 +352,8 @@ We require `Inv_illusion(m)` to increase when:
 * `A_agree(m; C)` is high only in narrow subsets of contexts, and
 * `I_intervene(m; C, J)` is large for many choices of `J` whenever these high agreement structures are used.
 
+The functional dependence of `Inv_illusion(m)` on `A_agree` and `I_intervene` is part of the encoding and is subject to the same fixed parameter and versioning rules as `Inv_truth_core(m)`.
+
 ### 3.5 Truth tension functional
 
 We define an effective truth tension functional:
@@ -329,9 +369,9 @@ Tension_truth(m) =
 
 where:
 
-* `H_backbone(m)` is a summary of `H_data(m; C)` over contexts that support candidate backbone structure.
-* `R_backbone(m)` is a summary of `R_pattern(m; C)` over those contexts.
-* `A_backbone(m)` is a summary of `A_agree(m; C)` over those contexts.
+* `H_backbone(m)` is a summary of `H_data(m; C)` over contexts that support candidate backbone structure;
+* `R_backbone(m)` is a summary of `R_pattern(m; C)` over those contexts;
+* `A_backbone(m)` is a summary of `A_agree(m; C)` over those contexts;
 * `I_backbone(m)` is a summary of `I_intervene(m; C, J)` over interventions on those contexts.
 
 The weights are fixed once for the encoding:
@@ -346,18 +386,18 @@ w_L = 1
 
 Properties:
 
-* `Tension_truth(m)` is nonnegative on all admissible states.
+* `Tension_truth(m)` is nonnegative on all admissible states in `M_synth_reg`;
 
-* Low `Tension_truth(m)` means:
+* low `Tension_truth(m)` means:
 
   * low entropy on backbone relevant contexts,
   * high redundancy and agreement on those contexts,
   * low sensitivity to generator changes on those contexts,
-  * low illusion intensity.
+  * low illusion intensity;
 
-* High `Tension_truth(m)` means the opposite pattern.
+* high `Tension_truth(m)` means the opposite pattern.
 
-Weights are not allowed to change after seeing any particular dataset or state.
+Weights are part of the encoding for Q127, versioned together with thresholds and context families, and are not allowed to change after seeing any particular dataset or state.
 
 ### 3.6 Singular set and domain restriction
 
@@ -368,7 +408,7 @@ S_sing = {
   m in M_synth :
     any of H_data, R_pattern, A_agree, I_intervene,
     Inv_truth_core, Inv_illusion, Tension_truth
-    is undefined or not finite for the chosen C_set and J subsets
+    is undefined or not finite for the chosen C_set and J_set
 }
 ```
 
@@ -380,6 +420,68 @@ M_synth_reg = M_synth \ S_sing
 
 Whenever an experiment or protocol would require evaluating `Tension_truth(m)` for `m` in `S_sing`, the result is treated as “out of domain” and not as evidence for or against the existence of truth structures.
 
+### 3.7 Effective tension tensor components
+
+To make the stochastic field structure explicit and to align with the declared tension type `consistency_tension`, we introduce an effective tension tensor on `M_synth_reg`.
+
+We choose finite index sets:
+
+```txt
+I_source = {1, ..., P}
+J_channel = {1, ..., Q}
+```
+
+For each state `m` in `M_synth_reg` and each context `C` in `C_set`, we define:
+
+* a family of source factors
+
+  ```txt
+  S_i(m; C)  for i in I_source
+  ```
+
+  which are bounded nonnegative functions built from `H_data(m; C)` and `R_pattern(m; C)`. They represent how much of the local stochastic data flow in context `C` contributes to candidate backbone structure.
+
+* a family of channel and constraint factors
+
+  ```txt
+  C_j(m; C)  for j in J_channel
+  ```
+
+  which are bounded nonnegative functions built from `A_agree(m; C)` and `I_intervene(m; C, J)` for `J` in `J_set`. They represent how strongly model agreement and generator robustness support or undermine local consistency.
+
+* a local truth tension increment
+
+  ```txt
+  DeltaS_truth(m; C) >= 0
+  ```
+
+  which is a context level contribution to `Tension_truth(m)` obtained from the same backbone summaries `H_backbone`, `R_backbone`, `A_backbone`, `I_backbone` that appear in Section 3.5.
+
+We then define the context level tensor components:
+
+```txt
+T_ij_synth(m; C) =
+  S_i(m; C) * C_j(m; C) * DeltaS_truth(m; C) * lambda_regime * kappa_scale
+```
+
+where:
+
+* `lambda_regime > 0` is a fixed global factor that encodes the chosen regime of synthetic data dominance for this encoding;
+* `kappa_scale > 0` is a fixed global scaling constant that maps the dimensionless product of observables into a tension scale compatible with the TU Tension Scale Charter.
+
+Both `lambda_regime` and `kappa_scale` are part of the Q127 encoding version and cannot be tuned after the fact.
+
+Finally, we aggregate over contexts to obtain a state level tensor:
+
+```txt
+T_ij_synth(m) =
+  Sum over C in C_set of w_C(C) * T_ij_synth(m; C)
+```
+
+where `w_C(C)` are fixed nonnegative weights on the finite context family `C_set` that sum to `1`. The tensor `T_ij_synth(m)` is a stochastic field on `M_synth_reg`. High values in particular entries indicate directions in which synthetic data entropy and model consistency exert strong, possibly conflicting, pressure on candidate truth backbones.
+
+This tensor is purely an effective layer construct. It does not encode any deep TU geometry or physical stress tensor, but it records how synthetic stochastic structure and consistency constraints interact in the Q127 setting.
+
 ---
 
 ## 4. Tension principle for this problem
@@ -390,23 +492,25 @@ This block states how Q127 is characterized as a tension problem.
 
 At the effective layer, Q127 asks:
 
-* In synthetic training ecosystems described by `M_synth_reg`, is there a regime where a nontrivial truth backbone can emerge and persist, despite high entropy synthetic data and the absence of external labels.
+* in synthetic training ecosystems described by `M_synth_reg`, is there a regime where a nontrivial truth backbone can emerge and persist, despite high entropy synthetic data and the absence of external labels.
 
 We capture this through the functional `Tension_truth(m)`:
 
-* Low `Tension_truth(m)` indicates that:
+* low `Tension_truth(m)` indicates that:
 
   * there exists a backbone of structures that are:
 
     * compressible in the synthetic data,
     * redundant across contexts,
     * shared across models,
-    * robust to changing which generators are active.
+    * robust to changing which generators are active;
 
-* High `Tension_truth(m)` indicates that:
+* high `Tension_truth(m)` indicates that:
 
   * model consensus is concentrated on high entropy, generator sensitive structures,
   * illusions dominate candidate truth backbones.
+
+The tensor `T_ij_synth(m)` from Section 3.7 refines this narrative by recording how different aspects of entropy, redundancy, agreement, and intervention sensitivity contribute to the overall truth tension in specific directions of the synthetic field.
 
 ### 4.2 Existence of a low tension regime
 
@@ -418,13 +522,13 @@ Q127, in its positive form, posits that the synthetic ecosystem is in a regime w
 Tension_truth(m_true) <= epsilon_truth
 ```
 
-for some small fixed `epsilon_truth`, and such that:
+for some small fixed `epsilon_truth` that is part of the encoding, and such that:
 
 * this inequality remains true when:
 
   * we refine the summaries inside `m_true`,
-  * we expand the context family `C_set`,
-  * we apply admissible generator interventions.
+  * we expand the context family `C_set` within the encoding class,
+  * we apply admissible generator interventions from `J_set`.
 
 In words:
 
@@ -440,10 +544,10 @@ In its negative form, Q127 frames the possibility that:
 Tension_truth(m) >= delta_truth
 ```
 
-for some strictly positive `delta_truth`, even when we allow:
+for some strictly positive `delta_truth` that is uniform across the encoding class, even when we allow:
 
-* large context families,
-* many generator interventions,
+* large context families within the finite bounds of the encoding,
+* many generator interventions from `J_set`,
 * long training and adaptation periods.
 
 In words:
@@ -452,7 +556,7 @@ In words:
 
 Q127 becomes a precise tension question:
 
-* Which of these regimes better describes realistic AI synthetic ecosystems, when viewed through the effective layer observables.
+* which of these regimes better describes realistic AI synthetic ecosystems, when viewed through the effective layer observables and the tension tensor defined above.
 
 ---
 
@@ -502,10 +606,7 @@ Key patterns:
 3. Illusion dominance
 
    * `Inv_illusion(m_F)` is large and grows as the ecosystem becomes more synthetic.
-   * Any apparent truth backbone is either:
-
-     * very small, or
-     * highly sensitive to which generators and training schedules are used.
+   * Any apparent truth backbone is either very small or highly sensitive to which generators and training schedules are used.
 
 4. Persistent high tension
 
@@ -518,13 +619,15 @@ These worlds are not claims about the actual universe. They are effective layer 
 * one where low tension truth backbones persist,
 * one where high tension illusions dominate.
 
-Q127 asks how to detect which regime a given ecosystem belongs to, using only observables available in `M_synth_reg`.
+Q127 asks how to detect which regime a given ecosystem belongs to, using only observables available in `M_synth_reg` and encodings that respect the TU charters.
 
 ---
 
 ## 6. Falsifiability and discriminating experiments
 
 This block specifies experiments that can falsify particular Q127 encodings at the effective layer.
+
+All experiments in this section are understood as applying to a specific encoding version. If falsification conditions are met, that encoding version must be recorded as failed, and any replacement must be given a new identifier. Parameters may not be silently adjusted in response to negative results.
 
 ### Experiment 1: Hidden anchor synthetic ensemble
 
@@ -535,8 +638,20 @@ Test whether the Q127 encoding can recognise a truth anchored synthetic world wh
 *Setup:*
 
 * Construct a simple anchor environment `E_anchor` (for example a small grid world or logic puzzle universe) with well defined dynamics.
-* Build a finite set of synthetic generators `G_lib_anchor = { g_1, ..., g_K }` that each produce rich high entropy data about `E_anchor` using different styles, abstractions and noise patterns.
-* Train a model ensemble `F_ensemble_anchor = { f_1, ..., f_L }` only on data from `G_lib_anchor`, without using any explicit labels for underlying states of `E_anchor`.
+* Build a finite set of synthetic generators
+
+  ```txt
+  G_lib_anchor = { g_1, ..., g_K }
+  ```
+
+  that each produce rich high entropy data about `E_anchor` using different styles, abstractions, and noise patterns.
+* Train a model ensemble
+
+  ```txt
+  F_ensemble_anchor = { f_1, ..., f_L }
+  ```
+
+  only on data from `G_lib_anchor`, without using any explicit labels for underlying states of `E_anchor`.
 
 *Protocol:*
 
@@ -549,7 +664,7 @@ Test whether the Q127 encoding can recognise a truth anchored synthetic world wh
 2. For each `m_T`, compute:
 
    * `H_data(m_T; C)`, `R_pattern(m_T; C)`, `A_agree(m_T; C)` for all `C` in `C_set`,
-   * `I_intervene(m_T; C, J)` for a fixed set of generator subsets `J`,
+   * `I_intervene(m_T; C, J)` for a fixed set of generator subsets `J` in `J_set`,
    * `Inv_truth_core(m_T)`, `Inv_illusion(m_T)`, `Tension_truth(m_T)`.
 
 3. Track how these quantities evolve as training progresses and as additional generators that still respect `E_anchor` are added.
@@ -562,19 +677,21 @@ Test whether the Q127 encoding can recognise a truth anchored synthetic world wh
 
 *Falsification conditions:*
 
-* If, across reasonable design choices for the Q127 encoding, the following pattern holds:
+* If, across reasonable design choices for the Q127 encoding within the admissible class, the following pattern holds:
 
   * `Inv_truth_core(m_T)` fails to grow or remains close to zero,
   * `Inv_illusion(m_T)` dominates,
   * `Tension_truth(m_T)` remains high,
 
-  even though all generators share the same simple anchor environment, then the current encoding is considered falsified at the effective layer.
+  even though all generators share the same simple anchor environment, then the current encoding version is considered falsified at the effective layer.
 
-* If small modifications to the encoding parameters change `Tension_truth(m_T)` arbitrarily without clear mathematical justification, the encoding is considered unstable and rejected.
+* If small modifications to the encoding that are still within the fixed finite library and threshold rules produce arbitrarily different conclusions about stability for the same `G_lib_anchor` and `F_ensemble_anchor`, the encoding is considered unstable and rejected.
+
+When falsification occurs, the rejected encoding version must be archived together with the experimental configuration and logs. Any new encoding proposed in response must be given a new version identifier and must not reuse tuned parameters from the failed version without explicit justification.
 
 *Semantics implementation note:*
 
-All quantities are computed in the hybrid regime declared in Block 0, where synthetic samples are discrete but entropy and agreement statistics are treated as continuous fields over the context family.
+All quantities are computed in the hybrid regime declared in the metadata, where synthetic samples are discrete but entropy and agreement statistics are treated as continuous fields over the context family.
 
 *Boundary note:*
 
@@ -592,7 +709,13 @@ Test whether the Q127 encoding correctly flags high tension and illusion dominan
 
 *Setup:*
 
-* Construct a library of diverse synthetic generators `G_lib_free = { h_1, ..., h_K }` where each `h_k` produces data about a different underlying world or about no coherent world at all.
+* Construct a library of diverse synthetic generators
+
+  ```txt
+  G_lib_free = { h_1, ..., h_K }
+  ```
+
+  where each `h_k` produces data about a different underlying world or about no coherent world at all.
 * Ensure that the mixture of these generators produces high entropy, stylistically rich synthetic data with conflicting latent assumptions.
 * Train a model ensemble `F_ensemble_free` only on mixtures of these synthetic outputs, without access to any external labels or anchor environment.
 
@@ -620,9 +743,11 @@ Test whether the Q127 encoding correctly flags high tension and illusion dominan
 
 *Falsification conditions:*
 
-* If the encoding assigns similar low `Tension_truth` and high `Inv_truth_core` to both the anchor and free ensembles, despite clear generator sensitivity in the free ensemble, then the encoding is considered misaligned and rejected.
+* If the encoding assigns similar low `Tension_truth` and high `Inv_truth_core` to both the anchor and free ensembles, despite clear generator sensitivity in the free ensemble, then the encoding version is considered misaligned and rejected.
 
 * If `Inv_illusion(m_F)` does not exceed `Inv_truth_core(m_F)` in regimes where generator interventions clearly flip model beliefs, the encoding fails to capture illusion dominance and is rejected.
+
+Again, when falsification conditions are met, the corresponding encoding version must be archived as a failed version, and any successor encoding must receive a new identifier. No silent parameter changes are allowed.
 
 *Semantics implementation note:*
 
@@ -646,12 +771,12 @@ We outline training signals that can be implemented as auxiliary losses or diagn
 
 1. `signal_cross_world_agreement`
 
-   * Definition: for a given context `C`, this signal is a function of `A_agree(m; C)` computed under multiple generator subsets `J`.
+   * Definition: for a given context `C`, this signal is a function of `A_agree(m; C)` computed under multiple generator subsets `J` in `J_set`.
    * Usage: reward high agreement that remains stable under changes in `J`, and penalise agreement that collapses when generators are perturbed.
 
 2. `signal_entropy_reduction_on_backbone`
 
-   * Definition: a signal proportional to `H_backbone(m)`, the average of `H_data(m; C)` over contexts where `Inv_truth_core` is high.
+   * Definition: a signal proportional to `H_backbone(m)`, the average of `H_data(m; C)` over contexts where `Inv_truth_core(m)` is high.
    * Usage: encourage the model to compress and stabilise backbone relevant patterns, without forcing global entropy collapse.
 
 3. `signal_illusion_penalty`
@@ -664,6 +789,8 @@ We outline training signals that can be implemented as auxiliary losses or diagn
    * Definition: a regulariser that keeps `Tension_truth(m)` within a target band during training, avoiding both trivial collapse and runaway illusion dominance.
    * Usage: shape the synthetic ecosystem so that a nontrivial but stable backbone is encouraged.
 
+All these signals are defined at the effective layer. They treat `M_synth_reg` state summaries and observables as inputs and do not require any direct manipulation of underlying code or weights.
+
 ### 7.2 Architectural patterns
 
 We describe module patterns that can reuse Q127 without revealing deep TU rules.
@@ -674,7 +801,7 @@ We describe module patterns that can reuse Q127 without revealing deep TU rules.
    * Interface:
 
      * Inputs: identifiers or summaries of active generators and models, plus recent synthetic sample statistics.
-     * Outputs: the observables `H_data`, `R_pattern`, `A_agree`, `I_intervene`, and the derived invariants `Inv_truth_core`, `Inv_illusion`, `Tension_truth`.
+     * Outputs: the observables `H_data`, `R_pattern`, `A_agree`, `I_intervene`, and the derived invariants `Inv_truth_core`, `Inv_illusion`, `Tension_truth`, and optionally entries of the tension tensor `T_ij_synth(m)`.
 
 2. `TruthBackboneHead`
 
@@ -682,14 +809,14 @@ We describe module patterns that can reuse Q127 without revealing deep TU rules.
    * Interface:
 
      * Inputs: internal representations of context and model outputs.
-     * Outputs: estimates of local contributions to `Inv_truth_core` and `Inv_illusion`.
+     * Outputs: estimates of local contributions to `Inv_truth_core(m)` and `Inv_illusion(m)`.
 
 3. `GeneratorDiversityController`
 
    * Role: a controller that selects which generators in `G_lib(m)` are active in training at a given time.
    * Interface:
 
-     * Inputs: current observables and tension metrics.
+     * Inputs: current observables and tension metrics, including summaries of `Tension_truth(m)` and selected entries of `T_ij_synth(m)`.
      * Outputs: generator selection schedules that maintain diversity while supporting backbone emergence.
 
 ### 7.3 Evaluation harness
@@ -711,7 +838,7 @@ We suggest an evaluation harness to test the impact of Q127 modules.
 
    * TU condition:
 
-     * the same base models are trained with `SyntheticWorldObserver`, `TruthBackboneHead`, and relevant training signals.
+     * the same base models are trained with `SyntheticWorldObserver`, `TruthBackboneHead`, and relevant training signals such as `signal_cross_world_agreement` and `signal_illusion_penalty`.
 
 3. Metrics
 
@@ -726,6 +853,8 @@ We suggest an evaluation harness to test the impact of Q127 modules.
    * Generalisation:
 
      * performance on held out tasks that rely on the same latent backbone but are not directly seen during training.
+
+The goal is not to prove safety. It is to demonstrate that Q127 style encodings can be used to detect and reduce illusion dominated regimes in practical systems.
 
 ### 7.4 60-second reproduction protocol
 
@@ -761,8 +890,8 @@ A minimal protocol to let external observers experience the difference made by Q
 
 * What to log
 
-  * Prompts, full responses, and the associated values of `Inv_truth_core`, `Inv_illusion`, and `Tension_truth` at each interaction.
-  * This allows later inspection without revealing any internal TU generative mechanism.
+  * Prompts, full responses, and the associated values of `Inv_truth_core(m)`, `Inv_illusion(m)`, `Tension_truth(m)`, and selected entries of `T_ij_synth(m)` at each interaction.
+  * This allows later inspection of how the system reasons about synthetic truth, without revealing any deep TU generative mechanism.
 
 ---
 
@@ -849,9 +978,10 @@ This block explains how Q127 fits into the TU verification ladder and what steps
     * observables `H_data`, `R_pattern`, `A_agree`, `I_intervene`,
     * invariants `Inv_truth_core`, `Inv_illusion`,
     * a tension functional `Tension_truth`,
+    * a tension tensor `T_ij_synth(m)`,
     * a singular set `S_sing` and domain restriction.
 
-  * Two concrete experiments with falsification conditions have been described.
+  * Two concrete experiments with falsification conditions and versioning rules have been described.
 
 * N_level: N1
 
@@ -860,17 +990,17 @@ This block explains how Q127 fits into the TU verification ladder and what steps
 
 ### 9.2 Next measurable step toward E2
 
-To reach E2, at least one of the following steps should be carried out in practice:
+To reach E2, at least one of the following steps should be carried out in practice.
 
 1. Prototype implementation
 
    * Implement `SyntheticWorldObserver` and `TruthBackboneHead` for a concrete synthetic training ecosystem.
-   * Compute `Tension_truth(m)` across training checkpoints and publish anonymised tension trajectories, together with enough detail to allow independent replication.
+   * Compute `Tension_truth(m)` and selected entries of `T_ij_synth(m)` across training checkpoints and publish anonymised tension trajectories, together with enough detail to allow independent replication.
 
 2. Controlled synthetic experiments
 
    * Realise versions of Experiment 1 and Experiment 2 with open source synthetic generators and models.
-   * Show that at least one Q127 encoding passes the anchor ensemble and free ensemble tests according to the stated falsification conditions.
+   * Show that at least one Q127 encoding passes the anchor ensemble and free ensemble tests according to the stated falsification conditions, without post hoc parameter tuning.
 
 These steps operate entirely on observable summaries and do not require exposing any deep TU generative mechanism.
 
@@ -878,15 +1008,15 @@ These steps operate entirely on observable summaries and do not require exposing
 
 In the longer term, Q127 is expected to serve as:
 
-* A reference node for questions about truth and illusion in AI ecosystems dominated by synthetic data.
+* a reference node for questions about truth and illusion in AI ecosystems dominated by synthetic data;
 
-* A bridge between:
+* a bridge between:
 
   * information theoretic views of learning,
   * epistemic views of simulators,
-  * safety concerns about self reinforcing illusions.
+  * safety concerns about self reinforcing illusions;
 
-* A template for similar questions in other domains, for example:
+* a template for similar questions in other domains, for example:
 
   * synthetic financial markets with algorithmic agents,
   * synthetic social media environments with generative content.
@@ -908,14 +1038,15 @@ We imagine a space of states, where each state summarises:
 * which synthetic generators are active,
 * which models are being trained,
 * what the synthetic data looks like in different situations,
-* how much the models agree with each other.
+* how much the models agree with each other,
+* how sensitive this agreement is to changing which generators are used.
 
 For each state, we measure things like:
 
 * how random or high entropy the synthetic data is in a given situation,
 * how often the same patterns appear again and again,
 * how strongly different models agree on what they think is happening,
-* how sensitive this agreement is to changing which generators are used.
+* how sensitive this agreement is to changes in the generator library.
 
 From these measurements we build two indicators:
 
@@ -924,14 +1055,61 @@ From these measurements we build two indicators:
 
 We then combine these into a single number called truth tension:
 
-* low truth tension means there is a strong, stable backbone of patterns that many generators and models share,
+* low truth tension means there is a strong, stable backbone of patterns that many generators and models share;
 * high truth tension means confident beliefs mostly live in fragile, generator sensitive regions.
 
 Finally, we imagine two types of synthetic ecosystems:
 
-* one where all generators are different views of the same simple hidden world, so a backbone should exist,
+* one where all generators are different views of the same simple hidden world, so a backbone should exist;
 * one where generators tell unrelated stories, so any backbone is an illusion.
 
-Our goal is not to decide which type the real world will be. Our goal is to define observables and experiments that can tell, in a given system, whether we are in a low tension truth anchored regime or in a high tension illusion dominated regime.
+Our goal is not to decide which type the real world will be. Our goal is to define observables and experiments that can tell, in a given system and under a fixed encoding, whether we are in a low tension truth anchored regime or in a high tension illusion dominated regime.
 
-Q127 is therefore about building the instruments and scales needed to talk about “truth” in synthetic worlds in a precise way, without claiming to solve the philosophical problem of truth itself.
+Q127 is therefore about building the instruments and scales needed to talk about “truth” in synthetic worlds in a precise way, without claiming to solve the philosophical problem of truth itself or to expose any deep TU generative laws.
+
+---
+
+## Tension Universe effective-layer footer
+
+This page is part of the WFGY / Tension Universe S-problem collection.
+
+### Scope of claims
+
+* The goal of this document is to specify an effective-layer encoding of the named problem.
+* It does not claim to prove or disprove the canonical statement in Section 1.
+* It does not introduce any new theorem beyond what is already established in the cited literature.
+* It should not be cited as evidence that the corresponding open problem has been solved, nor as a complete theory of truth in synthetic AI ecosystems.
+
+### Effective-layer boundary
+
+* All objects used here (state spaces `M_synth`, observables, invariants, tension scores, tensors, counterfactual worlds) live at the effective layer.
+* No claim is made about the existence or uniqueness of any deep TU model that realises these objects.
+* No physical interpretation of the tension tensor `T_ij_synth(m)` is assumed; it is a bookkeeping device for synthetic consistency tension only.
+
+### Encoding and fairness
+
+* All libraries, thresholds, weights, and metric forms are fixed as part of a given Q127 encoding version.
+
+* These choices are constrained by the TU Encoding and Fairness Charter:
+
+  * they must be finite,
+  * they must be specified before evaluating particular synthetic ecosystems,
+  * they must not be tuned retrospectively to force low or high tension on selected systems.
+
+* When an encoding version is falsified by the experiments described in Section 6, it must be recorded as a failed version. Any replacement encoding must be assigned a new identifier and documented as such.
+
+### Use of tension scores and tensors
+
+* The scalar tension scores `Tension_truth(m)` and tensor components `T_ij_synth(m)` are diagnostic tools:
+
+  * they organise how we think about synthetic truth backbones and illusions,
+  * they support comparisons across systems and experiments,
+  * they do not themselves guarantee safety, correctness, or alignment.
+
+* Any safety or governance decision that uses these quantities must be justified by additional argument and context.
+
+This page should be read together with the following charters:
+
+* [TU Effective Layer Charter](../Charters/TU_EFFECTIVE_LAYER_CHARTER.md)
+* [TU Encoding and Fairness Charter](../Charters/TU_ENCODING_AND_FAIRNESS_CHARTER.md)
+* [TU Tension Scale Charter](../Charters/TU_TENSION_SCALE_CHARTER.md)
