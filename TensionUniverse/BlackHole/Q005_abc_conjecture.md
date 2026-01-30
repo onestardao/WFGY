@@ -20,6 +20,17 @@ Last_updated: 2026-01-28
 
 ---
 
+## 0. Effective layer disclaimer
+
+All statements in this entry are made strictly at the effective layer of the Tension Universe (TU) framework:
+
+* We only specify observables, summaries, mismatch fields, tension functionals, counterfactual “worlds”, and engineering patterns that operate on abc related integer triples and their statistics.
+* We do not specify any underlying TU axiom system, deep generative rules, or constructive derivations of TU itself.
+* We do not provide any explicit mapping from raw arithmetic data, simulations, or code into internal TU fields; we only assume that TU compatible models exist which can reproduce the listed observables when interpreted at the effective layer.
+* Nothing in this file should be read as a proof or disproof of the canonical abc conjecture. All “world T / world F” constructions are counterfactual patterns for tension analysis, not claims about the actual universe.
+
+---
+
 ## 1. Canonical problem and status
 
 ### 1.1 Canonical statement
@@ -1106,7 +1117,7 @@ Now define:
   q(a, b, c) = log(H(a, b, c)) / log(rad(abc)),
   ```
 
-  which compares the size of `c` to the product of the distinct primes in `abc`, after taking logarithms.
+  which compares the size of `c` to the product of the distinct primes in `abc`, after taking logarithms to compress both.
 
 If `q(a, b, c)` is a little larger than `1`, it means that `c` is significantly larger than the product of the distinct primes that appear in `abc`, even after using logarithms to compress both.
 
@@ -1166,17 +1177,21 @@ This page is part of the **WFGY / Tension Universe** S-problem collection. It fo
 
 ### Encoding and fairness
 
-* Admissible encoding classes, reference profiles, upper bounds and weight families used in this page are constrained by shared Tension Universe charters:
+This page should be read together with the following charters:
 
-  * [TU Effective Layer Charter](../Charters/TU_EFFECTIVE_LAYER_CHARTER.md)
-  * [TU Encoding and Fairness Charter](../Charters/TU_ENCODING_AND_FAIRNESS_CHARTER.md)
-  * [TU Tension Scale Charter](../Charters/TU_TENSION_SCALE_CHARTER.md)
+* [TU Effective Layer Charter](../Charters/TU_EFFECTIVE_LAYER_CHARTER.md)
+* [TU Encoding and Fairness Charter](../Charters/TU_ENCODING_AND_FAIRNESS_CHARTER.md)
+* [TU Tension Scale Charter](../Charters/TU_TENSION_SCALE_CHARTER.md)
+
+*Admissible encoding classes, reference profiles, upper bounds and weight families used in this page are constrained by the shared Tension Universe charters above.*
 
 * For every encoding class referenced here:
 
   * its definition, parameter ranges, template families, and reference profiles are fixed at the charter or encoding level before any problem-specific tuning;
   * these choices may depend on general mathematical considerations and on public benchmark selections, but not on the unknown truth value of the abc conjecture;
   * no encoding is allowed to hide the canonical answer as an uninterpreted field, label or parameter.
+
+* Tension encodings and reference families must respect all known theorems and hard constraints in the relevant mathematical domains. If a conflict is found, the encoding is revised or retired, not used to reinterpret those results.
 
 ### Tension scale and thresholds
 
