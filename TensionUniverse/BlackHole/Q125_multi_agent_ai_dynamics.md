@@ -1,4 +1,4 @@
-<!-- QUESTION_ID: TU-Q125-->
+<!-- QUESTION_ID: TU-Q125 -->
 # Q125 · Multi agent AI dynamics
 
 ## 0. Header metadata
