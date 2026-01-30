@@ -1,3 +1,4 @@
+<!-- QUESTION_ID: TU-Q051 -->
 # Q051 · P versus NP
 
 ## 0. Header metadata
