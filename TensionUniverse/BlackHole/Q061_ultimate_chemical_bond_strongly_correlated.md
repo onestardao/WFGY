@@ -19,7 +19,7 @@ EncodingKey: Q061_BOND_CORE_V1
 LibraryKey: Q061_BOND_LIB_V1
 WeightKey: Q061_BOND_WEIGHTS_V1
 RefinementKey: Q061_BOND_REFINE_V1
-Last_updated: 2026-01-29
+Last_updated: 2026-01-30
 ```
 
 ---
@@ -1290,3 +1290,4 @@ This page should be read together with the following charters:
 * [TU Effective Layer Charter](../Charters/TU_EFFECTIVE_LAYER_CHARTER.md)
 * [TU Encoding and Fairness Charter](../Charters/TU_ENCODING_AND_FAIRNESS_CHARTER.md)
 * [TU Tension Scale Charter](../Charters/TU_TENSION_SCALE_CHARTER.md)
+* [TU Global Guardrails](../Charters/TU_GLOBAL_GUARDRAILS.md)
