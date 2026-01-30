@@ -1,3 +1,4 @@
+<!-- QUESTION_ID: TU-Q082 -->
 # Q082 · Binding problem
 
 ## 0. Header metadata
