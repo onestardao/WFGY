@@ -1,3 +1,4 @@
+<!-- QUESTION_ID: TU-Q072 -->
 # Q072 · Origin of the genetic code
 
 ## 0. Header metadata
