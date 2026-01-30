@@ -1,4 +1,5 @@
 <!-- QUESTION_ID: TU-Q001 -->
+
 # Q001 · Riemann Hypothesis
 
 ## 0. Header metadata
@@ -13,7 +14,7 @@ Projection_dominance: I
 Field_type: analytic_field
 Tension_type: spectral_tension
 Status: Open
-Semantics: continuous
+Semantics: finite_real_vector
 E_level: E2
 N_level: N2
 Last_updated: 2026-01-30
@@ -23,31 +24,31 @@ Last_updated: 2026-01-30
 
 ## 0. Effective layer disclaimer
 
-All content in this file lives at the **effective layer** of the Tension Universe (TU) framework.
+All content in this file lives at the effective layer of the Tension Universe (TU) framework.
 
-* We only talk about **state spaces, observables, invariants, tension scores and counterfactual worlds** as engineering level objects.
+* We only talk about state spaces, observables, invariants, tension scores, and counterfactual worlds as engineering level objects.
 * We do not specify any TU base axiom system, any deep generative rule, or any constructive mapping from raw arithmetic data to internal TU fields.
-* Nothing in this file claims to **prove** or **disprove** the classical Riemann Hypothesis.
+* Nothing in this file claims to prove or disprove the classical Riemann Hypothesis.
 
 Semantics choice for this problem:
 
-* The tag `Semantics: continuous` in the header means that both the spectral side and the arithmetic side are encoded as **finite dimensional real feature vectors**.
-* Histograms of zeros and summaries of prime errors are treated as continuous observables, up to a fixed choice of norm and scaling.
-* This semantics choice is fixed for all blocks that mention `DeltaS_spec`, `DeltaS_arith`, `Tension_RH` or the effective tension tensor.
+* The header tag `Semantics: finite_real_vector` means both the spectral side and the arithmetic side are represented as fixed finite dimensional real feature vectors.
+* Histograms of zeros and summaries of prime errors are treated as normalized, dimensionless observables under a fixed, pre declared norm and scaling.
+* This semantics choice is frozen for all blocks that mention `DeltaS_spec`, `DeltaS_arith`, `Mismatch_RH`, `Tension_RH`, or any effective tension tensor component.
 
 Counterfactual worlds:
 
-* When we speak about **World T** and **World F** later in this file, they are **counterfactual tension patterns** over the same family of observables under a frozen encoding tuple.
+* When we speak about World T and World F later in this file, they are counterfactual tension patterns over the same family of observables under a frozen encoding tuple.
 * They are not claims about which world we actually live in.
 * They are not hidden encodings of the canonical answer to RH.
 
 Scope of claims:
 
-* This file only specifies an **effective encoding** of RH as a spectral tension problem.
-* It is designed so that encodings and procedures can be **falsified** or retired without touching the canonical statement.
-* The global rules that constrain effective layer behavior, encoding fairness and tension scales are written in the shared TU charters and not repeated here in full.
+* This file specifies an effective encoding of RH as a spectral tension problem.
+* It is designed so encodings and procedures can be falsified or retired without touching the canonical statement.
+* The global rules that constrain effective layer behavior, encoding fairness, and tension scales are written in the shared TU charters and not repeated here in full.
 
-All later references to "Block 0" or to the semantics choice in this problem refer back to this section.
+All later references to Block 0 or to the semantics choice in this problem refer back to this section.
 
 ---
 
@@ -77,7 +78,7 @@ This is a central open problem of analytic number theory and of modern mathemati
 
 RH has remained open since Riemann's 1859 memoir. Partial results include:
 
-* All nontrivial zeros lie in the critical strip `0 < Re(s) < 1` by analytic continuation and the functional equation.
+* All nontrivial zeros lie in the critical strip `0 < Re(s) < 1` within the standard analytic continuation and functional equation framework.
 * Infinitely many zeros lie on the critical line `Re(s) = 1/2`.
 * A positive proportion of zeros are known to lie on the critical line.
 * Many deep theorems in prime number theory, in particular about error terms in the prime number theorem and related counting functions, are equivalent to, or would follow from, RH.
@@ -108,62 +109,62 @@ Within the BlackHole S problem collection, Q001 plays three roles:
 
 ## 2. Position in the BlackHole graph
 
-This block records how Q001 sits inside the BlackHole graph as nodes and edges among Q001–Q125. Each edge is listed with a one line reason that points to a concrete component or tension type.
+This block records how Q001 sits inside the BlackHole graph as nodes and edges among Q001–Q125. Each edge is listed with a one line reason that points to a concrete component, constraint, or tension type.
 
 ### 2.1 Upstream problems
 
-These problems provide prerequisites, tools, or general foundations that Q001 relies on at the effective layer.
+These problems provide prerequisites, tools, or foundations that Q001 relies on at the effective layer.
 
 * Q016 (BH_MATH_ZFC_CH_L3_016)
-  Reason: Provides foundational perspective on set theory and continuum structure that underlies the analytic_field used in the RH encoding.
+  Reason: Supplies effective layer contracts for auditable countable ladders, deterministic region families, and set based state space handling that are reused here.
 
 * Q018 (BH_MATH_RANDOM_MATRIX_ZEROS_L3_018)
-  Reason: Supplies the random matrix perspective used to define spectral_tension baselines for the zero distribution.
+  Reason: Supplies pre declared random matrix reference ensembles used as optional `Ref_spec` baselines for spectral summaries.
 
 * Q019 (BH_MATH_DIOPH_DENSITY_L3_019)
-  Reason: Encodes frameworks for rational point and density problems that parallel how prime distributions are linked to zeta zeros.
+  Reason: Supplies reusable audit patterns for coupling discrete arithmetic summaries to continuous like feature encodings under a frozen procedure.
 
 ### 2.2 Downstream problems
 
-These problems are direct reuse targets of Q001 components or depend on Q001 spectral tension structure.
+These problems are reuse targets of Q001 components or depend on Q001 style spectral tension structure.
 
 * Q002 (BH_MATH_GRH_L3_002)
-  Reason: Reuses the SpectralTensionScore_RH component as a template for L function families.
+  Reason: Reuses the `SpectralTensionScore_RH` interface and the admissible encoding tuple pattern as a template for L function families.
 
 * Q003 (BH_MATH_BSD_L3_003)
-  Reason: Uses zeta and L function spectral tension to constrain ranks of elliptic curves.
+  Reason: Reuses the counterfactual world separation template for coupling spectral summaries to arithmetic invariants within a frozen encoding instance.
 
 * Q015 (BH_MATH_RANK_BOUNDS_L3_015)
-  Reason: Depends on spectral_tension ideas to relate global L function behavior to uniform rank bounds.
+  Reason: Reuses the spectral arithmetic coupling audit pattern and the refinement ladder protocol, without claiming any theorem level consequence.
 
 * Q018 (BH_MATH_RANDOM_MATRIX_ZEROS_L3_018)
-  Reason: Uses Q001 spectral_tension functional as the reference object for comparing actual zero statistics with model ensembles.
+  Reason: Reuses the region family and histogram mismatch definition to compare zero statistics with pre declared ensembles.
 
 ### 2.3 Parallel problems
 
 Parallel nodes share similar tension types but no direct component dependence.
 
 * Q036 (BH_PHYS_HIGH_TC_MECH_L3_036)
-  Reason: Both Q001 and Q036 are governed by hidden spectral structures that must match macroscopic observables under spectral_tension.
+  Reason: Both use spectral_tension style functionals that compare structured spectra with macroscopic summaries under frozen observables.
 
 * Q039 (BH_PHYS_QTURBULENCE_L3_039)
-  Reason: Both are governed by complex fields with intricate structure where global laws emerge from local spectral patterns.
+  Reason: Both use multi scale region families and invariant style summaries to diagnose complex field behavior without deep generative rules.
 
 ### 2.4 Cross domain edges
 
-Cross domain edges connect Q001 to problems in other domains that can reuse its components.
+Cross domain edges connect Q001 to problems in other domains that can reuse its patterns and components.
 
 * Q032 (BH_PHYS_QTHERMO_L3_032)
-  Reason: Can reuse tension style functionals on spectra to relate microscopic energy distributions to macroscopic thermodynamic behavior.
+  Reason: Can reuse frozen spectral mismatch functionals for comparing microscopic spectra with macroscopic summary observables.
 
 * Q040 (BH_PHYS_QBLACKHOLE_INFO_L3_040)
-  Reason: Can reuse spectral_tension tools to study how field spectra encode information in black hole models.
+  Reason: Can reuse region ladder audits and spectral mismatch baselines for information encoding studies.
 
 * Q059 (BH_CS_INFO_THERMODYN_L3_059)
-  Reason: Reuses the notion of tension between spectral structure and information theoretic observables.
+  Reason: Reuses the tension between a structured spectrum and information theoretic observables under a fixed encoding instance.
 
 * Q123 (BH_AI_INTERP_L3_123)
-  Reason: Uses RH spectral_tension encoding as a model for interpreting internal AI representations as structured spectra.
+  Reason: Reuses the counterfactual separation protocol and the idea of interpreting internal representations as structured spectra, at the effective layer.
 
 ---
 
@@ -188,296 +189,292 @@ M
 
 with the following interpretation at the effective layer:
 
-* Each element `m` in `M` represents a coherent "zeta world configuration" for the Riemann zeta function, consisting of:
+* Each element `m` in `M` represents a coherent zeta world configuration, consisting of:
 
-  * local spectral data for zeta(s) in a bounded region of the critical strip,
-  * local arithmetic data related to primes or prime powers in corresponding ranges,
-  * coarse meta information about the regularity of the spectral data.
+  * local spectral summaries for zeta(s) in bounded regions of the critical strip,
+  * local arithmetic summaries related to primes or prime powers in corresponding ranges,
+  * metadata about completeness and regularity needed for audits.
 
 We do not specify how these configurations are constructed from raw numerical computations or proofs.
 
-We assume the following minimal structure, just enough to make suprema, refinement and audits meaningful:
+We assume the following minimal structure, just enough to make refinement and audits meaningful:
 
 * `M` is a set of states.
-* `Par` is a subset of `R^k` for some finite k, containing resolution parameters used by the encoding. Typical elements of `Par` are written `r`, with a countable resolution ladder `r_k` defined in Block 3.4.
-* Every observable defined in this file is a well defined map on a restricted domain `M_reg` defined in Block 3.5.
-* Any sup over a family of regions is always taken over a countable family parameterized by an explicit resolution index. No uncountable families are used for suprema.
 
-For later experiments we also make the following effective data interface explicit, without exposing any deep TU generative rule:
+* `Par` is a subset of `R^k` for some finite k, containing resolution parameters used by the encoding.
+
+* A `LadderSpec` deterministically maps an integer index k to a resolution parameter `r_k` in `Par`.
+
+* For each `r_k`, `LadderSpec` also determines the concrete engineering knobs that affect observables, at minimum:
+
+  * the region height `ΔT_k`,
+  * the histogram dimension `N_spec(k)`,
+  * the anchor count `N_anchor(k)` or an equivalent rule.
+
+* Every observable defined in this file is a well defined map on a restricted domain `M_reg` defined in Block 3.6.
+
+* Any sup over a family of regions is always taken over a countable family parameterized by an explicit ladder index.
+
+Engineering interface, for external reproducibility:
 
 * A state `m_k` at resolution `r_k` can be represented externally as a serializable object
 
   ```txt
   m_k = {
     resolution_id: r_k,
-    region_id → zero_features,
-    interval_id → arith_features,
+    region_id -> zero_features,
+    interval_id -> arith_features,
     metadata
   }
   ```
 
   where `zero_features` and `arith_features` are finite dimensional vectors defined below. This is an engineering interface, not an ontological claim.
 
-### 3.2 Effective fields, observables, and admissible encoding class
+### 3.2 Effective observables and admissible encoding class
 
-We next define the observables and the admissible encoding class that together determine the RH tension. All observables below are defined on `M_reg`.
+We next define observables and the admissible encoding class that together determine RH mismatch and tension. All observables below are defined on `M_reg`.
 
-For notational compactness, inputs will be written in combined form, for example `m_R` for a state plus a region.
+For compactness, inputs will be written in combined form, for example `m_R` for a state plus a region.
 
-#### 3.2.1 Local spectral density observable
-
-```txt
-rho_zero(m_R) >= 0
-```
-
-* Input: `m_R` denotes a state `m` paired with a bounded region `R` in the critical strip, where `R` is one element of a deterministic, countable family.
-* Output: a scalar or short feature vector summarizing the density and low order statistics of nontrivial zeros in `R` as encoded in `m`.
-
-For each region `R` with imaginary part range `[T, T + ΔT]`, the encoding uses a fixed binning scheme:
-
-* divide `[T, T + ΔT]` into `N_spec` equal subintervals,
-* count zeros in each bin,
-* optionally normalize by `ΔT` to obtain a density histogram.
-
-Whenever we speak of norms we use an L2 norm on this fixed finite dimensional representation.
-
-#### 3.2.2 Local arithmetic profile observable
+#### 3.2.1 Local spectral histogram observable
 
 ```txt
-A_prime(m_I)
+H_zero(m_R) in R^{N_spec(k)}
 ```
 
-* Input: `m_I` denotes a state `m` paired with an interval `I = [X, Y]` of positive real numbers chosen from a deterministic, countable family coupled to regions.
-* Output: a finite dimensional vector summarizing prime distribution features on `I`, for example:
+* Input: `m_R` denotes a state `m` paired with a bounded region `R` in the critical strip, where `R` is one element of a deterministic, countable family tied to some `r_k`.
+* Output: a fixed length histogram vector summarizing zero statistics in `R`.
 
-  * the values of `π_m(x_j) − li(x_j)` at a frozen set of anchor points `{x_j}` inside `I`,
-  * discrete differences of these errors between consecutive anchors.
+Construction rule inside the encoding tuple:
+
+* For each `R` with imaginary part range `[T, T + ΔT_k]`, the encoding uses a fixed binning scheme tied to `r_k`:
+
+  * divide `[T, T + ΔT_k]` into `N_spec(k)` equal bins,
+  * count encoded zeros per bin,
+  * optionally normalize counts by `ΔT_k`.
+* The binning and normalization choice is part of the frozen encoding tuple.
+
+Whenever we speak about norms we use an L2 norm on this fixed finite dimensional representation.
+
+#### 3.2.2 Local arithmetic feature observable
+
+```txt
+A_prime(m_I) in R^{N_anchor(k)}
+```
+
+* Input: `m_I` denotes a state `m` paired with an interval `I = [X, Y]` chosen from a deterministic, countable family coupled to regions.
+* Output: a fixed length feature vector summarizing prime distribution features on `I`.
+
+Example feature family:
+
+* values of `pi(x_j) - li(x_j)` at a frozen set of anchor points `{x_j}` inside `I`,
+* discrete differences between consecutive anchors.
+
+Data contract note:
+
+* `pi` and `li` conventions, plus any approximation method, must be declared as part of the arithmetic data protocol inside the encoding tuple, and must be constant across all evaluations of that tuple.
 
 Finite value lock:
 
 * For all `m` in `M_reg` and admissible `I`, `A_prime(m_I)` is finite by definition of `M_reg`.
 
-The anchor sets `{x_j}` are determined by a fixed rule:
+Anchor rule:
 
-* given an interval `I = [X, Y]` and resolution parameter `r`, define a finite set `Anchors(I, r)` by a declared grid rule (for example geometric spacing between `X` and `Y`);
-* this rule is part of the encoding spec and is identical for all experiments within a given encoding tuple.
+* given an interval `I` and resolution parameter `r_k`, define a finite anchor set `Anchors(I, r_k)` by a declared deterministic rule.
+* this rule is part of the encoding tuple and identical for all experiments under that tuple.
 
-#### 3.2.3 Spectral mismatch observable with explicit metric
+#### 3.2.3 Spectral mismatch with explicit metric
 
 ```txt
 DeltaS_spec(m_R) >= 0
 ```
 
-Interpretation: L2 deviation of the encoded spectral histogram from a frozen reference profile.
-
 Let
 
-* `h(m_R)` be the `N_spec` dimensional histogram derived from `rho_zero(m_R)` under the fixed binning scheme,
-* `h_ref(R, r)` be the reference histogram for region `R` at resolution `r`, as explained in the reference class definition below.
+* `h(m_R)` be the histogram `H_zero(m_R)`,
+* `h_ref(R, r_k)` be the frozen reference histogram for region `R` at resolution `r_k`.
 
-Then we define
+Define
 
 ```txt
-DeltaS_spec(m_R) = sqrt( sum_j ( h_j(m_R) - h_ref_j(R, r) )^2 )
+DeltaS_spec(m_R) = sqrt( sum_j ( h_j(m_R) - h_ref_j(R, r_k) )^2 )
 ```
 
 Properties:
 
 * `DeltaS_spec(m_R) >= 0`.
-* `DeltaS_spec(m_R) = 0` if and only if `h(m_R)` agrees with `h_ref(R, r)` exactly, within the declared numerical tolerance for that resolution.
+* `DeltaS_spec(m_R) = 0` if and only if `h(m_R)` agrees with `h_ref(R, r_k)` within the declared numerical tolerance for that `r_k`.
 
-#### 3.2.4 Arithmetic mismatch observable with explicit metric
+#### 3.2.4 Arithmetic mismatch with explicit metric
 
 ```txt
 DeltaS_arith(m_I) >= 0
 ```
 
-Interpretation: L2 deviation of prime summary features from a frozen reference profile.
-
 Let
 
-* `a(m_I)` be the feature vector derived from `A_prime(m_I)` on the anchor set `Anchors(I, r)`,
-* `a_ref(I, r)` be the reference arithmetic feature vector on the same anchors.
+* `a(m_I)` be the feature vector `A_prime(m_I)` evaluated on `Anchors(I, r_k)`,
+* `a_ref(I, r_k)` be the frozen reference arithmetic feature vector on the same anchors.
 
-Then we define
+Define
 
 ```txt
-DeltaS_arith(m_I) = sqrt( sum_j ( a_j(m_I) - a_ref_j(I, r) )^2 )
+DeltaS_arith(m_I) = sqrt( sum_j ( a_j(m_I) - a_ref_j(I, r_k) )^2 )
 ```
 
 Properties:
 
 * `DeltaS_arith(m_I) >= 0`.
-* `DeltaS_arith(m_I) = 0` if and only if `a(m_I)` agrees with `a_ref(I, r)` within the declared tolerance model.
+* `DeltaS_arith(m_I) = 0` if and only if `a(m_I)` agrees with `a_ref(I, r_k)` within the declared tolerance model.
 
 #### 3.2.5 Coupling rule between regions and intervals
 
-To relate spectral and arithmetic data, we fix a deterministic coupling between regions `R` and intervals `I`.
+To relate spectral and arithmetic summaries, we fix a deterministic coupling rule as an explicit encoding choice.
 
 Let a vertical region be specified as
 
 ```txt
-R(T) = { s : Re(s) in [0, 1], Im(s) in [T, T + ΔT] }
+R(T, r_k) = { s : Re(s) in [0, 1], Im(s) in [T, T + ΔT_k] }
 ```
 
-for some `T` on a declared grid and a fixed height `ΔT > 0` that does not vary between experiments.
+for some `T` on a declared grid and a fixed height `ΔT_k` determined by `LadderSpec`.
 
-The coupled interval is
+Coupling choice used by this encoding tuple:
 
 ```txt
-I(T) = [exp(T), exp(T + ΔT)]
+I(T, r_k) = [exp(T), exp(T + ΔT_k)]
 ```
 
-All evaluations of `DeltaS_spec(m_R)` and `DeltaS_arith(m_I)` used to form RH tension must use pairs `(R(T), I(T))` obtained from this coupling rule, together with the pre declared resolution ladder `r_k` and anchor rules.
+Operational constraint:
 
-This removes any free choice to adjust intervals after looking at data.
+* All evaluations used to form mismatch and tension must use coupled pairs `(R(T, r_k), I(T, r_k))` produced by the frozen coupling rule.
+* This removes any free choice to adjust intervals after seeing data.
 
-#### 3.2.6 Combined RH mismatch and weight lock
+If a future version uses a different coupling rule, it must appear as a different admissible encoding tuple, not a local edit.
 
-We define the combined RH mismatch for a state `m` at a chosen pair `(R, I)` as
+#### 3.2.6 Unified mismatch and tension definition, single weight lock
+
+To avoid duplicate weight families, this file uses one unified aggregation for both mismatch and tension.
+
+Define, for a state `m` at a coupled pair `(R, I)`:
 
 ```txt
-DeltaS_RH(m) = w_spec * DeltaS_spec(m_R) + w_arith * DeltaS_arith(m_I)
+Tension_RH(m) = w_spec * DeltaS_spec(m_R) + w_arith * DeltaS_arith(m_I)
 ```
 
-Weight lock (anti cheat and auditability):
+Weight lock:
 
 * `w_spec + w_arith = 1`.
-* `w_spec` and `w_arith` are fixed before any experiment runs.
-* `w_spec` is in `[0.2, 0.8]` and `w_arith` is in `[0.2, 0.8]`.
-
-To keep the encoding class finite:
-
-* The allowed values of `w_spec` and `w_arith` are taken from a **finite discrete set** of pairs specified at the charter level, for example a small list of rational pairs that satisfy the above bounds.
+* `w_spec` and `w_arith` lie in `[0.2, 0.8]`.
+* The allowed values of `(w_spec, w_arith)` are taken from a finite discrete menu specified at the charter level.
 * Once an encoding tuple chooses one such pair, it cannot vary inside this problem.
 
-Any change to weights after seeing evaluation outputs invalidates the experiment as "not admissible" for this encoding class.
+There is no separate `DeltaS_RH` in this version. The unified scalar `Tension_RH` is the only combined score.
 
 #### 3.2.7 Admissible encoding class Enc_RH
 
-To prevent "choose reference so tension is always small" exploits, we define an admissible encoding class `Enc_RH` that locks references, weights and couplings.
+To prevent post hoc reference selection, we define an admissible encoding class that locks references, weights, couplings, ladders, and tolerances.
 
-**Finite encoding class**
-
-The admissible class for this problem is a **finite set** of encoding tuples
+Finite encoding class:
 
 ```txt
 Enc_RH = { Enc_RH^1, Enc_RH^2, ..., Enc_RH^J }
 ```
 
-where each tuple has the form
+Each encoding tuple has the form
 
 ```txt
-Enc = (Ref_spec, Ref_arith, w_spec, w_arith, alpha, beta, CouplingRule, LadderSpec, ToleranceModel)
+Enc = (Ref_spec, Ref_arith, w_spec, w_arith, CouplingRule, LadderSpec, ArithmeticDataProtocol, ToleranceModel)
 ```
 
-and every component is chosen from a finite option list defined at the charter level. In particular:
-
-* reference libraries are finite,
-* allowed weight pairs `(w_spec, w_arith)` form a finite discrete set,
-* allowed coefficient pairs `(alpha, beta)` form a finite discrete set,
-* allowed ladder profiles and tolerance profiles form finite lists.
-
-This makes the universal quantifier "for any Enc in Enc_RH" auditable.
+and every component is chosen from a finite option list specified at the charter level.
 
 Admissible reference class for spectral data:
 
 * `Ref_spec` is selected from a finite library built only from:
 
-  * closed form baseline densities and envelopes implied by the standard analytic framework of zeta(s), such as Riemann–von Mangoldt type formulas,
-  * and optional random matrix inspired reference ensembles specified in advance.
-
-* `Ref_spec` may depend on `(R, r)` where `r` is a resolution parameter from `Par`.
-
-* `Ref_spec` is not allowed to depend on the actual evaluation dataset values of zero positions in a way that is fitted after inspection.
+  * closed form baseline densities and envelopes consistent with standard analytic number theory, including Riemann von Mangoldt style expectations,
+  * optional random matrix inspired reference ensembles specified in advance.
+* `Ref_spec` may depend on `(R, r_k)`.
+* `Ref_spec` is not allowed to be fitted to evaluation zero tables after inspection.
 
 Admissible reference class for arithmetic data:
 
 * `Ref_arith` is selected from a finite library built only from:
 
   * baseline prime distribution approximations and envelopes consistent with standard analytic number theory,
-  * and explicit bounds or benchmark envelopes defined independently of the evaluation dataset.
-
-* `Ref_arith` may depend on `(I, r)`.
-
+  * explicit bounds or benchmark envelopes defined independently of the evaluation dataset.
+* `Ref_arith` may depend on `(I, r_k)`.
 * `Ref_arith` cannot be chosen or tuned after seeing evaluation results.
-
-Weight and coefficient lock:
-
-* The constraints on `w_spec` and `w_arith` described above hold for all `Enc` in `Enc_RH`.
-
-* The coefficients `alpha` and `beta` used in the tension functional (see Block 4.1) satisfy:
-
-  ```txt
-  alpha + beta = 1
-  alpha in [0.2, 0.8]
-  beta in [0.2, 0.8]
-  ```
-
-* `(alpha, beta)` are taken from a finite discrete set of pairs specified at the charter level.
-
-* `(alpha, beta)` are frozen together with `(w_spec, w_arith)` for each encoding tuple.
 
 Coupling and ladder lock:
 
-* `CouplingRule` is the fixed mapping `R(T) -> I(T)` from Block 3.2.5.
-* `LadderSpec` defines a countable resolution ladder `r_k` and associated region families, as described in Block 3.4.
-* Both are fixed before any evaluation and each admissible choice is listed in a finite charter level menu.
+* `CouplingRule` is a declared mapping `R(T, r_k) -> I(T, r_k)` listed in the encoding menu.
+* `LadderSpec` defines the ladder `r_k` and the induced region families and observable dimensions.
+* Both are fixed before any evaluation for that tuple.
+
+Arithmetic data protocol lock:
+
+* `ArithmeticDataProtocol` specifies:
+
+  * the source of prime summary inputs, or a deterministic computation method,
+  * the conventions for `pi`, `li`, and any approximation or rounding rule,
+  * how these choices map into the feature vector `A_prime`.
+* It is fixed before evaluation for that tuple.
 
 Tolerance model:
 
 * `ToleranceModel` gathers all explicit numerical tolerances, including:
 
-  * acceptable histogram error margins for `DeltaS_spec`,
-  * acceptable arithmetic feature error margins for `DeltaS_arith`,
-  * and the rules by which epsilon and delta thresholds are later derived.
-
+  * histogram error margins for `DeltaS_spec`,
+  * feature error margins for `DeltaS_arith`,
+  * rules by which epsilon and delta thresholds are derived in Block 6.3.
 * Each `ToleranceModel` used here is chosen from a finite charter level library.
 
 Fairness and audit constraint:
 
 * For each encoding tuple in `Enc_RH`:
 
-  * the reference choices, weights, coefficients, coupling rule, ladder and tolerance model are declared in full,
+  * the reference choices, weights, coupling rule, ladder, arithmetic protocol, and tolerance model are declared in full,
   * a cryptographic hash of the full encoding spec text is published before any experiment in Block 6 is run.
 
-Any adaptation of references, weights, coefficients or coupling after seeing outcomes is considered a failure of the encoding procedure, not evidence about RH.
+Any adaptation of references, weights, coupling, ladders, tolerances, or arithmetic protocol after seeing outcomes is a failure of the encoding procedure, not evidence about RH.
 
-### 3.3 Effective tension tensor components
+### 3.3 Optional effective tension tensor note
 
-We assume an effective semantic tension tensor `T_ij` over `M`, consistent with the TU core decision:
+Some TU pages use an effective tension tensor notation. In this file it is treated as optional reporting, not as a free extra degree of freedom.
+
+If a tensor is reported, it must be a deterministic transform of the already frozen scalar `Tension_RH(m)` and metadata already present in the encoding tuple.
+
+Minimal contract for any reported tensor:
+
+* Index sets: finite, explicitly listed in the encoding tuple.
+* Component ranges: bounded, explicitly listed in the encoding tuple.
+* No additional tunable functions are allowed beyond what is already locked by `Enc`.
+
+A compliant example template:
 
 ```txt
-T_ij(m) = S_i(m) * C_j(m) * DeltaS_RH(m) * lambda(m) * kappa
+T_ij(m) = G_ij( meta(m), Enc ) * Tension_RH(m)
 ```
 
-where:
+where `G_ij` is a frozen bounded table or frozen bounded feature map specified inside the encoding tuple.
 
-* `S_i(m)` is a source like factor representing the strength of the i th semantic source component in `m`.
-* `C_j(m)` is a receptivity like factor representing how sensitive the j th downstream component is to RH related mismatches.
-* `DeltaS_RH(m)` is the combined mismatch defined above under the locked admissible class.
-* `lambda(m)` is a convergence state factor taking values in a fixed range encoding convergent versus divergent behavior states.
-* `kappa` is a coupling constant setting the overall scale of RH related spectral tension.
-
-The exact indexing sets for `i` and `j` are not needed at the effective layer. It is sufficient that for each `m` in `M_reg`, `T_ij(m)` is well defined and finite.
+If no such frozen `G_ij` is declared, this file reports only the scalar `Tension_RH`.
 
 ### 3.4 Invariants and scale locked constraints
 
-We define effective invariants using only countable, scale locked region families. This prevents thin region exploits.
+We define effective invariants using only countable, scale locked region families.
 
 Resolution ladder and admissible region families:
 
-* Choose a countable resolution ladder `r_k` in `Par`, indexed by `k = 1, 2, 3, ...`.
-* For each `r_k`, define a countable family of admissible regions `Regions(r_k)` by a deterministic rule.
-* Any sup over regions is always taken over `Regions(r_k)` for some declared `k`.
+* Choose a countable resolution ladder `r_k` from `LadderSpec`, indexed by `k = 1, 2, 3, ...`.
+* For each `r_k`, define a countable family of admissible regions by deterministic rules.
+* Any sup over regions is taken over a declared region family at some `r_k`.
 
-1. Critical line invariance (scale locked)
+1. Critical strip histogram invariance (scale locked)
 
-Let `Regions_line(r_k)` be the admissible family of vertical regions at scale `r_k` that approximate the critical line, constructed by a fixed rule, for example:
-
-* boxes with width covering `Re(s) in [0, 1]`,
-* height `ΔT` fixed by `r_k`,
-* imaginary parts on a pre declared grid.
+Let `Regions_line(r_k)` be the admissible family of vertical regions at scale `r_k` constructed by a deterministic rule.
 
 Define
 
@@ -486,41 +483,53 @@ I_line_k(m) = sup_{R in Regions_line(r_k)} DeltaS_spec(m_R)
 I_line(m)   = sup_k I_line_k(m)
 ```
 
-All `Regions_line(r_k)` must be explicitly specified by a deterministic rule. The countability and determinism make the sup externally auditable.
-
 2. Spectral statistics invariance (scale locked)
 
-Let `Regions_stats(r_k)` be another deterministic family of regions at scale `r_k`. Let `stat_zero` be a fixed statistic extractor operating on the histograms used for `DeltaS_spec`, and let
-
-```txt
-stat_ref(R, r_k)
-```
-
-be derived from the chosen `Ref_spec` without using evaluation data.
+Let `Regions_stats(r_k)` be another deterministic family of regions at scale `r_k`. Let `stat_zero` be a fixed statistic extractor operating on the histograms used for `DeltaS_spec`, and let `stat_ref(R, r_k)` be derived from `Ref_spec` under the same tuple.
 
 Define
 
 ```txt
-I_stats_k(m) = sup_{R in Regions_stats(r_k)}
-               | stat_zero(m_R) - stat_ref(R, r_k) |
-I_stats(m)    = sup_k I_stats_k(m)
+I_stats_k(m) = sup_{R in Regions_stats(r_k)} | stat_zero(m_R) - stat_ref(R, r_k) |
+I_stats(m)   = sup_k I_stats_k(m)
 ```
 
-This provides a multi scale invariant for spectral statistics.
+### 3.5 World representing sequences, deterministic construction rule
 
-### 3.5 Singular set and domain restrictions
+A world representing sequence is not an arbitrary existence claim in this file.
 
-Some observables may be undefined or not finite if encoded data are incomplete or inconsistent. To handle this, define a singular set `S_sing` by an explicit domain rule:
+Definition:
+
+* Fix an encoding tuple `Enc` in `Enc_RH`.
+* Fix a dataset source or generator specified by the protocol of an experiment in Block 6.
+* The procedure in that experiment deterministically constructs a sequence `(m_k)` by applying the frozen ladder, region families, coupling rule, and feature extraction rules.
+
+A sequence `(m_k)` is world representing for `(Enc, ExperimentID, DatasetID)` if and only if it is produced by that declared deterministic procedure, with all required inputs present.
+
+This turns statements in Blocks 4 and 5 into auditable protocol statements, not free selection.
+
+### 3.6 Singular set and domain restrictions
+
+Some observables are undefined or not finite if required encoded data are incomplete or inconsistent. Define a singular set:
 
 ```txt
 S_sing is a subset of M
-m is in S_sing if DeltaS_RH(m) is undefined or not finite
+m is in S_sing if any required DeltaS_spec or DeltaS_arith call is undefined or not finite under the frozen Enc
 ```
 
-We impose:
+Auditable out of domain reasons, recorded as metadata:
 
-* All RH related tension analysis is restricted to `M_reg`, where `M_reg` is the set of states `m` in `M` that are not in `S_sing`.
-* If an experiment attempts to evaluate `DeltaS_RH` on a state outside `M_reg`, the outcome is "out of domain" and must not be interpreted as evidence about RH.
+* missing spectral bins needed to build `H_zero` at some `r_k`
+* missing anchor values needed to build `A_prime` at some `r_k`
+* mismatch between declared region families and available region ids
+* mismatch between declared coupling rule and available interval ids
+* failure of declared arithmetic data protocol to produce required values
+* tolerance model preconditions violated, for example incompatible dimension
+
+Domain rule:
+
+* All RH related analysis is restricted to `M_reg`, where `M_reg = M \ S_sing`.
+* If an experiment attempts to evaluate required observables on a state outside `M_reg`, the outcome is recorded as out of domain and treated as inconclusive for that evaluation, not as evidence about RH.
 
 ---
 
@@ -528,96 +537,78 @@ We impose:
 
 This block states how Q001 is characterized as a tension problem within TU at the effective layer, with refinement and encoding class locks.
 
-### 4.1 Core tension functional and coefficient lock
+### 4.1 Core tension functional, already locked by Enc
 
-We define an effective RH tension functional:
-
-```txt
-Tension_RH(m) = F(DeltaS_spec(m_R), DeltaS_arith(m_I))
-```
-
-where `F` is a fixed nonnegative function, for example
+The core tension functional is the unified scalar defined in Block 3.2.6:
 
 ```txt
-Tension_RH(m) = alpha * DeltaS_spec(m_R) + beta * DeltaS_arith(m_I)
+Tension_RH(m) = w_spec * DeltaS_spec(m_R) + w_arith * DeltaS_arith(m_I)
 ```
 
-with `alpha > 0` and `beta > 0`.
+There are no additional free coefficients in this version.
 
-Coefficient lock:
+### 4.2 World T operational statement, low tension band across refinement
 
-* `alpha + beta = 1`.
-* `alpha` and `beta` lie in `[0.2, 0.8]`.
-* `alpha` and `beta` belong to a finite discrete set specified at the charter level.
-* `alpha` and `beta` are part of each encoding tuple `Enc` in `Enc_RH`, frozen and audited together with references and weights.
+At the effective layer, RH true is expressed as an operational low tension pattern relative to a fixed encoding tuple and a fixed experiment protocol.
 
-### 4.2 RH as a low tension principle (refinement order locked)
+Operational statement:
 
-At the effective layer, RH is expressed as a low tension consistency claim under an admissible encoding.
+* Fix `Enc` in `Enc_RH`.
+* Fix an experiment protocol in Block 6 that constructs a world representing sequence `(m_k)` deterministically from a declared dataset.
 
-Refinement order lock:
-
-* The resolution ladder `r_k` is fixed as in Block 3.4.
-* For each `k`, let `m_k` be a state in `M_reg` representing the world at resolution `r_k` under the same frozen encoding tuple `Enc` in `Enc_RH`.
-* The sequence `(m_k)` is the only object on which refinement statements are made in this file.
-
-Low tension formulation:
-
-> In RH true worlds, for any fixed admissible encoding tuple `Enc` in `Enc_RH`, there exist world representing sequences `(m_k)` such that `Tension_RH(m_k)` stays bounded in a narrow band across `k`.
-
-Formally at the effective layer, for some index `k0(Enc)`,
+World T is the counterfactual pattern in which the resulting tension sequence eventually stays in a small band:
 
 ```txt
-sup_{k >= k0} Tension_RH(m_k) <= epsilon_RH(Enc)
+sup_{k >= k0} Tension_RH(m_k) <= epsilon_RH(Enc, ExperimentID)
 ```
 
-where `epsilon_RH(Enc)` is a declared threshold tied to the tolerance model in `Enc` and derived as described in Block 6.3. It is chosen before evaluation and does not grow unbounded as resolution increases.
+where:
 
-### 4.3 RH failure as persistent high tension (encoding class locked)
+* `k0` depends on `Enc` and the experiment protocol,
+* `epsilon_RH(Enc, ExperimentID)` is derived by the calibration rule in Block 6.3 and is frozen together with the tuple and the experiment spec.
 
-If RH is false, the "persistent high tension" statement is only meaningful relative to `Enc_RH`.
+This is a pattern specification for an encoding and a protocol. It is not a proof claim about RH.
 
-High tension formulation:
+### 4.3 World F operational statement, persistent high tension separator threshold
 
-> In RH false worlds, for any fixed admissible encoding tuple `Enc` in `Enc_RH`, any world representing sequence `(m_k)` eventually has tension bounded away from zero.
+World F is the counterfactual pattern in which the resulting tension sequence eventually stays above a separator threshold.
 
-Effective layer statement using the refinement ladder:
+Operational statement:
 
-There exists a strictly positive constant `delta_RH(Enc)` such that, for each fixed encoding tuple `Enc` in `Enc_RH`, there exists `k0(Enc)` with
+* Fix `Enc` in `Enc_RH`.
+* Fix an experiment protocol in Block 6 that constructs a world representing sequence `(m_k)` deterministically.
+
+World F is the pattern in which:
 
 ```txt
-inf_{k >= k0} Tension_RH(m_k) >= delta_RH(Enc)
+inf_{k >= k0} Tension_RH(m_k) >= delta_RH(Enc, ExperimentID)
 ```
 
-The value `delta_RH(Enc)` is derived from mock world experiments as described in Block 6.3 and is part of the frozen encoding tuple.
+where `delta_RH(Enc, ExperimentID)` is an operational separator threshold derived in Block 6.3.
 
-This prevents exploits where one keeps modifying references or weights to drive tension to zero, because:
+Interpretation constraint:
 
-* reference choices are restricted and frozen,
-* weights and coefficients are locked and audited,
-* region families and coupling rules are deterministic,
-* the encoding class itself is finite and fully enumerated.
-
-Thus, at the effective layer, Q001 states that the universe belongs to a low tension spectral world rather than to a high tension one, for some `Enc` in `Enc_RH`.
+* `delta_RH` is a calibration artifact of the encoding and the chosen family of mock worlds used in Experiment 2.
+* It is not claimed to be a theorem level lower bound that covers all logically possible RH false behaviors.
 
 ---
 
 ## 5. Counterfactual tension worlds
 
-We outline two counterfactual worlds, described strictly at the effective layer and always relative to a fixed `Enc` in `Enc_RH`:
+We outline two counterfactual worlds, described strictly at the effective layer and always relative to a fixed `Enc` in `Enc_RH` and a fixed experiment protocol.
 
-* World T: RH is true.
-* World F: RH is false.
+* World T: RH true operational pattern.
+* World F: RH false operational pattern.
 
 Each world is described through observable tension patterns. No hidden construction rules are provided and no canonical answer is stored inside any encoding parameter.
 
-### 5.1 World T (RH true, low spectral tension)
+### 5.1 World T (operational low tension)
 
-In World T, for any fixed encoding tuple `Enc` in `Enc_RH`:
+In World T, for any fixed encoding tuple `Enc` in `Enc_RH` and any fixed protocol that deterministically constructs `(m_k)`:
 
-1. Critical line behavior
+1. Critical strip behavior
 
-   For world representing sequences `(m_k)` on the declared resolution ladder, `I_line(m_k)` remains small and stable across `k`.
+   The invariant `I_line(m_k)` remains small and stable across k according to the tolerance model.
 
 2. Spectral statistics
 
@@ -625,47 +616,45 @@ In World T, for any fixed encoding tuple `Enc` in `Enc_RH`:
 
 3. Arithmetic profiles
 
-   `DeltaS_arith(m_I)` stays within the tolerance model tied to `Ref_arith` across the declared coupled intervals `I(T)`.
+   `DeltaS_arith(m_I)` stays within the tolerance model tied to `Ref_arith` across coupled intervals.
 
-4. Global tension
+4. Global tension band
 
    There exists `k0` such that
 
    ```txt
-   sup_{k >= k0} Tension_RH(m_k) <= epsilon_RH(Enc)
+   sup_{k >= k0} Tension_RH(m_k) <= epsilon_RH(Enc, ExperimentID)
    ```
 
-### 5.2 World F (RH false, high spectral tension)
+### 5.2 World F (operational high tension)
 
-In World F, for any fixed encoding tuple `Enc` in `Enc_RH`:
+In World F, for any fixed encoding tuple `Enc` in `Enc_RH` and any fixed protocol that deterministically constructs `(m_k)`:
 
-1. Critical line deviation
+1. Critical strip deviation
 
-   For any world representing sequence `(m_k)`, the scale locked invariant cannot stay arbitrarily small. There exists `k0` such that `I_line(m_k)` is bounded away from zero for `k >= k0`.
+   There exists `k0` such that `I_line(m_k)` is bounded away from zero for all `k >= k0` under the calibrated thresholding.
 
 2. Spectral statistics anomaly
 
-   `I_stats(m_k)` eventually deviates from `stat_ref` in a way that does not shrink under increasing `k`.
+   `I_stats(m_k)` deviates from `stat_ref` in a way that does not shrink under increasing k, relative to the tolerance model.
 
 3. Arithmetic distortion
 
-   There exist coupled intervals `I(T)` where `DeltaS_arith(m_I)` violates the tolerance envelope tied to `Ref_arith` in `Enc`.
+   There exist coupled intervals where `DeltaS_arith(m_I)` violates the tolerance envelope tied to `Ref_arith`.
 
-4. Global tension
+4. Global separator threshold
 
    There exists `k0` such that
 
    ```txt
-   inf_{k >= k0} Tension_RH(m_k) >= delta_RH(Enc)
+   inf_{k >= k0} Tension_RH(m_k) >= delta_RH(Enc, ExperimentID)
    ```
-
-   where `delta_RH(Enc) > 0` is the class level lower bound.
 
 ### 5.3 Interpretive note
 
-These counterfactual worlds do not claim to construct TU internal fields from raw data. They only assert that if faithful world representing sequences exist under a locked encoding tuple, then the observable tension patterns differ as described.
+These counterfactual worlds do not claim to construct TU internal fields from raw data. They only assert that if a protocol produces a world representing sequence under a locked encoding tuple, then the observable tension patterns differ as described.
 
-They are templates for how RH true versus RH false worlds would look under this effective layer encoding, not storage locations for the canonical answer.
+They are templates for how RH true versus RH false operational patterns look under this effective layer encoding, not storage locations for the canonical answer.
 
 ---
 
@@ -673,144 +662,138 @@ They are templates for how RH true versus RH false worlds would look under this 
 
 This block specifies experiments and protocols at the effective layer that can:
 
-* test the coherence of the Q001 encoding,
+* test coherence of the Q001 encoding,
 * discriminate between alternative admissible encoding tuples,
-* falsify specific TU encodings for Q001,
-* and define the thresholds `epsilon_RH(Enc)` and `delta_RH(Enc)`.
+* falsify specific TU encoding tuples for Q001,
+* define thresholds `epsilon_RH(Enc, ExperimentID)` and `delta_RH(Enc, ExperimentID)`.
 
 These experiments do not prove or disprove RH. They test encoding procedures and encoding tuples.
 
 ### 6.1 Experiment 1: Numerical spectral tension profile (pre registered encoding)
 
-**Scope of this experiment**
+Scope:
 
-This experiment tests a frozen TU encoding tuple `Enc` for Q001 and the associated procedure. It does not test the canonical truth of the Riemann Hypothesis.
+* Tests a frozen TU encoding tuple `Enc` for Q001 and its procedure.
+* Does not test the canonical truth of RH.
 
 Goal:
 
-* Test whether the frozen `Tension_RH` functional and reference classes produce stable, non cheat friendly tension profiles on published numerical datasets.
+* Test whether the frozen `Tension_RH` functional and reference classes produce stable, auditable tension profiles on published numerical datasets.
 
 Setup:
 
-* Input data: published tables of nontrivial zeros of zeta(s) up to a stated height range, and associated prime counting summaries over coupled ranges.
+* Input data: published tables of nontrivial zeros up to a stated height range, plus prime summary inputs required by `ArithmeticDataProtocol` over coupled ranges.
 
-* Declare:
+* Declare, as part of the tuple and protocol:
 
-  * the resolution ladder `r_k`, region families `Regions(r_k)`, `Regions_line(r_k)`, and `Regions_stats(r_k)`,
-  * the coupling rule `R(T) -> I(T)` with fixed `ΔT`,
-  * the anchor rules `Anchors(I, r_k)`.
+  * the ladder `r_k` and induced region families,
+  * the coupling rule with `ΔT_k` determined by the ladder,
+  * the anchor rules and arithmetic conventions.
 
 * Freeze a specific encoding tuple `Enc` in `Enc_RH`:
 
-  * select `Ref_spec` from the admissible spectral library,
-  * select `Ref_arith` from the admissible arithmetic library,
-  * fix `w_spec`, `w_arith`, `alpha`, `beta` within locked discrete choices,
-  * fix `ToleranceModel` chosen from the finite charter level library,
+  * select `Ref_spec`,
+  * select `Ref_arith`,
+  * fix `(w_spec, w_arith)` from the discrete menu,
+  * fix `LadderSpec`, `CouplingRule`, `ArithmeticDataProtocol`, `ToleranceModel`,
   * publish a hash of the full encoding spec before evaluation.
 
 Protocol:
 
-1. For each `k` in a declared range, construct states `m_k` in `M_reg` that represent the world at scale `r_k`, using the published zero and prime data as inputs to the engineering interface in Block 3.1.
-2. For each coupled pair `(R(T), I(T))` at this scale, compute `DeltaS_spec(m_R)` and `DeltaS_arith(m_I)` using the frozen references and metrics.
-3. Compute `Tension_RH(m_k)` for each `k`.
+1. For each k in a declared range, construct the state `m_k` deterministically using the published inputs and the frozen feature extraction rules.
+2. For each coupled pair produced by the coupling rule at that k, compute `DeltaS_spec(m_R)` and `DeltaS_arith(m_I)`.
+3. Compute `Tension_RH(m_k)` for each k.
 4. Compute `I_line_k(m_k)` and `I_stats_k(m_k)` using the deterministic region families.
-5. Report all results together with the full encoding tuple and its hash.
+5. Report all outputs with the full encoding tuple, its hash, and all out of domain metadata if any.
 
 Metrics:
 
-* The sequence `Tension_RH(m_k)` across `k`.
-* The sequences `I_line_k(m_k)` and `I_stats_k(m_k)` across `k`.
-* Sensitivity under small, pre registered perturbations inside the admissible ranges defined at the charter level.
+* The sequence `Tension_RH(m_k)` across k.
+* The sequences `I_line_k(m_k)` and `I_stats_k(m_k)` across k.
+* Sensitivity under neighboring choices in the discrete encoding menu, when such comparisons are pre registered.
 
 Falsification conditions:
 
-* If, under the frozen admissible encoding tuple, `Tension_RH(m_k)` is unstable in the sense that it has uncontrolled jumps across adjacent `k` that cannot be attributed to declared tolerance or resolution effects, the encoding tuple is rejected as not robust.
-* If post hoc adjustments to `Ref_spec`, `Ref_arith` or weights are required to obtain reasonable tension bands, the encoding procedure is rejected as not admissible for Q001.
-* If the encoding yields materially different qualitative conclusions under small, pre registered parameter changes inside the allowed discrete sets, it is rejected as non auditable.
-
-Semantics note:
-
-* All calculations follow the semantics choice in Block 0.
-* The operator interpretations used by `DeltaS_spec` and `DeltaS_arith` remain unchanged across `k`.
+* If, under the frozen tuple, `Tension_RH(m_k)` has uncontrolled jumps across adjacent k that cannot be attributed to declared ladder effects or tolerance effects, the tuple is rejected as not robust.
+* If post evaluation changes to references, weights, coupling, ladder, tolerances, or arithmetic protocol are required to obtain stable behavior, the encoding procedure is rejected as not admissible for Q001.
+* If neighboring discrete menu choices flip qualitative conclusions in a way that violates the audit expectations set by the tolerance model, the tuple is rejected as non auditable.
 
 Boundary note:
 
-* Falsifying a TU encoding in this experiment is not the same as solving the canonical statement.
+* Falsifying an encoding tuple in this experiment is not the same as solving the canonical statement.
 
 ### 6.2 Experiment 2: Model world comparison with mock zeta like functions (class separation)
 
-**Scope of this experiment**
+Scope:
 
-This experiment tests whether a frozen TU encoding tuple `Enc` for Q001 can separate RH like and non RH like families. It does not test the canonical truth of RH.
+* Tests whether a frozen encoding tuple can separate RH like and non RH like mock families.
+* Does not test the canonical truth of RH.
 
 Goal:
 
-* Test whether the frozen Q001 encoding can separate RH like versus non RH like spectral families under the same admissible encoding class, without tuning after seeing outcomes.
+* Test whether the encoding can separate RH like versus non RH like spectral families under the same admissible encoding tuple, without tuning after seeing outcomes.
 
 Setup:
 
 * Construct or select zeta like families:
 
-  * Family T: functions with zeros constrained to a single vertical line by construction, mimicking RH behavior.
-  * Family F: functions with a declared fraction of zeros off that line by construction.
+  * Family T: functions whose constructed zeros lie on a single vertical line.
+  * Family F: functions whose constructed zeros include a declared fraction off that line.
 
-* For each function, generate synthetic spectral and arithmetic like summaries to populate states `m_k` on the resolution ladder.
+* For each function, generate synthetic spectral and arithmetic like summaries to populate states `m_k` on the ladder, using a declared generator rule.
 
-* Freeze the same encoding tuple `Enc` in `Enc_RH` as in Experiment 1.
+* Freeze the same encoding tuple `Enc` in `Enc_RH` as used for calibration.
 
 Protocol:
 
-1. For each family element and each `k`, build a state `m_k` in `M_reg` representing that model at scale `r_k`.
-2. Compute `DeltaS_spec`, `DeltaS_arith` and `Tension_RH` for all such `m_k` using frozen references and weights.
-3. Compare the tension distributions between Family T and Family F across `k`.
+1. For each family element and each k, construct `m_k` deterministically from the declared generator rule and the frozen ladder.
+2. Compute `DeltaS_spec`, `DeltaS_arith`, and `Tension_RH` for all such `m_k`.
+3. Compare tension distributions between Family T and Family F across k.
 
 Metrics:
 
 * Mean and variance of `Tension_RH` for Family T and Family F.
-* Separation between the two distributions at each `k`.
-* Stability of the separation across `k`.
-* Agreement between separation and the known construction labels T versus F.
+* Separation between the distributions at each k.
+* Stability of separation across k.
+* Agreement between separation and the known construction labels.
 
 Falsification conditions:
 
-* If the encoding fails to separate Family T from Family F across `k` for the frozen tuple, the encoding is rejected as misaligned for Q001.
-* If the encoding systematically assigns lower tension to Family F than Family T under the frozen tuple, the encoding is rejected as directionally incorrect.
-
-Semantics note:
-
-* All calculations follow the semantics choice in Block 0.
-* The same deterministic `Regions(r_k)` and coupling rule must be used.
+* If the frozen encoding fails to separate Family T from Family F across k, the tuple is rejected as misaligned for Q001.
+* If the frozen encoding systematically assigns lower tension to Family F than to Family T, the tuple is rejected as directionally incorrect.
 
 Boundary note:
 
-* Falsifying a TU encoding in this experiment is not the same as solving the canonical statement.
+* Falsifying an encoding tuple in this experiment is not the same as solving the canonical statement.
 
-### 6.3 Calibration of epsilon_RH(Enc) and delta_RH(Enc)
+### 6.3 Calibration of epsilon_RH and delta_RH, operational thresholds
 
-The thresholds `epsilon_RH(Enc)` and `delta_RH(Enc)` used in Block 4 are derived from Experiment 2 and are part of the frozen encoding tuple.
+The thresholds `epsilon_RH(Enc, ExperimentID)` and `delta_RH(Enc, ExperimentID)` are calibration artifacts used to define operational World T and World F patterns for this encoding and protocol.
 
 Calibration rule:
 
-* For each encoding tuple `Enc`:
+* For each encoding tuple `Enc` and a fixed calibration protocol for Experiment 2:
 
   1. Run Experiment 2 on Family T and Family F.
-  2. Let `Tension_RH_T(k)` and `Tension_RH_F(k)` denote the distributions on each family at scale `k`.
+  2. Let `Tension_T(k)` and `Tension_F(k)` denote the tension distributions on each family at scale k.
 
-* Define `epsilon_RH(Enc)` as:
+Define `epsilon_RH(Enc, Experiment2)`:
 
-  * a fixed quantile (for example the 95th percentile) of the pooled `Tension_RH_T(k)` values across all `k` in a pre declared range, rounded up according to the tolerance model.
+* a fixed quantile, such as the 95th percentile, of the pooled `Tension_T(k)` values across a pre declared k range, rounded according to `ToleranceModel`.
 
-* Define `delta_RH(Enc)` as:
+Define `delta_RH(Enc, Experiment2)`:
 
-  * a fixed quantile (for example the 5th percentile) of the pooled `Tension_RH_F(k)` values across the same range, rounded down according to the tolerance model.
+* a fixed quantile, such as the 5th percentile, of the pooled `Tension_F(k)` values across the same k range, rounded according to `ToleranceModel`.
 
 Constraints:
 
-* The quantile choices and ranges are specified in `ToleranceModel` before any experiments.
-* The allowed quantile choices and rounding rules must stay inside the global constraints in the TU Tension Scale Charter.
-* Once chosen, `epsilon_RH(Enc)` and `delta_RH(Enc)` are frozen and published together with the encoding tuple.
+* Quantile choices, k ranges, and rounding rules are specified in `ToleranceModel` before running experiments.
+* Changing calibration rules requires a charter level update, not a local edit.
 
-This makes the thresholds themselves reproducible and prevents implicit tuning.
+Interpretation constraint:
+
+* These thresholds calibrate separation for the chosen mock world family, under the chosen protocol.
+* They are not asserted as theorem level constants about the canonical RH.
 
 ---
 
@@ -820,27 +803,27 @@ This block describes how Q001 can be used as an engineering module for AI system
 
 ### 7.1 Training signals
 
-We define training signals that encourage RH aware and tension aware reasoning under the encoding.
+We define training signals that encourage tension aware reasoning under the frozen encoding tuple.
 
 1. `signal_zero_spectrum_stability`
 
-   * Definition: a penalty proportional to `DeltaS_spec(m_R)` evaluated on the coupled `(m_R)` inputs across declared regions.
-   * Purpose: discourage internal representations that imply spectral patterns inconsistent with the frozen reference baselines.
+   * Definition: a penalty proportional to `DeltaS_spec(m_R)` evaluated on coupled inputs across declared regions.
+   * Purpose: discourage internal representations that imply spectral patterns inconsistent with frozen baselines.
 
 2. `signal_prime_error_profile`
 
-   * Definition: a penalty derived from `DeltaS_arith(m_I)` evaluated on coupled `(m_I)` inputs across declared intervals.
+   * Definition: a penalty derived from `DeltaS_arith(m_I)` evaluated on coupled inputs across declared intervals.
    * Purpose: discourage internal representations that imply arithmetic profiles outside the frozen tolerance envelope.
 
 3. `signal_spectral_tension_score`
 
    * Definition: the scalar `Tension_RH(m)` under the frozen admissible tuple.
-   * Purpose: provide a single measurable indicator of RH consistency tension.
+   * Purpose: provide a single measurable indicator of RH encoding tension.
 
 4. `signal_counterfactual_consistency`
 
    * Definition: a consistency penalty when the model mixes World T and World F assumptions in the same explanation under a declared stance prompt.
-   * Purpose: enforce clean separation of counterfactual assumptions rather than blended narratives.
+   * Purpose: enforce separation of counterfactual assumptions rather than blended narratives.
 
 ### 7.2 Architectural patterns
 
@@ -849,23 +832,23 @@ We outline module patterns that reuse Q001 structures without revealing any deep
 1. `SpectralTensionHead`
 
    * Role: produce an estimate of `Tension_RH` as an auxiliary output from internal representations.
-   * Interface: internal embeddings to scalar tension estimate plus optional decomposed mismatch vector.
+   * Interface: internal embeddings to scalar tension estimate, optionally with decomposition into spectral and arithmetic parts.
 
 2. `ArithmeticConsistencyFilter`
 
-   * Role: score candidate statements about primes for compatibility with frozen `Ref_arith` envelopes.
+   * Role: score candidate statements about primes for compatibility with frozen `Ref_arith` envelopes and the declared arithmetic protocol.
    * Interface: candidate statement representation to soft score or mask.
 
 3. `TU_SpecField_Observer`
 
-   * Role: extract simplified spectral summaries (rho_zero like descriptors) from internal representations.
+   * Role: extract simplified spectral summaries compatible with `H_zero` from internal representations.
    * Interface: internal embeddings to low dimensional spectral summary.
 
 ### 7.3 Evaluation harness
 
 1. Task selection
 
-   * Use analytic number theory prompts where RH strengthens bounds or sharpens error terms.
+   * Use analytic number theory prompts where RH affects bounds or error term narratives.
 
 2. Conditions
 
@@ -882,21 +865,21 @@ We outline module patterns that reuse Q001 structures without revealing any deep
 
 Baseline setup:
 
-* Prompt: explain links between zeta zeros, prime distribution, error terms and random matrix heuristics.
-* Log: response text and any self reported uncertainty markers.
+* Prompt: explain links between zeta zeros, prime distribution, error terms, and random matrix heuristics.
+* Log: response text and self reported uncertainty markers.
 
 TU encoded setup:
 
-* Prompt: same, plus require an explicit tension narrative that references `Tension_RH`, separates World T and World F and respects the encoding tuple.
+* Prompt: same, plus require an explicit tension narrative that references `Tension_RH`, separates World T and World F, and cites the encoding tuple hash.
 * Log: response text plus any produced tension scores.
 
 Comparison metric:
 
-* Rate structural coherence, explicit linkage quality and counterfactual separation quality.
+* Rate structural coherence, linkage quality, and counterfactual separation quality.
 
 What to log:
 
-* Prompts, outputs, encoding tuple hash and any auxiliary tension traces.
+* Prompts, outputs, encoding tuple hash, and any auxiliary tension traces.
 
 ---
 
@@ -909,44 +892,38 @@ This block describes reusable components produced by Q001 and how they transfer.
 1. ComponentName: `SpectralTensionScore_RH`
 
    * Type: functional
-
    * Minimal interface:
 
-     * Inputs: `local_zero_summary`, `local_arith_summary`, `encoding_tuple_id`
+     * Inputs: `local_zero_histogram`, `local_arith_features`, `encoding_tuple_id`
      * Output: `tension_value` (nonnegative scalar)
-
    * Preconditions:
 
      * `encoding_tuple_id` points to a frozen admissible tuple in `Enc_RH`.
-     * Summaries are generated by the deterministic region, interval and anchor rules.
+     * Summaries are generated by deterministic region, interval, and anchor rules.
 
 2. ComponentName: `ZetaSpectrumField_Descriptor`
 
    * Type: field
-
    * Minimal interface:
 
      * Inputs: `region_id`, `resolution_id`
      * Output: `summary_features`
-
    * Preconditions:
 
-     * `region_id` is in the deterministic `Regions(r_k)` family.
-     * `resolution_id` matches `r_k` in `LadderSpec`.
+     * `region_id` is in the deterministic region family induced by `LadderSpec`.
+     * `resolution_id` matches the ladder.
 
 3. ComponentName: `CounterfactualSpectralWorld_Template`
 
    * Type: experiment_pattern
-
    * Minimal interface:
 
-     * Inputs: `model_family_id`, `encoding_tuple_id`
+     * Inputs: `model_family_id`, `encoding_tuple_id`, `protocol_id`
      * Output: `world_T_protocol`, `world_F_protocol`
-
    * Preconditions:
 
      * `encoding_tuple_id` is frozen and audited.
-     * The model family provides spectral and arithmetic like summaries that can be mapped into the effective layer interface.
+     * The model family provides summaries that map into the effective layer interface under the declared protocol.
 
 ### 8.2 Direct reuse targets
 
@@ -959,10 +936,10 @@ This block describes reusable components produced by Q001 and how they transfer.
 2. Q003 (Birch and Swinnerton Dyer conjecture)
 
    * Reused component: `CounterfactualSpectralWorld_Template`.
-   * Why it transfers: BSD links L function spectral behavior to arithmetic invariants, allowing similar World T versus World F patterns.
+   * Why it transfers: BSD couples L function spectral behavior to arithmetic invariants, allowing similar world separation patterns.
    * What changes: arithmetic summaries refer to elliptic curve invariants rather than primes.
 
-3. Q018 (Pair correlation of zeros of zeta functions)
+3. Q018 (Pair correlation of zeros)
 
    * Reused component: `ZetaSpectrumField_Descriptor`.
    * Why it transfers: Q018 makes fine spectral statistics the primary observable.
@@ -972,7 +949,7 @@ This block describes reusable components produced by Q001 and how they transfer.
 
    * Reused component: `CounterfactualSpectralWorld_Template`.
    * Why it transfers: spectral_tension and counterfactual separation patterns apply to physical spectra.
-   * What changes: model families are Hamiltonians; observables are energy level summaries.
+   * What changes: model families are Hamiltonians, observables are energy level summaries.
 
 ---
 
@@ -985,37 +962,37 @@ This block positions Q001 on the TU verification ladder and declares next measur
 * E_level: E2
 
   * A coherent effective encoding of RH via spectral_tension is specified.
-  * Experiments exist that can falsify an encoding tuple or procedure and calibrate thresholds.
+  * Experiments exist that can falsify an encoding tuple or procedure and calibrate operational thresholds.
 
 * N_level: N2
 
   * The linkage between spectral and arithmetic observables is explicit at the effective layer.
-  * Counterfactual worlds are specified in an auditable way using a fixed refinement ladder.
+  * Counterfactual worlds are specified as auditable operational patterns using a fixed ladder and fixed protocols.
 
 ### 9.2 Next measurable step toward E3
 
 To move from E2 to E3, implement at least one of the following in practice:
 
-1. A public, reproducible prototype that, for a declared encoding tuple `Enc`:
+1. A public reproducible prototype that, for a declared encoding tuple `Enc`:
 
-   * computes `Tension_RH(m_k)`, `I_line_k(m_k)` and `I_stats_k(m_k)` on a declared `r_k` ladder using public zero and prime datasets,
-   * publishes the full encoding tuple, deterministic region families, coupling rule, tolerance model and pre registration hash.
+   * computes `Tension_RH(m_k)`, `I_line_k(m_k)`, and `I_stats_k(m_k)` on a declared ladder using public datasets,
+   * publishes the full encoding tuple, region families, coupling rule, arithmetic protocol, tolerance model, and pre registration hash.
 
-2. A public benchmark on mock zeta like families that demonstrates stable separation of Family T versus Family F under a frozen admissible encoding tuple, including:
+2. A public benchmark on mock zeta like families that demonstrates stable separation of Family T versus Family F under a frozen encoding tuple, including:
 
-   * published code and data for model families,
+   * published code and data for mock families,
    * published tension distributions,
    * independent replication by external groups.
 
-Both steps operate entirely at the effective layer because they work with observable summaries and audited encoding tuples, not with any deep TU generative rule.
+Both steps operate at the effective layer because they work with observable summaries and audited encoding tuples, not with any deep TU generative rule.
 
 ### 9.3 Long term role in the TU program
 
 Q001 is expected to serve as:
 
-* The reference node for spectral_tension problems across mathematics and physics.
-* A calibration ground for auditable tension encodings that avoid proof claims while still being testable.
-* A bridge node connecting pure mathematics, mathematical physics and AI interpretability via shared spectral tension structure.
+* a reference node for spectral_tension problems across mathematics and physics,
+* a calibration ground for auditable tension encodings that avoid proof claims while staying testable,
+* a bridge node connecting pure mathematics, mathematical physics, and AI interpretability via shared spectral tension structure.
 
 ---
 
@@ -1023,43 +1000,47 @@ Q001 is expected to serve as:
 
 The classical Riemann Hypothesis says:
 
-> In the critical strip, all nontrivial zeros of zeta(s) line up on the line with real part equal to `1/2`.
+> In the critical strip, all nontrivial zeros of zeta(s) lie on the line with real part equal to `1/2`.
 
 Why it matters:
 
-* The pattern of these zeros controls how primes fluctuate around their average distribution.
-* If the zeros are well organized, prime fluctuations are constrained.
+* the pattern of these zeros controls how primes fluctuate around their average distribution,
+* if the zeros are well organized, prime fluctuations are constrained.
 
 In the Tension Universe view, we do not claim a proof. Instead, we define an effective tension score:
 
-* One part measures how far the observed zero statistics deviate from a frozen reference baseline.
-* One part measures how far prime related summaries deviate from a frozen reference baseline.
-* Both are combined into a single number `Tension_RH`.
+* one part measures how far observed zero histograms deviate from a frozen spectral reference,
+* one part measures how far prime summary features deviate from a frozen arithmetic reference,
+* both are combined into a single number `Tension_RH` under a frozen encoding tuple.
 
-The main anti cheat idea is that the reference baselines, weights, coefficients, coupling rule and resolution ladder are frozen before evaluation and audited. We do not allow a second pass where someone looks at results and then picks a new baseline that makes tension small.
+The anti cheat idea is simple:
 
-Then we compare two kinds of world patterns:
+* references, weights, coupling rule, ladder, arithmetic protocol, and tolerances are frozen before evaluation,
+* the full encoding spec is hashed before evaluation,
+* no post evaluation tuning is admissible.
 
-* In a RH true world, there should exist a consistent sequence of descriptions at increasing resolution where `Tension_RH` stays in a small, stable band.
-* In a RH false world, under the same frozen admissible encoding class, any consistent sequence eventually shows tension bounded away from zero.
+Then we compare two counterfactual operational patterns:
+
+* World T is the pattern where a declared protocol produces tension that eventually stays below a calibrated band threshold.
+* World F is the pattern where the declared protocol produces tension that eventually stays above a calibrated separator threshold.
 
 This does not decide RH. It does something different and testable:
 
-* It makes the RH world versus non RH world distinction auditable at the effective layer.
-* It provides explicit observables and experiments that can falsify bad encodings.
-* It defines reusable components for other spectral tension problems.
+* it makes the RH like versus non RH like operational distinction auditable at the effective layer,
+* it provides explicit observables and experiments that can falsify bad encoding tuples,
+* it defines reusable components for other spectral tension problems.
 
-Q001 is therefore the prototype for spectral tension problems in the Tension Universe framework and a benchmark for encoding a world class open problem without crossing the boundary into deep generative rules.
+Q001 is therefore a prototype for spectral tension problem encodings in TU and a benchmark for encoding an open problem without crossing into deep generative rules.
 
 ---
 
 ## Tension Universe effective layer footer
 
-This page is part of the **WFGY / Tension Universe** S problem collection.
+This page is part of the WFGY / Tension Universe S problem collection.
 
 ### Scope of claims
 
-* The goal of this document is to specify an **effective layer encoding** of the named problem.
+* The goal of this document is to specify an effective layer encoding of the named problem.
 * It does not claim to prove or disprove the canonical statement in Section 1.
 * It does not introduce any new theorem beyond what is already established in the cited literature.
 * It should not be cited as evidence that the corresponding open problem has been solved.
@@ -1073,33 +1054,32 @@ This page should be read together with the following charters:
 * [TU Tension Scale Charter](../Charters/TU_TENSION_SCALE_CHARTER.md)
 * [TU Global Guardrails](../Charters/TU_GLOBAL_GUARDRAILS.md)
 
-
 ### Effective layer boundary
 
-* All objects used here (state spaces `M`, observables, invariants, tension scores, counterfactual "worlds") live at the effective layer.
+* All objects used here (state spaces `M`, observables, invariants, tension scores, counterfactual worlds) live at the effective layer.
 * No step in this file gives a constructive mapping from raw experimental or simulation data into internal TU fields.
 * No step exposes any deep TU generative rule or any first principle axiom system.
 
 ### Encoding and fairness
 
-* Admissible encoding classes, reference profiles and weight families used in this page are constrained by the shared TU charters listed above.
+* Admissible encoding classes, reference profiles, weight menus, coupling rules, ladder specs, arithmetic data protocols, and tolerance models used in this page are constrained by the shared TU charters listed above.
 * For every encoding class referenced here:
 
-  * its definition, parameter ranges and reference families are fixed at the charter level before any problem specific tuning;
-  * these choices may depend on general physical or mathematical considerations and on public benchmark selections, but not on the unknown truth value of this specific problem;
-  * no encoding is allowed to hide the canonical answer as an uninterpreted field, label or parameter.
+  * its definition, parameter menus, reference families, and protocol contracts are frozen at the charter level before any evaluation,
+  * these choices may depend on general mathematical considerations and on public benchmark selections, but not on the unknown truth value of this specific problem,
+  * no encoding is allowed to hide the canonical answer as an uninterpreted field, label, or parameter.
 
 ### Tension scale and thresholds
 
 * All mismatch terms `DeltaS_*` and tension functionals in this file are treated as dimensionless or normalized quantities, defined up to a fixed monotone rescaling specified in the TU Tension Scale Charter.
-* Thresholds such as `epsilon_*`, `delta_*` and experiment cutoffs are always interpreted relative to that fixed scale.
+* Thresholds such as `epsilon_*`, `delta_*`, and experiment cutoffs are interpreted relative to that fixed scale.
 * Changing the tension scale requires an explicit update of the TU Tension Scale Charter, not an edit of individual problem files.
 
 ### Falsifiability and experiments
 
 * Experiments described in this document are tests of TU encodings, not tests of the underlying canonical problem itself.
 * The rule "falsifying a TU encoding is not the same as solving the canonical statement" applies globally, even where it is not restated.
-* When required observables cannot be reliably estimated in practice, the outcome of the corresponding experiment is recorded as "inconclusive", not as confirmation.
+* When required observables cannot be reliably estimated in practice, the outcome is recorded as inconclusive, not as confirmation.
 
 ### Interaction with established results
 
@@ -1111,7 +1091,7 @@ This page should be read together with the following charters:
 * This file is a versioned specification within the WFGY / Tension Universe research program.
 * Definitions and symbols in this file are frozen for this version.
 * Revisions, if needed, must be published as a new versioned file or accompanied by an explicit changelog entry and must not silently alter prior definitions.
-* All changes to encoding classes, reference libraries, weight ranges or tolerance models that affect multiple problems should be made at the charter level, not by local edits to this file.
+* All changes to encoding classes, reference libraries, weight menus, coupling rules, ladder specs, arithmetic protocols, or tolerance models that affect multiple problems should be made at the charter level, not by local edits to this file.
 
 ### Program note
 
