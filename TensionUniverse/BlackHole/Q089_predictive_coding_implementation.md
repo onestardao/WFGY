@@ -11,12 +11,47 @@ Rank: S
 Projection_dominance: I
 Field_type: dynamical_field
 Tension_type: consistency_tension
-Status: Partial
-Semantics: hybrid
+Status: Open problem (partial evidence, no implementation consensus)
+Semantics: hybrid (discrete events summarized into continuous effective fields)
 E_level: E1
 N_level: N1
-Last_updated: 2026-01-25
-```
+Last_updated: 2026-01-30
+````
+
+---
+
+## 0. Effective layer disclaimer
+
+All content in this entry is restricted to the **Tension Universe effective layer**.
+
+* The goal is to specify an **effective-layer encoding** of Q089, including:
+
+  * a state space for predictive coding implementations,
+  * admissible encodings from data into that state space,
+  * tension functionals and mismatch scores,
+  * falsifiable experiment templates,
+  * and reusable components for other BlackHole problems and AI systems.
+
+* This document **does not**:
+
+  * claim to prove or disprove the canonical statement of Q089,
+  * assert that biological brains do or do not implement predictive coding in any deep or fundamental sense,
+  * introduce new theorems beyond what is already established in the cited literature,
+  * define or expose any Tension Universe bottom-level axiom system or generative rules.
+
+* All objects in this entry (for example `M`, `E_PC`, observables, mismatch measures, `Tension_PC`, `T_ij`, counterfactual worlds) are:
+
+  * effective constructs,
+  * defined only up to the requirements stated in this file,
+  * and interpreted as tools for structuring experiments and reasoning at the effective layer.
+
+* Domain boundary:
+
+  * Tension analysis is only defined on the regular domain `M_reg` introduced in Section 3.5.
+  * States in the singular set `S_sing` are treated as **out of domain** for Q089 tension analysis.
+  * Out-of-domain outcomes are not counted as evidence for or against predictive coding as an implementation hypothesis.
+
+For the general rules governing effective-layer scope, encoding and fairness constraints, and tension scales, this page should be read together with the Tension Universe charters listed in the footer.
 
 ---
 
@@ -26,7 +61,7 @@ Last_updated: 2026-01-25
 
 The canonical problem behind Q089 can be phrased as follows:
 
-> Predictive coding proposes that the brain implements a hierarchical generative model in which top–down predictions are continuously compared with bottom–up sensory signals, and only prediction errors are propagated forward. The open question is: **how, if at all, is this architecture concretely implemented in biological neural circuits?**
+> Predictive coding proposes that the brain implements a hierarchical generative model in which top down predictions are continuously compared with bottom up sensory signals, and only prediction errors are propagated forward. The open question is: **how, if at all, is this architecture concretely implemented in biological neural circuits?**
 
 More precisely:
 
@@ -53,7 +88,7 @@ such that we can reasonably claim that predictive coding (or a close approximati
 
 ### 1.2 Status and difficulty
 
-Current knowledge can be summarized at the effective layer as:
+Current knowledge at the effective layer can be summarized as:
 
 * There is strong conceptual appeal and some empirical support for predictive coding and more general predictive processing theories, including:
 
@@ -65,7 +100,7 @@ Current knowledge can be summarized at the effective layer as:
 
   * It is not fully agreed which neurons encode predictions versus errors.
   * It is unclear how closely biological local microcircuits implement the update equations of standard PC algorithms.
-  * Alternative interpretive frameworks (for example, efficient coding, attractor dynamics, energy-based models, or other forms of hierarchical inference) can sometimes explain similar data.
+  * Alternative interpretive frameworks (for example efficient coding, attractor dynamics, energy-based models, or other forms of hierarchical inference) can sometimes explain similar data.
 
 As a result, there is no consensus that predictive coding, in the strict algorithmic form proposed by canonical models, is literally implemented by cortical microcircuits. The problem is widely regarded as deep and structurally hard, because it sits at the intersection of:
 
@@ -84,7 +119,6 @@ Within the BlackHole S-problem collection, Q089 plays several roles:
    * Q085 (learning and plasticity rules),
    * Q086 (functions of sleep and offline processing),
    * Q087 (neurodegenerative and psychiatric disorders as failures of prediction and error handling).
-
 3. It provides a reference pattern for how Tension Universe handles:
 
    * algorithmic theories of brain function,
@@ -102,56 +136,56 @@ Within the BlackHole S-problem collection, Q089 plays several roles:
 
 ## 2. Position in the BlackHole graph
 
-This block records how Q089 is positioned among Q001–Q125. Each edge includes a one-line reason tied to concrete components or tension types.
+This block records how Q089 is positioned among Q001–Q125. Each edge includes a one line reason tied to concrete components or tension types.
 
 ### 2.1 Upstream problems
 
 These provide prerequisites, tools, or general frameworks for Q089.
 
-* Q083 (BH_NEURO_CODE_L3_083)  
+* Q083 (BH_NEURO_CODE_L3_083)
   Reason: Supplies general frameworks for population codes and representational formats that are reused to describe predictive and error-coding populations.
 
-* Q085 (BH_NEURO_PLASTICITY_RULES_L3_085)  
+* Q085 (BH_NEURO_PLASTICITY_RULES_L3_085)
   Reason: Provides candidate synaptic update rules and local learning operators used to instantiate predictive coding algorithms in biological synapses.
 
-* Q088 (BH_NEURO_DEV_PATTERN_L3_088)  
-  Reason: Describes developmental patterning and constraints that shape which predictive coding architectures are even realizable in real brains.
+* Q088 (BH_NEURO_DEV_PATTERN_L3_088)
+  Reason: Describes developmental patterning and constraints that shape which predictive coding architectures are even realizable in real brains and which geometries are permitted for hierarchical maps.
 
 ### 2.2 Downstream problems
 
 These use Q089 components or depend on its tension structure.
 
-* Q081 (BH_NEURO_CONSCIOUS_HARD_L3_081)  
-  Reason: Reuses Q089’s predictive_implementation_tension component to examine whether conscious experiences correlate with predictive coding regimes.
+* Q081 (BH_NEURO_CONSCIOUS_HARD_L3_081)
+  Reason: Reuses Q089 predictive_implementation_tension components to examine whether conscious experiences correlate with predictive coding regimes.
 
-* Q086 (BH_NEURO_SLEEP_FUNC_L3_086)  
-  Reason: Uses Q089’s offline_prediction_update pattern to analyze whether sleep supports predictive model refinement.
+* Q086 (BH_NEURO_SLEEP_FUNC_L3_086)
+  Reason: Uses Q089 offline_prediction_update patterns to analyze whether sleep supports predictive model refinement.
 
-* Q087 (BH_NEURO_DEGEN_DISEASE_L3_087)  
-  Reason: Applies Q089’s error_precision_mismatch descriptor to characterize how neurodegenerative and psychiatric conditions might involve mis-weighted prediction errors.
+* Q087 (BH_NEURO_DEGEN_DISEASE_L3_087)
+  Reason: Applies Q089 error_precision_mismatch descriptors to characterize how neurodegenerative and psychiatric conditions might involve mis-weighted prediction errors.
 
 ### 2.3 Parallel problems
 
 Parallel nodes share similar tension types but no direct component dependence.
 
-* Q082 (BH_NEURO_MEMORY_CONSOL_L3_082)  
+* Q082 (BH_NEURO_MEMORY_CONSOL_L3_082)
   Reason: Both Q089 and Q082 deal with long-range consistency between representational dynamics and behavioral outcomes under consistency_tension.
 
-* Q090 (BH_NEURO_DEFAULT_MODE_L3_090)  
+* Q090 (BH_NEURO_DEFAULT_MODE_L3_090)
   Reason: Both examine large-scale neural dynamics as implementations of internal generative activity, one via predictive coding, the other via default mode network structure.
 
 ### 2.4 Cross-domain edges
 
-Cross-domain nodes reuse Q089’s components in other domains.
+Cross-domain nodes reuse Q089 components in other domains.
 
-* Q059 (BH_CS_INFO_THERMODYN_L3_059)  
+* Q059 (BH_CS_INFO_THERMODYN_L3_059)
   Reason: Reuses predictive_implementation_tension ideas to study algorithmic implementations of prediction and compression in artificial systems under resource constraints.
 
-* Q123 (BH_AI_INTERP_L3_123)  
+* Q123 (BH_AI_INTERP_L3_123)
   Reason: Reuses predictive_coding_block templates as interpretability modules for artificial neural networks.
 
-* Q124 (BH_AI_AGENT_MODELS_L3_124)  
-  Reason: Uses Q089’s hierarchical_prediction_descriptor to define agent architectures based on internal predictive models.
+* Q124 (BH_AI_AGENT_MODELS_L3_124)
+  Reason: Uses Q089 hierarchical_prediction_descriptor to define agent architectures based on internal predictive models.
 
 ---
 
@@ -164,7 +198,7 @@ All content in this block stays strictly at the effective layer. We describe:
 * invariants and tension scores,
 * singular sets and domain restrictions.
 
-We do not describe any hidden TU generative rules or any mapping from raw biological data to internal TU fields.
+We do not describe any hidden TU generative rules or any mapping from raw biological data to internal TU bottom-level fields.
 
 ### 3.1 State space and admissible encodings
 
@@ -186,28 +220,41 @@ with the following interpretation:
 
 We introduce an admissible encoding class `E_PC` with the following properties:
 
-1. Each encoding `E` in `E_PC` maps raw experimental data (for example, spikes, voltages, imaging signals) plus task metadata to states `m` in `M`.
+1. Each encoding `E` in `E_PC` maps raw experimental data (for example spikes, voltages, imaging signals) plus task metadata to states `m` in `M`.
 
-2. The map is **fixed before** any evaluation of predictive coding tension and does not adapt per dataset to minimize tension. Formally:
+2. The map is fixed before any evaluation of predictive coding tension and does not adapt per dataset to minimize tension. Formally:
 
    ```txt
    For all E in E_PC and for all datasets D,
    m = E(D) is determined without access to Tension_PC(m).
    ```
 
-3. Each encoding `E` in `E_PC` uses a **finite library of features and scales**:
+3. Each encoding `E` in `E_PC` uses a finite library of features and scales:
 
-   * a finite set `L_reg` of region definitions (for example, cortical areas or laminar compartments),
+   * a finite set `L_reg` of region definitions (for example cortical areas or laminar compartments),
    * a finite set `L_time` of time window templates,
    * a finite set `L_feature` of summary statistics (for example averages, variances, cross-correlations).
 
-4. All observables defined below depend only on the outputs of `E` and these finite libraries. This prevents free adjustment of the encoding to match desired tension values.
+4. For practical use, there is a **finite encoding registry**:
+
+   * For any specific experimental program, the investigator pre-registers a finite set of concrete encodings
+     `Registry_PC = {E_1, E_2, ..., E_K} ⊂ E_PC`.
+   * For each analysis, one `E_k` is selected from this registry and its identity is logged.
+   * New encodings added after seeing data define a **new versioned registry**, not a silent update of the old one.
+
+5. All observables and mismatch measures defined below depend only on:
+
+   * the outputs of `E`,
+   * the finite libraries that are declared for Q089,
+   * and the fixed parameters of this entry.
+
+This prevents free adjustment of the encoding to match desired tension values.
 
 We do not specify how elements of `E_PC` are implemented. We only assume that at least some elements are empirically realizable with current or future experimental techniques.
 
 ### 3.2 Effective fields and observables
 
-Given a state `m` in `M`, we define the following observables.
+Given a state `m` in `M`, we define the following observables. All observables are interpreted with the **hybrid semantics** from the header metadata: discrete neural events and micro signals are summarized into continuous effective fields.
 
 1. Hierarchical representation field
 
@@ -215,7 +262,7 @@ Given a state `m` in `M`, we define the following observables.
 R_level(m; l, r)
 ```
 
-* Input: state `m`, level index `l` (for example, cortical hierarchy level), region `r` in `L_reg`.
+* Input: state `m`, level index `l` (for example cortical hierarchy level), region `r` in `L_reg`.
 * Output: an effective vector summarizing the representational activity at level `l` in region `r` during the time window of `m`.
 
 2. Prediction error field
@@ -255,13 +302,13 @@ A_energy(m; r)
 * Input: state `m`, region `r`.
 * Output: a nonnegative scalar summarizing effective metabolic cost or activity for that region over the relevant time window.
 
-All these observables are assumed to be well-defined and finite for states in a regular subset `M_reg` defined below.
+All these observables are assumed to be well defined and finite for states in the regular subset `M_reg` defined in Section 3.5.
 
 ### 3.3 Mismatch measures and finite libraries
 
-We define three mismatch measures, each based on a fixed finite library of reference patterns and scales. These libraries are fixed once and reused across all experiments.
+We define three mismatch measures, each based on a fixed finite library of reference patterns and scales. These libraries are fixed once at the level of this Q089 entry and reused across all experiments. They are **not** tuned after examining individual datasets.
 
-1. Error-balance mismatch
+1. Error balance mismatch
 
 Let `L_ref_err` be a finite library of **predictive-coding-consistent error patterns**, specifying expected relationships between `E_level` and `R_level` across levels and regions when predictive coding holds approximately.
 
@@ -285,9 +332,11 @@ DeltaS_hier(m) >= 0
 
 as a scalar measuring the deviation between the observed `C_ff`, `C_fb` patterns in `m` and this library. It is zero when connectivity is consistent with at least one library pattern within tolerance.
 
+Where appropriate, these patterns can reuse geometric constraints defined in Q088, so that predictive coding hierarchies respect known map geometries.
+
 3. Energy-efficiency mismatch
 
-Let `L_ref_energy` be a finite library of **energy-vs-prediction-efficiency tradeoff profiles** expected for predictive coding implementations, given task complexity and input statistics.
+Let `L_ref_energy` be a finite library of **energy versus prediction-efficiency tradeoff profiles** expected for predictive coding implementations, given task complexity and input statistics.
 
 We define:
 
@@ -295,9 +344,9 @@ We define:
 DeltaS_energy(m) >= 0
 ```
 
-as a scalar measuring deviation between the observed `A_energy` vs performance profile and these tradeoff curves.
+as a scalar measuring deviation between the observed `A_energy` versus performance profile and these tradeoff curves.
 
-These mismatch measures are constructed so they:
+These mismatch measures are constructed so that they:
 
 * depend only on the observable fields,
 * use finite libraries fixed prior to evaluation,
@@ -313,16 +362,16 @@ DeltaS_PC(m) = w_err * DeltaS_err(m)
              + w_energy * DeltaS_energy(m)
 ```
 
-where `w_err`, `w_hier`, and `w_energy` are fixed nonnegative weights satisfying:
+with fixed nonnegative weights:
 
 ```txt
-w_err + w_hier + w_energy = 1
-w_err = 0.5
-w_hier = 0.3
+w_err   = 0.5
+w_hier  = 0.3
 w_energy = 0.2
+w_err + w_hier + w_energy = 1
 ```
 
-These weights are part of the encoding specification and are **not** adjusted per dataset or per experiment.
+These weights are part of the **Q089 tension scale specification** and are not adjusted per dataset or experiment. Any alternative weight triplet should be treated as a different versioned configuration, not as a silent change of this entry.
 
 We define an effective tension tensor, consistent with the TU core decision:
 
@@ -355,7 +404,11 @@ and the regular domain:
 M_reg = M \ S_sing
 ```
 
-All Q089-related tension analysis is restricted to `M_reg`. When experimental procedures produce states in `S_sing`, the outcome is considered “out of domain” rather than evidence for or against predictive coding as an implementation hypothesis.
+All Q089-related tension analysis is restricted to `M_reg`.
+
+* States in `S_sing` are treated as **out of domain**.
+* Out-of-domain outcomes are used to diagnose data or encoding issues, not as evidence for or against predictive coding implementation.
+* Experiments that produce a high fraction of states in `S_sing` must be reported as violating Q089 domain assumptions rather than falsifying Q089 itself.
 
 ---
 
@@ -393,7 +446,7 @@ More concretely, for a chosen admissible encoding `E` in `E_PC` and fixed refere
 Tension_PC(m_true) <= epsilon_PC
 ```
 
-for some small threshold `epsilon_PC` that does not diverge as more precise or higher-resolution data are incorporated, provided the encoding remains in `E_PC`.
+for some small threshold `epsilon_PC` that does not diverge as more precise or higher-resolution data are incorporated, provided the encoding remains in `E_PC` and the finite libraries are unchanged.
 
 ### 4.3 Alternative architectures as persistent high tension
 
@@ -432,7 +485,7 @@ In World T:
 2. Hierarchical connectivity
 
    * `DeltaS_hier(m_T)` remains small when connectivity patterns are projected into `L_ref_hier`.
-   * Feedforward and feedback strengths across levels and laminae respect characteristic predictive-coding patterns (for example error-driven forward projections, prediction-carrying feedback).
+   * Feedforward and feedback strengths across levels and laminae respect characteristic predictive-coding patterns, such as error-driven forward projections and prediction-carrying feedback.
 
 3. Energy-efficiency profile
 
@@ -487,79 +540,87 @@ Falsifying an encoding does not solve the canonical problem but constrains which
 
 ### Experiment 1: Laminar physiology and error signal segregation
 
-*Goal:*  
+**Goal**
 Test whether cortical laminar activity under sensory prediction tasks is consistent with library patterns for error and prediction segregation encoded in `DeltaS_err` and `DeltaS_hier`.
 
-*Setup:*
+**Setup**
 
 * Data: multi-laminar recordings or high-resolution imaging from sensory cortex (for example visual cortex) during tasks that contrast predictable versus surprising stimuli.
 * Regions: select a finite set of cortical columns or areas as `L_reg`.
 * Time windows: select task-aligned windows (for example stimulus onset, sustained response, post-stimulus period) as `L_time`.
-* Encoding: fix an admissible encoding `E` in `E_PC` that maps raw signals to `R_level`, `E_level`, `Pi_level`, `C_ff`, `C_fb` using a finite feature set.
+* Encoding: fix an admissible encoding `E` in `E_PC` that maps raw signals to `R_level`, `E_level`, `Pi_level`, `C_ff`, `C_fb` using a finite feature set and a registered entry in `Registry_PC`.
 
-*Protocol:*
+**Protocol**
 
-1. For each dataset and task condition, apply `E` to obtain a state `m_data` in `M_reg` (when possible).
-2. Compute `DeltaS_err(m_data)` and `DeltaS_hier(m_data)` using the fixed libraries `L_ref_err` and `L_ref_hier`.
-3. Aggregate `Tension_PC(m_data)` across tasks, regions, and time windows.
-4. Compare tension distributions between:
+1. For each dataset and task condition, apply `E` to obtain a state `m_data` in `M`.
+2. If the resulting state falls into `S_sing`, label it as out-of-domain for Q089 and use it only for encoding diagnostics, not for tension analysis.
+3. For `m_data` in `M_reg`, compute `DeltaS_err(m_data)` and `DeltaS_hier(m_data)` using the fixed libraries `L_ref_err` and `L_ref_hier`.
+4. Aggregate `Tension_PC(m_data)` across tasks, regions, and time windows.
+5. Compare tension distributions between:
 
-   * conditions where predictive coding should be most active (for example predictable sequences), and
-   * control or randomized conditions.
+   * conditions where predictive coding should be most active (for example predictable sequences),
+   * and control or randomized conditions.
 
-*Metrics:*
+**Metrics**
 
-* Distribution of `DeltaS_err` and `DeltaS_hier` across all `m_data`.
+* Distribution of `DeltaS_err` and `DeltaS_hier` across all `m_data` in `M_reg`.
 * Fraction of states with `Tension_PC(m_data) <= epsilon_PC`.
 * Stability of these fractions when resolution or recording quality is improved.
 
-*Falsification conditions:*
+**Falsification conditions**
 
 * If, for any reasonable choice of finite libraries and encoding `E` in `E_PC`, `Tension_PC(m_data)` is consistently large in conditions where predictive coding is theoretically expected to be strong, and remains large under refinement, then the current encoding of predictive-coding implementation for those circuits is considered falsified at the effective layer.
 * If small changes in the encoding that preserve admissibility lead to arbitrarily different tension profiles with no principled reason, the encoding is considered unstable and rejected.
 
-*Semantics implementation note:*  
-All observables are treated in the hybrid sense indicated in the metadata: discrete spikes and events are summarized into continuous rate and correlation descriptors. No additional semantic regime is introduced.
+**Semantics note**
+All observables are treated with the hybrid semantics: discrete events and spikes are summarized into continuous rate and correlation descriptors. No additional semantic regime is introduced.
 
-*Boundary note:*  
-Falsifying TU encoding != solving canonical statement. This experiment can reject specific predictive coding encodings but does not prove or disprove that biological brains implement predictive coding in general.
+**Domain note**
+States in `S_sing` are explicitly excluded from tension statistics. A high fraction of `S_sing` outcomes indicates a failure of encoding assumptions or data quality, not evidence about predictive coding itself.
+
+**Boundary note**
+Falsifying this TU encoding does not solve the canonical statement. This experiment can reject specific predictive coding encodings but does not prove or disprove that biological brains implement predictive coding in general.
 
 ---
 
 ### Experiment 2: Precision weighting and neuromodulation
 
-*Goal:*  
+**Goal**
 Assess whether changes in uncertainty or neuromodulatory state produce error gain modulations consistent with predictive coding precision weighting as captured by `Pi_level` and `DeltaS_energy`.
 
-*Setup:*
+**Setup**
 
 * Data: recordings or imaging during tasks that manipulate uncertainty (for example cue reliability) and neuromodulatory systems (for example pharmacological or behavioral manipulations).
 * Regions: select a finite set of sensory and association regions as `L_reg`.
-* Encoding: fix an admissible encoding `E` in `E_PC` that extracts `E_level`, `Pi_level`, and `A_energy` from the data.
+* Encoding: fix an admissible encoding `E` in `E_PC` that extracts `E_level`, `Pi_level`, and `A_energy` from the data, with the encoding pre-registered in `Registry_PC`.
 
-*Protocol:*
+**Protocol**
 
 1. For each combination of uncertainty and neuromodulatory condition, construct states `m_cond` via `E`.
-2. Compute `DeltaS_err(m_cond)`, `DeltaS_energy(m_cond)`, and `Tension_PC(m_cond)`.
-3. Examine how `Pi_level` and `A_energy` co-vary with uncertainty and with prediction error magnitudes.
-4. Compare observed patterns to the fixed library `L_ref_energy` and expected precision-weighting patterns.
+2. Discard states in `S_sing` from tension statistics and report their frequency separately as a domain-violation indicator.
+3. For states in `M_reg`, compute `DeltaS_err(m_cond)`, `DeltaS_energy(m_cond)`, and `Tension_PC(m_cond)`.
+4. Examine how `Pi_level` and `A_energy` co-vary with uncertainty and with prediction error magnitudes.
+5. Compare observed patterns to the fixed library `L_ref_energy` and expected precision-weighting patterns.
 
-*Metrics:*
+**Metrics**
 
 * Correlation between uncertainty manipulations and `Pi_level` changes.
 * Changes in `DeltaS_err` and `DeltaS_energy` across conditions.
 * Frequency with which `Tension_PC(m_cond)` falls within the low-tension band in conditions where predictive coding should provide an advantage.
 
-*Falsification conditions:*
+**Falsification conditions**
 
 * If across multiple tasks and regions, manipulations of uncertainty and neuromodulatory state fail to produce any consistent relationship between `Pi_level`, error signals, and performance compatible with `L_ref_energy`, then the specific encoding of precision weighting and energy tradeoffs is falsified.
 * If in all admissible encodings, `Tension_PC(m_cond)` remains high or behaves inversely to predictive coding expectations, the predictive-coding implementation hypothesis for those circuits becomes significantly weakened at the effective layer.
 
-*Semantics implementation note:*  
-The same hybrid semantics from metadata is used: discrete neural events are summarized into continuous variables for error magnitude, gain, and energy proxies.
+**Semantics note**
+The same hybrid semantics is used: discrete neural events are summarized into continuous variables for error magnitude, gain, and energy proxies.
 
-*Boundary note:*  
-Falsifying TU encoding != solving canonical statement. Even consistent neuromodulation patterns do not prove predictive coding; they only support specific implementation stories at the effective layer.
+**Domain note**
+States in `S_sing` are out of domain. A robust conclusion about predictive coding requires that a substantial fraction of states lie in `M_reg` under the chosen encoding.
+
+**Boundary note**
+Even consistent neuromodulation patterns do not prove predictive coding; they only support specific implementation stories at the effective layer.
 
 ---
 
@@ -579,7 +640,7 @@ We define several training signals for AI models.
 2. `signal_hierarchy_consistency`
 
    * Definition: a penalty based on `DeltaS_hier(m_model)` computed from effective connectivity or influence measures between layers.
-   * Role: promotes hierarchical relationships consistent with predictive-coding-like top–down and bottom–up pathways.
+   * Role: promotes hierarchical relationships consistent with predictive-coding-like top down and bottom up pathways.
 
 3. `signal_energy_efficiency`
 
@@ -625,12 +686,12 @@ We propose an evaluation harness for AI models integrating Q089 components.
 
 1. Task design
 
-   * Sequence prediction, sensorimotor control, and noisy perception tasks where predictive coding suggests advantages (for example robust handling of partial observations, fast adaptation to prediction errors).
+   * Sequence prediction, sensorimotor control, and noisy perception tasks where predictive coding suggests advantages, such as robust handling of partial observations and fast adaptation to prediction errors.
 
 2. Conditions
 
    * Baseline model: standard deep network without explicit PC blocks.
-   * PC-enhanced model: architecture with `PC_Block`, `Hierarchical_PC_Stack`, and `Precision_Controller` modules.
+   * PC-enhanced model: architecture with `PC_Block`, `Hierarchical_PC_Stack`, and `Precision_Controller` modules and access to `signal_*` tension regularizers.
 
 3. Metrics
 
@@ -640,7 +701,7 @@ We propose an evaluation harness for AI models integrating Q089 components.
 
 ### 7.4 60-second reproduction protocol
 
-A minimal protocol for external users to see Q089’s impact on AI behavior.
+A minimal protocol for external users to see Q089 impact on AI explanatory behavior.
 
 * Baseline setup
 
@@ -654,7 +715,6 @@ A minimal protocol for external users to see Q089’s impact on AI behavior.
     * separate theoretical predictive coding equations from biological implementation,
     * talk in terms of observables like error units, feedback connectivity, and energy costs,
     * and articulate an effective-layer tension between theory and data.
-
   * Observation: record whether the explanation becomes more structured, with clear statements about what would count as support or disconfirmation.
 
 * Comparison metric
@@ -665,10 +725,10 @@ A minimal protocol for external users to see Q089’s impact on AI behavior.
     * explicitness of measurable predictions,
     * mention of error patterns, hierarchy, and energy.
 
-* What to log
+* Logging
 
-  * Full prompts and responses.
-  * Any internal `Tension_PC` estimates, if exposed, to illustrate how the model organizes its explanation.
+  * Store full prompts and responses.
+  * If available, log internal `Tension_PC` estimates to illustrate how the model organizes its explanation.
 
 ---
 
@@ -676,41 +736,38 @@ A minimal protocol for external users to see Q089’s impact on AI behavior.
 
 ### 8.1 Reusable components produced by this problem
 
-1. ComponentName: `PredictiveCodingImplementation_Tension`
+1. Component name: `PredictiveCodingImplementation_Tension`
 
    * Type: functional
    * Minimal interface:
 
      * Inputs: effective fields representing representation activity, error activity, precision, connectivity, and energy usage.
      * Output: scalar `Tension_PC_value`.
+   * Preconditions: inputs must be derived from an admissible encoding consistent with `E_PC` and the finite libraries defined for Q089.
 
-   * Preconditions: inputs must be derived from an admissible encoding consistent with `E_PC`.
-
-2. ComponentName: `PC_Hierarchy_Descriptor`
+2. Component name: `PC_Hierarchy_Descriptor`
 
    * Type: field
    * Minimal interface:
 
-     * Inputs: summarized connectivity matrices and laminar-level indices.
+     * Inputs: summarized connectivity matrices and laminar-level indices, possibly constrained by map geometries from Q088.
      * Output: a compact descriptor of hierarchical structure suitable for reuse in other problems.
-
    * Preconditions: connectivity summaries must be available across multiple levels or regions.
 
-3. ComponentName: `ErrorPrecision_Experiment_Template`
+3. Component name: `ErrorPrecision_Experiment_Template`
 
    * Type: experiment_pattern
    * Minimal interface:
 
      * Inputs: descriptions of tasks, uncertainty manipulations, and available measurement modalities.
      * Output: a protocol for measuring error and precision observables and computing `DeltaS_err` and `DeltaS_energy`.
-
    * Preconditions: tasks must support uncertainty or gain manipulations.
 
 ### 8.2 Direct reuse targets
 
 1. Q086 (functions of sleep and offline processing)
 
-   * Reused component: `PC_Hierarchy_Descriptor` and `ErrorPrecision_Experiment_Template`.
+   * Reused components: `PC_Hierarchy_Descriptor` and `ErrorPrecision_Experiment_Template`.
    * Why it transfers: offline replay and consolidation can be studied as modifications to predictive hierarchies and error weighting.
    * What changes: experiments are performed during sleep or rest states rather than active perception, and observables emphasize offline activity.
 
@@ -771,7 +828,7 @@ In the long run, Q089 is expected to serve as:
 
 ## 10. Elementary but precise explanation
 
-Predictive coding is the idea that the brain works a bit like a prediction machine. It constantly tries to guess what will happen next in the senses and only pays special attention to the parts it did not predict well. Those are the **prediction errors**.
+Predictive coding is the idea that the brain works a bit like a prediction machine. It constantly tries to guess what will happen next in the senses and only pays special attention to the parts it did not predict well. Those are the prediction errors.
 
 In simple language:
 
@@ -779,7 +836,7 @@ In simple language:
 * some carry the differences between what was predicted and what actually came in,
 * and the brain keeps adjusting itself to make those differences smaller and more useful.
 
-The hard question is not just “is prediction important for the brain?” Most scientists agree that it is. The hard question is:
+The hard question is not just “is prediction important for the brain”. Most scientists agree that it is. The hard question is:
 
 > Does the brain actually use circuits that match the specific predictive coding algorithms from theory?
 
@@ -798,8 +855,8 @@ In this document, we do not try to answer that by fiat. Instead, we:
 
 3. Consider two kinds of worlds:
 
-   * In a **predictive-coding world**, we should be able to find situations where `Tension_PC` is small and stays small as we look more closely.
-   * In a **non-predictive-coding world**, no matter how we look at the data, `Tension_PC` stays big.
+   * In a predictive-coding world, we should be able to find situations where `Tension_PC` is small and stays small as we look more closely.
+   * In a non-predictive-coding world, no matter how we look at the data, `Tension_PC` stays big.
 
 We then design experiments that measure error signals, connectivity, and energy use, and we compute this tension number. If many careful experiments keep showing high tension, that weakens the idea that predictive coding is really implemented in those circuits. If instead we find low tension in the right places and tasks, that strengthens the case.
 
@@ -808,3 +865,36 @@ Q089 therefore does not declare “yes, the brain implements predictive coding�
 * talk about what that claim would mean in measurable terms,
 * test specific implementation stories,
 * and reuse these tools when we study related questions about memory, sleep, disease, and artificial neural networks.
+
+---
+
+## Tension Universe effective-layer footer
+
+This page is part of the **WFGY / Tension Universe** S-problem collection.
+
+### Scope of claims
+
+* The goal of this document is to specify an effective-layer encoding of **Q089 · Implementation of predictive coding in biological brains**.
+* It does not claim to prove or disprove the canonical predictive coding statement in Section 1.
+* It does not introduce any new theorem beyond what is already established in the cited literature.
+* It should not be cited as evidence that the corresponding open problem has been solved.
+
+### Effective-layer boundary
+
+* All objects used here (state spaces `M`, observables, invariants, tension scores, counterfactual worlds) live at the Tension Universe effective layer.
+* No claim is made about the uniqueness or fundamentality of these objects at the level of physics or deep axioms.
+* Domain restrictions are enforced via `M_reg` and `S_sing`. States in `S_sing` are treated as out of domain and are not used to support or refute predictive coding implementation.
+
+### Encoding and fairness
+
+* Encodings from data to states must belong to an admissible class `E_PC` and a pre-registered finite encoding registry.
+* Reference libraries for mismatch measures (`L_ref_err`, `L_ref_hier`, `L_ref_energy`) are finite and fixed at the level of this entry. They are not tuned per dataset.
+* Tension weights (`w_err`, `w_hier`, `w_energy`) are fixed as part of the Q089 tension scale configuration. Different weights define different versioned proposals.
+* Any implementation that violates these constraints may still be scientifically useful, but it should not be presented as an implementation of this Q089 effective-layer entry.
+
+This page should be read together with the following charters:
+
+* [TU Effective Layer Charter](../Charters/TU_EFFECTIVE_LAYER_CHARTER.md)
+* [TU Encoding and Fairness Charter](../Charters/TU_ENCODING_AND_FAIRNESS_CHARTER.md)
+* [TU Tension Scale Charter](../Charters/TU_TENSION_SCALE_CHARTER.md)
+
