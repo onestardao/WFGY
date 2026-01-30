@@ -15,7 +15,7 @@ Status: Open
 Semantics: continuous
 E_level: E2
 N_level: N2
-Last_updated: 2026-01-29
+Last_updated: 2026-01-30
 ```
 
 ---
