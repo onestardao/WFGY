@@ -5,6 +5,7 @@
 ```txt
 ID: Q008
 Code: BH_MATH_COLLATZ_L3_008
+Encoding_class: encoding_class_BH_MATH_COLLATZ_E1_v1
 Domain: Mathematics
 Family: Discrete dynamics and Diophantine trajectories
 Rank: S
@@ -18,6 +19,20 @@ N_level: N1
 Spec_version: 2
 Last_updated: 2026-01-28
 ```
+
+---
+
+## 0. Effective layer disclaimer
+
+All statements in this entry are made strictly at the effective layer of the Tension Universe (TU) framework.
+
+* This file specifies only effective layer objects: state spaces, refinement schemes, encoding libraries, observables, mismatch metrics, tension functionals, singular sets, experiment templates and their interactions.
+* It does not specify any TU first principle axiom system, any deep TU generative rule or any full semantic geometry of the universe.
+* It does not give a constructive mapping from raw Collatz trajectories or numerical data into internal TU fields. It only requires that such a mapping exists for states in the regular domain described in Section 3.8.
+* It does not claim to prove or disprove the classical Collatz conjecture. It does not introduce any new theorem beyond what is already established in the cited literature.
+* No field, constant or parameter in this file is allowed to encode the canonical truth value of the Collatz conjecture as an uninterpreted label.
+
+The goal of this page is to describe a single, fully specified encoding class for Q008 that can be implemented, tested and, when needed, falsified under the shared TU charters.
 
 ---
 
@@ -51,9 +66,9 @@ The Collatz conjecture is an open problem in number theory and discrete dynamics
 
 Known partial results include:
 
-* The conjecture has been verified by computer for starting values in very large ranges, up to scales such as `n` near `2^68` and beyond in later computations.
-* Many structural properties of orbits are known. These include typical growth and decay patterns, parity structure, and the existence of very long but ultimately terminating orbits.
-* Terence Tao proved that for almost all starting values (in a natural density sense), the orbit eventually attains values that are bounded by a fixed power of the starting value. This gives strong evidence that non terminating behavior, if it exists at all, must be extremely rare.
+* The conjecture has been verified by computer for starting values in very large ranges, with checks up to values of order `2^68` and beyond in later computations.
+* Many structural properties of orbits are known. These include typical growth and decay patterns, parity structure and the existence of very long but ultimately terminating orbits.
+* Terence Tao proved that for almost all starting values (in a natural density sense) the orbit eventually attains values that are bounded by a fixed power of the starting value. This gives strong evidence that non terminating behavior, if it exists at all, must be extremely rare.
 
 No proof is known that every orbit reaches the trivial cycle, and no explicit counterexample has been found. The problem is widely regarded as very difficult and is often used as a model case where a simple local rule generates globally elusive dynamics.
 
@@ -63,7 +78,7 @@ Within the BlackHole S problem collection, Q008 has three main roles.
 
 1. Prototype of a discrete dynamical S problem
 
-   Q008 is the canonical example of a system where a very simple local update rule on integers induces orbit structures that are hard to analyze at global scale.
+   Q008 is a canonical example of a system where a very simple local update rule on integers induces orbit structures that are hard to analyze at global scale.
 
 2. Testbed for computational_tension
 
@@ -91,7 +106,7 @@ This block describes how Q008 sits inside the BlackHole graph. Each edge has a o
 Upstream nodes provide prerequisites or general frameworks that Q008 reuses at the effective layer.
 
 * Q016 (BH_MATH_ZFC_CONTINUUM_L3_016)
-  Reason: Supplies the foundational view of sets and real valued quantities used for densities of starting values, limiting behaviors, and real valued observables defined in Block 3.
+  Reason: Supplies the foundational view of sets and real valued quantities used for densities of starting values, limiting behaviors and real valued observables defined in Block 3.
 
 * Q019 (BH_MATH_DIOPH_DENSITY_L3_019)
   Reason: Provides general Diophantine density and distribution tools reused to interpret `Obs_termination_ratio` and related frequency based observables.
@@ -130,7 +145,7 @@ Cross domain edges show where Q008 components transfer into other domains.
 
 ## 3. Tension Universe encoding (effective layer)
 
-All content in this block is at the effective layer. We describe only state spaces, observables, reference profiles, mismatch functionals, tension functionals, and singular sets. No rule is given for how raw Collatz data is mapped into internal TU fields, and no deep TU generative mechanism is exposed.
+All content in this block is at the effective layer. We describe only state spaces, observables, reference profiles, mismatch functionals, tension functionals and singular sets. No rule is given in this file for how raw Collatz data is mapped into internal TU fields.
 
 ### 3.1 State space and refinement path
 
@@ -144,7 +159,13 @@ together with a fixed refinement path encoded by the following data.
 
 1. Refinement indices
 
-   We consider integers `k >= k_min`, where `k_min >= 1` is a fixed baseline index.
+   For this encoding class we fix a baseline index
+
+   ```txt
+   k_min = 10
+   ```
+
+   and consider integers `k >= k_min`.
 
 2. Starting value sets
 
@@ -166,11 +187,20 @@ together with a fixed refinement path encoded by the following data.
    V_max(k)   = N_k^gamma
    ```
 
-   where `C_len >= 1` and `gamma >= 2` are fixed positive constants chosen at the encoding level and recorded as part of the Q008 specification. They are not adjusted after inspecting data.
+   where `log_2` denotes the logarithm in base two.
+
+   For this encoding class we fix
+
+   ```txt
+   C_len = 10
+   gamma = 2
+   ```
+
+   and treat these constants as frozen parts of `encoding_class_BH_MATH_COLLATZ_E1_v1`. They are not tuned between runs and are not adjusted after inspecting data.
 
    For a starting value `n` in `S_k`:
 
-   * we follow the Collatz map for at most `L_max(k)` steps, unless we reach the trivial cycle earlier,
+   * we follow the Collatz map for at most `L_max(k)` steps, unless we reach the trivial cycle earlier;
    * we record whether the orbit ever exceeds `V_max(k)` within the first `L_max(k)` steps.
 
 4. States along the refinement path
@@ -203,7 +233,20 @@ L_enc_008_finite = {
 }
 ```
 
-The internal representation of each encoding is fixed once and for all at the effective layer. Each encoding has a minimal input–output interface.
+For this encoding class we bind the histogram dimensions and bin cut points to a frozen external artifact
+
+```txt
+REF_COLLatz_BINS_v1
+```
+
+which specifies:
+
+* integers `J_len` and `J_exc`;
+* for each index the range of stopping times or maximal excursions covered by that bin.
+
+`REF_COLLatz_BINS_v1` is versioned under the TU charters. This file assumes it is fixed and does not treat it as a hyperparameter source.
+
+Each encoding in `L_enc_008_finite` has a minimal input–output interface.
 
 1. `Enc_orbit_length`
 
@@ -216,10 +259,10 @@ The internal representation of each encoding is fixed once and for all at the ef
 
      where:
 
-     * bins `j = 0,...,J_len-2` represent ranges of stopping times measured in units of Collatz steps, for example logarithmic bins in base 2,
+     * bins `j = 0,...,J_len-2` represent ranges of stopping times measured in units of Collatz steps, for example logarithmic bins in base two;
      * bin `j = J_len-1` is the censored bin that collects starting values in `S_k` whose trajectories did not reach the trivial cycle within `L_max(k)` steps, or exceeded `V_max(k)` before termination.
 
-     The binning scheme (cut points, number of bins `J_len`) is fixed and does not depend on any observed data.
+     The binning scheme (cut points and the number of bins `J_len`) is fixed by `REF_COLLatz_BINS_v1` and does not depend on any observed data.
 
 2. `Enc_max_excursion`
 
@@ -232,15 +275,15 @@ The internal representation of each encoding is fixed once and for all at the ef
 
      where:
 
-     * bins `j = 0,...,J_exc-2` represent ranges of maximal orbit values below or equal to `V_max(k)`,
+     * bins `j = 0,...,J_exc-2` represent ranges of maximal orbit values below or equal to `V_max(k)`;
      * bin `j = J_exc-1` is an overflow bin that collects starting values whose truncated trajectory exceeded `V_max(k)` at least once before termination or truncation.
 
-     The binning scheme for maximal excursion is also fixed in advance.
+     The binning scheme for maximal excursion is also fixed by `REF_COLLatz_BINS_v1`.
 
 3. `Enc_parity_signature`
 
    * Input: truncated trajectories for starting values in `S_k`.
-   * Output: a compact vector of parity or symbolic pattern features (for example frequency of odd steps, simple parity patterns, or short parity word statistics).
+   * Output: a compact vector of parity or symbolic pattern features (for example frequency of odd steps, simple parity patterns or short parity word statistics).
    * In this version of Q008, `Enc_parity_signature` is part of the state description but does not directly enter the main tension functional. It is retained for future extensions of computational_tension in discrete dynamics.
 
 For each encoding, the following effective layer rules hold.
@@ -299,15 +342,23 @@ All three observables are defined on any state `m` that encodes the necessary hi
 
 Reference profiles are fixed objects that describe hypothetical behavior in a Collatz true world. They are part of the encoding and cannot be altered after data inspection within a given version.
 
+For this encoding class all reference profiles are taken from a versioned artifact
+
+```txt
+REF_COLLatz_PROFILES_v1
+```
+
+which fixes:
+
+* `Ref_orbit_length(k) = (L_ref(k; j))_{j=0,...,J_len}`;
+* `Ref_max_excursion(k) = (E_ref(k; j))_{j=0,...,J_exc}`;
+* a reference termination curve `Ref_term(k)` for all `k >= k_min`.
+
+The artifact `REF_COLLatz_PROFILES_v1` is frozen for `Spec_version = 2`. Using a different artifact counts as a change of encoding and requires a new specification version.
+
+Within this artifact the components satisfy:
+
 1. Reference orbit length profile
-
-   For each `k` we fix a reference histogram
-
-   ```txt
-   Ref_orbit_length(k) = (L_ref(k; j))_{j=0,...,J_len}
-   ```
-
-   with the same dimension and bin interpretation as `Obs_orbit_length`. The components satisfy
 
    ```txt
    L_ref(k; j) >= 0
@@ -316,29 +367,22 @@ Reference profiles are fixed objects that describe hypothetical behavior in a Co
 
 2. Reference maximal excursion profile
 
-   For each `k` we fix a reference histogram
-
    ```txt
-   Ref_max_excursion(k) = (E_ref(k; j))_{j=0,...,J_exc}
+   E_ref(k; j) >= 0
+   sum_j E_ref(k; j) = 1.
    ```
-
-   with the same interpretation as `Obs_max_excursion` and normalized in the same way.
 
 3. Reference termination profile
 
-   For each `k` we fix a scalar
-
-   ```txt
-   Ref_term(k) = 1 - eps_term(k)
-   ```
-
-   where `eps_term(k)` is a small nonnegative function of `k` chosen at the encoding level. A simple choice is
+   For this specification we set
 
    ```txt
    eps_term(k) = eps_0
+   eps_0 = 10^-6
+   Ref_term(k) = 1 - eps_term(k)
    ```
 
-   for all `k >= k_min`, with `eps_0` a small constant such as `10^-6`. More general choices can allow slow dependence on `k`, but must be specified in advance and written into the encoding.
+   for all `k >= k_min`. The constant `eps_0` is part of the encoding class and is not tuned based on data.
 
 The triplet
 
@@ -350,7 +394,7 @@ is treated as an external artifact for Q008. Any update of these profiles define
 
 ### 3.5 Fixed mismatch metrics
 
-We define three mismatch functionals using fixed metrics. The formulas stated here are not examples. They are the definitions used in this specification.
+We define three mismatch functionals using fixed metrics. The formulas stated here are the definitions used in this specification.
 
 1. Length mismatch
 
@@ -372,7 +416,7 @@ We define three mismatch functionals using fixed metrics. The formulas stated he
        (1/2) * sum_{j=0}^{J_exc} | h_exc(m; k; j) - E_ref(k; j) |
    ```
 
-   This is again the total variation distance, this time between `Obs_max_excursion(m; k)` and `Ref_max_excursion(k)`.
+   This is the total variation distance between `Obs_max_excursion(m; k)` and `Ref_max_excursion(k)`.
 
 3. Termination mismatch
 
@@ -410,7 +454,7 @@ W_008_adm = {
 
 The following rules apply.
 
-* The admissible set `W_008_adm` is part of the Q008 encoding and does not depend on any data.
+* The admissible set `W_008_adm` is part of `encoding_class_BH_MATH_COLLATZ_E1_v1` and does not depend on any data.
 * In any single experimental run or analysis, one weight triple from `W_008_adm` is chosen in advance and logged as part of the protocol.
 * Once a weight triple is fixed for that run, it is not adjusted based on observed tension values.
 * Moving from one triple in `W_008_adm` to another is treated as defining a distinct encoding choice within Q008, not as an in run parameter tweak.
@@ -435,12 +479,18 @@ T_ij(m; k) =
 
 where:
 
-* `S_i(m; k)` encodes the strength of the i-th source component of the Collatz related context at refinement level `k`.
-* `C_j(m; k)` encodes the sensitivity of the j-th downstream component to Collatz related tension at this level.
-* `lambda(m; k)` is a bounded convergence or divergence factor from the TU core decisions.
+* `S_i(m; k)` encodes the strength of the ith source component of the Collatz related context at refinement level `k`;
+* `C_j(m; k)` encodes the sensitivity of the jth downstream component to Collatz related tension at this level;
+* `lambda(m; k)` is a bounded convergence or divergence factor from the TU core decisions;
 * `kappa_008` is a fixed coupling constant specific to Q008.
 
 The index sets for `i` and `j` are finite and model dependent. They are not specified at the effective layer.
+
+For this specification the following constraints apply.
+
+* The function `lambda(m; k)` is chosen within the TU core and is required to stay within a fixed bounded interval that does not depend on the canonical truth value of the Collatz conjecture.
+* The constant `kappa_008` is fixed at the charter level for this problem and does not encode the answer to the conjecture.
+* Changing either the definition of `lambda` or the value of `kappa_008` in ways that affect experimental outcomes counts as an encoding change and requires a new specification version.
 
 ### 3.8 Singular set and domain restriction
 
@@ -473,7 +523,7 @@ This block states the effective layer principle that Q008 uses to distinguish lo
 
 ### 4.1 Core tension principle
 
-At the effective layer, the Collatz conjecture is encoded as a statement about the existence of low tension refinement paths that respect the fixed encoding.
+At the effective layer the Collatz conjecture is encoded as a statement about the existence of low tension refinement paths that respect the fixed encoding.
 
 A refinement path is a sequence of states
 
@@ -487,13 +537,13 @@ We consider two types of branches.
 
 * Low tension branch
 
-  There exists at least one admissible choice of weight triple in `W_008_adm`, a threshold `epsilon_Collatz > 0`, and a refinement path `m_T(k)` such that
+  There exists at least one admissible choice of weight triple in `W_008_adm`, a threshold `epsilon_Collatz > 0` and a refinement path `m_T(k)` such that
 
   ```txt
   Tension_Collatz(m_T(k); k) <= epsilon_Collatz
   ```
 
-  for all sufficiently large `k`. The threshold `epsilon_Collatz` is chosen in advance based on theoretical expectations and is not allowed to grow without bound with `k`.
+  for all sufficiently large `k`. The threshold `epsilon_Collatz` is fixed at the encoding level or charter level and is not allowed to grow without bound with `k`. It is chosen before any data analysis and is not tuned to force a desired label.
 
 * High tension branch
 
@@ -505,19 +555,19 @@ We consider two types of branches.
 
   for infinitely many `k`.
 
-The Collatz conjecture is then rephrased at the effective layer as the statement that the actual universe belongs to a low tension branch with respect to this encoding.
+The Collatz conjecture is rephrased at the effective layer as the statement that the actual universe belongs to a low tension branch with respect to this encoding.
 
-### 4.2 Stability, monotonicity, and fairness
+### 4.2 Stability, monotonicity and fairness
 
 The tension principle is subject to several stability and fairness conditions.
 
 1. Fixed refinement scheme
 
-   The sequences `S_k`, `L_max(k)`, and `V_max(k)` are fixed by formulas in Section 3.1 and do not depend on which counterfactual world we are in. Refinement is monotone in the sense described there.
+   The sequences `S_k`, `L_max(k)` and `V_max(k)` are fixed by formulas in Section 3.1 and do not depend on which counterfactual world we are in. Refinement is monotone in the sense described there.
 
 2. Termination footprint monotonicity
 
-   Because of the censored bin in `Obs_orbit_length` and the overflow bin in `Obs_max_excursion`, non terminating behavior cannot be hidden by truncation. If a starting value fails to reach the trivial cycle by step `L_max(k)` or exceeds `V_max(k)`, then its contribution to the censored or overflow bins is visible in `DeltaS_length`, `DeltaS_excursion`, and `DeltaS_term` at level `k`. These contributions cannot be erased by redefining bins or metrics.
+   Because of the censored bin in `Obs_orbit_length` and the overflow bin in `Obs_max_excursion`, non terminating behavior cannot be hidden by truncation. If a starting value fails to reach the trivial cycle by step `L_max(k)` or exceeds `V_max(k)`, then its contribution to the censored or overflow bins is visible in `DeltaS_length`, `DeltaS_excursion` and `DeltaS_term` at level `k`. These contributions cannot be erased by redefining bins or metrics.
 
 3. Fixed metrics and weights
 
@@ -537,14 +587,14 @@ The tension principle is subject to several stability and fairness conditions.
 
    In any single experimental run, the following objects are chosen and logged in advance before numerical data or tension values are examined:
 
-   * the refinement levels to be used,
-   * the reference profiles,
-   * the weight triple from `W_008_adm`,
+   * the refinement levels to be used;
+   * the reference profiles;
+   * the weight triple from `W_008_adm`;
    * the threshold conventions for low and high tension labels.
 
    These choices are not adjusted during or after the run to achieve a desired conclusion. A new choice of encoding or weights counts as a new run.
 
-Under these conditions, the tension principle expresses a genuine structural distinction between worlds with robust low tension Collatz behavior and worlds where any faithful encoding must carry persistent high tension.
+Under these conditions the tension principle expresses a structural distinction between worlds with robust low tension Collatz behavior and worlds where any faithful encoding must carry persistent high tension.
 
 ---
 
@@ -635,17 +685,17 @@ Test whether `Tension_Collatz` behaves in a stable and interpretable way when ap
 * Input data: published or freshly computed Collatz trajectories for starting values `n` with `1 <= n <= N_K` for some maximal index `K`.
 * Encoding: choose in advance
 
-  * refinement indices `k_min,...,K`,
-  * truncation rules `L_max(k)` and `V_max(k)` (as in Section 3.1),
-  * reference profiles `Ref_orbit_length(k)`, `Ref_max_excursion(k)`, and `Ref_term(k)`,
+  * refinement indices `k_min,...,K`;
+  * truncation rules `L_max(k)` and `V_max(k)` (as in Section 3.1);
+  * reference profiles `Ref_orbit_length(k)`, `Ref_max_excursion(k)` and `Ref_term(k)`;
   * one weight triple `(w_len, w_exc, w_term)` from `W_008_adm`.
 
 *Protocol*
 
 1. For each `k` in `{k_min,...,K}`, construct a state `m_data(k)` in `M_008_reg` that encodes:
 
-   * `Obs_orbit_length(m_data(k); k)` as a normalized histogram with a censored bin,
-   * `Obs_max_excursion(m_data(k); k)` as a normalized histogram with an overflow bin,
+   * `Obs_orbit_length(m_data(k); k)` as a normalized histogram with a censored bin;
+   * `Obs_max_excursion(m_data(k); k)` as a normalized histogram with an overflow bin;
    * `Obs_termination_ratio(m_data(k); k)` as described in Section 3.3.
 
 2. Compute
@@ -665,12 +715,12 @@ Test whether `Tension_Collatz` behaves in a stable and interpretable way when ap
 
 * The sequence of `Tension_Collatz(m_data(k); k)` as `k` increases.
 * The behavior of individual mismatch terms, especially `DeltaS_term`, under refinement.
-* Stability of these sequences under small allowed changes in reference profiles that remain within the same version of the encoding.
+* Stability of these sequences under small, charter respecting perturbations of the numerical approximations used to estimate the reference profiles, while keeping the underlying artifact identity fixed.
 
 *Falsification conditions*
 
-* If for all admissible choices in `W_008_adm` the tension sequence is wildly unstable under minor, charter respecting changes of reference profiles, the current encoding is considered inadequate.
-* If different admissible encodings with the same raw data lead to contradictory labels of low tension versus high tension that cannot be explained by the finite variation allowed in `W_008_adm`, then the encoding must be revised.
+* If for all admissible weight triples in `W_008_adm` the tension sequence is wildly unstable under minor, charter respecting changes to numerical approximations of the fixed reference profiles, the current encoding is considered inadequate.
+* If different admissible members of `W_008_adm` within this encoding class, applied to the same raw data and the same frozen reference artifacts, lead to contradictory labels of low tension versus high tension that cannot be explained by the limited variation in weights, then the encoding must be revised.
 * If the tension functional systematically fails to react to known large deviations in orbit behavior inside the tested range, the mismatch definitions must be reconsidered.
 
 *Boundary note*
@@ -688,13 +738,13 @@ Check whether the Q008 encoding can distinguish between toy iterative maps that 
 * Construct two families of maps on positive integers.
 
   * Family `Ttoy`: maps that mimic the structural complexity of the Collatz map but are designed so that all orbits eventually reach a trivial cycle.
-  * Family `Ftoy`: maps with similar local rule complexity but with known non terminating or nontrivial cycles for some starting values.
+  * Family `Ftoy`: maps with similar local rule complexity but with rigorously known non terminating or nontrivial cycles for some starting values.
 
 * For each map, compute trajectories for starting values in `S_k` for several values of `k`, using the same truncation rules `L_max(k)` and `V_max(k)`.
 
 *Protocol*
 
-1. Fix the encoding, reference profiles, and weight triple in advance.
+1. Fix the encoding, reference profiles and weight triple in advance.
 2. For each map in `Ttoy` and each refinement level `k`, construct a state `m_Ttoy(k)` in `M_008_reg` and compute `Tension_Collatz(m_Ttoy(k); k)`.
 3. For each map in `Ftoy` and each `k`, construct a state `m_Ftoy(k)` and compute `Tension_Collatz(m_Ftoy(k); k)`.
 4. Compare the distributions of tension values for the two families.
@@ -703,12 +753,12 @@ Check whether the Q008 encoding can distinguish between toy iterative maps that 
 
 * The empirical distributions of `Tension_Collatz` for `Ttoy` and `Ftoy` at each `k`.
 * The separation between these distributions, for example differences in averages or quantiles.
-* Robustness of this separation under allowed encoding changes that stay within the same version of Q008.
+* Robustness of this separation under allowed changes inside the same encoding class, such as switching between admissible weight triples in `W_008_adm`.
 
 *Falsification conditions*
 
-* If for reasonable encoding choices the tension distributions for `Ttoy` and `Ftoy` maps are systematically indistinguishable, the encoding fails to capture basic differences between terminating and non terminating behavior and is rejected.
-* If non terminating maps in `Ftoy` repeatedly receive lower tension values than terminating maps in `Ttoy` in ways that contradict their known properties, the encoding is considered misaligned and must be revised.
+* If, for all admissible weight triples in `W_008_adm` within this encoding class, the tension distributions for `Ttoy` and `Ftoy` maps are systematically indistinguishable, the encoding fails to capture basic differences between terminating and non terminating behavior and is rejected.
+* If there exist admissible weight triples for which non terminating maps in `Ftoy` repeatedly receive lower tension values than terminating maps in `Ttoy` in ways that contradict their known properties, the encoding is considered misaligned and must be revised.
 
 *Boundary note*
 Success or failure on toy maps tests only the Q008 encoding. It does not by itself confirm or disprove the original Collatz conjecture.
@@ -747,7 +797,7 @@ The following training signals rely on Q008 observables and mismatch fields with
 
 1. `DiscreteTrajectoryHead_008`
 
-   * Role: read internal embeddings of a discrete dynamics context and output approximate summaries analogous to `Obs_orbit_length`, `Obs_max_excursion`, and `Obs_termination_ratio`.
+   * Role: read internal embeddings of a discrete dynamics context and output approximate summaries analogous to `Obs_orbit_length`, `Obs_max_excursion` and `Obs_termination_ratio`.
    * Interface:
 
      * Input: a vector or tensor encoding the current discrete dynamics problem.
@@ -758,7 +808,7 @@ The following training signals rely on Q008 observables and mismatch fields with
    * Role: act as a soft filter on candidate statements about termination or non termination.
    * Interface:
 
-     * Input: a candidate statement, its internal representation, and a context tag (World T or World F).
+     * Input: a candidate statement, its internal representation and a context tag (World T or World F).
      * Output: a score indicating whether the statement is consistent with low or high `Tension_Collatz` for that context.
 
 3. `TU_DiscreteDynamics_Observer_008`
@@ -775,7 +825,7 @@ An evaluation harness for AI models augmented with Q008 components can proceed a
 
 1. Task design
 
-   * Construct a benchmark of discrete dynamics questions, including Collatz like problems, toy maps with known termination behavior, and mixed contexts with explicit assumptions.
+   * Construct a benchmark of discrete dynamics questions, including Collatz like problems, toy maps with known termination behavior and mixed contexts with explicit assumptions.
 
 2. Conditions
 
@@ -790,7 +840,7 @@ An evaluation harness for AI models augmented with Q008 components can proceed a
 
 4. Analysis
 
-   * Compare the baseline and TU conditions to test whether the Q008 encoding improves coherence, consistency, and interpretability in discrete trajectory reasoning.
+   * Compare the baseline and TU conditions to test whether the Q008 encoding improves coherence, consistency and interpretability in discrete trajectory reasoning.
 
 ### 7.4 Sixty second reproduction protocol
 
@@ -799,21 +849,21 @@ A minimal procedure that allows external users to experience the impact of Q008 
 * Baseline setup
 
   * Prompt: ask the model to explain why the Collatz conjecture is considered hard and to describe typical trajectory behavior, without mentioning WFGY or tension.
-  * Observation: record whether the answer separates observed data, heuristic beliefs, and the open status of the problem.
+  * Observation: record whether the answer separates observed data, heuristic beliefs and the open status of the problem.
 
 * TU encoded setup
 
   * Prompt: ask the model to explain the same topic but explicitly request organization around:
 
-    * discrete trajectory statistics,
-    * the three mismatch fields `DeltaS_length`, `DeltaS_excursion`, `DeltaS_term`,
+    * discrete trajectory statistics;
+    * the three mismatch fields `DeltaS_length`, `DeltaS_excursion`, `DeltaS_term`;
     * low tension versus high tension worlds.
 
   * Observation: record whether the explanation becomes more structured, and whether the role of termination as a distinct signal is clear.
 
 * Comparison metric
 
-  * Rate both responses for clarity about what is known, what is measured, and what remains unproved.
+  * Rate both responses for clarity about what is known, what is measured and what remains unproved.
   * Check whether the TU encoded answer avoids informal leaps from large finite experiments to global statements.
 
 ---
@@ -830,7 +880,7 @@ This block lists reusable components produced by Q008 and how they transfer to o
 
    * Minimal interface:
 
-     * Inputs: discrete trajectory summary histograms, termination ratios, and refinement indices.
+     * Inputs: discrete trajectory summary histograms, termination ratios and refinement indices.
      * Output: a nonnegative scalar tension value summarizing how well observed behavior matches a low tension terminating pattern.
 
    * Preconditions: histograms must be normalized and compatible with a fixed binning scheme.
@@ -838,6 +888,7 @@ This block lists reusable components produced by Q008 and how they transfer to o
 2. ComponentName: `StoppingTimeField_Descriptor_008`
 
    * Type: field
+
    * Minimal interface:
 
      * Inputs: a family of starting states and refinement parameters.
@@ -846,6 +897,7 @@ This block lists reusable components produced by Q008 and how they transfer to o
 3. ComponentName: `WorldT_WorldF_DiscreteCycle_Template_008`
 
    * Type: experiment_pattern
+
    * Minimal interface:
 
      * Inputs: a family of discrete maps with known or hypothesized termination behavior.
@@ -856,7 +908,7 @@ This block lists reusable components produced by Q008 and how they transfer to o
 1. Q051 (BH_CS_P_VS_NP_L3_051)
 
    * Reused components: `DiscreteTrajectory_Tension_008`, `StoppingTimeField_Descriptor_008`.
-   * Why it transfers: complexity questions often involve very long discrete computations. Q008 style tension gives a way to discuss how computation length, resource usage, and termination patterns fit into low or high tension regimes.
+   * Why it transfers: complexity questions often involve very long discrete computations. Q008 style tension gives a way to discuss how computation length, resource usage and termination patterns fit into low or high tension regimes.
    * What changes: trajectories become computation traces instead of Collatz orbits. Stopping times become measures of time or resource usage.
 
 2. Q053 (BH_CS_ONE_WAY_FUNCTIONS_L3_053)
@@ -880,7 +932,7 @@ This block positions Q008 on the TU verification ladder and states the next meas
 
 * E_level: E1
 
-  * The effective state space, fixed refinement scheme, observables, mismatch metrics, tension functional, and singular set are clearly specified.
+  * The effective state space, fixed refinement scheme, observables, mismatch metrics, tension functional and singular set are clearly specified.
   * Reference profiles and weight sets are fixed at the encoding level, with rules for versioning.
   * Concrete experiment templates with falsification conditions are defined.
 
@@ -895,8 +947,8 @@ To move Q008 from E1 to E2, one or more of the following should be implemented a
 
 1. A working implementation of the encoding that:
 
-   * constructs `Obs_orbit_length`, `Obs_max_excursion`, and `Obs_termination_ratio` from numerical data along the fixed refinement path,
-   * evaluates `DeltaS_length`, `DeltaS_excursion`, `DeltaS_term`, and `Tension_Collatz` for several refinement levels,
+   * constructs `Obs_orbit_length`, `Obs_max_excursion` and `Obs_termination_ratio` from numerical data along the fixed refinement path;
+   * evaluates `DeltaS_length`, `DeltaS_excursion`, `DeltaS_term` and `Tension_Collatz` for several refinement levels;
    * logs these values in a reusable format.
 
 2. A published tension profile table that, for each tested `k`, records:
@@ -912,9 +964,9 @@ To move Q008 from E1 to E2, one or more of the following should be implemented a
 
 3. A demonstration of the toy map experiment with:
 
-   * explicit definitions of `Ttoy` and `Ftoy` families,
-   * tension distributions for each family across refinement levels,
-   * analysis of robustness under allowed encoding changes.
+   * explicit definitions of `Ttoy` and `Ftoy` families;
+   * tension distributions for each family across refinement levels;
+   * analysis of robustness under allowed encoding changes that stay within the same version of Q008.
 
 These steps remain at the effective layer. They do not expose any TU core rules or claim any progress toward proving or disproving the conjecture.
 
@@ -924,7 +976,7 @@ In the long term, Q008 is expected to serve as:
 
 * a reference node for discrete dynamical S problems with simple rules and complex global behavior;
 * a test case for computational_tension design, including clear treatment of termination signals;
-* a bridge between number theoretic dynamics and broader questions in complexity, cryptography, and information thermodynamics.
+* a bridge between number theoretic dynamics and broader questions in complexity, cryptography and information thermodynamics.
 
 ---
 
@@ -948,12 +1000,12 @@ In the Tension Universe picture we do not try to prove the conjecture directly. 
 * How high do the trajectories climb along the way?
 * What fraction of starting numbers seem to reach the loop within a generous time and value budget?
 
-We group starting numbers into ranges and, for each range, build simple histograms. One histogram counts how many numbers have short stopping times, how many have medium stopping times, and how many seem not to have stopped yet within our cutoffs. Another histogram counts how large the trajectories get before they come back down or before we stop computation. From these histograms we also read off a single number: the termination ratio, the fraction that appears to reach the loop within our budget.
+We group starting numbers into ranges and, for each range, build simple histograms. One histogram counts how many numbers have short stopping times, how many have medium stopping times and how many seem not to have stopped yet within our cutoffs. Another histogram counts how large the trajectories get before they come back down or before we stop computation. From these histograms we also read off a single number: the termination ratio, the fraction that appears to reach the loop within our budget.
 
 We then compare these observed histograms to reference patterns that express what we would expect to see in a world where the conjecture is true. The differences between observed histograms and reference histograms give three mismatch scores:
 
-* one for stopping times,
-* one for maximal size,
+* one for stopping times;
+* one for maximal size;
 * one for termination ratio.
 
 A weighted combination of these mismatch scores is called the Collatz tension at that scale.
@@ -966,8 +1018,8 @@ Now we imagine two types of worlds.
 
 This approach does not answer the yes or no question about the conjecture. What it does provide is a well defined way to talk about:
 
-* what we can measure from many trajectories at once,
-* how to test whether an encoding behaves consistently under refinement,
+* what we can measure from many trajectories at once;
+* how to test whether an encoding behaves consistently under refinement;
 * how to reject encodings that would allow us to hide non terminating behavior.
 
 Q008 is therefore the discrete trajectory benchmark of the Tension Universe program. It turns the Collatz conjecture into a precise tension statement at the effective layer, with termination treated as a first class signal and with clear rules about what can be tuned and what must stay fixed.
@@ -977,6 +1029,12 @@ Q008 is therefore the discrete trajectory benchmark of the Tension Universe prog
 ## Tension Universe effective-layer footer
 
 This page is part of the **WFGY / Tension Universe** S-problem collection.
+
+This page should be read together with the following charters:
+
+* [TU Effective Layer Charter](../Charters/TU_EFFECTIVE_LAYER_CHARTER.md)
+* [TU Encoding and Fairness Charter](../Charters/TU_ENCODING_AND_FAIRNESS_CHARTER.md)
+* [TU Tension Scale Charter](../Charters/TU_TENSION_SCALE_CHARTER.md)
 
 ### Scope of claims
 
@@ -991,30 +1049,32 @@ This page is part of the **WFGY / Tension Universe** S-problem collection.
 * No step in this file gives a constructive mapping from raw experimental or simulation data into internal TU fields.
 * No step exposes any TU first-principle axiom system or deep generative rule.
 
+### Versioning and non-mutation policy
+
+* This file defines a single encoding class `encoding_class_BH_MATH_COLLATZ_E1_v1` for Q008.
+* Any change to the refinement scheme, encoding library, mismatch metrics, reference profiles, admissible weight set or singular set that would alter experimental outcomes must be recorded as a new specification version and, if needed, a new encoding class name.
+* Once published, this version is treated as immutable for the purpose of experiments and comparisons. Minor clarifications of wording are allowed only if they do not change the mathematical content.
+* Numerical artifacts such as `REF_COLLatz_BINS_v1` and `REF_COLLatz_PROFILES_v1` are versioned separately. Replacing them with new artifacts counts as an encoding update and must be accompanied by a bump of `Spec_version` and `Last_updated`.
+
 ### Encoding and fairness
 
-* Admissible encoding classes, reference profiles, and weight families used in this page are constrained by shared Tension Universe charters:
-
-  * [TU Effective Layer Charter](../Charters/TU_EFFECTIVE_LAYER_CHARTER.md)
-  * [TU Encoding and Fairness Charter](../Charters/TU_ENCODING_AND_FAIRNESS_CHARTER.md)
-  * [TU Tension Scale Charter](../Charters/TU_TENSION_SCALE_CHARTER.md)
-
+* Admissible encoding classes, reference profiles and weight families used in this page are constrained by shared Tension Universe charters listed above.
 * For every encoding referenced here:
 
-  * its definition, parameter ranges, and reference families are fixed at the charter level or at the specification level before any problem specific tuning;
+  * its definition, parameter ranges and reference families are fixed at the charter level or at the specification level before any problem specific tuning;
   * these choices may depend on general mathematical considerations and on public benchmark selections, but not on the unknown truth value of this specific problem;
-  * no encoding is allowed to hide the canonical answer as an uninterpreted field, label, or parameter;
-  * within a single experimental run, parameters such as reference profiles, weight triples, and thresholds are **not** changed after inspecting data. Any change to these parameters defines a new run with a new encoding identifier.
+  * no encoding is allowed to hide the canonical answer as an uninterpreted field, label or parameter;
+  * within a single experimental run, parameters such as reference profiles, weight triples and thresholds are not changed after inspecting data. Any change to these parameters defines a new run with a new encoding identifier.
 
 ### Tension scale and thresholds
 
-* All mismatch terms and tension functionals in this file are treated as **dimensionless or normalized quantities**, defined up to a fixed monotone rescaling specified in the TU Tension Scale Charter.
-* Thresholds such as `epsilon_Collatz`, `delta_Collatz`, and experiment cutoffs are always interpreted relative to that fixed scale.
+* All mismatch terms and tension functionals in this file are treated as dimensionless or normalized quantities, defined up to a fixed monotone rescaling specified in the TU Tension Scale Charter.
+* Thresholds such as `epsilon_Collatz`, `delta_Collatz` and experiment cutoffs are always interpreted relative to that fixed scale.
 * Changing the tension scale requires an explicit update of the TU Tension Scale Charter, not an edit of individual problem files.
 
 ### Falsifiability and experiments
 
-* Experiments described in this document are **tests of TU encodings**, not tests of the underlying canonical problem itself.
+* Experiments described in this document are tests of TU encodings, not tests of the underlying canonical problem itself.
 * The rule “falsifying a TU encoding is not the same as solving the canonical statement” applies globally, even where it is not restated.
 * When required observables cannot be reliably estimated in practice, the outcome of the corresponding experiment is recorded as “inconclusive”, not as confirmation.
 * Within any given version of this page, low tension or high tension labels for an experiment are evaluated under a fixed encoding and are not reinterpreted by retroactive parameter changes.
