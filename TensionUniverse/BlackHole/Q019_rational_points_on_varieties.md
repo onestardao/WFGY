@@ -1,3 +1,4 @@
+<!-- QUESTION_ID: TU-Q019 -->
 # Q019 · Distribution of rational points on varieties
 
 ## 0. Header metadata
