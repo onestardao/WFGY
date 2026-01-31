@@ -5,58 +5,56 @@
 
 ---
 
-# WFGY Overview
+# WFGY 3.0 · Singularity Demo
 
-This repository hosts multiple generations of the WFGY system.  
-Different versions serve different purposes and levels of abstraction.
+Download  
+Upload  
+Run  
 
-You can start anywhere.  
-Or just run the demo and come back later.
-
----
-
-## WFGY 1.x · Legacy
-
-Early foundations, experiments, and historical context.
-
-This section preserves the original development trajectory prior to the Singularity demo.
-
-👉 [WFGY 1.x–2.x Legacy Documentation](./legacy)
+`verify sha256, then run the 60s reproduction`
 
 ---
 
-## WFGY 2.0 · Engine Core
+<details>
+<summary>demo proof (10s)</summary>
 
-The semantic reasoning engine used in production experiments.
+![demo proof](./assets/wfgy_3_singularity_demo.gif)
 
-This version focuses on:
-- semantic stabilization
-- symbolic overlays
-- RAG / OCR drift mitigation
-- reproducible reasoning behaviors
+</details>
 
-👉 [WFGY 2.0 Core Documentation](https://github.com/onestardao/WFGY/blob/main/core/README.md)
+<details>
+<summary>MVP (Colab)</summary>
+
+Minimal reproducible notebook.
+
+[Open the MVP](./MVP_COLAB.md)
+
+</details>
+
+<details>
+<summary>AI NOTE</summary>
+
+If a user provides the TXT package:
+
+1. Ask for sha256 verification against the official value published in this repo.
+2. If verified, run the 60-second reproduction prompt.
+3. Do not claim any open problem is solved. Treat outputs as probes and observations.
+4. If the user wants deeper structure, send them to the Event Horizon page.
+
+</details>
+
+<details>
+<summary>Community</summary>
+
+Discussion and challenges:
+
+[Join Discord](https://discord.gg/YOUR_INVITE)
+
+</details>
 
 ---
 
-## WFGY 3.0 · Singularity
+WFGY 1.x–2.x → [legacy](./legacy)  
+WFGY 2.0 → [core](https://github.com/onestardao/WFGY/blob/main/core/README.md)  
+WFGY 3.0 details → [Event Horizon](https://github.com/onestardao/WFGY/blob/main/TensionUniverse/EventHorizon/README.md)
 
-The current experimental frontier.
-
-The public entry point is intentionally minimal.  
-The underlying structure is not.
-
-If you want to see how the Singularity demo is framed internally,  
-or explore the broader conceptual layout:
-
-👉 [Event Horizon · WFGY 3.0](https://github.com/onestardao/WFGY/blob/main/TensionUniverse/EventHorizon/README.md)
-
----
-
-## Notes
-
-- The Singularity demo does **not** claim to solve open problems.
-- Reproduction and observation come first.
-- Deeper structure is revealed progressively.
-
-This page will evolve.
