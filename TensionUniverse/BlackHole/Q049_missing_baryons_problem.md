@@ -1047,3 +1047,15 @@ This page should be read together with the following charters:
 * [TU Global Guardrails](../Charters/TU_GLOBAL_GUARDRAILS.md)
 
 These charters define the global rules for what counts as an admissible effective-layer encoding, how fairness and invariance must be handled, and how tension scores are interpreted across the Tension Universe program.
+
+---
+
+**Index:**  
+[`← Back to Event Horizon`](../EventHorizon/README.md)  
+[`← Back to WFGY Home`](https://github.com/onestardao/WFGY)
+
+**Consistency note:**  
+This entry has passed the internal formal-consistency and symbol-audit checks under the current WFGY 3.0 specification.  
+The structural layer is already self-consistent; any remaining issues are limited to notation or presentation refinement.  
+If you find a place where clarity can improve, feel free to open a PR or ping the community.  
+WFGY evolves through disciplined iteration, not ad-hoc patching.
