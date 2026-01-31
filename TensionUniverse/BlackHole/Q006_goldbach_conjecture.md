@@ -1,4 +1,4 @@
-<img width="2880" height="1824" alt="image" src="https://github.com/user-attachments/assets/587b968c-b3db-43b2-b0f9-c8590f98a7c1" /><!-- QUESTION_ID: TU-Q006 -->
+<!-- QUESTION_ID: TU-Q006 -->
 # Q006 · Goldbach conjecture
 
 ## 0. Header metadata
