@@ -17,7 +17,7 @@ Semantics: continuous
 E_level: E1
 N_level: N1
 Last_updated: 2026-01-31
-```
+````
 
 ---
 
@@ -154,9 +154,6 @@ Parallel nodes share similar tension types but no direct component dependence.
 
 * Q042 (BH_COSMO_DARKENERGY_L3_042)
   Reason: Q049 and Q042 both encode thermodynamic_tension on cosmic inventory consistency, but for different components (baryons versus dark energy).
-
-* Q048 (BH_COSMO_H0_TENSION_L3_048)
-  Reason: Both are consistency-tension problems comparing early-universe parameter inferences with late-universe observables.
 
 * Q091 (BH_CLIMATE_ECS_L3_091)
   Reason: Both study how hidden reservoirs and phase partitions control global observables and feedbacks.
@@ -497,22 +494,28 @@ In World T:
    * For each redshift bin within a chosen range, for example `0 <= z <= 2`, there exist states `m_T(z)` in `M_reg(z)` and encoding rules `enc` in `E_adm` such that
 
      ```txt
-     DeltaS_baryon(m_T, z) is small and stable
+     DeltaS_baryon(m_T(z), z) is small and stable
      ```
 
      when data are refined and combined across independent surveys.
 
 2. Phase-partition compatibility
 
-   * Phase mismatch `DeltaS_phase(m_T, z)` remains within narrow bands compatible with at least one reference partition `f_ref` in `F_ref_menu(z)`.
+   * Phase mismatch
+
+     ```txt
+     DeltaS_phase(m_T(z), z)
+     ```
+
+     remains within narrow bands compatible with at least one reference partition `f_ref` in `F_ref_menu(z)`.
 
 3. Multi-scale stability
 
-   * When the environment partition is refined, for example by splitting halos into mass bins or filaments into density bins, the aggregated `Tension_MB(m_T, z)` remains in a low band, up to expected fluctuations from sampling and systematics.
+   * When the environment partition is refined, for example by splitting halos into mass bins or filaments into density bins, the aggregated `Tension_MB(m_T(z), z)` remains in a low band, up to expected fluctuations from sampling and systematics.
 
 4. No unexplained high-tension pockets
 
-   * Any local high tension in `Tension_MB` can be traced to identifiable systematics, inadequate modeling, or clearly incomplete surveys, and it decreases as those issues are resolved.
+   * Any local high tension in `Tension_MB(m_T(z), z)` can be traced to identifiable systematics, inadequate modeling, or clearly incomplete surveys, and it decreases as those issues are resolved.
 
 ### 5.2 World F (persistent missing baryons, high tension)
 
@@ -523,22 +526,28 @@ In World F:
    * There exist redshift bins and environments such that, for all encoding rules `enc` in `E_adm` and realistic data refinements, any world-representing state `m_F(z)` in `M_reg(z)` satisfies
 
      ```txt
-     DeltaS_baryon(m_F, z) >= delta_b > 0
+     DeltaS_baryon(m_F(z), z) >= delta_b > 0
      ```
 
      where `delta_b` is a strictly positive design-time threshold representing a significant fraction of the total baryon budget.
 
 2. Systematic phase mismatch
 
-   * For certain phases or environments, `DeltaS_phase(m_F, z)` does not converge toward any reference partition in `F_ref_menu(z)` even when observational completeness `C_obs` increases.
+   * For certain phases or environments,
+
+     ```txt
+     DeltaS_phase(m_F(z), z)
+     ```
+
+     does not converge toward any reference partition in `F_ref_menu(z)` even when observational completeness `C_obs` increases.
 
 3. Robust high-tension regions
 
-   * The tension functional `Tension_MB(m_F, z)` retains a high baseline for specific redshift and environment ranges. This high-tension pattern remains under multi instrument and multi method observational campaigns that are considered reasonable within the design of `E_adm`.
+   * The tension functional `Tension_MB(m_F(z), z)` retains a high baseline for specific redshift and environment ranges. This high-tension pattern remains under multi instrument and multi method observational campaigns that are considered reasonable within the design of `E_adm`.
 
 4. Hidden-reservoir inference pressure
 
-   * Any attempt to reduce `Tension_MB(m_F, z)` within `E_adm` forces the introduction of new, poorly constrained phases or mechanisms that themselves remain tension heavy in other parts of the data space. In that case, Q049 registers a shift in where the tension resides rather than a genuine resolution.
+   * Any attempt to reduce `Tension_MB(m_F(z), z)` within `E_adm` forces the introduction of new, poorly constrained phases or mechanisms that themselves remain tension heavy in other parts of the data space. In that case, Q049 registers a shift in where the tension resides rather than a genuine resolution.
 
 ### 5.3 Interpretive note
 
@@ -581,20 +590,20 @@ Test whether a specific choice of `Tension_MB` encoding produces stable and inte
 
 1. For each redshift bin `z` with available data, construct an effective state `m_data(z)` in `M_reg(z)` encoding:
 
-   * `Omega_b_obs(m_data, z)`
-   * `f_phase(m_data, phase, z)`
-   * `C_obs(m_data, phase, z)`
+   * `Omega_b_obs(m_data(z), z)`
+   * `f_phase(m_data(z), phase, z)`
+   * `C_obs(m_data(z), phase, z)`
 
 2. Compute:
 
-   * `DeltaS_baryon(m_data, z)`
-   * `DeltaS_phase(m_data, z)`
-   * `Tension_MB(m_data, z)`
+   * `DeltaS_baryon(m_data(z), z)`
+   * `DeltaS_phase(m_data(z), z)`
+   * `Tension_MB(m_data(z), z)`
 
 3. Record the set of tension values across all `z`, along with the associated completeness indicators. Build a profile:
 
    ```txt
-   T_profile(z) = Tension_MB(m_data, z)
+   T_profile(z) = Tension_MB(m_data(z), z)
    ```
 
 4. Optionally repeat the procedure with alternative but still admissible choices of `f_ref` from `F_ref_menu(z)` to test robustness, keeping `alpha`, `beta`, and `w_phase` fixed.
@@ -603,21 +612,21 @@ Test whether a specific choice of `Tension_MB` encoding produces stable and inte
 
    ```txt
    DeltaT_MB(z) = max over admissible f_ref in F_ref_menu(z)
-                  |Tension_MB_f_ref(m_data, z) - Tension_MB_baseline(m_data, z)|
+                  |Tension_MB_f_ref(m_data(z), z) - Tension_MB_baseline(m_data(z), z)|
    ```
 
-   where `Tension_MB_baseline(m_data, z)` is defined as `Tension_MB(m_data, z)` evaluated using the initial reference partition chosen in step 4, and `Tension_MB_f_ref(m_data, z)` denotes `Tension_MB(m_data, z)` evaluated with a candidate reference partition `f_ref` drawn from `F_ref_menu(z)`.
+   where `Tension_MB_baseline(m_data(z), z)` is defined as `Tension_MB(m_data(z), z)` evaluated using the initial reference partition chosen in step 4, and `Tension_MB_f_ref(m_data(z), z)` denotes `Tension_MB(m_data(z), z)` evaluated with a candidate reference partition `f_ref` drawn from `F_ref_menu(z)`.
 
 *Metrics:*
 
-* Distribution of `Tension_MB(m_data, z)` over redshift.
-* Correlation of `Tension_MB(m_data, z)` with `C_obs(m_data, phase, z)` aggregated over phases, for example whether high tension is always associated with very low completeness.
+* Distribution of `Tension_MB(m_data(z), z)` over redshift.
+* Correlation of `Tension_MB(m_data(z), z)` with `C_obs(m_data(z), phase, z)` aggregated over phases, for example whether high tension is always associated with very low completeness.
 * Sensitivity of `Tension_MB` to changes in `f_ref` within `F_ref_menu(z)`, summarized by `DeltaT_MB(z)`.
 
 *Falsification conditions:*
 
 * If for a substantial subset of redshift bins, `DeltaT_MB(z)` exceeds the design-time sensitivity tolerance `DeltaT_tol(z)` in generic and non interpretive ways, the current definition of `DeltaS_baryon`, `DeltaS_phase`, or the choice of combination weights is considered unstable and rejected for Q049.
-* If `Tension_MB(m_data, z)` is either nearly zero across all redshifts or extremely large in ways that cannot be traced to data completeness, known systematics, or clearly documented reference choices, the encoding is flagged as misaligned and subject to revision.
+* If `Tension_MB(m_data(z), z)` is either nearly zero across all redshifts or extremely large in ways that cannot be traced to data completeness, known systematics, or clearly documented reference choices, the encoding is flagged as misaligned and subject to revision.
 * If small, justified changes in modeling within `E_adm` result in tension profiles that contradict basic physical expectations, for example by labeling obviously incomplete surveys as low tension while classifying more complete surveys as systematically high tension, the encoding is considered falsified.
 
 *Semantics implementation note:*
@@ -647,10 +656,11 @@ Assess whether the Q049 encoding can distinguish, in a stable and interpretable 
   * For each redshift `z`, define
 
     ```txt
-    S_sep(z) = P( Tension_MB(m_sim, z) < Tension_MB(m_obs, z) )
+    S_sep(z) = P( Tension_MB(m_sim(z), z) < Tension_MB(m_obs(z), z) )
     ```
 
     where the probability is taken over simulation snapshots and matched observational samples.
+
   * Choose a design-time threshold `S_sep_min(z)` that represents a meaningful separation level between simulation and observation in tension space for the specific experiment.
 
 *Protocol:*
@@ -659,11 +669,12 @@ Assess whether the Q049 encoding can distinguish, in a stable and interpretable 
 
    * states `m_sim(z)` representing simulation-based phase partitions and total baryon budgets,
    * states `m_obs(z)` representing observation-based phase partitions and total baryon budgets.
-     Both types of states must be built by encoding rules in `E_adm`.
+
+   Both types of states must be built by encoding rules in `E_adm`.
 
 2. Compute `DeltaS_baryon`, `DeltaS_phase`, and `Tension_MB` for both `m_sim(z)` and `m_obs(z)`.
 
-3. For each redshift, estimate `S_sep(z)` using the joint distribution of `Tension_MB(m_sim, z)` and `Tension_MB(m_obs, z)`.
+3. For each redshift, estimate `S_sep(z)` using the joint distribution of `Tension_MB(m_sim(z), z)` and `Tension_MB(m_obs(z), z)`.
 
 4. Optionally vary aspects of simulation physics, for example feedback strength, to see how tension profiles and `S_sep(z)` shift.
 
@@ -671,7 +682,7 @@ Assess whether the Q049 encoding can distinguish, in a stable and interpretable 
 
 *Metrics:*
 
-* Differences between `Tension_MB(m_sim, z)` and `Tension_MB(m_obs, z)` across redshifts and environments.
+* Differences between `Tension_MB(m_sim(z), z)` and `Tension_MB(m_obs(z), z)` across redshifts and environments.
 * The separation metric `S_sep(z)` and its behavior compared with the design-time thresholds `S_sep_min(z)`.
 * Sensitivity of tension differences to changes in simulation parameters, summarized by changes in `S_sep(z)` and in the distribution of tension values.
 * Robustness of tension differences under admissible changes of `f_ref` within the same simulation family.
@@ -800,6 +811,7 @@ A minimal protocol to let external users experience the practical impact of Q049
 
     * use a baryon-budget tension score as an internal check,
     * explicitly identify any phases or environments where tension remains high or data are incomplete.
+
   * Observation: record whether the explanation becomes more structured, with clear mention of known reservoirs, data gaps, and unresolved issues.
 
 * Comparison metric
@@ -813,7 +825,7 @@ A minimal protocol to let external users experience the practical impact of Q049
 * What to log
 
   * Prompts, responses, and any associated auxiliary tension estimates.
-  * This allows independent reviewers to check whether the model behavior changes in ways consistent with the Q049 tension framing.
+    This allows independent reviewers to check whether the model behavior changes in ways consistent with the Q049 tension framing.
 
 ---
 
@@ -977,10 +989,12 @@ In the Tension Universe view, we do not try to build a new cosmological model or
 
    * how many baryons are counted in each phase,
    * how complete the observations are for each phase.
+
 2. Compare two things in each such state:
 
    * the total baryon density we infer from observations at late times,
    * the total baryon density predicted by early-universe physics.
+
 3. Measure how much tension there is between:
 
    * the global budget from early-universe probes,
