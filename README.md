@@ -1,10 +1,3 @@
-> 🚧 **Under construction**
->
-> This page is active but not complete.  
-> Content is being filled incrementally as WFGY 3.0 rolls out.
-
----
-
 # WFGY 3.0 · Singularity Demo
 
 ## 60s quickstart
@@ -26,7 +19,7 @@
 
 <br/>
 
-![demo proof](./assets/wfgy_3_singularity_demo.gif)
+![WFGY 3.0 Singularity Demo](TensionUniverse/assets/wfgy_3_singularity_demo.gif)
 
 After uploading the TXT and saying `run`, the model shows the `[AI_BOOT_PROMPT_MENU]`:
 
@@ -128,6 +121,7 @@ WFGY 3.0 details → [Event Horizon](https://github.com/onestardao/WFGY/blob/mai
 ---
 
 > WFGY 3.0 · MIT License · Open, verifiable, reproducible · developed by PSBigBig · onestardao
+
 
 
 
