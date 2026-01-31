@@ -16,8 +16,8 @@ Status: Encoded_E1_Open
 Semantics: hybrid
 E_level: E1
 N_level: N1
-Last_updated: 2026-01-30
-```
+Last_updated: 2026-01-31
+````
 
 ---
 
@@ -362,6 +362,26 @@ w_pair, w_phase are fixed for E and do not depend on m
 
 The weights are part of the encoding choice but must be chosen once for a given encoding `E` and reused across all states and materials. They cannot be retuned to reduce `DeltaS_HTC` for specific materials after seeing the data.
 
+7. Refinement level mismatch fields
+
+For each admissible encoding `E` and refinement level `k`, we define refinement specific mismatch quantities by applying the same mismatch constructions to the refined feature maps:
+
+```txt
+DeltaS_pair_k(m; E)  :=  pairing mismatch at level k using FeatureMap_k
+DeltaS_phase_k(m; E) :=  phase diagram mismatch at level k using FeatureMap_k
+```
+
+More concretely, `DeltaS_pair_k(m; E)` is obtained by running the pairing mismatch procedure on the refined spectral and pairing descriptors produced by `FeatureMap_k`. Likewise, `DeltaS_phase_k(m; E)` is obtained by running the phase diagram mismatch procedure on the refined phase descriptors from `FeatureMap_k`.
+
+We then define the combined refinement level mismatch
+
+```txt
+DeltaS_HTC_k(m; E) = w_pair * DeltaS_pair_k(m; E)
+                   + w_phase * DeltaS_phase_k(m; E)
+```
+
+with the same weights `w_pair`, `w_phase` as in the unrefined case. This gives a family of combined mismatch quantities indexed by the refinement level `k`.
+
 ### 3.4 Effective spectral_tension tensor
 
 Consistent with the TU Tension Scale Charter, we assume an effective spectral_tension tensor of bookkeeping type
@@ -390,7 +410,7 @@ For each admissible encoding `E` and refinement level `k`, we define
 Tension_HTC(m; E, k) = DeltaS_HTC_k(m; E)
 ```
 
-where `DeltaS_HTC_k` is the combined mismatch computed using `FeatureMap_k`.
+where `DeltaS_HTC_k(m; E)` is the combined refinement level mismatch defined in Section 3.3 using `FeatureMap_k`.
 
 We then define a family level invariant
 
@@ -483,7 +503,7 @@ The admissible encoding class already includes fairness constraints, but for Q03
 
 * The mechanism library `L_mech` and weights `w_pair`, `w_phase` are fixed before evaluating any particular material state at the given level.
 
-* They cannot be tuned post hoc per sample in order to reduce `DeltaS_HTC`.
+* They cannot be tuned post hoc per sample in order to reduce `DeltaS_HTC` or `DeltaS_HTC_k`.
 
 * Refinement `k` may increase the resolution of features but cannot introduce new mechanism templates that are tailored to specific anomalies.
 
@@ -535,7 +555,7 @@ In World F:
 
      * no mechanism template in `L_mech` can simultaneously fit pairing and phase diagram features,
 
-     * `DeltaS_HTC(m; E)` remains above `delta_HTC` for representative states of those families.
+     * `DeltaS_HTC(m; E)` and the refinement level quantities `DeltaS_HTC_k(m; E)` remain above `delta_HTC` for representative states of those families at some refinement scales.
 
 2. Incompatible pairing stories
 
@@ -604,9 +624,15 @@ Test whether a fixed finite mechanism library and encoding can keep high Tc spec
    * pairing indicators `O_pair`,
    * phase diagram descriptors `Phi_phase`.
 
-2. Evaluate `DeltaS_pair_k(m_family,k; E)` and `DeltaS_phase_k(m_family,k; E)` using the fixed mechanism library.
+2. Evaluate `DeltaS_pair_k(m_family,k; E)` and `DeltaS_phase_k(m_family,k; E)` using the fixed mechanism library and the refinement level `k` feature maps.
 
-3. Compute `Tension_HTC(m_family,k; E, k)` for each family at each level.
+3. Compute
+
+   ```txt
+   Tension_HTC(m_family,k; E, k) = DeltaS_HTC_k(m_family,k; E)
+   ```
+
+   for each family at each level.
 
 4. Record the distribution of spectral_tension values across families and refinement levels.
 
@@ -1050,3 +1076,4 @@ This page should be read together with the following charters:
 * [TU Encoding and Fairness Charter](../Charters/TU_ENCODING_AND_FAIRNESS_CHARTER.md)
 * [TU Tension Scale Charter](../Charters/TU_TENSION_SCALE_CHARTER.md)
 * [TU Global Guardrails](../Charters/TU_GLOBAL_GUARDRAILS.md)
+
