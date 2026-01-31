@@ -17,10 +17,10 @@
 | 🧰 App | [TXT OS](https://github.com/onestardao/WFGY/tree/main/OS#readme) | .txt semantic OS — 60-second boot |
 | 🧰 App | [Blah Blah Blah](https://github.com/onestardao/WFGY/blob/main/OS/BlahBlahBlah/README.md) | Abstract/paradox Q&A (built on TXT OS) |
 | 🧰 App | [Blur Blur Blur](https://github.com/onestardao/WFGY/blob/main/OS/BlurBlurBlur/README.md) | Text-to-image with semantic control |
-| 🧰 App | [Blow Blow Blow](https://github.com/onestardao/WFGY/blob/main/OS/BlowBlowBlow/README.md) | Reasoning game engine & memory demo  — **🔴 YOU ARE HERE 🔴**|
+| 🧰 App | [Blow Blow Blow](https://github.com/onestardao/WFGY/blob/main/OS/BlowBlowBlow/README.md) | Reasoning game engine & memory demo  |
 | 🧪 Research | [Semantic Blueprint](https://github.com/onestardao/WFGY/blob/main/SemanticBlueprint/README.md) | Modular layer structures (future) |
 | 🧪 Research | [Benchmarks](https://github.com/onestardao/WFGY/blob/main/benchmarks/benchmark-vs-gpt5/README.md) | Comparisons & how to reproduce |
-| 🧪 Research | [Value Manifest](https://github.com/onestardao/WFGY/blob/main/value_manifest/README.md) | Why this engine creates $-scale value |
+| 🧪 Research | [Value Manifest](https://github.com/onestardao/WFGY/blob/main/value_manifest/README.md) | Why this engine creates $-scale value — **🔴 YOU ARE HERE 🔴**|
 
 </details>
 
