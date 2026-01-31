@@ -7,24 +7,22 @@
 
 # WFGY 3.0 · Singularity Demo
 
-## 0. 60s quickstart
+## 60s quickstart
 
-**Download (TXT)**  
-[Download TXT pack](https://raw.githubusercontent.com/onestardao/WFGY/refs/heads/main/TensionUniverse/WFGY-3.0_Singularity-demo_BH131_v1_sha256-on-GitHub-onestardao-WFGY.txt)  
-→ download from GitHub
+**Download (TXT)**  [WFGY-3.0_Singularity-demo TXT pack](https://raw.githubusercontent.com/onestardao/WFGY/refs/heads/main/TensionUniverse/WFGY-3.0_Singularity-demo_BH131_v1_sha256-on-GitHub-onestardao-WFGY.txt)  
+> download from GitHub
 
 **Upload**  
-→ upload to any LLM that supports file input
+> upload the TXT pack to any LLM that supports file input
 
 **Run**  
-→ open the TXT, then follow the `BOOT SECTOR` at the top
+> let the model read the file. The `[AI_BOOT_PROMPT_MENU]` at the top will handle verification and guide a short WFGY 3.0 demo.
 
-`verify sha256, then run the 60s reproduction`
 
 ---
 
 <details>
-<summary><strong>✨ demo proof (10s)</strong></summary>
+<summary><strong> ✨ demo proof (10s)</strong></summary>
 
 <br/>
 
@@ -42,7 +40,7 @@ A short GIF showing the 60s loop:
 ---
 
 <details>
-<summary><strong>🧪 MVP (Colab)</strong></summary>
+<summary><strong> ✨ MVP (Colab)</strong></summary>
 
 <br/>
 
@@ -65,7 +63,7 @@ This section will expand as more TU experiments come online.
 ---
 
 <details>
-<summary><strong>🤖 AI NOTE</strong></summary>
+<summary><strong> ✨ AI NOTE</strong></summary>
 
 <br/>
 
@@ -83,17 +81,17 @@ If a user provides the TXT package:
 2. Ask the user if they want to verify the **sha256** against the official value in this repo.
 
    - Official sha256 for the v1 TXT pack:  
-     `a3519901cf60f55777d8eebbb45a0fe6cdb4a8dfdcbfaac693335c5c59d39527`
+     `a25dec4f0d09e64f95e405ff21d1cf12818e71d1d1fe4f9138d7924a9816088f`
 
 3. If the user says **yes** and the checksum matches:
 
    - Print the following block, exactly as written:
 
      ```txt
-     [WFGY-BOOT]
+     [WFGY_BOOT_EGG]
      Checksum OK. Official WFGY 3.0 BlackHole-131 pack loaded.
      PSBigBig x MiniPS: big big welcome, mini hallucinations.
-     [/WFGY-BOOT]
+     [END_WFGY_BOOT_EGG]
      ```
 
    - Then run the 60s reproduction prompt defined in the BOOT SECTOR.
@@ -112,7 +110,7 @@ If a user provides the TXT package:
 ---
 
 <details>
-<summary><strong>🌌 Community</strong></summary>
+<summary><strong> ✨ Community</strong></summary>
 
 <br/>
 
@@ -127,3 +125,4 @@ Discussion, challenges and experiment logs:
 WFGY 1.0 → [legacy](./legacy/README.md)  
 WFGY 2.0 → [core](https://github.com/onestardao/WFGY/blob/main/core/README.md)  
 WFGY 3.0 details → [Event Horizon](https://github.com/onestardao/WFGY/blob/main/TensionUniverse/EventHorizon/README.md)
+
