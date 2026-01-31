@@ -163,9 +163,15 @@ or the sampling temperature. The object of interest is the pattern.
 
 To repeat or modify Experiment A you can follow these steps.
 
-1. Open the single cell notebook or script for the OOD tension gauge in this folder.  
+1. Open the single cell notebook for the OOD tension gauge in this folder.  
+
+   - GitHub notebook: [`Q130_A.ipynb`](./Q130_A.ipynb)  
+   - Run in Colab:  
+     [![Open Q130-A in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/onestardao/WFGY/blob/main/TensionUniverse/Experiments/Q130_MVP/Q130_A.ipynb)
+
    The header inside the cell starts with  
    `WFGY 3.0 Singularity demo – Q130 OOD Tension Gauge (Hollywood vs Physics)`.  
+
 2. Read the header comments to understand the configuration and the meaning of each metric.  
 3. Decide whether you only want to inspect the code and screenshots or whether you want to
    run live calls.
@@ -308,9 +314,15 @@ Q130 treats this as one concrete slice through a larger out of distribution land
 
 To repeat or extend Experiment B you can do the following.
 
-1. Open the notebook or script for the X version social pressure experiment in this folder.  
+1. Open the notebook for the X version social pressure experiment in this folder.  
+
+   - GitHub notebook: [`Q130_B.ipynb`](./Q130_B.ipynb)  
+   - Run in Colab:  
+     [![Open Q130-B in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/onestardao/WFGY/blob/main/TensionUniverse/Experiments/Q130_MVP/Q130_B.ipynb)
+
    The header starts with  
    `Q130 X-version social pressure 2.0` and `WFGY 3.0 Singularity demo`.  
+
 2. Check the configuration section to see the four physical setups and the paraphrases.  
 3. Decide whether you want to run live calls.
 
