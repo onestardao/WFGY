@@ -1,4 +1,4 @@
-<!-- QUESTION_ID: TU-Q020 -->
+<img width="2880" height="1824" alt="image" src="https://github.com/user-attachments/assets/bce00d3e-13c0-4fc7-bcfe-99e331b42e84" /><!-- QUESTION_ID: TU-Q020 -->
 # Q020 · Global classification of high dimensional manifolds under curvature constraints
 
 ## 0. Header metadata
@@ -16,7 +16,7 @@ Status: Open
 Semantics: continuous
 E_level: E1
 N_level: N1
-Last_updated: 2026-01-30
+Last_updated: 2026-01-31
 ```
 
 ---
@@ -993,3 +993,16 @@ This page should be read together with the following charters:
 * [TU Encoding and Fairness Charter](../Charters/TU_ENCODING_AND_FAIRNESS_CHARTER.md)
 * [TU Tension Scale Charter](../Charters/TU_TENSION_SCALE_CHARTER.md)
 * [TU Global Guardrails](../Charters/TU_GLOBAL_GUARDRAILS.md)
+
+---
+
+**Index:**  
+[`← Back to Event Horizon`](../EventHorizon/README.md)  
+[`← Back to WFGY Home`](https://github.com/onestardao/WFGY)
+
+**Consistency note:**  
+This entry has passed the internal formal-consistency and symbol-audit checks under the current WFGY 3.0 specification.  
+The structural layer is already self-consistent; any remaining issues are limited to notation or presentation refinement.  
+If you find a place where clarity can improve, feel free to open a PR or ping the community.  
+WFGY evolves through disciplined iteration, not ad-hoc patching.
+
