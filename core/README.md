@@ -1,14 +1,14 @@
 <a id="top"></a>
 <details>
-<summary><strong>🧭 Lost or curious? Open the WFGY Compass & ⭐ Star Unlocks</strong></summary>
-  
+<summary><strong>🧭 Lost or curious? Open the WFGY Compass </strong></summary>
+ 
 ### WFGY System Map
 *(One place to see everything; links open the relevant section.)*
 
 | Layer | Page | What it’s for |
 |------|------|----------------|
-| 🧠 Core | [WFGY 1.0](https://github.com/onestardao/WFGY/edit/main/legacy/README.md) | The original homepage for WFGY 1.0  |
-| 🧠 Core | [WFGY 2.0](https://github.com/onestardao/WFGY/blob/main/core/README.md) | The symbolic reasoning engine (math & logic) — **🔴 YOU ARE HERE 🔴** |
+| 🧠 Core | [WFGY 1.0](https://github.com/onestardao/WFGY/edit/main/legacy/README.md) | The original homepage for WFGY 1.0 |
+| 🧠 Core | [WFGY 2.0](https://github.com/onestardao/WFGY/blob/main/core/README.md) | The symbolic reasoning engine (math & logic) — **🔴 YOU ARE HERE 🔴**  |
 | 🧠 Core | [WFGY 3.0](https://github.com/onestardao/WFGY/blob/main/TensionUniverse/EventHorizon/README.md) | The public viewing window for WFGY 3.0 Singularity demo |
 | 🗺️ Map | [Problem Map 1.0](https://github.com/onestardao/WFGY/tree/main/ProblemMap#readme) | 16 failure modes + fixes |
 | 🗺️ Map | [Problem Map 2.0](https://github.com/onestardao/WFGY/blob/main/ProblemMap/rag-architecture-and-recovery.md) | RAG-focused recovery pipeline |
