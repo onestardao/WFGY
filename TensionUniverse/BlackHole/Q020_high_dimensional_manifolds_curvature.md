@@ -1,4 +1,4 @@
-<img width="2880" height="1824" alt="image" src="https://github.com/user-attachments/assets/bce00d3e-13c0-4fc7-bcfe-99e331b42e84" /><!-- QUESTION_ID: TU-Q020 -->
+<!-- QUESTION_ID: TU-Q020 -->
 # Q020 · Global classification of high dimensional manifolds under curvature constraints
 
 ## 0. Header metadata
