@@ -20,8 +20,8 @@ Encoding_class: A_enc_QCD_CONFINEMENT
 EncodingKey_Q028: E_CONF_Q028_V1
 LibraryKey_ref_Q028: L_CONF_REF_Q028_V1
 WeightKey_Q028: W_CONF_Q028_V1
-Last_updated: 2026-01-30
-````
+Last_updated: 2026-01-31
+```
 
 ---
 
@@ -289,6 +289,7 @@ DeltaS_flux(m; R)
 DeltaS_Wilson(m; scale)
 ```
 
+* Definition: `DeltaS_Wilson(m; scale)` denotes the nonnegative mismatch functional that scores how Wilson loop behavior at the given length scale deviates from an admissible confining reference band.
 * Uses the family of loops at a given length scale to compare observed `(A_scale, P_scale)` behavior with an admissible confining reference class exhibiting an area law at that scale.
 * Properties:
 
@@ -301,6 +302,7 @@ DeltaS_Wilson(m; scale)
 DeltaS_singlet(m; region)
 ```
 
+* Definition: `DeltaS_singlet(m; region)` denotes the nonnegative mismatch functional that scores deviations from ideal color neutral behavior in the specified infrared region.
 * Quantifies how much `C_color_singlet(m; region)` deviates from ideal color neutral expectations in infrared regions.
 * Properties:
 
@@ -1007,4 +1009,3 @@ This page should be read together with the following charters:
 * [TU Encoding and Fairness Charter](../Charters/TU_ENCODING_AND_FAIRNESS_CHARTER.md)
 * [TU Tension Scale Charter](../Charters/TU_TENSION_SCALE_CHARTER.md)
 * [TU Global Guardrails](../Charters/TU_GLOBAL_GUARDRAILS.md)
-
