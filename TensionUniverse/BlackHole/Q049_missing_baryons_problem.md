@@ -1,5 +1,4 @@
 <!-- QUESTION_ID: TU-Q049 -->
-
 # Q049 · Missing baryons problem
 
 ## 0. Header metadata
