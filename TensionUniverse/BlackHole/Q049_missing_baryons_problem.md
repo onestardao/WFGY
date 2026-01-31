@@ -1,4 +1,5 @@
 <!-- QUESTION_ID: TU-Q049 -->
+
 # Q049 · Missing baryons problem
 
 ## 0. Header metadata
@@ -17,7 +18,7 @@ Semantics: continuous
 E_level: E1
 N_level: N1
 Last_updated: 2026-01-30
-````
+```
 
 ---
 
@@ -606,7 +607,7 @@ Test whether a specific choice of `Tension_MB` encoding produces stable and inte
                   |Tension_MB_f_ref(m_data, z) - Tension_MB_baseline(m_data, z)|
    ```
 
-   where `Tension_MB_baseline` is computed with the initial reference partition.
+   where `Tension_MB_baseline(m_data, z)` is defined as `Tension_MB(m_data, z)` evaluated using the initial reference partition chosen in step 4, and `Tension_MB_f_ref(m_data, z)` denotes `Tension_MB(m_data, z)` evaluated with a candidate reference partition `f_ref` drawn from `F_ref_menu(z)`.
 
 *Metrics:*
 
