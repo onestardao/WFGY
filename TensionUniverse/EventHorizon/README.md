@@ -1,12 +1,14 @@
-# WFGY 3.0 · Singularity Demo
+# WFGY 3.0 · Singularity Demo 
+
 ![W3](https://github.com/user-attachments/assets/460b1fca-c1b2-4814-adde-60433fcbaa40)
 
-A public viewing window for **WFGY 3.0 Singularity demo**.  
-This is a frozen, versioned **effective-layer specification** of how the **Tension Universe (TU)** framework encodes **131 cross-domain S-class problems** without changing definitions or hiding parameters.
+## Tension Universe· BlackHole S problem collection
+This folder is the public viewing window for **WFGY 3.0 Singularity demo**.  
+It is not a loose set of notes. It is a frozen, versioned **effective layer specification** of how the **Tension Universe** framework encodes 131 cross domain S class problems.
 
 - **Public online date**: 2026-01-31  
-- **Problems covered**: Q001–Q131 (mathematics, physics, chemistry, biology, climate, economics, philosophy, AI safety and AI systems)  
-- **Intent**: demonstrate that one tension-based encoding language can survive across many of the hardest open problems **without** ad hoc definitions, per-question parameter tuning, or silent rule changes.
+- **Problems covered**: Q001 to Q131  
+- **Intent**: demonstrate that one tension based encoding language can survive across many hard problems without changing definitions, adding hidden parameters, or doing post hoc tuning.
 
 If you want to discuss, attack, or extend this work, you are invited to join the community:
 
@@ -14,109 +16,110 @@ If you want to discuss, attack, or extend this work, you are invited to join the
 
 ---
 
+## Scope and licensing boundaries
+
+Read this once. It prevents future misunderstandings.
+
+### What is open source here
+
+- This **Singularity demo** folder content is public and released under the repository license.
+- This includes the BlackHole problem pages, the charters, and the effective layer encoding structure.
+- This demo is meant to be audited, reused, attacked, and extended as documents and engineering contracts.
+
+### What is NOT open source here
+
+- **WFGY 3.0 production engine** is not published here.
+- **Tension Universe AI** as a product level system is not promised to be open sourced.
+- Any hosted service, paid offering, private runtime, private model control logic, or commercial deployment version is out of scope of this repository.
+
+This repo is a demo window and a spec. It is not a commitment to open source the commercial engine.
+
+---
+
 ## Quick navigation
 
 - [Tension Universe in everyday language](#tension-universe-in-everyday-language)
-- [What is WFGY 3.0 Singularity demo?](#what-is-wfgy-30-singularity-demo)
-- [Why is this only a demo?](#why-is-this-only-a-demo)
+- [What is the Singularity demo](#what-is-the-singularity-demo)
+- [Why this is only a demo](#why-this-is-only-a-demo)
+- [Repository layout](#repository-layout)
+- [Scientific position and disclaimers](#scientific-position-and-disclaimers)
+- [Versioning and non mutation policy](#versioning-and-non-mutation-policy)
 - [How to start](#how-to-start)
 - [MVP Colab demos](#mvp-colab-demos)
 - [How to read a single S problem page](#how-to-read-a-single-s-problem-page)
 - [FAQ and participation](#faq-and-participation)
-- [131 S-problem index](#131-s-problem-index)
+- [Navigation index for the 131 S problems](#navigation-index-for-the-131-s-problems)
 
 ---
 
 ## Tension Universe in everyday language
 
-If you are new here, you can think about **tension** in a very simple way.
+If you are new here, you can think about tension in a simple way.
 
-In real life there is **good tension** and **bad tension**.
+In real life there is good tension and bad tension.
 
-- Good tension is like the right amount of stretch in a muscle, or a project that is challenging but still under control. It keeps things sharp, coordinated, and creative.
-- Bad tension is like a cracked bridge or chronic stress. The forces are still there, but they are misaligned. Energy is wasted, and eventually something snaps.
+- Good tension is like the right stretch in a muscle, or a project that is hard but still under control. It keeps things sharp and coordinated.
+- Bad tension is like a cracked bridge or chronic stress. Forces exist but do not align. Energy is wasted and something snaps.
 
-Modern AI systems are full of both kinds of tension.
+Modern AI systems contain both.
 
-- We pour huge amounts of data and compute into a model. Some of that pressure becomes useful structure for reasoning and prediction. That is good tension.
-- Some of it becomes uncontrolled pressure that has no clear target or constraint. That is where hallucinations, unstable behavior, and hard-to-explain failures come from. That is bad tension.
+- We pour data and compute into models. Some pressure becomes useful structure for reasoning and prediction. That is good tension.
+- Some pressure becomes uncontrolled and targetless. That is where hallucinations, unstable behavior, and failures appear. That is bad tension.
 
-What **Tension Universe** tries to do is direct:
+What Tension Universe tries to do is direct:
 
-> give a precise language for describing where pressure becomes structure, and where it collapses into noise.
+> give a precise language for describing these tensions, then use that language to encode hard problems at the effective layer.
 
-Instead of saying “this model seems smart on math” or “this safety metric looks fine”, we want to say things like:
+Instead of saying “this model seems smart” or “this metric looks fine”, we want to say:
 
-- here is the **state space** we care about  
-- here are the **observables** and **invariants** that should remain stable  
-- here is how **good tension** is stored and moved  
-- here is what counts as **bad tension** and collapse  
+- here is the state space we care about  
+- here are the observables and invariants that should remain stable  
+- here is how good tension is stored and moved  
+- here is what counts as bad tension and collapse  
 - here are experiments that can tell the difference
 
-The 131 S problems in this folder are the first large scale test:
+The 131 S problems in this folder are the first large scale stress test:
 
-- each file takes a famous century-level problem  
+- each file takes a famous problem  
 - rewrites it in tension language at the effective layer  
-- and attaches **concrete experimental patterns** an AI system or a research lab could, in principle, run
-
-This is why we call this a **demo**.  
-It shows that the tension language can survive across many domains without changing its own rules in the middle of the game.
+- attaches concrete experimental patterns that an AI system or a research lab could in principle run
 
 ---
 
-## What is WFGY 3.0 Singularity demo?
+## What is the Singularity demo?
 
-WFGY 3.0 is an open source reasoning engine under the broader **Tension Universe (TU)** program.  
-The **Singularity demo** is the first full scale public experiment of that program:
+The Singularity demo is a public, open specification artifact inside the TU program.
 
-- It takes **131 S class open problems** across many fields.  
-- It forces all of them to be written using a **single set of charters and encoding rules**.  
-- It refuses to add ad hoc definitions for individual questions.
+- It takes 131 S class problems across many fields.
+- It forces all of them to be written using a single set of charters and encoding rules.
+- It refuses to add ad hoc definitions per question.
 
-In other words, this folder is the “event horizon” view of the future TU system.  
-You see the **effective layer** (what the system is allowed to say and measure), not the deep generative rules.
+You can treat this folder as the event horizon view.  
+You see the effective layer objects and the constraints, not the internal engine.
 
-The actual AI system that uses these encodings lives elsewhere (WFGY core, agents, and tools).  
-Here you see the **specification that those systems must obey**.
+The production grade TU AI system and the WFGY 3.0 commercial runtime live elsewhere.  
+This folder is the spec and the contract that those systems must obey.
 
 ---
 
-## Why is this only a demo?
+## Why this is only a demo?
 
 Tension Universe is designed as a full AI system:
 
-- It has its own notion of state spaces, observables, invariants, and tension fields.  
-- It is meant to drive agents, training signals, and evaluation pipelines, not only static text.
+- it has its own notion of state spaces, observables, invariants, and tension fields
+- it is meant to drive agents, training signals, and evaluation pipelines
 
-However, this repository does not expose that whole machinery. What you see here is deliberately limited.
+This repository does not expose that whole machinery. That is intentional.
 
 This demo focuses on one question:
 
-> if we lock ourselves to a single tension language, can we still write down 131 of the hardest known problems without breaking our own rules?
+> if we lock ourselves to a single tension language, can we still write down 131 hard problems without breaking our own rules?
 
-So this is a **demo of the encoding discipline**, not a demo of “solving” those problems.  
-The files here are meant to be attacked, audited, and reused as **engineering contracts**, not as claims of mathematical or physical breakthroughs.
-
----
-
-## How to start
-
-If you only do three things:
-
-1. Read the everyday explanation of tension above.
-2. Open one problem file from a domain you know well, and one from a domain you do not.
-3. Check whether the same structure survives both without changing definitions.
-
-If that feels coherent, you are already the intended audience.
+So this is a demo of encoding discipline, not a claim of solving anything.
 
 ---
 
-## Repository layout and policies
-
-<details>
-<summary><strong>Repository layout</strong></summary>
-
-At the level of this folder, the main pieces are:
+## Repository layout
 
 ### Charters
 
@@ -127,277 +130,149 @@ Located in [`./Charters/`](./Charters):
 - [`TU_TENSION_SCALE_CHARTER.md`](./Charters/TU_TENSION_SCALE_CHARTER.md)  
 - [`TU_GLOBAL_GUARDRAILS.md`](./Charters/TU_GLOBAL_GUARDRAILS.md)
 
-These documents define the global rules that every S problem file must obey:
-
-- what “effective layer” means  
-- how encoding classes are allowed to be chosen  
-- how tension scales and thresholds are normalized  
-- what counts as a fair experiment or falsification
-
-They are the constitution of this demo.
+These documents define the rules every S problem file must obey.
 
 ### BlackHole S problem collection
 
-The 131 problem files sit in:
+All 131 problem files sit in:
 
 - [`./BlackHole/`](./BlackHole)
 
-with names such as:
+Examples:
 
 - `Q001_riemann_hypothesis.md`  
 - `Q002_generalized_riemann_hypothesis.md`  
-- …  
+- ...  
 - `Q131_tension_free_energy.md`
 
-They are grouped by domain. A full navigation index with links is provided below.
-
-Each file is written so that it can be read on its own, but all of them share the same structure and footer.
+They are grouped by domain. Full navigation index is below.
 
 ### TXT “book” edition and frozen snapshots
 
-There is also a TXT “book” edition of the BlackHole collection.  
-That TXT file is an exact textual snapshot of **BlackHole v1** and is kept in sync with it.
+There is a TXT “book” edition of the BlackHole collection.  
+It is meant to be a textual snapshot of BlackHole v1 and kept in sync with that frozen edition.
 
 Versioning rule:
 
-- **BlackHole v1**: first public edition. Once tagged, it is never mutated.  
-- **BlackHole v2**: at most one followup round of edits, strictly for clarity, bug fixes, and consistency.  
-- The original v1 layout and files remain available, and the TXT snapshot refers to that frozen edition.
+- BlackHole v1 is frozen once tagged.
+- BlackHole v2 is at most one followup round for clarity, bug fixes, and consistency.
+- no silent patching of definitions or parameters after the fact.
 
-There is no silent patching of definitions or parameters after the fact.
+---
 
-</details>
-
-<details>
-<summary><strong>Scientific position and disclaimers</strong></summary>
-
-This repository has a specific stance.
+## Scientific position and disclaimers
 
 ### What this project does not claim
 
-- It does not claim to prove or disprove any of the 131 canonical problems.  
-- It does not hide any canonical answer as a secret field, label, or parameter in the encodings.  
-- It does not declare any new theorem beyond what is already standard in the cited literature.
+- it does not claim to prove or disprove any canonical problem
+- it does not hide any answer as a secret field, label, or parameter
+- it does not declare any new theorem beyond standard cited literature
 
-Every page is an **effective layer encoding**:
+Every page is an effective layer encoding:
 
-- it describes observable structures, invariants, and tension functionals  
-- it defines falsifiable experiments and calibration rules  
-- it specifies how AI systems may use those objects as training signals or evaluation metrics
+- it specifies observables, invariants, and tension functionals
+- it defines falsifiable experiments and calibration rules
+- it describes how an AI system may use those objects as evaluation or training contracts
 
-It is a language for working with these problems, not a proof that they are solved.
+It is a language for working with problems, not a proof that they are solved.
 
 ### No post hoc parameter tuning
 
-The TU charters enforce anti-cheat rules:
+The TU charters enforce anti cheat rules:
 
-- Encoding classes, reference profiles, weight menus, ladders, and tolerance models are chosen from finite menus living in the charters, not in individual files.  
-- For each encoding used in an experiment, the full spec is meant to be published and hashed before evaluation.  
-- If someone needs to change an encoding after seeing results, that is recorded as a failed encoding, not evidence about the underlying problem.
+- encoding classes and menus live in the charters, not in individual files
+- specs are meant to be published and hashed before evaluation
+- changing an encoding after seeing results is recorded as a failed encoding, not a success
 
-This is why the project can invite hostile audit without needing anyone to trust an opaque oracle behind the scenes.
+---
 
-</details>
-
-<details>
-<summary><strong>Versioning and non-mutation policy</strong></summary>
+## Versioning and non mutation policy
 
 To keep the history auditable:
 
-1. Problem files are versioned. Each file declares `Last_updated` in its header metadata.
-2. BlackHole v1 is frozen. Once the v1 tag is created, files under that tag and the TXT snapshot remain unchanged.
-3. At most one structural update wave (v2). If the community finds inconsistencies, missing definitions, or symbol clashes, they can be fixed in a v2 edition with explicit changelogs.
-4. No change of deep meaning without new version. Any change that alters the meaning of a definition, an encoding class, or an experiment protocol must appear as a new versioned file or be mediated through the charters.
+1. problem files are versioned and declare `Last_updated`
+2. BlackHole v1 is frozen after tagging
+3. at most one structural update wave for v2 with explicit changelogs
+4. changes that alter meaning must become a new version or be mediated through charters
 
-</details>
+---
+
+## How to start
+
+If you only do three things:
+
+1. read the everyday explanation of tension above  
+2. open one problem from a domain you know and one you do not  
+3. check whether the same structure survives both without definition drift  
+
+If that feels coherent, you are already the intended audience.
 
 ---
 
 ## MVP Colab demos
 
-<details>
-<summary><strong>MVP (Colab)</strong></summary>
-
 This demo is not only static text.
 
-There are also Colab notebooks that let you:
+There will be Colab notebooks that let you:
 
-- load one or more S problems as effective-layer specs  
-- plug them into a WFGY-based reasoning pipeline  
-- see how different choices of encodings and guardrails change the behavior of an AI model
+- load one or more S problems as effective layer specs  
+- plug them into a WFGY based pipeline  
+- compare baseline behavior vs constrained behavior under the same declared rules
 
-The current MVP focuses on a small but representative subset of the 131 problems so that a full run can fit into a single Colab session.
-
-A typical run looks like this:
-
-1. Choose a problem file and an encoding profile.
-2. Ask a baseline model to reason without Tension Universe guardrails.
-3. Ask the same model again, now constrained by the encoding.
-4. Compare where hallucinations, contradictions, and unstable answers are reduced.
-
-Links to these Colab notebooks will be added here so anyone can reproduce the basic experiments before reading the deeper theory.
-
-</details>
+Links will be added here once finalized.
 
 ---
 
 ## How to read a single S problem page
 
-<details>
-<summary><strong>Page structure (shared template)</strong></summary>
-
-Each `Qxxx_*.md` file follows a shared pattern. You can use **Q001 · Riemann Hypothesis** as a canonical example.
+Each `Qxxx_*.md` file follows a shared template.
 
 Typical blocks:
 
-1. **Header metadata**  
-   Encodes the domain, family, rank, tension type, semantics, and verification levels (`E_level`, `N_level`).
-
-2. **Effective layer disclaimer**  
-   Repeats the boundary: only effective layer objects, no deep generative rules.
-
-3. **Canonical problem and status**  
-   A precise restatement of the classical problem in its own field, with references.
-
-4. **Position in the BlackHole graph**  
-   Lists upstream, downstream, parallel, and cross-domain edges.
-
-5. **Tension Universe encoding**  
-   Defines state spaces, observables, invariants, mismatch functionals, and tension scores.
-
-6. **Counterfactual worlds and experiments**  
-   Specifies “World T” and “World F” patterns and describes experiments to falsify an encoding without claiming to decide the canonical problem.
-
-7. **AI and WFGY engineering spec**  
-   Explains how the file can be used as a module inside AI systems.
-
-8. **Roadmap and elementary explanation**  
-   Places the problem on a verification ladder and ends with a short explanation for non-specialists.
-
-9. **Tension Universe effective-layer footer**  
-   Links back to the charters and repeats key guardrails.
-
-</details>
+1. header metadata  
+2. effective layer disclaimer  
+3. canonical problem statement and status  
+4. position in the BlackHole graph  
+5. TU encoding, state spaces, observables, invariants  
+6. counterfactual worlds and experiments  
+7. AI and engineering spec usage notes  
+8. roadmap and elementary explanation  
+9. TU effective layer footer with charter links and guardrails
 
 ---
 
 ## FAQ and participation
 
-<details>
-<summary><strong>Join the community</strong></summary>
-
-If you want to challenge the construction, propose extensions, or watch the experiments unfold:
+### Join the community
 
 - **Discord**: <https://discord.gg/KRxBsr6GYx>
 
-You can also open GitHub issues and pull requests in this repository.
+You can also open GitHub issues and pull requests.
 
-</details>
+### FAQ
 
-<details>
-<summary><strong>FAQ</strong></summary>
+**Q1. did you solve any of these 131 problems?**  
+No. These files describe encodings and experiments, not proofs.
 
-**Q1. Did you solve any of these 131 problems?**
+**Q2. what does S problem mean here?**  
+An internal label for hard and foundational problems that can be encoded with observables and falsifiable patterns.
 
-No.
+**Q3. how is this related to WFGY and TU AI?**  
+This folder is the public spec that can be used to test and audit reasoning behavior. The production TU AI system and WFGY 3.0 commercial runtime are out of scope here.
 
-The whole design is built to avoid that claim:
+**Q4. why should I trust definitions will not be changed quietly?**  
+You do not need personal trust. The rules are structural. v1 is frozen once tagged and any v2 changes require explicit versioning.
 
-- the files describe encodings and experiments, not proofs  
-- the charters repeatedly state that falsifying an encoding is not the same as solving the canonical problem  
-- no file should be cited as evidence that a listed open problem is now resolved
-
-The point is to create a transparent, testable language for working with these problems, and for connecting them to AI systems.
-
----
-
-**Q2. What does “S problem” mean here?**
-
-“S problem” is an internal label for problems that are:
-
-- widely recognized as very hard or foundational in their field  
-- central enough that any real solution would have major structural consequences  
-- suitable for encoding as tension problems with clear observables and falsifiable patterns
-
-It is not a formal external ranking. It is a working classification for the Tension Universe program.
+**Q5. does the framework assume answers in advance?**  
+It is designed to forbid baking in an answer bit. If you find any implicit assumption, report it.
 
 ---
 
-**Q3. How is this related to AI and WFGY?**
+## Navigation index for the 131 S problems
 
-WFGY is an open source reasoning engine.  
-The S problem encodings here are meant to act as:
+All files live in [`./BlackHole`](./BlackHole).
 
-- training signals for models  
-- evaluation harnesses for reasoning agents  
-- templates for treating scientific and safety questions as tension problems with guardrails
-
-This repository defines what it means for an AI system to respect Tension Universe constraints when it talks about these topics.
-
----
-
-**Q4. Why should I trust that you will not change definitions after the fact?**
-
-You do not have to trust anyone personally. The guardrails are structural:
-
-- charters define allowed encoding classes and their menus  
-- files declare `Last_updated` and carry their own footers  
-- BlackHole v1 and its TXT snapshot are frozen once published  
-- any v2 update must appear with explicit versioning and changelogs
-
-If a definition changes without versioning, that is a violation of the stated rules and can be treated as a scientific failure of the project itself.
-
----
-
-**Q5. Does this framework assume any answer in advance?**
-
-The encoding rules intentionally forbid baking in an answer:
-
-- no encoding may include a hidden bit that stores “true” or “false”  
-- counterfactual worlds are described operationally under declared protocols  
-- experiments test whether an encoding is robust or fair, not the canonical truth value
-
-If you find a place where an answer seems assumed, that is a serious bug and should be reported.
-
----
-
-**Q6. Can I reuse this for my own research?**
-
-Yes.
-
-The project is released under an open source license (see the root of the WFGY repository).  
-You are free to:
-
-- reuse the charters as templates  
-- fork the S problem collection and add your own problems  
-- build AI benchmarks or interpretability tools on top of these definitions
-
-If you do so, a link back is appreciated.
-
----
-
-**Q7. What if I think the whole approach is wrong?**
-
-That is welcome.
-
-The design is adversarial-friendly:
-
-- critique a specific problem encoding by pointing at the exact block  
-- critique the charters by proposing alternative guardrails  
-- provide counterexamples where tension encodings fail
-
-This repository exists so that criticism has a precise target.
-
-</details>
-
----
-
-## 131 S-problem index
-
-All files live in [`./BlackHole`](./BlackHole). They are grouped here by domain for navigation.
-
-<details>
-<summary><strong>Q001–Q020 · Mathematics and foundations</strong></summary>
+### Q001 to Q020 · Mathematics and foundations
 
 - [Q001 · Riemann Hypothesis](./BlackHole/Q001_riemann_hypothesis.md)  
 - [Q002 · Generalized Riemann Hypothesis](./BlackHole/Q002_generalized_riemann_hypothesis.md)  
@@ -420,10 +295,7 @@ All files live in [`./BlackHole`](./BlackHole). They are grouped here by domain 
 - [Q019 · Rational Points on Varieties](./BlackHole/Q019_rational_points_on_varieties.md)  
 - [Q020 · High Dimensional Manifolds and Curvature](./BlackHole/Q020_high_dimensional_manifolds_curvature.md)  
 
-</details>
-
-<details>
-<summary><strong>Q021–Q040 · Fundamental physics and quantum matter</strong></summary>
+### Q021 to Q040 · Fundamental physics and quantum matter
 
 - [Q021 · Quantum Gravity Unification](./BlackHole/Q021_quantum_gravity_unification.md)  
 - [Q022 · Hierarchy Problem](./BlackHole/Q022_hierarchy_problem.md)  
@@ -446,10 +318,7 @@ All files live in [`./BlackHole`](./BlackHole). They are grouped here by domain 
 - [Q039 · Quantum Turbulence](./BlackHole/Q039_quantum_turbulence.md)  
 - [Q040 · Black Hole Information Problem](./BlackHole/Q040_black_hole_information_problem.md)  
 
-</details>
-
-<details>
-<summary><strong>Q041–Q060 · Cosmology and computation</strong></summary>
+### Q041 to Q060 · Cosmology and computation
 
 - [Q041 · Nature of Dark Matter](./BlackHole/Q041_nature_of_dark_matter.md)  
 - [Q042 · Dark Energy and Cosmic Acceleration](./BlackHole/Q042_dark_energy_and_cosmic_acceleration.md)  
@@ -472,10 +341,7 @@ All files live in [`./BlackHole`](./BlackHole). They are grouped here by domain 
 - [Q059 · Information Thermodynamic Cost](./BlackHole/Q059_information_thermodynamic_cost.md)  
 - [Q060 · Dynamic Data Structure Lower Bounds](./BlackHole/Q060_dynamic_data_structure_lower_bounds.md)  
 
-</details>
-
-<details>
-<summary><strong>Q061–Q080 · Chemistry, materials and origins of life</strong></summary>
+### Q061 to Q080 · Chemistry, materials and origins of life
 
 - [Q061 · Ultimate Chemical Bond in Strongly Correlated Systems](./BlackHole/Q061_ultimate_chemical_bond_strongly_correlated.md)  
 - [Q062 · General Theory of Catalyst Design](./BlackHole/Q062_general_theory_of_catalyst_design.md)  
@@ -498,10 +364,7 @@ All files live in [`./BlackHole`](./BlackHole). They are grouped here by domain 
 - [Q079 · Origin of Eukaryotes](./BlackHole/Q079_origin_of_eukaryotes.md)  
 - [Q080 · Limits of Biosphere Adaptability](./BlackHole/Q080_limits_of_biosphere_adaptability.md)  
 
-</details>
-
-<details>
-<summary><strong>Q081–Q100 · Neuroscience and Earth system</strong></summary>
+### Q081 to Q100 · Neuroscience and Earth system
 
 - [Q081 · Hard Problem of Consciousness](./BlackHole/Q081_hard_problem_of_consciousness.md)  
 - [Q082 · Binding Problem](./BlackHole/Q082_binding_problem.md)  
@@ -524,10 +387,7 @@ All files live in [`./BlackHole`](./BlackHole). They are grouped here by domain 
 - [Q099 · Global Freshwater Dynamics](./BlackHole/Q099_global_freshwater_dynamics.md)  
 - [Q100 · Environmental Pandemic Risk](./BlackHole/Q100_environmental_pandemic_risk.md)  
 
-</details>
-
-<details>
-<summary><strong>Q101–Q120 · Economics, social systems and philosophy</strong></summary>
+### Q101 to Q120 · Economics, social systems and philosophy
 
 - [Q101 · Equity Premium Puzzle](./BlackHole/Q101_equity_premium_puzzle.md)  
 - [Q102 · Home Bias in Portfolios](./BlackHole/Q102_home_bias_in_portfolios.md)  
@@ -550,10 +410,7 @@ All files live in [`./BlackHole`](./BlackHole). They are grouped here by domain 
 - [Q119 · Meaning of Probability](./BlackHole/Q119_meaning_of_probability.md)  
 - [Q120 · Value of Information and Knowledge](./BlackHole/Q120_value_of_information_and_knowledge.md)  
 
-</details>
-
-<details>
-<summary><strong>Q121–Q131 · AI alignment, safety and advanced systems</strong></summary>
+### Q121 to Q131 · AI alignment, safety and advanced systems
 
 - [Q121 · AI Alignment Problem](./BlackHole/Q121_ai_alignment_problem.md)  
 - [Q122 · AI Control Problem](./BlackHole/Q122_ai_control_problem.md)  
@@ -567,14 +424,10 @@ All files live in [`./BlackHole`](./BlackHole). They are grouped here by domain 
 - [Q130 · OOD Grounding and Common Sense](./BlackHole/Q130_ood_grounding_and_common_sense.md)  
 - [Q131 · Tension Free Energy](./BlackHole/Q131_tension_free_energy.md)  
 
-</details>
-
 ---
 
-If you want a concrete starting point:
+## More WFGY pages
 
-1. Read the everyday explanation of tension.  
-2. Skim one problem from a domain you know well and one from a domain you do not.  
-3. Decide whether the shared structure is coherent enough to be worth attacking.
-
-If the answer is “yes, this is at least internally serious”, then you are already in the audience this demo was built for.
+- WFGY 1.x to 2.x legacy: [legacy](https://github.com/onestardao/WFGY/tree/main/legacy)  
+- WFGY 2.0 core: [core](https://github.com/onestardao/WFGY/blob/main/core/README.md)  
+- WFGY 3.0 details: [Event Horizon](https://github.com/onestardao/WFGY/blob/main/TensionUniverse/EventHorizon/README.md)
