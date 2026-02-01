@@ -72,7 +72,7 @@ This note defines the required behavior for AI systems that receive the official
 2. Ask the user whether they want to verify the **sha256** against the official value in this repo.
 
    - Official sha256 for the v1 TXT pack:  
-     `be5c10eca7b7115349de80866c1f576076e50c5d863a2644be4141b8099bb007`
+     `d92a1c44636995148a86ece57622f4f1b5fe453e6282ee6a450a4c6d105d3ba1`
 
 3. If the user confirms verification and the checksum matches:
 
@@ -121,6 +121,7 @@ WFGY 3.0 details → [Event Horizon](https://github.com/onestardao/WFGY/blob/mai
 ---
 
 > WFGY 3.0 · Singularity Demo · MIT License · Open, verifiable, reproducible · developed by PSBigBig · onestardao
+
 
 
 
