@@ -148,26 +148,10 @@ Ref: **WFGY Core Flagship v2.0** (text spec). :contentReference[oaicite:0]{index
 
 ---
 
-### 🧭 Explore More
-
-| Module | Description | Link |
-|---|---|---|
-| WFGY Core | WFGY **2.0** engine is live: full symbolic reasoning architecture + math stack | [View →](https://github.com/onestardao/WFGY/tree/main/core/README.md) |
-| Problem Map 1.0 | Initial 16-mode diagnostic and symbolic fix framework | [View →](https://github.com/onestardao/WFGY/tree/main/ProblemMap/README.md) |
-| Problem Map 2.0 | RAG-focused failure tree, modular fixes, and pipelines | [View →](https://github.com/onestardao/WFGY/blob/main/ProblemMap/rag-architecture-and-recovery.md) |
-| Semantic Clinic Index | Expanded failure catalog: prompt injection, memory bugs, logic drift | [View →](https://github.com/onestardao/WFGY/blob/main/ProblemMap/SemanticClinicIndex.md) |
-| Semantic Blueprint | Layer-based symbolic reasoning & semantic modulations | [View →](https://github.com/onestardao/WFGY/tree/main/SemanticBlueprint/README.md) |
-| Benchmark vs GPT-5 | Stress test GPT-5 with full WFGY reasoning suite | [View →](https://github.com/onestardao/WFGY/tree/main/benchmarks/benchmark-vs-gpt5/README.md) |
-| 🧙‍♂️ Starter Village 🏡 | New here? Lost in symbols? The wizard will guide you through. | [Start →](https://github.com/onestardao/WFGY/blob/main/StarterVillage/README.md) |
-
----
-
 > 👑 **Early Stargazers: [See the Hall of Fame](https://github.com/onestardao/WFGY/tree/main/stargazers)** — Engineers, hackers, and open-source builders who supported WFGY from day one.
 
 > <img src="https://img.shields.io/github/stars/onestardao/WFGY?style=social" alt="GitHub stars"> ⭐ **[WFGY Engine 2.0](https://github.com/onestardao/WFGY/blob/main/core/README.md)** is already unlocked.  
 > Star the repo to help others discover it and unlock more on the **[Unlock Board](https://github.com/onestardao/WFGY/blob/main/STAR_UNLOCKS.md)**.
-
-
 
 ---
 
