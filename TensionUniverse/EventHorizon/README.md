@@ -37,7 +37,7 @@
    > Upload the TXT pack to a high-capability model (reasoning mode on, if supported).
 
 3. **Run**  
-   > Follow the menu; say `go` when prompted to reproduce the evaluation.
+   > Type run to see the menu, then say go when prompted.
 
 ---
 
