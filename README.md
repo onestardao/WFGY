@@ -1,12 +1,12 @@
 # WFGY 3.0 · Singularity Demo
 
-## 60s quickstart
+## 120s quickstart
 
 1. **Download (TXT)**  [WFGY-3.0 Singularity demo TXT file](https://raw.githubusercontent.com/onestardao/WFGY/refs/heads/main/TensionUniverse/WFGY-3.0_Singularity-Demo_AutoBoot_SHA256-Verifiable.txt)  
    > download from GitHub · [verify checksum manually (Colab)](https://colab.research.google.com/github/onestardao/WFGY/blob/main/TensionUniverse/WFGY-SHA256-Verification-Tool.ipynb)
 
 2. **Upload**  
-   > upload the TXT pack to a flagship LLM with full reasoning enabled
+   > Upload the TXT pack to a high-capability model (reasoning mode on, if supported).
 
 3. **Run**  
    > upload the TXT and the demo auto boots; verifiable via `go`
@@ -128,6 +128,7 @@ WFGY 3.0 details → [Event Horizon](https://github.com/onestardao/WFGY/blob/mai
 ---
 
 > WFGY 3.0 · Singularity Demo · MIT License · Verifiable · Reproducible · developed by PSBigBig · onestardao
+
 
 
 
