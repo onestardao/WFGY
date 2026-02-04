@@ -14,7 +14,7 @@
 ---
 
 <details>
-<summary><strong>  demo proof (10s)</strong></summary>
+<summary><strong>  demo trace (10s)</strong></summary>
 
 <br/>
 
@@ -127,7 +127,8 @@ WFGY 3.0 details → [Event Horizon](https://github.com/onestardao/WFGY/blob/mai
 
 ---
 
-> WFGY 3.0 · Singularity Demo · MIT License · Open, verifiable, reproducible · developed by PSBigBig · onestardao
+> WFGY 3.0 · Singularity Demo · MIT License · Verifiable · Reproducible · developed by PSBigBig · onestardao
+
 
 
 
