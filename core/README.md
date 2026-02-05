@@ -86,6 +86,12 @@
 ### 📖 Mathematical Reference
 WFGY 2.0 (WFGY Core) = [WFGY 1.0 math formulas](https://github.com/onestardao/WFGY/blob/main/SemanticBlueprint/wfgy_formulas.md) + [Drunk Transformer](https://github.com/onestardao/WFGY/blob/main/SemanticBlueprint/drunk_transformer_formulas.md)
 
+> Note on evaluation  
+> All metrics above are computed by LLM evaluators under a fixed WFGY 2.0 protocol at the effective layer.  
+> They measure relative behavioural uplift (before vs after WFGY prompts) and do not assume any direct
+> access to, or modification of, internal embeddings or model weights.
+
+
 <p align="right"><a href="#top">Back to top ↑</a></p>
 
 ---
