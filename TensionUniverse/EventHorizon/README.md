@@ -45,6 +45,53 @@ Before you start:
 
 ---
 
+<details>
+<summary><strong>  demo trace (10s)</strong></summary>
+
+<br/>
+
+![WFGY 3.0 Singularity Demo](../assets/wfgy_3_singularity_demo.gif)
+
+After uploading the TXT and saying `go`, the model shows the `[AI_BOOT_PROMPT_MENU]`:
+
+Choose:
+1) Verify this TXT pack online (sha256)  
+2) Run the guided WFGY 3.0 · Singularity Demo for 3 problems  
+3) Explore WFGY 3.0 · Singularity Demo with suggested questions
+
+</details>
+
+---
+
+<details>
+<summary><strong>  MVP (Colab)</strong></summary>
+
+<br/>
+
+Verify checksum manually (sha256, Colab):  
+[Open in Colab](https://colab.research.google.com/github/onestardao/WFGY/blob/main/TensionUniverse/WFGY-SHA256-Verification-Tool.ipynb)
+
+Use this when automated verification is unavailable.
+
+<br/>
+
+Early **Tension Universe · Q130** effective-layer experiments.  
+Both notebooks are single-cell scripts: they install deps, explain the setup, prompt you to provide an API key (locally in Colab), then run the full experiment and print tables / plots.  
+No fine-tuning, only encoding and scoring changes.
+
+- **Q130-A · OOD tension gauge (Hollywood vs Physics)**  
+  [Open in Colab](https://colab.research.google.com/github/onestardao/WFGY/blob/main/TensionUniverse/Experiments/Q130_MVP/Q130_A.ipynb)
+- **Q130-B · X-version social pressure 2.0**  
+  [Open in Colab](https://colab.research.google.com/github/onestardao/WFGY/blob/main/TensionUniverse/Experiments/Q130_MVP/Q130_B.ipynb)
+- **All TU experiments (growing list)**  
+  [Tension Universe · Experiments index](https://github.com/onestardao/WFGY/blob/main/TensionUniverse/Experiments/README.md)
+
+This section will expand as more TU experiments come online.
+
+</details>
+
+---
+
 ## Tension Universe · BlackHole S problem collection
 
 This folder is the public viewing window for **WFGY 3.0 Singularity demo**.  
