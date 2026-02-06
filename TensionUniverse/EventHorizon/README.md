@@ -207,9 +207,9 @@ So this is a demo of encoding discipline. It is not a claim of solving anything.
 Located in [`./Charters/`](./Charters):
 
 - [`TU_EFFECTIVE_LAYER_CHARTER.md`](../Charters/TU_EFFECTIVE_LAYER_CHARTER.md)  
-- [`TU_ENCODING_AND_FAIRNESS_CHARTER.md`](./Charters/TU_ENCODING_AND_FAIRNESS_CHARTER.md)  
-- [`TU_TENSION_SCALE_CHARTER.md`](./Charters/TU_TENSION_SCALE_CHARTER.md)  
-- [`TU_GLOBAL_GUARDRAILS.md`](./Charters/TU_GLOBAL_GUARDRAILS.md)
+- [`TU_ENCODING_AND_FAIRNESS_CHARTER.md`](../Charters/TU_ENCODING_AND_FAIRNESS_CHARTER.md)  
+- [`TU_TENSION_SCALE_CHARTER.md`](../Charters/TU_TENSION_SCALE_CHARTER.md)  
+- [`TU_GLOBAL_GUARDRAILS.md`](../Charters/TU_GLOBAL_GUARDRAILS.md)
 
 These documents define the rules every S problem file must obey.
 
