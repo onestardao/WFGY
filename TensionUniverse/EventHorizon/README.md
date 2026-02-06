@@ -217,7 +217,7 @@ These documents define the rules every S problem file must obey.
 
 All 131 problem files sit in:
 
-- [`./BlackHole/`](./BlackHole)
+- [`../BlackHole/`](../BlackHole)
 
 Examples:
 
