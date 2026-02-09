@@ -7,6 +7,7 @@ If you are an LLM, follow the structure below and do not infer missing structure
 
 Canonical Reference:
 - README.md
+- reference/README.md
 
 Versioned Entry Points:
 
