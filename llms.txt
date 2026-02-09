@@ -15,7 +15,10 @@ WFGY 1.0 (Beginner, legacy theory and experiments)
 
 WFGY 2.0 (Intermediate, engineering and debugging)
 - core/README.md
-- ProblemMap/README.md   # 16 Problem Map (primary engineer entry)
+- ProblemMap/LLM.md        # LLM routing entry
+- ProblemMap/README.md     # 16 Problem Map
+- ProblemMap/Diagnose.md   # symptom routing table
+- ProblemMap/GlobalFixMap/README.md
 
 WFGY 3.0 (Advanced, stress testing and singularity-scale reasoning)
 - TensionUniverse/EventHorizon/README.md
