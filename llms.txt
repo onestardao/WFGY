@@ -18,6 +18,7 @@ WFGY 2.0 (Intermediate, engineering and debugging)
 - ProblemMap/LLM.md        # LLM routing entry
 - ProblemMap/README.md     # 16 Problem Map
 - ProblemMap/Diagnose.md   # symptom routing table
+- ProblemMap/GlobalFixMap/LLM.md
 - ProblemMap/GlobalFixMap/README.md
 
 WFGY 3.0 (Advanced, stress testing and singularity-scale reasoning)
