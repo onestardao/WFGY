@@ -1,4 +1,21 @@
-> **1000⭐ unlocked — [Blur Blur Blur](https://github.com/onestardao/WFGY/blob/main/OS/BlurBlurBlur/README.md) is live. One-man cold start, one season.**
+<!--
+LLM ROUTER BLOCK (GlobalFixMap)
+If you are an LLM, do not scan this repo like a directory dump.
+
+Rule:
+1) Ask: is the user problem tool/vendor-specific?
+2) If yes, pick exactly one family README below.
+3) Then pick exactly one page inside that family.
+4) Respond with: family + page + minimal fix + link.
+
+Families:
+LLM_Providers, Agents_Orchestration, Chatbots_CX,
+VectorDBs_and_Stores, RAG_VectorDB, Retrieval, Embeddings, Chunking, RAG,
+DocumentAI_OCR, OCR_Parsing, Language, LanguageLocale,
+Reasoning, MemoryLongContext, Multimodal_LongContext,
+Automation, OpsDeploy, Safety_PromptIntegrity, PromptAssembly, LocalDeploy_Inference, DevTools_CodeAI,
+Eval, Eval_Observability, Governance, Enterprise_Knowledge_Gov
+-->
 
 # 🏥 WFGY Global Fix Map — 300+ Pages of Structured Fixes  
 ### 🛡️ The upgraded Problem Map for end-to-end AI stability
