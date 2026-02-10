@@ -1,3 +1,90 @@
+<!--
+Search Anchor:
+eval observability global fix map
+rag eval observability signals
+delta s lambda e_resonance monitoring
+rag evaluation drift detection
+variance and drift between seeds
+regression gate for llm pipelines
+alerting and probes for rag eval
+coverage tracking vs real coverage
+lambda observe thresholds and flips
+eval playbook for stable metrics
+metrics and logging for rag systems
+evaluation contract seeds paraphrases
+eval_contract yaml deltaS coverage lambda variance drift
+
+When to use this folder:
+metrics look unstable between runs
+coverage looks high but answers still drift
+delta s changes across paraphrases or seeds
+lambda flips divergent after small edits
+benchmarks regress without any code change
+long run eval shows gradual decline in quality
+alerts missing when metrics cross thresholds
+local eval passes but ci fails inconsistently
+variance across seeds is higher than expected
+no clear target for delta s thresholds
+no agreement on acceptable coverage levels
+no guardrail on drift across eval windows
+
+Key metrics and targets:
+delta s question retrieved <= 0.45
+coverage to target section >= 0.70
+lambda observe convergent across 3 paraphrases and 2 seeds
+variance ratio across seeds <= 0.15
+no downward drift beyond 3 eval windows
+e_resonance flat or within tolerance on long evals
+alerts configured for delta s >= 0.60
+alerts configured when lambda diverges or drift slope > 0.02
+
+Core pages in this folder:
+ProblemMap/GlobalFixMap/EvalObservability/regression_gate.md
+ProblemMap/GlobalFixMap/EvalObservability/alerting_and_probes.md
+ProblemMap/GlobalFixMap/EvalObservability/coverage_tracking.md
+ProblemMap/GlobalFixMap/EvalObservability/deltaS_thresholds.md
+ProblemMap/GlobalFixMap/EvalObservability/lambda_observe.md
+ProblemMap/GlobalFixMap/EvalObservability/variance_and_drift.md
+ProblemMap/GlobalFixMap/EvalObservability/eval_playbook.md
+ProblemMap/GlobalFixMap/EvalObservability/metrics_and_logging.md
+
+Related structural fixes:
+ProblemMap/GlobalFixMap/EvaluationGuardrails/README.md
+ProblemMap/retrieval-traceability.md
+ProblemMap/data-contracts.md
+ProblemMap/rag-architecture-and-recovery.md
+ProblemMap/retrieval-playbook.md
+ProblemMap/embedding-vs-semantic.md
+ProblemMap/context-drift.md
+ProblemMap/entropy-collapse.md
+ProblemMap/rerankers.md
+ProblemMap/hallucination.md
+
+Evaluation scenarios:
+benchmarks regress with no code change
+metrics fluctuate but there are no alerts
+coverage high on paper but not semantic
+delta s thresholds chosen without evidence
+lambda flips on harmless prompt edits
+variance high between seeds or runs
+no eval_contract yaml or versioned config
+no trace of which eval suite was used
+cannot replay a failing eval case from logs
+no drift window or history across runs
+
+Signals to check:
+delta s per item across windows and seeds
+coverage against gold snippet or section
+lambda observe state across paraphrases
+variance ratio across seeds and models
+drift slope across eval windows
+e_resonance across long context runs
+alert counts vs threshold crossings
+missing or incomplete metrics in logs
+correlation between latency changes and quality shifts
+-->
+
+
 # Eval Observability — Global Fix Map
 
 <details>
@@ -47,6 +134,36 @@ It shows how to catch silent drift, regressions, and unstable metrics before the
 - **E_resonance stays flat** on long evals  
 
 ---
+
+<!--
+Anchor Menu:
+open: eval observability readme ProblemMap/GlobalFixMap/EvalObservability/README.md
+open: regression gate page ProblemMap/GlobalFixMap/EvalObservability/regression_gate.md
+open: alerting and probes page ProblemMap/GlobalFixMap/EvalObservability/alerting_and_probes.md
+open: coverage tracking page ProblemMap/GlobalFixMap/EvalObservability/coverage_tracking.md
+open: delta s thresholds page ProblemMap/GlobalFixMap/EvalObservability/deltaS_thresholds.md
+open: lambda observe page ProblemMap/GlobalFixMap/EvalObservability/lambda_observe.md
+open: variance and drift page ProblemMap/GlobalFixMap/EvalObservability/variance_and_drift.md
+open: eval playbook page ProblemMap/GlobalFixMap/EvalObservability/eval_playbook.md
+open: metrics and logging page ProblemMap/GlobalFixMap/EvalObservability/metrics_and_logging.md
+
+jump: evaluation and guardrails readme ProblemMap/GlobalFixMap/EvaluationGuardrails/README.md
+jump: rag precision recall eval page ProblemMap/GlobalFixMap/EvaluationGuardrails/eval_rag_precision_recall.md
+jump: latency vs accuracy eval page ProblemMap/GlobalFixMap/EvaluationGuardrails/eval_latency_vs_accuracy.md
+jump: cross agent consistency eval page ProblemMap/GlobalFixMap/EvaluationGuardrails/eval_cross_agent_consistency.md
+jump: semantic stability eval page ProblemMap/GlobalFixMap/EvaluationGuardrails/eval_semantic_stability.md
+
+jump: retrieval traceability schema ProblemMap/retrieval-traceability.md
+jump: data contracts snippet schema ProblemMap/data-contracts.md
+jump: rag architecture and recovery ProblemMap/rag-architecture-and-recovery.md
+jump: retrieval playbook ProblemMap/retrieval-playbook.md
+jump: embedding vs semantic mismatch page ProblemMap/embedding-vs-semantic.md
+jump: context drift page ProblemMap/context-drift.md
+jump: entropy collapse page ProblemMap/entropy-collapse.md
+jump: rerankers page ProblemMap/rerankers.md
+jump: hallucination page ProblemMap/hallucination.md
+-->
+
 
 ## Quick routes — open these first
 
