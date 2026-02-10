@@ -1,3 +1,151 @@
+<!--
+Search Anchor:
+language and multilingual global fix map
+cross lingual retrieval
+cross language retrieval
+multilingual rag problems
+bilingual corpus retrieval issues
+mixed script corpus
+mixed language query
+code switching queries
+code switched prompt
+cjk thai indic languages
+rtl languages arabic hebrew
+cyrillic search issues
+accented latin letters
+non latin script recall low
+high similarity but wrong meaning multilingual
+multilingual hybrid retrieval worse than single
+index healthy but low coverage for cjk
+zh hans and zh hant never co retrieve
+thai recall suddenly drops
+korean jamo or particles missing
+japanese segmentation problems
+wordpiece bpe tokenizer mismatch
+
+Typical multilingual bugs:
+query in english answer in wrong local language
+question translated but citations jump section
+answer quotes wrong paragraph after translation
+mixed latin plus cjk query under recall
+proper noun aliases flip between local and english
+romanization vs transliteration mismatch
+brand names oscillate between scripts
+language detection flips per run
+search analyzer and index analyzer not aligned
+reranker mono lingual on multi lingual corpus
+negations removed by stopwords
+particles or unit words dropped by morphology
+accent stripping changes meaning
+width normalization not applied
+half width full width inconsistent
+unicode normalization inconsistent
+diacritics dropped or duplicated
+locale drift in logs vs index
+
+When to use this folder:
+bilingual faq site
+global product docs
+support center in many languages
+developer docs in english plus local language
+cjk manual plus english index
+arabic or hebrew rtl knowledge base
+indic language content with mixed scripts
+logs or tickets mixing english and local language
+user queries with frequent code switching
+chatbot that must answer in user language but cite english docs
+
+Languages covered (examples):
+english en
+simplified chinese zh hans
+traditional chinese zh hant
+japanese ja
+korean ko
+thai th
+vietnamese vi
+hindi hi
+bengali bn
+arabic ar
+hebrew he
+russian ru
+ukrainian uk
+turkish tr
+polish pl
+spanish es
+portuguese pt
+french fr
+german de
+italian it
+indonesian id
+malay ms
+tagalog tl
+
+Key metrics:
+delta s question retrieved <= 0.45 across languages
+coverage of intended section >= 0.70 after repair
+lambda observe convergent across 3 paraphrases and 2 seeds
+e_resonance flat on long mixed script windows
+citation fields complete and stable
+alias noise does not leak into evidence
+language detection contract stable
+query routing and analyzers deterministic
+
+Core pages in this folder:
+ProblemMap/GlobalFixMap/Language/tokenizer_mismatch.md
+ProblemMap/GlobalFixMap/Language/script_mixing.md
+ProblemMap/GlobalFixMap/Language/locale_drift.md
+ProblemMap/GlobalFixMap/Language/multilingual_guide.md
+ProblemMap/GlobalFixMap/Language/proper_noun_aliases.md
+ProblemMap/GlobalFixMap/Language/romanization_transliteration.md
+ProblemMap/GlobalFixMap/Language/query_language_detection.md
+ProblemMap/GlobalFixMap/Language/query_routing_and_analyzers.md
+ProblemMap/GlobalFixMap/Language/hybrid_ranking_multilingual.md
+ProblemMap/GlobalFixMap/Language/stopword_and_morphology_controls.md
+ProblemMap/GlobalFixMap/Language/fallback_translation_and_glossary_bridge.md
+ProblemMap/GlobalFixMap/Language/code_switching_eval.md
+-->
+
+<!--
+Related structural fixes:
+ProblemMap/embedding-vs-semantic.md
+ProblemMap/retrieval-traceability.md
+ProblemMap/data-contracts.md
+ProblemMap/context-drift.md
+ProblemMap/patterns/pattern_query_parsing_split.md
+ProblemMap/GlobalFixMap/Retrieval/README.md
+ProblemMap/GlobalFixMap/Embeddings/README.md
+ProblemMap/GlobalFixMap/Chunking/README.md
+ProblemMap/GlobalFixMap/VectorDBs_and_Stores/README.md
+-->
+
+<!--
+Language patterns and scenarios:
+query: chinese question english docs
+query: english question chinese docs
+query: japanese question english and japanese docs
+query: thai ui labels with english logs
+query: spanish product name english manual
+query: arabic faq english knowledge base
+query: cjk code switching with english error message
+query: local name plus english acronym
+pattern: user asks in local language wants local answer
+pattern: user asks in english wants citations in local docs
+pattern: product or brand has many spellings
+pattern: same entity across scripts and romanization
+pattern: eval set for bilingual and code switching
+-->
+
+<!--
+Cross folder jumps:
+ProblemMap/GlobalFixMap/Language/README.md
+ProblemMap/GlobalFixMap/Retrieval/README.md
+ProblemMap/GlobalFixMap/Embeddings/README.md
+ProblemMap/GlobalFixMap/Chunking/README.md
+ProblemMap/GlobalFixMap/VectorDBs_and_Stores/README.md
+ProblemMap/SemanticClinicIndex.md
+-->
+
+
 # Language & Multilingual · Global Fix Map
 
 <details>
