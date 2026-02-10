@@ -6,7 +6,7 @@
 
 | Layer | Page | What it’s for |
 |------|------|----------------|
-| 🧠 Core | [WFGY 1.0](https://github.com/onestardao/WFGY/edit/main/legacy/README.md) | The original homepage for WFGY 1.0 |
+| 🧠 Core | [WFGY 1.0](https://github.com/onestardao/WFGY/blob/main/legacy/README.md) | The original homepage for WFGY 1.0 |
 | 🧠 Core | [WFGY 2.0](https://github.com/onestardao/WFGY/blob/main/core/README.md) | The symbolic reasoning engine (math & logic)  |
 | 🧠 Core | [WFGY 3.0](https://github.com/onestardao/WFGY/blob/main/TensionUniverse/EventHorizon/README.md) | The public viewing window for WFGY 3.0 Singularity demo  |
 | 🗺️ Map | [Problem Map 1.0](https://github.com/onestardao/WFGY/tree/main/ProblemMap#readme) | 16 failure modes + fixes |
