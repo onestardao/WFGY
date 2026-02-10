@@ -1,3 +1,147 @@
+<!--
+Search Anchor:
+multimodal long context global fix map
+multimodal long window collapse
+text vision audio fusion drift
+cross modal reasoning failure
+image caption mismatch long context
+caption collapse in long window
+vision text misalignment after 50k tokens
+multimodal fusion break with three modalities
+cross sequence fusion anchor drift
+visual snippet points to wrong paragraph
+audio transcript out of sync with text
+video frame and caption mismatch
+phantom visuals hallucinated images
+modality dropout mid sequence
+modality swap bug
+semantic anchor shift across modalities
+boundary fade at context edge
+alignment drift multimodal
+anchor misalignment multimodal
+cross modal traceability missing
+fusion blindspot ignores one modality
+desync amplification across modalities
+multi hop multimodal collapse
+time sync failure audio text video
+spatial fusion error in layout
+sync loop on multimodal state
+
+When to use this folder:
+text and vision anchors diverge beyond 50k to 100k tokens
+captions disappear or repeat when context window grows
+visual snippets show but reference wrong text section
+answers flip when switching between text and images
+audio or video timeline goes out of sync with transcript
+fusion works on short prompts but fails on long sessions
+cross sequence reasoning stops using one modality
+structured signals vanish in the middle of a run
+anchors move between runs without code changes
+tri modal setups behave worse than single modality
+
+Key metrics and targets:
+delta s question retrieved <= 0.45
+delta s across modality joins <= 0.50
+coverage >= 0.70 for intended anchors
+lambda convergent across three paraphrases and two modality seeds
+e_resonance stable across text vision audio triads
+no unexplained modality dropout for active anchors
+no phantom visuals or hallucinated images in cited evidence
+modality_id and snippet_id always present in snippets
+anchor_id unique and stable within a session
+time_index alignment consistent across audio text video
+
+Core pages in this folder:
+ProblemMap/GlobalFixMap/MultimodalLongContext/alignment-drift.md
+ProblemMap/GlobalFixMap/MultimodalLongContext/anchor-misalignment.md
+ProblemMap/GlobalFixMap/MultimodalLongContext/boundary-fade.md
+ProblemMap/GlobalFixMap/MultimodalLongContext/caption-collapse.md
+ProblemMap/GlobalFixMap/MultimodalLongContext/cross-modal-bootstrap.md
+ProblemMap/GlobalFixMap/MultimodalLongContext/cross-modal-trace.md
+ProblemMap/GlobalFixMap/MultimodalLongContext/desync-amplification.md
+ProblemMap/GlobalFixMap/MultimodalLongContext/desync-anchor.md
+ProblemMap/GlobalFixMap/MultimodalLongContext/echo-loop.md
+ProblemMap/GlobalFixMap/MultimodalLongContext/fusion-blindspot.md
+ProblemMap/GlobalFixMap/MultimodalLongContext/fusion-latency.md
+ProblemMap/GlobalFixMap/MultimodalLongContext/modal-bridge-failure.md
+ProblemMap/GlobalFixMap/MultimodalLongContext/modality-dropout.md
+ProblemMap/GlobalFixMap/MultimodalLongContext/modality-swap.md
+ProblemMap/GlobalFixMap/MultimodalLongContext/multi-hop-collapse.md
+ProblemMap/GlobalFixMap/MultimodalLongContext/multi-seed-consistency.md
+ProblemMap/GlobalFixMap/MultimodalLongContext/multimodal-fusion-break.md
+ProblemMap/GlobalFixMap/MultimodalLongContext/phantom-visuals.md
+ProblemMap/GlobalFixMap/MultimodalLongContext/reference-bleed.md
+ProblemMap/GlobalFixMap/MultimodalLongContext/semantic-anchor-shift.md
+ProblemMap/GlobalFixMap/MultimodalLongContext/signal-drop.md
+ProblemMap/GlobalFixMap/MultimodalLongContext/spatial-fusion-error.md
+ProblemMap/GlobalFixMap/MultimodalLongContext/sync-loop.md
+ProblemMap/GlobalFixMap/MultimodalLongContext/time-sync-failure.md
+ProblemMap/GlobalFixMap/MultimodalLongContext/visual-anchor-shift.md
+
+Related structural fixes:
+ProblemMap/GlobalFixMap/MemoryLongContext/README.md
+ProblemMap/GlobalFixMap/Reasoning/README.md
+ProblemMap/GlobalFixMap/OCR_Parsing/README.md
+ProblemMap/rag-architecture-and-recovery.md
+ProblemMap/retrieval-playbook.md
+ProblemMap/retrieval-traceability.md
+ProblemMap/data-contracts.md
+ProblemMap/context-drift.md
+ProblemMap/entropy-collapse.md
+ProblemMap/SemanticClinicIndex.md
+
+Multimodal and long context scenarios:
+long document with images and tables loses alignment later
+figure caption no longer matches chart after many turns
+audio plus transcript plus slides get out of sync over time
+user asks about a specific figure but answer cites wrong one
+first runs use both text and images later runs use text only
+adding third modality breaks earlier working setup
+structured signals such as metrics or events disappear mid chain
+same question sometimes answered from image sometimes from text
+hallucinated diagram appears in reasoning but not in source
+vision or audio encoder version changed but logs do not show
+anchor_id reused across different images in one session
+
+Signals to check:
+delta s low on local snippet high on cross modality join
+lambda unstable when mixing modalities even if single is stable
+coverage good for text but low for visual anchors
+missing modality_id or source_url in retrieved snippets
+anchor_id or snippet_id missing or reused across items
+time_index gaps between audio and text segments
+bbox or spatial anchors missing in visual snippets
+different seeds pick different modalities for same question
+fusion layer ignores one modality on long windows only
+trace logs do not show which modality drove the final answer
+
+Normalization and contracts:
+require snippet_id modality_id anchor_id section_id for all snippets
+log time_index for audio and video aligned with transcript
+enforce unique anchor_id within each session
+record source_url or asset_id for every visual reference
+lock encoder versions for text vision audio in data contracts
+store per modality coverage and delta s in logs
+document fusion strategy and weights in retrieval playbook
+tie multimodal updates to explicit checkpoints not every token
+-->
+
+<!--
+Cross folder jumps:
+ProblemMap/GlobalFixMap/MultimodalLongContext/README.md
+ProblemMap/GlobalFixMap/MemoryLongContext/README.md
+ProblemMap/GlobalFixMap/Reasoning/README.md
+ProblemMap/GlobalFixMap/OCR_Parsing/README.md
+ProblemMap/rag-architecture-and-recovery.md
+ProblemMap/retrieval-playbook.md
+ProblemMap/retrieval-traceability.md
+ProblemMap/data-contracts.md
+ProblemMap/context-drift.md
+ProblemMap/entropy-collapse.md
+ProblemMap/SemanticClinicIndex.md
+-->
+
+
 # Multimodal & Long-Context — Global Fix Map
 
 <details>
@@ -36,6 +180,45 @@ Use this folder when models collapse, drift, or desync under multimodal fusion o
 - Cross-sequence fusion drops or swaps semantic anchors.  
 
 ---
+
+<!--
+Anchor Menu:
+open: alignment drift guide ProblemMap/GlobalFixMap/MultimodalLongContext/alignment-drift.md
+open: anchor misalignment guide ProblemMap/GlobalFixMap/MultimodalLongContext/anchor-misalignment.md
+open: boundary fade guide ProblemMap/GlobalFixMap/MultimodalLongContext/boundary-fade.md
+open: caption collapse guide ProblemMap/GlobalFixMap/MultimodalLongContext/caption-collapse.md
+open: cross modal bootstrap guide ProblemMap/GlobalFixMap/MultimodalLongContext/cross-modal-bootstrap.md
+open: cross modal trace guide ProblemMap/GlobalFixMap/MultimodalLongContext/cross-modal-trace.md
+open: desync amplification guide ProblemMap/GlobalFixMap/MultimodalLongContext/desync-amplification.md
+open: desync anchor guide ProblemMap/GlobalFixMap/MultimodalLongContext/desync-anchor.md
+open: echo loop guide ProblemMap/GlobalFixMap/MultimodalLongContext/echo-loop.md
+open: fusion blindspot guide ProblemMap/GlobalFixMap/MultimodalLongContext/fusion-blindspot.md
+open: fusion latency guide ProblemMap/GlobalFixMap/MultimodalLongContext/fusion-latency.md
+open: modal bridge failure guide ProblemMap/GlobalFixMap/MultimodalLongContext/modal-bridge-failure.md
+open: modality dropout guide ProblemMap/GlobalFixMap/MultimodalLongContext/modality-dropout.md
+open: modality swap guide ProblemMap/GlobalFixMap/MultimodalLongContext/modality-swap.md
+open: multi hop collapse guide ProblemMap/GlobalFixMap/MultimodalLongContext/multi-hop-collapse.md
+open: multi seed consistency guide ProblemMap/GlobalFixMap/MultimodalLongContext/multi-seed-consistency.md
+open: multimodal fusion break guide ProblemMap/GlobalFixMap/MultimodalLongContext/multimodal-fusion-break.md
+open: phantom visuals guide ProblemMap/GlobalFixMap/MultimodalLongContext/phantom-visuals.md
+open: reference bleed guide ProblemMap/GlobalFixMap/MultimodalLongContext/reference-bleed.md
+open: semantic anchor shift guide ProblemMap/GlobalFixMap/MultimodalLongContext/semantic-anchor-shift.md
+open: signal drop guide ProblemMap/GlobalFixMap/MultimodalLongContext/signal-drop.md
+open: spatial fusion error guide ProblemMap/GlobalFixMap/MultimodalLongContext/spatial-fusion-error.md
+open: sync loop guide ProblemMap/GlobalFixMap/MultimodalLongContext/sync-loop.md
+open: time sync failure guide ProblemMap/GlobalFixMap/MultimodalLongContext/time-sync-failure.md
+open: visual anchor shift guide ProblemMap/GlobalFixMap/MultimodalLongContext/visual-anchor-shift.md
+
+jump: multimodal long context readme ProblemMap/GlobalFixMap/MultimodalLongContext/README.md
+jump: memory long context readme ProblemMap/GlobalFixMap/MemoryLongContext/README.md
+jump: reasoning global fix map ProblemMap/GlobalFixMap/Reasoning/README.md
+jump: ocr parsing global fix map ProblemMap/GlobalFixMap/OCR_Parsing/README.md
+jump: rag architecture and recovery ProblemMap/rag-architecture-and-recovery.md
+jump: retrieval playbook knobs and metrics ProblemMap/retrieval-playbook.md
+jump: retrieval traceability and data contracts ProblemMap/retrieval-traceability.md ProblemMap/data-contracts.md
+jump: general context drift and entropy collapse ProblemMap/context-drift.md ProblemMap/entropy-collapse.md
+jump: semantic clinic index ProblemMap/SemanticClinicIndex.md
+-->
 
 ## Common failure patterns
 
