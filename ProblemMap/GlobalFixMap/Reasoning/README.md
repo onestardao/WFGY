@@ -1,3 +1,137 @@
+<!--
+Search Anchor:
+reasoning global fix map
+reasoning failure modes
+long chain stability
+chain of thought stability
+cot variance clamp
+reasoning collapse map
+hallucination reentry
+recursive reasoning loop
+logic collapse invariants
+symbolic collapse abstraction
+proof dead ends unprovable steps
+anchoring bridge proofs
+context stitching window joins
+redundant evidence collapse
+entropy overload long plans
+llm planning never converge
+multi step answer drift
+rerun same question different answer
+window roll loses anchor
+long chat loses earlier facts
+plan keeps growing never lands
+model rewrites reality in long plans
+drift across seeds and paraphrases
+auditable reasoning steps
+deterministic step count
+
+Typical reasoning bugs:
+steps keep growing and answer never lands
+model goes in circles and repeats itself
+model re asserts false claim after correction
+reasoning jumps without citing source step
+invariants vanish during abstraction jump
+proof chain stalls at unprovable step
+model changes interpretation mid chain
+long context window drops earlier anchor
+window joins flip the claim
+different runs choose different evidence
+reruns disagree on the same question
+minority facts drowned by many similar snippets
+model cherry picks evidence to support wrong answer
+different seeds give different final conclusion
+answer depends on irrelevant snippet ordering
+model conflates hypothetical with real data
+
+When to use this folder:
+rag already fixed but answers still drift
+retrieval stable yet explanation changes every run
+you see hallucination only in long plans
+cot used but not reproducible
+agent loop does many steps without progress
+mathematical proof suddenly switches frame
+safety or governance chain needs audit trail
+researcher wants to compare seeds and paraphrases
+benchmark requires stable long chain behavior
+legal or medical reasoning must be traceable
+
+Key metrics and targets:
+delta s question selected evidence <= 0.45 on all runs
+coverage of target section >= 0.70 with cite then explain
+lambda observe convergent across three paraphrases and two seeds
+e_resonance flat across long windows and window joins
+deterministic step count per stage after clamps applied
+no hallucination reentry after correction
+same conclusion across seeds given same evidence
+proof chain explicit about each jump and its source
+no hidden frame jumps or abstraction collapse
+reasons and evidence stay aligned across windows
+
+Core pages in this folder:
+ProblemMap/GlobalFixMap/Reasoning/entropy-overload.md
+ProblemMap/GlobalFixMap/Reasoning/recursive-loop.md
+ProblemMap/GlobalFixMap/Reasoning/hallucination-reentry.md
+ProblemMap/GlobalFixMap/Reasoning/logic-collapse.md
+ProblemMap/GlobalFixMap/Reasoning/symbolic-collapse.md
+ProblemMap/GlobalFixMap/Reasoning/proof-dead-ends.md
+ProblemMap/GlobalFixMap/Reasoning/anchoring-and-bridge-proofs.md
+ProblemMap/GlobalFixMap/Reasoning/context-stitching-and-window-joins.md
+ProblemMap/GlobalFixMap/Reasoning/chain-of-thought-variance-clamp.md
+ProblemMap/GlobalFixMap/Reasoning/redundant-evidence-collapse.md
+
+Related structural fixes:
+ProblemMap/rag-architecture-and-recovery.md
+ProblemMap/retrieval-playbook.md
+ProblemMap/retrieval-traceability.md
+ProblemMap/data-contracts.md
+ProblemMap/context-drift.md
+ProblemMap/entropy-collapse.md
+ProblemMap/rerankers.md
+ProblemMap/embedding-vs-semantic.md
+ProblemMap/Embeddings/metric_mismatch.md
+ProblemMap/Embeddings/normalization_and_scaling.md
+
+Reasoning scenarios:
+multi step financial plan changes answer across runs
+safety policy chain contradicts itself later
+math proof switches definition mid argument
+system design review flips conclusion with same docs
+governance decision tree loops on same node
+research summary hallucinate extra papers
+cot explanation disagrees with final answer
+agent rewrites the task mid execution
+long back and forth chat forgets original constraint
+model keeps expanding plan without committing
+
+Signals to check:
+coverage good but lambda unstable
+delta s low on evidence but conclusion different
+citations stable but reasoning text drifts
+proof steps not numbered or auditable
+no explicit reference to step that caused jump
+branching factor keeps increasing per step
+model keeps asking for more context
+seed one and seed two disagree on final verdict
+paraphrase question changes the reasoning path
+-->
+
+<!--
+Cross folder jumps:
+ProblemMap/GlobalFixMap/Reasoning/README.md
+ProblemMap/rag-architecture-and-recovery.md
+ProblemMap/retrieval-playbook.md
+ProblemMap/retrieval-traceability.md
+ProblemMap/context-drift.md
+ProblemMap/entropy-collapse.md
+ProblemMap/rerankers.md
+ProblemMap/GlobalFixMap/Retrieval/README.md
+ProblemMap/GlobalFixMap/Embeddings/README.md
+ProblemMap/GlobalFixMap/Chunking/README.md
+ProblemMap/SemanticClinicIndex.md
+-->
+
+
 # Reasoning — Global Fix Map
 
 <details>
@@ -6,7 +140,7 @@
 <br>
 
   > You are in a specialist desk.  
-  > For full triage and doctors on duty, return here:  
+  > For full triage and doctors on duty, return here:  a
   > 
   > - [**WFGY Global Fix Map** — main Emergency Room, 300+ structured fixes](https://github.com/onestardao/WFGY/blob/main/ProblemMap/GlobalFixMap/README.md)  
   > - [**WFGY Problem Map 1.0** — 16 reproducible failure modes](https://github.com/onestardao/WFGY/blob/main/ProblemMap/README.md)  
@@ -20,6 +154,27 @@ Use this folder when answers drift across runs, chains dead end, or the model re
 Every page maps symptoms to exact WFGY fixes with measurable targets. No infra change required.
 
 ---
+
+<!--
+Anchor Menu:
+open: entropy overload guide ProblemMap/GlobalFixMap/Reasoning/entropy-overload.md
+open: recursive loop guide ProblemMap/GlobalFixMap/Reasoning/recursive-loop.md
+open: hallucination reentry guide ProblemMap/GlobalFixMap/Reasoning/hallucination-reentry.md
+open: logic collapse guide ProblemMap/GlobalFixMap/Reasoning/logic-collapse.md
+open: symbolic collapse guide ProblemMap/GlobalFixMap/Reasoning/symbolic-collapse.md
+open: proof dead ends guide ProblemMap/GlobalFixMap/Reasoning/proof-dead-ends.md
+open: anchoring and bridge proofs guide ProblemMap/GlobalFixMap/Reasoning/anchoring-and-bridge-proofs.md
+open: context stitching and window joins guide ProblemMap/GlobalFixMap/Reasoning/context-stitching-and-window-joins.md
+open: chain of thought variance clamp guide ProblemMap/GlobalFixMap/Reasoning/chain-of-thought-variance-clamp.md
+open: redundant evidence collapse guide ProblemMap/GlobalFixMap/Reasoning/redundant-evidence-collapse.md
+
+jump: rag architecture and recovery visual map ProblemMap/rag-architecture-and-recovery.md
+jump: retrieval playbook knobs and metrics ProblemMap/retrieval-playbook.md
+jump: retrieval traceability and data contracts ProblemMap/retrieval-traceability.md ProblemMap/data-contracts.md
+jump: long context drift and entropy collapse ProblemMap/context-drift.md ProblemMap/entropy-collapse.md
+jump: rerankers for ordering evidence ProblemMap/rerankers.md
+-->
+
 
 ## Orientation: what each page solves
 
