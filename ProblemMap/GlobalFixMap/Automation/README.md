@@ -1,3 +1,77 @@
+<!--
+Search Anchor:
+automation platform bugs
+workflow automation failures
+zapier zap not working
+zapier duplicate triggers
+zapier runs twice
+zapier retry storm
+zapier webhook timeout
+n8n workflow stuck
+n8n execution retry loop
+n8n idempotency dedupe
+make integromat scenario duplicated
+make scenario retries
+power automate flow failed
+power automate runs twice
+power automate trigger duplicates
+retool workflow cron drift
+retool job retries
+ifttt applet not firing
+pipedream webhook handler timeout
+github actions workflow stuck
+github actions rerun duplicates
+airflow dag stuck
+airflow scheduler time drift
+airflow retry overload
+airtable automation runs twice
+asana rules duplicated
+crm automation duplicate leads
+gohighlevel ghl workflow duplication
+
+Failure classes / Fix intent:
+at least once delivery
+exactly once semantics
+idempotency key
+dedupe key
+retries with backoff and jitter
+rate limit storm
+webhook acknowledged before persist
+store then process pattern
+cron timezone drift
+utc scheduling
+time drift and clock skew
+bootstrap ordering
+cold start ordering
+deployment deadlock
+predeploy collapse
+traceability breaks
+citation mismatch
+data contract missing offsets tokens
+embedding semantic drift
+high similarity wrong meaning
+vector index not ready
+VECTOR_READY INDEX_HASH
+
+Routing to vendor pages:
+Zapier -> Automation/zapier.md
+n8n -> Automation/n8n.md
+Make Integromat -> Automation/make.md
+Retool -> Automation/retool.md
+IFTTT -> Automation/ifttt.md
+Pipedream -> Automation/pipedream.md
+Power Automate -> Automation/power-automate.md
+GitHub Actions -> Automation/github-actions.md
+Airflow -> Automation/airflow.md
+Airtable Automations -> Automation/airtable.md
+Asana Rules -> Automation/asana.md
+GoHighLevel GHL -> Automation/ghl.md
+Parabola -> Automation/parabola.md
+LangChain automation -> Automation/langchain.md
+LlamaIndex automation -> Automation/llamaindex.md
+-->
+
+
 # Automation Platforms — Global Fix Map
 
 <details>
