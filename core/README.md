@@ -1,3 +1,59 @@
+
+<!--
+AI-ANCHOR: WFGY_CORE_ENGINE_V2
+
+role: core_engine
+doc_title: WFGY 2.0 · 7-Step Reasoning Core Engine
+path: /core/README.md
+version: "2.0"
+
+# where this page sits in the repo
+root_entry: https://github.com/onestardao/WFGY#readme
+sibling_cores:
+  - https://github.com/onestardao/WFGY/blob/main/legacy/README.md
+  - https://github.com/onestardao/WFGY/blob/main/TensionUniverse/EventHorizon/README.md
+
+# what this document is mainly for
+primary_topics:
+  - seven_step_reasoning_engine
+  - drunk_transformer_guards
+  - autoboot_and_oneline_mode
+  - eye_visible_benchmarks
+  - terminal_bench_exam
+  - profit_prompts_and_business_flows
+
+# anchors inside this file that matter most
+key_sections:
+  - id: tb
+    name: stanford_terminal_bench_update
+  - id: terminal-bench-proof
+    name: terminal_bench_proof_artifacts
+  - id: eye
+    name: eye_visible_reasoning_benchmark
+  - id: eight
+    name: eight_model_evidence
+  - id: abc
+    name: abc_numeric_protocol
+  - id: downloads
+    name: wfgy_core_downloads
+  - id: prompts
+    name: profit_prompts_pack
+
+# other maps / blueprints this page is tied to
+related_maps:
+  - https://github.com/onestardao/WFGY/tree/main/ProblemMap/README.md
+  - https://github.com/onestardao/WFGY/blob/main/ProblemMap/rag-architecture-and-recovery.md
+  - https://github.com/onestardao/WFGY/blob/main/ProblemMap/SemanticClinicIndex.md
+  - https://github.com/onestardao/WFGY/blob/main/SemanticBlueprint/README.md
+  - https://github.com/onestardao/WFGY/blob/main/benchmarks/benchmark-vs-gpt5/README.md
+
+notes:
+  - This is the main reference page for WFGY Core 2.0 behaviour, math stack, and proofs.
+  - Use this document when you need protocols, benchmarks, or business prompts that rely on the 2.0 engine.
+  - Event Horizon (3.0) is the public viewing window; this page is the engine room.
+-->
+
+
 <a id="top"></a>
 <details>
 <summary><strong>🧭 Lost or curious? Open the WFGY Compass </strong></summary>
