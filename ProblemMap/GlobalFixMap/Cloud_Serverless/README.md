@@ -1,3 +1,91 @@
+
+<!--
+Search Anchor:
+cloud serverless bugs
+serverless guardrails
+edge runtime failures
+cloudflare workers bugs
+vercel function timeout
+vercel edge cache stale
+aws lambda cold start
+lambda concurrency throttling
+lambda timeout streaming
+google cloud run cold start
+cloud run request timeout
+azure functions cold start
+fly io deploy issues
+preview prod mismatch
+dev prod drift serverless
+environment mismatch
+deployment traffic shaping
+canary release serverless
+blue green switchover
+region failover drills
+multi region routing issues
+dns ttl sticky sessions
+cache key drift
+edge cache invalidation
+stale content after deploy
+webhook storms
+retry storm jitter backoff
+at least once delivery
+idempotency key serverless
+dedupe key kv fence
+stateless job lost work
+kv queue pattern
+timeouts streaming body limits
+proxy buffer streaming stalls
+ttfb slow streaming
+network egress allowlist
+vpc egress rules
+data exfiltration webhook
+pii in logs
+pii in vector payload
+dlp redact payload
+secrets rotation overlap window
+token leak rotation failure
+quotas scaling budget caps
+serverless throttles surprise bill
+observability slo templates
+golden signals serverless
+error budget alerts
+rag route drift after infra change
+retrieval traceability broken
+citation mismatch offsets tokens
+data contracts schema lock
+bootstrap ordering
+deployment deadlock
+predeploy collapse
+
+Routing to pages in this folder:
+cold start concurrency -> Cloud_Serverless/cold_start_concurrency.md
+streaming stalls body limits -> Cloud_Serverless/timeouts_streaming_body_limits.md
+stateless kv queue patterns -> Cloud_Serverless/stateless_kv_queue_patterns.md
+edge cache invalidation -> Cloud_Serverless/edge_cache_invalidation.md
+network egress and vpc -> Cloud_Serverless/network_egress_and_vpc.md
+deploy traffic shaping -> Cloud_Serverless/deploy_traffic_shaping.md
+serverless limits matrix -> Cloud_Serverless/serverless_limits_matrix.md
+secrets rotation -> Cloud_Serverless/secrets_rotation.md
+multi region routing -> Cloud_Serverless/multi_region_routing.md
+region failover drills -> Cloud_Serverless/region_failover_drills.md
+observability slo -> Cloud_Serverless/observability_slo.md
+canary release serverless -> Cloud_Serverless/canary_release_serverless.md
+blue green switchovers -> Cloud_Serverless/blue_green_switchovers.md
+disaster recovery tabletop -> Cloud_Serverless/disaster_recovery_tabletop.md
+data retention backups -> Cloud_Serverless/data_retention_and_backups.md
+privacy and pii edges -> Cloud_Serverless/privacy_and_pii_edges.md
+
+Cross links:
+bootstrap ordering -> ProblemMap/bootstrap-ordering.md
+deployment deadlock -> ProblemMap/deployment-deadlock.md
+predeploy collapse -> ProblemMap/predeploy-collapse.md
+retrieval traceability -> ProblemMap/retrieval-traceability.md
+data contracts -> ProblemMap/data-contracts.md
+prompt injection -> ProblemMap/prompt-injection.md
+bluffing -> ProblemMap/bluffing.md
+-->
+
+
 # Cloud & Serverless — Guardrails and Fix Patterns
 
 <details>
