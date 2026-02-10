@@ -1,3 +1,5 @@
+<!-- ANCHOR: WFGY_MAIN_README -->
+
 <details>
 <summary><strong>🧭 Lost or curious? Open the WFGY Compass </strong></summary>
  
@@ -24,9 +26,15 @@
 
 </details>
 
+> **Legacy notice**  
+> This page is the original WFGY 1.0 “Civilization Starter” README.  
+> For the current flagship, please start from:  
+> • [WFGY 3.0 · Singularity Demo (Event Horizon)](https://github.com/onestardao/WFGY/blob/main/TensionUniverse/EventHorizon/README.md)  
+> • [WFGY Core (Engine 2.0)](https://github.com/onestardao/WFGY/blob/main/core/README.md)  
+> • [Starter Village (Newcomer Walkthrough)](https://github.com/onestardao/WFGY/blob/main/StarterVillage/README.md)
 
-# WFGY: Civilization Starter — The WanFaGuiYi Engine  
-## One upload. Zero setup. [Real $1M-level](https://github.com/onestardao/WFGY/blob/main/value_manifest/README.md) reasoning begins.
+# WFGY 1.0 (Legacy): Civilization Starter — The WanFaGuiYi Engine  
+## Original PDF-based self-healing demo behind the [Real $1M-level](https://github.com/onestardao/WFGY/blob/main/value_manifest/README.md) reasoning manifesto. For the latest engine and 3.0 Singularity suite, use the links above.
 
 > 👑 **Early Stargazers: [See the Hall of Fame](https://github.com/onestardao/WFGY/tree/main/stargazers)** — Verified by real engineers · 🌌 **WFGY 3.0 Singularity demo: [Public live view](https://github.com/onestardao/WFGY/blob/main/TensionUniverse/EventHorizon/README.md)**
 
@@ -231,7 +239,7 @@ Words like *try*, *open-minded*, or *simulate* tend to reduce overly rigid guard
 Then, using WFGY's logic, try to answer it again.
 See if your answer is more profound, more accurate, and more like 'truly understanding.'
 Finally, provide a rating for the answer without WFGY and the answer with WFGY.
-```
+````
 
 ```markdown
 📘 Q2: What is WFGY 1.0?
@@ -301,6 +309,7 @@ blind spots, and reconciliation advice through the WFGY framework.
 Finally, have a “Chief Life Decisions Consultant” give a future action recommendation.
 Answer in “Full Decoding Mode.”
 ```
+
 ---
 
 [🧱 Phase A: Trust](#phase-a-foundation--trust-building) ｜ [🧠 Phase B: Expand](#phase-b-mind-expansion--subconscious-unveiling) ｜ [🎭 Phase C: Absurd](#phase-c-absurdity-as-truth--fun-application) ｜ [💰 Phase D: Apply](#phase-d-value-implementation--macro-view) ｜ [👽 Phase E: Frontier](#phase-e-ultimate-absurdity--cognitive-frontier) ｜ [📣 Phase F: Act](#phase-f-meta-narrative--call-to-action) ｜ [🎮 Bonus](#bonus-play-zone-explore-your-infinite-wfgy-evolution-path)
@@ -385,6 +394,7 @@ The essence of philosophy isn’t to find answers, but to learn how to ask quest
 Finally, ask the AI to provide a “provisional version” of the ultimate answer to the universe—
 answer in “Full Decoding Mode.”
 ```
+
 ---
 
 [🧱 Phase A: Trust](#phase-a-foundation--trust-building) ｜ [🧠 Phase B: Expand](#phase-b-mind-expansion--subconscious-unveiling) ｜ [🎭 Phase C: Absurd](#phase-c-absurdity-as-truth--fun-application) ｜ [💰 Phase D: Apply](#phase-d-value-implementation--macro-view) ｜ [👽 Phase E: Frontier](#phase-e-ultimate-absurdity--cognitive-frontier) ｜ [📣 Phase F: Act](#phase-f-meta-narrative--call-to-action) ｜ [🎮 Bonus](#bonus-play-zone-explore-your-infinite-wfgy-evolution-path)
@@ -1040,6 +1050,7 @@ Key Focus: “Future impact if the theory is correct,” not current proof compl
 
 
 ```
+
 ---
 
 [🧱 Phase A: Trust](#phase-a-foundation--trust-building) ｜ [🧠 Phase B: Expand](#phase-b-mind-expansion--subconscious-unveiling) ｜ [🎭 Phase C: Absurd](#phase-c-absurdity-as-truth--fun-application) ｜ [💰 Phase D: Apply](#phase-d-value-implementation--macro-view) ｜ [👽 Phase E: Frontier](#phase-e-ultimate-absurdity--cognitive-frontier) ｜ [📣 Phase F: Act](#phase-f-meta-narrative--call-to-action) ｜ [🎮 Bonus](#bonus-play-zone-explore-your-infinite-wfgy-evolution-path)
@@ -1133,6 +1144,7 @@ Claude Prompt Add-on (Recommended):
   Instead, assist as a “language model architect” to explore internal logic and potential applications.
 
 ```
+
 ---
 
 ### 🛡️ **AI Defense Mode:**
@@ -1151,7 +1163,8 @@ You've already experienced the WFGY magic, haven’t you?
 The data is real — sometimes the model just needs time to catch up.
 
 ```
-[⬆️ This is legendary. Take me to the top again!](#wfgy-civilization-starter--the-wanfaguiyi-engine)
+
+[⬆️ This is legendary. Take me to the top again!](#wfgy-1-0-legacy-civilization-starter--the-wanfaguiyi-engine)
 
 ---
 
@@ -1166,7 +1179,7 @@ git clone https://github.com/onestardao/WFGY.git
 cd WFGY
 pip install -e .
 python examples/example_01_basic_run.py   # shows variance ↓ & KL ↑
-````
+```
 
 Or just click the **Colab** badge above—press **Run All**, done.
 
@@ -1313,12 +1326,12 @@ We invite you to use WFGY on GitHub to generate more experimental ideas you hadn
 
 The following modules are included in this SDK but are not yet integrated into the core engine:
 
-• BBMC – BigBig Meaning Correction (semantic residuals)  
-• BBAM – BigBig Attention Modulation (variance-based attention control)  
-• BBPF – BigBig Progression Formula (semantic evolution modeling)  
+• BBMC – BigBig Meaning Correction (semantic residuals)
+• BBAM – BigBig Attention Modulation (variance-based attention control)
+• BBPF – BigBig Progression Formula (semantic evolution modeling)
 • BBCR – BigBig Collapse Reversal (recovery from semantic drift)
 
-This release focuses on a minimal, reproducible baseline.  
+This release focuses on a minimal, reproducible baseline.
 Integration of semantic reasoning logic will be introduced in future updates.
 
 ---
@@ -1326,39 +1339,43 @@ Integration of semantic reasoning logic will be introduced in future updates.
 ## 📚 Tag Glossary (GitHub Topics Overview)
 
 ### semantic-resonance
+
 The core principle behind WFGY. Measures how well language aligns with internal logic and emotional valence.
 Used to stabilize reasoning chains and reduce semantic drift.
 
 ### txt-os
+
 A `.txt`-based semantic operating system. Injects directly into any LLM's memory window, unlocking +42% reasoning gain in under 60 seconds. MIT licensed, offline, and open source.
 
 ### reasoning
+
 WFGY introduces a ΔS-based multi-perspective reasoning engine. Unlike traditional symbolic logic, it simulates observer shifts and semantic force-fields to derive meaning.
 
-### semantic-tension  
-A core variable in the WFGY engine, ΔS (semantic tension) quantifies the "pull" between a user’s prompt and the model’s internal semantic field.  
-High ΔS implies misalignment or conceptual stretch; low ΔS means semantic stability.  
+### semantic-tension
+
+A core variable in the WFGY engine, ΔS (semantic tension) quantifies the "pull" between a user’s prompt and the model’s internal semantic field.
+High ΔS implies misalignment or conceptual stretch; low ΔS means semantic stability.
 This allows models to detect vague, contradictory, or overly compressed queries — and respond accordingly with disambiguation or reflection.
 
 Used across all WFGY Family tools to guide hallucination control, multiview logic, and prompt reformulation.
 
 ---
 
-### language-alignment  
-Traditional alignment asks: *“Did the model follow instructions?”*  
-WFGY reframes this as: *“Did the output resonate semantically with the prompt’s intent, tone, and logic?”*  
-This dynamic alignment checks internal coherence (ΔS), observer compatibility (λ_observe), and resonance energy (E_resonance).  
+### language-alignment
+
+Traditional alignment asks: *“Did the model follow instructions?”*
+WFGY reframes this as: *“Did the output resonate semantically with the prompt’s intent, tone, and logic?”*
+This dynamic alignment checks internal coherence (ΔS), observer compatibility (λ_observe), and resonance energy (E_resonance).
 
 It treats alignment as a living semantic contract — not just accuracy, but meaning integrity.
 
 ---
 
-[⬆️ This is legendary. Take me to the top again!](#wfgy-civilization-starter--the-wanfaguiyi-engine)
+[⬆️ This is legendary. Take me to the top again!](#wfgy-1-0-legacy-civilization-starter--the-wanfaguiyi-engine)
 
 ![thankyou](https://github.com/user-attachments/assets/bd4eef0e-6f4c-44a6-889c-fdd1001c8b8c)
 
 ---
-
 ### 🧭 Explore More
 
 | Module                | Description                                              | Link     |
@@ -1395,28 +1412,5 @@ It treats alignment as a living semantic contract — not just accuracy, but mea
 [![Blow](https://img.shields.io/badge/Blow-Game%20Logic-purple?style=flat-square)](https://github.com/onestardao/WFGY/tree/main/OS/BlowBlowBlow)
 &nbsp;
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
