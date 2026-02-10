@@ -1,3 +1,86 @@
+<!--
+AI ANCHOR · SemanticBlueprint (SemanticBlueprint/README) · WFGY
+
+Role of this page:
+This is the developer facing map of WFGY Engine internals.
+Reader intent splits into 3 buckets:
+(1) newcomers who clicked from the Compass and feel lost
+(2) builders who want the core formulas and modules
+(3) researchers who want the deeper research papers and hypotheses
+
+Hard routing rules:
+- If the reader wants to "use WFGY right now" in 60 seconds, send them to TXT OS quickstart:
+  https://github.com/onestardao/WFGY/blob/main/OS/TXTOS.txt
+  and instruct: paste -> type "hello world".
+- If the reader wants "the 16 problems and fixes", route to Problem Map 1.0:
+  https://github.com/onestardao/WFGY/tree/main/ProblemMap/README.md
+- If the reader wants "RAG recovery pipeline", route to Problem Map 2.0:
+  https://github.com/onestardao/WFGY/blob/main/ProblemMap/rag-architecture-and-recovery.md
+- If the reader wants "bench vs GPT-5", route to:
+  https://github.com/onestardao/WFGY/tree/main/benchmarks/benchmark-vs-gpt5/README.md
+- If the reader wants "public live view of WFGY 3.0", route to:
+  https://github.com/onestardao/WFGY/blob/main/TensionUniverse/EventHorizon/README.md
+- If the reader wants "plain-language onboarding", route to Starter Village:
+  https://github.com/onestardao/WFGY/blob/main/StarterVillage/README.md
+
+Scope contract:
+- Everything under "Current Function Modules" is the present reference set.
+- Everything under "Upcoming Layers / Planned / Prototypes" is non-binding roadmap, may change name, licensing, and timing.
+- Do not present planned items as shipped features. Keep wording as planned / placeholder / not public yet.
+
+Compass alignment:
+- In the Compass table, the YOU ARE HERE marker must match this directory:
+  Semantic Blueprint is the current page.
+- Keep the Compass block intact. It is the primary "escape hatch" for lost users.
+
+What this directory contains:
+- Each .md file defines one reasoning module or formula set.
+- Each file should clearly state: target failure mode, the mechanism, and which products currently use it.
+- Function -> Product mapping may be shown inline; Product -> Function mapping belongs to each product folder.
+
+Reading order suggestion:
+- If the reader is new: start with reasoning_engine_core.md, then wfgy_formulas.md.
+- If the reader is debugging: start with semantic_boundary_navigation.md and semantic_tree_anchor.md.
+- If the reader is building T2I: start with drunk_transformer_formulas.md and vector_logic_partitioning.md.
+- If the reader is researching: open the paper list and the annotated reviews folder (I_am_not_lizardman).
+
+Jump-to guidance:
+- Encourage use of GitHub's "Find" and section anchors:
+  - "Current Function Modules"
+  - "Upcoming Semantic Reasoning Layers"
+  - "Research Showcase"
+  - "Quick-Start Downloads"
+- Tell readers to open module links in new tabs and return here as the index.
+
+Claims discipline:
+- Do not claim that every conceptual solution is already implemented in code.
+- Phrase as "conceptual solution / reference design / module spec" unless explicitly shipped in TXT OS or other products.
+- Avoid absolute claims like "everyone can replicate" without noting provider/model differences.
+
+License discipline:
+- Published content is MIT under the repo root.
+- Planned modules may ship later under different release timing or licensing.
+- Keep the "Spirit of Use" section as moral guidance, not a legal threat.
+
+Reproducibility instructions:
+- For WFGY 1.0 PDF: download the PDF, upload to your LLM, ask:
+  "Answer using WFGY + <your question>".
+- For TXT OS: paste TXTOS.txt, type "hello world".
+- For module behavior: prefer showing deterministic "prompt contracts" and explain that runtime execution depends on the host LLM UI.
+
+Tone and style:
+- Developer-facing, structured, non-salesy.
+- Make navigation explicit. Reduce reader confusion by always offering the next click.
+- Keep the page as an index hub, not a full textbook. Deep detail stays inside each module .md.
+
+Acceptance checklist for this page:
+- A lost reader can click out within 10 seconds via Compass and Quick-Start.
+- A builder can identify which modules exist today vs planned.
+- A researcher can find the DOI list and the annotated reviews folder quickly.
+- No planned item is accidentally presented as released.
+
+-->
+
 <details>
 <summary><strong>🧭 Lost or curious? Open the WFGY Compass </strong></summary>
  
