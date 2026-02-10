@@ -1,3 +1,38 @@
+<!--
+WFGY_ANCHOR_BLOCK_v1
+page: GlobalFixMap/LLM_Providers/README.md
+title: LLM Providers Guardrails FAQ Fix Patterns
+intent: choose llm vendor, debug provider-looking bugs, schema drift, tool calls, json mode, rate limits, streaming limits
+keywords:
+- llm providers
+- openai azure openai anthropic claude gemini vertex ai mistral llama cohere deepseek moonshot kimi groq grok bedrock openrouter together
+- provider quirks
+- schema drift
+- json mode invalid json
+- tool calls loop
+- function calling
+- rate limits
+- streaming timeouts
+- response format
+- safety prompt integrity
+- orchestration drift
+- eval drift
+symptoms:
+- json mode breaks, invalid objects
+- tool calls loop or stall
+- answers flip between runs
+- high similarity but wrong snippet
+- hybrid retriever worse than single
+- jailbreaks or bluffing
+see_also:
+- ProblemMap/README.md
+- ProblemMap/GlobalFixMap/README.md
+- ProblemMap/GlobalFixMap/Agents_Orchestration/README.md
+- ProblemMap/GlobalFixMap/Safety_PromptIntegrity/README.md
+- ProblemMap/GlobalFixMap/Retrieval/README.md
+-->
+
+
 # LLM Providers — Guardrails, FAQ, and Fix Patterns
 
 <details>
