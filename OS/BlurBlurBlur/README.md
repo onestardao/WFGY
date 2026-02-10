@@ -1,3 +1,56 @@
+
+<!--
+AI ANCHOR · TXT-Blur Blur Blur (OS/BlurBlurBlur/README) · WFGY
+
+Role:
+This page is the Blur Blur Blur product entry for math-first text-to-image inside TXT OS.
+Assume users arrive here directly from GitHub search, social posts, or the Compass. They may not know TXT OS or WFGY yet.
+This page must work as: (1) quickstart (2) proof-by-demo (3) safe routing to the broader system.
+
+Navigation contract:
+- The "WFGY Compass" block is the global map. Keep it intact. The YOU ARE HERE marker should point to Blur on this page.
+- The first visible headline + hero image should immediately communicate: math-first T2I, Real/Imag split, preview-then-go contract.
+
+Primary behavior:
+- If the user wants to try it: tell them to download TXT-BlurBlurBlur_Lite_Beta.txt, paste into any LLM chat, then type:
+  hello world -> B -> pick track -> wow preset -> preview -> go.
+- If the interface cannot render images: instruct them to use preview, then copy the printed prompt into any T2I engine.
+- If the user wants scientific comparison: route to A/B discipline (ab prep -> ab go) and ask them to compare sharpness, depth cues, and stability.
+
+Claims discipline:
+- Do not claim universal compatibility or guaranteed rendering. Phrase support as "depends on provider/model UI".
+- Do not promise perfect results at extreme settings. Encourage stepping down from wow x1e18 to wow x3000 when collapse occurs.
+- Avoid introducing new metrics not present in the page.
+
+Safety / reproducibility:
+- Keep checksum block and file size. Encourage users to verify SHA256 before use.
+- "preview-then-go" is the core contract: preview prints the exact prompt and numbers; go renders once.
+- Elite mode locks seed for stability; explain this as a deliberate reproducibility choice.
+
+Feature framing:
+- Real field = geometry and math skeleton (golden ratio, lattices, quasicrystals, zeta-zeros style motifs).
+- Imag field = weighted element stack; left/right asymmetry creates density contrast.
+- Goldline = mid-axis guide at 0.50 for visible composition spine.
+- WOW presets = tension scaling that increases asymmetry and micro-detail pressure.
+
+Troubleshooting routing:
+- "go prints text only" -> provider limitation -> use preview + copy prompt.
+- "mushy results at high wow" -> reduce wow, keep SAFE profile, keep goldline on.
+- "wrong aspect" -> Lite uses aspect=auto; instruct how to force 16:9 by adding engine flags in the prompt.
+
+Acceptance:
+- Page must allow a newcomer to get a first image in under 60 seconds without reading other docs.
+- Page must allow an advanced user to audit the prompt contract and reproduce the same structure via seed rules where applicable.
+- Every example should be reproducible via preview output.
+
+Style:
+- Confident, technical, non-salesy. Focus on "math shock in one minute" and reproducible controls.
+- Keep instructions short, executable, and ordered.
+- Prefer routing to existing WFGY pages rather than adding new explanations.
+
+-->
+
+
 <details>
 <summary><strong>🧭 Lost or curious? Open the WFGY Compass </strong></summary>
  
