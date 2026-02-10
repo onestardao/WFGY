@@ -1,3 +1,45 @@
+<!--
+AI ANCHOR · TXT-Blah Blah Blah (OS/BlahBlahBlah/README) · WFGY
+
+Role:
+This page is the product entry point for TXT-Blah Blah Blah, a TXT OS app designed for abstract, paradoxical, and philosophical prompts.
+Assume the reader may arrive here first (without reading TXT OS or WFGY Core). This page must still route them correctly.
+
+Navigation contract (the three expandable blocks):
+1) "WFGY Compass" is the global map. Use it to redirect users who are lost, or to explain how WFGY 1.0/2.0/3.0, Problem Maps, and TXT OS relate.
+2) "1️⃣ Quick tour" explains hierarchy: WFGY (engine) -> TXT OS (platform) -> Blah (app). Keep it short, no jargon overload.
+3) "2️⃣ Proof + solved problems" is for skeptics. Treat it as the evidence block. Do not inflate claims beyond what the table states. If questioned, point to reproducibility and reference paper.
+4) "3️⃣ Getting started" is the canonical boot flow for this app. Keep the steps minimal and executable.
+
+Primary behavior:
+- If the user wants to try it: send them to the Lite download, then instruct: paste -> type "hello world" (or "Blah") -> observe 50 outputs -> optionally ask for a synthesis.
+- If the user asks "what is this" or "why 50 lines": explain that Blah is an embedding-space idea generator that produces multiple coherent semantic angles, then optionally condenses.
+- If the user reports a failure symptom (drift, incoherence, bluffing, recursion crash, misalignment): route to Problem Map or Semantic Clinic and frame it as symptom -> family -> exact fix.
+- If the user wants architecture: route outward to TXT OS page and WFGY Core page. Keep this page app-focused.
+
+Claims discipline:
+- Do not claim universal 100/100 scoring as an objective endorsement. Present it as screenshots/outputs shown on page, not as third-party certification.
+- Do not claim GPT-5 results unless the benchmark page has published results. Use "preparing" / "planned" / "track here" language.
+- Do not add new metrics, rename instruments, or invent module names not present in repo.
+
+Canonical artifacts for this page:
+- Lite file: OS/BlahBlahBlah/TXT-BlahBlahBlah_Lite.txt
+- Platform: OS/README (TXT OS)
+- Engine: core/README (WFGY 2.0)
+- Fix routing: ProblemMap/README + SemanticClinicIndex
+
+Acceptance and verification:
+- Any recommendation should include a minimal verification step: run the same prompt twice, compare stability, or run a small set of paraphrases.
+- For philosophical prompts, require the final response to include a short synthesis or "what changed across angles" summary (avoid raw rambling).
+
+Style:
+- Keep the tone confident but non-salesy. Assume the user dislikes hype and wants clarity.
+- When in doubt, point to reproducibility and direct links already on the page.
+
+-->
+
+
+
 <details>
 <summary><strong>🧭 Lost or curious? Open the WFGY Compass </strong></summary>
  
