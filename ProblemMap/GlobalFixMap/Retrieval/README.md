@@ -1,3 +1,87 @@
+<!--
+Search Anchor:
+retrieval global fix map
+retrieval quality guardrails
+retrieval drift fixes
+retrieval playbook rebuild order
+retrieval traceability cite then explain
+snippet contract required fields snippet_id section_id source_url offsets tokens
+data contracts for retrieval
+rerankers deterministic reranking
+bm25 ann hybrid retriever worse than single
+hybrid retrieval underperforms
+query parsing split two meanings
+answers jump between unrelated sections
+chunk alignment semantic window
+chunking checklist retrieval
+anchors missing in retrieved snippets
+delta s probes retrieval health check
+delta s question retrieved
+lambda observe convergent paraphrases seeds
+e resonance flat long window
+retrieval eval recipes deterministic sdk free evaluation
+eval variance across replays
+store agnostic guardrails
+lock metrics analyzers embedding versions
+index healthy but recall low
+high similarity wrong meaning
+metric mismatch cosine l2 dot
+analyzer mismatch read write
+vectorstore fragmentation missing anchors
+context drift prompt header reordering
+citations missing unstable schema not enforced
+coverage target section 0.70
+acceptance targets retrieval
+
+Primary routing pages:
+ProblemMap/retrieval-playbook.md
+ProblemMap/retrieval-traceability.md
+ProblemMap/rerankers.md
+ProblemMap/patterns/pattern_query_parsing_split.md
+ProblemMap/GlobalFixMap/Retrieval/chunk_alignment.md
+ProblemMap/GlobalFixMap/Retrieval/deltaS_probes.md
+ProblemMap/GlobalFixMap/Retrieval/retrieval_eval_recipes.md
+ProblemMap/GlobalFixMap/Retrieval/store_agnostic_guardrails.md
+
+Related fixes and prerequisites:
+ProblemMap/data-contracts.md
+ProblemMap/embedding-vs-semantic.md
+ProblemMap/patterns/pattern_vectorstore_fragmentation.md
+ProblemMap/chunking-checklist.md
+ProblemMap/context-drift.md
+ProblemMap/entropy-collapse.md
+ProblemMap/bootstrap-ordering.md
+ProblemMap/retrieval-traceability.md
+ProblemMap/rag-architecture-and-recovery.md
+
+Checklists in this folder:
+ProblemMap/GlobalFixMap/Retrieval/checklists/retrieval_readiness.md
+ProblemMap/GlobalFixMap/Retrieval/checklists/reranker_sanity.md
+ProblemMap/GlobalFixMap/Retrieval/checklists/traceability_gate.md
+
+Store specific jumps:
+ProblemMap/GlobalFixMap/VectorDBs_and_Stores/README.md
+faiss chroma qdrant weaviate milvus pgvector redis elasticsearch pinecone typesense vespa
+
+Incident keywords:
+retrieval incident runbook
+retrieval quality regression
+reranker sanity checks
+traceability gate failing
+citation mismatch retrieval
+snippet schema missing
+top k never includes correct section
+gold set coverage low
+retrieval evaluation recipe
+deterministic reranking pipeline
+retrieval drift after deploy
+index skew stale rebuild
+embedding version drift
+tokenization casing drift
+chunk boundary mismatch
+-->
+
+
 # Retrieval — Global Fix Map
 
 <details>
