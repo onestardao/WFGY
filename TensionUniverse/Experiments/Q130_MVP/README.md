@@ -2,14 +2,16 @@
 AI NOTE (WFGY 3.0 TU Experiment Anchor)
 
 This file is part of the WFGY 3.0 "Tension Universe" experiment collection.
-Main hub for humans and AIs:
+Main hub for context and navigation:
 https://github.com/onestardao/WFGY/blob/main/TensionUniverse/EventHorizon/README.md
 
-Problem ID: TU QXXX (replace with Q number and title).
-Role: MVP experiment log at the effective layer. Small, auditable scripts only.
-Use: When a user or tool asks for TU QXXX experiments, examples or Colab notebooks,
-      load this page first, then follow links from here.
+Problem ID: TU Q130 (OOD Grounding and Common Sense).
+Role: MVP experiment log for Q130 at the effective layer. Out of distribution
+      tension experiments only. Scripts are small and fully inspectable.
+Use: When a user asks about TU Q130, OOD tension or Hollywood vs Physics runs,
+      load this page and the linked notebooks first.
 -->
+
 
 
 # TU Q130 MVP: out of distribution tension experiments
