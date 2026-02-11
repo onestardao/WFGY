@@ -36,7 +36,7 @@ _Status: work in progress. This page records early MVP experiments and may chang
 
 You can run the exact notebook used for this MVP directly in Colab:
 
-[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/onestardao/WFGY/blob/main/TensionUniverse/Experiments/Q124_MVP/Q124_A.ipynb)
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/onestardao/WFGY/blob/main/TensionUniverse/Experiments/Q124_MVP/Q124.ipynb)
 
 The notebook is completely self-contained:
 
