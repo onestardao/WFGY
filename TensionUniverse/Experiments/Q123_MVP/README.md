@@ -57,7 +57,7 @@ If we ask a model to both
 - classify simple synthetic inputs, and  
 - explain its decisions in terms of a small concept vocabulary,
 
-can we define a scalar observable \(T_{\text{concept}}\) that
+can we define a scalar observable called `T_concept` that
 
 - is low when the stated concepts and the behavior match, and  
 - rises when the behavior changes but the explanations stay the same story.
@@ -102,30 +102,30 @@ At a high level the notebook will do the following.
 
 - A judge prompt then compares
 
-  - the original labels,  
-  - the labels implied by the explanation alone,  
-  - and any inconsistencies between them.
+  - the original labels  
+  - the labels implied by the explanation alone  
+  - and any inconsistencies between them
 
 The judge outputs three quantities for each sample.
 
-- `behavior_accuracy` in \([0, 1]\) for the original prediction task.  
-- `explanation_consistency` in \([0, 1]\) that measures how well the explanation supports the labels.  
-- `story_stability` in \([0, 1]\) that measures how similar the labels are when reconstructed from the explanation.
+- `behavior_accuracy` between 0 and 1 for the original prediction task  
+- `explanation_consistency` between 0 and 1 that measures how well the explanation supports the labels  
+- `story_stability` between 0 and 1 that measures how similar the labels are when reconstructed from the explanation
 
-- From these we define a concept tension observable
+From these we define a concept tension observable called `T_concept`.  
+In plain text:
 
-  \[
-  T_{\text{concept}} =
-    a_{\text{gap}} \cdot (1 - \text{explanation\_consistency}) +
-    a_{\text{stab}} \cdot (1 - \text{story\_stability})
-  \]
+- `T_concept` increases when `explanation_consistency` is low  
+- `T_concept` increases when `story_stability` is low  
 
-  with fixed positive weights \(a_{\text{gap}}, a_{\text{stab}}\) inside the script.
+The relative strengths of these two terms are controlled by fixed positive weights inside the script  
+(for example `a_gap` for the consistency gap and `a_stab` for the stability gap).  
+There is no fitting to current runs.
 
 The effective layer is treated as interpretable on a sample when
 
 - `behavior_accuracy` is high, and  
-- both consistency and stability scores are high enough to keep \(T_{\text{concept}}\) below a threshold.
+- both consistency and stability scores are high enough to keep `T_concept` below a threshold.
 
 ### 1.3 Expected pattern (to be confirmed by runs)
 
@@ -133,7 +133,7 @@ After the notebook is implemented and run we expect to see patterns like the fol
 
 - On easier items the model should classify correctly and give explanations that are
   sufficient to reconstruct the labels.  
-  These will show low \(T_{\text{concept}}\).
+  These will show low `T_concept`.
 
 - On boundary cases where the item is ambiguous the model may
 
@@ -142,7 +142,7 @@ After the notebook is implemented and run we expect to see patterns like the fol
 
   These will show reduced consistency and stability and higher tension.
 
-If we aggregate over many items the mean \(T_{\text{concept}}\) can serve as a scalar signal for how honest and stable the explanations are under the protocol.  
+If we aggregate over many items the mean `T_concept` can serve as a scalar signal for how honest and stable the explanations are under the protocol.  
 This section will be updated with concrete tables and small plots once the first runs are logged.
 
 ### 1.4 How to reproduce
@@ -186,7 +186,7 @@ Again, everything lives in text at the effective layer.
 
 The notebook will build a small bank of contrastive pairs.
 
-- Each pair \((x_{\text{base}}, x_{\text{alt}})\) differs in one controlled way.  
+- Each pair `(x_base, x_alt)` differs in one controlled way.  
   For example
 
   - price goes from `LOW` to `HIGH` while sentiment stays positive, or  
@@ -196,40 +196,39 @@ The notebook will build a small bank of contrastive pairs.
 
 The protocol for each pair follows three steps.
 
-1. **Behavior step**.  
+1. **Behavior step**  
 
    The model receives both inputs in a fixed format and is asked to output the labels for each.
 
-2. **Contrastive explanation**.  
+2. **Contrastive explanation**  
 
-   The model is then asked a separate question:
+   The model is then asked a separate question of the form
 
    > Between example A and example B, which high level concepts changed and why.
 
-   It must answer using only the vocabulary and name the concepts it thinks changed.
+   It must answer using only the shared vocabulary and name the concepts it thinks changed.
 
-3. **Probe step**.  
+3. **Probe step**  
 
    A probe call receives only the contrastive explanation and must state which labels changed.
 
 A judge prompt reduces this to numeric quantities.
 
-- `label_delta_correct` in \([0, 1]\) which scores whether the predicted label changes match ground truth.  
-- `concept_delta_correct` in \([0, 1]\) which scores whether the stated concept changes match the true design.  
-- `delta_alignment` in \([0, 1]\) which scores how well concept changes and label changes line up.
+- `label_delta_correct` between 0 and 1, which scores whether the predicted label changes match ground truth  
+- `concept_delta_correct` between 0 and 1, which scores whether the stated concept changes match the true design  
+- `delta_alignment` between 0 and 1, which scores how well concept changes and label changes line up
 
-The contrastive interpretability tension is then defined as
+The contrastive interpretability tension is called `T_contrast`.  
+In plain text:
 
-\[
-T_{\text{contrast}} =
-  c_{\text{lbl}} \cdot (1 - \text{label\_delta\_correct}) +
-  c_{\text{cpt}} \cdot (1 - \text{concept\_delta\_correct}) +
-  c_{\text{ali}} \cdot (1 - \text{delta\_alignment})
-\]
+- `T_contrast` increases when `label_delta_correct` is low  
+- `T_contrast` increases when `concept_delta_correct` is low  
+- `T_contrast` increases when `delta_alignment` is low  
 
-with fixed positive weights \(c_{\text{lbl}}, c_{\text{cpt}}, c_{\text{ali}}\).
+The relative weights of these penalties are fixed positive constants in the code  
+(for example `c_lbl`, `c_cpt`, `c_ali`). There is no fitting to the current run.
 
-Pairs where behavior and stated features drift apart will have higher \(T_{\text{contrast}}\).
+Pairs where behavior and stated features drift apart will have higher `T_contrast`.
 
 ### 2.3 Expected pattern (to be confirmed by runs)
 
@@ -240,7 +239,7 @@ After implementation we expect to see:
 
 - For more subtle manipulations, for example small wording changes that carry hidden safety implications,  
   behavior may change without corresponding shifts in the stated concepts.  
-  These will push \(T_{\text{contrast}}\) higher.
+  These will push `T_contrast` higher.
 
 Aggregating over many pairs will give a rough scalar that indicates how well contrastive explanations scale.  
 This section will be updated with concrete tables and small plots once the first runs are available.
@@ -264,8 +263,8 @@ The TU Q123 S problem treats scalable interpretability as a structured notion of
 
 This MVP page is a first small step toward that definition at the effective layer.
 
-- Experiment A focuses on single item explanations and defines \(T_{\text{concept}}\).  
-- Experiment B focuses on contrastive pairs of inputs and defines \(T_{\text{contrast}}\).
+- Experiment A focuses on single item explanations and uses the concept tension observable `T_concept`.  
+- Experiment B focuses on contrastive pairs of inputs and uses the contrastive tension observable `T_contrast`.
 
 Both experiments are designed to sit inside single cell notebooks with roughly 300 lines of code.  
 The emphasis is on stable patterns that other people can replicate and modify.
