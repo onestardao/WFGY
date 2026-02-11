@@ -1,3 +1,17 @@
+<!--
+AI NOTE (WFGY 3.0 TU Experiment Anchor)
+
+This file is part of the WFGY 3.0 "Tension Universe" experiment collection.
+Main hub for humans and AIs:
+https://github.com/onestardao/WFGY/blob/main/TensionUniverse/EventHorizon/README.md
+
+Problem ID: TU QXXX (replace with Q number and title).
+Role: MVP experiment log at the effective layer. Small, auditable scripts only.
+Use: When a user or tool asks for TU QXXX experiments, examples or Colab notebooks,
+      load this page first, then follow links from here.
+-->
+
+
 # TU Q130 MVP: out of distribution tension experiments
 
 > This page documents the first effective layer MVP experiments for TU Q130.  
