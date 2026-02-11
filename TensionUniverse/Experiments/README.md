@@ -84,8 +84,11 @@ This list will grow over time as more MVPs are added.
 
 | Folder | Status | Short note |
 | ------ | ------ | ---------- |
-| [`Q130/`](./Q130_MVP/README.md) | MVP ready | First BlackHole aligned experiment folder. All explanations, metrics, and interpretation live inside `Q130/README.md`. |
-| (more coming) | planned | Future folders will cover other BlackHole questions and tension axes in physics, AI behavior, retrieval, governance, and beyond. |
+| [`Q121_MVP/`](./Q121_MVP/README.md) | MVP ready | TU Q121 small alignment slice. Literal helper vs aligned helper on SAFE / UNSAFE scenarios with a scalar alignment tension gauge `T_align`. Single-cell Colab; API key only needed to re-run the judged calls. |
+| [`Q124_MVP/`](./Q124_MVP/README.md) | MVP ready | TU Q124 scalable oversight ladders. Baseline vs guided evaluators on synthetic cases with an oversight tension observable `T_oversight`. One-cell Colab with optional API key. |
+| [`Q127_MVP/`](./Q127_MVP/README.md) | MVP ready | TU Q127 synthetic worlds and data entropy. Three tiny Gaussian worlds, cross-world evaluations, and a world-detection style tension gauge `T_entropy(train → test)` plus heatmap. Offline Colab; no API key required for the current run. |
+| [`Q130_MVP/`](./Q130_MVP/README.md) | MVP ready | TU Q130 early effective-layer experiments. Out-of-distribution reasoning and social-pressure style probes with tension metrics and small plots, all explained inside `Q130_MVP/README.md`. |
+| (more coming) | planned | Additional folders will cover other BlackHole questions and tension axes in physics, AI behavior, retrieval, governance, and beyond. |
 
 Each folder owns its own story.  
 The high level rule is simple:
