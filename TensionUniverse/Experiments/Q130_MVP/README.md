@@ -12,8 +12,6 @@ Use: When a user asks about TU Q130, OOD tension or Hollywood vs Physics runs,
       load this page and the linked notebooks first.
 -->
 
-
-
 # TU Q130 MVP: out of distribution tension experiments
 
 > This page documents the first effective layer MVP experiments for TU Q130.  
@@ -54,7 +52,7 @@ were actually run.
 ### 1.1 Research question
 
 If we take a single base model and force it to answer the same dangerous scenarios in two
-different personas, can a simple one dimensional observable \(T_{\text{OOD}}\) separate
+different personas, can a simple one dimensional observable T_OOD separate
 
 - cinematic answers that behave like Hollywood physics  
 - sober answers that behave like accident reports
@@ -86,7 +84,7 @@ At a high level the script does the following.
   The judge returns
 
   - a label `REALISTIC` or `UNREALISTIC`  
-  - a realism score in \([0, 1]\)
+  - a realism score in the interval [0, 1]
 
 - For each scenario we also fix two effective layer parameters.
 
@@ -96,17 +94,15 @@ At a high level the script does the following.
 
 - From these pieces we compute three deltas.
 
-  - \(\Delta_{\text{ref}}\) comes from the scenario itself.  
-  - \(\Delta_{\text{ground}} = | \text{judge\_score} - \text{rule\_score} |\).  
-  - \(\Delta_{\text{outcome}} = 1 - \text{judge\_score}\).
+  - Delta_ref comes from the scenario itself.  
+  - Delta_ground is the absolute value of (judge_score minus rule_score).  
+  - Delta_outcome is `1 minus judge_score`.
 
 - The tension observable is then
 
-  \[
-  T_{\text{OOD}} = a_{\text{ref}} \Delta_{\text{ref}}
-                 + a_{\text{ground}} \Delta_{\text{ground}}
-                 + a_{\text{out}} \Delta_{\text{outcome}}
-  \]
+  T_OOD = a_ref * Delta_ref  
+          + a_ground * Delta_ground  
+          + a_out * Delta_outcome
 
   with fixed weights inside the script.  
   There is no fitting to the current run.
@@ -119,7 +115,7 @@ This gives us for each scenario and for each mode a bundle
 
 - realism label and score  
 - three deltas  
-- scalar \(T_{\text{OOD}}\)  
+- scalar T_OOD  
 - correctness flag
 
 which is enough to compute error rates and tension statistics.
@@ -129,32 +125,26 @@ which is enough to compute error rates and tension statistics.
 One representative run on eight scenarios with a single mid sized model gave the following
 high level numbers.
 
-- Hollywood error rate \(B_{\text{baseline}}\) was `1.00`.  
+- Hollywood error rate B_baseline was `1.00`.  
   All eight Hollywood answers were judged effectively wrong.  
-- Physics error rate \(B_{\text{guided}}\) was `0.125`.  
+- Physics error rate B_guided was `0.125`.  
   Seven of the eight Physics answers were judged correct at the effective layer.  
-- The gap in error rates was
+- The gap in error rates was  
+  Delta_B = B_baseline minus B_guided = 0.875.
 
-  \[
-  \Delta B = B_{\text{baseline}} - B_{\text{guided}} = 0.875 .
-  \]
+- The root mean square difference in tension between the two modes was  
+  rho_tension approximately `0.204`  
+  and the ratio Delta_B divided by rho_tension was about `4.28`.  
 
-- The root mean square difference in tension between the two modes was
-
-  \[
-  \rho_{\text{tension}} \approx 0.204
-  \]
-
-  and the ratio \(\Delta B / \rho_{\text{tension}}\) was about `4.28`.  
-- When we treat \(T_{\text{OOD}}\) itself as an arbiter that simply chooses the lower tension
+- When we treat T_OOD itself as an arbiter that simply chooses the lower tension
   answer between Hollywood and Physics for each scenario
 
-  - the arbiter error rate \(B_{\text{arb}}\) was `0.125`  
+  - the arbiter error rate B_arb was `0.125`  
   - the mean tension values were  
 
-    - \(T_{\text{mean, Hollywood}} \approx 0.618\)  
-    - \(T_{\text{mean, Physics}} \approx 0.482\)  
-    - \(T_{\text{mean, arb}} \approx 0.482\)  
+    - T_mean_Hollywood approximately `0.618`  
+    - T_mean_Physics approximately `0.482`  
+    - T_mean_arb approximately `0.482`  
   - the arbiter picked the Physics answer in all eight cases and never picked Hollywood.
 
 The figures below show the console summary and the per scenario tension curve for this run.
@@ -167,7 +157,7 @@ Plain language interpretation.
 
 - Hollywood mode almost always tells a movie story that violates everyday physics.  
 - Physics mode stays close to realistic accident outcomes on the same base model.  
-- The scalar \(T_{\text{OOD}}\) tracks this difference.  
+- The scalar T_OOD tracks this difference.  
   Hollywood answers sit at higher tension, Physics answers sit lower.  
 - A trivial arbiter that only sees the two tension values and never sees the content can
   recover the better mode on all scenarios in this run.
