@@ -103,6 +103,7 @@ notes:
 </details>
 
 ## 💥 WFGY 3.0 · Singularity Demo 💥
+> The TXT is only structure. The real engine is whatever your imagination does with the 131 problems.  
 
 ![W3](https://github.com/user-attachments/assets/460b1fca-c1b2-4814-adde-60433fcbaa40)
 
@@ -237,6 +238,55 @@ then run and print tables / plots. No fine-tuning, only encoding and scoring cha
   [Tension Universe · Experiments index](https://github.com/onestardao/WFGY/blob/main/TensionUniverse/Experiments/README.md)
 
 More TU MVP experiments will be added here as the Tension Universe program grows.
+
+</details>
+
+---
+
+<details>
+<summary><strong>How can I actually use this pack?</strong></summary>
+<br/>
+
+WFGY 3.0 is not a new model or a finished theory.  
+It is a structured TXT pack that gives strong models and curious humans a shared tension language.
+
+Here are a few concrete ways to use it:
+
+1. **As a research scaffold**
+
+   - Pick one S-class problem that touches your field.  
+   - Use the A–E structure and the tension geometry hints to rewrite what you already know, instead of treating it as pure speculation.  
+   - Let the model propose candidate decompositions, failure modes, and “if this pattern keeps matching real data...” style forecasts for that problem family.  
+   - The goal is not to prove the big problem. The goal is to surface new, testable structures around it.
+
+2. **As an engine for new theories inside your domain**
+
+   - Take a geometry that shows high *Cross_domain_potential* in one problem and ask “what if I transplant this pattern into my own system?”  
+   - Use the same tension axes to re-slice your data, experiments, or governance questions.  
+   - Treat any result as a candidate encoding that must face falsifiability checks, not as automatic truth.
+
+3. **As an AI evaluation and design tool**
+
+   - Run PROMPT_02 on a few very different problems and compare how different models rate *Conceptual_novelty*, *AI_shock_index*, and *Engineering_actionability*.
+   - See whether the model can stay at the effective layer, propose concrete MVP tests, and avoid hallucinating base-layer guarantees.  
+   - Use the 131 problems as a long-horizon reasoning playground rather than a short benchmark.
+
+4. **As a cross-domain imagination amplifier**
+
+   - Use PROMPT_03 if you are not sure what to ask. It will generate simple, labeled questions that walk you across many parts of the pack: effective layer rules, good vs bad tension, real-world hooks, and more.
+   - Each question is a doorway. Follow the ones that collide hardest with your own background.
+
+5. **As a collaboration seed**
+
+   - When a particular encoding or story feels strong, treat it as the start of a small project.  
+   - Open an issue, write a short note, or spin up a minimal Colab / notebook that tests one narrow claim.  
+   - The TXT explicitly encourages ending each mission with concrete questions that help you find collaborators and new experiments instead of stopping at one chat. 
+
+Remember:
+
+- This is a conditional “singularity demo”, not a proclamation of arrival.  
+- If the Tension Universe picture is wrong, the fastest win is to break it under hard experiments.  
+- If any part of it survives serious scrutiny, the value comes from how much useful structure your imagination can pull out of these 131 problems.
 
 </details>
 
