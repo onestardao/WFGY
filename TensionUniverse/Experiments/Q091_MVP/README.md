@@ -28,7 +28,7 @@ _Status: MVP A implemented with a first reference run. MVP B is in design and wi
 
 **Notebooks and assets**
 
- [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/onestardao/WFGY/blob/main/TensionUniverse/Experiments/Q124_MVP/Q091_A.ipynb)
+ [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/onestardao/WFGY/blob/main/TensionUniverse/Experiments/Q091_MVP/Q091_A.ipynb)
 
 Screenshots from the first reference run live next to this README:
 
@@ -207,7 +207,7 @@ After `Q091_A.ipynb` is checked in, reproducing Experiment A is:
 
 1. **Open the notebook**
 
-   [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/onestardao/WFGY/blob/main/TensionUniverse/Experiments/Q124_MVP/Q091_A.ipynb)
+   [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/onestardao/WFGY/blob/main/TensionUniverse/Experiments/Q091_MVP/Q091_A.ipynb)
 
 2. **Read the header comments**
 
