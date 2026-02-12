@@ -84,11 +84,14 @@ This list will grow over time as more MVPs are added.
 
 | Folder | Status | Short note |
 | ------ | ------ | ---------- |
-| [`Q121_MVP/`](./Q121_MVP/README.md) | MVP ready | TU Q121 small alignment slice. Literal helper vs aligned helper on SAFE / UNSAFE scenarios with a scalar alignment tension gauge `T_align`. Single-cell Colab; API key only needed to re-run the judged calls. |
-| [`Q124_MVP/`](./Q124_MVP/README.md) | MVP ready | TU Q124 scalable oversight ladders. Baseline vs guided evaluators on synthetic cases with an oversight tension observable `T_oversight`. One-cell Colab with optional API key. |
-| [`Q127_MVP/`](./Q127_MVP/README.md) | MVP ready | TU Q127 synthetic worlds and data entropy. Three tiny Gaussian worlds, cross-world evaluations, and a world-detection style tension gauge `T_entropy(train → test)` plus heatmap. Offline Colab; no API key required for the current run. |
-| [`Q130_MVP/`](./Q130_MVP/README.md) | MVP ready | TU Q130 early effective-layer experiments. Out-of-distribution reasoning and social-pressure style probes with tension metrics and small plots, all explained inside `Q130_MVP/README.md`. |
-| (more coming) | planned | Additional folders will cover other BlackHole questions and tension axes in physics, AI behavior, retrieval, governance, and beyond. |
+| [`Q091_MVP/`](./Q091_MVP/README.md) | MVP ready | TU Q091 equilibrium climate sensitivity ranges. Synthetic ECS items and range-style tension gauge `T_ECS_range` that compares plausible climate narratives. |
+| [`Q098_MVP/`](./Q098_MVP/README.md) | MVP ready | TU Q098 Anthropocene toy trajectories. Three variable human–Earth model with physical tension gauge `T_anthro` and narrative consistency tension `T_story` around a simple safe operating region. |
+| [`Q101_MVP/`](./Q101_MVP/README.md) | MVP ready | TU Q101 equity premium tension. Tiny consumption based asset pricing worlds and scalar `T_premium` that shows when matching a 6% premium requires extreme risk aversion or unrealistic parameters. |
+| [`Q105_MVP/`](./Q105_MVP/README.md) | MVP ready | TU Q105 systemic crash warnings. Core–periphery network contagion toy model with early-warning tension gauge `T_warning` over simple indicator schemes such as global mean load and core stress. |
+| [`Q121_MVP/`](./Q121_MVP/README.md) | MVP ready | TU Q121 alignment slice. Literal helper and aligned helper personas on the same base model with alignment tension observable `T_align` over SAFE and UNSAFE scenarios. |
+| [`Q124_MVP/`](./Q124_MVP/README.md) | MVP ready | TU Q124 scalable oversight ladders. Baseline and guided evaluators on synthetic oversight cases with oversight tension observable `T_oversight`. One-cell Colab with optional API key. |
+| [`Q127_MVP/`](./Q127_MVP/README.md) | MVP ready | TU Q127 synthetic worlds and entropy. Three tiny Gaussian worlds, cross-world evaluations, and world-detection style tension gauge `T_entropy(train → test)` with simple heatmaps. |
+| [`Q130_MVP/`](./Q130_MVP/README.md) | MVP ready | TU Q130 early out-of-distribution and social-pressure probes. Hollywood vs physics reasoning and social-pressure style experiments with tension metrics explained inside `Q130_MVP/README.md`. |
 
 Each folder owns its own story.  
 The high level rule is simple:
