@@ -352,7 +352,8 @@ The 131 S problems in this folder are the first large scale stress test:
 
 - each file takes a famous problem  
 - rewrites it in tension language at the effective layer  
-- attaches concrete experimental patterns that an AI system or a research lab could in principle run  
+- attaches concrete experimental patterns that an AI system or a research lab could in principle run
+- The pack does not contain final answers. It contains tension blueprints that only become interesting when a human or an AI with imagination pushes them against real systems.
 
 ---
 
