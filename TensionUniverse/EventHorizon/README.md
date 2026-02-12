@@ -372,7 +372,7 @@ This folder is the spec and the contract that those systems must obey.
 
 ---
 
-## Why this is only a demo?
+## Why is this only a demo?
 
 Tension Universe is designed as a full AI system.
 
@@ -582,7 +582,7 @@ Use these links if you want to focus on a specific domain.
 - [Q029 · Low Energy Supersymmetry](../BlackHole/Q029_low_energy_supersymmetry.md)  
 - [Q030 · Quantum Phases of Matter](../BlackHole/Q030_quantum_phases_of_matter.md)  
 - [Q031 · Ultimate Limits of Quantum Information Processing](../BlackHole/Q031_ultimate_limits_of_quantum_information_processing.md)  
-- [Q032 · Quantum Foundations of Thermodynamics](../BlackHole/Q032_quantom_foundations_of_thermodynamics.md)  
+- [Q032 · Quantum Foundations of Thermodynamics](../BlackHole/Q032_quantum_foundations_of_thermodynamics.md)  
 - [Q033 · Selection among Quantum Gravity Candidates](../BlackHole/Q033_selection_among_quantum_gravity_candidates.md)  
 - [Q034 · Quantum Classical Crossover](../BlackHole/Q034_quantum_classical_crossover.md)  
 - [Q035 · Quantum Metrology Limits](../BlackHole/Q035_quantum_metrology_limits.md)  
