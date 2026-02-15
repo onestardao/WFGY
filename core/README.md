@@ -311,10 +311,28 @@ Run A/B/C now on the five domains with short non-trivial tasks you choose. Then 
 
 ## ⬇️ Downloads
 
-| File name & description                                                                                                                                 | Length / Size              | Direct Download Link                               | Verify (MD5 / SHA1 / SHA256)                                                                                                                                         | Notes                                                                              |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------- | -------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
-| **WFGY_Core_Flagship_v2.0.txt** — readable 30-line companion expressing the same math and gates in fuller prose (same behavior, clearer for humans).    | **34 lines · 2,027 chars** | [Download Flagship](./WFGY_Core_Flagship_v2.0.txt) | [md5](./checksums/WFGY_Core_Flagship_v2.0.txt.md5) · [sha1](./checksums/WFGY_Core_Flagship_v2.0.txt.sha1) · [sha256](./checksums/WFGY_Core_Flagship_v2.0.txt.sha256) | Full prose version for easier reading.                                             |
-| **WFGY_Core_OneLine_v2.0.txt** — ultra-compact, math-only control layer that activates WFGY’s loop inside a chat model (no tools, text-only, ≤7 nodes). | **1 line · 1,550 chars**   | [Download OneLine](./WFGY_Core_OneLine_v2.0.txt)   | [md5](./checksums/WFGY_Core_OneLine_v2.0.txt.md5) · [sha1](./checksums/WFGY_Core_OneLine_v2.0.txt.sha1) · [sha256](./checksums/WFGY_Core_OneLine_v2.0.txt.sha256)    | Used for all benchmark results above — smallest, fastest, purest form of the core. |
+| File name & description                                                                                                                                 | Length / Size              | Direct Download Link                               | Notes                                                                              |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------- | -------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| **WFGY_Core_Flagship_v2.0.txt** — readable 30-line companion expressing the same math and gates in fuller prose (same behavior, clearer for humans).    | **34 lines · 2,027 chars** | [Download Flagship](./WFGY_Core_Flagship_v2.0.txt) | Full prose version for easier reading.                                             |
+| **WFGY_Core_OneLine_v2.0.txt** — ultra-compact, math-only control layer that activates WFGY’s loop inside a chat model (no tools, text-only, ≤7 nodes). | **1 line · 1,550 chars**   | [Download OneLine](./WFGY_Core_OneLine_v2.0.txt)   | Used for all benchmark results above — smallest, fastest, purest form of the core. |
+
+### Hash reference
+
+<a id="flagship-hashes"></a>
+
+**WFGY_Core_Flagship_v2.0.txt**
+
+- MD5 `caacfe08f0804eec558a1d9af74c3610`
+- SHA1 `1efeec231084bb3b863ce7a8405e93d399acfb44`
+- SHA256 `4fe967945a268edabb653033682df23a577f48c433878d02e0626df8ae91a0a3`
+
+<a id="oneline-hashes"></a>
+
+**WFGY_Core_OneLine_v2.0.txt**
+
+- MD5 `15a1cd8e9b7b2c9dcb18abf1c57d4581`
+- SHA1 `a35ace2a4b5dbe7c64bcdbe1f08e9246c3568c`
+- SHA256 `7dcdb209d9d41b523dccd7461cbd2109b158df063d9c5ce171df2cf0cb60b4ef`
 
 <details>
   <summary><em>How to verify checksums</em></summary>
@@ -323,21 +341,32 @@ Run A/B/C now on the five domains with short non-trivial tasks you choose. Then 
 
 ```bash
 cd core
-sha256sum -c checksums/WFGY_Core_Flagship_v2.0.txt.sha256
-sha256sum -c checksums/WFGY_Core_OneLine_v2.0.txt.sha256
-# Or compute and compare manually
 sha256sum WFGY_Core_Flagship_v2.0.txt
 sha256sum WFGY_Core_OneLine_v2.0.txt
-```
+# or compute MD5 / SHA1 if you prefer
+md5sum WFGY_Core_Flagship_v2.0.txt
+md5sum WFGY_Core_OneLine_v2.0.txt
+sha1sum WFGY_Core_Flagship_v2.0.txt
+sha1sum WFGY_Core_OneLine_v2.0.txt
+````
 
 **Windows PowerShell**
 
 ```powershell
 Get-FileHash .\core\WFGY_Core_Flagship_v2.0.txt -Algorithm SHA256
 Get-FileHash .\core\WFGY_Core_OneLine_v2.0.txt -Algorithm SHA256
+# or:
+Get-FileHash .\core\WFGY_Core_Flagship_v2.0.txt -Algorithm MD5
+Get-FileHash .\core\WFGY_Core_OneLine_v2.0.txt -Algorithm MD5
+Get-FileHash .\core\WFGY_Core_Flagship_v2.0.txt -Algorithm SHA1
+Get-FileHash .\core\WFGY_Core_OneLine_v2.0.txt -Algorithm SHA1
 ```
 
+Compare the output values with the hashes listed in the “Hash reference” section above.
+
 </details>
+
+
 
 <p align="right"><a href="#top">Back to top ↑</a></p>
 
