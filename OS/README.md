@@ -280,35 +280,57 @@ Consider its semantic memory, boundary detection, and formula structure.
 | 🔓 MIT-Licensed | Use it commercially, modify it freely — just keep the credit. |  
 
 
-### 📦 Upcoming Modules  
+<details>
+<summary><strong>📦 Upcoming Modules</strong> (click to expand)</summary>
+
+<br>
+
 Each one is a real `.txt` file — no install, no boilerplate, just logic.  
 Bookmark now, or risk missing a truth so weird it breaks your cat.
 
-**TXT-Blah Blah Blah** (Semantic Q&A)  
-> ⭐ **Lite: 7/15** · 💥 **Pro: _TBD_**  
+---
+
+### TXT-Blah Blah Blah  
+*(Semantic Q&A)*  
+> ⭐ **Lite: released** · 💥 **Pro: _TBD_**  
 > Just for fun? Maybe. But many were shocked by how deep the answers got.  
 [🔓 Unlock this module](./BlahBlahBlah/README.md) <sub><em>Available now</em></sub>
 
-**TXT-Blur Blur Blur** (Image Generation)  
-> ⭐ **Lite: _TBD_** · 💥 **Pro: _TBD_**  
+---
+
+### TXT-Blur Blur Blur  
+*(Image Generation)*  
+> ⭐ **Lite: released** · 💥 **Pro: _TBD_**  
 > Next-gen text-to-image. No prompt skills needed, almost no hallucinations.  
 [🔓 Unlock this module](./BlurBlurBlur/README.md) <sub><em>Beta page online</em></sub>
 
-**TXT-Blow Blow Blow** (Reasoning Games)  
+---
+
+### TXT-Blow Blow Blow  
+*(Reasoning Games)*  
 > ⭐ **Lite: _TBD_** · 💥 **Pro: _TBD_**  
 > The first AIGC RPG with real logic. Game Boy era for AI begins.  
 [🔓 Unlock this module](./BlowBlowBlow/README.md) <sub><em>Coming soon...</em></sub>
 
-**TXT-Blot Blot Blot** (Humanized Writing)  
+---
+
+### TXT-Blot Blot Blot  
+*(Humanized Writing)*  
 > ⭐ **Lite: _TBD_** · 💥 **Pro: _TBD_**  
 > From outlines to emotional nuance — finally, AI that writes like a person.  
 [🔓 Unlock this module](./BlotBlotBlot/README.md) <sub><em>Coming soon...</em></sub>
 
-**TXT-Bloc Bloc Bloc** (Prompt Injection Firewall)  
+---
+
+### TXT-Bloc Bloc Bloc  
+*(Prompt Injection Firewall)*  
 > ⭐ **Lite: _TBD_** · 💥 **Pro: _TBD_**  
 > Text-based semantic firewall with ΔS gating, λ_observe control, and drunk-mode confusion.  
 > Stops attacks even when the attacker knows the rules.  
 [🔓 Unlock this module](./BlocBlocBloc/README.md) <sub><em>Coming soon...</em></sub>
+
+</details>
+
 
 ---
 
