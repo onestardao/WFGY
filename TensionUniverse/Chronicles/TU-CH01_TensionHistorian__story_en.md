@@ -919,7 +919,7 @@ there is one line under its name:
 
 | Section | Description |
 |----------|-------------|
-| [Event Horizon](https://github.com/onestardao/WFGY/blob/main/TensionUniverse/EventHorizon/README.md) | Official entry point of Tension Universe (WFGY 3.0) |
+| [Event Horizon](https://github.com/onestardao/WFGY/blob/main/TensionUniverse/EventHorizon/README.md) | Official entry point of Tension Universe (WFGY 3.0 Singularity Demo) |
 | [BlackHole Archive](https://github.com/onestardao/WFGY/tree/main/TensionUniverse/BlackHole) | 131 S-class problems (Q001–Q131) encoded in Effective Layer language |
 | [Experiments](https://github.com/onestardao/WFGY/blob/main/TensionUniverse/Experiments/README.md) | Reproducible MVP runs and observable tension patterns |
 | [Charters](https://github.com/onestardao/WFGY/tree/main/TensionUniverse/Charters) | Scope, guardrails, encoding limits and constraints |
