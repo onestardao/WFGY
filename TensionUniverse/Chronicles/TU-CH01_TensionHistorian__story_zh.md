@@ -616,7 +616,7 @@ AI 對齊、控制問題、可解釋性、代理交互；
 
 如果你只是單純好奇，想看更多人怎麼用張力語言吵架、測 AI、寫故事，
 
-有人把那個角落叫做：r/TensionUniverse
+有人把那個角落叫做：[r/TensionUniverse](https://www.reddit.com/r/TensionUniverse/).
 
 那裡會慢慢出現一整個系列：
 每一個小節，會分成三種文章：
