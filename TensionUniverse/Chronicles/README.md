@@ -876,7 +876,7 @@ and want to see more people
 using the language of tension
 to argue, test AI, and tell stories,
 
-some people call that corner of the internet: r/TensionUniverse.
+some people call that corner of the internet: [r/TensionUniverse](https://www.reddit.com/r/TensionUniverse/).
 
 There, a whole series will slowly appear.
 Each chapter will have three types of articles:
