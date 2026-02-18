@@ -637,4 +637,15 @@ AI 對齊、控制問題、可解釋性、代理交互；
 
 > 參考來源：
 > WFGY 3.0 · Singularity Demo
-> 張力宇宙一三一世紀問題。
+> 張力宇宙 131 S-Class 問題。
+
+## 快速導覽
+
+| Section | Description |
+|----------|-------------|
+| [Event Horizon](https://github.com/onestardao/WFGY/blob/main/TensionUniverse/EventHorizon/README.md) | Tension Universe（WFGY 3.0）的官方入口頁 |
+| [BlackHole Archive](https://github.com/onestardao/WFGY/tree/main/TensionUniverse/BlackHole) | 以 Effective Layer 語言重新編碼的 131 題 S-class 問題（Q001–Q131） |
+| [Experiments](https://github.com/onestardao/WFGY/blob/main/TensionUniverse/Experiments/README.md) | 可重現的 MVP 實驗與可觀察的張力模式 |
+| [Charters](https://github.com/onestardao/WFGY/tree/main/TensionUniverse/Charters) | 範圍界定、守則、語言限制與系統約束說明 |
+| [r/TensionUniverse](https://www.reddit.com/r/TensionUniverse/) | 社群討論與持續更新的故事系列 |
+
