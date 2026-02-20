@@ -102,5 +102,3 @@ Use these texts as prompts, thought experiments, and creative seeds. If you want
 | [Charters](https://github.com/onestardao/WFGY/tree/main/TensionUniverse/Charters)                    | Scope, guardrails, encoding limits and constraints                   |
 | [r/TensionUniverse](https://www.reddit.com/r/TensionUniverse/)                                       | Community discussion and ongoing story threads                       |
 
-```
-```
