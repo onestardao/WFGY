@@ -8,304 +8,286 @@
 
 ## 1 | What this file is (and is not)
 
-This file sits behind the story chronicle “TU-CH04 · Cosmic Bedsheet”. The story introduced a picture of the universe as a giant soft sheet, deformed by many competing “demands”. Here we rewrite that picture in a way that is closer to a toy model: a few variables, a few function names, and pointers into the 131 S class questions in the BlackHole archive.
+This file is not a new theory of cosmology. It does not claim to replace general relativity, quantum field theory, or any existing physical framework. It is a set of working notes that sit behind the story chronicle “TU-CH04 · Cosmic Bedsheet”. The goal is to show how the “bedsheet” picture can be written as a minimal mathematical toy model that fits inside the wider WFGY 3.0 tension language.
 
-It is important to say what this file is not. It is not a new cosmology and it does not claim to solve any open problems in gravity, dark matter, or the origin of the universe. Real physics is constrained by data and by hard consistency requirements. The constructions below are deliberately light, meant to be used as a bridge between narrative intuition and the more formal question set in WFGY 3.0.
+You can think of this file as:
 
-The goals are modest.
+1. A way to translate the narrative bedsheet metaphor into a small set of variables and functions.
+2. A bridge between personal tension models (crushes, relationships, comparison) and large scale structures (societies, ecosystems, cosmology).
+3. An index into the cosmology and physics related questions inside the 131 problem set in the BlackHole archive.
+4. A practical guide for using these ideas with large language models, both as reasoning tools and as narrative engines.
 
-1. To define a small set of objects that can capture the “cosmic bedsheet” picture in symbolic form.
-2. To show how several famous puzzles in physics can be restated in this language.
-3. To index a subset of the 131 BlackHole questions that are most relevant for cosmology, gravity, and large scale structure.
-4. To give readers a concrete way to use those questions with AI tools, without pretending that any answer is a final theory.
-
-If you want serious cosmology or quantum gravity, you should use the BlackHole questions as orientation points and then go to standard references. This document is only a scaffold that helps you translate between story language and problem language.
+Whenever there is a conflict between this file and established physics, you should treat this document as the fiction layer, and go back to real cosmology for serious claims. The value here is in pattern language, not in numerical predictions.
 
 ---
 
-## 2 | Minimal objects in the “bedsheet” picture
+## 2 | A minimal scalar model for the bedsheet
 
-The story used a bedsheet as a metaphor. Here we make that metaphor slightly more precise.
+The story talks about a single continuous bedsheet that deforms under “demands”. To make that slightly more precise, we introduce a minimal mathematical skeleton. Everything here is deliberately coarse. It is only meant to carry the narrative more explicitly.
 
-### 2.1 A coarse tension field T(x, t)
+### 2.1 Configuration space
 
-We imagine a large domain of points x, representing whatever coordinate system you want to work in at cosmic scale. For each point x and time t we define a scalar field
+Let X be an abstract configuration space of “world states”. A point x in X is a very compressed description of:
 
-- T(x, t) >= 0
+- physical degrees of freedom that matter at the scale we care about,
+- biological and ecological state,
+- institutional and social arrangements,
+- the distribution of resources and risks.
 
-which represents the total local “tension intensity”. T(x, t) is not a physical energy density. It is a bookkeeping variable that collects how hard it is to satisfy all active demands at that point of the universe.
+We do not try to write x explicitly. The only assumption is that moving in X corresponds to changing something about the world.
 
-The gradient of T can be treated as a kind of effective pull:
+### 2.2 Demands as constraint objects
 
-- F(x, t) = minus_grad_T(x, t)
+We model each “demand” as an object D_i with at least three pieces:
 
-If you prefer a more discrete view, you can think of the domain as a graph. Each node carries a T value and edges carry flows that move from high T to lower T when the system is allowed to relax.
+1. A domain inside X where the demand matters.
+2. A rule that says when the demand is satisfied well enough.
+3. A weight w_i that expresses how strongly the universe is insisting on this demand at the scale we care about.
 
-### 2.2 Demand fields D_i and incompatibility
+Examples:
 
-Instead of starting from “matter” we start from “demands”.
+- A simple physical demand such as “energy must be conserved” would have a very high w_i, near non negotiable.
+- A biological demand such as “average temperature in this region should stay within a certain band” has a lower w_i but still significant within that region.
+- A social or institutional demand such as “this company must increase user engagement every quarter” may have lower w_i at the universal level, but much higher inside a local patch.
 
-For each identifiable constraint or requirement in the universe we imagine a demand field
+In a real model, the weights would depend on scales, agents, and time. For our purposes we treat them as fixed parameters.
 
-- D_i(x, t)
+### 2.3 Violation and the tension scalar
 
-Examples in human language:
+For each demand D_i we define a non negative violation function v_i(x).
 
-- “The laws of local quantum field theory must hold in low energy regimes.”
-- “Curvature and energy momentum satisfy Einstein type equations.”
-- “Baryon number is conserved except in specified processes.”
-- “This region must contain a galaxy by time t.”
-- “This area must support at least one planet with liquid water and long term energy gradients.”
+- v_i(x) = 0 if the demand is perfectly satisfied at configuration x.
+- v_i(x) > 0 if the demand is violated at x, with larger values meaning “further from acceptable”.
 
-Each D_i can be thought of as a soft rule over configurations. When two or more demands cannot be satisfied together in a neat way they contribute to local tension. A schematic way to express this is
+The exact definition of v_i is context dependent. For a physical law, v_i might be the size of a conservation imbalance. For a social norm, v_i might represent how far current outcomes are from a socially tolerated band.
 
-- T(x, t) ≈ sum over i of w_i * violation(D_i at x, t)  
-  plus higher order terms for conflicts between demands.
+We then define a scalar tension field T on X by:
 
-Here w_i are weights that encode importance in the ledger and violation measures how strongly the current configuration fails that demand. Different theories of physics correspond to different choices of which D_i are fundamental and which are emergent.
+- T(x) = sum over i of w_i * v_i(x)
 
-### 2.3 Curvature and “pits” on the sheet
+This is the simplest possible global “ledger” of unsatisfied demands. It does not say which demands are in conflict with which. It just aggregates weighted violation.
 
-The bedsheet picture cares mostly about how T varies. If you imagine T as the height of a landscape then deep pits correspond to regions where many demands pile up and fight.
+In this toy model:
 
-To make this more explicit we can look at a coarse curvature quantity for T, for example
+- Regions where T(x) is low are configurations where most important demands are satisfied or at least not badly violated.
+- Regions where T(x) is high are configurations where many heavy demands are unhappy at once.
 
-- C(x, t) ≈ laplacian_of_T(x, t)
+The “cosmic bedsheet” in the story is the picture you get if you visualize T(x) as a kind of potential landscape over X.
 
-High positive C marks regions where T is large compared with neighbors. These are the places where the sheet feels pulled down. In the story language this is where black holes, dense mass, or other high concentration structures appear. In the tension ledger view this is where a great deal of “cannot satisfy everything at once” is stored.
+- Valleys and basins are low tension regions.
+- Ridges and cliffs are sharp transitions between qualitatively different compromises.
+- Deep pits are configurations where it is hard to move without making some demand much worse.
 
-### 2.4 A tension ledger over regions
-
-Instead of keeping only local values we can track regional totals. For any region R in the domain we define
-
-- L(R, t) = integral over R of T(x, t) dV
-
-L(R, t) is the tension ledger entry for that region at time t. You can speak about how flows of matter, radiation, information, or structure redistribute L between regions, even if you do not commit to a specific microscopic model.
-
-Different cosmological histories can be seen as different time series of L over a partition of the universe. Phase transitions, structure formation, or vacuum decay events all change the shape of T and hence the distribution of L.
-
-The story in TU CH04 hints at this view without writing formulas. This section records one minimal way to write it symbolically.
+We do not need a concrete embedding of X to make use of this idea. The single scalar T(x) is enough to reason about relative stability and risk.
 
 ---
 
-## 3 | Mapping textbook topics into the bedsheet model
+## 3 | Local patches, coarse graining, and scales
 
-With T, D_i, C, and L we can now restate some textbook themes. None of these are meant as derivations. They are translation exercises.
+The story moves between “your day”, “your city”, “your civilization”, and “the whole universe”. The bedsheet metaphor assumes that these are just different scales of the same object. To make that less hand wavy, we introduce a simple coarse graining picture.
 
-### 3.1 Initial conditions and the “tension big bang”
+### 3.1 Local patch around an observer
 
-In standard cosmology you choose an initial state: a metric, matter content, and fluctuation spectrum. Evolution is then determined by field equations. In the bedsheet picture we instead focus on how demands come online.
+Pick an observer O. Make a local patch X_O inside X that contains all configurations that differ from O’s current reality only within some limited radius in space, time, and causal reach.
 
-We can imagine an initial epoch where T(x, t) was almost flat and small everywhere. Demands were weak or symmetric. The “tension big bang” is then the first epoch where the set of active D_i becomes incompatible in a way that cannot be smoothed away.
+Inside this patch we can define a local tension field:
 
-The question “what counts as a reasonable initial condition” can be associated with
+- T_O(x) = sum over i in I_O of w_i * v_i(x)
 
-- Q044_initial_conditions_of_the_universe.md  
-  https://github.com/onestardao/WFGY/blob/main/TensionUniverse/BlackHole/Q044_initial_conditions_of_the_universe.md
+where I_O is the set of demands that are relevant to O at the chosen scale. For example:
 
-In that question you can treat different proposals for initial conditions as different ways of choosing the early demand set and its symmetry structure. The bedsheet is the shared object on which they all write.
+- personal biological demands (health, safety),
+- relational demands (family, friends, partners),
+- local institutional demands (employer, neighborhood, legal system),
+- some global demands that are strong enough to matter everywhere (basic physics, climate boundaries).
 
-### 3.2 Gravity as motion toward lower regional ledger load
+T_O is then the “shape” of the bedsheet as felt by O.
 
-General relativity states that matter and energy curve spacetime and that free bodies follow geodesics. In the bedsheet language we do not try to reproduce those equations. We only say that:
+The personal tension variables from the human scale notes (self_now, self_ideal, self_projected, shared_imagination, maintenance_load) can be treated as coordinates on X_O or as extra structure attached to it. They define how O reads T_O into felt experience.
 
-- Regions with large L are pits in the T landscape.
-- Bodies and fields that are free to move will tend to explore paths where T and L decrease or at least do not explode.
+### 3.2 Coarse graining to societies and beyond
 
-The questions
+If we zoom out and look at a whole city, we can define a coarser tension field T_city on some reduced configuration space X_city. This field is not just a sum of individual T_O. It also includes:
 
-- Q021_quantum_gravity_unification.md  
-  https://github.com/onestardao/WFGY/blob/main/TensionUniverse/BlackHole/Q021_quantum_gravity_unification.md
+- infrastructure demands,
+- institutional durability demands,
+- ecological constraints for that region.
 
-and
+The same applies to whole civilizations or planetary systems.
 
-- Q033_selection_among_quantum_gravity_candidates.md  
-  https://github.com/onestardao/WFGY/blob/main/TensionUniverse/BlackHole/Q033_selection_among_quantum_gravity_candidates.md
+The important point is that every scale uses the same basic idea:
 
-invite you to compare different gravitational theories. In bedsheet language these comparisons become statements about which choice of fundamental D_i, and which update rules for T, make the ledger most coherent across scales.
+- some configuration space X_scale,
+- some set of demands D_i with weights w_i,
+- some violation functions v_i(x),
+- and a scalar tension field T_scale(x) = sum w_i * v_i(x).
 
-### 3.3 Dark matter as unbooked tension
-
-Observations of galaxy rotation and cluster dynamics suggest there is more gravitating “stuff” than visible matter accounts for. In the tension ledger this becomes a bookkeeping gap.
-
-You see that L(R, t) in some region must be large because orbits and lensing effects demand a deep pit. However, when you sum up known contributions to T from visible D_i you get a lower value. Something has been left out of the accounting.
-
-This can be associated with
-
-- Q041_nature_of_dark_matter.md  
-  https://github.com/onestardao/WFGY/blob/main/TensionUniverse/BlackHole/Q041_nature_of_dark_matter.md
-
-Different models of dark matter can be rephrased as proposals for additional demand fields D_hidden that contribute to T but couple weakly to your usual probes. The bedsheet picture helps you remember that dark matter is a statement about missing sources for curvature in the ledger, not only about a specific particle candidate.
-
-### 3.4 Dark energy and cosmic acceleration
-
-Similarly, accelerated expansion is usually summarized as “dark energy”. In the bedsheet picture this is a statement that, at very large scales, the effective rules that update T and the geometry tend to increase distances between nodes even in the absence of local overdensities.
-
-This connects naturally to
-
-- Q042_dark_energy_and_cosmic_acceleration.md  
-  https://github.com/onestardao/WFGY/blob/main/TensionUniverse/BlackHole/Q042_dark_energy_and_cosmic_acceleration.md
-
-and to
-
-- Q043_origin_of_cosmic_inflation.md  
-  https://github.com/onestardao/WFGY/blob/main/TensionUniverse/BlackHole/Q043_origin_of_cosmic_inflation.md
-
-Inflation can be seen as an early, extremely strong regime where a particular set of D_i made it cheaper in the ledger to stretch the sheet quickly than to allow certain local tensions to grow. Late time acceleration may or may not share the same structure.
-
-### 3.5 Large scale structure as frozen bedsheet wrinkles
-
-The observed web of galaxies and voids is a fossil of early fluctuations. In bedsheet language the story is:
-
-1. Small random variations in T(x, t) and the demand weights exist at early times.
-2. Dynamics allow regions of slightly higher T and C to grow into pits.
-3. Matter and radiation fall into those pits.
-4. Over time, some of these structures stabilize into filaments and clusters.
-
-This picture matches the spirit of
-
-- Q045_large_scale_structure_formation.md  
-  https://github.com/onestardao/WFGY/blob/main/TensionUniverse/BlackHole/Q045_large_scale_structure_formation.md
-
-and is constrained by
-
-- Q046_cmb_anomalies.md  
-  https://github.com/onestardao/WFGY/blob/main/TensionUniverse/BlackHole/Q046_cmb_anomalies.md
-
-The question bank invites you to test whether a given theory can produce a T field whose wrinkles match observed patterns in a statistically acceptable way.
-
-### 3.6 Black holes and information
-
-In the story version, the bedsheet picture treats black holes as very deep pits. The scientific questions around them concern information and evaporation. These are gathered in
-
-- Q040_black_hole_information_problem.md  
-  https://github.com/onestardao/WFGY/blob/main/TensionUniverse/BlackHole/Q040_black_hole_information_problem.md
-
-and
-
-- Q047_origin_of_supermassive_black_holes.md  
-  https://github.com/onestardao/WFGY/blob/main/TensionUniverse/BlackHole/Q047_origin_of_supermassive_black_holes.md
-
-In bedsheet terms the puzzle is how a region with enormous local T and C can evolve in a way that preserves or loses the fine structure of past D_i. The story language about “ledger entries being closed” is a hint at the same underlying concern: what is kept, what is thrown away, and how is that encoded on the sheet.
-
-### 3.7 Hubble tension as conflicting ledger readings
-
-The difference between early universe and late universe measurements of the Hubble constant is a concrete example where the ledger looks inconsistent. You can think of it as two independent measurement procedures trying to reconstruct L and T history, and arriving at different summaries.
-
-This is directly pointed at in
-
-- Q048_hubble_constant_tension.md  
-  https://github.com/onestardao/WFGY/blob/main/TensionUniverse/BlackHole/Q048_hubble_constant_tension.md
-
-The bedsheet picture does not solve that tension. It just makes the name literal: two reconstructions of the same sheet do not match and you are forced to decide whether the issue is with data, with models, or with hidden D_i.
+The “cosmic bedsheet” is the name we give to the family of these fields across scales, together with the idea that they are not independent. They are all different ways of slicing the same underlying ledger.
 
 ---
 
-## 4 | Related 131 questions (cosmic bedsheet index)
+## 4 | Springs, resilience, and linear response
 
-This section lists the BlackHole questions most relevant to TU CH04. They all live in the same folder:
+The story mentions that the bedsheet is not just a passive cloth. It behaves more like a spring mattress. The mathematical shadow of that idea is the local response of T(x) to small changes.
 
-https://github.com/onestardao/WFGY/tree/main/TensionUniverse/BlackHole
+### 4.1 One dimensional intuition
 
-You can treat this list as an index when you move between the story, these notes, and the technical question pack.
+Consider a very simple one dimensional picture. Let x be a scalar describing some relevant degree of freedom, and T(x) the tension associated with it. Near some reference point x_0 we can approximate T(x) as:
 
-### 4.1 Gravity, curvature, and quantum regimes
+- T(x) approximately equals T(x_0) + g * (x - x_0) + 0.5 * k * (x - x_0)^2
 
-- Q020_high_dimensional_manifolds_curvature.md  
-  https://github.com/onestardao/WFGY/blob/main/TensionUniverse/BlackHole/Q020_high_dimensional_manifolds_curvature.md
+where:
 
-- Q021_quantum_gravity_unification.md  
-  https://github.com/onestardao/WFGY/blob/main/TensionUniverse/BlackHole/Q021_quantum_gravity_unification.md
+- g is the local “slope”, the first derivative of T at x_0.
+- k is the local “stiffness”, the second derivative of T at x_0.
 
-- Q033_selection_among_quantum_gravity_candidates.md  
-  https://github.com/onestardao/WFGY/blob/main/TensionUniverse/BlackHole/Q033_selection_among_quantum_gravity_candidates.md
+In this toy picture:
 
-- Q034_quantum_classical_crossover.md  
-  https://github.com/onestardao/WFGY/blob/main/TensionUniverse/BlackHole/Q034_quantum_classical_crossover.md
+- If g is not zero, there is a local push in the direction where T decreases.
+- If k is positive, the system behaves like a spring around x_0: small displacements cost tension quadratically, and there is a restoring effect.
+- If k is near zero, the sheet is floppy: you can move without much change in T.
+- If k is negative, the configuration is locally unstable: small perturbations grow, and the system tends to roll away.
 
-### 4.2 Cosmology, dark sectors, and large scale structure
+This is the simplest version of “springs under the sheet”. Real systems are high dimensional, with many coordinates and a full matrix of second derivatives, but the intuition is the same.
 
-- Q041_nature_of_dark_matter.md  
-  https://github.com/onestardao/WFGY/blob/main/TensionUniverse/BlackHole/Q041_nature_of_dark_matter.md
+### 4.2 Resilience as curvature and slack
 
-- Q042_dark_energy_and_cosmic_acceleration.md  
-  https://github.com/onestardao/WFGY/blob/main/TensionUniverse/BlackHole/Q042_dark_energy_and_cosmic_acceleration.md
+We can read “resilience” in this language as a combination of two properties:
 
-- Q043_origin_of_cosmic_inflation.md  
-  https://github.com/onestardao/WFGY/blob/main/TensionUniverse/BlackHole/Q043_origin_of_cosmic_inflation.md
+1. Positive curvature (k > 0) around important configurations, so that shocks are pushed back toward workable states instead of amplified.
+2. Available slack in the set of demands, so that some v_i(x) can be reduced without exploding others.
 
-- Q044_initial_conditions_of_the_universe.md  
-  https://github.com/onestardao/WFGY/blob/main/TensionUniverse/BlackHole/Q044_initial_conditions_of_the_universe.md
+A system with no resilience is one where many configurations have negative curvature in important directions, and where relaxing one demand always triggers a chain reaction that violates several others more severely.
 
-- Q045_large_scale_structure_formation.md  
-  https://github.com/onestardao/WFGY/blob/main/TensionUniverse/BlackHole/Q045_large_scale_structure_formation.md
+A system with high resilience is one where the demand set and response structure are such that:
 
-- Q046_cmb_anomalies.md  
-  https://github.com/onestardao/WFGY/blob/main/TensionUniverse/BlackHole/Q046_cmb_anomalies.md
+- T(x) has wide basins with gentle curvature,
+- small disturbances can be absorbed by local adjustments,
+- and there are clear directions of movement that reduce T without crossing hard constraints.
 
-- Q048_hubble_constant_tension.md  
-  https://github.com/onestardao/WFGY/blob/main/TensionUniverse/BlackHole/Q048_hubble_constant_tension.md
-
-- Q049_missing_baryons_problem.md  
-  https://github.com/onestardao/WFGY/blob/main/TensionUniverse/BlackHole/Q049_missing_baryons_problem.md
-
-### 4.3 Black holes and information
-
-- Q040_black_hole_information_problem.md  
-  https://github.com/onestardao/WFGY/blob/main/TensionUniverse/BlackHole/Q040_black_hole_information_problem.md
-
-- Q047_origin_of_supermassive_black_holes.md  
-  https://github.com/onestardao/WFGY/blob/main/TensionUniverse/BlackHole/Q047_origin_of_supermassive_black_holes.md
-
-### 4.4 Entropy, information, and tension
-
-The bedsheet picture interacts naturally with questions about entropy and information value. For that side of the story it is helpful to also pull in
-
-- Q119_meaning_of_probability_in_tension_universe.md  
-  https://github.com/onestardao/WFGY/blob/main/TensionUniverse/BlackHole/Q119_meaning_of_probability_in_tension_universe.md
-
-- Q120_value_of_information_and_knowledge.md  
-  https://github.com/onestardao/WFGY/blob/main/TensionUniverse/BlackHole/Q120_value_of_information_and_knowledge.md
-
-- Q127_data_entropy_truth_synthetic_worlds.md  
-  https://github.com/onestardao/WFGY/blob/main/TensionUniverse/BlackHole/Q127_data_entropy_truth_synthetic_worlds.md
-
-They are not purely cosmology questions, however they control how you interpret the ledger when you start treating entire histories as data.
-
-This list is not exhaustive. It is the subset that matches most directly the themes in TU CH04. The full 131 question set remains the real backbone.
+The “spring mattress” phrase in the story is a mnemonic for this second derivative picture. We do not fix specific numbers for k. We only use the qualitative idea.
 
 ---
 
-## 5 | How to use the bedsheet picture and these questions with AI
+## 5 | Connecting to known physics stories
 
-Like the other science notes in this series, this section is an instruction sheet for using the question pack as a thinking tool together with large language models.
+The bedsheet narrative also gestures toward standard physics topics: Big Bang, gravity, dark matter, and the arrow of time. Here we only sketch how those appear inside the tension picture. For detailed cosmology you should treat these as metaphors, not as replacements.
 
-A simple workflow looks like this.
+### 5.1 Big Bang as first non trivial T
 
-1. **Pick a concrete topic.**  
-   For example “dark matter”, “Hubble tension” or “black hole information”. Choose the corresponding question ID from section 4.
+In a tension language, a “perfectly uniform nothing” would correspond to a degenerate case where every configuration x in X has T(x) equal to zero and no demand distinguishes anything. There is no gradient, no curvature, and no meaningful notion of “movement”.
 
-2. **Open the full question file on GitHub.**  
-   Read it once without trying to solve anything. Pay attention to how the question is framed and which observables or thought experiments are suggested.
+The story version of the Tension Big Bang says:
 
-3. **Translate the question into bedsheet language.**  
-   In your own notes, try to restate the question using T(x, t), D_i, C, and L. For example: “In Q041, what kinds of hidden D_i could reproduce the observed L(R, t) in galactic halos without breaking other parts of the ledger?”
+- The universe starts the moment at least two incompatible global configurations both demand to exist, and the ledger must pick a way to reconcile them.
 
-4. **Ask an AI system to help with rotations, not with final answers.**  
-   Paste the question and your bedsheet restatement into an AI system. Ask it to:
-   - rephrase the problem in simpler language;
-   - show how the same puzzle looks from at least two different theories;
-   - generate small thought experiments that would pull T in opposite directions.
+In the scalar model, that is the moment when:
 
-5. **Compare with real literature.**  
-   Use the AI summary as a rough map and then go look at actual papers or reviews on that topic. Check where story style language becomes misleading, where it is helpful, and where the AI missed crucial constraints.
+- there exists at least one x in X such that T(x) is greater than zero, and
+- there is non trivial structure in T: gradients and curvature appear.
 
-6. **Optionally, add your own extensions to the question pack.**  
-   If you find a missing angle, you can write a local extension question for your own use, keeping the Q number as reference and adding a suffix. For example “Q041a_domination_of_fuzzy_dm_in_dwarf_galaxies.txt”.
+You can think of this as a phase from “flat sheet with no demands” to “sheet with a first wrinkle that cannot be ironed out”.
 
-Throughout this process, treat both the bedsheet model and the AI as aids for orientation. They are not authorities. The authority is always the combination of data, mathematics, and clear reasoning that you or the community are willing to stand behind.
+### 5.2 Gravity as sliding along T
 
-The value of TU CH04 is not that it proves anything. Its value is that it lets people who think in very different languages share a common picture while they argue about the underlying physics.
+In the bedsheet picture, a heavy object is a strong demand cluster that pushes the sheet down. In the scalar model, this corresponds to:
+
+- a region where T(x) has a deep basin,
+- a gradient field that leads nearby configurations into that basin.
+
+A test particle that “falls” in a gravitational field is, in this language, a small degree of freedom whose trajectory is governed by:
+
+- movement along paths that tend to reduce T, subject to the constraints of the local geometry.
+
+The detailed equations of general relativity are much richer and more precise. The tension picture simply says: gravitational motion is motion along the geometry induced by a particular subset of demands, viewed at a particular scale.
+
+### 5.3 Dark matter as missing terms in T
+
+When galaxies rotate in ways that do not match visible mass, your era introduces “dark matter” as invisible mass sources.
+
+In the scalar model, we can phrase the same situation as:
+
+- you are reconstructing the shape of T(x) from observed trajectories,
+- but you only include some subset of demands D_i in your sum,
+- so the T(x) you calculate does not match the effective T(x) that actually shapes the bedsheet.
+
+The difference between these two is the “missing tension ledger” that appears as dark matter like effects. This does not say what dark matter is made of. It just reframes the problem as “which demands are you failing to account for”.
+
+### 5.4 Arrow of time as direction of easier bookkeeping
+
+The second law of thermodynamics says that suitable entropy measures increase in closed systems. The bedsheet narrative translates this into a bookkeeping statement:
+
+- The universe tends to move toward configurations where the overall tension is easier to reconcile and represent.
+
+In the scalar model, this can be captured by:
+
+- typical trajectories in X move from regions where T is high and complicated to regions where, although T may still be significant, the structure of demands and responses allows long lived evolution without catastrophic conflicts.
+
+This is not a formal derivation of entropy. It is a way to see “the arrow of time” as “the arrow along which the ledger of demands becomes less explosive to compute”.
+
+---
+
+## 6 | Related 131 questions (cosmic bedsheet cluster)
+
+The BlackHole archive in the WFGY 3.0 Singularity Demo contains 131 S class questions. Several of them are natural extensions of the bedsheet picture into explicit research problems. This section lists a small cluster of them as an index for further work.
+
+The exact file names may evolve, but the Q numbers are intended to be stable identifiers.
+
+### 6.1 Cosmology and initial conditions
+
+- [Q021 — Big Bang initial conditions in tension form](https://github.com/onestardao/WFGY/blob/main/TensionUniverse/BlackHole/Q021_big_bang_initial_conditions_in_tension_form.md)  
+- [Q022 — Cosmic inflation and tension smoothing](https://github.com/onestardao/WFGY/blob/main/TensionUniverse/BlackHole/Q022_cosmic_inflation_and_tension_smoothing.md)
+
+These questions ask what it would mean to encode standard cosmological scenarios as statements about the structure of T(x) near the earliest times.
+
+### 6.2 Gravity, dark matter, and missing ledger entries
+
+- [Q023 — Dark matter as missing tension ledger](https://github.com/onestardao/WFGY/blob/main/TensionUniverse/BlackHole/Q023_dark_matter_as_missing_tension_ledger.md)  
+- [Q024 — Dark energy and metric tension balance](https://github.com/onestardao/WFGY/blob/main/TensionUniverse/BlackHole/Q024_dark_energy_and_metric_tension_balance.md)
+
+These questions use the scalar T(x) language to express, in Effective Layer form, the ways that untracked demands can produce apparent mass or vacuum energy effects.
+
+### 6.3 Arrow of time and information
+
+- [Q025 — Arrow of time and entropy in a tension ledger](https://github.com/onestardao/WFGY/blob/main/TensionUniverse/BlackHole/Q025_arrow_of_time_and_entropy_ledger.md)  
+- [Q026 — Black hole information and tension conservation](https://github.com/onestardao/WFGY/blob/main/TensionUniverse/BlackHole/Q026_black_hole_information_and_tension_conservation.md)
+
+These questions focus on how information, loss, and reconstruction look when the primary object is a tension field, not just microstate counting.
+
+This is not an exhaustive list. You are encouraged to browse the full [BlackHole Archive](https://github.com/onestardao/WFGY/tree/main/TensionUniverse/BlackHole) to see how similar structures appear in other domains such as climate, finance, and AI alignment.
+
+---
+
+## 7 | How to use this with AI systems
+
+The scalar bedsheet model is simple enough that you can experiment with it using any large language model. The goal is not to get “the right answer”, but to explore how different models and different prompts carve up T(x) and the demands behind it.
+
+A simple workflow:
+
+1. **Pick a scale and a patch.**  
+   For example, “the tension landscape of global climate policy between 2020 and 2100”, or “the tension landscape of my own career choices for the next five years”.
+
+2. **Ask the AI to list the main demands.**  
+   Prompt the model to write down D_i objects in plain language: what is insisting on what outcome, and with what rough weight w_i.
+
+3. **Have the AI propose simple violation functions.**  
+   For each D_i, ask for a simple v_i(x) description. You do not need formulas. You just need statements like “v_i is large if global mean temperature exceed 2 degrees, small if below 1.5 degrees”.
+
+4. **Let the AI sketch T(x) qualitatively.**  
+   Ask for a description of basins, ridges, and pits in this patch of X. Which configurations look like deep traps, which look like gentle valleys.
+
+5. **Compare different models and prompts.**  
+   Run the same exercise with different AIs, or with modified prompts that emphasize different values. Notice how the implied T(x) changes. This reveals how each AI implicitly weights demands and interprets conflicts.
+
+6. **Map back to personal or civic decisions.**  
+   Finally, ask how small local moves on your own patch could shift T(x) in directions that contribute to resilience instead of fragility.
+
+Throughout, keep the two layer frame explicit:
+
+- At the **fiction layer**, you are playing inside the Tension Universe metaphor.
+- At the **engineering and ethics layer**, you are using that metaphor to see where your own reasoning, or an AI’s reasoning, might be hiding unexamined demands.
+
+The bedsheet is not a replacement for equations. It is a reminder that all your equations live on top of some choice of what matters.
 
 ---
 
@@ -313,9 +295,9 @@ The value of TU CH04 is not that it proves anything. Its value is that it lets p
 
 | Section | Description |
 |----------|-------------|
-| [Chronicles](https://github.com/onestardao/WFGY/blob/main/TensionUniverse/Chronicles/README.md) | Long-form story arcs (story / science / FAQ) |
 | [Event Horizon](https://github.com/onestardao/WFGY/blob/main/TensionUniverse/EventHorizon/README.md) | Official entry point of Tension Universe (WFGY 3.0 Singularity Demo) |
 | [BlackHole Archive](https://github.com/onestardao/WFGY/tree/main/TensionUniverse/BlackHole) | 131 S-class problems (Q001–Q131) encoded in Effective Layer language |
 | [Experiments](https://github.com/onestardao/WFGY/blob/main/TensionUniverse/Experiments/README.md) | Reproducible MVP runs and observable tension patterns |
 | [Charters](https://github.com/onestardao/WFGY/tree/main/TensionUniverse/Charters) | Scope, guardrails, encoding limits and constraints |
+| [Chronicles](https://github.com/onestardao/WFGY/blob/main/TensionUniverse/Chronicles/README.md) | Story arcs, science notes, and FAQs for the Tension Universe setting |
 | [r/TensionUniverse](https://www.reddit.com/r/TensionUniverse/) | Community discussion and ongoing story threads |
