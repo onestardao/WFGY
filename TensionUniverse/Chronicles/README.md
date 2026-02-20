@@ -55,7 +55,7 @@ This way:
 
 * **Story (EN)** – [`TU-CH02_HumanTension__story_en.md`](./TU-CH02_HumanTension__story_en.md)
 * **Science (EN)** – [`TU-CH02_HumanTension__science_en.md`](./TU-CH02_HumanTension__science_en.md)
-* **FAQ (EN)** – [`CH02_HumanTension__faq_en.md`](./CH02_HumanTension__faq_en.md)
+* **FAQ (EN)** – [`CH02_HumanTension__faq_en.md`](./TU-CH02_HumanTension__faq_en.md)
 
 ---
 
