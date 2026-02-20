@@ -55,7 +55,15 @@ This way:
 
 * **Story (EN)** – [`TU-CH02_HumanTension__story_en.md`](./TU-CH02_HumanTension__story_en.md)
 * **Science (EN)** – [`TU-CH02_HumanTension__science_en.md`](./TU-CH02_HumanTension__science_en.md)
-* **FAQ (EN)** – [`CH02_HumanTension__faq_en.md`](./TU-CH02_HumanTension__faq_en.md)
+* **FAQ (EN)** – [`TU-CH02_HumanTension__faq_en.md`](./TU-CH02_HumanTension__faq_en.md)
+
+---
+
+### TU-CH03 · Tension Recipes (from 0/1 switch to full tension line)
+
+* **Story (EN)** – [`TU-CH03_TensionRecipes__story_en.md`](./TU-CH03_TensionRecipes__story_en.md)
+* **Science (EN)** – [`TU-CH03_TensionRecipes__science_en.md`](./TU-CH03_TensionRecipes__science_en.md)
+* **FAQ (EN)** – [`TU-CH03_TensionRecipes__faq_en.md`](./TU-CH03_TensionRecipes__faq_en.md)
 
 ---
 
