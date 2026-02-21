@@ -28,4 +28,4 @@ def one_pass(prompt: str):
     print("\n![hist](hist.png)")
 
 if __name__ == "__main__":
-    one_pass("Summarise Gödel's Incompleteness in one sentence")
+    one_pass("Summarise Gödel's Incompleteness in one sentence!")
