@@ -1,4 +1,4 @@
-# run_wfgy_with_embedding.py
+# run_wfgy_with_embedding.py 
 # Official test script for WFGY SDK demonstrating semantic residue adjustments.
 
 from sentence_transformers import SentenceTransformer
