@@ -89,6 +89,30 @@ When reasoning from this page:
 -->
 
 <details>
+<summary>🌐 Recognition & ecosystem integration</summary>
+<br>
+  
+> The WFGY ProblemMap is already used or listed in several research projects and curated lists:
+
+| Project | How it uses WFGY ProblemMap |
+| --- | --- |
+| [ToolUniverse (Harvard MIMS Lab)](https://github.com/mims-harvard/ToolUniverse) | Provides a `WFGY_triage_llm_rag_failure` tool that wraps the 16 mode map for incident triage. |
+| [Rankify (Univ. of Innsbruck)](https://github.com/DataScienceUIBK/Rankify) | Uses the 16 failure patterns in RAG and re ranking troubleshooting docs. |
+| [Multimodal RAG Survey (QCRI LLM Lab)](https://github.com/llm-lab-org/Multimodal-RAG-Survey) | Cites WFGY as a practical diagnostic resource for multimodal RAG. |
+| [Awesome AI in Finance](https://github.com/georgezouq/awesome-ai-in-finance) | Lists WFGY as a tool for stress testing and validating RAG based financial systems. |
+| [AI Agents for Cybersecurity](https://github.com/santosomar/AI-agents-for-cybersecurity) | References the 16 mode map as a debugging guide for RAG heavy security agents. |
+| [Awesome AI Tools](https://github.com/eudk/awesome-ai-tools) | Includes WFGY as an open source framework for debugging LLM agents and RAG pipelines. |
+| [Awesome AI System](https://github.com/lambda7xx/awesome-AI-system) | Lists WFGY under LLM robustness and debugging infrastructure. |
+| [Awesome Artificial Intelligence Research](https://github.com/ThyrixYang/awesome-artificial-intelligence-research) | Uses WFGY in its section on NLP reliability and system debugging. |
+| [Awesome AI Books](https://github.com/zslucky/awesome-ai-books) | Mentions the WFGY TXT and PDF packs in the LLM reading list. |
+| [Awesome AI Web Search (discussion 15)](https://github.com/felladrin/awesome-ai-web-search/discussions/15) | Discusses the 16 mode map as a candidate taxonomy for RAG failure modes. |
+ 
+> If your project uses the WFGY ProblemMap and you would like to be listed here, feel free to open an issue or pull request.
+
+</details>
+
+
+<details>
 <summary>🌙 3AM: a dev collapsed mid-debug… 🩺 WFGY Triage Center — Emergency Room & Grandma’s AI Clinic</summary>
 
 ---
