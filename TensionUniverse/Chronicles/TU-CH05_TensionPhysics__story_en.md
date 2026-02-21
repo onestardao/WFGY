@@ -4,6 +4,8 @@
 > This is speculative science fiction, not a proven physical theory.  
 > “Tension Universe” is a fictional framing device. All stories are MIT licensed, remix and build freely.
 
+<img width="1536" height="1024" alt="TensionPhysics (3)" src="https://github.com/user-attachments/assets/4bc7121b-9798-423a-9eb6-fe181dc0cb57" />
+
 ---
 
 ## 0 | The page in your physics textbook that never felt complete
