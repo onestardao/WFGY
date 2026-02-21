@@ -67,6 +67,23 @@ This way:
 
 ---
 
+### TU-CH04 · Cosmic Bedsheet (universe as a tension field)
+
+* **Story (EN)** – [`TU-CH04_CosmicBedsheet__story_en.md`](./TU-CH04_CosmicBedsheet__story_en.md)
+* **Science (EN)** – [`TU-CH04_CosmicBedsheet__science_en.md`](./TU-CH04_CosmicBedsheet__science_en.md)
+* **FAQ (EN)** – [`TU-CH04_CosmicBedsheet__faq_en.md`](./TU-CH04_CosmicBedsheet__faq_en.md)
+
+---
+
+### TU-CH05 · Tension Physics (Big Bang, gravity, dark matter, time arrow)
+
+* **Story (EN)** – [`TU-CH05_TensionPhysics__story_en.md`](./TU-CH05_TensionPhysics__story_en.md)
+* **Science (EN)** – [`TU-CH05_TensionPhysics__science_en.md`](./TU-CH05_TensionPhysics__science_en.md)
+* **FAQ (EN)** – [`TU-CH05_TensionPhysics__faq_en.md`](./TU-CH05_TensionPhysics__faq_en.md)
+
+
+---
+
 ## License and remix policy
 
 All narrative content in `TensionUniverse/Chronicles` is released under the same **MIT License** as the rest of WFGY. That means you are explicitly welcome to:
