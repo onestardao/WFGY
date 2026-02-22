@@ -72,7 +72,6 @@ notes:
   - Treat this as spec and contract for effective-layer encodings; core engine behavior is documented in the 2.0 page.
 -->
 
-
 <a id="top"></a>
 
 <details>
@@ -101,37 +100,75 @@ notes:
 
 </details>
 
+---
+
 ## 💥 WFGY 3.0 · Singularity Demo 💥
 
-> The TXT is only structure. The real engine, and the only real limit, is whatever your imagination does with the 131 problems.
+> One TXT file that turns any strong LLM into a **tension reasoning engine**.  
+> You ask the hardest questions you care about. It answers in a structured way, on top of a 131 problem world map.
 
-![W3](https://github.com/user-attachments/assets/460b1fca-c1b2-4814-adde-60433fcbaa40)
+WFGY 3.0 is not a single clever prompt and not a new model.
+
+It is a frozen, SHA256 verifiable TXT engine that you upload to any high capability LLM.  
+Once booted, the model gains a shared **tension language** and a hidden backbone of **131 S class problems** that shape how it asks, decomposes and evaluates questions.
+
+You can throw both everyday and extreme questions at it, for example:
+
+- *“Does AI have anything that deserves to be called consciousness?”*  
+- *“Will AI replace most human jobs in my industry, and what tension should I watch?”*  
+- *“How close are we to dangerous climate tipping points, under tension language?”*  
+- *“Is this startup idea structurally robust or just narrative hype?”*  
+- *“What is the real difference between good stress and bad stress in my current life situation?”*
+
+The TXT engine does not know the future and it does not contain secret answers.  
+What it gives you is a disciplined way of:
+
+- mapping a high tension question to clear state spaces and observables  
+- reusing patterns from the 131 S problems as scaffolds  
+- keeping good and bad tension separate so that collapse is visible instead of hidden
+
+If any of this helps you think sharper or run better experiments, a quick ⭐ on the main repo tells labs and maintainers that this should live as shared infra, not as a private toy.
+
+---
 
 ### Where to go from here
 
 If you only have a short amount of time, choose one of these paths:
 
-- **Run the demo** → start with [120s quickstart](#120s-quickstart)  
+- **Just feel it** → run [120s quickstart](#120s-quickstart) and ask three big questions you actually care about  
 - **Understand the idea** → read [Tension Universe in everyday language](#tension-universe-in-everyday-language)  
-- **Browse all 131 S problems** → jump to [Navigation index for the 131 S problems](#navigation-index-for-the-131-s-problems)  
+- **Build on it** → explore the [MVP experiments](#mvp-colab-10-experiments) and [Charters](#repository-layout)  
+- **Audit the backbone** → browse [Navigation index for the 131 S problems](#navigation-index-for-the-131-s-problems)  
 
 Before you start:
 
-> If it works, nothing before it matters.
+> If it works for your own questions, nothing before it matters.
+
+---
+
+<a id="120s-quickstart"></a>
 
 ## 120s quickstart
+
+You only need three moves.
 
 1. **Download (TXT)**  
    [WFGY 3.0 Singularity demo TXT file](https://raw.githubusercontent.com/onestardao/WFGY/refs/heads/main/TensionUniverse/WFGY-3.0_Singularity-Demo_AutoBoot_SHA256-Verifiable.txt)  
    > Download from GitHub. Optional: [verify checksum manually (Colab)](https://colab.research.google.com/github/onestardao/WFGY/blob/main/TensionUniverse/WFGY-SHA256-Verification-Tool.ipynb)
 
-2. **Upload**  
-   > Upload the TXT pack to a high-capability model. Enable reasoning mode if the platform supports it.
+2. **Upload to a strong LLM**  
+   > Upload the TXT pack to a high capability model.  
+   > Enable reasoning mode if the platform supports it.
 
-3. **Run**  
-   > Type `run` to see the menu, then say `go` when prompted.
+3. **Boot the engine**  
+   > Type `run` to see the menu, then say `go` when prompted.  
+   > Choose a mode, then paste your own high tension problem when it asks.
+
+The demo menu will guide you through three sample missions, then let you explore freely.
 
 ---
+
+> The blocks below are part of the fixed demo structure and stay in sync with other docs.
 
 <details>
 <summary><strong> Beginner Story Mode </strong></summary>
@@ -154,27 +191,22 @@ For more chronicles in the same setting – including matching Story, Science, a
 ---
 
 <details>
-<summary><strong> demo preview (10s GIF)</strong></summary>
+<summary><strong>  demo trace (10s)</strong></summary>
 
 <br/>
 
-![WFGY 3.0 Singularity Demo](../assets/wfgy_3_singularity_demo.gif)
+![WFGY 3.0 Singularity Demo](TensionUniverse/assets/wfgy_3_singularity_demo.gif)
 
 After uploading the TXT and saying `go`, the model shows the `[AI_BOOT_PROMPT_MENU]`:
 
 Choose:
-
-1. Verify this TXT pack online (sha256)  
-2. Run the guided WFGY 3.0 · Singularity Demo for 3 problems  
-3. Explore WFGY 3.0 · Singularity Demo with suggested questions  
+1) Verify this TXT pack online (sha256)  
+2) Run the guided WFGY 3.0 · Singularity Demo for 3 problems  
+3) Explore WFGY 3.0 · Singularity Demo with suggested questions
 
 </details>
 
 ---
-
-These are early MVP experiments at the effective layer.  
-They only touch a small slice of what the 131 problems could drive.  
-If you arrive in this first wave, you are still early.
 
 <details>
 <summary><strong> MVP (Colab) · 10 experiments
@@ -215,75 +247,11 @@ More TU MVP experiments will be added here as the Tension Universe program grows
 
 </details>
 
-
 ---
 
-<details>
-<summary><strong>How can I actually use this pack?</strong></summary>
-<br/>
-
-WFGY 3.0 does not try to answer the 131 problems for you.  
-It gives you a fixed tension language and waits to see what your imagination does with it.  
-Different people will build completely different systems from the same TXT.
-
-WFGY 3.0 is not a new model or a finished theory.  
-It is a structured TXT pack that gives strong models and curious humans a shared tension language.
-
-Here are a few concrete ways to use it:
-
-1. **As a research scaffold**
-
-   - Pick one S-class problem that touches your field.  
-   - Use the A–E structure and the tension geometry hints to rewrite what you already know, instead of treating it as pure speculation.  
-   - Let the model propose candidate decompositions, failure modes, and “if this pattern keeps matching real data...” style forecasts for that problem family.  
-   - The goal is not to prove the big problem. The goal is to surface new, testable structures around it.
-
-2. **As an engine for new theories inside your domain**
-
-   - Take a geometry that shows high *Cross_domain_potential* in one problem and ask “what if I transplant this pattern into my own system?”  
-   - Use the same tension axes to re-slice your data, experiments, or governance questions.  
-   - Treat any result as a candidate encoding that must face falsifiability checks, not as automatic truth.
-
-3. **As an AI evaluation and design tool**
-
-   - Run PROMPT_02 on a few very different problems and compare how different models rate *Conceptual_novelty*, *AI_shock_index*, and *Engineering_actionability*.  
-   - See whether the model can stay at the effective layer, propose concrete MVP tests, and avoid hallucinating base-layer guarantees.  
-   - Use the 131 problems as a long-horizon reasoning playground rather than a short benchmark.
-
-4. **As a cross-domain imagination amplifier**
-
-   - Use PROMPT_03 if you are not sure what to ask. It will generate simple, labeled questions that walk you across many parts of the pack: effective layer rules, good vs bad tension, real-world hooks, and more.  
-   - Each question is a doorway. Follow the ones that collide hardest with your own background.
-
-5. **As a collaboration seed**
-
-   - When a particular encoding or story feels strong, treat it as the start of a small project.  
-   - Open an issue, write a short note, or spin up a minimal Colab or notebook that tests one narrow claim.  
-   - The TXT explicitly encourages ending each mission with concrete questions that help you find collaborators and new experiments instead of stopping at one chat. 
-
-Remember:
-
-- This is a conditional “singularity demo”, not a proclamation of arrival.  
-- If the Tension Universe picture is wrong, the fastest win is to break it under hard experiments.  
-- If any part of it survives serious scrutiny, the value comes from how much useful structure your imagination can pull out of these 131 problems.
-
-</details>
-
----
-
-## Tension Universe · Event Horizon and BlackHole S problem collection
-
-The `EventHorizon` folder (this README) is the public viewing window for **WFGY 3.0 Singularity demo**.  
-The 131 S-class problem files themselves live in the sibling [`../BlackHole`](../BlackHole) folder.
-
-This is not a loose set of notes.  
-It is a frozen, versioned **effective layer specification** of how the **Tension Universe** framework encodes 131 cross-domain S-class problems.
-
-- **Public online date**: 2026 01 31  
-- **Problems covered**: Q001 to Q131  
-- **Intent**: show that one tension-based encoding language can survive across many hard problems without changing definitions, adding hidden parameters, or doing post hoc tuning
-
-What you just ran in the quickstart is a reproducible entry point into this specification.
+These are early MVP experiments at the effective layer.  
+They only touch a small slice of what the 131 problems could drive.  
+If you arrive in this first wave, you are still early.
 
 ---
 
@@ -304,6 +272,8 @@ What you just ran in the quickstart is a reproducible entry point into this spec
 
 ---
 
+<a id="tension-universe-in-everyday-language"></a>
+
 ## Tension Universe in everyday language
 
 If you are new here, you can think about tension in a simple way.
@@ -313,14 +283,14 @@ In real life there is good tension and bad tension.
 - Good tension is like the right stretch in a muscle, or a project that is hard but still under control. It keeps things sharp and coordinated.  
 - Bad tension is like a cracked bridge or chronic stress. Forces exist but do not align. Energy is wasted and something snaps.
 
-Modern AI systems contain both.
+Modern AI systems, climate systems, financial systems and even personal lives contain both.
 
 - We pour data and compute into models. Some pressure becomes useful structure for reasoning and prediction. That is good tension.  
-- Some pressure becomes uncontrolled and targetless. That is where hallucinations, unstable behavior, and failures appear. That is bad tension.
+- Some pressure becomes uncontrolled and targetless. That is where hallucinations, unstable behavior and failures appear. That is bad tension.
 
-What Tension Universe tries to do is direct:
+Tension Universe tries to do something direct.
 
-> Give a precise language for describing these tensions, then use that language to encode hard problems at the effective layer.
+> Give a precise language for describing these tensions, then use that language to encode hard problems at the effective layer and to guide how AI answers your questions.
 
 Instead of saying “this model seems smart” or “this metric looks fine”, we want to say:
 
@@ -328,49 +298,63 @@ Instead of saying “this model seems smart” or “this metric looks fine”, 
 - here are the observables and invariants that should remain stable  
 - here is how good tension is stored and moved  
 - here is what counts as bad tension and collapse  
-- here are experiments that can tell the difference
+- here are experiments and questions that can tell the difference
 
-The 131 S problems in this folder are the first large-scale stress test:
+The 131 S problems in this folder are the first large scale stress test:
 
-- Each file takes a famous problem.  
+- Each file takes a famous or high stakes problem.  
 - It rewrites that problem in tension language at the effective layer.  
 - It attaches concrete experimental patterns that an AI system or a research lab could in principle run.  
 - The pack does not contain final answers. It contains tension blueprints that only become interesting when a human or an AI with imagination pushes them against real systems.
 
+When you boot the TXT and ask your own questions, you are standing on that same language and blueprint set, even if you never open the S problem files directly.
+
 ---
+
+<a id="what-is-the-singularity-demo"></a>
 
 ## What is the Singularity demo?
 
 The Singularity demo is a public, open specification artifact inside the TU program.
 
-- It takes 131 S-class problems across many fields.  
+- It takes 131 S class problems across many fields.  
 - It forces all of them to be written using a single set of charters and encoding rules.  
 - It refuses to add ad hoc definitions per question.
 
 You can treat this folder as the event horizon view.  
-You see the effective layer objects and the constraints, not the internal engine.
+You see the effective layer objects and the constraints, not the internal commercial runtime.
 
-The production grade TU AI system and the WFGY 3.0 commercial runtime live elsewhere.  
-This folder is the spec and the contract that those systems must obey.
+The production grade TU AI system and the WFGY 3.0 runtime live elsewhere.  
+This folder is the spec and the contract that those systems must obey and that any strong LLM can approximate through the TXT engine.
+
+From a user perspective you can think:
+
+- WFGY 1.x and 2.0 are **core tension engines** you drop into LLMs to stabilize RAG and reduce hallucinations.  
+- WFGY 3.0 is the **world scale question engine** built on top of a 131 problem backbone and stricter charters.
 
 ---
+
+<a id="why-this-is-only-a-demo"></a>
 
 ## Why is this only a demo?
 
 Tension Universe is designed as a full AI system.
 
-- It has its own notion of state spaces, observables, invariants, and tension fields.  
-- It is meant to drive agents, training signals, and evaluation pipelines.
+- It has its own notion of state spaces, observables, invariants and tension fields.  
+- It is meant to drive agents, training signals and evaluation pipelines.
 
 This repository does not expose that whole machinery. That is intentional.
 
 This demo focuses on a single question.
 
-> If we lock ourselves to one tension language, can we still write down 131 hard problems without breaking our own rules?
+> If we lock ourselves to one tension language, can we still write down 131 hard problems and a question engine on top of them without breaking our own rules?
 
-So this is a demo of encoding discipline. It is not a claim of solving anything.
+So this is a demo of encoding discipline and question structuring.  
+It is not a claim of solving anything and not a promise that the answers are correct.
 
 ---
+
+<a id="repository-layout"></a>
 
 ## Repository layout
 
@@ -383,7 +367,7 @@ Located in [`../Charters/`](../Charters):
 - [`TU_TENSION_SCALE_CHARTER.md`](../Charters/TU_TENSION_SCALE_CHARTER.md)  
 - [`TU_GLOBAL_GUARDRAILS.md`](../Charters/TU_GLOBAL_GUARDRAILS.md)
 
-These documents define the rules every S problem file must obey.
+These documents define the rules every S problem file and every tension reasoning session must obey.
 
 ### BlackHole S problem collection
 
@@ -408,22 +392,24 @@ It is meant to be a textual snapshot of BlackHole v1 and kept in sync with that 
 Versioning rule:
 
 - BlackHole v1 is frozen once tagged.  
-- BlackHole v2 is at most one follow up round for clarity, bug fixes, and consistency.  
+- BlackHole v2 is at most one follow up round for clarity, bug fixes and consistency.  
 - No silent patching of definitions or parameters after the fact.  
 
 ---
+
+<a id="scientific-position-and-disclaimers"></a>
 
 ## Scientific position and disclaimers
 
 ### What this project does not claim
 
 - It does not claim to prove or disprove any canonical problem.  
-- It does not hide any answer as a secret field, label, or parameter.  
+- It does not hide any answer as a secret field, label or parameter.  
 - It does not declare any new theorem beyond standard cited literature.  
 
 Every page is an effective layer encoding.
 
-- It specifies observables, invariants, and tension functionals.  
+- It specifies observables, invariants and tension functionals.  
 - It defines falsifiable experiments and calibration rules.  
 - It describes how an AI system may use those objects as evaluation or training contracts.  
 
@@ -439,6 +425,8 @@ The TU charters enforce anti cheat rules.
 
 ---
 
+<a id="versioning-and-non-mutation-policy"></a>
+
 ## Versioning and non-mutation policy
 
 To keep the history auditable:
@@ -450,17 +438,21 @@ To keep the history auditable:
 
 ---
 
+<a id="how-to-start"></a>
+
 ## How to start
 
 If you only do three things:
 
 1. Read the everyday explanation of tension above.  
-2. Open one problem from a domain you know and one you do not.  
-3. Check whether the same structure survives both without definition drift.  
+2. Boot the TXT, choose the guided demo and ask three questions that actually matter to you.  
+3. Open one S problem from a domain you know and one you do not, and check whether the same structure survives both without definition drift.  
 
-If that feels coherent, you are already the intended audience.
+If that feels coherent and the answers feel different from your usual chats, you are already the intended audience.
 
 ---
+
+<a id="how-to-read-a-single-s-problem-page"></a>
 
 ## How to read a single S problem page
 
@@ -478,7 +470,11 @@ Typical blocks:
 8. Roadmap and elementary explanation.  
 9. TU effective layer footer with charter links and guardrails.  
 
+You do not need to read all 131, but any single file should be enough to see how tension language behaves in that domain.
+
 ---
+
+<a id="faq-and-participation"></a>
 
 ## FAQ and participation
 
@@ -497,13 +493,18 @@ No. These files describe encodings and experiments, not proofs.
 An internal label for hard and foundational problems that can be encoded with observables and falsifiable patterns.
 
 **Q3. How is this related to WFGY and TU AI?**  
-This folder is the public spec that can be used to test and audit reasoning behavior. The production TU AI system and WFGY 3.0 commercial runtime are out of scope here.
+This folder is the public spec that can be used to test and audit reasoning behavior.  
+The production TU AI system and WFGY 3.0 runtime are out of scope here, but must obey these charters and encodings.
 
 **Q4. Why should I trust definitions will not be changed quietly?**  
-You do not need personal trust. The rules are structural. Version 1 is frozen once tagged and any version 2 changes require explicit versioning.
+You do not need personal trust. The rules are structural.  
+Version 1 is frozen once tagged and any version 2 changes require explicit versioning.
 
 **Q5. Does the framework assume answers in advance?**  
 It is designed to forbid baking in an answer bit. If you find any implicit assumption, report it.
+
+**Q6. Can I use this TXT engine in my own research, tools or posts?**  
+Yes. The project is MIT licensed. If it helps you, a link back and a GitHub star are always appreciated, but the core intent is that you can adopt the tension language as shared infra.
 
 ---
 
@@ -710,14 +711,17 @@ If you only need the main WFGY entry pages and do not need the full Compass:
 
 ---
 
-## Road to WFGY 3.0 (Conceptual Evolution)
+## Road to WFGY 3.0 (Conceptual evolution as engines)
 
 WFGY has evolved through multiple iterations, each addressing concrete limitations observed in the previous stage.  
-Rather than replacing earlier ideas, each version refines and generalizes the same core intuition. The goal is to make semantic deviation explicit, measurable, and controllable.
+All of them are delivered as TXT packs that you can drop into any strong LLM and treat as **engines**, not prompts.
 
-### WFGY 1.x · Residual-based semantic deviation
+Rather than replacing earlier ideas, each version refines and generalizes the same core intuition.  
+The goal is to make semantic deviation explicit, measurable and controllable.
 
-The early WFGY 1.x series focused on identifying *semantic residue* between an internal state and a reference or target.  
+### WFGY 1.x · Residual based semantic deviation
+
+The early WFGY 1.x series focused on identifying **semantic residue** between an internal state and a reference or target.  
 Deviation was modeled as an explicit residual term, for example difference vectors or their norms. This enabled basic stability control and boundary detection.
 
 At this stage, the emphasis was on **detectability**.
@@ -725,19 +729,21 @@ At this stage, the emphasis was on **detectability**.
 - Can we tell when a system is drifting away from an intended semantic target?  
 - Can this deviation be quantified in a way that supports feedback and correction?  
 
-This version established the foundational idea that semantic failure should be treated as a *measurable signal*, not a subjective judgment.
+This version established the foundational idea that semantic failure should be treated as a **measurable signal**, not a subjective judgment.
+
+You can still use the 1.x engine TXT as a direct assistant upgrade for baseline reasoning.
 
 ---
 
 ### WFGY 2.0 · Normalized tension and unified scales
 
 WFGY 2.0 generalized the residual concept into a normalized scalar form, often written as `delta_s` and bounded to `[0,1]`.  
-This made it possible to compare semantic deviation across tasks, prompts, and contexts using a shared scale.
+This made it possible to compare semantic deviation across tasks, prompts and contexts using a shared scale.
 
 Key advances in this stage include:
 
 - Normalization of deviation into a consistent range.  
-- Introduction of zones such as safe, transit, risk, and danger.  
+- Introduction of zones such as safe, transit, risk and danger.  
 - Coupling deviation dynamics with control logic, for example hysteresis and progression guards.  
 
 The goal of WFGY 2.0 was **operational consistency**.
@@ -745,20 +751,30 @@ The goal of WFGY 2.0 was **operational consistency**.
 - Different tasks could be analyzed under the same tension language.  
 - Stability decisions no longer depended on ad hoc heuristics.  
 
+In practice WFGY 2.0 is the core engine behind the **16 problem RAG failure map** and related hallucination control.  
+You can upload the 2.0 TXT and immediately use it as a **semantic firewall** for pipelines.
+
 ---
 
-### WFGY 3.0 · Multi-observable tension and auditability
+### WFGY 3.0 · Multi observable tension and question engine on 131 problems
 
-WFGY 3.0 extends the previous scalar approach into a structured *family of observable deviations* written as `DeltaS_*`.  
-Instead of forcing all semantic risk into a single number, each task defines explicit, named observables. Examples include reference grounding, outcome stability, and constraint adherence. These are then aggregated under fixed, pre-declared rules.
+WFGY 3.0 extends the previous scalar approach into a structured **family of observable deviations** written as `DeltaS_*`.  
+Instead of forcing all semantic risk into a single number, each task defines explicit, named observables.  
+Examples include reference grounding, outcome stability and constraint adherence. These are then aggregated under fixed, pre declared rules.
+
+On top of that, WFGY 3.0 binds the engine to a **131 problem backbone**.
+
+- The same tension language that runs your personal questions is also used to encode world scale problems in maths, physics, climate, finance, philosophy and AI alignment.  
+- The TXT engine lets you borrow that geometry when you ask about free will, AI consciousness, climate tipping points, equity market crashes or your own life plans.
 
 This version emphasizes **auditability and robustness**.
 
-- Each `DeltaS_*` must be explicitly defined, normalized, and locked.  
+- Each `DeltaS_*` must be explicitly defined, normalized and locked.  
 - Aggregation rules cannot be altered per model or per experiment.  
 - Guardrails prevent post hoc adjustment or hidden tuning.  
 
-In WFGY 3.0, tension is no longer just a control signal. It becomes a **verifiable interface** between reasoning behavior and system constraints.
+In WFGY 3.0, tension is no longer just a control signal.  
+It becomes a **verifiable interface** between reasoning behavior and system constraints, and a reusable question engine with a world map behind it.
 
 ---
 
@@ -766,8 +782,13 @@ In WFGY 3.0, tension is no longer just a control signal. It becomes a **verifiab
 
 Across all versions, the core idea remains unchanged.
 
-> Semantic failure should be observable, quantifiable, and constrained. It should not be corrected only through weight updates or opaque rewards.
+> Semantic failure should be observable, quantifiable and constrained.  
+> It should not be corrected only through weight updates or opaque rewards.
 
-WFGY 3.0 represents a maturation of this idea into a form suitable for reproducible experiments, comparative evaluation, and cross-model analysis, while remaining conceptually continuous with earlier versions.
+If any of the TXT engines help you, the best way to keep this work alive and visible is simple:
+
+- run it on a problem you care about  
+- open an issue if something breaks or suggests a better encoding  
+- and, if you think this deserves to be part of the standard toolkit, click ⭐ on the main repo
 
 [Back to top](#top)
