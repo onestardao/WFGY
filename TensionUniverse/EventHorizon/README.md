@@ -104,6 +104,8 @@ notes:
 
 ## 💥 WFGY 3.0 · Singularity Demo 💥
 
+![W3](https://github.com/user-attachments/assets/65b02ae5-4fc0-41f4-aae7-33add3f9949b)
+
 > One TXT file that turns any strong LLM into a **tension reasoning engine**.  
 > You ask the hardest questions you care about. It answers in a structured way, on top of a 131 problem world map.
 
