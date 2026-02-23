@@ -1,6 +1,12 @@
 # TU-CH06 · Quantum Futures & the Observer  
 *Story · English · TensionUniverse Chronicles*
 
+> This is speculative science fiction, not a proven physical theory.  
+> “Tension Universe” is a fictional framing device. All stories are MIT licensed — remix and build freely.
+
+<img width="1536" height="1024" alt="TUQuantumObserver (2)" src="https://github.com/user-attachments/assets/97cb3620-d2e1-4751-a284-b8b3cd150dc6" />
+
+
 The lecture hall was far smaller than the one in your memories.
 
 No star map on the ceiling this time, no glowing list of one hundred and thirty one S class questions stretched across the sky. Only a curved window that looked out onto a slow turning planet, and a single table where the Tension Historian had laid out three empty ledger books.
