@@ -81,6 +81,21 @@ This way:
 * **Science (EN)** – [`TU-CH05_TensionPhysics__science_en.md`](./TU-CH05_TensionPhysics__science_en.md)
 * **FAQ (EN)** – [`TU-CH05_TensionPhysics__faq_en.md`](./TU-CH05_TensionPhysics__faq_en.md)
 
+---
+
+### TU-CH06 · Quantum Observer (superposition, measurement, uncertainty)
+
+* **Story (EN)** – [`TU-CH06_QuantumObserver__story_en.md`](./TU-CH06_QuantumObserver__story_en.md)
+* **Science (EN)** – [`TU-CH06_QuantumObserver__science_en.md`](./TU-CH06_QuantumObserver__science_en.md)
+* **FAQ (EN)** – [`TU-CH06_QuantumObserver__faq_en.md`](./TU-CH06_QuantumObserver__faq_en.md)
+
+---
+
+### TU-CH07 · Outsourced Imagination (short video, AI companions, tension fuel)
+
+* **Story (EN)** – [`TU-CH07_OutsourcedImagination__story_en.md`](./TU-CH07_OutsourcedImagination__story_en.md)
+* **Science (EN)** – [`TU-CH07_OutsourcedImagination__science_en.md`](./TU-CH07_OutsourcedImagination__science_en.md)
+* **FAQ (EN)** – [`TU-CH07_OutsourcedImagination__faq_en.md`](./TU-CH07_OutsourcedImagination__faq_en.md)
 
 ---
 
