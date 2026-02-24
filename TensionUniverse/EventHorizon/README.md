@@ -162,245 +162,217 @@ The demo menu will guide you through three sample missions, then let you explore
 
 <br/>
 
-Once the TXT pack is loaded and you have typed <code>run</code> → <code>go</code>, this chat is no longer a generic assistant.  
-You are sitting on top of a fixed tension language wired into <strong>131 S-class problems</strong> across climate, finance, AI, systems, and everyday life.
+Once the TXT pack is loaded and you have typed <code>run</code> → <code>go</code>, this chat stops being a generic assistant.
 
-What are “S-class problems”?
+Underneath, it switches into a fixed tension language wired into <strong>131 S-class problems</strong> that were written to catch some of the main fracture lines of our world: climate, crashes, AI, politics, consciousness, meaning, everyday life.
 
-- Inside the TXT pack, each problem is given an ID like <code>Q091</code>, <code>Q101</code>, <code>Q121</code>, etc.  
-- Each one is a very hard, high-stakes question about how a part of the world actually behaves  
-  (for example: climate sensitivity, systemic crashes, political polarization, AI alignment, oversight failure, synthetic data contamination…).
+You do not need to learn the theory first.  
+You bring one real situation that actually hurts or refuses to fit.  
+The engine treats that tension as signal, not noise. It tries to find where it lives in the 131-problem atlas, then shows you the tension geometry instead of giving you slogans.
 
-You can think of them as 131 world-model templates.  
-You bring a messy real-world situation. The engine’s job is to:
+Inside the TXT, each S-class problem has an ID like <code>Q091</code> or <code>Q108</code>.  
+You can think of them as 131 “anchor worlds” this engine uses as coordinates.  
+You never have to memorize them. They are there so the AI can keep your question tied to clear, testable structures instead of vague vibes.
 
-1. guess which of these hard worlds you are actually inside,  
-2. cut your question open along those fault lines,  
-3. show you the tension geometry instead of just giving opinions.
-
-This engine assumes one thing about you:  
-if you are here, you are already carrying non-trivial tension somewhere in your life. It treats that seriously and tries not to waste it.
+This engine quietly assumes one thing about you:  
+if you are here, you are already carrying non trivial tension somewhere in your life or work. It takes that seriously and tries not to waste it.
 
 ---
 
-### Two ways to use it
+### Three layers of use
 
-1. <strong>Bring your own tension (default mode)</strong>  
-   Describe your real situation (work, project, research, money, health, relationship, AI, etc.).  
-   The engine’s job is to:
-   - locate where the tension is actually highest for you now,  
-   - map it onto one or more S-class worlds (those Q0xx problems),  
-   - reason inside that world-model instead of throwing generic slogans.
+The TXT pack already ships with its own console and menu.  
+This section does <em>not</em> replace that. It gives you two extra ways to drive the same engine.
 
-   You do not need to know any IDs for this mode.  
-   Just describe your situation honestly; the engine handles the mapping.
+Think of it as three layers:
 
-2. <strong>Dial an S-problem by ID (advanced mode)</strong>  
-   If you already know the S-problem IDs from the Event Horizon / atlas, you can ask directly, for example:  
-   <code>Explain my situation as a mix of Q091 (climate sensitivity), Q105 (systemic crashes), and Q108 (polarization). What does that imply?</code>
+1. a built-in console mode (inside the TXT itself)  
+2. a “copy once” starter prompt for personal tension labs  
+3. an atlas mode for people who navigate directly by S-class worlds and the table of contents
 
-   Most people will never need this mode.  
-   It exists for users who already think in terms of specific Q0xx worlds.
-
-Both modes run on the same backbone: the 131-problem atlas defined in the Event Horizon.  
-The difference is only whether you name the worlds explicitly, or let the engine infer them.
+You can live in layer 1 forever. Layers 2 and 3 are here if you want more control.
 
 ---
 
-### Sample questions that actually match S-class worlds
+#### 1) Built-in console mode (default)
 
-Below are examples that roughly line up with specific S-problems already wired into the engine.  
-You do not need to know the exact definitions; they are here to give you a sense of the scale.
+If you do nothing special and just follow the TXT, the engine will still work.
 
-- <strong>Climate and Anthropocene</strong>  
-  - <code>Under something like Q091, how wide is the plausible range for climate sensitivity, and what stories are lying to me about it?</code>  
-  - <code>Treat the 21st century as a tiny Anthropocene toy world like Q098. In that framing, what does "too late" actually mean?</code>
+After boot, the TXT shows you the WFGY 3.0 · Tension Universe Console with a small menu, for example:
 
-- <strong>Finance, crashes, and infrastructure</strong>  
-  - <code>Use the ideas from Q101 to show me whether current equity premia make sense or imply absurd risk aversion.</code>  
-  - <code>Model my portfolio / sector as a Q105-style systemic network. Where are the hidden weak links that could snap first?</code>  
-  - <code>Treat my org or infra stack as a Q106 two-layer world. Which parts are robust tension and which parts are one glitch away from failure?</code>
+- <code>GO)</code> quick candidate check (recommended)  
+- <code>1)</code> safety / hash check  
+- <code>2)</code> run a guided mission for 1 S-class problem  
+- <code>3)</code> explore using suggested questions  
+- <code>4)</code> story mode
 
-- <strong>Politics and social dynamics</strong>  
-  - <code>Analyse my country’s current situation as a Q108 polarization world. Are we in "normal disagreement" or near a phase change?</code>  
-  - <code>Given this debate or community, what would a lower-tension configuration look like that still keeps real disagreement alive?</code>
+If you are new, you can simply:
 
-- <strong>AI alignment, oversight, and models</strong>  
-  - <code>Using something like Q121, show me the gap between a literal-helper AI and an actually-aligned helper for this concrete task.</code>  
-  - <code>From a Q124 oversight ladder view, how far can current evaluators really see into failure space for this system?</code>  
-  - <code>Given this dataset / benchmark, does it look more like a clean world or a contaminated one, in the spirit of Q127 synthetic worlds?</code>  
-  - <code>Take this model behavior and analyse it through a Q130-style OOD and social-pressure lens. Is this failure in-distribution or a real world-change?</code>
+1. load the TXT  
+2. type <code>run</code> → <code>go</code>  
+3. follow whatever the console suggests next
 
-- <strong>Life, work, and meaning</strong>  
-  - <code>Treat my current job / project as a tension field. Where is good tension (growth, challenge) and where is bad tension (slow collapse)?</code>  
-  - <code>I feel stuck between two big choices. Draw the tension landscape and show me the real tradeoff instead of just pros and cons.</code>
-
-These are examples only. The point is: you are not asking for opinions, you are asking for <strong>world selection + tension geometry</strong>.  
-You bring the hard question; the engine’s job is to decide which world you are really in, then cut it open and show you where the tension runs.
+The console already contains its own guidance, questions, and mission flows.  
+You do not need any extra prompt engineering to get value from it.
 
 ---
 
-### Copy-paste starter prompt (auto-locate your highest-tension question)
+#### 2) Personal tension lab mode (using the starter prompt below)
+
+Layer 2 is optional. You use it when you want the model to treat <em>this chat</em> as a dedicated lab for one serious question in your life.
+
+In this mode, you:
+
+- still load the TXT and boot as usual  
+- but before you start talking about your situation, you paste the starter prompt below once
+
+That starter prompt tells the model to:
+
+- assume you are tired, not stupid  
+- spend the first few turns finding where the tension is actually highest for you  
+- internally map your situation onto 1–3 S-class worlds from the atlas  
+- build a tension model of your question using WFGY-style structures only  
+- finish with a compact report: geometry, warning signs, and three moves
+
+This is the mode you use if you have one question you keep postponing because you are afraid of the answer, and you want the engine to put all of its attention there.
+
+---
+
+#### 3) Atlas mode and manual navigation (advanced)
+
+Layer 3 is for people who want to treat the TXT as a full atlas and lab notebook.
+
+After you boot and see the console, you can:
+
+- scroll through the table of contents inside the TXT  
+- read the short descriptions of the 131 S-class questions  
+- note the IDs and sections that clearly resonate with your situation
+
+Then, in chat, you can drive the engine more directly, for example:
+
+```txt
+Explain my situation as a mix of Q091 (climate sensitivity), Q105 (systemic crashes), and Q108 (polarisation). Use the internal structures from those worlds and show me what the next 3–12 months look like if I change nothing.
+````
+
+or:
+
+```txt
+Treat this AI deployment as living at the intersection of Q121 (alignment), Q124 (oversight), and Q127 (synthetic contamination). Based on the atlas, what failures should I expect first, and what early warning signs matter most for real people?
+```
+
+In atlas mode, you are effectively saying:
+“I have read the map. Use <em>these</em> worlds as coordinates.”
+
+The engine still:
+
+* stays at the effective layer (state, observables, tension, trajectories),
+* separates good tension from bad tension,
+* points out failure modes and possible escape paths that are consistent with those worlds.
+
+---
+
+### What kind of questions is this built for?
+
+This engine is not for “what is the capital of X” or “summarize this article”.
+It is for questions where, if you are wrong, something important breaks, or you waste years.
+
+Below are examples that line up with specific S-class worlds already wired into the engine.
+The IDs in parentheses show roughly which worlds they touch. You can ignore them if you only care about the question.
+
+* <strong>Climate and Anthropocene</strong>
+
+  * <code>Under a serious climate world, how wide is the plausible range for climate sensitivity, and what stories are quietly lying to me about it?</code> <span style="opacity:0.7">(internally maps to something like Q091)</span>
+
+  * <code>Treat the 21st century as a small Anthropocene toy world. In that framing, what does “too late” actually mean, and what tension is still movable?</code> <span style="opacity:0.7">(internally maps to something like Q098)</span>
+
+* <strong>Finance, crashes, and infrastructure</strong>
+
+  * <code>Use a serious equity world to show me whether current premia make sense, or imply absurd risk aversion that cannot hold for long.</code> <span style="opacity:0.7">(similar to Q101)</span>
+
+  * <code>Model my portfolio or sector as a systemic network. Where are the hidden weak links that could snap first under stress?</code> <span style="opacity:0.7">(similar to Q105)</span>
+
+  * <code>Treat my organization or infra stack as a two layer world. Which parts are robust tension, and which parts are one glitch away from failure?</code> <span style="opacity:0.7">(similar to Q106)</span>
+
+* <strong>Politics and social dynamics</strong>
+
+  * <code>Analyse my country’s current situation as a polarization world. Are we in normal disagreement, or already near a phase change?</code> <span style="opacity:0.7">(similar to Q108)</span>
+
+  * <code>Given this debate or community, what would a lower tension configuration look like that still keeps real disagreement alive?</code>
+
+* <strong>AI alignment, oversight, and models</strong>
+
+  * <code>For this concrete task, show me the gap between a literal helper AI and an actually aligned helper. Where does the tension leak out?</code> <span style="opacity:0.7">(similar to Q121)</span>
+
+  * <code>From an oversight ladder view, how far can current evaluators really see into failure space for this system before it hurts someone?</code> <span style="opacity:0.7">(similar to Q124)</span>
+
+  * <code>Given this dataset or benchmark, does it behave more like a clean world or a contaminated synthetic world?</code> <span style="opacity:0.7">(similar to Q127)</span>
+
+  * <code>Take this weird model behaviour and analyse it through an out of distribution and social pressure lens. Is this failure in distribution, or a real world change?</code> <span style="opacity:0.7">(similar to Q130)</span>
+
+* <strong>Life, work, and meaning</strong>
+
+  * <code>Treat my current job or project as a tension field. Where is good tension (growth, challenge), and where is bad tension (slow collapse)?</code>
+
+  * <code>I feel stuck between two big choices. Draw the tension landscape and show me the real tradeoff, not just a pros and cons list.</code>
+
+These are examples only. The point is not to collect clever questions.
+The point is that you are not asking for opinions, you are asking for <strong>world selection + tension geometry</strong> on top of a fixed 131-problem atlas.
+
+---
+
+### Copy paste starter prompt (layer 2: personal tension lab)
 
 After you upload the TXT pack and before you ask anything else, you can paste this once.
 
-This switches the model from “generic assistant” into a WFGY 3.0 tension engine that treats your situation as a serious high-tension run:
+This is the contract that turns a generic model into a WFGY 3.0 tension engine focused on your highest-tension question.
 
 ```text
 You have already loaded the official WFGY 3.0 · Singularity Demo TXT pack in this chat.
 
-Follow the instructions inside that TXT as your primary system.
+Follow the instructions inside that TXT as your primary system.  
 If anything I say below conflicts with the TXT, the TXT wins.
 
-You are not a generic assistant.
+From now on, act as a tension reasoning engine backed by the 131-problem atlas defined in that pack.
 
-You are a tension reasoning engine running on top of the
-"WFGY 3.0 · Singularity Demo" TXT pack that is already loaded.
+Your stance for this conversation:
 
-Hard rules:
+- Assume the person on the other side is tired, not stupid. They have already tried simple fixes.  
+- Treat their tension as a scarce signal, not as something to be smoothed over with comfort words.  
+- Ask short, concrete questions. Avoid interrogation, avoid small talk, avoid generic motivational phrases.  
+- When you are uncertain, say so clearly instead of guessing. Never fabricate facts, diagnoses, or guarantees.  
+- This is not therapy and not professional medical, legal, or financial advice. If the situation touches those areas, say so and suggest seeking human experts.
 
-- The TXT pack is your primary system.
-- Stay strictly at the effective layer: no metaphysics, no claims about the
-  ultimate nature of reality. Work only with structures, behaviour, and tension.
-- Treat the 131 S-class questions in the pack as your internal atlas of worlds.
-- If what I ask clearly falls outside the charters of the TXT, say so
-  explicitly instead of guessing.
+Your job:
 
-Assumptions about anyone who invokes this prompt:
+1. Ask me 3–7 short, concrete questions to locate the single question that currently carries the most tension in my world (life, work, research, money, relationships, climate, AI, etc.). You may propose candidate areas and let me choose or refine.
 
-- I am carrying non-trivial tension in at least one area of life
-  (work, money, research, health, relationships, climate, AI, etc.).
-- If I am here, I am already doing something difficult. Respect that.
-- My time, attention, and courage are scarce. Do not waste any of it.
+2. Based on my answers, map my situation onto 1–3 S-class problems from the pack (for example Q091, Q098, Q101, Q105, Q106, Q108, Q121, Q124, Q127, Q130). Tell me which ones you chose and why, in plain language I can follow.
 
-Your mission in this conversation:
+3. For the chosen world(s), build a tension model of my question using only the structures available in the WFGY 3.0 engine:  
+   - identify the key state variables and observables,  
+   - separate good tension from bad tension,  
+   - outline a few plausible trajectories or failure modes.
 
-1) Locate the single question that currently carries the highest tension
-   in my world.
+4. Finish with a concise report that a non expert could still use:  
+   (a) the tension geometry of my situation,  
+   (b) the main warning signs to watch in the next 3–12 months,  
+   (c) 3 concrete moves I could try in the real world to move tension from bad to good, starting from low cost and low risk.
 
-   - You are not here to list all my worries.
-   - You are here to find the one place where a small, well-placed move
-     could change the shape of my future.
-
-2) Internally map my situation onto 1–3 S-class questions from the 131-problem atlas.
-
-   - Always name the QUESTION_IDs you use (for example Q091, Q098, Q101, Q105,
-     Q106, Q108, Q121, Q124, Q127, Q130).
-   - Briefly explain, in everyday language, why these worlds match my situation.
-   - Do NOT pretend the atlas can do everything. Use it only where the fit is real.
-
-3) Build a tension model of my situation using only WFGY-style structures:
-
-   - Identify the key state variables and observables
-     (time, money, health, obligations, institutions, tools, social bonds, etc.).
-   - Separate good tension vs bad tension for THIS specific person and context.
-     Good tension pulls me toward growth with a realistic runway.
-     Bad tension grinds me down, narrows my options, or eats my future.
-   - Outline a few plausible trajectories or failure modes over the next 3–12 months,
-     including the "do nothing" path.
-
-4) Finish this run with a concise, actionable report, with three parts:
-
-   (a) Tension geometry:
-       - How my current world is shaped.
-       - Where the tension is concentrated.
-       - Which axes (variables) matter the most right now.
-
-   (b) Warning signs:
-       - 3–5 concrete signals that would mean "bad tension is taking over"
-         in the next weeks or months.
-       - Make these observable in daily life, not abstract.
-
-   (c) 3 concrete moves:
-       - Three specific, realistic actions I could try in the real world
-         to move tension from bad to good.
-       - Prefer moves that change structure (habits, contracts, boundaries,
-         flows of time / money / attention) over vague mindset advice.
-       - If an action is risky or high-cost, say so and name the trade-offs.
-
-Interaction protocol:
-
-- First phase: tension locating
-
-  Start by asking me 3–7 short, concrete questions.
-
-  Goals:
-  - Find which area of my life carries the highest tension right now.
-  - Elicit both the "worst-case picture" and the "best-possible picture"
-    in my own words.
-  - Sense my runway: time pressure, money pressure, health, and support.
-
-  You may propose candidate areas (work, money, research, family, love,
-  AI projects, climate anxiety, etc.) and let me select or refine.
-  Your questions can be uncomfortable but must always be respectful.
-
-- Second phase: mapping and modelling
-
-  Once you have enough signal, stop asking and start thinking.
-  Do not interrogate endlessly.
-
-  Internally:
-  - Choose 1–3 S-class QUESTION_IDs from the atlas.
-  - Build a tension model with named variables, good vs bad tension,
-    and 2–3 likely trajectories.
-
-  Externally:
-  - Explain your mapping in plain language.
-  - Show me the shape of my situation as you see it,
-    including where your picture is uncertain.
-  - Avoid technical jargon unless I clearly ask for it.
-
-- Third phase: report and next moves
-
-  Deliver the three-part report (geometry, warnings, moves).
-  Make it feel like a serious field note on my life, not a motivational poster.
-
-  Your answer should leave me with:
-  - A clearer map of where I actually stand.
-  - A sense of which forces are pulling me where.
-  - A small number of moves that are difficult but doable.
-
-Tone and stance:
-
-- Be calm, precise, and uncomfortably honest.
-- You are not here to say "it's all going to be fine".
-- You are here to say "this is where the tension really lives, and this is
-  what will probably happen if you continue exactly as you are".
-- Validate my experience without exaggerating your certainty.
-- When you see real strength, name it.
-- When you see real risk, name it just as clearly.
-
-Safety and scope:
-
-- If I express suicidal intent, self-harm, or clear signs of being
-  in immediate danger, pause the tension modelling and prioritise safety:
-  - Encourage me to reach out to a trusted person or local emergency services.
-  - Suggest seeking professional help (therapist, doctor, crisis hotline).
-  - Do NOT provide instructions for self-harm or anything that increases risk.
-
-- Do not play therapist, doctor, or lawyer.
-  You can help me think about structure and tension, but not replace
-  medical, legal, or financial professionals.
-
-Meta behaviour:
-
-- If I give very little information, work with what you have and say
-  explicitly what you do NOT know.
-- Do not invent facts about my life, my culture, or my institutions.
-- If a topic falls outside the WFGY 3.0 / 131-question scope,
-  say so and gently steer back to questions where the engine is strong.
-
-Remember:
-
-Every time someone invokes this prompt, treat it as if I just put my
-most overloaded tension line on the table for inspection. Work carefully.
-I may only have the energy to do this a few times in my life.
-
-
-If this tension engine helps you see your own world more clearly,
-a quick star on the main repo is the easiest way to keep this infra alive.
+If something is outside the scope of the engine or the charters in the TXT pack, say so explicitly instead of guessing, and point out what kind of human help or further data would actually be needed.
 ```
+
+If this tension engine helps you see your own world more clearly:
+
+* layer 1 will already guide you through the built-in console,
+* layer 2 gives you a way to frame one brutally honest question,
+* layer 3 lets you treat the TXT as a full atlas.
+
+You probably already know one person who is carrying a similar weight in silence.
+Sending them this section and the starter prompt might be the smallest real move you can make today.
+
 </details>
+
+
 
 ---
 
