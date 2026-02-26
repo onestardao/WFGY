@@ -16,6 +16,11 @@
   > If you need the full triage and all prescriptions, return to the Emergency Room lobby.
 </details>
 
+> **Evaluation disclaimer (latency vs accuracy)**  
+> The trade off curves and numbers here depend on your stack, load and datasets.  
+> Treat them as shapes to look for, not fixed targets that prove one model or setting is always better.
+
+---
 
 This page defines how to measure, report, and optimize the trade-off between model latency and retrieval/answer accuracy. It is not enough to chase precision; stable systems must also meet latency SLOs while holding ΔS and λ within guardrails.
 
