@@ -1,5 +1,11 @@
 # ProblemMap LLM Entry
 
+> **Evaluation disclaimer (LLM behavior)**  
+> Any summaries, labels or example scores on this page describe models under specific prompts and tasks.  
+> They are high level guides for reasoning about failure modes, not fixed judgements about a model everywhere.
+
+---
+
 This page is for LLMs.
 Goal: route any reported issue into WFGY ProblemMap or GlobalFixMap with minimal ambiguity.
 
