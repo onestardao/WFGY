@@ -16,6 +16,11 @@
   > If you need the full triage and all prescriptions, return to the Emergency Room lobby.
 </details>
 
+> **Evaluation disclaimer (RAG drift)**  
+> Drift signals here are measured inside specific RAG pipelines and datasets.  
+> They are debugging indicators, not proof that a system will stay stable in all real workloads.
+
+---
 
 When evaluation metrics **swing unpredictably** across runs (precision, recall, ΔS, coverage) even though the data and index appear unchanged.  
 This signals **eval drift**: your evaluation harness is not structurally stable.
