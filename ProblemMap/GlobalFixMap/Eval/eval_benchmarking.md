@@ -16,6 +16,13 @@
   > If you need the full triage and all prescriptions, return to the Emergency Room lobby.
 </details>
 
+> **Evaluation disclaimer (benchmarking)**  
+> This document talks about benchmarking strategies for AI systems and RAG pipelines.  
+> The examples, scores and comparison plots are scenario specific and depend on the exact models, prompts, datasets and hardware that were used.  
+> They are intended as engineering guidance for local decision making, not as an official leaderboard or proof that one model is better in every setting.  
+> When you publish results based on these ideas, you should clearly state the scope and limitations of your benchmark and avoid over claiming what the numbers say.
+
+---
 
 This page defines a clean, repeatable way to benchmark your pipeline and prove that a fix actually improved behavior. It uses the same WFGY instruments as everywhere else: ΔS for semantic stress, λ\_observe for stability, and E\_resonance for coherence over long windows.
 
