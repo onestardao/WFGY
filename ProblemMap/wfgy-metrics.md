@@ -8,6 +8,14 @@
 # 📐 WFGY Metrics — Canonical Definitions  
 *A single spec for measuring semantic accuracy, stability, cost, and safety across any LLM system.*
 
+> **Evaluation disclaimer (WFGY metrics)**  
+> This document defines a set of WFGY style metrics for inspecting model behavior and RAG pipelines.  
+> These metrics are heuristic instruments that highlight patterns and failure modes in a given setup.  
+> They do not by themselves prove that a system is safe, aligned or correct in all cases.  
+> When you use these metrics, you should report the models, prompts, datasets and thresholds that were chosen and avoid treating any single score as a scientific guarantee.
+
+---
+
 > **Why read this?**  
 > – You can’t improve what you can’t measure.  
 > – ΔS, λ_observe, and E_resonance already power the **Problem Map**, **Semantic Clinic**, and WFGY’s CI templates.  
