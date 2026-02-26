@@ -16,6 +16,11 @@
   > If you need the full triage and all prescriptions, return to the Emergency Room lobby.
 </details>
 
+> **Evaluation disclaimer (λ_observe)**  
+> λ_observe is a heuristic stability signal defined inside the WFGY framework.  
+> It helps you notice drift and volatility but is not a formal guarantee of long term robustness.
+
+---
 
 A core probe for evaluating **semantic convergence** across multiple seeds, paraphrases, and retrieval variations.  
 While ΔS measures semantic distance, **λ_observe** captures **stability vs divergence of reasoning paths**.
