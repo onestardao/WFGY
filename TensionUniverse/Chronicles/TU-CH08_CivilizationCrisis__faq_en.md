@@ -5,6 +5,9 @@
 > Read this as a conversation with a junior Tension Historian,  
 > not as official policy or prediction.
 
+<img width="1536" height="1024" alt="CivilizationCrisis (3)" src="https://github.com/user-attachments/assets/74fd798f-e124-4455-9692-148622d67cff" />
+
+
 ---
 
 ## Q1. Is this just a fancy way to say “the world is in trouble”?
