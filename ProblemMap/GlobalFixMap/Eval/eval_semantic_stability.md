@@ -16,6 +16,11 @@
   > If you need the full triage and all prescriptions, return to the Emergency Room lobby.
 </details>
 
+> **Evaluation disclaimer (semantic stability)**  
+> Stability scores in this page are heuristic signals about how outputs move under small changes.  
+> They do not prove global robustness or safety and should be combined with other checks.
+
+---
 
 **Goal**  
 Quantify how **stable** your pipeline is under small, *non-semantic* perturbations: different seeds, low temperature noise, and benign **prompt jitters** (punctuation/whitespace/synonym swaps). A robust system should keep claims, citations, refusals, and constraint echos **invariant** (or nearly so).
