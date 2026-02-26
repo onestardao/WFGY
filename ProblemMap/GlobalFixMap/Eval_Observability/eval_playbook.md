@@ -16,6 +16,11 @@
   > If you need the full triage and all prescriptions, return to the Emergency Room lobby.
 </details>
 
+> **Evaluation disclaimer (observability playbook)**  
+> The signals in this playbook come from specific logging and probing setups.  
+> They are tools for monitoring behavior, not proofs of safety or correctness on their own.
+
+---
 
 A compact playbook to **stabilize evaluation** and ensure results are reproducible.  
 Use this when metrics look inconsistent, coverage drifts, or benchmarks feel untrustworthy.
