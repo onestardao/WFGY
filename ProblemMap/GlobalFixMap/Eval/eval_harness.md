@@ -16,6 +16,13 @@
   > If you need the full triage and all prescriptions, return to the Emergency Room lobby.
 </details>
 
+> **Evaluation disclaimer (eval harness)**  
+> This page sketches a harness for running structured evaluations on AI pipelines.  
+> Any metrics or labels that pass through such a harness remain heuristic outputs of models, scripts and annotators.  
+> They do not become scientific proof just because they flow through this structure.  
+> Use the harness to compare variants inside a controlled scenario, and avoid presenting those numbers as universal claims about model quality beyond that scenario.
+
+---
 
 A minimal yet strict harness to run repeatable evaluations for RAG and agent pipelines. It fixes the two usual failures. First, non-reproducible runs. Second, noisy metrics that cannot explain drift. Everything here maps to WFGY pages with measurable targets.
 
