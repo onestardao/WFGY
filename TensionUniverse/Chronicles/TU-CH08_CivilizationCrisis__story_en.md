@@ -4,6 +4,9 @@
 > This is speculative science fiction, not a proven model of history or physics.  
 > “Tension Universe” is a fictional framing device. Use it as a lens, not as a prophecy.
 
+<img width="1536" height="1024" alt="CivilizationCrisis (1)" src="https://github.com/user-attachments/assets/03c07113-0795-425c-a443-8a579a97211b" />
+
+
 ---
 
 ## 1 ▹ The museum of vanished civilizations
