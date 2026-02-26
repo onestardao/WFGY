@@ -16,6 +16,11 @@
   > If you need the full triage and all prescriptions, return to the Emergency Room lobby.
 </details>
 
+> **Evaluation disclaimer (coverage tracking)**  
+> Coverage numbers here measure how much of a designed space you have touched under chosen tests.  
+> High coverage does not guarantee absence of bugs or failures outside those tests.
+
+---
 
 A focused module to monitor **retrieval coverage** during eval and live runs.  
 Coverage answers the key question: *“Did we retrieve enough of the right section to support the answer?”*
