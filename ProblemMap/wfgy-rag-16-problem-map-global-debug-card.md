@@ -14,4 +14,6 @@ No external framework required.
 
 ---
 
-📥 Download the original full-resolution version directly from this repository.
+📥 Download the original full-resolution image directly from this repository.
+
+If this helps you, feel free to leave a ⭐ on GitHub.
