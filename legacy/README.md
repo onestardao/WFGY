@@ -117,7 +117,8 @@ notes:
 
 <img width="2299" height="1219" alt="gpt5_vs_wfgy_benchmark_20250808" src="https://github.com/user-attachments/assets/19f59128-14a5-42de-aa2b-d25c8114db10" />
 
-> Quick demo: WFGY turns GPT-4 into a stronger reasoner than GPT-5 baseline.  
+> In one small internal benchmark, a GPT-4 + WFGY pipeline scored higher than a GPT-5-class baseline on several reasoning tasks.
+> This is limited to that setup and is not a general claim that WFGY “beats GPT-5” in all cases.  
 > Reproduce in under 30s with the PDF + prompt.  
 
 📎 [Benchmark vs GPT-5 →](https://github.com/onestardao/WFGY/tree/main/benchmarks/benchmark-vs-gpt5/README.md)
@@ -168,7 +169,7 @@ notes:
 | Fragile logic chains | BBPF multi-path reasoning |
 | Chaotic inputs | BBMC cleans semantic residue |
 | Multi-agent memory | Stable shared logic |
-| Scaling RAG | 10M+ docs without collapse |
+| Scaling RAG | Designed for large-scale corpora; tested on mid-size setups so far (10M+ is a target design scale, not a proven hard limit). |
 
 📎 [Full Problem Map →](../ProblemMap/README.md)  
 📎 [Semantic Clinic →](../ProblemMap/SemanticClinicIndex.md)
