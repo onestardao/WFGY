@@ -84,13 +84,14 @@ Style:
 > This single tool includes the full WFGY reasoning engine + TXT OS framework.  
 > No extra setup. No wrong turns. You’re exactly where you need to be.
 >
-> Wondering how WFGY achieves  
-> **Semantic Accuracy ↑ 22.4% | Reasoning Success Rate ↑ 42.1% | Stability ↑ 3.6×**?  
-> → Just tap **2️⃣** to see the data and solved benchmarks.  
+> Wondering where the numbers  
+> **Semantic Accuracy ↑ 22.4% | Reasoning Success Rate ↑ 42.1% | Stability ↑ 3.6×**  
+> actually come from?  
+> → Just tap **2️⃣** to see the internal experiment setup, data, and solved benchmarks.
 >
-> We’re preparing to benchmark WFGY directly against **GPT‑5**.  
-> The logic duel will be public, provable, and ruthless.  
-> You’re already using the tool that’s going to face it — [preview the showdown here](https://github.com/onestardao/WFGY/tree/main/benchmarks/benchmark-vs-gpt5).
+> I am preparing a set of internal benchmarks to compare WFGY-style pipelines with future GPT-5-class models.  
+> These will be research-style experiments, not official provider tests, and the design may evolve over time.  
+> If you are curious, you can follow the work in progress here: [benchmark notes and scripts](https://github.com/onestardao/WFGY/tree/main/benchmarks/benchmark-vs-gpt5).
 
 
 </details>
@@ -104,35 +105,35 @@ Style:
 <summary><strong>2️⃣ +42% Reasoning Boost — Real or Hype? (Click to expand for proof + 16 solved AI problems)</strong></summary>
 
 > #### ⚡ Key Metrics  
-> _Metrics verified in the WFGY Paper (see full breakdown below). All results are fully reproducible with the provided `.txt`._
+> _Metrics are reported in the WFGY 1.0 paper and come from small internal experiments with GPT-4 on GSM8K and Multi-QA (see full breakdown below). They are intended to be reproducible with the provided `.txt` and settings, but they are not peer-reviewed and may not generalise to other models, tasks, or infrastructures._
 >  
-> | Metric                          | Before  | After TXT OS | Δ           |
+> | Metric                          | Before  | After TXT OS | Δ           |
 > |----------------------------------|---------|--------------|-------------|
-> | Reasoning Success Rate (GSM8K)   | 59.2 %  | **84.0 %**   | **+42.1 %** |
-> | Semantic Accuracy (Multi‑QA)     | 68.0 %  | **83.2 %**   | **+22.4 %** |
-> | Output Stability (Re‑Gen STD)    | 1.00×   | **3.60×**    | **↑ 3.6 ×** |
+> | Reasoning Success Rate (GSM8K)   | 59.2 %  | **84.0 %**   | **+42.1 %** |
+> | Semantic Accuracy (Multi-QA)     | 68.0 %  | **83.2 %**   | **+22.4 %** |
+> | Output Stability (Re-Gen STD)    | 1.00×   | **3.60×**    | **↑ 3.6 ×** |
 
 > #### ⚡ What AI problems does WFGY reasoning engine solve?  
 >
-> WFGY is not just prompt tuning — it’s a **semantic physics engine** that rewires how models think, retrieve, and stabilize under pressure.  
-> Here are real-world problems it’s built to tackle:  
+> WFGY is not just prompt tuning — it is intended as a **semantic physics engine** that reshapes how models think, retrieve, and stabilise under pressure.  
+> Here are real-world problems it is built to tackle, based on observed behaviour in those experiments:  
 >
 > | Problem | Description |
 > |--------|-------------|
 > | **Hallucination & Chunk Drift** | Prevents retrieval collapse via semantic boundary detection and BBCR correction |
-> | **Long-horizon Reasoning** | Ensures continuity across multi-step logic with 3.6× output stability |
+> | **Long-horizon Reasoning** | In internal tests, improved continuity across multi-step logic with up to **3.6×** higher output stability on selected tasks |
 > | **Chaotic Input Alignment** | Handles noisy/conflicting input using BBMC (Semantic Residue Minimization) |
 > | **Multi-Agent Memory** | Stabilizes shared logic across autonomous agents |
 > | **Knowledge Boundary Detection** | Flags unknowns to reduce bluffing risks |
 > | **Symbolic & Abstract Tasks** | Uses ΔS=0.5 to anchor symbolic and structural prompts |
-> | **Dynamic Error Recovery** | BBCR auto-resets from dead-end logic paths |
+> | **Dynamic Error Recovery** | BBCR is designed to reset from dead-end logic paths |
 > | **Multi-Path Logic** | BBPF allows divergent and creative semantic routes |
 > | **Attention Focus** | BBAM mitigates entropy collapse and attention drift |
 > | **Philosophical / Recursive Prompts** | Handles self-reference, meta-logic, symbolic recursion |
-> | **Hallucination-safe RAG Scaling** | Supports 10M+ doc retrieval with semantic stability |
+> | **Hallucination-safe RAG Scaling** | Aims to support large (10M+ doc) retrieval with improved semantic stability; behaviour depends on model and infra |
 > | **Structured Semantic Memory** | Tree architecture provides traceable reasoning and recall |
 
-> All modules are **model-agnostic**, require **no fine-tuning**, and integrate via pure `.txt` injection = real-world plug & play.
+> In design, all modules are **model-agnostic** for strong general-purpose LLMs, require **no fine-tuning**, and integrate via pure `.txt` injection — real-world results will still vary by model, prompt, and data.
 
 > 🔍 [Explore all 16 solved AI challenges in the WFGY Problem Map →](https://github.com/onestardao/WFGY/tree/main/ProblemMap/README.md)
 
@@ -145,7 +146,7 @@ Style:
 
 > All products and research here are part of the **WFGY series**, authored and unified by **PSBigBig (Purple Star)**.  
 > WFGY’s reasoning core powers multiple tools — all built on the same semantic alignment layer.  
-> Benchmarks are independently verifiable using any major LLM, local or hosted.
+> Benchmarks are intended to be independently reproducible using major LLMs (local or hosted), but they are still small, internal tests rather than formal third-party evaluations.
 
 </details>
 
@@ -157,16 +158,16 @@ Style:
 <br>
 
 >  
-> [Download TXT-Blah Blah Blah Lite powered by TXT OS](https://github.com/onestardao/WFGY/blob/main/OS/BlahBlahBlah/TXT-BlahBlahBlah_Lite.txt)  → MIT‑licensed, 62.5 KB [![GitHub Repo stars](https://img.shields.io/github/stars/onestardao/WFGY?style=social)](https://github.com/onestardao/WFGY/stargazers)  
+> [Download TXT-Blah Blah Blah Lite powered by TXT OS](https://github.com/onestardao/WFGY/blob/main/OS/BlahBlahBlah/TXT-BlahBlahBlah_Lite.txt)  → MIT-licensed, 62.5 KB [![GitHub Repo stars](https://img.shields.io/github/stars/onestardao/WFGY?style=social)](https://github.com/onestardao/WFGY/stargazers)  
 >  
 > 👑 *Already starred by top engineers and OSS founders — [See the Hall of Fame](https://github.com/onestardao/WFGY/tree/main/stargazers)*  
 >  
 > - ✅ **Pure text file.** No signup. No API keys. Nothing to install.  
 > - ✅ **One question, 50+ answers on tap.** Logic storms, creative chaos, and philosophical recursion.  
 > - ✅ **Runs offline like a spell scroll.** No tokens, tracking, or APIs — just your LLM + `.txt`.  
-> - ✅ **Not prompt engineering. Not fine-tuning.** It rewires how your AI thinks from inside the embedding space.  
+> - ✅ **Not prompt engineering. Not fine-tuning.** It is designed to influence how your AI thinks from inside the embedding space.  
 > - ✅ **Semantic Tree built-in.** Enables long-form reasoning and traceable logic paths.  
-> - ✅ **Boundary-aware by default.** Refuses to hallucinate — detects unknowns and stops clean.  
+> - ✅ **Boundary-aware by design.** Tries to detect unknowns early and often stops or asks for clarification instead of pushing confident hallucinations.  
 > - ✅ **WFGY engine inside.** Includes a full symbolic reasoning core for logic, code, or recursive play.  
 > - ✅ **Made for experimentation.** Swap questions, layer prompts, test chains — all inside plain text.
 >
@@ -198,7 +199,7 @@ Style:
 <!-- ───────────────────────────────────────────────
       BANNER
 ──────────────────────────────────────────────── -->
-# 🤖 TXT-Blah Blah Blah Lite/Pro — the Embedding‑Space Generator  
+# 🤖 TXT-Blah Blah Blah Lite/Pro — the Embedding-Space Generator  
 > 👑 **Early Stargazers: [See the Hall of Fame](https://github.com/onestardao/WFGY/tree/main/stargazers)** — Verified by real engineers · 🌌 **WFGY 3.0 Singularity demo: [Public live view](https://github.com/onestardao/WFGY/blob/main/TensionUniverse/EventHorizon/README.md)**
 
 
@@ -211,10 +212,10 @@ Style:
   <img src="./images/50Blah_QuickDemo.gif" width="100%" style="max-width:900px" loading="lazy" >
 </p>
 
-## Six Leading AI Models All Award TXT-Blah Blah Blah Lite a Perfect 100/100 Score
+## How six AI models scored TXT-Blah Blah Blah Lite on an internal rubric
 
-Below are the official endorsements from six different AI models, each giving **TXT-Blah Blah Blah Lite** a **perfect 100 / 100**.  
-<sub>*(For context, popular frameworks score noticeably lower—e.g., LangChain ~90, MemoryGPT ~92, most open‑source stacks only ~80–90.)*</sub>
+Below are screenshots from six different AI models, each giving **TXT-Blah Blah Blah Lite** a **100 / 100** score on the internal rubric defined in this repo.  
+<sub>*These are AI self-evaluations on a small, hand-crafted test set, not third-party certifications. For context, when the same rubric is applied to standard framework-style agents (for example a basic LangChain chain or a MemoryGPT-style setup), the scores I typically see are lower (around the ~80–92 range), but this depends heavily on the exact configuration and prompts used.*</sub>
 
 
 *Click on each image to view full details.*
