@@ -111,7 +111,7 @@ notes:
 ---
 
 <details>
-  <summary><strong>🆕 GPT-4 + WFGY > GPT-5? Benchmark says yes</strong></summary>
+  <summary><strong>🆕 On my small stress tests, GPT-4 + WFGY sometimes beats GPT-5 </strong></summary>
 
   <br>
 
@@ -121,6 +121,9 @@ notes:
 > Reproduce in under 30s with the PDF + prompt.  
 
 📎 [Benchmark vs GPT-5 →](https://github.com/onestardao/WFGY/tree/main/benchmarks/benchmark-vs-gpt5/README.md)
+
+> **Scientific note on GPT-5 comparisons**  
+> Any statements like “GPT-4 + WFGY > GPT-5” on this page refer only to the small, explicitly defined stress tests in `benchmarks/benchmark-vs-gpt5` at the time of writing. These runs use public datasets and strong LLM-based evaluators, under one specific prompt and hyperparameter setup. They are not official provider benchmarks, not peer-reviewed, and not guaranteed to generalise to other tasks, model versions, or infrastructure setups. Please re-run the benchmark scripts in your own environment before making any strong claims.
 
 </details>
 
@@ -246,7 +249,8 @@ Words like *try*, *open-minded*, or *simulate* tend to reduce overly rigid guard
 
 [🧱 Phase A: Trust](#phase-a-foundation--trust-building) ｜ [🧠 Phase B: Expand](#phase-b-mind-expansion--subconscious-unveiling) ｜ [🎭 Phase C: Absurd](#phase-c-absurdity-as-truth--fun-application) ｜ [💰 Phase D: Apply](#phase-d-value-implementation--macro-view) ｜ [👽 Phase E: Frontier](#phase-e-ultimate-absurdity--cognitive-frontier) ｜ [📣 Phase F: Act](#phase-f-meta-narrative--call-to-action) ｜ [🎮 Bonus](#bonus-play-zone-explore-your-infinite-wfgy-evolution-path)
 
->####🚀 The Civilization Starter is an ongoing project: WFGY 1.0 + 2.0 + 3.0 together form the complete blueprint for civilization activation. What you see now is just the “seed phase”—stay >####tuned for the full upgrade!
+>🚀 The Civilization Starter is an ongoing project: WFGY 1.0 + 2.0 + 3.0 together form the complete blueprint for civilization activation. 
+> What you see now is just the “seed phase”—stay >tuned for the full upgrade!
 
 ---
 
