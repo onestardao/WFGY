@@ -468,6 +468,8 @@ When guiding:
 * **Diagnose by symptom:** [`Diagnose.md` table →](./Diagnose.md)
 * **Visual RAG Guide:** [`RAG Architecture & Recovery`](./rag-architecture-and-recovery.md)
   high-altitude map linking symptom × stage × failure class with exact recovery paths.
+* **Global Debug Card (3.0):** [`RAG 16 Problem Map · Image-Native Poster`](./wfgy-rag-16-problem-map-global-debug-card.md)
+  single-image portable RAG failure map.
 * **Multi-Agent chaos:** [Role drift & memory overwrite →](./Multi-Agent_Problems.md)
 * **TXT OS directory:** [browse the OS repo →](../OS/README.md)
 * **MVP demos:** [Minimal WFGY examples →](./mvp_demo/README.md)
