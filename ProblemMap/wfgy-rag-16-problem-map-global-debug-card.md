@@ -10,6 +10,22 @@ No external framework required.
 
 ---
 
+## 🌍 Environment Coverage
+
+The following environments represent structured applications of the 16-Problem Map in production contexts:
+
+- **[MLflow](https://github.com/mlflow/mlflow)** — Experiment tracking & RAG debugging · [Medium Article](https://psbigbig.medium.com/the-16-problem-rag-map-how-to-debug-failing-mlflow-runs-with-a-single-screenshot-6563f5bee003?postPublishedType=repub)
+- **[Dask](https://github.com/dask/dask)** — Distributed execution & task orchestration · Medium Article *(coming soon)*
+- **[Kedro](https://github.com/kedro-org/kedro)** — Pipeline structuring & ML workflow management · Medium Article *(coming soon)*
+
+---
+
+📥 Download the original high-resolution Debug Card directly from this repository.
+
+If this helps you, feel free to leave a ⭐ on GitHub.
+
+---
+
 ![WFGY RAG 16 Problem Map Global Debug Card](./WFGY_RAG_16_Problem_Map_Global_Debug_Card.jpeg)
 
 ---
