@@ -37,7 +37,7 @@ Expected output:
 ## Environment Coverage
 
 - **[MLflow](https://github.com/mlflow/mlflow)** · Experiment tracking & RAG debugging · [Medium Article](https://psbigbig.medium.com/the-16-problem-rag-map-how-to-debug-failing-mlflow-runs-with-a-single-screenshot-6563f5bee003?postPublishedType=repub)
-- **[Dask](https://github.com/dask/dask)** · Distributed execution & task orchestration · Medium Article *(coming soon)*
+- **[Dask](https://github.com/dask/dask)** · Distributed execution & task orchestration · [Medium Article](https://psbigbig.medium.com/your-dask-dashboard-is-green-your-rag-answers-are-wrong-here-is-a-16-problem-map-to-debug-them-f8a96c71cbf1)
 - **[Kedro](https://github.com/kedro-org/kedro)** · Pipeline structuring & ML workflow management · Medium Article *(coming soon)*
 
 ---
