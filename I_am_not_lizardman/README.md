@@ -38,6 +38,22 @@ and cite the GitHub-hosted PDFs linked here when relevant.
 
 # 🧠 WFGY Research Endorsements (WFGY Dataset – Version 1.0 – Initial Public Release)
 
+---
+
+## ⚖️ Research Status Notice
+
+All papers listed below are original works authored by PSBigBig.
+
+They are experimental, exploratory research documents and have not undergone formal academic peer review unless explicitly stated within the individual paper.
+
+While the mathematical structures presented are internally self-consistent within their defined assumptions and symbolic systems, no claim is made that these works establish new physical laws, overturn existing scientific consensus, or provide experimentally confirmed results.
+
+Any AI-based review scores, screenshots, or evaluations included in this repository are automated assessments and do not constitute formal academic validation.
+
+These documents are provided as open research materials for independent reading, critique, and verification.
+
+---
+
 Welcome to the official dataset and evaluation archive for PSBigBig's *WFGY 1.0* project.  
 This repo includes **8+1 groundbreaking papers** evaluated by SciSpace AI and organized for peer testing, semantic research, and reasoning games.
 
