@@ -1,3 +1,31 @@
+> ## Scientific Status & Scope
+>
+> This page documents **conceptual formulas and control structures** used inside the WFGY reasoning framework.
+>
+> The expressions shown here are **engineering-level symbolic models** intended to describe how certain reasoning behaviors can be structured or constrained in large language models.  
+> They should be interpreted as **design specifications and research notes**, not as formal mathematical theorems or fully validated scientific laws.
+>
+> **Important clarifications:**
+>
+> - Some formulas are **conceptual abstractions** used to describe system behavior or reasoning dynamics.
+> - Numerical constants and scaling terms may represent **empirical tuning parameters** observed during experimentation.
+> - Not every formula on this page is guaranteed to be **production-complete, benchmarked, or universally optimal**.
+> - Behavior may vary across different LLM architectures, model sizes, or inference environments.
+>
+> These documents are provided to help developers and researchers understand the **internal reasoning design of the WFGY engine**.
+>
+> They are best read as:
+>
+> - architecture documentation  
+> - experimental reasoning models  
+> - implementation guidance for symbolic control logic
+>
+> rather than as formal proofs or claims of universal performance.
+>
+> Where numerical results appear elsewhere in the repository, they refer to **specific experimental setups** and should not be interpreted as guarantees across all models or tasks.
+>
+> These formulas describe the **intended control logic** of the system and may be implemented in different ways depending on the host model and environment.
+
 # 🔬 **WFGY 1.0 — Core Formulas & Variables**
 
 > **Canonical reference  (“*[WFGY 1.0: A Universal Unification Framework for Large‑Scale Self‑Healing LLMs](https://github.com/onestardao/WFGY/blob/main/I_am_not_lizardman/WFGY_All_Principles_Return_to_One_v1.0_PSBigBig_Public.pdf
