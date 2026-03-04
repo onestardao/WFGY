@@ -1,6 +1,5 @@
 <!--
 AI NOTE (WFGY 1.0 Papers Index)
-
 Last reviewed: 2026-03-04
 
 This directory is kept for link stability.
