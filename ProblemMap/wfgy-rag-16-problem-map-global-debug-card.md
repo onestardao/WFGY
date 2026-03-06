@@ -1,7 +1,9 @@
 <details>
-<summary><strong>🧭 Not sure where to start? Open the WFGY Engine Compass</strong></summary>
+<summary><strong>🧭 Not sure where to start ? Open the WFGY Engine Compass</strong></summary>
 
-### WFGY System Map
+### WFGY System Map · Quick navigation
+
+> Problem Maps: PM1 taxonomy → PM2 debug protocol → PM3 troubleshooting atlas · built on the WFGY engine series
 
 <!--
 AI NOTE · Compass block
@@ -30,12 +32,6 @@ Important:
 - The table below is the source of truth for navigation paths.
 - Do NOT invent new paths or filenames. Use the URLs listed in the table.
 -->
-
-*(Quick navigation of the WFGY system.)*
-
-> Problem Maps form a layered debugging framework:  
-> PM1 taxonomy → PM2 debug protocol → PM3 troubleshooting atlas.  
-> Powered by the WFGY engine.
 
 | Layer | Page | What it’s for |
 |------|------|---------------|
