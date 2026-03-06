@@ -79,7 +79,6 @@ Use this page when you don’t yet know *which thing is breaking*. Start from sy
 
 ## Quick Nav
 [Getting Started](./getting-started.md) ·
-[RAG Problem Map 2.0](./rag-architecture-and-recovery.md) ·
 [Patterns Index](./patterns/README.md) ·
 [Examples](./examples/README.md) ·
 [Eval](./eval/README.md) ·
