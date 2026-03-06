@@ -50,7 +50,7 @@ Important:
 ---
 </details>
 
-# Problem Map · AI Troubleshooting Atlas
+# Problem Map 3.0 · AI Troubleshooting Atlas
 
 🧭 **Problem Map 3.0** is the next evolution of the WFGY troubleshooting system.
 
