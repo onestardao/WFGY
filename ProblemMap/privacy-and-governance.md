@@ -5,7 +5,6 @@ Build trustworthy AI: minimize data, control exposure, and prove compliance with
 > **Quick Nav**  
 > [Data Contracts](./data-contracts.md) ·
 > [Ops](./ops/README.md) ·
-> [RAG Map 2.0](./rag-architecture-and-recovery.md) ·
 > Patterns: [Memory Desync](./patterns/pattern_memory_desync.md) ·
 > [SCU](./patterns/pattern_symbolic_constraint_unlock.md)
 
