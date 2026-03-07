@@ -749,6 +749,36 @@ If you want a pure text workflow (or automation-friendly instructions), use the 
 ---
 
 <details>
+<summary><b>When should I use Problem Map 1.0, 2.0, or 3.0?</b></summary>
+
+<br>
+
+They serve different roles in the WFGY stack.
+
+* **Problem Map 1.0** is the canonical **16-problem taxonomy**.
+  Use it when you want the base vocabulary, the numbered failure modes, and the core fix map.
+
+* **Problem Map 2.0** is the **Global Debug Card** on this page.
+  Use it when you want the fastest operational workflow:
+  upload one image, provide `(Q, E, P, A)`, and get a structured first-pass diagnosis.
+
+* **Problem Map 3.0** is the broader **AI Troubleshooting Atlas**.
+  Use it when the failure pattern goes beyond the base RAG card and you need wider AI system coverage.
+
+A simple rule of thumb:
+
+* use **1.0** for the base taxonomy
+* use **2.0** for fast triage
+* use **3.0** for broader troubleshooting coverage
+
+They are not competing pages.
+They are layered views of the same debugging direction.
+
+</details>
+
+---
+
+<details>
 <summary><b>Do I need a specific framework (LangChain, LlamaIndex, etc.) to use this?</b></summary>
 
 <br>
@@ -1153,6 +1183,41 @@ This makes it possible to compare:
 
 That is one reason the Colab MVP and JSON MVP matter.
 They move the card from "diagnostic poster" toward "replayable debugging protocol."
+
+</details>
+
+---
+
+<details>
+<summary><b>Can I use this with private production incidents or redacted data?</b></summary>
+
+<br>
+
+Yes.
+
+In many real cases, you do **not** need to share raw production data to use the protocol.
+
+A safe first-pass packet can often be built from:
+
+* a paraphrased `Q`
+* shortened or redacted `E`
+* the prompt structure in `P`
+* the observed failure pattern in `A`
+* optional logs or metrics with secrets removed
+
+What matters most is preserving the **failure structure**, not exposing sensitive content.
+
+Good redaction practice usually means:
+
+* remove names, IDs, secrets, and internal URLs
+* keep chunk boundaries and ordering if possible
+* preserve the prompt contract and answer shape
+* keep enough evidence text to show whether support actually exists
+
+If heavy redaction destroys the failure pattern, start with a synthetic reproduction that mirrors the same boundary break.
+
+So the protocol is compatible with private environments,
+as long as the diagnostic signals are still visible after redaction.
 
 </details>
 
