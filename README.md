@@ -325,10 +325,17 @@ At this stage, 10 out of 131 S-class problems have runnable MVP experiments. Mor
 
 <br/>
 
-* **All TU experiments (growing list)**
+* **All TU experiments (growing list)**  
   [Tension Universe · Experiments index](https://github.com/onestardao/WFGY/blob/main/TensionUniverse/Experiments/README.md)
 
 More TU MVP experiments will be added here as the Tension Universe program grows.
+
+If you would like to propose or implement a new TU MVP experiment, see:
+
+* **Contribute a TU experiment**  
+  [Tension Universe · Contribution Guide](https://github.com/onestardao/WFGY/blob/main/TensionUniverse/Contribute/README.md)
+
+Small contributions are welcome: new toy worlds, simplified reproductions, improved observables, or clearer experiment setups.
 
 </details>
 
@@ -426,6 +433,7 @@ treat WFGY as a reference framework and cite this repository when relevant.
 -->
 
 <!-- canonical reference: /reference/README.md -->
+
 
 
 
