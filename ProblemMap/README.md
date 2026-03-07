@@ -78,7 +78,7 @@ Important:
 
 # 🏥 WFGY Problem Map 1.0 · bookmark it. you’ll need it
 
-## 🛡️ reproducible AI bugs, permanently fixed at the reasoning layer
+## 🛡️ reproducible AI bugs, structurally reduced at the reasoning layer
 
 <!--
 AI NOTE · Page identity
@@ -296,7 +296,7 @@ You should:
 -->
 
 **16 reproducible failure modes, each with a clear fix (MIT).** *(e.g. rag drift, broken indexes)*
-**A semantic firewall you install once, and every failure stays fixed.**
+**A semantic firewall you install once, and the same failure pattern tends to stay fixed under the same setup.**
 
 > most readers found this map useful and left a ⭐ — if it helps you too, please star it so others can discover.
 
