@@ -1,11 +1,11 @@
 # SAMPLE_DELIVERABLE
 
-Sample shape of a compact WFGY pilot return package.
+Sample structure of a compact WFGY pilot return package.
 
-This page shows what a small WFGY deliverable may look like in practice.
+This page shows what a small WFGY deliverable may look like after a pilot, audit, or structured review.
 
-It is not a universal template for every engagement.  
-It is a sample structure that makes the output shape legible before any formal collaboration begins.
+It is not a promise that every engagement will produce the same sections in the same length.  
+It is a practical sample that makes the expected output shape easier to understand before collaboration begins.
 
 For the pilot entry itself, see [PILOT_OFFER_ONE_PAGER.md](./PILOT_OFFER_ONE_PAGER.md).  
 For the broader collaboration entry, see [WORK_WITH_WFGY.md](./WORK_WITH_WFGY.md).  
@@ -15,39 +15,46 @@ For historical context and public proof, see [EVIDENCE_TIMELINE.md](./EVIDENCE_T
 
 ## What this page is
 
-This page is a sample output format.
+This page is a sample return package.
 
-Its purpose is simple:
+Its purpose is to answer a simple but important question:
 
-show what a compact WFGY return package may contain after a small pilot, audit, or structured review.
+**what would a team actually receive after a small WFGY pilot**
 
-This page is here to answer practical questions such as:
+The answer is not “a vague summary.”  
+The intended shape is a bounded, structured, decision-useful package that helps a team move from scattered symptoms toward clearer categories, clearer boundaries, and more disciplined next steps.
 
-1. What would a team actually receive
-2. How concrete would the analysis be
-3. What kind of structure would WFGY impose on messy failures
-4. What is included, and what is not
+This page is not:
 
-This is not a legal contract, not a guarantee of outcomes, and not a fixed statement of scope for every future collaboration.
+* a fixed legal scope
+* a formal statement of work
+* a guarantee of outcome
+* a claim that every engagement will uncover the same level of clarity
+
+It is a model of what “useful structure” can look like.
 
 ---
 
-## Best way to read this page
+## Best way to read this sample
 
-The sample below should be read as:
+Read this page as a sample in three senses at once:
 
-1. a shape example
-2. a structure example
-3. a boundary example
+### 1. Structure sample
 
-It is not meant to imply that every real engagement will have the same length, same inputs, or same number of findings.
+It shows the sections a compact WFGY return package is likely to include.
 
-The main point is to show that WFGY outputs are intended to be:
+### 2. Decision sample
 
-* structured
-* bounded
-* readable by mixed teams
-* useful for next-step decisions
+It shows the kind of judgments WFGY tries to make legible:
+
+* what the likely failure layers are
+* what is high confidence versus low confidence
+* what next moves are worth doing first
+
+### 3. Boundary sample
+
+It shows that a good deliverable should not only say what seems likely.  
+It should also say what remains uncertain and what is out of scope.
 
 ---
 
@@ -61,203 +68,310 @@ RAG or agent workflow review
 **Pilot type**  
 Failure audit pilot
 
-**Review window**  
-Small scoped pilot based on a limited batch of representative cases
+**Review scope**  
+Small scoped review based on a limited set of representative failures, system notes, and current debugging assumptions
 
 **Primary question**  
-Why does the system keep producing wrong or unstable outputs even when the infrastructure appears mostly healthy
+Why does the system continue to produce wrong, unstable, or weakly grounded outputs even when the infrastructure appears mostly healthy
 
-**Output goal**  
-Turn scattered symptoms into a smaller set of structured failure categories, identify likely root-cause layers, and propose a practical next-step sequence
+**Deliverable goal**  
+Convert scattered symptoms into a smaller set of structured categories, identify the most likely failure layers, and recommend a practical next-step sequence
+
+**Overall reading**  
+The system does not appear to be facing one isolated issue.  
+The evidence suggests a layered debugging problem with multiple interacting surfaces.
 
 ---
 
 ## 2. Inputs reviewed
 
-A compact WFGY pilot may review material such as:
+The following materials were reviewed in this sample scenario:
 
-* representative failing cases
+* representative failing examples
 * selected logs, traces, screenshots, or prompt chains
-* architecture notes or system sketches
-* current debugging hypotheses from the team
-* known constraints on tooling, ownership, or deployment
+* a short description of the current architecture
+* the team’s current explanations or debugging hypotheses
+* key constraints on ownership, tooling, and deployment
 
-The exact input set may vary.  
-The point is not to ingest everything.  
-The point is to review enough evidence to form a disciplined structural reading.
+### Boundary note
+
+The pilot does not assume full access to every production component.  
+The goal is to review enough material to reach a disciplined structural reading, not to claim omniscience over the whole system.
 
 ---
 
 ## 3. System snapshot
 
-This section gives a short plain-language description of the system under review.
+The reviewed system is a retrieval-backed generation workflow with a multi-step prompt construction path, a document retrieval layer, a ranking layer, and a final answer-generation stage.
 
-Example:
+The team reports the following recurring pattern:
 
-The reviewed system is a retrieval-backed generation workflow with a multi-step prompt assembly path, a document store, a ranking layer, and a final answer-generation stage. The team reports recurring answer drift, occasional confident hallucinations, and unstable behavior across similar queries.
+* some answers are fluent but incorrect
+* similar questions may produce different retrieved evidence and different final outputs
+* some failures appear before final generation
+* debugging discussions often collapse multiple error types into one generic label
 
-This section should be short.  
-Its job is to establish context, not rewrite the team’s internal docs.
+### Why this section exists
+
+This section is intentionally short.  
+Its purpose is to establish a readable shared context before moving into classification and judgment.
 
 ---
 
 ## 4. Observed failure surface
 
-This section lists the visible symptoms before deeper classification.
+Before any deeper interpretation, the visible failure surface in this sample case looks like this:
 
-Example:
+1. The system often produces answers that sound stable but are not reliably grounded in the retrieved material.
+2. Similar inputs do not consistently lead to similar retrieval and answer behavior.
+3. Evidence suggests that some failures emerge before final answer generation, especially in selection or context preparation.
+4. The current debugging loop appears to focus heavily on the model output itself, while upstream layers may be contributing materially to the final result.
 
-1. Answers are often plausible in tone but wrong in content
-2. Similar queries produce inconsistent retrieval and inconsistent final answers
-3. Some failures appear to begin before generation, especially in retrieval selection or context assembly
-4. The team’s current debugging process focuses heavily on model behavior, but evidence suggests multiple upstream layers may be involved
+### Observational status
 
-This section stays close to what was actually observed.  
+This section stays close to visible behavior.  
 It does not yet claim root cause.
 
 ---
 
 ## 5. Structured failure classification
 
-This is one of the core sections in a WFGY-style deliverable.
-
-Example:
+This is one of the core sections in a WFGY-style return package.
 
 ### Primary category cluster
 
-1. Retrieval-selection instability  
-   The system appears to surface context that is variably relevant across similar requests.
+#### A. Retrieval-selection instability
 
-2. Context assembly distortion  
-   Even when useful material exists, the assembled context may over-compress, fragment, or misweight it before answer generation.
+Relevant material is not being surfaced consistently enough across similar requests.
 
-3. Final-answer overconfidence  
-   The generation layer sometimes presents uncertain or weakly grounded outputs in a form that looks more stable than the evidence supports.
+**Confidence**  
+High
+
+**Why this appears likely**  
+Repeated variation in retrieved context suggests the issue begins upstream of final generation in at least part of the case set.
+
+#### B. Context assembly distortion
+
+Useful material may exist, but the way it is combined, compressed, ordered, or weighted may reduce its practical usefulness before generation.
+
+**Confidence**  
+Medium to high
+
+**Why this appears likely**  
+Some failures show a gap between the presence of relevant source material and the quality of the final answer.
+
+#### C. Final-answer overconfidence
+
+The answer layer sometimes presents weakly supported outputs with stronger confidence than the evidence can justify.
+
+**Confidence**  
+Medium
+
+**Why this appears likely**  
+Observed outputs appear rhetorically stable even when grounding is partial or inconsistent.
 
 ### Secondary category cluster
 
-1. Evaluation blind spots  
-   The current review loop may be catching obvious wrong answers, but not consistently separating retrieval failure from orchestration failure.
+#### D. Evaluation blind spots
 
-2. Triage vocabulary weakness  
-   The team may be discussing several different failure layers under one generic label, making debugging slower and less reproducible.
+The current review loop may detect bad outcomes, but does not yet separate retrieval, orchestration, and answer-layer failures reliably enough.
 
-This section is where WFGY becomes useful.  
-Its role is to convert raw symptoms into a smaller set of meaningful buckets.
+**Confidence**  
+High
+
+#### E. Triage vocabulary weakness
+
+Multiple distinct failure patterns may be grouped under one generic description, making debugging slower and less reproducible.
+
+**Confidence**  
+High
+
+### Why this section matters
+
+This section converts raw symptoms into smaller, reusable buckets.
+
+That matters because teams often lose time not only from technical issues, but from category confusion.
 
 ---
 
 ## 6. Likely root-cause layers
 
-This section gives a disciplined reading of where the problem most likely lives.
-
-Example:
+This section moves from classification toward deeper reading.
 
 ### Highest-probability layers
 
-1. Retrieval and selection layer  
-   Evidence suggests that at least part of the failure begins before the model writes the answer.
+#### 1. Retrieval and selection layer
 
-2. Context construction layer  
-   The prompt may be receiving material that is technically relevant but structurally misassembled.
+**Priority**  
+Highest
 
-3. Review and evaluation layer  
-   The team’s current debugging loop may not yet isolate layer-specific failure signatures well enough.
+**Confidence**  
+High
+
+**Reading**  
+At least part of the observed failure surface likely begins before the model writes the final answer.
+
+#### 2. Context construction layer
+
+**Priority**  
+High
+
+**Confidence**  
+Medium to high
+
+**Reading**  
+The prompt may be receiving technically relevant material in a structurally degraded form.
+
+#### 3. Review and evaluation layer
+
+**Priority**  
+High
+
+**Confidence**  
+High
+
+**Reading**  
+The current internal debugging loop may not yet distinguish failure signatures by layer clearly enough to support fast iteration.
 
 ### Lower-confidence but relevant layers
 
-1. Memory or carryover behavior
-2. Tool or handoff instability
-3. Prompt framing side effects
+#### 4. Memory or carryover behavior
 
-This section should distinguish between:
+**Priority**  
+Medium
 
-* likely
-* possible
-* still unclear
+**Confidence**  
+Low to medium
 
-That distinction matters a lot.
+#### 5. Tool or handoff instability
+
+**Priority**  
+Medium
+
+**Confidence**  
+Low to medium
+
+#### 6. Prompt framing side effects
+
+**Priority**  
+Medium
+
+**Confidence**  
+Low
+
+### Interpretation rule
+
+A strong deliverable should separate:
+
+* what appears likely
+* what remains possible
+* what is still too weak to assert
+
+That distinction is part of the value.
 
 ---
 
-## 7. What this most likely means
+## 7. Working diagnosis
 
-This section translates the diagnosis into practical reading.
+### Core reading
 
-Example:
+The current pattern does not look like a pure model-quality problem.
 
-The current pattern does not look like a pure model-quality problem.  
-It looks more like a layered systems problem in which retrieval quality, context assembly, and evaluation framing interact to produce unstable final answers.
+The stronger reading is that this is a layered systems problem in which retrieval quality, context assembly, and evaluation framing interact to produce unstable or weakly grounded final answers.
 
-This matters because the team may waste time if it continues to treat the issue only as “the model hallucinated.”  
-The evidence suggests the debugging route should become more layered and more explicit.
+### Why this matters
 
-This section is not supposed to sound dramatic.  
-It is supposed to sharpen decision quality.
+If the team continues to read the issue only as “the model hallucinated,” it may keep applying fixes at the wrong layer.
+
+The evidence in this sample case suggests that the more useful route is to separate the failure surface into upstream selection, context construction, and final-answer expression.
+
+### Boundary
+
+This is a working diagnosis, not a claim of full proof.
 
 ---
 
 ## 8. Recommended next moves
 
-This section is the most actionable part of the package.
-
-Example:
+This section should be concrete, limited, and sequenced.
 
 ### Priority 1
 
-Separate retrieval failure from generation failure using a smaller reviewed case set.  
-Do not treat all incorrect answers as one category.
+Separate retrieval failure from generation failure using a smaller reviewed case set.
+
+**Goal**  
+Stop treating all bad answers as one category.
+
+**Why first**  
+This creates the cleanest structural gain for the least cost.
 
 ### Priority 2
 
-Inspect context assembly rules for compression, ranking, and ordering artifacts.  
-Check whether relevant material is being technically retrieved but practically neutralized before generation.
+Inspect context assembly rules for compression, ranking, truncation, and ordering artifacts.
+
+**Goal**  
+Check whether useful material is being technically retrieved but practically neutralized before generation.
+
+**Why second**  
+This is one of the most likely places where “good inputs turn into weak answer conditions.”
 
 ### Priority 3
 
-Add a lightweight review frame that tags each failure by likely layer before discussing fixes.
+Add a lightweight layer tag to internal review.
+
+**Goal**  
+Mark each failure as most likely retrieval, assembly, answer, tool, memory, or evaluation related before discussing fixes.
+
+**Why third**  
+A small tagging habit often improves debugging clarity more than another round of vague brainstorming.
 
 ### Priority 4
 
-Use a shared internal vocabulary for repeated failure categories so that future triage is faster and less dependent on individual intuition.
+Standardize a short internal vocabulary for repeated failure classes.
 
-These actions should be concrete, limited, and realistically sequenced.
+**Goal**  
+Reduce repeated ambiguity in triage conversations.
+
+**Why fourth**  
+This makes future failures cheaper to discuss and faster to route.
 
 ---
 
-## 9. What is still uncertain
+## 9. What remains uncertain
 
-This section is very important.
+A good deliverable should say clearly what it does not yet know.
 
-Example:
+In this sample scenario, the reviewed material is sufficient for a structured preliminary reading, but not sufficient for strong claims about all long-run production behavior.
 
-The reviewed material is enough to support a structured preliminary diagnosis, but not enough to make strong claims about long-run production behavior, security properties, or full-system robustness under all workloads.
-
-The following remain uncertain:
+### Still uncertain
 
 1. Whether ranking logic or chunking logic is the dominant upstream driver
-2. Whether memory effects are meaningful or incidental
-3. Whether some failures are benchmark-specific rather than architecture-level
+2. Whether carryover or memory effects are meaningful or only incidental
+3. Whether some observed failures are benchmark-specific rather than architecture-level
+4. Whether the same pattern holds consistently across all major workload classes
 
-A good deliverable should say what it does not yet know.
+### Why this section matters
+
+Without an uncertainty section, teams often over-read a pilot and treat it as a full-system verdict.
+
+That would be a mistake.
 
 ---
 
-## 10. What this does not claim
+## 10. Boundaries and non-claims
 
-A sample WFGY return package should clearly state its boundaries.
+A compact WFGY return package should clearly state what it does **not** establish.
 
-Example:
-
-This review does not claim:
+This sample does not claim:
 
 * that every major failure has been found
 * that all root causes are proven
-* that the system is close to production readiness
-* that architectural changes are unnecessary
-* that a small pilot replaces engineering, security, or infra work
+* that the system is near production readiness
+* that architecture changes are unnecessary
+* that a small pilot replaces engineering, security, or infrastructure work
+* that every future failure will fit the same categories
 
-The purpose of the package is narrower:
+The purpose of the package is narrower and more practical:
 
 to improve structural clarity, reduce debugging ambiguity, and make the next round of decisions more disciplined.
 
@@ -265,34 +379,38 @@ to improve structural clarity, reduce debugging ambiguity, and make the next rou
 
 ## 11. Possible follow-on outputs
 
-Depending on scope, a future engagement might extend into outputs such as:
+Depending on scope, a future engagement may extend into outputs such as:
 
-* a cleaner failure taxonomy for the team
-* a triage protocol based on recurring patterns
-* a lightweight debug worksheet
+* a cleaner internal failure taxonomy
+* a triage worksheet for recurring incidents
 * a review rubric for future runs
-* a pilot summary for decision-makers
-* a deeper integration or design-partner proposal
+* a routing guide for common failure types
+* a summary note for decision-makers
+* a deeper design-partner or integration proposal
 
-Not every pilot needs these.  
-They are possible extensions, not default promises.
+These are possible extensions.  
+They are not automatic promises.
+
+For the pilot framing that may lead into these, see [PILOT_OFFER_ONE_PAGER.md](./PILOT_OFFER_ONE_PAGER.md).
 
 ---
 
 ## 12. Why this sample matters
 
-This sample matters because many teams do not need more vague advice.  
-They need a clearer way to turn messy failures into smaller, more meaningful decisions.
+Many teams do not need more generic advice.  
+They need a better way to move from messy evidence to smaller, more meaningful decisions.
 
-That is the main role of a WFGY deliverable.
+That is the role of a WFGY deliverable at its best.
 
-At its best, it helps a team move from:
+It helps a team move from:
 
-“something is wrong”
+**something is wrong**
 
-to:
+toward:
 
-“these are the likely failure layers, these are the boundaries, and these are the next moves worth trying.”
+**these are the likely failure layers, these are the boundaries, and these are the next moves worth trying**
+
+That is a much better place to be.
 
 ---
 
