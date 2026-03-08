@@ -1,6 +1,8 @@
+<a id="top"></a>
+
 # EVIDENCE_TIMELINE
 
-🕰️ Historical evidence timeline for WFGY.
+Historical evidence timeline for WFGY.
 
 This page records how WFGY became real, usable, public, and externally legible over time.
 
@@ -11,12 +13,42 @@ You can read this page as a compact historical route:
 
 **cold start → structure → teaching → evaluation → public proof**
 
-Related pages:
+## Quick navigation
+
+- [What this page is](#what-this-page-is)
+- [What this page is not](#what-this-page-is-not)
+- [Timeline](#timeline)
+  - [Cold Start Era](#cold-start-era)
+  - [Diagnostic Wedge Era](#diagnostic-wedge-era)
+  - [Expansion Era](#expansion-era)
+  - [Public Proof Era](#public-proof-era)
+- [What this timeline currently shows](#what-this-timeline-currently-shows)
+- [Maintenance rules](#maintenance-rules)
+- [Related pages](#related-pages)
+
+## Related pages
+
+Core proof and interpretation:
 
 * [ADOPTERS](./ADOPTERS.md)
 * [CASE_EVIDENCE](./CASE_EVIDENCE.md)
 * [Recognition Map](./recognition/README.md)
+
+Collaboration and next-layer packaging:
+
 * [Work with WFGY](./WORK_WITH_WFGY.md)
+* [Pilot Offer One-Pager](./PILOT_OFFER_ONE_PAGER.md)
+* [Sample Deliverable](./SAMPLE_DELIVERABLE.md)
+
+Structure and reference:
+
+* [Ecosystem Map](./ECOSYSTEM_MAP.md)
+* [Problem Map 1.0](./ProblemMap/README.md)
+* [Repository Citation Metadata](./CITATION.cff)
+
+---
+
+<a id="what-this-page-is"></a>
 
 ## What this page is
 
@@ -33,6 +65,17 @@ It combines three kinds of milestones:
 3. **Packaging milestones**  
    when WFGY itself became easier to audit, route, reuse, or evaluate from the outside
 
+This page sits between two other proof surfaces:
+
+* [ADOPTERS](./ADOPTERS.md), which gives the shortest high-signal summary
+* [Recognition Map](./recognition/README.md), which remains the broader ecosystem ledger
+
+It also supports the interpretation layer in [CASE_EVIDENCE](./CASE_EVIDENCE.md).
+
+---
+
+<a id="what-this-page-is-not"></a>
+
 ## What this page is not
 
 This page is not:
@@ -44,18 +87,23 @@ This page is not:
 * a claim that every milestone has equal weight
 
 For the shortest high-signal summary, use [ADOPTERS](./ADOPTERS.md).  
-For the full ledger, use the [Recognition Map](./recognition/README.md).
+For the broader ledger, use the [Recognition Map](./recognition/README.md).  
+For cross-case interpretation, use [CASE_EVIDENCE](./CASE_EVIDENCE.md).
 
 ---
 
+<a id="timeline"></a>
+
 # Timeline
+
+<a id="cold-start-era"></a>
 
 ## Cold Start Era
 
 The earliest phase of WFGY was a cold-start build.  
 This period matters because it shows the stack did not begin as a polished ecosystem surface. It began as a public baseline, then slowly gained structure.
 
-### 2025/06/15 · 🧱 WFGY 1.0 becomes the baseline public reference
+### 2025/06/15 · WFGY 1.0 becomes the baseline public reference
 
 **Track**  
 Internal milestone
@@ -67,7 +115,7 @@ Internal milestone
 This is the starting point of the public WFGY stack.  
 It marks the moment when the project stopped being private intuition and became a public reference surface.
 
-### 2025/07/02 · 🧩 TXTOS opens the application layer
+### 2025/07/02 · TXTOS opens the application layer
 
 **Track**  
 Internal milestone
@@ -79,7 +127,7 @@ Internal milestone
 This widened WFGY from theory into application surfaces.  
 It showed that the project was not only about concepts, but also about structured usage.
 
-### 2025/07/15 · 🔧 Blah Blah Blah extends the TXTOS stack
+### 2025/07/15 · Blah Blah Blah extends the TXTOS stack
 
 **Track**  
 Internal milestone
@@ -90,14 +138,18 @@ Internal milestone
 **Why this matters**  
 This is one of the earlier signs that WFGY was growing as a family of connected modules rather than a single page or one-off idea.
 
+[Back to top](#top)
+
 ---
+
+<a id="diagnostic-wedge-era"></a>
 
 ## Diagnostic Wedge Era
 
 This is the phase where WFGY became much easier for outside teams to understand.  
 The project gained a practical wedge, especially through structured failure diagnosis and teaching surfaces.
 
-### 2025/07/28 · 🗺️ Problem Map 1.0 becomes the practical wedge
+### 2025/07/28 · Problem Map 1.0 becomes the practical wedge
 
 **Track**  
 Internal milestone
@@ -109,7 +161,7 @@ Internal milestone
 This is one of the most important turning points in the whole timeline.  
 It gave WFGY a practical front door that real RAG and agent teams could understand quickly.
 
-### 2025/07/28 · 🩺 Semantic Clinic expands the teaching layer
+### 2025/07/28 · Semantic Clinic expands the teaching layer
 
 **Track**  
 Internal milestone
@@ -120,7 +172,7 @@ Internal milestone
 **Why this matters**  
 It showed that WFGY was not only classifying failures, but also teaching people how to reason about them.
 
-### 2025/07/30 · 🧠 Semantic Blueprint deepens the theory layer
+### 2025/07/30 · Semantic Blueprint deepens the theory layer
 
 **Track**  
 Internal milestone
@@ -131,7 +183,7 @@ Internal milestone
 **Why this matters**  
 This strengthened the internal architecture story behind the public-facing maps and teaching pages.
 
-### 2025/09/05 · 🛠️ Global Fix Map extends beyond one checklist
+### 2025/09/05 · Global Fix Map extends beyond one checklist
 
 **Track**  
 Internal milestone
@@ -142,7 +194,7 @@ Internal milestone
 **Why this matters**  
 This is where the scope clearly widened from a single 16-problem entry map into a broader systems-facing fix library.
 
-### 2025/09/14 · 👵 Grandma Clinic turns the map into memory-friendly teaching
+### 2025/09/14 · Grandma Clinic turns the map into memory-friendly teaching
 
 **Track**  
 Internal milestone
@@ -153,14 +205,21 @@ Internal milestone
 **Why this matters**  
 This made the WFGY diagnostic layer more memorable and easier to teach beyond narrowly technical audiences.
 
+**Related layer**  
+For the broader diagnostic line, see [Problem Map 1.0](./ProblemMap/README.md) and the future-facing structure in [Ecosystem Map](./ECOSYSTEM_MAP.md).
+
+[Back to top](#top)
+
 ---
+
+<a id="expansion-era"></a>
 
 ## Expansion Era
 
 This phase matters because WFGY stopped being only a diagnostic and teaching surface.  
 It began to open toward broader evaluation and higher-order reasoning layers.
 
-### 2026/01/31 · 🌌 WFGY 3.0 Singularity Demo opens the frontier evaluation layer
+### 2026/01/31 · WFGY 3.0 Singularity Demo opens the frontier evaluation layer
 
 **Track**  
 Internal milestone
@@ -172,7 +231,7 @@ Internal milestone
 This is a major expansion of the WFGY line.  
 It pushed the project from diagnostic and teaching surfaces into a more ambitious evaluation and reasoning arena.
 
-### 2026/03/03 · 🖼️ Problem Map 2.0 Global Debug Card turns the map into image protocol
+### 2026/03/03 · Problem Map 2.0 Global Debug Card turns the map into image protocol
 
 **Track**  
 Internal milestone
@@ -184,14 +243,21 @@ Internal milestone
 This is a major packaging milestone.  
 It compressed the WFGY diagnostic line into a faster, more shareable, more reusable format across platforms and models.
 
+**Related layer**  
+This milestone connects naturally to [CASE_EVIDENCE](./CASE_EVIDENCE.md), [ADOPTERS](./ADOPTERS.md), and the future-facing collaboration surface in [Work with WFGY](./WORK_WITH_WFGY.md).
+
+[Back to top](#top)
+
 ---
+
+<a id="public-proof-era"></a>
 
 ## Public Proof Era
 
 This is the phase where outside projects began to make the signal legible in public.  
-It does not mean universal adoption. It does mean the WFGY wedge became hard to ignore.
+It does not mean universal adoption. It does mean the WFGY wedge became harder to ignore.
 
-### 2026/02/17 · 🌍 ToolUniverse shows tool-level public integration
+### 2026/02/17 · ToolUniverse shows tool-level public integration
 
 **Track**  
 Public ecosystem milestone
@@ -203,7 +269,7 @@ ToolUniverse publicly merged a WFGY-related triage surface through [PR #75](http
 This is stronger than a loose mention.  
 It suggests that WFGY could be wrapped into an actionable tool pathway, not only cited as an idea.
 
-### 2026/02/20 · 📚 Rankify and Multimodal RAG Survey widen the external signal
+### 2026/02/20 · Rankify and Multimodal RAG Survey widen the external signal
 
 **Track**  
 Public ecosystem milestone
@@ -217,7 +283,7 @@ This date matters because the signal diversified.
 WFGY was no longer visible in only one style of external context.  
 It was starting to appear across both practical docs and research-facing material.
 
-### 2026/02/23 · 🚪 LlamaIndex makes the wedge more mainstream
+### 2026/02/23 · LlamaIndex makes the wedge more mainstream
 
 **Track**  
 Public ecosystem milestone
@@ -229,7 +295,7 @@ Public ecosystem milestone
 This is one of the clearest mainstream ecosystem signals in the timeline.  
 It shows that structured WFGY-style failure mapping is legible inside a major public RAG stack.
 
-### 2026/02/25 · 🧯 RAGFlow strengthens the operational debugging signal
+### 2026/02/25 · RAGFlow strengthens the operational debugging signal
 
 **Track**  
 Public ecosystem milestone
@@ -241,7 +307,7 @@ Public ecosystem milestone
 This strongly reinforces the practical wedge of WFGY.  
 It shows the map is useful in operational debugging contexts, not only in teaching or theory.
 
-### 2026/03/01 · 🔍 FlashRAG reinforces cross-stack reuse
+### 2026/03/01 · FlashRAG reinforces cross-stack reuse
 
 **Track**  
 Public ecosystem milestone
@@ -253,7 +319,7 @@ Public ecosystem milestone
 By this point, the pattern is harder to dismiss as an isolated one-off.  
 The same wedge is being adapted across multiple public stacks.
 
-### 2026/03/04 · 🤖 LightAgent extends the signal into multi-agent territory
+### 2026/03/04 · LightAgent extends the signal into multi-agent territory
 
 **Track**  
 Public ecosystem milestone
@@ -264,7 +330,7 @@ Public ecosystem milestone
 **Why this matters**  
 This matters because it widened the visible wedge beyond classic RAG debugging and into multi-agent coordination and failure diagnosis.
 
-### 2026/03/08 · 🧭 Public proof becomes a first-class routing layer in WFGY
+### 2026/03/08 · Public proof becomes a first-class routing layer in WFGY
 
 **Track**  
 Packaging milestone
@@ -282,11 +348,18 @@ It also exposes a dedicated collaboration entry through [Work with WFGY](./WORK_
 This does not create new third-party proof by itself.  
 What it does is make the accumulated evidence auditable, legible, and much easier to evaluate in one pass.
 
+**Related layer**  
+This stage naturally leads into [Pilot Offer One-Pager](./PILOT_OFFER_ONE_PAGER.md) and [Sample Deliverable](./SAMPLE_DELIVERABLE.md), where public proof can later connect to a more structured collaboration surface.
+
+[Back to top](#top)
+
 ---
+
+<a id="what-this-timeline-currently-shows"></a>
 
 # What this timeline currently shows
 
-📌 The pattern is not random.
+The pattern is not random.
 
 WFGY first became public as a baseline reference.  
 Then it grew application surfaces.  
@@ -311,3 +384,48 @@ The safest disciplined reading today is:
 * the strongest public adoption signal still clusters around diagnostic and debugging use
 * the broader WFGY stack is larger than that single wedge, but public proof is currently strongest there
 * the timeline shows continuity, structure, and increasing external legibility, but should not be exaggerated into universal adoption claims
+
+---
+
+<a id="maintenance-rules"></a>
+
+# Maintenance rules
+
+When updating this page:
+
+1. Keep the timeline chronological.
+2. Prefer dates when something became publicly visible in stable form.
+3. Separate internal milestones from external proof in wording, even if they share the same page.
+4. Do not retroactively inflate old events into stronger claims.
+5. If a milestone is important but weak, move it to the [Recognition Map](./recognition/README.md) instead.
+6. If an event belongs mainly to explanation rather than chronology, keep it in [CASE_EVIDENCE](./CASE_EVIDENCE.md).
+7. If a future page becomes the canonical destination for a subtopic, keep this page concise and link outward instead of duplicating full explanations.
+
+---
+
+<a id="related-pages"></a>
+
+# Related pages
+
+Proof surfaces:
+
+* [ADOPTERS](./ADOPTERS.md)
+* [CASE_EVIDENCE](./CASE_EVIDENCE.md)
+* [Recognition Map](./recognition/README.md)
+
+Collaboration surfaces:
+
+* [Work with WFGY](./WORK_WITH_WFGY.md)
+* [Pilot Offer One-Pager](./PILOT_OFFER_ONE_PAGER.md)
+* [Sample Deliverable](./SAMPLE_DELIVERABLE.md)
+
+Structure and reference:
+
+* [Ecosystem Map](./ECOSYSTEM_MAP.md)
+* [Problem Map 1.0](./ProblemMap/README.md)
+* [Repository Citation Metadata](./CITATION.cff)
+
+---
+
+Last updated: 2026/03/08  
+Maintained manually.
