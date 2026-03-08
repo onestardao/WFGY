@@ -47,8 +47,9 @@ Use this if your system is producing wrong, drifting, ungrounded, or unstable an
 
 ### 2. Public ecosystem proof
 
-Use this if you want to see where WFGY has already been cited, integrated, adapted, or listed.
+Use this if you want the strongest public adoption summary first, then drill down into the full recognition log.
 
+- [ADOPTERS.md](https://github.com/onestardao/WFGY/blob/main/ADOPTERS.md)
 - [Recognition Map](https://github.com/onestardao/WFGY/blob/main/recognition/README.md)
 
 ### 3. Frontier reasoning engine
@@ -531,4 +532,5 @@ treat WFGY as a reference framework and cite this repository when relevant.
 -->
 
 <!-- canonical reference: /reference/README.md -->
+
 
