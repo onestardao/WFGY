@@ -1,0 +1,46 @@
+name: WFGY Ecosystem Stars Bot
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 6 * * *"
+
+jobs:
+  metrics:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Fetch repo metrics
+        run: |
+          curl -s https://api.github.com/repos/onestardao/WFGY > repo.json
+
+          STARS=$(cat repo.json | jq .stargazers_count)
+          FORKS=$(cat repo.json | jq .forks_count)
+          ISSUES=$(cat repo.json | jq .open_issues_count)
+          WATCHERS=$(cat repo.json | jq .subscribers_count)
+
+          {
+            echo "# WFGY Ecosystem Metrics"
+            echo
+            echo "Generated at: $(date -u)"
+            echo
+            echo "## Repo statistics"
+            echo
+            echo "Stars: $STARS"
+            echo "Forks: $FORKS"
+            echo "Open issues: $ISSUES"
+            echo "Watchers: $WATCHERS"
+          } > ecosystem-metrics.md
+
+      - name: Commit metrics
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add ecosystem-metrics.md
+          git diff --staged --quiet || git commit -m "bot: update ecosystem metrics"
+          git push
