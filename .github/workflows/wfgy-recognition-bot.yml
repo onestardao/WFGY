@@ -17,6 +17,8 @@ jobs:
 
       - name: Generate recognition scan
         run: |
+          mkdir -p automation
+
           {
             echo "# WFGY Recognition Scan"
             echo
@@ -28,12 +30,12 @@ jobs:
             echo
             echo "Total recognition docs:"
             find recognition -type f | wc -l
-          } > recognition-scan.md
+          } > automation/recognition-scan.md
 
       - name: Commit report
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add recognition-scan.md
+          git add automation/recognition-scan.md
           git diff --staged --quiet || git commit -m "bot: update recognition scan"
           git push

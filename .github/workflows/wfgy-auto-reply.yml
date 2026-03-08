@@ -16,17 +16,15 @@ jobs:
         with:
           script: |
             const body = `
-            Thanks for opening this issue.
+Thanks for opening this issue.
 
-            If your question is related to RAG failures,
-            you may want to check the WFGY ProblemMap first:
+PSBigBig is currently somewhere thinking about life, the universe, and possibly debugging the meaning of existence.
 
-            https://github.com/onestardao/WFGY/tree/main/ProblemMap
+Your issue has been recorded.  
+He will take a look when he returns to this dimension.
 
-            This page explains the 16 common RAG failure modes.
-
-            A maintainer will review your issue soon.
-            `;
+Thanks again for contributing to the project.
+`;
 
             github.rest.issues.createComment({
               issue_number: context.issue.number,
