@@ -18,22 +18,24 @@ jobs:
 
       - name: Generate ecosystem report
         run: |
-          echo "# WFGY Ecosystem Scan" > ecosystem-report.md
-          echo "" >> ecosystem-report.md
-          echo "Generated at: $(date -u)" >> ecosystem-report.md
-          echo "" >> ecosystem-report.md
-          echo "## Repo snapshot" >> ecosystem-report.md
-          echo "" >> ecosystem-report.md
-          echo "File count:" >> ecosystem-report.md
-          find . -type f | wc -l >> ecosystem-report.md
-          echo "" >> ecosystem-report.md
-          echo "Top directories:" >> ecosystem-report.md
-          ls -1 >> ecosystem-report.md
+          mkdir -p automation
+
+          echo "# WFGY Ecosystem Scan" > automation/ecosystem-report.md
+          echo "" >> automation/ecosystem-report.md
+          echo "Generated at: $(date -u)" >> automation/ecosystem-report.md
+          echo "" >> automation/ecosystem-report.md
+          echo "## Repo snapshot" >> automation/ecosystem-report.md
+          echo "" >> automation/ecosystem-report.md
+          echo "File count:" >> automation/ecosystem-report.md
+          find . -type f | wc -l >> automation/ecosystem-report.md
+          echo "" >> automation/ecosystem-report.md
+          echo "Top directories:" >> automation/ecosystem-report.md
+          ls -1 >> automation/ecosystem-report.md
 
       - name: Commit report
         run: |
           git config user.name "wfgy-ecosystem-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add ecosystem-report.md
+          git add automation/ecosystem-report.md
           git commit -m "bot: update ecosystem report" || echo "no changes"
           git push
