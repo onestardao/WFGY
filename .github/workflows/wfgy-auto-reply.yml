@@ -1,0 +1,36 @@
+name: WFGY Auto Reply Bot
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  reply:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+
+    steps:
+      - name: Auto reply
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const body = `
+            Thanks for opening this issue.
+
+            If your question is related to RAG failures,
+            you may want to check the WFGY ProblemMap first:
+
+            https://github.com/onestardao/WFGY/tree/main/ProblemMap
+
+            This page explains the 16 common RAG failure modes.
+
+            A maintainer will review your issue soon.
+            `;
+
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: body
+            });
