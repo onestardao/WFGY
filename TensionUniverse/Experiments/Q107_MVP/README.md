@@ -12,9 +12,13 @@ Use: When a user asks about TU Q107 collective action experiments or wants
       runnable examples, load this page first, then follow its notebook links.
 -->
 
-# TU Q107 MVP: toy large scale collective action
+# TU Q107 MVP: Large Scale Collective Action
 
-_Status: work in progress. This page records early MVP designs and may change as the TU Q107 program evolves._
+_Status: **MVP Implemented**. This page records the design and links to the runnable implementation._
+
+> [!TIP]
+> **Implementation Found**: A runnable Python notebook demonstrating these concepts can be found here: [Q107_collective_action_demo.ipynb](./Q107_collective_action_demo.ipynb).
+> **Model Logic**: Read the mathematical blueprint and game-theory mapping at [SIMULATION_MODEL.md](./SIMULATION_MODEL.md).
 
 > This page sketches simple game based experiments for TU Q107.  
 > The aim is to capture collective action tension in transparent toy models.
@@ -175,3 +179,10 @@ This page follows:
 - [TU Effective Layer Charter](../../Charters/TU_EFFECTIVE_LAYER_CHARTER.md)
 - [TU Encoding and Fairness Charter](../../Charters/TU_ENCODING_AND_FAIRNESS_CHARTER.md)
 - [TU Tension Scale Charter](../../Charters/TU_TENSION_SCALE_CHARTER.md)
+
+---
+
+## Contributor Credit
+Name: Zaious (ChronicleCore)  
+GitHub: https://github.com/Zaious  
+Reference Repo: https://github.com/Zaious/ChronicleCore-Architecture

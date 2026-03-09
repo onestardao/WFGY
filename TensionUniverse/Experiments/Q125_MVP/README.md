@@ -12,9 +12,13 @@ Use: When a user asks about TU Q125 multi agent experiments or wants
       runnable examples, load this page first, then follow its notebook links.
 -->
 
-# TU Q125 MVP: toy multi agent AI dynamics
+# TU Q125 MVP: Multi-Agent AI Dynamics
 
-_Status: work in progress. This page records early MVP designs and will be extended with concrete results later._
+_Status: **MVP Implemented**. This page records the design and links to the runnable implementation._
+
+> [!TIP]
+> **Implementation Found**: A runnable Python notebook demonstrating these concepts can be found here: [Q125_multi_agent_dynamics_demo.ipynb](./Q125_multi_agent_dynamics_demo.ipynb).
+> **Model Logic**: Read the mathematical mechanics of Role Drift at [SIMULATION_MODEL.md](./SIMULATION_MODEL.md).
 
 > This page sketches simple multi agent experiments for TU Q125.  
 > The aim is to make interaction tension visible in controlled toy setups.
@@ -22,6 +26,11 @@ _Status: work in progress. This page records early MVP designs and will be exten
 **Navigation**
 
 - [← Back to Experiments index](../README.md)
+
+## Contributor Credit
+Name: Zaious (ChronicleCore)  
+GitHub: https://github.com/Zaious  
+Reference Repo: https://github.com/Zaious/ChronicleCore-Architecture
 - [← Back to Event Horizon (WFGY 3.0)](../../EventHorizon/README.md)
 
 ---
