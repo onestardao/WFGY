@@ -179,7 +179,7 @@ Entries here are community submissions and do not imply endorsement.
 | Project | Type | Language | Link | What it does with WFGY | Proof | Credit |
 | --- | --- | --- | --- | --- | --- | --- |
 | WFGY 3.0 UI (S131 Problem Browser) | website | ZH | [scyprodigy.github.io/wfgy-scy](https://scyprodigy.github.io/wfgy-scy/) | A Traditional Chinese UI prototype that visualizes and lets users browse the WFGY 3.0 "131 S-Class Problems" set (work in progress). | [live demo](https://scyprodigy.github.io/wfgy-scy/) | scyprodigy |
-| Dungeon Master OS | project | EN | [github.com/djnightmare9909/Dungeon-master-OS-](https://github.com/djnightmare9909/Dungeon-master-OS-) | An experimental system exploring WFGY-style structured reasoning for worldbuilding, scenario design, and interactive narrative workflows. | [repo](https://github.com/djnightmare9909/Dungeon-master-OS-) | djnightmare9909 |
+| Dungeon Master OS | project | EN | [github.com/djnightmare9909/Dungeon-master-OS-](https://github.com/djnightmare9909/Dungeon-master-OS-WFGY) | An experimental system exploring WFGY-style structured reasoning for worldbuilding, scenario design, and interactive narrative workflows. | [repo](https://github.com/djnightmare9909/Dungeon-master-OS-WFGY) | djnightmare9909 |
 
 
 ### 🤝 Contributing
