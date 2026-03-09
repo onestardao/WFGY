@@ -1,4 +1,4 @@
-# TU-CH02 · Human Tension  
+# TU-CH01 · Human Tension  
 *Science notes · English · TensionUniverse Chronicles*
 
 > This is speculative science fiction, not a proven physical theory.  

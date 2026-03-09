@@ -1,4 +1,4 @@
-# TU-CH06 · Quantum Futures & the Observer  
+# TU-CH05 · Quantum Futures & the Observer  
 *Story · English · TensionUniverse Chronicles*
 
 > This is speculative science fiction, not a proven physical theory.  

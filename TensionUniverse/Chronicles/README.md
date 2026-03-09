@@ -11,81 +11,59 @@ All files are plain text (`.md`), so they can be versioned, remixed, and quoted 
 
 ---
 
-## File naming rules
-
-Each chronicle gets a short ID:
-
-- Prefix: `TU-CH` = **Tension Universe – Chronicle**
-- Index: `01`, `02`, `03`, … (two digits, zero-padded)
-- Slug: a short English name for the main idea of that chronicle
-
-File name pattern (all files live directly under `TensionUniverse/Chronicles` for now):
-
-```text
-TU-CHXX_<Slug>__story_en.md    # narrative version (English)
-TU-CHXX_<Slug>__science_en.md  # technical / model notes (English)
-TU-CHXX_<Slug>__faq_en.md      # collected questions and answers (English)
-
-# optional, if we add other languages later:
-TU-CHXX_<Slug>__story_zh.md
-TU-CHXX_<Slug>__science_zh.md
-TU-CHXX_<Slug>__faq_zh.md
-````
-
-This way:
-
-* `TU-CHXX` lets you search all files for a given chronicle.
-* The slug tells you what it is about.
-* The suffix (`story / science / faq` + language code) tells you which view you are reading.
-
----
-
 ## Current chronicles
 
-### TU-CH01 · Memo from a Tension Historian (year 2413)
+### TU-CH00 · Memo from a Tension Historian (year 2413)
 
-* **Story (EN)** – [`TU-CH01_TensionHistorian__story_en.md`](./TU-CH01_TensionHistorian__story_en.md)
-* **Story (ZH)** – [`TU-CH01_TensionHistorian__story_zh.md`](./TU-CH01_TensionHistorian__story_zh.md)
-
----
-
-### TU-CH02 · Human Tension (crushes, relationships, comparison)
-
-* **Story (EN)** – [`TU-CH02_HumanTension__story_en.md`](./TU-CH02_HumanTension__story_en.md)
-* **Science (EN)** – [`TU-CH02_HumanTension__science_en.md`](./TU-CH02_HumanTension__science_en.md)
-* **FAQ (EN)** – [`TU-CH02_HumanTension__faq_en.md`](./TU-CH02_HumanTension__faq_en.md)
+* **Story (EN)** – [`TU-CH00_TensionHistorian__story_en.md`](./TU-CH00_TensionHistorian__story_en.md)
 
 ---
 
-### TU-CH03 · Tension Recipes (from 0/1 switch to full tension line)
+### TU-CH01 · Human Tension (crushes, relationships, comparison)
 
-* **Story (EN)** – [`TU-CH03_TensionRecipes__story_en.md`](./TU-CH03_TensionRecipes__story_en.md)
-* **Science (EN)** – [`TU-CH03_TensionRecipes__science_en.md`](./TU-CH03_TensionRecipes__science_en.md)
-* **FAQ (EN)** – [`TU-CH03_TensionRecipes__faq_en.md`](./TU-CH03_TensionRecipes__faq_en.md)
-
----
-
-### TU-CH04 · Cosmic Bedsheet (universe as a tension field)
-
-* **Story (EN)** – [`TU-CH04_CosmicBedsheet__story_en.md`](./TU-CH04_CosmicBedsheet__story_en.md)
-* **Science (EN)** – [`TU-CH04_CosmicBedsheet__science_en.md`](./TU-CH04_CosmicBedsheet__science_en.md)
-* **FAQ (EN)** – [`TU-CH04_CosmicBedsheet__faq_en.md`](./TU-CH04_CosmicBedsheet__faq_en.md)
+* **Story (EN)** – [`TU-CH01_HumanTension__story_en.md`](./TU-CH01_HumanTension__story_en.md)
+* **Science (EN)** – [`TU-CH01_HumanTension__science_en.md`](./TU-CH01_HumanTension__science_en.md)
+* **FAQ (EN)** – [`TU-CH01_HumanTension__faq_en.md`](./TU-CH01_HumanTension__faq_en.md)
 
 ---
 
-### TU-CH05 · Tension Physics (Big Bang, gravity, dark matter, time arrow)
+### TU-CH02 · Tension Recipes (from 0/1 switch to full tension line)
 
-* **Story (EN)** – [`TU-CH05_TensionPhysics__story_en.md`](./TU-CH05_TensionPhysics__story_en.md)
-* **Science (EN)** – [`TU-CH05_TensionPhysics__science_en.md`](./TU-CH05_TensionPhysics__science_en.md)
-* **FAQ (EN)** – [`TU-CH05_TensionPhysics__faq_en.md`](./TU-CH05_TensionPhysics__faq_en.md)
+* **Story (EN)** – [`TU-CH02_TensionRecipes__story_en.md`](./TU-CH02_TensionRecipes__story_en.md)
+* **Science (EN)** – [`TU-CH02_TensionRecipes__science_en.md`](./TU-CH02_TensionRecipes__science_en.md)
+* **FAQ (EN)** – [`TU-CH02_TensionRecipes__faq_en.md`](./TU-CH02_TensionRecipes__faq_en.md)
 
 ---
 
-### TU-CH06 · Quantum Observer (superposition, measurement, uncertainty)
+### TU-CH03 · Cosmic Bedsheet (universe as a tension field)
 
-* **Story (EN)** – [`TU-CH06_QuantumObserver__story_en.md`](./TU-CH06_QuantumObserver__story_en.md)
-* **Science (EN)** – [`TU-CH06_QuantumObserver__science_en.md`](./TU-CH06_QuantumObserver__science_en.md)
-* **FAQ (EN)** – [`TU-CH06_QuantumObserver__faq_en.md`](./TU-CH06_QuantumObserver__faq_en.md)
+* **Story (EN)** – [`TU-CH03_CosmicBedsheet__story_en.md`](./TU-CH03_CosmicBedsheet__story_en.md)
+* **Science (EN)** – [`TU-CH03_CosmicBedsheet__science_en.md`](./TU-CH03_CosmicBedsheet__science_en.md)
+* **FAQ (EN)** – [`TU-CH03_CosmicBedsheet__faq_en.md`](./TU-CH03_CosmicBedsheet__faq_en.md)
+
+---
+
+### TU-CH04 · Tension Physics (Big Bang, gravity, dark matter, time arrow)
+
+* **Story (EN)** – [`TU-CH04_TensionPhysics__story_en.md`](./TU-CH04_TensionPhysics__story_en.md)
+* **Science (EN)** – [`TU-CH04_TensionPhysics__science_en.md`](./TU-CH04_TensionPhysics__science_en.md)
+* **FAQ (EN)** – [`TU-CH04_TensionPhysics__faq_en.md`](./TU-CH04_TensionPhysics__faq_en.md)
+
+---
+
+### TU-CH05 · Quantum Observer (superposition, measurement, uncertainty)
+
+* **Story (EN)** – [`TU-CH05_QuantumObserver__story_en.md`](./TU-CH05_QuantumObserver__story_en.md)
+* **Science (EN)** – [`TU-CH05_QuantumObserver__science_en.md`](./TU-CH05_QuantumObserver__science_en.md)
+* **FAQ (EN)** – [`TU-CH05_QuantumObserver__faq_en.md`](./TU-CH05_QuantumObserver__faq_en.md)
+
+---
+
+### TU-CH06 · Tension Islands (life, consciousness, free will)
+
+* **Story (EN)** – [`TU-CH06_TensionIslands__story_en.md`](./TU-CH06_TensionIslands__story_en.md)
+* **Science (EN)** – [`TU-CH06_TensionIslands__science_en.md`](./TU-CH06_TensionIslands__science_en.md)
+* **FAQ (EN)** – [`TU-CH06_TensionIslands__faq_en.md`](./TU-CH06_TensionIslands__faq_en.md)
 
 ---
 

@@ -1,4 +1,4 @@
-# TU-CH03 · Tension Recipes  
+# TU-CH02 · Tension Recipes  
 *FAQ · English · TensionUniverse Chronicles*
 
 > This is speculative science fiction, not a proven physical theory.  

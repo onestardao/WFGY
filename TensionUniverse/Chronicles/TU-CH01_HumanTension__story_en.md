@@ -1,4 +1,4 @@
-# TU-CH02 · Human Tension  
+# TU-CH01 · Human Tension  
 *Story · English · TensionUniverse Chronicles*
 > This is speculative science fiction, not a proven physical theory.  
 > “Tension Universe” is a fictional framing device.  All stories are MIT licensed — remix and build freely.

@@ -1,4 +1,4 @@
-# TU-CH04 · Cosmic Bedsheet  
+# TU-CH03 · Cosmic Bedsheet  
 *Story · English · TensionUniverse Chronicles*
 
 > This is speculative science fiction, not a proven physical theory.  

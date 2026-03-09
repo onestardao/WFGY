@@ -1,4 +1,4 @@
-# TU-CH05 · Tension Physics  
+# TU-CH04 · Tension Physics  
 *FAQ · English · TensionUniverse Chronicles*
 
 > This is speculative science fiction, not a proven physical theory.  
