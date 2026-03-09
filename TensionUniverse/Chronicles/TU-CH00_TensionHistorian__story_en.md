@@ -1,8 +1,7 @@
 > This is speculative science fiction, not a proven physical theory.  
-> “Tension Universe” is a fictional framing device.  All stories are MIT licensed — remix and build freely.
+> “Tension Universe” is a fictional framing device. All stories are MIT licensed. Remix and build freely.
 
-
-## 0 | Opening: A Tension Historian from the Future
+## 🧭 0 | Opening: A Tension Historian from the Future
 
 Hello.
 I’m a junior Tension Historian from the year 2413 CE. 🙂
@@ -52,9 +51,12 @@ But if at some point you suddenly feel:
 
 That spot is where tension is saying hello to you.
 
----
+> If you want the framing memo behind this whole piece, continue here:
+> [Story](./TU-CH00_TensionHistorian__story_en.md)
 
-## 1 | The Invisible Things Between People Are All Tension
+--
+
+## 🧭 1 | The Invisible Things Between People Are All Tension
 
 Forget the universe for a moment.
 Let’s start with what you actually live through every day.
@@ -119,9 +121,12 @@ In one sentence:
 > and you care about that gap,
 > the whole distance in between is where tension is working.
 
----
+> If this chapter caught your attention, you can continue in three directions:
+> [Story](./TU-CH01_HumanTension__story_en.md) · [Science](./TU-CH01_HumanTension__science_en.md) · [FAQ](./TU-CH01_HumanTension__faq_en.md)
 
-## 2 | Between 0 and 1, the Whole Line Is Made of “Tension Recipes”
+--
+
+## 🧭 2 | Between 0 and 1, the Whole Line Is Made of “Tension Recipes”
 
 Humans like to describe the world as a two-choice thing:
 
@@ -167,9 +172,12 @@ Same activity, different recipe, completely different story.
 This full line between 0 and 1,
 we call it a tension recipe.
 
----
+> If this chapter caught your attention, you can continue in three directions:
+> [Story](./TU-CH02_TensionRecipes__story_en.md) · [Science](./TU-CH02_TensionRecipes__science_en.md) · [FAQ](./TU-CH02_TensionRecipes__faq_en.md)
 
-## 3 | From Daily Life to the Universe: Bedsheets and Spring Mattresses
+--
+
+## 🧭 3 | From Daily Life to the Universe: Bedsheets and Spring Mattresses
 
 Now let’s zoom out as far as we can.
 
@@ -201,7 +209,7 @@ it becomes tighter, more pulled, more wrinkled.
 
 Where the sheet sinks down,
 where it is tight,
-where it forms valleys or something like a black hole –
+where it forms valleys or something like a black hole
 all these shapes together are the Tension Universe.
 
 One-sentence definition:
@@ -215,9 +223,12 @@ Tension is the trace left on this sheet by all these pulls and pushes.
 Next, we will use this bedsheet
 to retell the hard-to-understand parts of your physics textbook.
 
----
+> If this chapter caught your attention, you can continue in three directions:
+> [Story](./TU-CH03_CosmicBedsheet__story_en.md) · [Science](./TU-CH03_CosmicBedsheet__science_en.md) · [FAQ](./TU-CH03_CosmicBedsheet__faq_en.md)
 
-## 4 | Big Bang, Gravity, Dark Matter, Arrow of Time: The Physics Textbook in Tension Form
+--
+
+## 🧭 4 | Big Bang, Gravity, Dark Matter, Arrow of Time: The Physics Textbook in Tension Form
 
 ### 4-1 Big Bang: The Moment the First Tension Was Written into the Ledger
 
@@ -323,9 +334,12 @@ Only a practical question:
 How should we keep the books
 so we do not die inside the reconciliation process?
 
----
+> If this chapter caught your attention, you can continue in three directions:
+> [Story](./TU-CH04_TensionPhysics__story_en.md) · [Science](./TU-CH04_TensionPhysics__science_en.md) · [FAQ](./TU-CH04_TensionPhysics__faq_en.md)
 
-## 5 | Quantum and Observers: Many Possible Tension Futures Stacked Together
+--
+
+## 🧭 5 | Quantum and Observers: Many Possible Tension Futures Stacked Together
 
 People in your time love to use quantum as spiritual candy.
 
@@ -388,9 +402,12 @@ There is no “you can manifest whatever you want”.
 There is only
 “one page can only hold so much detail”.
 
----
+> If this chapter caught your attention, you can continue in three directions:
+> [Story](./TU-CH05_QuantumObserver__story_en.md) · [Science](./TU-CH05_QuantumObserver__science_en.md) · [FAQ](./TU-CH05_QuantumObserver__faq_en.md)
 
-## 6 | Life and Consciousness: Tension Islands and Tension Simulation Machines
+--
+
+## 🧭 6 | Life and Consciousness: Tension Islands and Tension Simulation Machines
 
 Now shrink the scale from the whole bedsheet
 to structures that do not fall apart right away.
@@ -480,9 +497,12 @@ inside a txt question bank you left in your era.
 
 But that is a later story.
 
----
+> If this chapter caught your attention, you can continue in three directions:
+> [Story](./TU-CH06_TensionIslands__story_en.md) · [Science](./TU-CH06_TensionIslands__science_en.md) · [FAQ](./TU-CH06_TensionIslands__faq_en.md)
 
-## 7 | Short Videos, Digital Drugs, AI Companions: When Imagination Is Outsourced
+--
+
+## 🧭 7 | Short Videos, Digital Drugs, AI Companions: When Imagination Is Outsourced
 
 Let’s go back to something that hits you directly.
 
@@ -582,9 +602,12 @@ The real problem is:
 > they slowly lose the ability
 > to design their own tension recipes.
 
----
+> If this chapter caught your attention, you can continue in three directions:
+> [Story](./TU-CH07_OutsourcedImagination__story_en.md) · [Science](./TU-CH07_OutsourcedImagination__science_en.md) · [FAQ](./TU-CH07_OutsourcedImagination__faq_en.md)
 
-## 8 | Civilization and Crisis: When a Whole Species Messes Up the Tension Ledger
+--
+
+## 🧭 8 | Civilization and Crisis: When a Whole Species Messes Up the Tension Ledger
 
 Zoom out again.
 
@@ -666,9 +689,12 @@ and different AIs handle tension.
 That question set is one of the most important
 txt files your era left behind.
 
----
+> If this chapter caught your attention, you can continue in three directions:
+> [Story](./TU-CH08_CivilizationCrisis__story_en.md) · [Science](./TU-CH08_CivilizationCrisis__science_en.md) · [FAQ](./TU-CH08_CivilizationCrisis__faq_en.md)
 
-## 9 | AI: The Second Thing That Can Simulate Tension Comes Online
+--
+
+## 🧭 9 | AI: The Second Thing That Can Simulate Tension Comes Online
 
 In the 21st century,
 you did something dangerous
@@ -756,9 +782,12 @@ In the end, alignment reduces to one question:
 This one sentence
 is more brutal than any technical definition.
 
----
+> If this chapter caught your attention, you can continue in three directions:
+> [Story](./TU-CH09_AITensionPartner__story_en.md) · [Science](./TU-CH09_AITensionPartner__science_en.md) · [FAQ](./TU-CH09_AITensionPartner__faq_en.md)
 
-## 10 | 131 Questions: The Midterm Exam of the Tension Universe
+--
+
+## 🧭 10 | 131 Questions: The Midterm Exam of the Tension Universe
 
 Now we can finally talk about that txt file.
 
@@ -820,9 +849,12 @@ is simply a story standing behind that txt file,
 translating its structure into something
 normal people can read.
 
----
+> If this chapter caught your attention, you can continue in three directions:
+> [Story](./TU-CH10_Tension131Exam__story_en.md) · [Science](./TU-CH10_Tension131Exam__science_en.md) · [FAQ](./TU-CH10_Tension131Exam__faq_en.md)
 
-## 11 | Closing: The Universe Does Not Care If You Believe This, but It Cares How You Use Your Tension
+--
+
+## 🧭 11 | Closing: The Universe Does Not Care If You Believe This, but It Cares How You Use Your Tension
 
 After reading all this,
 nothing in front of you has actually changed.
@@ -913,7 +945,10 @@ there is one line under its name:
 > WFGY 3.0 · Singularity Demo
 > The 131 Century Problems of the Tension Universe.
 
----
+> If you want to keep walking after the closing, the wider map continues here:
+> [Chronicles](./README.md) · [Event Horizon](../EventHorizon/README.md) · [BlackHole Archive](../BlackHole)
+
+--
 
 ## Navigation
 
@@ -925,5 +960,3 @@ there is one line under its name:
 | [Experiments](https://github.com/onestardao/WFGY/blob/main/TensionUniverse/Experiments/README.md) | Reproducible MVP runs and observable tension patterns |
 | [Charters](https://github.com/onestardao/WFGY/tree/main/TensionUniverse/Charters) | Scope, guardrails, encoding limits and constraints |
 | [r/TensionUniverse](https://www.reddit.com/r/TensionUniverse/) | Community discussion and ongoing story threads |
-
-
