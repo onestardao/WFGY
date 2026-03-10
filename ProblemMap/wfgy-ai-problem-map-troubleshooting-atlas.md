@@ -52,13 +52,16 @@ Important:
 
 # Problem Map · AI Troubleshooting Atlas
 
+<img width="1536" height="1024" alt="ChatGPT Image 2026年3月10日 下午01_50_47" src="https://github.com/user-attachments/assets/d2235b19-cac9-46e6-a396-65ce40a203de" />
+
+
 🧭 **Problem Map 3.0** is the next evolution of the WFGY troubleshooting system.
 
 The original **Problem Map 1.0** introduced a structured **16-problem checklist for RAG failures**, which has already been referenced and integrated across multiple open-source projects.
 
 Our goal now is to expand that idea into something bigger.
 
-Problem Map 3.0 aims to transform the popular **RAG problem map** into a broader **AI troubleshooting atlas** that can help diagnose failures across modern AI systems including:
+Problem Map 3.0 aims to transform the original **RAG problem map** into a broader **AI troubleshooting atlas** capable of diagnosing failures across modern AI systems, including:
 
 - RAG pipelines  
 - agent workflows  
@@ -67,10 +70,16 @@ Problem Map 3.0 aims to transform the popular **RAG problem map** into a broader
 
 Instead of focusing only on RAG errors, the new atlas will organize **failure patterns, debugging paths, and recovery strategies** in a more structured and scalable way.
 
-⚙️ **Status:** Work in progress
+This next iteration is designed to help developers understand **where AI systems break, why they break, and how to systematically recover from those failures**.
 
-We are currently building the structure, visual debug tools, and new troubleshooting layers.
+⚙️ **Release status**
 
-🚧 More details, maps, and debugging protocols will be added soon.
+Problem Map 3.0 is currently under active development.
+
+📅 **Planned public release:** **2026-03-13**
+
+The upcoming release will introduce a significantly expanded troubleshooting atlas, new diagnostic layers, and improved visual debugging maps.
+
+🚧 More details, maps, and debugging protocols will be published as the release approaches.
 
 Stay tuned.
