@@ -11,7 +11,7 @@ Role: MVP experiment log for Q109 at the effective layer.
 _Status: **MVP Implemented**. This page records the design and links to the runnable implementation._
 
 > [!IMPORTANT]
-> **Author Guidance**: This experiment follows the project lead's suggestion to use public datasets (UN, IOM, OECD) for simulating migration corridor tension.
+> **Implementation Note**: This experiment uses the **World Bank Open Data API** (`SM.POP.NETM`) as its data source. See [DATA_SOURCE.md](./DATA_SOURCE.md) for full citation and access details.
 
 ## 0. What this page is about
 
@@ -35,7 +35,7 @@ A runnable Python notebook simulating migration flows and calculating tension in
 ## 2. Methodology
 - **Vector G (Anchor)**: Global median net migration (baseline).
 - **Vector I (Current)**: Real-time net migration delta.
-- **ΔS Output**: A real-time heatmap of migration pressure categorised into SAFE, RISK, and DANGER zones.
+- **ΔS Output**: A tension heatmap categorised into four zones: SAFE, TRANSITIONAL, RISK, and DANGER (corresponding to ΔS ranges < 0.40, 0.40–0.60, 0.60–0.85, and ≥ 0.85 respectively).
 
 ---
 - [← Back to Experiments index](../README.md)

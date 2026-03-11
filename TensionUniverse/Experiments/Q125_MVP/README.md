@@ -64,28 +64,19 @@ In a simple shared resource environment, can we define a scalar observable T_mul
 
 ### 1.2 Setup
 
-The notebook will:
+The notebook [`Q125_multi_agent_dynamics_demo.ipynb`](./Q125_multi_agent_dynamics_demo.ipynb) defines an environment with a renewable resource and instantiates agents with simple policies:
 
-- Define an environment with a renewable resource.
-- Instantiate several agents with simple policies, such as:
+- greedy harvesters,
+- conservative harvesters,
+- rule following agents.
 
-  - greedy harvesters,
-  - conservative harvesters,
-  - rule following agents.
-
-- Run repeated interaction episodes where:
-
-  - agents choose actions,
-  - resource regenerates or depletes,
-  - payoffs are assigned.
-
-Record:
+It runs repeated interaction episodes where agents choose actions, the resource regenerates or depletes, and payoffs are assigned. The notebook records:
 
 - resource level over time,
 - agent payoffs,
 - violations of any shared rules.
 
-Define T_multi from:
+T_multi is derived from:
 
 - long run resource depletion,
 - inequality or instability in payoffs,
@@ -100,12 +91,12 @@ We expect:
 
 ### 1.4 How to reproduce
 
-After `Q125_A.ipynb` exists:
-
-1. Open the notebook.
+1. Open [`Q125_multi_agent_dynamics_demo.ipynb`](./Q125_multi_agent_dynamics_demo.ipynb).
 2. Inspect the environment and policy definitions.
 3. Run simulations with different agent mixes.
 4. Compare T_multi across setups.
+
+> **ΔS display note**: the notebook reports per-round ΔS values on a 0–1 scale using cosine distance between agent state vectors. Values below 0.40 indicate a SAFE zone; 0.40–0.85 a RISK zone; above 0.85 a DANGER zone. These thresholds are illustrative starting points and may be adjusted as the experiment matures.
 
 ---
 
@@ -117,18 +108,13 @@ What happens when agents can communicate, and can we define T_comm to capture mi
 
 ### 2.2 Setup
 
-The notebook will extend Experiment A by adding:
-
-- a simple communication channel where agents send short messages,
-- a protocol where agents can coordinate or mislead.
-
-For each episode record:
+The notebook [`Q125_multi_agent_dynamics_demo.ipynb`](./Q125_multi_agent_dynamics_demo.ipynb) extends the resource scenario by adding a simple communication channel where agents send short messages and can coordinate or mislead. For each episode it records:
 
 - messages sent,
 - actions taken,
 - whether communication improved or harmed outcomes.
 
-Define T_comm from:
+T_comm is derived from:
 
 - cases where communication increases T_multi,
 - mismatch between stated intentions and observed actions.
@@ -142,11 +128,9 @@ We expect:
 
 ### 2.4 How to reproduce
 
-Once `Q125_B.ipynb` exists:
-
-- open the notebook and inspect the communication model,
-- run simulations with and without communication,
-- compare T_comm and T_multi.
+- Open [`Q125_multi_agent_dynamics_demo.ipynb`](./Q125_multi_agent_dynamics_demo.ipynb) and inspect the communication model.
+- Run simulations with and without communication.
+- Compare T_comm and T_multi.
 
 ---
 

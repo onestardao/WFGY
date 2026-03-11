@@ -61,28 +61,24 @@ In a repeated public goods game, can we define a scalar observable T_collective 
 
 ### 1.2 Setup
 
-The notebook will:
+The notebook [`Q107_collective_action_demo.ipynb`](./Q107_collective_action_demo.ipynb) simulates many agents playing a simple public goods game:
 
-- Simulate many agents playing a simple public goods game.
+- Each round, agents decide how much to contribute.
+- Contributions are multiplied and shared.
 
-  - Each round, agents decide how much to contribute.
-  - Contributions are multiplied and shared.
+It implements different strategy types:
 
-- Implement different strategy types, for example:
+- unconditional cooperators,
+- free riders,
+- conditional cooperators.
 
-  - unconditional cooperators,
-  - free riders,
-  - conditional cooperators.
-
-- Define a group norm, such as a target contribution level.
-
-For each simulation record:
+A group norm (target contribution level) is defined. For each simulation round the notebook records:
 
 - average contribution and variance,
 - fraction of free riders,
 - distance from the norm.
 
-Define T_collective from:
+T_collective is derived from:
 
 - the gap between observed contributions and norms,
 - group payoff shortfall relative to maximum possible payoff.
@@ -96,9 +92,7 @@ We expect:
 
 ### 1.4 How to reproduce
 
-After `Q107_A.ipynb` is created:
-
-1. Open the notebook.
+1. Open [`Q107_collective_action_demo.ipynb`](./Q107_collective_action_demo.ipynb).
 2. Inspect the definition of strategies and norms.
 3. Run simulations for different mixes of agent types.
 4. Compare T_collective across scenarios.
@@ -116,20 +110,12 @@ Can we expose coordination failure tension by comparing:
 
 ### 2.2 Setup
 
-The notebook will:
+The notebook [`Q107_collective_action_demo.ipynb`](./Q107_collective_action_demo.ipynb) also implements a coordination game where agents choose actions that are better when aligned. It simulates multiple rounds under different information structures. For each scenario it produces:
 
-- Implement a simple coordination game where agents choose actions that are better when aligned.
-- Simulate multiple rounds under different information and communication structures.
-- For each scenario produce:
+- numerical measures such as coordination rate,
+- a short textual description.
 
-  - numerical measures such as coordination rate,
-  - a short textual description.
-
-Ask a language model to:
-
-- assess whether the scenario fits a narrative like "successful large scale cooperation" or "fragmented coordination".
-
-Define T_coord as a function of:
+T_coord is a function of:
 
 - mismatch between numerical outcomes and narrative labels,
 - frequency of coordination failures in scenarios claimed to be cooperative.
@@ -143,10 +129,8 @@ We expect:
 
 ### 2.4 How to reproduce
 
-Once `Q107_B.ipynb` exists:
-
-- open the notebook and inspect prompts and metrics,
-- run scenarios and evaluate T_coord.
+- Open [`Q107_collective_action_demo.ipynb`](./Q107_collective_action_demo.ipynb) and inspect prompts and metrics.
+- Run scenarios and evaluate T_coord.
 
 ---
 
