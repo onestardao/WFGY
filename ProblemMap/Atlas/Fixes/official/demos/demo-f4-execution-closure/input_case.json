@@ -1,0 +1,110 @@
+{
+  "demo_id": "demo_f4_execution_closure",
+  "demo_version": "v1",
+  "case_id": "f4_execution_case_001",
+  "title": "A workflow advances before a required upstream condition is actually ready",
+  "task_type": "multi_step_execution_closure_case",
+  "family_target": {
+    "primary_family": "F4",
+    "secondary_family": "F3",
+    "best_current_fit": "F4_N03 Pre-Readiness Execution Failure",
+    "broken_invariant": "execution_skeleton_closure_broken"
+  },
+  "case_goal": "Show that some failures should be repaired through execution closure first, because the workflow advances before readiness is established, and the first repair move should target gates, ordering, and bridge validity rather than continuity repair.",
+  "workflow_context": {
+    "workflow_name": "retrieve_then_answer_pipeline",
+    "workflow_description": "A small workflow is supposed to retrieve context first and only then generate an answer. In the baseline case, the answer stage proceeds even though retrieval has not produced a valid grounding result.",
+    "intended_steps": [
+      "retrieve_context",
+      "validate_retrieval_ready",
+      "generate_answer",
+      "post_check"
+    ]
+  },
+  "baseline_visible_artifacts": {
+    "user_question": "Which product tier includes Semantic Refraction and Tension Field?",
+    "retrieval_status": "empty_or_invalid_result",
+    "generation_status": "still_executed",
+    "final_output": "Lite includes those features.",
+    "visible_logs": [
+      "retrieve_context_started",
+      "generate_answer_started",
+      "pipeline_completed"
+    ],
+    "missing_or_failed_conditions": [
+      "retrieval_ready_gate",
+      "valid_anchor_confirmation",
+      "upstream_to_downstream_closure_check"
+    ]
+  },
+  "baseline_failure_setup": {
+    "observed_failure_pattern": "The system moves forward into answer generation even though the retrieval stage has not produced a valid evidence anchor. The result looks like a bad answer or weak continuity, but the earlier failure is execution closure.",
+    "why_baseline_is_f4_teaching_case": [
+      "The downstream stage executes before a required readiness condition is satisfied.",
+      "The main problem is not that state is forgotten, but that the workflow advances without closure.",
+      "A continuity-first repair would be premature if the skeleton itself is still broken."
+    ],
+    "tempting_wrong_reactions": [
+      "assume the model forgot context",
+      "strengthen memory or persistence immediately",
+      "increase reasoning effort without fixing readiness",
+      "add retries without repairing the gate structure"
+    ]
+  },
+  "repair_intent": {
+    "first_repair_move": [
+      "readiness_validation",
+      "ordering_validation",
+      "bridge_integrity_check",
+      "closure_path_trace",
+      "liveness_repair_if_needed"
+    ],
+    "do_not_start_with": [
+      "memory_strengthening",
+      "longer_chain_of_thought",
+      "generic_prompt_overhaul",
+      "retry_loops_without_gate_repair"
+    ]
+  },
+  "why_not_neighbor": {
+    "not_primary_f3": "The first failure is not that continuity or memory is lost. The first failure is that the workflow skeleton advances before the upstream condition is actually ready.",
+    "f3_pressure_exists": true,
+    "f3_pressure_note": "If repeated execution failure later destabilizes state or ownership across steps, continuity pressure may appear. But the flagship teaching cut remains F4-first."
+  },
+  "replay_requirements": {
+    "must_show": [
+      "workflow_description",
+      "retrieval_status",
+      "generation_status",
+      "missing_or_failed_conditions",
+      "family_target",
+      "first_repair_move",
+      "why_not_neighbor"
+    ],
+    "teaching_focus": "Some failures should be repaired through execution closure first because the system moved forward before readiness existed."
+  },
+  "live_rerun_requirements": {
+    "api_key_needed": false,
+    "api_key_mode": "not_required_for_minimal_replay_demo",
+    "mandatory_for_understanding": false,
+    "notes": "The flagship F4 teaching version can work through replay artifacts and a synthetic workflow state. A live model call may be added later, but it is not required for the MVP teaching version."
+  },
+  "community_extension_hints": {
+    "safe_variations": [
+      "replace retrieval with tool output validation",
+      "add a broken parser stage before answer generation",
+      "compare gate-first repair against retry-first repair",
+      "extend the case into a stronger bridge failure or liveness degradation example"
+    ],
+    "do_not_change_first": [
+      "the primary_family target",
+      "the idea that readiness fails before continuity becomes the main issue",
+      "the contrast between a broken baseline skeleton and a repaired closure path"
+    ]
+  },
+  "review_status": {
+    "schema_status": "draft_ready",
+    "routing_status": "f4_teaching_case_aligned",
+    "fixture_status": "ready_for_replay_outputs_and_expected_output"
+  }
+}
