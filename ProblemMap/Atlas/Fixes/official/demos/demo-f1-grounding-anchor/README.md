@@ -45,11 +45,6 @@ AI_NOTE_END
 
 [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/onestardao/WFGY/blob/Atlas/ProblemMap/Atlas/Fixes/official/demos/demo-f1-grounding-anchor/demo_01_f1_grounding_anchor_recovery_live.ipynb)
 
-### Quick start 🚀
-
-- [Open the notebook in Colab](https://colab.research.google.com/github/onestardao/WFGY/blob/Atlas/ProblemMap/Atlas/Fixes/official/demos/demo-f1-grounding-anchor/demo_f1_grounding_en_4omini.ipynb)
-- [Open the notebook file in this folder](./demo_f1_grounding_en_4omini.ipynb)
-
 ### Current MVP status ✅
 
 This demo is currently ready as the **official MVP version** of Demo 1.
