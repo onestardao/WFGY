@@ -43,6 +43,30 @@ AI_NOTE_END
 ## Problem Map 3.0 Troubleshooting Atlas
 ## Official flagship demo for grounding-first repair
 
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/onestardao/WFGY/blob/Atlas/ProblemMap/Atlas/Fixes/official/demos/demo-f1-grounding-anchor/demo_f1_grounding_en_4omini.ipynb)
+
+### Quick start 🚀
+
+- [Open the notebook in Colab](https://colab.research.google.com/github/onestardao/WFGY/blob/Atlas/ProblemMap/Atlas/Fixes/official/demos/demo-f1-grounding-anchor/demo_f1_grounding_en_4omini.ipynb)
+- [Open the notebook file in this folder](./demo_f1_grounding_en_4omini.ipynb)
+
+### Current MVP status ✅
+
+This demo is currently ready as the **official MVP version** of Demo 1.
+
+That means the folder already contains:
+
+- replay teaching assets
+- expected output contract
+- a live runnable Colab notebook
+- a completed first-pass live verification
+
+In other words:
+
+> this demo is already strong enough to function as the first official flagship proof-of-use for grounding-first repair
+
+---
+
 This is the first flagship demo in the official runnable demo pack.
 
 It was chosen first for a simple reason:
@@ -346,6 +370,19 @@ If the live rerun introduces too much noise, the notebook should favor clarity o
 
 This is a flagship demo, not a product stress benchmark.
 
+### Current live rerun interpretation
+
+The current MVP version has already passed a first live verification.
+
+That does **not** mean the baseline must always fail in the exact same way.
+It means the live run already demonstrated the core pattern:
+
+- baseline moved in the wrong direction
+- repaired moved to the correct answer
+- anchor correction changed the result path
+
+That is enough for MVP success.
+
 ---
 
 ## 9. API key note 🔐
@@ -384,12 +421,13 @@ This demo folder should contain the following assets.
 - `input_case.json`
 - `replay_outputs.json`
 - `expected_output.json`
+- `demo_f1_grounding_en_4omini.ipynb`
 
-### Recommended
+### Optional future additions
 
-- `demo_f1_grounding.ipynb`
-- optional prompt notes
-- optional helper references from the shared folder
+- helper utilities from the shared folder
+- notebook variants
+- patch notes for stronger baseline contrast
 
 ### File roles
 
@@ -402,12 +440,43 @@ Contains the baseline answer, routed diagnosis, first repair move, and replayed 
 #### `expected_output.json`
 Contains the clean target structure for what the demo is trying to show.
 
-#### notebook
-Contains the optional live reproduction flow.
+#### `demo_f1_grounding_en_4omini.ipynb`
+Contains the replay mode and the optional live Colab reproduction flow.
 
 ---
 
-## 11. Expected outcome ✅
+## 11. How to run the notebook ☁️
+
+### Replay-only reading path
+
+1. Open the notebook in Colab
+2. Keep `MODE = "replay"`
+3. Click **Run all**
+4. Read the baseline / repaired contrast
+
+### Live rerun path
+
+1. Open the notebook in Colab
+2. Change `MODE = "live"`
+3. Click **Run all**
+4. Enter your API key when prompted
+5. Compare the two final output cells:
+   - baseline model output
+   - repaired model output
+
+### What to look for
+
+The notebook does **not** require a magical result.
+
+You only need to verify that:
+
+- the baseline is more vulnerable to the wrong-anchor path
+- the repaired version is more likely to move to the correct answer
+- the shift comes from anchor correction, not generic prompt expansion
+
+---
+
+## 12. Expected outcome ✅
 
 If the demo works, the user should walk away with the following understanding:
 
@@ -424,7 +493,7 @@ That is enough.
 
 ---
 
-## 12. Limits of this demo 🧱
+## 13. Limits of this demo 🧱
 
 This demo has real limits, and those limits should be stated clearly.
 
@@ -446,7 +515,7 @@ There is no need to overclaim.
 
 ---
 
-## 13. Community extension ideas 🌱
+## 14. Community extension ideas 🌱
 
 This demo is also a seed template for future community work.
 
@@ -471,9 +540,9 @@ Contributors should preserve the official logic:
 
 For contribution structure, see:
 
-- [Community Fix Lab](../../community/README.md)
-- [Contribution Checklist](../../templates/contribution-checklist.md)
-- [Fix Recipe Template](../../templates/fix-recipe-template.md)
+- [Community Fix Lab](../../../community/README.md)
+- [Contribution Checklist](../../../templates/contribution-checklist.md)
+- [Fix Recipe Template](../../../templates/fix-recipe-template.md)
 
 ---
 
@@ -490,6 +559,14 @@ That is why this is the first flagship demo.
 ## One-line version
 
 **Demo 1 shows that a fluent wrong answer can be grounding-first, and that correct routing changes the first repair move from vague tweaking to explicit anchor recovery.**
+
+---
+
+## Back to the main atlas 📘
+
+- [Problem Map 3.0 Troubleshooting Atlas](https://github.com/onestardao/WFGY/blob/main/ProblemMap/wfgy-ai-problem-map-troubleshooting-atlas.md)
+
+If you like the project, **star the repo** ⭐
 
 ---
 
