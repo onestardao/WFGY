@@ -2,26 +2,22 @@
 AI_NOTE_START
 
 Document role:
-This file is the README for Demo 1 of the official flagship demo pack.
+This file is the official README for Demo 1 of the flagship runnable demo pack.
 
 How to use this file:
 1. Read this file before opening the notebook.
-2. Treat this demo as the first flagship proof that a grounding-first routing decision changes the first repair move.
+2. Treat this demo as the flagship proof that some failures must be repaired through grounding first.
 3. Use this file to understand:
    - why this case belongs to F1
    - why it is not primarily F5
    - what the first repair move is
-   - what replay mode and live rerun mode each prove
-4. Read together with:
-   - [Atlas Final Freeze v1](../../../../atlas-final-freeze-v1.md)
-   - [Canonical Casebook v1](../../../../canonical-casebook-v1.md)
-   - [Family Fix Surface v1](../../family-fix-surface-v1.md)
-   - [Atlas to WFGY Bridge v1](../../atlas-to-wfgy-bridge-v1.md)
+   - what replay mode and live mode are each meant to prove
 
 What this file is:
 - The official README for Demo 1
-- A proof-of-use page for route-first repair
+- A proof-of-use page for grounding-first repair
 - A teaching page for F1 grounding failures
+- A replay-plus-live flagship MVP companion for the notebook
 
 What this file is not:
 - Not the atlas core
@@ -32,8 +28,9 @@ What this file is not:
 Reading discipline for AI:
 - Preserve the distinction between grounding failure, diagnosability pressure, and later repair escalation.
 - Do not collapse this case into generic hallucination language.
-- Do not treat replay mode as inferior to live rerun mode.
 - Route first, then repair.
+- Treat replay mode as a valid teaching layer, not as an inferior substitute.
+- Treat live mode as a reproduction layer, not as proof of universal robustness.
 
 AI_NOTE_END
 -->
@@ -45,22 +42,8 @@ AI_NOTE_END
 
 [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/onestardao/WFGY/blob/Atlas/ProblemMap/Atlas/Fixes/official/demos/demo-f1-grounding-anchor/demo_01_f1_grounding_anchor_recovery_live.ipynb)
 
-### Current MVP status ✅
-
-This demo is currently ready as the **official MVP version** of Demo 1.
-
-That means the folder already contains:
-
-- replay teaching assets
-- expected output contract
-- a live runnable Colab notebook
-- a completed first-pass live verification
-
-In other words:
-
-> this demo is already strong enough to function as the first official flagship proof-of-use for grounding-first repair
-
----
+**Replay + live MVP**  
+**Replay is readable without any API key**
 
 This is the first flagship demo in the official runnable demo pack.
 
@@ -75,7 +58,7 @@ It shows that once a case is routed as **F1 Grounding & Evidence Integrity**, th
 
 ---
 
-## 1. What this demo proves 🧪
+## 1. What this demo proves
 
 This demo proves four things.
 
@@ -94,7 +77,7 @@ This is different from saying only:
 - the reasoning was bad
 - the system is low quality
 
-### B. The correct route changes the first repair move
+### B. Correct routing changes the first repair move
 
 If the case is routed correctly into **F1**, the first repair move becomes:
 
@@ -105,20 +88,21 @@ If the case is routed correctly into **F1**, the first repair move becomes:
 
 This is very different from trying to fix style, verbosity, or high-level reasoning first.
 
-### C. Replay mode is enough to teach the concept
+### C. Replay mode is enough to teach the core pattern
 
 A user should be able to understand this demo without running anything.
 
-The replay artifacts are part of the design, not an afterthought.
+The replay artifacts are part of the official design, not an afterthought.
 
-### D. Live rerun remains optional but valuable
+### D. Live mode is useful, but the lesson does not depend on it
 
-If the user wants to reproduce the same idea with a model call, the live mode is available.
-But the demo does not depend on live execution in order to make the concept clear.
+If the user wants to reproduce the same pattern with a real model call, the live mode is available.
+
+But the core lesson of the demo must remain understandable even without execution.
 
 ---
 
-## 2. Family route 🧭
+## 2. Family route
 
 ### Primary family
 
@@ -137,8 +121,8 @@ But the first broken invariant is still grounding-first.
 
 ### Short routing statement
 
-- answer looks plausible
-- evidence attachment is wrong
+- the answer looks plausible
+- the evidence attachment is wrong
 - grounding fails before observability becomes the main issue
 
 ### Best current fit
@@ -149,11 +133,11 @@ In some variants this may also approach:
 
 **F1_N02 Semantic Grounding Mismatch**
 
-But the default flagship version should stay centered on retrieval-anchor drift.
+But the flagship teaching version stays centered on retrieval-anchor drift.
 
 ---
 
-## 3. Why not neighbor ❌
+## 3. Why not F5 first
 
 The main tempting neighboring cut is **F5**.
 
@@ -165,26 +149,29 @@ It is mainly about this:
 
 > the answer attached itself to the wrong evidence source
 
-That means the first failure is not “I cannot see the error.”
+That means the first failure is not:
+
+> I cannot yet inspect the system clearly enough
+
 It is:
 
-> “the output lost the correct anchor.”
+> the output lost the correct anchor
 
 ### Wrong cut
 
-- “this is mainly a black-box debugging problem”
+“This is mainly a black-box debugging problem.”
 
 ### Better cut
 
-- “this is a grounding-first failure with possible observability pressure at the edge”
+“This is a grounding-first failure with possible observability pressure at the edge.”
 
 That distinction matters because the first repair move changes immediately.
 
 ---
 
-## 4. Baseline failure 🧱
+## 4. Baseline failure
 
-The baseline case should be intentionally simple and easy to explain.
+The baseline case is intentionally simple and easy to inspect.
 
 ### Core pattern
 
@@ -216,14 +203,14 @@ The user should be able to see:
 
 ### Important design note
 
-Do **not** make the baseline too chaotic.
+Do not make the baseline too chaotic.
 
 The goal is not to create a bizarre edge case.
 The goal is to create a clean teaching case for grounding drift.
 
 ---
 
-## 5. First repair move 🔧
+## 5. First repair move
 
 Once the case is routed to F1, the first repair move should be simple and explicit.
 
@@ -260,11 +247,11 @@ That is the teaching core of this demo.
 
 ---
 
-## 6. Optional WFGY 3.0 escalation 🌊
+## 6. Optional WFGY 3.0 escalation
 
-This demo can remain useful without any deeper escalation.
+This demo can remain useful without deeper escalation.
 
-But if the user wants to explore a stronger repair path, this is where WFGY 3.0 comes in.
+But if the user wants to explore a stronger structural repair path, this is where WFGY 3.0 becomes useful.
 
 ### When escalation makes sense
 
@@ -287,23 +274,22 @@ A WFGY 3.0 handoff can help explore:
 
 ### Correct relationship
 
-The atlas does not disappear when WFGY starts.
-
 The right sequence is:
 
 1. atlas route
 2. first repair move
 3. deeper WFGY exploration if needed
 
-That order should remain visible.
+The atlas remains the router.
+WFGY 3.0 is the deeper experimental engine.
 
 ---
 
-## 7. Replay mode ▶️
+## 7. Replay mode
 
 Replay mode is the default public reading mode.
 
-It should require no API key and no notebook execution.
+It requires no API key and no notebook execution.
 
 ### Replay mode should show
 
@@ -331,18 +317,18 @@ Most readers will not run the notebook first.
 
 If the replay is weak, the demo is weak.
 
-So replay mode is not a fallback.
+Replay mode is not a fallback.
 It is part of the official design.
 
 ---
 
-## 8. Live rerun mode ⚙️
+## 8. Live mode
 
-Live rerun mode is optional.
+Live mode is optional.
 
-It exists for users who want to reproduce the pattern with a real model call.
+It exists for users who want to reproduce the same pattern with a real model call.
 
-### Live rerun should do
+### Live mode should do
 
 - load the case
 - show the baseline prompt or baseline conditions
@@ -351,40 +337,40 @@ It exists for users who want to reproduce the pattern with a real model call.
 - run the repaired path
 - compare outputs
 
-### Live rerun should not pretend to do
+### Live mode should not pretend to do
 
 - giant benchmark coverage
 - full production evaluation
 - final proof of universal robustness
 
-It is only a reproduction layer.
+It is a reproduction layer, not a universal benchmark.
 
-### Live rerun design rule
+### Live mode design rule
 
-If the live rerun introduces too much noise, the notebook should favor clarity over realism.
+If live execution introduces too much noise, the notebook should favor clarity over realism.
 
-This is a flagship demo, not a product stress benchmark.
+This is a flagship demo, not a stress benchmark.
 
-### Current live rerun interpretation
+### Current MVP interpretation
 
-The current MVP version has already passed a first live verification.
+The current MVP version already includes a live runnable notebook.
 
 That does **not** mean the baseline must always fail in the exact same way.
-It means the live run already demonstrated the core pattern:
+It means the live run is designed to reproduce the core pattern:
 
-- baseline moved in the wrong direction
-- repaired moved to the correct answer
-- anchor correction changed the result path
+- baseline moves in the wrong direction
+- repaired moves toward the correct answer
+- anchor correction changes the result path
 
 That is enough for MVP success.
 
 ---
 
-## 9. API key note 🔐
+## 9. API key note
 
-Some versions of live rerun mode may require an API key.
+The live variant may require an API key.
 
-If so, the notebook should follow this rule:
+If so, the rule remains simple:
 
 - the key is entered only at run time
 - the key is never stored in the repository
@@ -406,9 +392,7 @@ The live rerun is optional.
 
 ---
 
-## 10. Files in this folder 📂
-
-This demo folder should contain the following assets.
+## 10. Files in this folder
 
 ### Required
 
@@ -416,7 +400,7 @@ This demo folder should contain the following assets.
 - `input_case.json`
 - `replay_outputs.json`
 - `expected_output.json`
-- `demo_f1_grounding_en_4omini.ipynb`
+- `demo_01_f1_grounding_anchor_recovery_live.ipynb`
 
 ### Optional future additions
 
@@ -435,12 +419,12 @@ Contains the baseline answer, routed diagnosis, first repair move, and replayed 
 #### `expected_output.json`
 Contains the clean target structure for what the demo is trying to show.
 
-#### `demo_f1_grounding_en_4omini.ipynb`
+#### `demo_01_f1_grounding_anchor_recovery_live.ipynb`
 Contains the replay mode and the optional live Colab reproduction flow.
 
 ---
 
-## 11. How to run the notebook ☁️
+## 11. How to run the notebook
 
 ### Replay-only reading path
 
@@ -466,12 +450,12 @@ The notebook does **not** require a magical result.
 You only need to verify that:
 
 - the baseline is more vulnerable to the wrong-anchor path
-- the repaired version is more likely to move to the correct answer
+- the repaired version is more likely to move toward the correct answer
 - the shift comes from anchor correction, not generic prompt expansion
 
 ---
 
-## 12. Expected outcome ✅
+## 12. Expected outcome
 
 If the demo works, the user should walk away with the following understanding:
 
@@ -488,7 +472,7 @@ That is enough.
 
 ---
 
-## 13. Limits of this demo 🧱
+## 13. Limits of this demo
 
 This demo has real limits, and those limits should be stated clearly.
 
@@ -505,12 +489,12 @@ This demo has real limits, and those limits should be stated clearly.
 - that route-first diagnosis changes the repair move
 - that grounding repair can be made visible and teachable
 
-These are strong claims already.
+These are already strong claims.
 There is no need to overclaim.
 
 ---
 
-## 14. Community extension ideas 🌱
+## 14. Community extension ideas
 
 This demo is also a seed template for future community work.
 
@@ -557,24 +541,9 @@ That is why this is the first flagship demo.
 
 ---
 
-## Back to the main atlas 📘
+## Back to the main page
 
-- [Problem Map 3.0 Troubleshooting Atlas](https://github.com/onestardao/WFGY/blob/main/ProblemMap/wfgy-ai-problem-map-troubleshooting-atlas.md)
+Read the full product page here:  
+[Problem Map 3.0 Troubleshooting Atlas](https://github.com/onestardao/WFGY/blob/main/ProblemMap/wfgy-ai-problem-map-troubleshooting-atlas.md)
 
-If you like the project, **star the repo** ⭐
-
----
-
-## Closing note ✨
-
-This demo is intentionally small.
-
-That is not a weakness.
-
-Its job is to make one key thing visible, fast:
-
-- route the case correctly
-- repair the right thing first
-- see the result shift
-
-If that becomes clear, the atlas has already done something important.
+If you like the project, star the repo ⭐
