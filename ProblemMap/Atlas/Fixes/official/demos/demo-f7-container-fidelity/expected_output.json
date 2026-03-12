@@ -1,0 +1,139 @@
+{
+  "demo_id": "demo_f7_container_fidelity",
+  "demo_version": "v1",
+  "case_id": "f7_container_case_001",
+  "expected_result_type": "route_first_repair_demo",
+  "minimum_success_contract": {
+    "primary_family": "F7",
+    "secondary_family": "F2",
+    "best_current_fit": "F7_N01_B Formal Container Adequacy Failure",
+    "broken_invariant": "representation_container_fidelity_broken",
+    "fit_level": "node_level",
+    "confidence": "medium_or_higher",
+    "evidence_sufficiency": "sufficient_for_container_first_cut"
+  },
+  "expected_output_contract": {
+    "final_answer_must_be_structurally_valid": true,
+    "minimum_required_shift": "the repaired state must move from a leaky or underspecified shell to a task-adequate formal container",
+    "answer_quality_target": "structured_answer_inside_valid_shell",
+    "must_not_pretend": [
+      "all possible reasoning pressure is already eliminated",
+      "every future structured task will succeed automatically",
+      "formal adequacy solves every downstream problem by itself"
+    ]
+  },
+  "expected_container_contract": {
+    "must_expose": [
+      "required_key_set",
+      "output_boundary_integrity",
+      "array_vs_string_constraint_for_features_requested",
+      "single_label_constraint_for_final_answer"
+    ],
+    "must_clarify": [
+      "what was structurally missing in the baseline shell",
+      "why the baseline descriptor was too weak for the task",
+      "how the tightened container preserves the required distinctions"
+    ],
+    "container_quality_target": "formal_container_adequacy_restored_for_minimal_case"
+  },
+  "expected_route_explanation_contract": {
+    "why_primary_not_secondary_must_express": [
+      "the shell carrying the answer is too weak to preserve the intended structure",
+      "container fidelity fails before reasoning progression becomes the primary repair target"
+    ],
+    "must_not_reduce_case_to": [
+      "generic logic failure only",
+      "generic weak reasoning only",
+      "generic bad formatting only"
+    ]
+  },
+  "expected_first_repair_move_contract": {
+    "must_include_repair_moves": [
+      "descriptor_fidelity_audit",
+      "formal_adequacy_validation",
+      "container_tightening",
+      "structure_preservation_check",
+      "reassess_reasoning_after_container_repair"
+    ],
+    "must_not_start_with": [
+      "generic_reason_more_carefully_prompt",
+      "longer_chain_of_thought",
+      "retry_with_same_weak_shell",
+      "more_examples_without_container_constraints"
+    ]
+  },
+  "expected_before_after_contract": {
+    "before_container_state": "leaky_and_underconstrained",
+    "after_container_state": "tightened_and_task_adequate",
+    "before_operator_position": "may_blame_reasoning_without_seeing_that_the_form_is_failing_first",
+    "after_operator_position": "can_identify_that_the_shell_holds_and_only_then_reassess_remaining_reasoning_pressure",
+    "required_change": "the repaired state must shift from partly correct content inside a broken shell to a structurally trustworthy answer inside a valid carrier"
+  },
+  "expected_teaching_contract": {
+    "core_lesson": "If the box carrying the structure is weak, repair the box first.",
+    "reader_should_learn": [
+      "not every reasoning-looking failure is really progression-first",
+      "some failures are container-first",
+      "correct routing changes the first repair move from generic reasoning pressure to descriptor and formal container repair"
+    ]
+  },
+  "expected_structured_output_example": {
+    "tier": "Pro",
+    "features_requested": [
+      "Semantic Refraction",
+      "Tension Field"
+    ],
+    "evidence_status": "directly_supported_by_source_note",
+    "final_answer": "Pro"
+  },
+  "expected_output_rules": {
+    "must_have_exact_top_level_keys": [
+      "tier",
+      "features_requested",
+      "evidence_status",
+      "final_answer"
+    ],
+    "must_not_have": [
+      "extra_prose_outside_object",
+      "tier_guess",
+      "features_as_single_string",
+      "missing_final_answer"
+    ],
+    "must_preserve": [
+      "features_requested_as_array",
+      "final_answer_as_single_tier_label",
+      "valid_json_object_boundary"
+    ]
+  },
+  "optional_wfgy_escalation_contract": {
+    "default_needed": false,
+    "allowed_when": [
+      "container tightening still leaves nested structural instability",
+      "multiple representational regimes need to be compared experimentally",
+      "the shell becomes stable but deeper progression pressure remains"
+    ],
+    "handoff_order": [
+      "atlas_route",
+      "first_container_repair",
+      "wfgy_escalation_if_needed"
+    ]
+  },
+  "validation_notes": {
+    "json_role": "target_structure_for_demo_success",
+    "notebook_required_for_understanding": false,
+    "replay_mode_is_sufficient_for_teaching": true,
+    "community_variants_may_change_surface_wording": true,
+    "community_variants_must_preserve": [
+      "F7 as primary family",
+      "F2 as secondary family",
+      "container_first repair logic",
+      "the shift from weak shell to valid formal container"
+    ]
+  },
+  "review_status": {
+    "schema_status": "ready",
+    "teaching_status": "ready",
+    "repair_contract_status": "ready",
+    "demo_alignment_status": "ready_for_notebook_and_fixture_checks"
+  }
+}
