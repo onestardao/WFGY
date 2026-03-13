@@ -354,6 +354,49 @@ A first formal bridge pack showing that the current atlas can already extend bey
 
 ---
 
+## Use the atlas directly with AI ⚡
+
+Problem Map 3.0 is not only a document system.
+
+It now also includes a compact product-facing routing pack:
+
+### [Troubleshooting Atlas Router v1](./Atlas/troubleshooting-atlas-router-v1-freeze-note.md)
+
+This is the first compact TXT routing pack built from the atlas.
+
+Its purpose is simple:
+
+- route the case first
+- identify the broken invariant
+- separate the strongest neighboring pressure
+- suggest the first repair direction
+- warn about likely misrepair
+- stay honest when evidence is weak
+
+Short version:
+
+> **The Atlas is the map.**  
+> **The Router is the first compact executable surface of that map.**
+
+If you want the practical entry points:
+
+- [Router Freeze Note](./Atlas/troubleshooting-atlas-router-v1-freeze-note.md)
+- [Router Usage Guide](./Atlas/troubleshooting-atlas-router-v1-usage.md)
+- [Router TXT Pack](./Atlas/troubleshooting-atlas-router-v1.txt)
+
+What the Router is **not**:
+
+- not the full Atlas
+- not the full Casebook
+- not a full auto-repair engine
+- not a claim of full diagnosis closure
+
+What it does give you is something more immediate:
+
+> **drop the TXT into an AI system, feed it a failure case, and the model becomes much more likely to classify the failure family correctly before jumping into the wrong fix**
+
+---
+
 ## From routing to repair
 
 Problem Map 3.0 does not stop at diagnosis.
@@ -386,6 +429,24 @@ It is:
 * cut correctly
 * repair the right layer first
 * only then escalate deeper if needed
+
+---
+
+## Use it now
+
+If you want the shortest working path, start here:
+
+- want the full product overview → [Problem Map 3.0 Troubleshooting Atlas](./wfgy-ai-problem-map-troubleshooting-atlas.md)
+- want the full system map → [Atlas Hub](./Atlas/README.md)
+- want the compact TXT routing pack → [Troubleshooting Atlas Router v1](./Atlas/troubleshooting-atlas-router-v1-usage.md)
+- want first repair-facing guidance → [Fixes Hub](./Atlas/Fixes/README.md)
+- want official proof-of-use demos → [Official Flagship Demos](./Atlas/Fixes/official/demos/README.md)
+
+This is the shortest practical interpretation of the current system:
+
+> **read the atlas if you want the map**  
+> **use the router if you want the compact operational entry**  
+> **use the fixes layer if you want the first repair surface**
 
 ---
 
@@ -508,6 +569,194 @@ The safer and more accurate claim is:
 
 > the first formal atlas version is complete enough to matter,
 > and future work should continue through patching, thickening, adaptation, and demonstration expansion
+
+---
+
+## FAQ
+
+<details>
+<summary><strong>What is the difference between Problem Map 1.0, 2.0, and 3.0?</strong></summary>
+
+**Problem Map 1.0** is the canonical 16-problem RAG failure taxonomy and fix map.
+
+**Problem Map 2.0** is the Global Debug Card layer.  
+It compresses debugging objects, metrics, ΔS zones, and operating modes into a visual protocol.
+
+**Problem Map 3.0** is the broader troubleshooting atlas.  
+It moves from flat failure naming toward routing grammar, family structure, boundary rules, case teaching, repair-facing direction, and broader bridge work.
+
+Short version:
+
+- **1.0** gives the base failure vocabulary
+- **2.0** gives the compressed visual debug protocol
+- **3.0** gives the broader troubleshooting atlas and routing system
+
+</details>
+
+<details>
+<summary><strong>Is this a checklist, a framework, or a routing system?</strong></summary>
+
+It begins where a checklist stops.
+
+Problem Map 3.0 should be understood as a **debugging decision system** and a **failure routing grammar**.
+
+It still preserves map-like clarity, but its real job is not just to name failures.
+
+Its real job is to help humans and AI systems decide:
+
+- where the failure lives
+- what neighboring region is tempting but wrong
+- which invariant is broken
+- what should be repaired first
+
+So the most accurate answer is:
+
+> **it is a routing grammar and troubleshooting decision system, not just a checklist**
+
+</details>
+
+<details>
+<summary><strong>Do I need to read the full Atlas to use it?</strong></summary>
+
+No.
+
+The full Atlas is the strongest version if you want the full structure, deeper definitions, casebook, patch logic, and bridge materials.
+
+But you do **not** need to read the full Atlas just to start using the system.
+
+If you want the compact entry point, use:
+
+- [Troubleshooting Atlas Router v1 Usage Guide](./Atlas/troubleshooting-atlas-router-v1-usage.md)
+- [Troubleshooting Atlas Router v1 TXT Pack](./Atlas/troubleshooting-atlas-router-v1.txt)
+
+That is the shortest route from “I have a bug case” to “help me classify this correctly.”
+
+</details>
+
+<details>
+<summary><strong>What does Troubleshooting Atlas Router actually do?</strong></summary>
+
+The Router is the first compact TXT routing pack built from the Atlas.
+
+Its job is to help an AI system do the following in order:
+
+1. identify the most likely primary family
+2. identify the strongest neighboring family pressure if it is real
+3. explain why the primary cut is stronger
+4. identify the broken invariant
+5. suggest the first repair direction
+6. warn about likely misrepair
+7. stay honest about confidence and evidence sufficiency
+
+It is best understood as:
+
+> **the first compact executable surface of the Atlas**
+
+It is not the whole Atlas and not a full repair engine.
+
+</details>
+
+<details>
+<summary><strong>Does this system already repair everything automatically?</strong></summary>
+
+No.
+
+The current public system is strongest at:
+
+- route-first classification
+- boundary-aware diagnosis
+- broken-invariant reading
+- first repair direction
+- misrepair warning
+- deeper escalation paths when needed
+
+That is already very valuable.
+
+But it is not the same thing as claiming:
+
+- full autonomous diagnosis
+- full autonomous repair
+- complete root-cause closure in every case
+
+The current repair logic is best understood as:
+
+> **route first, choose the right first move, then escalate deeper only when needed**
+
+</details>
+
+<details>
+<summary><strong>Is this only for AI systems?</strong></summary>
+
+The current strongest public form is **AI-first**.
+
+That is intentional, because AI troubleshooting is the first validated operational surface of the atlas.
+
+At the same time, the family grammar was not carved as a narrow topic list.
+It was carved as a more general failure grammar for complex systems.
+
+That is why the atlas already has a formal bridge layer through documents such as:
+
+- [Cross-Domain Demonstration Pack v2](./Atlas/cross-domain-demonstration-pack-v2.md)
+- [Civilization Bridge Modules v1](./Atlas/civilization-bridge-modules-v1.md)
+
+So the correct reading is:
+
+> **AI-first in its strongest validated public form**  
+> **already structured enough to support controlled bridge work beyond AI**  
+> **not yet claiming universal final closure**
+
+</details>
+
+<details>
+<summary><strong>Why do you call it an atlas?</strong></summary>
+
+Because this project is not meant to feel like a loose article or a flat symptom list.
+
+It is meant to function like a map:
+
+- a map of failure space
+- a map of neighboring regions
+- a map of common wrong turns
+- a map of first repair surfaces
+
+That is why “atlas” fits better than a simple checklist or note collection.
+
+The name is meant to signal:
+
+> **this is a structured navigation surface for debugging, not a loose pile of advice**
+
+</details>
+
+<details>
+<summary><strong>Where should a new user start?</strong></summary>
+
+That depends on what kind of user you are.
+
+### If you want the product overview
+Start with this page, then go to:
+- [Atlas Hub](./Atlas/README.md)
+
+### If you want the core structure
+Go to:
+- [Atlas Final Freeze v1](./Atlas/atlas-final-freeze-v1.md)
+
+### If you want examples and teaching cases
+Go to:
+- [Canonical Casebook v1](./Atlas/canonical-casebook-v1.md)
+
+### If you want a compact AI-usable entry point
+Go to:
+- [Troubleshooting Atlas Router v1 Usage Guide](./Atlas/troubleshooting-atlas-router-v1-usage.md)
+
+### If you want repair-facing materials
+Go to:
+- [Fixes Hub](./Atlas/Fixes/README.md)
+
+### If you want demos
+Go to:
+- [Official Flagship Demos](./Atlas/Fixes/official/demos/README.md)
+
+</details>
 
 ---
 
