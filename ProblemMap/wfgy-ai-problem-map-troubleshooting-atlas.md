@@ -102,7 +102,8 @@ AI_NOTE_END
 
 ## Start here in 60 seconds ⚡
 
-You do **not** need deep RAG knowledge to start. This is built for vibe coders, AI app builders, workflow / agent builders, and engineers debugging AI-heavy systems.
+You do **not** need deep system knowledge to start.  
+This atlas is built for vibe coders, AI app builders, workflow / agent builders, and engineers working with complex AI systems.
 
 > **Install the TXT once. Build normally. Let AI start debugging from the right layer more often.**
 
