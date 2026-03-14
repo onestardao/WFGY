@@ -5,17 +5,17 @@ Document role:
 This page is the main hub and navigation index for the Atlas folder.
 
 How to use this page:
-1. Treat this page as the central entry point for all Atlas system documents.
+1. Treat this page as the central entry point for Atlas system documents.
 2. Use this page to understand document roles, reading order, freeze status, patch status, and current product-facing extensions.
 3. Do not confuse this hub with the product-facing main page.
 4. The product-facing main page is:
    ProblemMap/wfgy-ai-problem-map-troubleshooting-atlas.md
 
 What this page is:
-- A folder-level atlas hub
+- A folder-level Atlas hub
 - A document map
 - A stable navigation layer for humans and AI systems
-- A bridge between product-facing, engineering-facing, teaching-facing, and router-facing assets
+- A bridge between product-facing, engineering-facing, teaching-facing, router-facing, and repair-facing assets
 
 What this page is not:
 - Not the public homepage
@@ -38,17 +38,17 @@ Routing guidance:
 - For limits and safe expansion, go to Negative Space Report v1.
 - For teaching and examples, go to Canonical Casebook v1.
 - For AI-facing routing logic, go to Atlas-to-AI Adapter v1.
-- For compact TXT routing, go to Troubleshooting Atlas Router v1.
+- For compact TXT routing, go to Troubleshooting Atlas Router v1 TXT Pack and Usage Guide.
 - For repair-facing materials, go to the Fixes folder.
-- For cross-domain bridge evidence, go to Cross-Domain Demonstration Pack v2.
+- For cross-domain bridge evidence, go to Cross-Domain Freeze Note v2 and Civilization Bridge Modules v1.
 
 AI_NOTE_END
 -->
 
-# Atlas Hub
+# Atlas Hub ⭐️
 
 ## Problem Map 3.0 Troubleshooting Atlas
-## Folder index, freeze map, routing layer, and system control room
+>  Quick start, folder index, freeze map, and system control room
 
 This folder is the structured vault for the Atlas system.
 
@@ -56,7 +56,7 @@ The main product-facing page lives here:
 
 [Problem Map 3.0 Troubleshooting Atlas](../wfgy-ai-problem-map-troubleshooting-atlas.md)
 
-This `README.md` is not the public homepage.  
+This `README.md` is **not** the public homepage.  
 It is the **system hub** for the Atlas folder.
 
 Its job is simple:
@@ -65,13 +65,46 @@ Its job is simple:
 - show what role each document plays
 - show what is already frozen
 - show what is patch-driven
-- show what is bridge-facing or router-facing
-- help humans and AI systems enter the atlas without getting lost
+- show what is bridge-facing, router-facing, or repair-facing
+- help humans and AI systems enter the Atlas without getting lost
 
 In short:
 
 > the main product page introduces the atlas  
-> this hub explains how the atlas folder is organized, frozen, extended, and used
+> this hub shows how the Atlas folder is organized, frozen, extended, and used
+
+---
+
+## New here? Start here first 🚀
+
+If you are a vibe coder, builder, or first-time reader, do **not** start from the deepest docs.
+
+Start with the compact router first:
+
+- **Download the TXT immediately:** [Troubleshooting Atlas Router v1 TXT Pack](./troubleshooting-atlas-router-v1.txt)
+- **See the fastest way to use it:** [Troubleshooting Atlas Router v1 Usage Guide](./troubleshooting-atlas-router-v1-usage.md)
+- **See the main product overview:** [Problem Map 3.0 Troubleshooting Atlas](../wfgy-ai-problem-map-troubleshooting-atlas.md)
+
+Short version:
+
+> load the TXT first, try it in practice, then come back here if you want the deeper system
+
+---
+
+## Choose your entry path 🧭
+
+| What you want | Go here | Level |
+|---|---|---|
+| Try the compact router immediately | [Troubleshooting Atlas Router v1 TXT Pack](./troubleshooting-atlas-router-v1.txt) | 🟢 Beginner |
+| See the fastest practical usage path | [Troubleshooting Atlas Router v1 Usage Guide](./troubleshooting-atlas-router-v1-usage.md) | 🟢 Beginner |
+| Understand the product first | [Problem Map 3.0 Troubleshooting Atlas](../wfgy-ai-problem-map-troubleshooting-atlas.md) | 🟢 Beginner |
+| See proof and examples | [Canonical Casebook v1](./canonical-casebook-v1.md) · [Fixes Hub](./Fixes/README.md) | 🟡 Builder |
+| Understand the stable Atlas core | [Atlas Final Freeze v1](./atlas-final-freeze-v1.md) | 🟡 Builder |
+| Understand AI-facing routing logic | [Atlas-to-AI Adapter v1](./atlas-to-ai-adapter-v1.md) | 🟡 Builder |
+| Understand bridge, provenance, and derivation | [Cross-Domain Freeze Note v2](./cross-domain-freeze-note-v2.md) · [Civilization Bridge Modules v1](./civilization-bridge-modules-v1.md) · [Provenance and Derivation v1](./provenance-and-derivation-v1.md) | 🟠 Research |
+| Understand patch and release discipline | [Patch Governance v1](./patch-governance-v1.md) · [Release and Freeze Policy v1](./release-and-freeze-policy-v1.md) | 🟠 Research |
+
+> tip: if you are new, start with the TXT pack or the Usage Guide. the rest of the stack can be explored later.
 
 ---
 
@@ -117,13 +150,13 @@ Different readers need different entry paths.
 ### Path A · first-time reader
 
 1. [Problem Map 3.0 Troubleshooting Atlas](../wfgy-ai-problem-map-troubleshooting-atlas.md)
-2. [Atlas Final Freeze v1](./atlas-final-freeze-v1.md)
-3. [Canonical Casebook v1](./canonical-casebook-v1.md)
-4. [Atlas-to-AI Adapter v1](./atlas-to-ai-adapter-v1.md)
+2. [Troubleshooting Atlas Router v1 TXT Pack](./troubleshooting-atlas-router-v1.txt)
+3. [Troubleshooting Atlas Router v1 Usage Guide](./troubleshooting-atlas-router-v1-usage.md)
+4. [Atlas Final Freeze v1](./atlas-final-freeze-v1.md)
 
-Use this path if you want the shortest route from “what is this” to “how does this system behave in practice.”
+Use this path if you want the shortest route from “what is this” to “how do I try it quickly.”
 
-### Path B · engineering / system reader
+### Path B · builder / engineering reader
 
 1. [Atlas Final Freeze v1](./atlas-final-freeze-v1.md)
 2. [Atlas Negative Space Report v1](./atlas-negative-space-report-v1.md)
@@ -138,7 +171,7 @@ Use this path if you want the frozen core, its limits, and the formal rules for 
 
 1. [Canonical Casebook v1](./canonical-casebook-v1.md)
 2. [Atlas Final Freeze v1](./atlas-final-freeze-v1.md)
-3. [Cross-Domain Demonstration Pack v2](./cross-domain-demonstration-pack-v2.md)
+3. [Cross-Domain Freeze Note v2](./cross-domain-freeze-note-v2.md)
 4. [Fixes Hub](./Fixes/README.md)
 
 Use this path if you want to teach, explain, demo, or onboard new readers.
@@ -148,9 +181,8 @@ Use this path if you want to teach, explain, demo, or onboard new readers.
 1. [Atlas-to-AI Adapter v1](./atlas-to-ai-adapter-v1.md)
 2. [Adapter Runtime Modes v1](./adapter-runtime-modes-v1.md)
 3. [Adapter Failure Discipline v1](./adapter-failure-discipline-v1.md)
-4. [Troubleshooting Atlas Router v1 Freeze Note](./troubleshooting-atlas-router-v1-freeze-note.md)
-5. [Troubleshooting Atlas Router v1 Usage Guide](./troubleshooting-atlas-router-v1-usage.md)
-6. `troubleshooting-atlas-router-v1.txt`
+4. [Troubleshooting Atlas Router v1 Usage Guide](./troubleshooting-atlas-router-v1-usage.md)
+5. [Troubleshooting Atlas Router v1 TXT Pack](./troubleshooting-atlas-router-v1.txt)
 
 Use this path if you want the AI-facing routing layer in both full-spec and compact TXT product form.
 
@@ -165,11 +197,10 @@ Use this path if you want to connect routing to first repair direction and deepe
 
 ### Path F · bridge / theory / provenance reader
 
-1. [Cross-Domain Demonstration Pack v2](./cross-domain-demonstration-pack-v2.md)
+1. [Cross-Domain Freeze Note v2](./cross-domain-freeze-note-v2.md)
 2. [Civilization Bridge Modules v1](./civilization-bridge-modules-v1.md)
-3. [Cross-Domain Freeze Note v2](./cross-domain-freeze-note-v2.md)
-4. [Validation Basis v1](./validation-basis-v1.md)
-5. [Provenance and Derivation v1](./provenance-and-derivation-v1.md)
+3. [Validation Basis v1](./validation-basis-v1.md)
+4. [Provenance and Derivation v1](./provenance-and-derivation-v1.md)
 
 Use this path if you want the strongest current account of why the atlas exists, how it was carved, and how it bridges beyond the AI-first domain.
 
@@ -229,21 +260,18 @@ These compress atlas logic into a reusable routing layer for models and systems.
 
 These turn the Atlas routing grammar into a compact TXT product.
 
-- `troubleshooting-atlas-router-v1.txt`  
+- [Troubleshooting Atlas Router v1 TXT Pack](./troubleshooting-atlas-router-v1.txt)  
   The first formal route-first TXT pack.  
   Designed for compact failure classification, boundary-aware diagnosis, broken-invariant reading, and first-fix guidance.
-
-- [Troubleshooting Atlas Router v1 Freeze Note](./troubleshooting-atlas-router-v1-freeze-note.md)  
-  The formal product freeze note.  
-  Defines what Router v1 now stabilizes and what it does not claim.
 
 - [Troubleshooting Atlas Router v1 Usage Guide](./troubleshooting-atlas-router-v1-usage.md)  
   The practical usage guide.  
   Explains how to use the Router, what kind of input it needs, and how to interpret its output.
 
-- [Troubleshooting Atlas Router v1 Product Spec Freeze](./troubleshooting-atlas-router-v1-spec-freeze.md)  
-  The product-spec freeze document for the Router line.  
-  Useful if you want to see the original MVP scope, output contract, and construction boundary.
+- Full router discipline and routing logic currently live in:
+  - [Atlas-to-AI Adapter v1](./atlas-to-ai-adapter-v1.md)
+  - [Adapter Runtime Modes v1](./adapter-runtime-modes-v1.md)
+  - [Adapter Failure Discipline v1](./adapter-failure-discipline-v1.md)
 
 ---
 
@@ -266,15 +294,12 @@ These define how the atlas grows without silently mutating the core.
 
 These show how the atlas extends beyond narrow AI-only reading.
 
-- [Cross-Domain Demonstration Pack v2](./cross-domain-demonstration-pack-v2.md)  
-  The first formal bridge evidence pack.  
-  Shows that the mother structure can absorb selected coordination, institutional, coherence, and broader complex-system pressures.
+- [Cross-Domain Freeze Note v2](./cross-domain-freeze-note-v2.md)  
+  The current bridge freeze note.  
+  Summarizes what the first cross-domain bridge layer now stabilizes and what it does not claim.
 
 - [Civilization Bridge Modules v1](./civilization-bridge-modules-v1.md)  
   Defines the current bridge modules that connect the AI-first atlas to more general complex-system failure space.
-
-- [Cross-Domain Freeze Note v2](./cross-domain-freeze-note-v2.md)  
-  Formal freeze wording for the current bridge layer.
 
 ---
 
@@ -353,7 +378,7 @@ The following can now be treated as stable first-version assets.
 
 ### Frozen bridge body
 
-- first cross-domain demonstration pack
+- first cross-domain bridge wording
 - first bridge modules
 - first bridge freeze wording
 
@@ -395,7 +420,7 @@ Its current formal state should be understood as:
 
 - AI-first in its strongest validated public form
 - already strong enough to support formal bridge work
-- already strong enough to support first cross-domain canonical packs
+- already strong enough to support first cross-domain bridge wording
 - designed to grow through disciplined expansion rather than silent redefinition
 
 Current bridge-facing materials already include:
@@ -467,6 +492,11 @@ This wording is strong, accurate, and safe.
 Start with:
 - [Problem Map 3.0 Troubleshooting Atlas](../wfgy-ai-problem-map-troubleshooting-atlas.md)
 
+### For first-time practical use
+Start with:
+- [Troubleshooting Atlas Router v1 TXT Pack](./troubleshooting-atlas-router-v1.txt)
+- [Troubleshooting Atlas Router v1 Usage Guide](./troubleshooting-atlas-router-v1-usage.md)
+
 ### For system and routing work
 Start with:
 - [Atlas Final Freeze v1](./atlas-final-freeze-v1.md)
@@ -485,7 +515,7 @@ Start with:
 
 ### For bridge and provenance framing
 Start with:
-- [Cross-Domain Demonstration Pack v2](./cross-domain-demonstration-pack-v2.md)
+- [Cross-Domain Freeze Note v2](./cross-domain-freeze-note-v2.md)
 - [Civilization Bridge Modules v1](./civilization-bridge-modules-v1.md)
 - [Validation Basis v1](./validation-basis-v1.md)
 - [Provenance and Derivation v1](./provenance-and-derivation-v1.md)
@@ -506,7 +536,7 @@ Start with:
 
 ## Closing note
 
-This folder is where the atlas becomes a real system.
+This folder is where the Atlas becomes a real system.
 
 The main page tells you what the product is.  
 This hub tells you how the system is organized.  
