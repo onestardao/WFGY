@@ -46,9 +46,18 @@ AI_NOTE_END
 ## Problem Map 3.0 Troubleshooting Atlas
 ## Official MVP demo entry for route-first repair
 
+Quick links:
+
+- [Back to Atlas landing page](../../../wfgy-ai-problem-map-troubleshooting-atlas.md)
+- [Back to AI Eval Evidence](../../../ai-eval-evidence.md)
+- [Open Atlas Hub](../../../README.md)
+- [Get the Atlas Router TXT](../../../troubleshooting-atlas-router-v1.txt)
+
+---
+
 This folder contains the first flagship runnable demos for the Atlas fix system.
 
-These demos are not meant to prove every possible case.
+These demos are not meant to prove every possible case.  
 They are meant to prove something more important:
 
 > the atlas does not only name failures  
@@ -60,11 +69,92 @@ If the atlas is only a naming system, people may find it interesting.
 
 If the atlas can show that different routing decisions lead to different repair decisions, people begin to feel that it is actually useful.
 
-That is the job of this folder.
+This demo pack is the smallest runnable surface that makes that claim visible.
 
-This folder should be read as the **official public demo surface** of the first Atlas fix release.
-It is not a giant benchmark zoo.
+Each demo is built around the same high-signal pattern:
+
+- baseline failure
+- atlas routing
+- first repair move
+- visible outcome shift
+- optional deeper WFGY 3.0 exploration
+
+The goal is not scale.  
+The goal is clarity.
+
+This folder should be read as the **official public demo surface** of the first Atlas fix release.  
+It is not a giant benchmark zoo.  
 It is a compact, high-signal proof layer.
+
+---
+
+## What this demo pack proves
+
+This demo pack is designed to make four claims visible.
+
+### 1. Different failures should not be repaired the same way
+
+Many systems fail with surface similarities.
+
+A fluent wrong answer, a broken workflow, a symbolic collapse, and a black-box debugging problem can all feel like “the system is bad.”
+
+The atlas says that is too coarse.
+
+This demo pack shows that once a case is routed into the right family, the first repair move changes.
+
+### 2. The atlas is not just a checklist
+
+A checklist can name symptoms.
+
+A troubleshooting atlas should help you decide:
+
+- what kind of failure this is
+- why this family is primary
+- why a neighboring family is secondary
+- what should be repaired first
+- what should **not** be repaired first
+
+These demos are built to make that difference visible.
+
+### 3. Route-first repair is practical
+
+The purpose of these notebooks is not to simulate a giant production stack.
+
+The purpose is to show a minimal but convincing pattern:
+
+- baseline failure
+- atlas routing
+- first repair move
+- result shift
+- optional deeper WFGY 3.0 exploration
+
+That is enough to make the system feel real.
+
+### 4. Community growth becomes much easier once the flagship set exists
+
+These four demos are also templates.
+
+They are not only proofs.  
+They are seed assets for future contributed demos in:
+
+- Colab
+- JSON fixtures
+- prompt packs
+- workflow reproductions
+- benchmark reruns
+
+This is why the first official set matters so much.
+
+---
+
+## Demo overview
+
+| Demo | Family | Core proof | Recommended entry |
+|------|--------|------------|-------------------|
+| Demo 1 | F1 Grounding & Evidence Integrity | re-grounding changes the first repair path | `demo_01_f1_grounding_anchor_recovery_live.ipynb` |
+| Demo 2 | F5 Observability & Diagnosability Integrity | visibility uplift comes before answer repair | `demo_02_f5_observability_first_replay_v2.ipynb` |
+| Demo 3 | F4 Execution & Contract Integrity | execution closure repair comes before reasoning-level repair | `demo_03_f4_execution_closure_replay_v2.ipynb` |
+| Demo 4 | F7 Representation & Localization Integrity | container repair changes what can stabilize next | `demo_04_f7_container_fidelity_replay_v2.ipynb` |
 
 ---
 
@@ -88,7 +178,7 @@ That means:
 - use live mode where live comparison adds real proof value
 - use replay mode where replay is clearer, safer, and more honest
 
-This is not a shortcut.
+This is not a shortcut.  
 It is a deliberate MVP teaching decision.
 
 At the current release stage, this pack should be treated as the **official recommended first demo set** for route-first repair.
@@ -151,65 +241,6 @@ In short:
 
 > the shared layer already exists  
 > but it remains intentionally small
-
----
-
-## What this demo pack proves
-
-This demo pack is designed to make four claims visible.
-
-### 1. Different failures should not be repaired the same way
-
-Many systems fail with surface similarities.
-
-A fluent wrong answer, a broken workflow, a symbolic collapse, and a black-box debugging problem can all feel like “the system is bad.”
-
-The atlas says that is too coarse.
-
-This demo pack shows that once a case is routed into the right family, the first repair move changes.
-
-### 2. The atlas is not just a checklist
-
-A checklist can name symptoms.
-
-A troubleshooting atlas should help you decide:
-
-- what kind of failure this is
-- why this family is primary
-- why a neighboring family is secondary
-- what should be repaired first
-- what should **not** be repaired first
-
-These demos are built to make that difference visible.
-
-### 3. Route-first repair is practical
-
-The purpose of these notebooks is not to simulate a giant production stack.
-
-The purpose is to show a minimal but convincing pattern:
-
-- baseline failure
-- atlas routing
-- first repair move
-- result shift
-- optional deeper WFGY 3.0 exploration
-
-That is enough to make the system feel real.
-
-### 4. Community growth becomes much easier once the flagship set exists
-
-These four demos are also templates.
-
-They are not only proofs.
-They are seed assets for future contributed demos in:
-
-- Colab
-- JSON fixtures
-- prompt packs
-- workflow reproductions
-- benchmark reruns
-
-This is why the first official set matters so much.
 
 ---
 
@@ -508,7 +539,7 @@ That makes live reproduction especially worthwhile.
 
 Demo 2 is about **failure-path visibility**.
 
-Its first teaching job is not to show a model being more impressive.
+Its first teaching job is not to show a model being more impressive.  
 Its first teaching job is to show that:
 
 > the system was too opaque to diagnose safely  
@@ -552,7 +583,7 @@ That means:
 - use live mode where live comparison adds real proof value
 - use replay mode where replay is clearer, safer, and more honest
 
-This is not a shortcut.
+This is not a shortcut.  
 It is a deliberate teaching design.
 
 ---
@@ -658,7 +689,7 @@ Long-tail expansion belongs to the community structure under:
 
 That is intentional.
 
-Official demos prove the core.
+Official demos prove the core.  
 Community demos scale the edge.
 
 ---
@@ -740,13 +771,32 @@ This pack claims only that:
 
 If you are new, use this order:
 
-1. [Problem Map 3.0 Troubleshooting Atlas](../../../../wfgy-ai-problem-map-troubleshooting-atlas.md)
-2. [Atlas Hub](../../../README.md)
-3. [Atlas Final Freeze v1](../../../atlas-final-freeze-v1.md)
-4. [Family Fix Surface v1](../../family-fix-surface-v1.md)
-5. this demo pack
-6. individual demo folders
-7. optional deeper bridge through [Atlas to WFGY Bridge v1](../../atlas-to-wfgy-bridge-v1.md)
+1. [Problem Map 3.0 Troubleshooting Atlas](../../../wfgy-ai-problem-map-troubleshooting-atlas.md)
+2. [AI Eval Evidence](../../../ai-eval-evidence.md)
+3. [Atlas Hub](../../../README.md)
+4. [Atlas Final Freeze v1](../../../atlas-final-freeze-v1.md)
+5. [Family Fix Surface v1](../../family-fix-surface-v1.md)
+6. this demo pack
+7. individual demo folders
+8. optional deeper bridge through [Atlas to WFGY Bridge v1](../../atlas-to-wfgy-bridge-v1.md)
+
+---
+
+## What to explore next
+
+After reading this demo pack, most readers continue with:
+
+- [Back to Atlas landing page](../../../wfgy-ai-problem-map-troubleshooting-atlas.md)
+- [Back to AI Eval Evidence](../../../ai-eval-evidence.md)
+- [Open the Atlas Router TXT](../../../troubleshooting-atlas-router-v1.txt)
+- [Open Atlas Hub](../../../README.md)
+
+If this demo pack helped you understand the Atlas, consider:
+
+- [starring the WFGY repo](https://github.com/onestardao/WFGY)
+- opening an issue
+- testing the demo folders
+- contributing a clean community extension later
 
 ---
 
