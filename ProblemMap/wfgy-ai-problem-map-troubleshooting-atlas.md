@@ -1053,7 +1053,7 @@ The safer and more accurate claim is:
 ---
 
 <details>
-<summary><strong>Recognition and ecosystem integration</strong></summary>
+<summary><strong>🌐 Recognition & ecosystem integration</strong></summary>
 
 <br>
 
@@ -1076,6 +1076,7 @@ Some representative integrations:
 | [Rankify (University of Innsbruck)](https://github.com/DataScienceUIBK/Rankify) | [![GitHub Repo stars](https://img.shields.io/github/stars/DataScienceUIBK/Rankify?style=social)](https://github.com/DataScienceUIBK/Rankify) | Academic lab / system | Uses the 16 failure patterns in RAG and re-ranking troubleshooting docs. | [PR #76](https://github.com/DataScienceUIBK/Rankify/pull/76) |
 | [Multimodal RAG Survey (QCRI LLM Lab)](https://github.com/llm-lab-org/Multimodal-RAG-Survey) | [![GitHub Repo stars](https://img.shields.io/github/stars/llm-lab-org/Multimodal-RAG-Survey?style=social)](https://github.com/llm-lab-org/Multimodal-RAG-Survey) | Academic lab / survey | Cites WFGY as a practical diagnostic resource for multimodal RAG. | [PR #4](https://github.com/llm-lab-org/Multimodal-RAG-Survey/pull/4) |
 | [LightAgent](https://github.com/wanxingai/LightAgent) | [![GitHub Repo stars](https://img.shields.io/github/stars/wanxingai/LightAgent?style=social)](https://github.com/wanxingai/LightAgent) | Agent framework | Incorporates WFGY ProblemMap concepts into its documentation via a **Multi-agent troubleshooting (failure map)** section, providing a structured symptom → failure-mode → debugging checklist for diagnosing role drift, cross-agent memory issues, and coordination failures in multi-agent systems. | [PR #24](https://github.com/wanxingai/LightAgent/pull/24#event-23265428525) |
+| [OmniRoute](https://github.com/diegosouzapw/OmniRoute) | ![GitHub Repo stars](https://img.shields.io/github/stars/diegosouzapw/OmniRoute?style=social) | Gateway / routing infra | Adds an optional WFGY 16-problem RAG / LLM failure taxonomy to its official troubleshooting documentation, allowing teams to classify downstream RAG and agent failures with `No.1` to `No.16` alongside OmniRoute logs when the gateway itself appears healthy. | [PR #164](https://github.com/diegosouzapw/OmniRoute/pull/164) |
 
 For the complete 30+ project list (frameworks, benchmarks, curated lists), see the [WFGY Recognition Map](https://github.com/onestardao/WFGY/blob/main/recognition/README.md)
 
