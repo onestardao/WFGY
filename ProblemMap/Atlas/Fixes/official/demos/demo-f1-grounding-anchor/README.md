@@ -44,7 +44,7 @@ Quick links:
 
 - [Back to demo pack index](../README.md)
 - [Back to AI Eval Evidence](../../../../ai-eval-evidence.md)
-- [Back to Atlas landing page](../../../../wfgy-ai-problem-map-troubleshooting-atlas.md)
+- [Back to Atlas landing page](../../../../../wfgy-ai-problem-map-troubleshooting-atlas.md)
 - [Open Atlas Hub](../../../../README.md)
 - [Get the Atlas Router TXT](../../../../troubleshooting-atlas-router-v1.txt)
 
@@ -587,7 +587,7 @@ After this page, most readers continue with:
 
 1. [Back to the demo pack index](../README.md)
 2. [Back to AI Eval Evidence](../../../../ai-eval-evidence.md)
-3. [Back to the Atlas landing page](../../../../wfgy-ai-problem-map-troubleshooting-atlas.md)
+3. [Back to the Atlas landing page](../../../../../wfgy-ai-problem-map-troubleshooting-atlas.md)
 4. [Open the Atlas Router TXT](../../../../troubleshooting-atlas-router-v1.txt)
 
 If this demo helped you understand the Atlas, consider:
@@ -602,4 +602,4 @@ If this demo helped you understand the Atlas, consider:
 ## Back to the main page
 
 Read the full product page here:  
-[Problem Map 3.0 Troubleshooting Atlas](../../../../wfgy-ai-problem-map-troubleshooting-atlas.md)
+[Problem Map 3.0 Troubleshooting Atlas](../../../../../wfgy-ai-problem-map-troubleshooting-atlas.md)
