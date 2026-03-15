@@ -319,6 +319,18 @@ Public ecosystem milestone
 By this point, the pattern is harder to dismiss as an isolated one-off.  
 The same wedge is being adapted across multiple public stacks.
 
+### 2026/03/01 · FlashRAG reinforces cross-stack reuse
+
+**Track**  
+Public ecosystem milestone
+
+**What became public**  
+[FlashRAG PR #224](https://github.com/RUC-NLPIR/FlashRAG/pull/224) merged a public debug checklist and failure-mode-oriented surface.
+
+**Why this matters**  
+By this point, the pattern is harder to dismiss as an isolated one-off.  
+The same wedge is being adapted across multiple public stacks.
+
 ### 2026/03/04 · LightAgent extends the signal into multi-agent territory
 
 **Track**  
