@@ -313,6 +313,58 @@ This example demonstrates conceptual portability rather than full domain coverag
 
 ---
 
+# Case 9 · OmniRoute
+
+## Context
+
+[OmniRoute](https://github.com/diegosouzapw/OmniRoute) is an LLM gateway and routing layer.
+
+At this layer, one of the hardest debugging situations is when the gateway itself appears healthy, but the system still produces wrong answers because the downstream RAG or agent stack is misbehaving.
+
+That kind of boundary matters in practice, because teams often need a way to distinguish gateway-level issues from downstream retrieval, prompting, memory, or agent-logic failures.
+
+## Where WFGY fits
+
+OmniRoute merged a docs-only troubleshooting update that references the **WFGY ProblemMap** as an optional **RAG / LLM failure taxonomy**.
+
+The added section is specifically positioned for cases where:
+
+- OmniRoute looks healthy
+- the gateway is not the primary failure source
+- answers are still wrong because the downstream RAG or agent stack is unstable
+
+The troubleshooting flow allows teams to tag incidents with `No.1` to `No.16` from the WFGY ProblemMap and keep those tags next to OmniRoute logs.
+
+This gives users a more structured way to reason about failures that sit **behind the gateway boundary**, instead of treating all bad outputs as generic routing problems.
+
+## Public proof
+
+[OmniRoute PR #164](https://github.com/diegosouzapw/OmniRoute/pull/164)
+
+## What this suggests
+
+This case suggests that WFGY is useful not only inside retrieval frameworks or agent toolkits, but also at the **gateway and routing layer** of AI systems.
+
+The ProblemMap can help teams separate:
+
+- infrastructure health
+- routing health
+- downstream RAG failures
+- downstream agent failures
+
+That makes WFGY useful as a **cross-boundary diagnostic vocabulary**, especially in stacks where multiple layers can look superficially correct while the final answer quality is still poor.
+
+It also shows that WFGY can serve as a practical bridge between **gateway observability** and **downstream failure classification**.
+
+## Important boundary
+
+This is a documentation-level troubleshooting integration, not evidence of runtime embedding or code-level dependency.
+
+It shows that WFGY was useful enough to be adopted as an optional failure classification framework in a gateway-oriented project, but it should not be read as proof that OmniRoute embeds the full WFGY system.
+
+
+---
+
 # Cross-case interpretation
 
 Taken together, these cases suggest a consistent pattern.
