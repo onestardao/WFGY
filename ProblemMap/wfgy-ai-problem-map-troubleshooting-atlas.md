@@ -154,7 +154,7 @@ What changes if the first debugging route is more often correct?
 
 The snapshot below is a reproducible AI reviewed before / after estimate of the kind of operational shift the Atlas is trying to create.
 
-[![Atlas routing before / after evaluation snapshot](./Atlas/images/atlas-routing-before-after-evaluation.png)](./Atlas/ai-eval-evidence.md)
+[![Atlas routing before / after evaluation snapshot](./Atlas/images/atlas-routing-before-after-evaluationatlas-routing-before-after-evaluation.png)](./Atlas/ai-eval-evidence.md)
 
 This is **not** a formal benchmark.  
 It is directional evidence for a simpler claim:
