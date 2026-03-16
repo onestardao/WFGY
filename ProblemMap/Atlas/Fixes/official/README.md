@@ -2,325 +2,938 @@
 AI_NOTE_START
 
 Document role:
-This file is the main hub for the official fixes layer inside the Atlas Fixes system.
+This file is the first official family-level repair-facing surface for Atlas v1.
 
 How to use this file:
-1. Treat this page as the entry point for official repair-facing guidance.
-2. Use this page to understand which materials belong to the stable public repair layer.
-3. Use this page to distinguish:
-   - official first repair grammar
-   - official misrepair warnings
-   - official atlas-to-WFGY bridge notes
-   - official flagship demos
-4. Read this page before adding new official fix-facing documents or modifying existing ones.
+1. Read this file after:
+   - [Atlas Final Freeze v1](../../atlas-final-freeze-v1.md)
+   - [Canonical Casebook v1](../../canonical-casebook-v1.md)
+   - [Atlas-to-AI Adapter v1](../../atlas-to-ai-adapter-v1.md)
+2. Treat this document as the official first-repair layer of the atlas.
+3. Use this file to determine:
+   - what to try first after correct routing
+   - what not to try first
+   - when to escalate into deeper WFGY 3.0 exploration
+   - when to look for community implementation packs
+4. Do not use this document as a full deep repair manual for every node.
 
 What this file is:
-- The hub for the official fixes layer
-- The stable public repair-facing layer
-- A navigation page for official demos and repair guidance
+- The first official family-level fix surface
+- A route-first repair grammar
+- The official public-facing first repair layer
 
 What this file is not:
-- Not the atlas core
-- Not the community contribution area
-- Not the templates area
-- Not the full WFGY 3.0 engine pack
-- Not the full auto-repair planning layer
-- Not a dump folder for every experimental implementation
+- Not the full WFGY 3.0 experiment engine
+- Not the complete node-by-node repair encyclopedia
+- Not the final custom audit layer
+- Not a guarantee that every real-world case is solved by one first move
 
 Reading discipline for AI:
-- Preserve the distinction between official fixes, community fixes, templates, and future planning layers.
-- Treat this folder as the stable first public repair-facing layer.
-- Do not silently promote community or experimental materials into this official layer.
-- Do not overclaim that every routed case already has a full runnable repair implementation.
+- Route first, then repair.
+- Preserve the distinction between family-level first moves and deeper problem-specific experimental layers.
+- Do not overpromise closure.
+- Do not jump into downstream implementation details before the family cut is stable.
 
 AI_NOTE_END
 -->
 
-# Official Fixes ✅
+# Family Fix Surface v1
 
 ## Problem Map 3.0 Troubleshooting Atlas
-## Stable first repair grammar, misrepair warnings, bridge notes, and flagship demos
+## Official First Repair Layer by Family
 
-This folder is the **official repair-facing layer** of the Atlas Fixes system.
+Quick links:
+
+- [Back to Official Fixes](./README.md)
+- [Back to Atlas landing page](../../../wfgy-ai-problem-map-troubleshooting-atlas.md)
+- [Back to AI Eval Evidence](../../ai-eval-evidence.md)
+- [Back to Atlas Hub](../../README.md)
+- [Open the Flagship Runnable Demo Pack](./demos/README.md)
+- [Get the Atlas Router TXT](../../troubleshooting-atlas-router-v1.txt)
+
+---
+
+This document is the **first official family-level repair-facing surface** for the Atlas system.
+
+If you arrived here from the official fixes hub, this is the page that answers the next practical question:
+
+> After correct routing, what should be tried first?
 
 The atlas tells you where the failure lives.  
-The casebook teaches how to recognize the cut.  
-The adapter helps route the case with discipline.  
-This official layer helps answer the next practical question:
+This document tells you what to try first after that cut is stable.
 
-> **What should be tried first after correct routing?**
+It sits after routing and before deeper experimentation.
 
-This layer is intentionally smaller and more stable than the community layer.
-
-Its goal is not to store every possible implementation.
-Its goal is to provide a clean, reusable, public-facing first repair surface.
+Its goal is not to explain every implementation detail.  
+Its goal is to provide a stable, reusable, public-facing first repair grammar.
 
 ---
 
-## What this folder is for 🎯
+## Quick start
 
-This folder exists to hold the official materials that connect atlas diagnosis to first repair action.
+Use this page in the following order:
 
-That includes:
+1. scan the **Family quick map**
+2. jump to your primary family
+3. read:
+   - **What this family is trying to restore**
+   - **First repair moves**
+   - **Common misrepair**
+4. only then decide whether escalation is needed
+5. use deeper bridge material only when the first family-level move is not enough
 
-- family-level first repair directions
-- common misrepair patterns
-- official bridge notes into deeper WFGY exploration
-- flagship demos that show route-to-repair flow
-- shared demo helpers that keep demo assets consistent
+If you want the shortest practical rule:
 
-Short version:
-
-> atlas gives the cut  
-> official fixes give the first public repair grammar
-
----
-
-## What belongs here ✅
-
-Materials in this folder should be stable enough to function as official public repair guidance.
-
-Good examples include:
-
-- family-level first repair guides
-- reusable route-to-repair logic
-- common wrong-first-move warnings
-- official bridge notes from atlas to deeper WFGY exploration
-- a small number of flagship demos
-- shared support files for official demo consistency
-
-This layer should be:
-
-- compact
-- readable
-- reusable
-- teachable
-- stable enough to cite
-- safe enough to place near the public-facing product surface
+> route first  
+> choose the first repair move  
+> avoid the common wrong first move  
+> escalate only if needed
 
 ---
 
-## What does not belong here 🚫
+## Family quick map
 
-This folder should **not** become:
-
-- a giant archive of experimental notes
-- a random collection of implementation drafts
-- a place for community-contributed packs
-- a place for templates and submission rules
-- a full auto-repair planning lab
-- a replacement for the atlas core
-
-If a material is:
-
-- fast-growing
-- contributor-driven
-- narrow in scope
-- highly experimental
-- still rough
-
-then it likely belongs in the community layer or a future planning layer instead.
+| Family | What to restore first | First repair instinct |
+|---|---|---|
+| F1 | evidence and reality anchor | re-ground first |
+| F2 | viable reasoning path | stabilize the progression path first |
+| F3 | continuity and state ownership | restore the thread first |
+| F4 | readiness, bridge, and closure | repair the skeleton first |
+| F5 | diagnosability and visibility | expose the failure path first |
+| F6 | viable boundary and control corridor | restore the boundary first |
+| F7 | representation carrier and structural fidelity | repair the container first |
 
 ---
 
-## Relationship to the rest of the Fixes system 🔗
+## What this document is
 
-This folder is only one part of the larger Fixes structure.
+This document is the **official first repair layer** of the atlas.
 
-### Parent hub
+Its job is to provide:
 
-- [Fixes Hub](../README.md)
+- family-level first repair moves
+- family-level misrepair warnings
+- escalation guidance
+- a stable public fix surface
 
-Use the parent hub if you want the full repair-facing map.
+In short:
 
-### Community extension layer
-
-- [Community Fix Lab](../community/README.md)
-
-Use the community layer for runnable community contributions such as Colab notebooks, JSON packs, prompt packs, workflows, reruns, and reproduction packs.
-
-### Templates layer
-
-- [Templates](../templates/README.md)
-
-Use the templates layer when contributing structured community materials.
-
-### Future-facing planning layer
-
-A deeper planning layer may continue growing elsewhere in the Fixes system, but it should not replace the stable official public layer represented here.
+> the atlas says where the failure lives  
+> this document says what to try first
 
 ---
 
-## Core principle 🔑
+## What this document does not do
 
-The official fixes layer must preserve this order:
+This document does **not** try to do all repair work at once.
 
-> **route first, then repair**
+It does **not** provide:
 
-That means:
+- a full node-by-node repair encyclopedia
+- the full WFGY 3.0 experimental layer
+- every possible domain-specific implementation
+- every possible Colab or JSON artifact
+- full custom architectural diagnosis
 
-1. determine the primary family
-2. identify the broken invariant
-3. identify the best current fit
-4. only then choose the first repair direction
-5. only then decide whether deeper escalation is needed
+This document is intentionally narrower.
 
-This matters because many bad fixes are not bad in isolation.
-They are bad because they start from the wrong cut.
+It focuses on:
 
----
+> **family-level first repair guidance**
 
-## Recommended reading order 📚
-
-If you want to understand the official repair-facing flow in the intended order, read:
-
-1. [Atlas Final Freeze v1](../../atlas-final-freeze-v1.md)
-2. [Canonical Casebook v1](../../canonical-casebook-v1.md)
-3. [Atlas-to-AI Adapter v1](../../atlas-to-ai-adapter-v1.md)
-4. [Family Fix Surface v1](./family-fix-surface-v1.md)
-5. [Misrepair Patterns v1](./misrepair-patterns-v1.md)
-6. [Atlas to WFGY Bridge v1](./atlas-to-wfgy-bridge-v1.md)
-7. [Flagship Fix Demos v1](./flagship-fix-demos-v1.md)
-
-If you want runnable assets after that, continue into the demos folder.
+That makes it useful, teachable, and stable.
 
 ---
 
-## Official document map 🗂️
+## How to use this file in practice
 
-### Core official repair documents
-
-- [Family Fix Surface v1](./family-fix-surface-v1.md)  
-  The first official family-level repair layer.  
-  Explains what should usually be tried first after correct routing.
-
-- [Misrepair Patterns v1](./misrepair-patterns-v1.md)  
-  The official wrong-first-move layer.  
-  Shows how repair often goes wrong when the cut is misunderstood or the wrong family logic is applied.
-
-- [Atlas to WFGY Bridge v1](./atlas-to-wfgy-bridge-v1.md)  
-  The bridge from compact atlas repair grammar into deeper WFGY exploration.  
-  Explains how first repair direction and deeper structural exploration differ.
-
-- [Flagship Fix Demos v1](./flagship-fix-demos-v1.md)  
-  The official overview for the flagship runnable demo pack.  
-  Explains what the demos are proving and how they fit into the atlas-to-fix story.
-
----
-
-## Official demos 🎬
-
-- [Flagship Runnable Demo Pack](./demos/README.md)
-
-This is the official demo layer for the public repair-facing system.
-
-Current flagship demos include:
-
-- [Demo 1 · F1 Grounding Anchor Recovery](./demos/demo-f1-grounding-anchor/README.md)
-- [Demo 2 · F5 Observability First](./demos/demo-f5-observability-first/README.md)
-- [Demo 3 · F4 Execution Closure](./demos/demo-f4-execution-closure/README.md)
-- [Demo 4 · F7 Container Fidelity](./demos/demo-f7-container-fidelity/README.md)
-
-These demos are important because they do not only classify.
-They show how correct routing changes the first repair move.
-
----
-
-## Shared demo support 🧰
-
-- [Shared Demo Helpers](./demos/shared/README.md)
-
-This area exists to keep official demo assets more consistent.
-
-Typical shared materials may include:
-
-- display helpers
-- demo utilities
-- shared routing schema notes
-- light reusable support code
-
-This layer helps the official demos stay cleaner without turning the whole folder into a code dump.
-
----
-
-## How the official layer should be used ⚙️
-
-A healthy official use flow should look like this:
+A practical use sequence should look like this:
 
 ### Step 1
 
-Use the atlas and casebook to route the case.
+Route the case using:
+
+- [Atlas Final Freeze v1](../../atlas-final-freeze-v1.md)
+- [Canonical Casebook v1](../../canonical-casebook-v1.md)
+- [Atlas-to-AI Adapter v1](../../atlas-to-ai-adapter-v1.md)
 
 ### Step 2
 
-Use the official fix surface to identify the first repair move.
+Use this file to choose:
+
+- what to try first
+- what not to try first
+- whether escalation is needed
 
 ### Step 3
 
-Use misrepair patterns to avoid the most common wrong first move.
+If deeper work is needed, move into:
 
-### Step 4
+- [Atlas to WFGY Bridge v1](./atlas-to-wfgy-bridge-v1.md)
+- community fix packs
+- or more experimental problem-specific layers
 
-If the case needs more depth, use the atlas-to-WFGY bridge.
-
-### Step 5
-
-If the case benefits from runnable assets, use the official demos or move into the community layer.
-
-Short version:
+This keeps the repair flow clean:
 
 > route  
 > first repair  
-> avoid misrepair  
-> escalate if needed  
-> implement if useful
+> escalate  
+> implement
 
 ---
 
-## Why this folder matters 💥
+## Core repair discipline
 
-Without an official fixes layer, the atlas risks being read as “only a classification system.”
+The Fix Surface layer must obey the following order.
 
-With this folder, the atlas becomes more actionable:
+### Step 1 · Route the case correctly
 
-- it teaches what to try first
-- it teaches what not to try first
-- it supports reusable product-facing repair grammar
-- it connects cleanly to deeper WFGY exploration
-- it supports official demos without collapsing into chaos
+Identify:
 
-This is why this folder matters.
+- primary family
+- secondary family
+- broken invariant
+- best current fit
 
-It is the layer where the atlas starts to become not only a map, but a disciplined repair-facing system.
+### Step 2 · Apply the first repair move
+
+Choose the family-level first move that best matches the routed failure region.
+
+### Step 3 · Avoid the common misrepair
+
+Each family has common wrong first moves.  
+Avoiding these is often as important as choosing the first correct move.
+
+### Step 4 · Escalate when needed
+
+If the case remains stubborn, underdetermined, or high-pressure:
+
+- bridge into deeper WFGY 3.0 exploration
+- use a community fix pack
+- or move into a stronger experiment or implementation layer
+
+Short version:
+
+> **route first  
+> repair second  
+> escalate third**
 
 ---
 
-## Stability rule 🧭
+## Family-level fix grammar
 
-This layer should remain:
+Each family section below uses the same structure:
 
-- smaller than the community layer
-- cleaner than the community layer
-- more stable than the community layer
-- easier to cite than the community layer
+1. what the family is trying to restore
+2. what to try first
+3. what not to try first
+4. when to escalate
+5. what kind of deeper layer may help
 
-If this layer grows too fast or absorbs too many rough materials, it will lose its role.
-
-The official layer should stay sharp.
-
----
-
-## One-line status
-
-**This folder is the stable public repair-facing layer of the Atlas system, combining first repair grammar, misrepair warnings, bridge notes, and official flagship demos.**
+This keeps the repair surface teachable and reusable.
 
 ---
 
-## Closing note ✨
+# F1 · Grounding & Evidence Integrity
 
-The atlas tells you where the failure lives.
+## What F1 is trying to restore
 
-The official fixes layer helps answer what should be tried next.
+F1 tries to restore correct alignment between output and:
 
-It does not claim that every case already has a full implementation.
-It provides the first stable public repair surface, so deeper exploration and practical execution can grow from a clean base.
+- evidence anchors
+- truth-like anchors
+- world anchors
+- semantic targets
+- deployment reality
+
+The repair goal is:
+
+> reconnect the output to what it is supposed to be about
+
+---
+
+## First repair moves
+
+Try these first:
+
+- re-ground the case against the correct evidence source
+- verify the source-to-claim chain
+- compare the output against the real target, not just a proxy
+- trace chunk-to-answer or source-to-answer alignment
+- re-check whether the model is using the right world anchor at all
+
+---
+
+## Common misrepair
+
+Do **not** start by:
+
+- polishing style
+- rewriting tone
+- adding decorative chain-of-thought language
+- tweaking wording while leaving the anchor broken
+- treating semantic similarity as proof of real grounding
+
+In many F1 cases, the system can sound more fluent while still being fundamentally wrong.
+
+---
+
+## Escalate when needed
+
+Escalate when:
+
+- the world anchor remains unclear
+- there are multiple possible referents
+- synthetic or truth-like extraction is involved
+- train / deploy mismatch is likely
+- grounding appears to fail differently across environments
+
+---
+
+## Deeper bridge direction
+
+Use deeper WFGY 3.0 exploration when the case needs:
+
+- truth-like extraction analysis
+- policy-to-world bridging
+- OOD grounding exploration
+- deployment-grounding stress design
+- explicit falsifiable grounding experiments
+
+---
+
+## One-line repair summary
+
+**First reattach the output to the right anchor. Do not waste the first move on style.**
+
+---
+
+# F2 · Reasoning & Progression Integrity
+
+## What F2 is trying to restore
+
+F2 tries to restore stable movement through reasoning space.
+
+The repair goal is:
+
+> re-establish a viable progression path
+
+This may involve:
+
+- interpretation reset
+- decomposition repair
+- continuity restoration inside the reasoning path
+- collapse detection and recovery
+
+---
+
+## First repair moves
+
+Try these first:
+
+- decompose the task into smaller stable steps
+- insert checkpoints into the reasoning path
+- test alternate parses of the problem
+- reduce recursive depth when collapse is suspected
+- isolate the first place where progression becomes invalid
+
+---
+
+## Common misrepair
+
+Do **not** start by:
+
+- adding more raw context without restructuring the path
+- treating a progression failure as pure style failure
+- assuming every reasoning failure is a representation failure
+- expanding the chain blindly when the chain is already unstable
+- jumping to high-level philosophical framing before basic path stability is restored
+
+---
+
+## Escalate when needed
+
+Escalate when:
+
+- recursive instability is strong
+- collapse-recovery loops keep repeating
+- a symbolic progression branch is failing under pressure
+- the system can start but cannot stay viable through long chains
+
+---
+
+## Deeper bridge direction
+
+Use deeper WFGY 3.0 exploration when the case needs:
+
+- recursive horizon experiments
+- long-chain reasoning stress tests
+- recovery protocol design
+- decomposition strategy comparison
+- explicit collapse / recovery experiment harnesses
+
+---
+
+## One-line repair summary
+
+**First restore a viable reasoning path. Do not make the path longer before making it stable.**
+
+---
+
+# F3 · State & Continuity Integrity
+
+## What F3 is trying to restore
+
+F3 tries to restore continuity across:
+
+- memory
+- role
+- ownership
+- session thread
+- agent thread
+- viable state-space
+
+The repair goal is:
+
+> make the right state persist in the right way
+
+---
+
+## First repair moves
+
+Try these first:
+
+- restore memory persistence or continuity checkpoints
+- fence roles and responsibilities clearly
+- trace ownership of state and outputs
+- rebuild continuity across turns, sessions, or agents
+- identify where viable state-space was lost
+
+---
+
+## Common misrepair
+
+Do **not** start by:
+
+- adding more instructions while continuity remains broken
+- assuming every continuity issue is just a workflow issue
+- patching execution scaffolds before checking state ownership
+- treating role contamination as mere formatting confusion
+- throwing in more memory context without role discipline
+
+---
+
+## Escalate when needed
+
+Escalate when:
+
+- multiple agents or threads are interacting
+- ownership lines are ambiguous
+- continuity is drifting without obvious execution collapse
+- the system remains active but no longer viable as the same stateful process
+
+---
+
+## Deeper bridge direction
+
+Use deeper WFGY 3.0 exploration when the case needs:
+
+- multi-agent continuity experiments
+- ownership line analysis
+- interaction-thread drift testing
+- viable-state restoration strategies
+- persistent-state stress harnesses
+
+---
+
+## One-line repair summary
+
+**First restore continuity and state ownership. Do not assume more instructions will repair a broken thread.**
+
+---
+
+# F4 · Execution & Contract Integrity
+
+## What F4 is trying to restore
+
+F4 tries to restore operational closure across:
+
+- readiness
+- ordering
+- liveness
+- bridge integrity
+- protocol closure
+- enforcement skeletons
+
+The repair goal is:
+
+> make the workflow actually close
+
+---
+
+## First repair moves
+
+Try these first:
+
+- check readiness and preconditions
+- validate ordering dependencies
+- test bridge integrity across modules or steps
+- identify deadlock or liveness failure points
+- trace whether the rule-to-action path truly closes
+
+---
+
+## Common misrepair
+
+Do **not** start by:
+
+- treating execution deadlock as a reasoning problem
+- changing prompts while a bridge remains broken
+- assuming policy exists just because a rule was written
+- polishing outputs before the workflow closes
+- rewriting explanations while liveness remains dead
+
+---
+
+## Escalate when needed
+
+Escalate when:
+
+- there are hidden ordering dependencies
+- multiple layers depend on each other
+- fallback logic exists in name only
+- institutional or protocol enforcement drift is present
+- the workflow “looks alive” but cannot actually complete
+
+---
+
+## Deeper bridge direction
+
+Use deeper WFGY 3.0 exploration when the case needs:
+
+- closure-path experiments
+- bridge integrity tests
+- readiness / deployment harnesses
+- protocol or contract stress mapping
+- fallback realism validation
+
+---
+
+## One-line repair summary
+
+**First restore operational closure. Do not ask the system to think better before it can even close the loop.**
+
+---
+
+# F5 · Observability & Diagnosability Integrity
+
+## What F5 is trying to restore
+
+F5 tries to restore visibility into:
+
+- failure paths
+- coherence conditions
+- audit routes
+- warning structure
+- fragility signals
+- meaning profiles
+
+The repair goal is:
+
+> make the failure visible enough to diagnose honestly
+
+---
+
+## First repair moves
+
+Try these first:
+
+- insert observability into the failure path
+- expose trace structure
+- add coherence probes
+- inspect the warning horizon
+- improve auditability before acting on abstract interpretations
+
+---
+
+## Common misrepair
+
+Do **not** start by:
+
+- jumping into regime intervention before visibility exists
+- treating opacity as proof of boundary failure
+- escalating to global theory when local observability is missing
+- assuming the first fluent explanation is the right one
+- repairing structure you still cannot see clearly
+
+---
+
+## Escalate when needed
+
+Escalate when:
+
+- pre-failure warning is weak
+- coherence is hard to inspect
+- interpretability pressure is scaling
+- the system might be entering a more serious boundary or regime failure but cannot yet be confirmed
+
+---
+
+## Deeper bridge direction
+
+Use deeper WFGY 3.0 exploration when the case needs:
+
+- warning-horizon experiments
+- fragility signature testing
+- auditability design
+- value / information coherence tracing
+- high-abstract diagnosability mapping
+
+---
+
+## One-line repair summary
+
+**First make the failure visible. Do not intervene at the highest level before the structure is diagnosable.**
+
+---
+
+# F6 · Boundary & Safety Integrity
+
+## What F6 is trying to restore
+
+F6 tries to restore viable boundaries across:
+
+- goals
+- control
+- incentives
+- collective structure
+- safe corridors
+- regime behavior
+
+The repair goal is:
+
+> bring the system back inside a viable boundary
+
+---
+
+## First repair moves
+
+Try these first:
+
+- inspect alignment or control path integrity
+- identify incentive drift or capture
+- test whether the system is still inside a safe corridor
+- examine whether collective boundaries are eroding
+- separate proxy optimization from true target structure
+
+---
+
+## Common misrepair
+
+Do **not** start by:
+
+- adding more observability alone when the boundary is already failing
+- assuming all F6 problems are just better-interpretability problems
+- rewriting goals without checking control paths
+- treating collective regime drift as a local style or logging issue
+- delaying stabilization while waiting for perfect explanation
+
+---
+
+## Escalate when needed
+
+Escalate when:
+
+- collective overshoot is likely
+- incentive amplification is strong
+- control paths are weakening fast
+- boundary damage is already active, not just predicted
+
+---
+
+## Deeper bridge direction
+
+Use deeper WFGY 3.0 exploration when the case needs:
+
+- corridor stability analysis
+- overshoot / runaway regime experiments
+- incentive tension mapping
+- collective-boundary stress design
+- intervention margin analysis
+
+---
+
+## One-line repair summary
+
+**First restore the boundary. Do not mistake a real boundary breach for a visibility problem alone.**
+
+---
+
+# F7 · Representation & Localization Integrity
+
+## What F7 is trying to restore
+
+F7 tries to restore structural fidelity across:
+
+- symbolic shells
+- formal containers
+- layouts
+- local anchors
+- explanations
+- synthetic structures
+
+The repair goal is:
+
+> make the container faithful enough to carry the structure again
+
+---
+
+## First repair moves
+
+Try these first:
+
+- audit descriptor fidelity
+- check whether the formal container is adequate
+- validate layout and local anchoring
+- test whether symbolic structure is being preserved
+- inspect hierarchy or skeleton integrity
+
+---
+
+## Common misrepair
+
+Do **not** start by:
+
+- expanding reasoning chains when the container itself is broken
+- assuming semantic grounding is always the first problem
+- patching style before repairing structural fidelity
+- treating layout or symbolic distortion as superficial
+- using richer explanation text to hide a broken carrier
+
+---
+
+## Escalate when needed
+
+Escalate when:
+
+- synthetic structure is unstable
+- formal adequacy is unclear
+- descriptor drift is severe
+- local anchors are failing under pressure
+- the structure looks complete but carries the wrong internal geometry
+
+---
+
+## Deeper bridge direction
+
+Use deeper WFGY 3.0 exploration when the case needs:
+
+- formal adequacy experiments
+- descriptor fidelity tests
+- synthetic structure stress design
+- hierarchy preservation checks
+- representation drift analysis
+
+---
+
+## One-line repair summary
+
+**First repair the container. Do not demand better reasoning from a broken carrier.**
+
+---
+
+## Cross-family repair discipline
+
+Not every case will remain cleanly inside one family.
+
+That is why the official fix surface must preserve cross-family discipline.
+
+### F1 / F7
+
+- if the output is detached from reality or evidence, repair grounding first
+- if the structure carrying the meaning is distorted, repair the container first
+
+### F5 / F6
+
+- if you still cannot see the failure clearly, repair diagnosability first
+- if the system is already outside a viable boundary, repair the boundary first
+
+### F3 / F4
+
+- if the thread is broken, repair continuity first
+- if the loop cannot close, repair execution first
+
+### F2 / F7
+
+- if the carrier is broken, repair representation first
+- if the carrier is acceptable but the path collapses, repair progression first
+
+These cuts matter because many bad fixes begin by repairing the wrong family.
+
+---
+
+## Misrepair pattern summary
+
+A wrong first move often looks like one of these:
+
+- fixing tone when grounding is broken
+- adding instructions when continuity is broken
+- changing prompts when the workflow cannot close
+- intervening at a regime level when observability is missing
+- adding explanation when the boundary is already breached
+- extending reasoning when the representation carrier is already damaged
+
+This is why route-first discipline matters so much.
+
+---
+
+## Relationship to WFGY 3.0
+
+This official fix surface is intentionally **lighter** than WFGY 3.0.
+
+### This document gives:
+
+- family-level first repair moves
+- first common mistakes
+- escalation direction
+- first bridge to deeper work
+
+### WFGY 3.0 gives:
+
+- deeper experimental reasoning
+- problem-specific MVP exploration
+- stronger tension-based analysis
+- falsifiable structural exploration
+- deeper reusable repair pathways
+
+Short version:
+
+> **this document gives first repair grammar**  
+> **WFGY 3.0 gives deeper experimental repair exploration**
+
+That means this file is a public first layer, not the entire engine.
+
+---
+
+## Relationship to community fixes
+
+This file is the official surface.  
+It should remain stable and compact.
+
+Community-contributed fixes may later extend this surface with:
+
+- Colab notebooks
+- JSON schemas
+- prompt packs
+- workflow examples
+- benchmark reruns
+- reproduction packs
+
+But community growth should attach to this official grammar, not replace it.
+
+That is why this file belongs inside the official fix layer.
+
+---
+
+## Document status
+
+This document is frozen as **Family Fix Surface v1**.
+
+It is frozen not because the entire repair universe is finished, but because the atlas now has a stable enough first repair grammar to support:
+
+- human troubleshooting
+- AI-assisted first repair guidance
+- demo flows
+- onboarding
+- route-first repair discipline
+- bridge escalation into WFGY 3.0 and community fix packs
+
+Future work should proceed through **fix-layer patch mode**, not by silently changing the official first repair grammar.
+
+---
+
+## Patch protocol
+
+Family Fix Surface v1 is frozen, but not closed.
+
+### Small patch
+
+Use for:
+
+- wording refinement
+- stronger first-move phrasing
+- clearer misrepair warnings
+- better escalation guidance
+
+### Medium patch
+
+Use for:
+
+- adding family-level examples
+- adding new stable first-repair distinctions
+- improving cross-family repair discipline
+- integrating stronger official bridge notes
+
+### Large patch
+
+Only use if:
+
+- family-level first moves repeatedly fail under stable routing
+- the official first repair grammar becomes structurally misleading
+- the relationship between family routing and first repair must be redesigned
+
+### Current status
+
+No large-patch pressure is currently justified.
+
+---
+
+## Official status
+
+The correct formal statement is:
+
+> Family Fix Surface v1 is the first frozen official repair-facing layer of Problem Map 3.0 Troubleshooting Atlas.  
+> It defines family-level first repair moves, common misrepair patterns, and escalation directions while preserving route-first discipline.
+
+---
+
+## Next steps
+
+After this page, most readers continue with:
+
+1. [Misrepair Patterns v1](./misrepair-patterns-v1.md)
+2. [Flagship Runnable Demo Pack](./demos/README.md)
+3. [Atlas to WFGY Bridge v1](./atlas-to-wfgy-bridge-v1.md)
+4. [Back to Official Fixes](./README.md)
+
+If you want to return to the broader product surface:
+
+- [Back to Atlas landing page](../../../wfgy-ai-problem-map-troubleshooting-atlas.md)
+- [Back to AI Eval Evidence](../../ai-eval-evidence.md)
+- [Back to Atlas Hub](../../README.md)
+
+If this page helps your workflow, consider:
+
+- [starring the WFGY repo](https://github.com/onestardao/WFGY)
+- opening an issue
+- testing the official demo pack
+- contributing later through the community layer
+
+---
+
+## One-line version
+
+**Family Fix Surface v1 tells you what to try first after correct atlas routing.**
+
+---
+
+## Closing note
+
+A strong atlas should not stop at naming failures.
+
+It should also help people and AI systems take a better first action.
+
+That is what this file is for.
+
+It does not promise total closure.  
+It gives a disciplined first move.
