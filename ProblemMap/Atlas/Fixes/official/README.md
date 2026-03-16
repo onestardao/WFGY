@@ -36,12 +36,25 @@ Reading discipline for AI:
 AI_NOTE_END
 -->
 
-# Official Fixes ✅
+# Official Fixes
 
 ## Problem Map 3.0 Troubleshooting Atlas
 ## Stable first repair grammar, misrepair warnings, bridge notes, and flagship demos
 
+Quick links:
+
+- [Back to Atlas landing page](../../../wfgy-ai-problem-map-troubleshooting-atlas.md)
+- [Back to AI Eval Evidence](../../ai-eval-evidence.md)
+- [Back to Atlas Hub](../../README.md)
+- [Back to Fixes Hub](../README.md)
+- [Open the Flagship Runnable Demo Pack](./demos/README.md)
+- [Get the Atlas Router TXT](../../troubleshooting-atlas-router-v1.txt)
+
+---
+
 This folder is the **official repair-facing layer** of the Atlas Fixes system.
+
+If you arrived here after the demos, this is the page that explains where the stable public repair layer begins and how to read it.
 
 The atlas tells you where the failure lives.  
 The casebook teaches how to recognize the cut.  
@@ -52,12 +65,35 @@ This official layer helps answer the next practical question:
 
 This layer is intentionally smaller and more stable than the community layer.
 
-Its goal is not to store every possible implementation.
+Its goal is not to store every possible implementation.  
 Its goal is to provide a clean, reusable, public-facing first repair surface.
 
 ---
 
-## What this folder is for 🎯
+## Quick start
+
+If you want the shortest useful path through the official layer, use this order:
+
+1. [Family Fix Surface v1](./family-fix-surface-v1.md)  
+2. [Misrepair Patterns v1](./misrepair-patterns-v1.md)  
+3. [Flagship Runnable Demo Pack](./demos/README.md)  
+4. [Atlas to WFGY Bridge v1](./atlas-to-wfgy-bridge-v1.md) only if deeper escalation is needed
+
+If you came here after the demos, the fastest next step is usually:
+
+1. [Family Fix Surface v1](./family-fix-surface-v1.md)
+2. [Misrepair Patterns v1](./misrepair-patterns-v1.md)
+
+Short version:
+
+> route first  
+> choose the first repair move  
+> avoid the wrong first move  
+> escalate only if needed
+
+---
+
+## What this folder is for
 
 This folder exists to hold the official materials that connect atlas diagnosis to first repair action.
 
@@ -76,7 +112,7 @@ Short version:
 
 ---
 
-## What belongs here ✅
+## What belongs here
 
 Materials in this folder should be stable enough to function as official public repair guidance.
 
@@ -100,7 +136,7 @@ This layer should be:
 
 ---
 
-## What does not belong here 🚫
+## What does not belong here
 
 This folder should **not** become:
 
@@ -123,7 +159,7 @@ then it likely belongs in the community layer or a future planning layer instead
 
 ---
 
-## Relationship to the rest of the Fixes system 🔗
+## Relationship to the rest of the Fixes system
 
 This folder is only one part of the larger Fixes structure.
 
@@ -151,7 +187,7 @@ A deeper planning layer may continue growing elsewhere in the Fixes system, but 
 
 ---
 
-## Core principle 🔑
+## Core principle
 
 The official fixes layer must preserve this order:
 
@@ -165,14 +201,25 @@ That means:
 4. only then choose the first repair direction
 5. only then decide whether deeper escalation is needed
 
-This matters because many bad fixes are not bad in isolation.
+This matters because many bad fixes are not bad in isolation.  
 They are bad because they start from the wrong cut.
 
 ---
 
-## Recommended reading order 📚
+## Recommended reading order
 
-If you want to understand the official repair-facing flow in the intended order, read:
+### Fast path
+
+Use this if you want the shortest practical route through the official layer:
+
+1. [Family Fix Surface v1](./family-fix-surface-v1.md)
+2. [Misrepair Patterns v1](./misrepair-patterns-v1.md)
+3. [Flagship Runnable Demo Pack](./demos/README.md)
+4. [Atlas to WFGY Bridge v1](./atlas-to-wfgy-bridge-v1.md) if needed
+
+### Full path
+
+Use this if you want the full official repair-facing story in the intended order:
 
 1. [Atlas Final Freeze v1](../../atlas-final-freeze-v1.md)
 2. [Canonical Casebook v1](../../canonical-casebook-v1.md)
@@ -180,13 +227,11 @@ If you want to understand the official repair-facing flow in the intended order,
 4. [Family Fix Surface v1](./family-fix-surface-v1.md)
 5. [Misrepair Patterns v1](./misrepair-patterns-v1.md)
 6. [Atlas to WFGY Bridge v1](./atlas-to-wfgy-bridge-v1.md)
-7. [Flagship Fix Demos v1](./flagship-fix-demos-v1.md)
-
-If you want runnable assets after that, continue into the demos folder.
+7. [Flagship Runnable Demo Pack](./demos/README.md)
 
 ---
 
-## Official document map 🗂️
+## Official document map
 
 ### Core official repair documents
 
@@ -202,17 +247,13 @@ If you want runnable assets after that, continue into the demos folder.
   The bridge from compact atlas repair grammar into deeper WFGY exploration.  
   Explains how first repair direction and deeper structural exploration differ.
 
-- [Flagship Fix Demos v1](./flagship-fix-demos-v1.md)  
-  The official overview for the flagship runnable demo pack.  
-  Explains what the demos are proving and how they fit into the atlas-to-fix story.
-
 ---
 
-## Official demos 🎬
+## Official demos
 
 - [Flagship Runnable Demo Pack](./demos/README.md)
 
-This is the official demo layer for the public repair-facing system.
+This is the official runnable proof layer for the public repair-facing system.
 
 Current flagship demos include:
 
@@ -221,12 +262,16 @@ Current flagship demos include:
 - [Demo 3 · F4 Execution Closure](./demos/demo-f4-execution-closure/README.md)
 - [Demo 4 · F7 Container Fidelity](./demos/demo-f7-container-fidelity/README.md)
 
-These demos are important because they do not only classify.
+These demos matter because they do not only classify.  
 They show how correct routing changes the first repair move.
+
+If you want the runnable proof layer first, start here:
+
+- [Open the Flagship Runnable Demo Pack](./demos/README.md)
 
 ---
 
-## Shared demo support 🧰
+## Shared demo support
 
 - [Shared Demo Helpers](./demos/shared/README.md)
 
@@ -243,7 +288,7 @@ This layer helps the official demos stay cleaner without turning the whole folde
 
 ---
 
-## How the official layer should be used ⚙️
+## How the official layer should be used
 
 A healthy official use flow should look like this:
 
@@ -277,9 +322,9 @@ Short version:
 
 ---
 
-## Why this folder matters 💥
+## Why this folder matters
 
-Without an official fixes layer, the atlas risks being read as “only a classification system.”
+Without an official fixes layer, the atlas risks being read as only a classification system.
 
 With this folder, the atlas becomes more actionable:
 
@@ -295,7 +340,7 @@ It is the layer where the atlas starts to become not only a map, but a disciplin
 
 ---
 
-## Stability rule 🧭
+## Stability rule
 
 This layer should remain:
 
@@ -310,17 +355,41 @@ The official layer should stay sharp.
 
 ---
 
+## Next steps
+
+After this page, most readers continue with:
+
+1. [Family Fix Surface v1](./family-fix-surface-v1.md)
+2. [Misrepair Patterns v1](./misrepair-patterns-v1.md)
+3. [Flagship Runnable Demo Pack](./demos/README.md)
+4. [Atlas to WFGY Bridge v1](./atlas-to-wfgy-bridge-v1.md)
+
+If you want to return to the broader product surface:
+
+- [Back to Atlas landing page](../../../wfgy-ai-problem-map-troubleshooting-atlas.md)
+- [Back to AI Eval Evidence](../../ai-eval-evidence.md)
+- [Back to Atlas Hub](../../README.md)
+
+If this layer helps your workflow, consider:
+
+- [starring the WFGY repo](https://github.com/onestardao/WFGY)
+- opening an issue
+- testing the official demo pack
+- contributing to the community layer later
+
+---
+
 ## One-line status
 
 **This folder is the stable public repair-facing layer of the Atlas system, combining first repair grammar, misrepair warnings, bridge notes, and official flagship demos.**
 
 ---
 
-## Closing note ✨
+## Closing note
 
 The atlas tells you where the failure lives.
 
 The official fixes layer helps answer what should be tried next.
 
-It does not claim that every case already has a full implementation.
+It does not claim that every case already has a full implementation.  
 It provides the first stable public repair surface, so deeper exploration and practical execution can grow from a clean base.
