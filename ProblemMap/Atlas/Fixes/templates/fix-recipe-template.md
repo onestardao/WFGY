@@ -35,13 +35,117 @@ Reading discipline for AI:
 AI_NOTE_END
 -->
 
-# Fix Recipe Template
+# Fix Recipe Template 🛠️
+
+## Problem Map 3.0 Troubleshooting Atlas
+## Reusable template for community or official fix recipes
+
+Quick links:
+
+- [Back to Templates Hub](./README.md)
+- [Back to Contribution Checklist](./contribution-checklist.md)
+- [Back to Community Fix Lab](../community/README.md)
+- [Back to Official Fixes](../official/README.md)
+- [Back to Atlas landing page](../../../wfgy-ai-problem-map-troubleshooting-atlas.md)
+- [Back to Atlas Hub](../../README.md)
+- [Open Prompt Template](./prompt-template.md)
+- [Open Colab Template](./colab-template.md)
+- [Get the Atlas Router TXT](../../troubleshooting-atlas-router-v1.txt)
+
+---
+
+This file is the reusable template for writing a clean fix recipe.
+
+If the **Contribution Checklist** helps you verify readiness, this template helps you actually write one clear contribution that is easy to review, easy to reuse, and easy to keep aligned with atlas routing ✨
+
+Use this template when you want to document:
+
+- one fix idea
+- one case shape
+- one main artifact
+- one expected result
+
+The template is intentionally structured so contributors do not skip:
+
+- routing context
+- first repair logic
+- misrepair warning
+- expected result
+- limitations
+
+---
+
+## Quick start 🚀
+
+Use this template in the following order:
+
+1. fill **Title**
+2. fill **0. Quick summary**
+3. fill **1. Artifact type**
+4. fill **2. Atlas routing context**
+5. fill **3. Problem being fixed**
+6. fill **5. First repair move**
+7. fill **6. Misrepair warning**
+8. fill **7. Inputs**, **8. Procedure**, and **9. Expected output or result**
+9. finish with **12. Files included**, **13. Limitations**, and **14. One-line maintainer note**
+
+If you want the fastest possible start, scroll to:
+
+- **15. Copy-paste mini skeleton**
+
+Short version:
+
+> one case  
+> one main fix  
+> one clear warning  
+> one expected result 📌
+
+---
+
+## Required vs optional quick map 🗂️
+
+| Section | Status | Purpose |
+|---|---|---|
+| Title | Required | identify the recipe clearly |
+| 0. Quick summary | Required | explain what the recipe does |
+| 1. Artifact type | Required | classify the main asset |
+| 2. Atlas routing context | Required | anchor the recipe in atlas logic |
+| 3. Problem being fixed | Required | define the target problem |
+| 4. Baseline failure | Recommended | show the broken starting point |
+| 5. First repair move | Required | define the main intervention |
+| 6. Misrepair warning | Required | prevent the tempting wrong first move |
+| 7. Inputs | Required | show what is needed |
+| 8. Procedure | Required | show how to use it |
+| 9. Expected output or result | Required | define success |
+| 10. Optional evaluation fields | Optional | add useful checks only if they help |
+| 11. Optional WFGY escalation | Optional | only if deeper exploration is relevant |
+| 12. Files included | Required | make the contribution reviewable |
+| 13. Limitations | Recommended | keep the recipe honest |
+| 14. One-line maintainer note | Required | help quick review |
+
+---
+
+## A good recipe usually looks like this 🌱
+
+A strong fix recipe usually has:
+
+- one family
+- one case
+- one main artifact
+- one clear first repair move
+- one misrepair warning
+- one expected result
+- one short explanation of limits
+
+Small and clear beats huge and vague almost every time.
+
+---
 
 ## Title
 
 > Replace this line with a short clear title.
 
-Example:
+Example:  
 `F1 Retrieval Anchor Drift - Minimal reranking fix recipe`
 
 ---
@@ -52,7 +156,7 @@ Example:
 
 Write 1 to 3 short sentences.
 
-Example:
+Example:  
 This recipe improves a grounding-first failure by adding a lightweight source-to-answer verification step after retrieval.  
 It is meant for cases where the answer looks fluent but is weakly anchored.
 
@@ -60,7 +164,7 @@ It is meant for cases where the answer looks fluent but is weakly anchored.
 
 ## 1. Artifact type
 
-Choose one or more:
+Choose one or more, but pick the **main artifact first**.
 
 - Colab notebook
 - JSON fixture
@@ -70,9 +174,15 @@ Choose one or more:
 - reproduction pack
 - implementation note
 
+If the contribution mixes several asset types, choose the main one first and attach the others as supporting files.
+
 ---
 
-## 2. Atlas routing context
+## 2. Atlas routing context ⭐
+
+This is one of the most important sections in the whole template.
+
+A fix recipe without routing context is much harder to review and much easier to misuse.
 
 **Primary family**  
 `F?`
@@ -106,7 +216,7 @@ Keep this section short and concrete.
 
 ---
 
-## 4. Baseline failure
+## 4. Baseline failure *(recommended)*
 
 Describe the broken version first.
 
@@ -128,9 +238,11 @@ Optional mini format:
 **Baseline failure note**  
 `...`
 
+A good fix recipe is usually much easier to understand when the broken starting point is visible.
+
 ---
 
-## 5. First repair move
+## 5. First repair move ⭐
 
 Describe the first repair move this recipe applies.
 
@@ -153,7 +265,7 @@ Optional mini format:
 
 ---
 
-## 6. Misrepair warning
+## 6. Misrepair warning ⭐
 
 State at least one common wrong first move.
 
@@ -169,8 +281,8 @@ State at least one common wrong first move.
 
 `...`
 
-This section is required.
-A good fix recipe should not only say what to do.
+This section is required.  
+A good fix recipe should not only say what to do.  
 It should also say what not to do first.
 
 ---
@@ -215,11 +327,13 @@ Keep them small and numbered.
 5. Run the repaired version.
 6. Compare before and after.
 
+If the steps are too large or too vague, the recipe is usually too hard to reuse.
+
 If this recipe is runnable, the steps should be easy to follow without guessing.
 
 ---
 
-## 9. Expected output or result
+## 9. Expected output or result ⭐
 
 State what should improve.
 
@@ -324,7 +438,7 @@ Small F1 grounding recipe with runnable JSON fixture and clear before/after supp
 
 ---
 
-## 15. Copy-paste mini skeleton
+## 15. Copy-paste mini skeleton ✂️
 
 Use this when you want the fastest possible start.
 
@@ -387,6 +501,29 @@ Why it is wrong:
 
 ---
 
+## Next steps ✨
+
+After this page, most readers continue with:
+
+1. [Back to Contribution Checklist](./contribution-checklist.md)
+2. [Back to Templates Hub](./README.md)
+3. [Back to Community Fix Lab](../community/README.md)
+4. [Open Prompt Template](./prompt-template.md)
+
+If you want to return to the broader product surface:
+
+* [Back to Official Fixes](../official/README.md)
+* [Back to Atlas landing page](../../../wfgy-ai-problem-map-troubleshooting-atlas.md)
+* [Back to Atlas Hub](../../README.md)
+
+If this template helps your workflow, consider:
+
+* [starring the WFGY repo](https://github.com/onestardao/WFGY)
+* opening an issue
+* shipping one small clean recipe 🌟
+
+---
+
 ## 16. Closing note
 
 A good fix recipe does not need to be huge.
@@ -398,4 +535,49 @@ It only needs to be:
 * scoped
 * usable
 * honest
+
+````
+
+下面是你要的 PR title 和 content。
+
+## PR Title
+
+```text
+Improve fix recipe template readability and contributor flow
+````
+
+## PR Content
+
+```markdown
+## Summary
+
+This PR improves the usability of `fix-recipe-template.md` as a reusable contributor-facing template.
+
+## What changed
+
+- added quick links to nearby Atlas and template pages
+- added a quick-start flow for first-time contributors
+- added a required vs optional quick map
+- clarified the most important recipe sections
+- improved the contributor-facing flow from checklist to template to submission
+- added stronger next-step paths
+
+## Scope
+
+Docs only.
+
+No changes were made to:
+- Atlas routing logic
+- official fix logic
+- bridge logic
+- demo behavior
+
+## Why this matters
+
+This template is one of the main entry points for community fix recipes.
+
+These changes make it easier for contributors to:
+- start faster
+- understand which fields matter most
+- keep recipes small, clear, and reviewable
 

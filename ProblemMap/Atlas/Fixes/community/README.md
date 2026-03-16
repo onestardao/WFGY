@@ -31,12 +31,27 @@ Reading discipline for AI:
 AI_NOTE_END
 -->
 
-# Community Fix Lab
+# Community Fix Lab 🛠️
 
 ## Problem Map 3.0 Troubleshooting Atlas
 ## Community-contributed fixes, demos, and runnable assets
 
+Quick links:
+
+- [Back to Official Fixes](../official/README.md)
+- [Back to Fixes Hub](../README.md)
+- [Back to Atlas landing page](../../../wfgy-ai-problem-map-troubleshooting-atlas.md)
+- [Back to AI Eval Evidence](../../ai-eval-evidence.md)
+- [Back to Atlas Hub](../../README.md)
+- [Open the Flagship Runnable Demo Pack](../official/demos/README.md)
+- [Open Templates](../templates/README.md)
+- [Get the Atlas Router TXT](../../troubleshooting-atlas-router-v1.txt)
+
+---
+
 This folder is the community extension layer for the Atlas Fixes system.
+
+If the official layer gives the repair grammar, this page shows how the community can turn that grammar into more runnable, shareable, and reusable assets 🤝
 
 The official atlas gives:
 
@@ -62,7 +77,50 @@ Short version:
 
 ---
 
-## What belongs here
+## Quick start 🚀
+
+### I want to contribute
+
+Use this path:
+
+1. pick the folder that matches your artifact
+2. read the required contribution docs
+3. build one small, clear, route-aware asset
+4. explain how to run it and what result to expect
+5. submit it in the right folder
+
+### I want to browse runnable assets
+
+Use this path:
+
+1. choose the folder that matches what you want to inspect
+2. open one scoped contribution
+3. check the routing context
+4. inspect or run the artifact
+5. compare it against the official layer when useful
+
+Short version:
+
+> route first  
+> build one useful thing  
+> explain it clearly ✨
+
+---
+
+## Community quick map 🗂️
+
+| Folder | Best for | Typical artifact |
+|---|---|---|
+| [Colab](./colab/) | runnable demos | notebook walkthroughs and replay notebooks |
+| [JSON](./json/) | structured fixtures | input cases, replay outputs, expected outputs |
+| [Prompts](./prompts/) | route-aware prompt assets | repair prompts, escalation prompts, compact packs |
+| [Workflows](./workflows/) | process recipes | step-by-step repair flows and troubleshooting sequences |
+| [Benchmark Reruns](./benchmark-reruns/) | comparison slices | before / after reruns and route-aware benchmark views |
+| [Reproduction Packs](./reproduction-packs/) | portable reuse | one-case reproducible bundles |
+
+---
+
+## What belongs here ✅
 
 Good community contributions include things like:
 
@@ -84,7 +142,7 @@ A good contribution should be:
 
 ---
 
-## What does not belong here
+## What does not belong here 🚫
 
 Please do **not** use this folder for:
 
@@ -99,13 +157,13 @@ This folder should grow, but it should not become chaos.
 
 ---
 
-## Official vs community
+## Official vs community 🌉
 
 ### Official fixes
 
 Official fixes live in:
 
-[Official Fixes](../official/README.md)
+- [Official Fixes](../official/README.md)
 
 They are:
 
@@ -134,7 +192,7 @@ The community layer helps the system grow faster.
 
 ---
 
-## Folder layout
+## Folder layout 🧩
 
 Suggested contribution areas:
 
@@ -151,7 +209,7 @@ If a contribution does not fit one of these clearly, add a short note explaining
 
 ---
 
-## What each folder is for
+## What each folder is for 🔍
 
 ### Colab
 
@@ -179,7 +237,7 @@ Use this folder for portable bundles that help others quickly reproduce one case
 
 ---
 
-## Minimum contribution rule
+## Minimum contribution rule 📌
 
 A community contribution should usually include five things:
 
@@ -193,7 +251,29 @@ That is enough to keep the contribution useful.
 
 ---
 
-## Suggested contribution flow
+## What a good first contribution looks like 🌱
+
+A strong first contribution usually looks like this:
+
+- one family
+- one case
+- one artifact
+- one expected result
+- one short explanation
+
+Examples:
+
+- one small Colab demo
+- one clean JSON fixture pair
+- one route-aware prompt example
+- one short workflow recipe
+- one simple reproduction pack
+
+Small, clean, scoped contributions are much better than giant messy ones.
+
+---
+
+## Suggested contribution flow 🧪
 
 A simple contribution flow should look like this:
 
@@ -232,26 +312,33 @@ Short version:
 
 > route first  
 > build one useful thing  
-> explain it clearly
+> explain it clearly 🧭
 
 ---
 
-## Before contributing
+## Before contributing 📚
+
+### Must read
 
 Please read these first:
 
-- [Atlas Final Freeze v1](../../atlas-final-freeze-v1.md)
 - [Family Fix Surface v1](../official/family-fix-surface-v1.md)
-- [Atlas to WFGY Bridge v1](../official/atlas-to-wfgy-bridge-v1.md)
-- [Misrepair Patterns v1](../official/misrepair-patterns-v1.md)
 - [Contribution Checklist](../templates/contribution-checklist.md)
 - [Fix Recipe Template](../templates/fix-recipe-template.md)
 
-This helps keep community work aligned with the atlas instead of drifting away from it.
+### Good to read
+
+These are highly recommended if you want stronger alignment:
+
+- [Atlas Final Freeze v1](../../atlas-final-freeze-v1.md)
+- [Atlas to WFGY Bridge v1](../official/atlas-to-wfgy-bridge-v1.md)
+- [Misrepair Patterns v1](../official/misrepair-patterns-v1.md)
+
+This keeps community work aligned with the atlas instead of drifting away from it.
 
 ---
 
-## Good first contributions
+## Good first contributions 🌟
 
 If you want an easy first contribution, start with one of these:
 
@@ -266,7 +353,7 @@ Small, clear contributions are much better than giant messy ones.
 
 ---
 
-## Relationship to WFGY 3.0
+## Relationship to WFGY 3.0 🌊
 
 This folder can connect to WFGY 3.0, but it is not the same as the WFGY engine layer.
 
@@ -286,7 +373,7 @@ That keeps the bridge clean.
 
 ---
 
-## Review standard
+## Review standard ✅
 
 A community contribution is much more likely to be accepted if it is:
 
@@ -302,7 +389,7 @@ Clean small contributions are more valuable.
 
 ---
 
-## Growth rule
+## Growth rule 🌱
 
 This folder should grow through structured additions, not through random accumulation.
 
@@ -318,13 +405,37 @@ Structured growth is the goal.
 
 ---
 
+## Next steps ✨
+
+After this page, most readers continue with:
+
+1. [Open Templates](../templates/README.md)
+2. [Back to Official Fixes](../official/README.md)
+3. [Open the Flagship Runnable Demo Pack](../official/demos/README.md)
+4. [Choose a folder and start small](./colab/)
+
+If you want to return to the broader product surface:
+
+- [Back to Atlas landing page](../../../wfgy-ai-problem-map-troubleshooting-atlas.md)
+- [Back to AI Eval Evidence](../../ai-eval-evidence.md)
+- [Back to Atlas Hub](../../README.md)
+
+If this layer helps your workflow, consider:
+
+- [starring the WFGY repo](https://github.com/onestardao/WFGY)
+- opening an issue
+- contributing one small clean asset
+- helping keep the community layer structured 💡
+
+---
+
 ## One-line status
 
 **This folder is the community extension layer for Atlas Fixes, where contributors turn repair grammar into runnable assets.**
 
 ---
 
-## Closing note
+## Closing note 🌍
 
 The atlas should not grow only through one author.
 

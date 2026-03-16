@@ -31,16 +31,103 @@ Reading discipline for AI:
 AI_NOTE_END
 -->
 
-# Contribution Checklist
+# Contribution Checklist ✅
 
 ## Problem Map 3.0 Troubleshooting Atlas
 ## Minimum checklist for community fix contributions
 
+Quick links:
+
+- [Back to Templates Hub](./README.md)
+- [Back to Community Fix Lab](../community/README.md)
+- [Back to Official Fixes](../official/README.md)
+- [Back to Atlas landing page](../../../wfgy-ai-problem-map-troubleshooting-atlas.md)
+- [Back to Atlas Hub](../../README.md)
+- [Open Fix Recipe Template](./fix-recipe-template.md)
+- [Open Prompt Template](./prompt-template.md)
+- [Open Colab Template](./colab-template.md)
+- [Get the Atlas Router TXT](../../troubleshooting-atlas-router-v1.txt)
+
+---
+
 Use this checklist before submitting any contribution to the community fixes layer.
+
+If the **Templates Hub** helps you choose the right template, this page helps you check whether the contribution is actually ready to submit 📌
 
 The goal is simple:
 
 > make contributions easier to review, easier to reuse, and less likely to become chaos
+
+---
+
+## Quick start 🚀
+
+Use this page in the following order:
+
+1. scan the **Checklist quick map**
+2. do the **30-second self-check**
+3. fix any obvious gaps
+4. run the full checklist section by section
+5. make sure the **Minimum submit format** is complete before submission
+
+If you only do three things first, do these:
+
+1. identify the main family
+2. explain how to use the artifact
+3. state the expected result
+
+That alone will prevent a lot of weak submissions.
+
+---
+
+## Checklist quick map 🗂️
+
+| Section | What it checks |
+|---|---|
+| Basic contribution identity | naming, purpose, audience |
+| Atlas routing context | family fit, broken invariant, route-first discipline |
+| Contribution scope | one clear problem, not a vague dump |
+| Artifact clarity | what is included and how to use it |
+| Reproducibility | whether someone else can run or inspect it |
+| Repair logic quality | whether it supports a real first move |
+| Misrepair awareness | whether it warns against a tempting wrong move |
+| WFGY bridge discipline | whether deeper exploration stays in the right place |
+| File hygiene | filenames, placement, reviewability |
+| Writing quality | clarity, explanation, usability |
+| Honesty check | limits, incompleteness, non-overclaiming |
+| Minimum submit format | the minimum fields a reviewer should be able to find |
+
+---
+
+## 30-second self-check ⚡
+
+If you are in a hurry, ask:
+
+1. What family is this for?
+2. What does this artifact actually do?
+3. How do I run or use it?
+4. What result should I expect?
+5. What wrong first move does it help avoid?
+
+If you cannot answer these quickly, the contribution probably needs another pass.
+
+---
+
+## Minimum submit format 📦
+
+Before submitting, make sure your contribution includes at least:
+
+- title
+- artifact type
+- primary family
+- broken invariant
+- short problem description
+- short usage instructions
+- expected output or outcome
+- one misrepair warning
+- limitations or notes
+
+If these are missing, the contribution is usually too hard to review.
 
 ---
 
@@ -189,39 +276,7 @@ This project grows better when contributors are strong and honest at the same ti
 
 ---
 
-## 12. Minimum submit format
-
-Before submitting, make sure your contribution includes at least:
-
-- title
-- artifact type
-- primary family
-- broken invariant
-- short problem description
-- short usage instructions
-- expected output or outcome
-- one misrepair warning
-- limitations or notes
-
-If these are missing, the contribution is usually too hard to review.
-
----
-
-## 13. Fast self-check
-
-If you only have 30 seconds, ask:
-
-1. What family is this for?
-2. What does this artifact actually do?
-3. How do I run or use it?
-4. What result should I expect?
-5. What wrong first move does it help avoid?
-
-If you cannot answer these quickly, the contribution probably needs another pass.
-
----
-
-## 14. Maintainer review principles
+## 12. Maintainer review principles
 
 Passing this checklist does not guarantee merge.
 
@@ -239,15 +294,37 @@ This checklist is a minimum gate, not the final decision.
 
 ---
 
-## 15. One-line version
+## Next steps ✨
+
+After this page, most readers continue with:
+
+1. [Open Fix Recipe Template](./fix-recipe-template.md)
+2. [Open Prompt Template](./prompt-template.md)
+3. [Back to Templates Hub](./README.md)
+4. [Back to Community Fix Lab](../community/README.md)
+
+If you want to return to the broader product surface:
+
+- [Back to Official Fixes](../official/README.md)
+- [Back to Atlas landing page](../../../wfgy-ai-problem-map-troubleshooting-atlas.md)
+- [Back to Atlas Hub](../../README.md)
+
+If this checklist helps your workflow, consider:
+
+- [starring the WFGY repo](https://github.com/onestardao/WFGY)
+- opening an issue
+- submitting one small clean contribution 🌱
+
+---
+
+## One-line version
 
 **A good community contribution is small, clear, routed, usable, and honest about limits.**
 
 ---
 
-## 16. Closing note
+## Closing note ✨
 
 The goal of this checklist is not to slow contributors down.
 
 The goal is to help the fix ecosystem grow without turning into a pile of random files.
-
