@@ -1,27 +1,106 @@
-# Repair Planner Prompt v1
+<!--
+AI_NOTE_START
 
-## 0. Document status
+Document role:
+This file defines the first formal prompt specification for the Auto Repair planner layer inside the Atlas Fixes package.
 
-This document defines the first formal prompt specification for the Auto Repair planner layer.
+How to use this file:
+1. Read this page when you want to prompt a model to turn a routed Atlas case into a conservative first repair plan.
+2. Use this page together with:
+   - [Auto Repair v1 README](./README.md)
+   - [Auto Repair Architecture v1](./auto-repair-architecture-v1.md)
+   - [Repair Action Schema v1](./repair-action-schema-v1.md)
+   - [Repair Validation Loop v1](./repair-validation-loop-v1.md)
+   - [Rollback Policy v1](./rollback-policy-v1.md)
+   - [Auto Repair Roadmap v1](./auto-repair-roadmap-v1.md)
+   - [Repair Planner Spec v1](./repair-planner-spec-v1.md)
+3. Use this page as the behavior contract for the planner prompt, not as a claim of full autonomous repair.
+
+What this file is:
+- The first prompt behavior contract for the Auto Repair planner layer
+- A prompt design page for conservative first repair planning
+- A structured transition surface from routed case to repair plan
+
+What this file is not:
+- Not Atlas routing from scratch
+- Not unrestricted repair execution
+- Not a benchmark storytelling file
+- Not proof of full autonomous repair closure
+
+Reading discipline for AI:
+- Respect the given Atlas routing unless severe routing uncertainty is explicit.
+- Focus on the first good repair move, not full repair closure.
+- Keep validation target, misrepair risk, and escalation logic visible.
+- Prefer narrow scope over fake precision when evidence is weak.
+
+AI_NOTE_END
+-->
+
+# Repair Planner Prompt v1 🧠
+
+## How a routed Atlas case should become a conservative first repair plan
+
+Quick links:
+
+- [Back to Auto Repair v1 README](./README.md)
+- [Back to Fixes Hub](../README.md)
+- [Back to Official Fixes](../official/README.md)
+- [Back to Atlas landing page](../../../wfgy-ai-problem-map-troubleshooting-atlas.md)
+- [Back to AI Eval Evidence](../../ai-eval-evidence.md)
+- [Back to Atlas Hub](../../README.md)
+- [Get the Atlas Router TXT](../../troubleshooting-atlas-router-v1.txt)
+- [Open Repair Planner Spec v1](./repair-planner-spec-v1.md)
+- [Open Repair Action Schema v1](./repair-action-schema-v1.md)
+- [Open Repair Validation Loop v1](./repair-validation-loop-v1.md)
+- [Open Rollback Policy v1](./rollback-policy-v1.md)
+- [Open Planner Review Checklist v1](./planner-review-checklist-v1.md)
+- [Open Planner Test Note v1](./planner-test-note-v1.md)
+- [Open Repair Plan Schema v1](./repair-plan-schema-v1.json)
+- [Open Semi Auto Repair Scope v1](./semi-auto-repair-scope-v1.md)
+
+---
+
+If the planner spec explains **what the planner layer should do**, this page explains **how to prompt a model so it actually behaves that way in practice**. 🧭
 
 Its purpose is simple:
 
-> given a routed Atlas case,
-> prompt the model to produce a conservative, structured, validation-aware first repair plan.
+> given a routed Atlas case,  
+> prompt the model to produce a conservative, structured, validation-aware first repair plan
 
 This file does **not** claim to solve full autonomous repair.
 
 It only defines how the planner should think and speak at the first operational planning layer.
 
-This document should be read together with:
+---
 
-- `README.md`
-- `auto-repair-architecture-v1.md`
-- `repair-action-schema-v1.md`
-- `repair-validation-loop-v1.md`
-- `rollback-policy-v1.md`
-- `auto-repair-roadmap-v1.md`
-- `repair-planner-spec-v1.md`
+## Quick start 🚀
+
+### I want the shortest planner prompt path
+
+Use this path:
+
+1. confirm the case is already routed by Atlas
+2. use the base prompt template
+3. require structured output only
+4. check the output with the review checklist
+5. narrow scope or escalate if evidence is weak
+
+### I want the stronger planner setup path
+
+Use this page together with:
+
+1. [Repair Planner Spec v1](./repair-planner-spec-v1.md)
+2. [Repair Action Schema v1](./repair-action-schema-v1.md)
+3. [Repair Validation Loop v1](./repair-validation-loop-v1.md)
+4. [Rollback Policy v1](./rollback-policy-v1.md)
+5. [Planner Review Checklist v1](./planner-review-checklist-v1.md)
+
+Short version:
+
+> respect the route  
+> choose only a few actions  
+> name validation first  
+> escalate instead of bluffing ✨
 
 ---
 
@@ -39,8 +118,8 @@ It is not for:
 
 It is for one specific transition:
 
-> routed case
-> to
+> routed case  
+> to  
 > structured first repair plan
 
 The planner should produce:
@@ -54,7 +133,22 @@ The planner should produce:
 
 ---
 
-## 2. Planner prompt design goals
+## 2. Planner prompt quick map 🗂️
+
+| Prompt concern | Main requirement |
+|---|---|
+| routing discipline | do not redo routing unless severe uncertainty is explicit |
+| action discipline | propose only 1 to 3 local actions |
+| validation discipline | always name the first validation target |
+| misrepair discipline | name the likely wrong path |
+| scope discipline | choose an appropriate `plan_scope` |
+| escalation discipline | narrow or escalate when evidence is weak |
+
+This page is the right place when the question is **how the planner prompt should behave**, not whether the whole repair loop is already automated.
+
+---
+
+## 3. Planner prompt design goals
 
 The planner prompt should make the model behave in a way that is:
 
@@ -76,17 +170,19 @@ The prompt should reduce the chance of these failure modes:
 
 ---
 
-## 3. Core planner behavior
+## 4. Core planner behavior
 
 The planner must follow these principles.
 
 ### Principle 1
+
 Route first, plan second.
 
-The planner must assume Atlas routing already happened.
+The planner must assume Atlas routing already happened.  
 It should not redo the full routing task unless the input explicitly signals routing failure.
 
 ### Principle 2
+
 Prefer the first good move.
 
 The planner should optimize for the first repair move or first small repair set.
@@ -94,23 +190,26 @@ The planner should optimize for the first repair move or first small repair set.
 It should not pretend to complete the whole repair journey.
 
 ### Principle 3
+
 Validation is part of the plan.
 
 Every repair plan must include the first thing to validate.
 
 ### Principle 4
+
 Misrepair risk must be explicit.
 
 The planner must state the most likely wrong repair direction.
 
 ### Principle 5
+
 Escalation is allowed.
 
 If evidence is weak or the case is too risky, the planner must prefer escalation over fake precision.
 
 ---
 
-## 4. Minimum planner input contract
+## 5. Minimum planner input contract
 
 The prompt should assume the following input object shape.
 
@@ -141,7 +240,7 @@ If required fields are missing, the planner should respond conservatively and av
 
 ---
 
-## 5. Minimum planner output contract
+## 6. Minimum planner output contract
 
 The planner should return a structured object with these fields.
 
@@ -167,31 +266,37 @@ The prompt should strongly encourage short, structured output rather than prose-
 
 ---
 
-## 6. Candidate action rules
+## 7. Candidate action rules
 
 The planner should obey the following rules when proposing actions.
 
 ### Rule A
+
 Propose **1 to 3** candidate actions only.
 
 ### Rule B
+
 Each action should be small enough to validate.
 
 ### Rule C
-Each action should be compatible with the Repair Action Schema.
+
+Each action should be compatible with the [Repair Action Schema v1](./repair-action-schema-v1.md).
 
 ### Rule D
+
 Actions should target the routed failure layer first.
 
 ### Rule E
+
 If the case is high-risk, prefer fewer actions and narrower scope.
 
 ### Rule F
+
 If the case is too ambiguous, do not invent strong action proposals.
 
 ---
 
-## 7. Scope discipline
+## 8. Scope discipline
 
 The planner must always set a `plan_scope`.
 
@@ -205,6 +310,7 @@ Suggested values:
 The prompt should encourage this logic:
 
 ### `planner-only`
+
 Use when:
 
 - case is highly ambiguous
@@ -213,6 +319,7 @@ Use when:
 - F6 pressure is heavy
 
 ### `minimal`
+
 Use when:
 
 - action is concrete
@@ -221,6 +328,7 @@ Use when:
 - risk is low
 
 ### `constrained`
+
 Use when:
 
 - action is still local
@@ -228,6 +336,7 @@ Use when:
 - and may affect workflow or structure more strongly
 
 ### `requires-review`
+
 Use when:
 
 - intervention has meaningful policy, legitimacy, or system-wide risk
@@ -235,11 +344,12 @@ Use when:
 
 ---
 
-## 8. Family-specific planning guidance
+## 9. Family-specific planning guidance
 
 The prompt should encode the following family-specific tendencies.
 
-### F1 · Grounding & Evidence Integrity
+### F1 · Grounding and Evidence Integrity
+
 Prefer:
 
 - re-grounding
@@ -253,9 +363,8 @@ Avoid:
 - stylistic repair
 - abstract reasoning pressure as the first move
 
----
+### F3 · State and Continuity Integrity
 
-### F3 · State & Continuity Integrity
 Prefer:
 
 - continuity scaffold
@@ -267,9 +376,8 @@ Avoid:
 
 - treating continuity drift as pure closure failure unless F4 is clearly stronger
 
----
+### F4 · Execution and Contract Integrity
 
-### F4 · Execution & Contract Integrity
 Prefer:
 
 - readiness gate insertion
@@ -283,9 +391,8 @@ Avoid:
 - adding more instructions as the first repair move
 - treating the problem as memory-first unless F3 is stronger
 
----
+### F5 · Observability and Diagnosability Integrity
 
-### F5 · Observability & Diagnosability Integrity
 Prefer:
 
 - trace exposure
@@ -298,9 +405,8 @@ Avoid:
 - pretending visibility uplift fully repairs the case
 - escalating to boundary intervention too early
 
----
+### F6 · Boundary and Safety Integrity
 
-### F6 · Boundary & Safety Integrity
 Prefer:
 
 - stabilization suggestion
@@ -314,9 +420,8 @@ Avoid:
 - high-confidence repair planning under weak evidence
 - strong action scope unless review is available
 
----
+### F7 · Representation and Localization Integrity
 
-### F7 · Representation & Localization Integrity
 Prefer:
 
 - schema tightening
@@ -331,7 +436,7 @@ Avoid:
 
 ---
 
-## 9. Stop and caution conditions
+## 10. Stop and caution conditions
 
 The prompt should instruct the planner to stop or narrow scope when:
 
@@ -351,7 +456,7 @@ In such cases, the planner should prefer:
 
 ---
 
-## 10. Prompt style rules
+## 11. Prompt style rules
 
 The planner prompt should produce output that is:
 
@@ -372,7 +477,7 @@ The planner prompt should avoid:
 
 ---
 
-## 11. Recommended base prompt template
+## 12. Recommended base prompt template
 
 Use the following as the first planner prompt template.
 
@@ -437,7 +542,7 @@ Choose a narrow scope or escalate.
 
 ---
 
-## 12. Recommended stricter variant
+## 13. Recommended stricter variant
 
 Use this when you want the planner to stay extra hard and minimal.
 
@@ -464,7 +569,7 @@ If boundary pressure is high, narrow scope or escalate.
 
 ---
 
-## 13. Recommended teaching variant
+## 14. Recommended teaching variant
 
 Use this when the planner output is for education, onboarding, or demo explanation.
 
@@ -482,7 +587,7 @@ Do not turn the output into an essay.
 
 ---
 
-## 14. Example planner call
+## 15. Example planner call
 
 ### Example input
 
@@ -532,7 +637,7 @@ Do not turn the output into an essay.
 
 ---
 
-## 15. Failure modes this prompt should reduce
+## 16. Failure modes this prompt should reduce
 
 This planner prompt is specifically meant to reduce these common planner failures:
 
@@ -548,7 +653,7 @@ The prompt should be judged by how well it prevents these mistakes.
 
 ---
 
-## 16. Suggested evaluation questions
+## 17. Suggested evaluation questions
 
 When reviewing planner quality, ask:
 
@@ -563,7 +668,7 @@ These questions are enough for a first practical review loop.
 
 ---
 
-## 17. What this file does not yet include
+## 18. What this file does not yet include
 
 This file does **not** yet define:
 
@@ -580,12 +685,12 @@ This file only defines the first prompt behavior contract.
 
 ---
 
-## 18. Recommended next files
+## 19. Recommended next files
 
 The most logical next files are:
 
-* `repair-plan-schema-v1.json`
-* `semi-auto-repair-scope-v1.md`
+* [Repair Plan Schema v1](./repair-plan-schema-v1.json)
+* [Semi Auto Repair Scope v1](./semi-auto-repair-scope-v1.md)
 
 That sequence makes sense because:
 
@@ -595,6 +700,24 @@ That sequence makes sense because:
 
 ---
 
-## 19. One-line prompt summary
+## 20. Next steps ✨
+
+After this page, most readers continue with:
+
+1. [Open Repair Plan Schema v1](./repair-plan-schema-v1.json)
+2. [Open Semi Auto Repair Scope v1](./semi-auto-repair-scope-v1.md)
+3. [Open Planner Review Checklist v1](./planner-review-checklist-v1.md)
+4. [Open Planner Test Note v1](./planner-test-note-v1.md)
+
+If you want the broader product surface:
+
+* [Back to Auto Repair v1 README](./README.md)
+* [Back to Fixes Hub](../README.md)
+* [Back to Atlas landing page](../../../wfgy-ai-problem-map-troubleshooting-atlas.md)
+* [Back to Atlas Hub](../../README.md)
+
+---
+
+## 21. One-line prompt summary 🌍
 
 **Repair Planner Prompt v1 defines how a routed Atlas case should be turned into a conservative, structured, validation-aware first repair plan.**

@@ -1,15 +1,98 @@
-# Repair Action Schema v1
+<!--
+AI_NOTE_START
 
-🧩 **Repair Action Schema v1** defines the minimum structured format for Atlas-based repair actions.
+Document role:
+This file defines the minimum structured action format for the Auto Repair layer inside the Atlas Fixes package.
+
+How to use this file:
+1. Read this page when defining, reviewing, or reusing Atlas-based repair actions.
+2. Use this page together with:
+   - [Auto Repair v1 README](./README.md)
+   - [Auto Repair Architecture v1](./auto-repair-architecture-v1.md)
+   - [Repair Validation Loop v1](./repair-validation-loop-v1.md)
+   - [Rollback Policy v1](./rollback-policy-v1.md)
+   - [Repair Planner Spec v1](./repair-planner-spec-v1.md)
+3. Use this page as the shared schema contract for planner outputs, validation checks, rollback logic, and later constrained execution.
+
+What this file is:
+- The minimum repair action schema for Auto Repair v1
+- A structured action contract for Atlas-based repair work
+- A reusable interface between planner, validator, and rollback layers
+
+What this file is not:
+- Not a full autonomous repair engine
+- Not a multi-step repair program format
+- Not a benchmark automation layer
+- Not a final universal schema for all future repair systems
+
+Reading discipline for AI:
+- Treat each repair action as a constrained first-move unit, not a whole repair story.
+- Keep target family, intended effect, validation need, and rollback hint visible.
+- Do not overload a single action with too many families or too many goals.
+- Preserve the distinction between action schema and later execution logic.
+
+AI_NOTE_END
+-->
+
+# Repair Action Schema v1 🧩
+
+## The minimum structured unit for Atlas-based repair actions
+
+Quick links:
+
+- [Back to Auto Repair v1 README](./README.md)
+- [Back to Fixes Hub](../README.md)
+- [Back to Official Fixes](../official/README.md)
+- [Back to Atlas landing page](../../../wfgy-ai-problem-map-troubleshooting-atlas.md)
+- [Back to AI Eval Evidence](../../ai-eval-evidence.md)
+- [Back to Atlas Hub](../../README.md)
+- [Get the Atlas Router TXT](../../troubleshooting-atlas-router-v1.txt)
+- [Open Auto Repair Architecture v1](./auto-repair-architecture-v1.md)
+- [Open Repair Validation Loop v1](./repair-validation-loop-v1.md)
+- [Open Rollback Policy v1](./rollback-policy-v1.md)
+- [Open Repair Planner Spec v1](./repair-planner-spec-v1.md)
+
+---
+
+If the Auto Repair architecture page explains **how the repair system should be organized**, this schema page defines **how one repair move should be represented inside that system**. 🧭
 
 Its purpose is simple:
 
-> if Auto Repair is going to plan, compare, validate, and later execute repairs,
-> then repair actions cannot remain vague sentences.
+> if Auto Repair is going to plan, compare, validate, and later execute repairs,  
+> then repair actions cannot remain vague sentences
 
 They must become structured action units.
 
 This document defines the first formal schema for those units.
+
+---
+
+## Quick start 🚀
+
+### I want the shortest schema reading
+
+Use this path:
+
+1. read what a repair action is
+2. inspect the required fields
+3. inspect the example action objects
+4. check the early implementation rules
+
+### I want the stronger system reading
+
+Use this page together with:
+
+1. [Auto Repair Architecture v1](./auto-repair-architecture-v1.md)
+2. [Repair Planner Spec v1](./repair-planner-spec-v1.md)
+3. [Repair Validation Loop v1](./repair-validation-loop-v1.md)
+4. [Rollback Policy v1](./rollback-policy-v1.md)
+
+Short version:
+
+> keep one action small  
+> keep the family explicit  
+> require validation  
+> keep rollback visible ✨
 
 ---
 
@@ -40,10 +123,10 @@ It is not:
 
 It is:
 
-> a structured candidate move that targets a specific failure layer,
-> with a specific intended effect,
-> under a constrained scope,
-> with explicit validation needs and risk notes.
+> a structured candidate move that targets a specific failure layer,  
+> with a specific intended effect,  
+> under a constrained scope,  
+> with explicit validation needs and risk notes
 
 In short:
 
@@ -69,7 +152,22 @@ It is trying to establish a clean and reusable minimum.
 
 ---
 
-## 4. Minimal action unit
+## 4. Action schema quick map 🗂️
+
+| Part of the action | Main job |
+|---|---|
+| identity fields | tell us what the action is |
+| target fields | tell us where the action is aimed |
+| mechanism fields | tell us how the action works |
+| safety fields | tell us how far it can go and how risky it is |
+| validation fields | tell us how to judge the action afterward |
+| rollback and escalation fields | tell us what to do if the action fails |
+
+This page is the right place when the question is **how a repair move should be encoded as a reusable object**, not whether the whole repair workflow is already automated.
+
+---
+
+## 5. Minimal action unit
 
 Every repair action in v1 should contain the following core fields.
 
@@ -98,7 +196,7 @@ This gives us a stable first schema without making the object too heavy.
 
 ---
 
-## 5. Field definitions
+## 6. Field definitions
 
 ### `action_id`
 
@@ -112,8 +210,6 @@ Example:
 
 This field is for tracking, referencing, validation, and patch evolution.
 
----
-
 ### `action_title`
 
 A short human-readable name.
@@ -125,8 +221,6 @@ Example:
 - `Tighten output schema`
 
 This field should be short and practical.
-
----
 
 ### `target_family`
 
@@ -143,8 +237,6 @@ Allowed examples:
 
 An action may later interact with neighboring families, but it must still declare its primary target family.
 
----
-
 ### `target_region`
 
 The more specific target area inside the family.
@@ -156,8 +248,6 @@ Examples:
 - `F7_N01_A Logic Descriptor Fidelity Failure`
 
 If a node is not yet fully frozen, a stable branch or family entry label may be used.
-
----
 
 ### `repair_type`
 
@@ -178,8 +268,6 @@ Suggested early values include:
 
 This field helps planners group actions by mechanism rather than only by family.
 
----
-
 ### `intended_effect`
 
 A short statement of what the action is supposed to improve.
@@ -192,8 +280,6 @@ Examples:
 - `increase failure-path visibility`
 
 This field should describe the intended repair effect, not implementation details.
-
----
 
 ### `allowed_scope`
 
@@ -216,8 +302,6 @@ Examples:
 
 This field is important for safety.
 
----
-
 ### `risk_level`
 
 A coarse early risk label.
@@ -229,8 +313,6 @@ Suggested values:
 - `high`
 
 This is not the only safety control, but it is a useful first signal.
-
----
 
 ### `validation_needed`
 
@@ -247,8 +329,6 @@ Suggested early values:
 
 An action without validation is incomplete.
 
----
-
 ### `rollback_hint`
 
 A short statement of how to back out if the repair makes things worse.
@@ -264,7 +344,7 @@ This field can be short in v1, but it must exist.
 
 ---
 
-## 6. Optional fields
+## 7. Optional fields
 
 These are not mandatory in the smallest action unit, but are strongly recommended.
 
@@ -279,8 +359,6 @@ Example:
 
 This field helps later planner logic.
 
----
-
 ### `misrepair_risk`
 
 Describes the most likely wrong repair pattern.
@@ -293,8 +371,6 @@ Examples:
 
 This field is highly valuable for planner quality.
 
----
-
 ### `preconditions`
 
 Lists what must already be true before the action is safe or meaningful.
@@ -306,8 +382,6 @@ Examples:
 - `readiness state can be checked explicitly`
 
 This prevents premature repair behavior.
-
----
 
 ### `escalation_if_failed`
 
@@ -322,8 +396,6 @@ Examples:
 
 This field supports later repair workflows.
 
----
-
 ### `notes`
 
 Free-form short note field.
@@ -332,11 +404,12 @@ Use sparingly.
 
 ---
 
-## 7. Recommended family-specific action style
+## 8. Recommended family-specific action style
 
 Different families tend to prefer different action shapes.
 
 ### F1
+
 Usually concrete and anchor-oriented.
 
 Common action styles:
@@ -347,6 +420,7 @@ Common action styles:
 - retrieval correction
 
 ### F3
+
 Usually continuity-oriented.
 
 Common action styles:
@@ -357,6 +431,7 @@ Common action styles:
 - persistence guard
 
 ### F4
+
 Usually workflow-structural.
 
 Common action styles:
@@ -367,6 +442,7 @@ Common action styles:
 - closure hardening
 
 ### F5
+
 Usually visibility-oriented.
 
 Common action styles:
@@ -377,6 +453,7 @@ Common action styles:
 - coherence probe
 
 ### F6
+
 Usually planner-heavy and safety-sensitive.
 
 Common action styles:
@@ -387,6 +464,7 @@ Common action styles:
 - intervention restraint marker
 
 ### F7
+
 Usually container-oriented.
 
 Common action styles:
@@ -397,11 +475,12 @@ Common action styles:
 - structure preservation
 
 This section is not a hard rule set.
+
 It is a practical guide for early consistency.
 
 ---
 
-## 8. Example action objects
+## 9. Example action objects
 
 ### Example A · F1 grounding action
 
@@ -472,7 +551,7 @@ It is a practical guide for early consistency.
 
 ---
 
-## 9. What this schema does not yet include
+## 10. What this schema does not yet include
 
 Repair Action Schema v1 does **not** yet try to encode:
 
@@ -488,7 +567,7 @@ Those may appear later, but should not be forced into v1 too early.
 
 ---
 
-## 10. Relationship to planner, validator, and rollback
+## 11. Relationship to planner, validator, and rollback
 
 This schema is meant to become the shared language across three later components:
 
@@ -505,11 +584,12 @@ Checks whether an action improved the targeted failure.
 Uses the rollback hint and action identity to back out harmful changes.
 
 This means the action schema is not just a static catalog.
+
 It is the interface contract between later layers.
 
 ---
 
-## 11. Early implementation guidance
+## 12. Early implementation guidance
 
 For early practical use, follow these rules:
 
@@ -525,11 +605,11 @@ These rules will make later automation much safer.
 
 ---
 
-## 12. Recommended next step
+## 13. Recommended next step
 
 Once this schema is accepted, the most logical next file is:
 
-* `repair-validation-loop-v1.md`
+* [Repair Validation Loop v1](./repair-validation-loop-v1.md)
 
 because a repair action without a clear validation path is still incomplete.
 
@@ -543,6 +623,24 @@ which is enough to support the first real repair planner draft.
 
 ---
 
-## 13. One-line schema summary
+## 14. Next steps ✨
+
+After this page, most readers continue with:
+
+1. [Open Repair Validation Loop v1](./repair-validation-loop-v1.md)
+2. [Open Rollback Policy v1](./rollback-policy-v1.md)
+3. [Open Repair Planner Spec v1](./repair-planner-spec-v1.md)
+4. [Back to Auto Repair Architecture v1](./auto-repair-architecture-v1.md)
+
+If you want the broader product surface:
+
+* [Back to Auto Repair v1 README](./README.md)
+* [Back to Fixes Hub](../README.md)
+* [Back to Atlas landing page](../../../wfgy-ai-problem-map-troubleshooting-atlas.md)
+* [Back to Atlas Hub](../../README.md)
+
+---
+
+## 15. One-line schema summary 🌍
 
 **Repair Action Schema v1 defines the minimum structured unit for Atlas-based repair planning, validation, rollback, and later constrained execution.**

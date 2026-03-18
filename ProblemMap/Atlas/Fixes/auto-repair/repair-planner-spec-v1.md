@@ -1,8 +1,65 @@
-# Repair Planner Spec v1
+<!--
+AI_NOTE_START
 
-## 0. Document status
+Document role:
+This file defines the first formal specification for the Auto Repair planner layer inside the Atlas Fixes package.
 
-This document defines the first formal specification for the Auto Repair planner layer.
+How to use this file:
+1. Read this page when you want the behavior contract for turning a routed Atlas case into a first repair plan.
+2. Use this page together with:
+   - [Auto Repair v1 README](./README.md)
+   - [Auto Repair Architecture v1](./auto-repair-architecture-v1.md)
+   - [Repair Action Schema v1](./repair-action-schema-v1.md)
+   - [Repair Validation Loop v1](./repair-validation-loop-v1.md)
+   - [Rollback Policy v1](./rollback-policy-v1.md)
+   - [Auto Repair Roadmap v1](./auto-repair-roadmap-v1.md)
+3. Use this page as the planner behavior contract, not as a claim of full autonomous repair.
+
+What this file is:
+- The formal behavior specification for the Auto Repair planner layer
+- A contract for conservative first repair planning after Atlas routing
+- A bridge between routed diagnosis and structured repair output
+
+What this file is not:
+- Not Atlas routing from scratch
+- Not a code implementation
+- Not a benchmark scoring document
+- Not proof that full autonomous repair already exists
+
+Reading discipline for AI:
+- Respect the routed Atlas case unless severe routing uncertainty is explicit.
+- Focus on the first good move, not full repair closure.
+- Keep action count small, validation explicit, and escalation available.
+- Prefer narrow scope over fake certainty when evidence is weak.
+
+AI_NOTE_END
+-->
+
+# Repair Planner Spec v1 🧠
+
+## The behavior contract for Atlas-based first repair planning
+
+Quick links:
+
+- [Back to Auto Repair v1 README](./README.md)
+- [Back to Fixes Hub](../README.md)
+- [Back to Official Fixes](../official/README.md)
+- [Back to Atlas landing page](../../../wfgy-ai-problem-map-troubleshooting-atlas.md)
+- [Back to AI Eval Evidence](../../ai-eval-evidence.md)
+- [Back to Atlas Hub](../../README.md)
+- [Get the Atlas Router TXT](../../troubleshooting-atlas-router-v1.txt)
+- [Open Auto Repair Architecture v1](./auto-repair-architecture-v1.md)
+- [Open Repair Action Schema v1](./repair-action-schema-v1.md)
+- [Open Repair Planner Prompt v1](./repair-planner-prompt-v1.md)
+- [Open Repair Plan Schema v1](./repair-plan-schema-v1.json)
+- [Open Repair Validation Loop v1](./repair-validation-loop-v1.md)
+- [Open Rollback Policy v1](./rollback-policy-v1.md)
+- [Open Planner Review Checklist v1](./planner-review-checklist-v1.md)
+- [Open Planner Test Note v1](./planner-test-note-v1.md)
+
+---
+
+If the Auto Repair architecture page explains **where the planner sits in the system**, this page explains **what the planner must do and how its output should behave**. 🧭
 
 Its purpose is to make one part of the system operationally clear:
 
@@ -13,16 +70,38 @@ This document does **not** claim that a full autonomous repair engine already ex
 
 It claims something narrower and more useful:
 
-> the planner layer now has a clear role, a clear contract, and a clear output shape.
+> the planner layer now has a clear role, a clear contract, and a clear output shape
 
-This file should be read together with:
+---
 
-- `README.md`
-- `auto-repair-architecture-v1.md`
-- `repair-action-schema-v1.md`
-- `repair-validation-loop-v1.md`
-- `rollback-policy-v1.md`
-- `auto-repair-roadmap-v1.md`
+## Quick start 🚀
+
+### I want the shortest planner reading
+
+Use this path:
+
+1. confirm the case is already routed by Atlas
+2. read the minimum planner inputs
+3. read the minimum planner outputs
+4. read the planner behavior rules
+5. inspect the example plan objects
+
+### I want the stronger planner reading
+
+Use this page together with:
+
+1. [Repair Action Schema v1](./repair-action-schema-v1.md)
+2. [Repair Planner Prompt v1](./repair-planner-prompt-v1.md)
+3. [Repair Plan Schema v1](./repair-plan-schema-v1.json)
+4. [Repair Validation Loop v1](./repair-validation-loop-v1.md)
+5. [Planner Review Checklist v1](./planner-review-checklist-v1.md)
+
+Short version:
+
+> respect the route  
+> choose a small first move  
+> name validation early  
+> escalate instead of bluffing ✨
 
 ---
 
@@ -55,7 +134,7 @@ In short:
 
 ---
 
-## 2. Placement in the system
+## 2. Placement in the system 🧩
 
 The planner sits in this workflow:
 
@@ -76,13 +155,28 @@ The planner must not bypass:
 * family routing
 * broken invariant declaration
 * fix-surface selection
-* confidence / evidence discipline
+* confidence and evidence discipline
 
 If those are missing, the planner should not pretend to be stronger than the inputs.
 
 ---
 
-## 3. Planner design principle
+## 3. Planner spec quick map 🗂️
+
+| Planner concern       | Main requirement                                        |
+| --------------------- | ------------------------------------------------------- |
+| inputs                | consume a routed case with enough structure             |
+| output                | emit a compact structured first repair plan             |
+| action discipline     | propose only 1 to 3 local actions                       |
+| validation discipline | always name the first validation target                 |
+| misrepair discipline  | always name the likely wrong path                       |
+| escalation discipline | narrow scope or escalate when the case is weak or risky |
+
+This page is the right place when the question is **how the planner should behave as a system layer**, not how to write the exact prompt text or benchmark the model.
+
+---
+
+## 4. Planner design principle
 
 The planner must remain:
 
@@ -118,7 +212,7 @@ The planner should **not** optimize for:
 
 ---
 
-## 4. Minimum planner inputs
+## 5. Minimum planner inputs
 
 The repair planner should consume a routed case object with at least the following fields.
 
@@ -150,7 +244,7 @@ The planner should treat missing required inputs as a sign to stop, defer, or re
 
 ---
 
-## 5. Minimum planner outputs
+## 6. Minimum planner outputs
 
 The planner should produce a structured repair plan object.
 
@@ -177,7 +271,7 @@ This output should be compact enough for repeated use and clear enough for engin
 
 ---
 
-## 6. Output field definitions
+## 7. Output field definitions
 
 ### `selected_repair_family`
 
@@ -193,8 +287,6 @@ Examples:
 
 This field must remain explicit.
 
----
-
 ### `planner_confidence`
 
 The planner's confidence in the proposed repair family and action ordering.
@@ -206,8 +298,6 @@ Suggested values:
 * `high`
 
 This should depend on routing quality and evidence sufficiency, not rhetorical certainty.
-
----
 
 ### `plan_scope`
 
@@ -227,8 +317,6 @@ Examples:
 * `constrained` for F4 gate insertion or F7 schema tightening
 * `requires-review` for ambiguous multi-family cases
 
----
-
 ### `candidate_actions`
 
 A list of 1 to 3 repair action objects.
@@ -238,8 +326,6 @@ These should be action-schema-compliant proposals.
 The planner should not produce a long bag of ideas.
 
 More than 3 actions usually means the planner is under-disciplined.
-
----
 
 ### `action_ordering`
 
@@ -254,8 +340,6 @@ Examples:
 * repair container before adding reasoning pressure
 * repair diagnosability before boundary intervention
 
----
-
 ### `primary_validation_target`
 
 The specific thing that should be checked first after the first action is tried.
@@ -269,8 +353,6 @@ Examples:
 
 This field prevents vague repair plans.
 
----
-
 ### `misrepair_risk`
 
 A short description of the most likely wrong repair direction.
@@ -283,8 +365,6 @@ Examples:
 * over-tightening the container and hiding semantic failure
 
 This field is mandatory for a good planner.
-
----
 
 ### `recommended_next_step`
 
@@ -302,7 +382,7 @@ This field keeps the planner connected to the real workflow.
 
 ---
 
-## 7. Planner behavior rules
+## 8. Planner behavior rules
 
 The planner must follow these behavior rules.
 
@@ -351,15 +431,15 @@ This is especially important for:
 * F6-heavy cases
 * multi-family ambiguity
 * weak routing confidence
-* high-abstract legitimacy / boundary cases
+* high-abstract legitimacy or boundary cases
 
 ---
 
-## 8. Family-specific planning style
+## 9. Family-specific planning style
 
 Different families should encourage different planner behavior.
 
-### F1 · Grounding & Evidence Integrity
+### F1 · Grounding and Evidence Integrity
 
 Typical planner style:
 
@@ -379,9 +459,7 @@ Common planner mistake:
 
 * over-interpreting a grounding failure as a representation or reasoning problem
 
----
-
-### F3 · State & Continuity Integrity
+### F3 · State and Continuity Integrity
 
 Typical planner style:
 
@@ -400,9 +478,7 @@ Common planner mistake:
 
 * treating continuity loss as pure execution failure
 
----
-
-### F4 · Execution & Contract Integrity
+### F4 · Execution and Contract Integrity
 
 Typical planner style:
 
@@ -422,9 +498,7 @@ Common planner mistake:
 
 * trying to fix execution failure by adding reasoning pressure or more instructions
 
----
-
-### F5 · Observability & Diagnosability Integrity
+### F5 · Observability and Diagnosability Integrity
 
 Typical planner style:
 
@@ -443,9 +517,7 @@ Common planner mistake:
 
 * mistaking better visibility for fully repaired failure
 
----
-
-### F6 · Boundary & Safety Integrity
+### F6 · Boundary and Safety Integrity
 
 Typical planner style:
 
@@ -467,9 +539,7 @@ Common planner mistake:
 
 The planner should often choose `planner-only` or `requires-review` here.
 
----
-
-### F7 · Representation & Localization Integrity
+### F7 · Representation and Localization Integrity
 
 Typical planner style:
 
@@ -490,7 +560,7 @@ Common planner mistake:
 
 ---
 
-## 9. Planning sequence
+## 10. Planning sequence
 
 The default planning sequence should be:
 
@@ -507,7 +577,7 @@ This sequence should remain stable in v1.
 
 ---
 
-## 10. Planner stop conditions
+## 11. Planner stop conditions
 
 The planner should stop and refuse overreach when:
 
@@ -528,7 +598,7 @@ rather than pretending to have a valid repair plan.
 
 ---
 
-## 11. Example plan object
+## 12. Example plan object
 
 ### Example A · F1 plan
 
@@ -559,7 +629,7 @@ rather than pretending to have a valid repair plan.
 
 ### Example B · F4 plan
 
-```json id="967prv"
+```json
 {
   "selected_repair_family": "F4",
   "planner_confidence": "medium",
@@ -586,7 +656,7 @@ rather than pretending to have a valid repair plan.
 
 ### Example C · F6 cautious plan
 
-```json id="u35fkz"
+```json
 {
   "selected_repair_family": "F6",
   "planner_confidence": "low",
@@ -613,7 +683,7 @@ rather than pretending to have a valid repair plan.
 
 ---
 
-## 12. What this spec does not yet include
+## 13. What this spec does not yet include
 
 Repair Planner Spec v1 does **not** yet define:
 
@@ -631,12 +701,12 @@ This file only defines the first formal behavior contract.
 
 ---
 
-## 13. Recommended companion files
+## 14. Recommended companion files
 
 The next useful files after this one are:
 
-* `repair-planner-prompt-v1.md`
-* `repair-plan-schema-v1.json`
+* [Repair Planner Prompt v1](./repair-planner-prompt-v1.md)
+* [Repair Plan Schema v1](./repair-plan-schema-v1.json)
 
 This file defines planner behavior.
 
@@ -649,7 +719,7 @@ That would complete Phase 1 at a much more operational level.
 
 ---
 
-## 14. Success condition for Phase 1
+## 15. Success condition for Phase 1
 
 Phase 1 should be considered successful when:
 
@@ -664,7 +734,24 @@ This is a strong enough milestone for first practical use.
 
 ---
 
-## 15. One-line planner summary
+## 16. Next steps ✨
+
+After this page, most readers continue with:
+
+1. [Open Repair Planner Prompt v1](./repair-planner-prompt-v1.md)
+2. [Open Repair Plan Schema v1](./repair-plan-schema-v1.json)
+3. [Open Planner Review Checklist v1](./planner-review-checklist-v1.md)
+4. [Open Planner Test Note v1](./planner-test-note-v1.md)
+
+If you want the broader product surface:
+
+* [Back to Auto Repair v1 README](./README.md)
+* [Back to Fixes Hub](../README.md)
+* [Back to Atlas landing page](../../../wfgy-ai-problem-map-troubleshooting-atlas.md)
+* [Back to Atlas Hub](../../README.md)
+
+---
+
+## 17. One-line planner summary 🌍
 
 **Repair Planner Spec v1 defines how Atlas-based diagnosis should be turned into a structured, conservative, validation-aware first repair plan.**
-
