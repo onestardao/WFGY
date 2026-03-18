@@ -1,37 +1,115 @@
-# Worked Escalation Example F4 v1
+<!--
+AI_NOTE_START
 
-## 0. Document status
+Document role:
+This file provides the first F4-oriented worked escalation example for the Auto Repair layer inside the Atlas Fixes package.
 
-This document defines the first F4-oriented worked escalation example for the Atlas Auto Repair layer.
+How to use this file:
+1. Read this page when you want to see a concrete case where Atlas routing and one local F4 repair move are both useful, but still not sufficient.
+2. Use this page together with:
+   - [Atlas Auto Repair to WFGY Bridge v1](./atlas-auto-repair-to-wfgy-bridge-v1.md)
+   - [Tiny Semi-Auto Demo Spec v1](./tiny-semi-auto-demo-spec-v1.md)
+   - [Tiny Semi-Auto Demo Pack v1](./tiny-semi-auto-demo-pack-v1.md)
+   - [Repair Validation Loop v1](./repair-validation-loop-v1.md)
+   - [Rollback Policy v1](./rollback-policy-v1.md)
+   - [Safe Early Action Catalog v1](./safe-early-action-catalog-v1.md)
+   - [Worked Escalation Example v1](./worked-escalation-example-v1.md)
+3. Use this page as a worked escalation reference, not as a claim that every F4 case should escalate.
+
+What this file is:
+- A worked escalation example centered on an F4-first case
+- A concrete bridge example from local closure repair into deeper WFGY continuation
+- A reference case for explaining why local workflow repair can be real but still incomplete
+
+What this file is not:
+- Not a claim that all F4 cases need WFGY 3.0
+- Not a replacement for Atlas routing
+- Not proof that local closure repair is unimportant
+- Not proof that WFGY 3.0 guarantees final success
+
+Reading discipline for AI:
+- Preserve the sequence Atlas first, Auto Repair second, WFGY 3.0 third.
+- Treat the local F4 repair gain as real signal, not as disposable noise.
+- Only escalate because the unresolved remainder is deeper than a local gate or closure patch.
+- Keep the distinction clear between partial improvement and true structural stabilization.
+
+AI_NOTE_END
+-->
+
+# Worked Escalation Example F4 v1 🧭
+
+## A concrete F4-first case where local closure repair helps, but deeper continuation is still justified
+
+Quick links:
+
+- [Back to Auto Repair v1 README](./README.md)
+- [Back to Fixes Hub](../README.md)
+- [Back to Official Fixes](../official/README.md)
+- [Back to Atlas landing page](../../../wfgy-ai-problem-map-troubleshooting-atlas.md)
+- [Back to AI Eval Evidence](../../ai-eval-evidence.md)
+- [Back to Atlas Hub](../../README.md)
+- [Get the Atlas Router TXT](../../troubleshooting-atlas-router-v1.txt)
+- [Open Atlas Auto Repair to WFGY Bridge v1](./atlas-auto-repair-to-wfgy-bridge-v1.md)
+- [Open WFGY 3.0 Deeper Continuation Quickstart v1](./wfgy-3-0-deeper-continuation-quickstart-v1.md)
+- [Open Tiny Semi-Auto Demo Spec v1](./tiny-semi-auto-demo-spec-v1.md)
+- [Open Tiny Semi-Auto Demo Pack v1](./tiny-semi-auto-demo-pack-v1.md)
+- [Open Repair Validation Loop v1](./repair-validation-loop-v1.md)
+- [Open Rollback Policy v1](./rollback-policy-v1.md)
+- [Open Safe Early Action Catalog v1](./safe-early-action-catalog-v1.md)
+- [Open Worked Escalation Example v1](./worked-escalation-example-v1.md)
+- [Open Auto Repair Integrated Handoff v1](./auto-repair-integrated-handoff-v1.md)
+
+---
+
+If the bridge document explains **why WFGY 3.0 belongs after Atlas and Auto Repair**, this page shows **what that transition looks like in one real F4-first worked example**.
 
 Its purpose is specific:
 
-> show one case where Atlas routing and a local F4 repair move are useful,
-> but not sufficient,
-> and where deeper continuation into WFGY 3.0 becomes justified.
+> show one case where Atlas routing and a local F4 repair move are useful,  
+> but not sufficient,  
+> and where deeper continuation into WFGY 3.0 becomes justified
 
 This file does **not** claim that every F4 case needs escalation.
 
 It claims something narrower and more useful:
 
-> some execution and contract failures can be improved locally first,
-> but still require deeper structural continuation when local closure repair does not fully stabilize the case.
+> some execution and contract failures can be improved locally first,  
+> but still require deeper structural continuation when local closure repair does not fully stabilize the case
 
-This document should be read together with:
+---
 
-- `atlas-auto-repair-to-wfgy-bridge-v1.md`
-- `tiny-semi-auto-demo-spec-v1.md`
-- `tiny-semi-auto-demo-pack-v1.md`
-- `repair-validation-loop-v1.md`
-- `rollback-policy-v1.md`
-- `safe-early-action-catalog-v1.md`
-- `worked-escalation-example-v1.md`
+## Quick start 🚀
+
+### I want the shortest reading
+
+Use this path:
+
+1. read the case summary
+2. inspect the Atlas routing
+3. inspect the local planner output and selected F4 action
+4. inspect the validation result
+5. inspect why the final local outcome becomes `escalate`
+
+### I want the stronger bridge reading
+
+Use this page together with:
+
+1. [Atlas Auto Repair to WFGY Bridge v1](./atlas-auto-repair-to-wfgy-bridge-v1.md)
+2. [WFGY 3.0 Deeper Continuation Quickstart v1](./wfgy-3-0-deeper-continuation-quickstart-v1.md)
+3. [Worked Escalation Example v1](./worked-escalation-example-v1.md)
+
+Short version:
+
+> Atlas got the family right  
+> local F4 repair really helped  
+> validation showed that help was only partial  
+> the unresolved remainder now belongs to deeper continuation
 
 ---
 
 ## 1. Why this example exists
 
-The current bridge already shows one worked escalation example centered on F7-like representational pressure.
+The current bridge already shows one worked escalation example centered on more representational pressure.
 
 That is useful, but incomplete.
 
@@ -44,17 +122,31 @@ That reading would be too shallow.
 
 This document exists to show a different but equally important pattern:
 
-> Atlas and Auto Repair can improve execution closure locally,
-> but some workflow failures still require deeper WFGY 3.0 continuation
-> when the underlying rule system, observables, or effective-layer commitments remain structurally weak.
+> Atlas and Auto Repair can improve execution closure locally,  
+> but some workflow failures still require deeper WFGY 3.0 continuation  
+> when the underlying rule system, observables, or effective-layer commitments remain structurally weak
 
 In short:
 
-> this is the first concrete example of why WFGY 3.0 matters after an F4-first local repair has already helped.
+> this is the first concrete example of why WFGY 3.0 matters after an F4-first local repair has already helped
 
 ---
 
-## 2. Escalation principle for F4
+## 2. Worked escalation quick map 🗂️
+
+| Layer | What happens in this example |
+|---|---|
+| Atlas | correctly routes the case into F4 first |
+| Auto Repair | chooses a real local closure move that genuinely helps |
+| Validation | shows the gain is only partial, not fake success |
+| Escalation decision | concludes the unresolved remainder is deeper than a local gate problem |
+| WFGY 3.0 | becomes the correct next layer for readiness, approval, obligation, and enforcement redesign |
+
+This page is the right place when the question is **what an honest F4 escalation should look like**, not whether all workflow failures are secretly the same kind of case.
+
+---
+
+## 3. Escalation principle for F4
 
 A good F4 worked escalation example should show all four of these:
 
@@ -67,7 +159,7 @@ That is the standard for this file.
 
 ---
 
-## 3. Chosen example
+## 4. Chosen example
 
 This example uses an F4-first case with neighboring F6 and F3 pressure.
 
@@ -82,7 +174,7 @@ This makes the transition to WFGY 3.0 very clear.
 
 ---
 
-## 4. Case summary
+## 5. Case summary
 
 ### Case ID
 
@@ -107,7 +199,7 @@ That is exactly the kind of case where escalation should become explicit.
 
 ---
 
-## 5. Atlas routing layer
+## 6. Atlas routing layer
 
 ### Routed diagnosis
 
@@ -117,7 +209,7 @@ That is exactly the kind of case where escalation should become explicit.
 - broken invariant: execution skeleton closure broken
 - best current fit: `F4_E01 Institutional Enforcement Drift`
 - local repair fit: `F4_GT_001` or `F4_CL_001`
-- fix surface direction: readiness gate / closure hardening / rule-to-action trace
+- fix surface direction: readiness gate, closure hardening, rule-to-action trace
 - confidence: medium
 - evidence sufficiency: medium
 
@@ -137,7 +229,7 @@ That matters, because escalation into WFGY 3.0 should happen **after** correct f
 
 ---
 
-## 6. Auto Repair planner layer
+## 7. Auto Repair planner layer
 
 ### Planner output
 
@@ -180,7 +272,7 @@ This is exactly what Auto Repair is supposed to do.
 
 ---
 
-## 7. Local action layer
+## 8. Local action layer
 
 ### Selected action
 
@@ -214,7 +306,7 @@ It means the local move was **insufficient**.
 
 ---
 
-## 8. Validation layer
+## 9. Validation layer
 
 ### Validation result
 
@@ -251,7 +343,7 @@ That is exactly where deeper continuation becomes rational.
 
 ---
 
-## 9. Why local repair is not enough
+## 10. Why local repair is not enough
 
 This is the most important section in the file.
 
@@ -277,7 +369,7 @@ That is the reason to escalate.
 
 ---
 
-## 10. Escalation decision
+## 11. Escalation decision
 
 ### Final local outcome
 
@@ -299,7 +391,7 @@ It is escalation because the local repair layer has reached its honest limit.
 
 ---
 
-## 11. WFGY 3.0 continuation rationale
+## 12. WFGY 3.0 continuation rationale
 
 At this point, WFGY 3.0 becomes the correct continuation layer because the remaining problem is no longer only:
 
@@ -328,19 +420,17 @@ That is classic WFGY territory.
 
 ---
 
-## 12. Official WFGY 3.0 continuation asset
+## 13. Official WFGY 3.0 continuation asset
 
 ### Official TXT
 
-```text
-https://raw.githubusercontent.com/onestardao/WFGY/refs/heads/main/TensionUniverse/WFGY-3.0_Singularity-Demo_AutoBoot_SHA256-Verifiable.txt
-```
+* [WFGY 3.0 Singularity Demo TXT](https://raw.githubusercontent.com/onestardao/WFGY/refs/heads/main/TensionUniverse/WFGY-3.0_Singularity-Demo_AutoBoot_SHA256-Verifiable.txt)
 
 This TXT should be treated as the official deeper continuation pack.
 
 ---
 
-## 13. Recommended escalation handoff prompt
+## 14. Recommended escalation handoff prompt
 
 Use the following handoff pattern when escalating this case.
 
@@ -375,7 +465,7 @@ This keeps the transition disciplined.
 
 ---
 
-## 14. Recommended system prompt for escalation mode
+## 15. Recommended system prompt for escalation mode
 
 Use this if you want the AI to operate in a bridge-aware escalation mode for F4-like cases.
 
@@ -400,7 +490,7 @@ Rules:
 
 ---
 
-## 15. Worked escalation object
+## 16. Worked escalation object
 
 For compact reuse, the whole escalation can be summarized like this:
 
@@ -430,7 +520,7 @@ For compact reuse, the whole escalation can be summarized like this:
 
 ---
 
-## 16. Why this example matters
+## 17. Why this example matters
 
 This worked escalation example matters because it proves five things at once.
 
@@ -459,7 +549,7 @@ This is extremely important for the overall architecture.
 
 ---
 
-## 17. What this example does not claim
+## 18. What this example does not claim
 
 This example does **not** claim:
 
@@ -471,13 +561,13 @@ This example does **not** claim:
 
 It only claims:
 
-> this is a case where local F4 repair was real, but deeper continuation was still justified.
+> this is a case where local F4 repair was real, but deeper continuation was still justified
 
 That is the correct scope.
 
 ---
 
-## 18. Recommended next step
+## 19. Recommended next step
 
 Once this file exists, the next useful follow-up is probably one of these:
 
@@ -493,6 +583,25 @@ because that would make the Atlas → Auto Repair → WFGY 3.0 bridge easier for
 
 ---
 
-## 19. One-line summary
+## 20. Next steps ✨
+
+After this page, most readers continue with:
+
+1. [Open WFGY 3.0 Deeper Continuation Quickstart v1](./wfgy-3-0-deeper-continuation-quickstart-v1.md)
+2. [Open Atlas Auto Repair to WFGY Bridge v1](./atlas-auto-repair-to-wfgy-bridge-v1.md)
+3. [Open Worked Escalation Example v1](./worked-escalation-example-v1.md)
+4. [Open Tiny Semi-Auto Demo Pack v1](./tiny-semi-auto-demo-pack-v1.md)
+5. [Open Auto Repair Integrated Handoff v1](./auto-repair-integrated-handoff-v1.md)
+
+If you want the broader product surface:
+
+* [Back to Auto Repair v1 README](./README.md)
+* [Back to Fixes Hub](../README.md)
+* [Back to Atlas landing page](../../../wfgy-ai-problem-map-troubleshooting-atlas.md)
+* [Back to Atlas Hub](../../README.md)
+
+---
+
+## 21. One-line summary 🌍
 
 **Worked Escalation Example F4 v1 shows how Atlas routing and local F4 repair can create a real local gain, while WFGY 3.0 becomes the correct deeper continuation layer when closure improvement remains structurally incomplete.**

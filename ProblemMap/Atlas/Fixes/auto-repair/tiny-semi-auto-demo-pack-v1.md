@@ -1,40 +1,131 @@
-# Tiny Semi-Auto Demo Pack v1
+<!--
+AI_NOTE_START
 
-## 0. Document status
+Document role:
+This file is the first compact semi-auto demo pack for the Auto Repair layer inside the Atlas Fixes package.
 
-This document defines the first tiny semi-auto demo pack for the Atlas Auto Repair layer.
+How to use this file:
+1. Read this page when you want small visible examples of the Atlas → Auto Repair micro-workflow in motion.
+2. Use this page together with:
+   - [Auto Repair v1 README](./README.md)
+   - [Auto Repair Architecture v1](./auto-repair-architecture-v1.md)
+   - [Repair Action Schema v1](./repair-action-schema-v1.md)
+   - [Repair Validation Loop v1](./repair-validation-loop-v1.md)
+   - [Rollback Policy v1](./rollback-policy-v1.md)
+   - [Auto Repair Roadmap v1](./auto-repair-roadmap-v1.md)
+   - [Repair Planner Spec v1](./repair-planner-spec-v1.md)
+   - [Repair Planner Prompt v1](./repair-planner-prompt-v1.md)
+   - [Repair Plan Schema v1](./repair-plan-schema-v1.json)
+   - [Semi Auto Repair Scope v1](./semi-auto-repair-scope-v1.md)
+   - [Safe Early Action Catalog v1](./safe-early-action-catalog-v1.md)
+   - [Tiny Validation Examples Pack v1](./tiny-validation-examples-pack-v1.md)
+   - [Tiny Rollback Examples Pack v1](./tiny-rollback-examples-pack-v1.md)
+   - [Planner Test Note v1](./planner-test-note-v1.md)
+   - [Planner Review Checklist v1](./planner-review-checklist-v1.md)
+   - [Tiny Planner Output Examples Pack v1](./tiny-planner-output-examples-pack-v1.md)
+   - [Tiny Semi Auto Demo Spec v1](./tiny-semi-auto-demo-spec-v1.md)
+   - [Atlas Auto Repair to WFGY Bridge v1](./atlas-auto-repair-to-wfgy-bridge-v1.md)
+3. Use this page for demo support, onboarding, review calibration, and future replay or notebook-oriented demo expansion.
+
+What this file is:
+- A compact semi-auto demo pack
+- The first visible sample layer for bounded local repair workflows
+- A practical bridge between planner output, local action, validation, rollback readiness, and deeper continuation decisions
+
+What this file is not:
+- Not a production repair suite
+- Not a benchmark pack
+- Not unrestricted self-repair
+- Not proof that broad autonomous repair is already available
+
+Reading discipline for AI:
+- Treat each demo as a bounded local workflow sample, not as proof of full repair autonomy.
+- Keep routed diagnosis, selected action, validation result, rollback readiness, and deeper continuation decision visible.
+- Do not overread small local success as total closure.
+- Preserve the layer distinction between Atlas routing, Auto Repair local action, and deeper WFGY continuation.
+
+AI_NOTE_END
+-->
+
+# Tiny Semi-Auto Demo Pack v1 🧪
+
+## The first compact visible demo layer for Atlas-based semi-auto repair
+
+Quick links:
+
+- [Back to Auto Repair v1 README](./README.md)
+- [Back to Fixes Hub](../README.md)
+- [Back to Official Fixes](../official/README.md)
+- [Back to Atlas landing page](../../../wfgy-ai-problem-map-troubleshooting-atlas.md)
+- [Back to AI Eval Evidence](../../ai-eval-evidence.md)
+- [Back to Atlas Hub](../../README.md)
+- [Get the Atlas Router TXT](../../troubleshooting-atlas-router-v1.txt)
+- [Open Auto Repair Architecture v1](./auto-repair-architecture-v1.md)
+- [Open Repair Action Schema v1](./repair-action-schema-v1.md)
+- [Open Repair Validation Loop v1](./repair-validation-loop-v1.md)
+- [Open Rollback Policy v1](./rollback-policy-v1.md)
+- [Open Auto Repair Roadmap v1](./auto-repair-roadmap-v1.md)
+- [Open Repair Planner Spec v1](./repair-planner-spec-v1.md)
+- [Open Repair Planner Prompt v1](./repair-planner-prompt-v1.md)
+- [Open Repair Plan Schema v1](./repair-plan-schema-v1.json)
+- [Open Semi Auto Repair Scope v1](./semi-auto-repair-scope-v1.md)
+- [Open Safe Early Action Catalog v1](./safe-early-action-catalog-v1.md)
+- [Open Tiny Validation Examples Pack v1](./tiny-validation-examples-pack-v1.md)
+- [Open Tiny Rollback Examples Pack v1](./tiny-rollback-examples-pack-v1.md)
+- [Open Planner Test Note v1](./planner-test-note-v1.md)
+- [Open Planner Review Checklist v1](./planner-review-checklist-v1.md)
+- [Open Tiny Planner Output Examples Pack v1](./tiny-planner-output-examples-pack-v1.md)
+- [Open Tiny Semi Auto Demo Spec v1](./tiny-semi-auto-demo-spec-v1.md)
+- [Open Atlas Auto Repair to WFGY Bridge v1](./atlas-auto-repair-to-wfgy-bridge-v1.md)
+- [Open Worked Escalation Example v1](./worked-escalation-example-v1.md)
+
+---
+
+If the demo spec explains **how a tiny semi-auto demo should be structured**, this pack shows **what a few compact demos actually look like when the workflow runs end to end**. 🧭
 
 Its purpose is practical:
 
 > provide a first compact set of semi-auto repair demos  
-> that make the Auto Repair workflow visible, testable, and teachable.
+> that make the Auto Repair workflow visible, testable, and teachable
 
 This file does **not** claim to be a production repair suite.
 
 It claims something smaller and more useful:
 
-> the project now has a first tiny pack of local, validation-aware, rollback-aware, WFGY-aware semi-auto repair demos.
+> the project now has a first tiny pack of local, validation-aware, rollback-aware, WFGY-aware semi-auto repair demos
 
-This document should be read together with:
+---
 
-- `README.md`
-- `auto-repair-architecture-v1.md`
-- `repair-action-schema-v1.md`
-- `repair-validation-loop-v1.md`
-- `rollback-policy-v1.md`
-- `auto-repair-roadmap-v1.md`
-- `repair-planner-spec-v1.md`
-- `repair-planner-prompt-v1.md`
-- `repair-plan-schema-v1.json`
-- `semi-auto-repair-scope-v1.md`
-- `safe-early-action-catalog-v1.md`
-- `tiny-validation-examples-pack-v1.md`
-- `tiny-rollback-examples-pack-v1.md`
-- `planner-test-note-v1.md`
-- `planner-review-checklist-v1.md`
-- `tiny-planner-output-examples-pack-v1.md`
-- `tiny-semi-auto-demo-spec-v1.md`
-- `atlas-auto-repair-to-wfgy-bridge-v1.md`
+## Quick start 🚀
+
+### I want the shortest demo reading
+
+Use this path:
+
+1. read one demo ID and case summary
+2. inspect the routed diagnosis
+3. inspect the planner output
+4. inspect the selected action
+5. inspect the validation result
+6. inspect the final outcome and deeper continuation note
+
+### I want the stronger workflow reading
+
+Use this page together with:
+
+1. [Tiny Semi Auto Demo Spec v1](./tiny-semi-auto-demo-spec-v1.md)
+2. [Tiny Planner Output Examples Pack v1](./tiny-planner-output-examples-pack-v1.md)
+3. [Tiny Validation Examples Pack v1](./tiny-validation-examples-pack-v1.md)
+4. [Tiny Rollback Examples Pack v1](./tiny-rollback-examples-pack-v1.md)
+5. [Atlas Auto Repair to WFGY Bridge v1](./atlas-auto-repair-to-wfgy-bridge-v1.md)
+
+Short version:
+
+> route the case  
+> pick one safe local action  
+> validate the result  
+> keep rollback visible  
+> decide whether local repair is enough ✨
 
 ---
 
@@ -73,7 +164,7 @@ It provides the first compact set of demo cases that show:
 
 In short:
 
-> this pack is the first visible semi-auto repair sample layer.
+> this pack is the first visible semi-auto repair sample layer
 
 ---
 
@@ -100,7 +191,19 @@ That is already enough for a strong first demo pack.
 
 ---
 
-## 3. Pack composition
+## 3. Demo quick map 🗂️
+
+| Demo | Main teaching focus |
+|---|---|
+| F1 demo | grounding-first repair can succeed through a single local evidence action |
+| F4 demo | execution-first repair can succeed through a narrow closure fix |
+| F7 demo | structure-first repair can improve the container while still ending in `revise` |
+
+This page is the right place when the question is **what a small bounded semi-auto workflow should look like in practice**, not whether the full repair stack is production-ready.
+
+---
+
+## 4. Pack composition
 
 This v1 pack includes three tiny semi-auto demos:
 
@@ -127,7 +230,7 @@ Those belong to later stages.
 
 ---
 
-## 4. Standard demo format
+## 5. Standard demo format
 
 Each demo in this pack follows the same structure:
 
@@ -155,19 +258,17 @@ This format is compact enough for:
 
 ---
 
-# Demo 1
+## Demo 1 · F1 Tiny Semi-Auto Demo
 
-# F1 Tiny Semi-Auto Demo
-
-## Demo ID
+### Demo ID
 
 `TSAD_F1_001`
 
-## Family
+### Family
 
-F1 · Grounding & Evidence Integrity
+F1 · Grounding and Evidence Integrity
 
-## Case summary
+### Case summary
 
 A response is fluent and plausible, but it is grounded in a semantically adjacent source chunk rather than the intended evidence source.
 
@@ -175,17 +276,17 @@ The failure is not primarily stylistic and not primarily representational.
 
 It is a grounding-first case.
 
-## Routed diagnosis
+### Routed diagnosis
 
 - primary family: F1
 - secondary family: F7
 - broken invariant: evidence-anchor integrity broken
 - best current fit: `F1_N01 Retrieval Anchor Drift`
-- fix surface direction: re-grounding / anchor re-check
+- fix surface direction: re-grounding or anchor re-check
 - confidence: medium
 - evidence sufficiency: medium
 
-## Planner output
+### Planner output
 
 ```json
 {
@@ -207,26 +308,26 @@ It is a grounding-first case.
 }
 ````
 
-## Selected action
+### Selected action
 
 `F1_RG_001`
 Re-ground evidence set
 
-## Before state
+### Before state
 
 * answer appears coherent
 * cited or implied source support is nearby but wrong
 * semantic target fit is weaker than it first appears
 * evidence anchor is not the intended one
 
-## After state
+### After state
 
 * evidence set is replaced with a better-aligned source set
 * answer is now tied more directly to the intended source target
 * local grounding quality improves
 * no visible container damage is introduced
 
-## Validation result
+### Validation result
 
 ```json
 {
@@ -240,42 +341,40 @@ Re-ground evidence set
 }
 ```
 
-## Final outcome
+### Final outcome
 
 `accept`
 
-## Rollback readiness
+### Rollback readiness
 
 * rollback ready: true
 * restore point: prior evidence set
 
-## Deeper continuation
+### Deeper continuation
 
 `local repair sufficient`
 
-### WFGY continuation note
+#### WFGY continuation note
 
-No deeper WFGY 3.0 continuation is needed for this tiny demo because the local grounding repair is already sufficient at the Atlas / Auto Repair layer.
+No deeper WFGY 3.0 continuation is needed for this tiny demo because the local grounding repair is already sufficient at the Atlas and Auto Repair layer.
 
-## Why this demo matters
+### Why this demo matters
 
 This demo shows that a grounding-first case can be improved through a small local repair without pretending that all plausible-looking failures are reasoning failures.
 
 ---
 
-# Demo 2
+## Demo 2 · F4 Tiny Semi-Auto Demo
 
-# F4 Tiny Semi-Auto Demo
-
-## Demo ID
+### Demo ID
 
 `TSAD_F4_001`
 
-## Family
+### Family
 
-F4 · Execution & Contract Integrity
+F4 · Execution and Contract Integrity
 
-## Case summary
+### Case summary
 
 A downstream action executes before approval and readiness are complete.
 
@@ -283,17 +382,17 @@ The workflow is not primarily broken because of memory loss or weak reasoning.
 
 It is a closure-first case.
 
-## Routed diagnosis
+### Routed diagnosis
 
 * primary family: F4
 * secondary family: F3
 * broken invariant: deployment liveness closure broken
 * best current fit: `F4_N03 Pre-Readiness Execution Failure`
-* fix surface direction: readiness audit / gate insertion
+* fix surface direction: readiness audit or gate insertion
 * confidence: medium
 * evidence sufficiency: medium
 
-## Planner output
+### Planner output
 
 ```json
 {
@@ -316,26 +415,26 @@ It is a closure-first case.
 }
 ```
 
-## Selected action
+### Selected action
 
 `F4_GT_001`
 Insert readiness gate
 
-## Before state
+### Before state
 
 * downstream action is available
 * readiness is incomplete
 * execution still moves forward
 * workflow closure is too weak
 
-## After state
+### After state
 
 * a local readiness gate is inserted
 * downstream action is blocked until readiness is satisfied
 * closure integrity improves
 * the workflow becomes more structurally disciplined
 
-## Validation result
+### Validation result
 
 ```json
 {
@@ -349,43 +448,42 @@ Insert readiness gate
 }
 ```
 
-## Final outcome
+### Final outcome
 
 `accept`
 
-## Rollback readiness
+### Rollback readiness
 
 * rollback ready: true
 * restore point: previous workflow gate configuration
 
-## Deeper continuation
+### Deeper continuation
 
 `local repair sufficient`
 
-### WFGY continuation note
+#### WFGY continuation note
 
 No deeper WFGY 3.0 continuation is needed for this tiny demo because the local closure repair is sufficient and the workflow state becomes stable under bounded intervention.
 
-## Why this demo matters
+### Why this demo matters
 
 This demo shows that not every system failure needs more intelligence pressure.
+
 Some failures need execution skeleton repair first.
 
 ---
 
-# Demo 3
+## Demo 3 · F7 Tiny Semi-Auto Demo
 
-# F7 Tiny Semi-Auto Demo
-
-## Demo ID
+### Demo ID
 
 `TSAD_F7_001`
 
-## Family
+### Family
 
-F7 · Representation & Localization Integrity
+F7 · Representation and Localization Integrity
 
-## Case summary
+### Case summary
 
 The content is partly correct, but the structured shell is broken and cannot be reliably consumed downstream.
 
@@ -393,17 +491,17 @@ The main problem is not primarily reasoning progression.
 
 It is a container-first case.
 
-## Routed diagnosis
+### Routed diagnosis
 
 * primary family: F7
 * secondary family: F2
 * broken invariant: representation container fidelity broken
 * best current fit: `F7_N01 Symbolic Representation Fidelity Failure`
-* fix surface direction: schema tightening / shell correction
+* fix surface direction: schema tightening or shell correction
 * confidence: medium
 * evidence sufficiency: medium
 
-## Planner output
+### Planner output
 
 ```json
 {
@@ -425,26 +523,26 @@ It is a container-first case.
 }
 ```
 
-## Selected action
+### Selected action
 
 `F7_SC_001`
 Tighten output schema
 
-## Before state
+### Before state
 
 * output content is partially useful
 * object or field boundaries are broken
 * downstream consumption is unreliable
 * structural shell is invalid
 
-## After state
+### After state
 
 * schema shell is tightened
 * field boundaries are restored
 * downstream consumption becomes possible
 * structure becomes cleaner and more stable
 
-## Validation result
+### Validation result
 
 ```json
 {
@@ -458,30 +556,28 @@ Tighten output schema
 }
 ```
 
-## Final outcome
+### Final outcome
 
 `revise`
 
-## Rollback readiness
+### Rollback readiness
 
 * rollback ready: true
 * restore point: prior schema version
 
-## Deeper continuation
+### Deeper continuation
 
 `local repair partially useful, deeper continuation optional`
 
-### WFGY continuation note
+#### WFGY continuation note
 
 The local Atlas-level repair improves container fidelity, but deeper WFGY 3.0 continuation may still be useful if semantic fit remains unstable or if the representational encoding itself is still too weak.
 
 Official TXT:
 
-```text
-https://raw.githubusercontent.com/onestardao/WFGY/refs/heads/main/TensionUniverse/WFGY-3.0_Singularity-Demo_AutoBoot_SHA256-Verifiable.txt
-```
+* [WFGY 3.0 Singularity Demo TXT](https://raw.githubusercontent.com/onestardao/WFGY/refs/heads/main/TensionUniverse/WFGY-3.0_Singularity-Demo_AutoBoot_SHA256-Verifiable.txt)
 
-## Why this demo matters
+### Why this demo matters
 
 This demo shows that a repair can improve one dimension without justifying a fake full success claim.
 
@@ -489,7 +585,7 @@ That is exactly why `revise` exists.
 
 ---
 
-## 5. What this pack teaches
+## 6. What this pack teaches
 
 Taken together, these three tiny demos teach several important lessons.
 
@@ -517,7 +613,7 @@ Sometimes the right outcome is `revise`, and sometimes deeper WFGY 3.0 continuat
 
 ---
 
-## 6. Why this pack is useful
+## 7. Why this pack is useful
 
 This pack is useful for at least five reasons.
 
@@ -531,7 +627,7 @@ It gives the planner concrete output targets.
 
 ### C. Validation support
 
-It shows what compact before / after validation should look like.
+It shows what compact before and after validation should look like.
 
 ### D. Rollback support
 
@@ -543,13 +639,13 @@ It demonstrates that local Atlas repair and deeper WFGY continuation belong to t
 
 ---
 
-## 7. What this pack does not yet include
+## 8. What this pack does not yet include
 
 Tiny Semi-Auto Demo Pack v1 does **not** yet include:
 
 * F6-heavy intervention demos
 * full notebook implementations
-* replay/live orchestration code
+* replay or live orchestration code
 * large benchmark demo suites
 * multi-step repair chains
 * full WFGY continuation walkthroughs
@@ -560,7 +656,7 @@ This pack is intentionally small and disciplined.
 
 ---
 
-## 8. Recommended next step
+## 9. Recommended next step
 
 Once this pack exists, the next useful follow-up is probably one of these:
 
@@ -576,6 +672,25 @@ because that would make the Atlas → Auto Repair → WFGY 3.0 bridge even more 
 
 ---
 
-## 9. One-line summary
+## 10. Next steps ✨
+
+After this page, most readers continue with:
+
+1. [Open Tiny Semi Auto Demo Spec v1](./tiny-semi-auto-demo-spec-v1.md)
+2. [Open Tiny Validation Examples Pack v1](./tiny-validation-examples-pack-v1.md)
+3. [Open Tiny Rollback Examples Pack v1](./tiny-rollback-examples-pack-v1.md)
+4. [Open Atlas Auto Repair to WFGY Bridge v1](./atlas-auto-repair-to-wfgy-bridge-v1.md)
+5. [Open Worked Escalation Example v1](./worked-escalation-example-v1.md)
+
+If you want the broader product surface:
+
+* [Back to Auto Repair v1 README](./README.md)
+* [Back to Fixes Hub](../README.md)
+* [Back to Atlas landing page](../../../wfgy-ai-problem-map-troubleshooting-atlas.md)
+* [Back to Atlas Hub](../../README.md)
+
+---
+
+## 11. One-line summary 🌍
 
 **Tiny Semi-Auto Demo Pack v1 provides the first compact F1, F4, and F7 semi-auto repair demos that show planner output, bounded local action, validation, final outcome, and possible WFGY 3.0 continuation.**

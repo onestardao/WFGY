@@ -1,35 +1,119 @@
-# Tiny Validation Examples Pack v1
+<!--
+AI_NOTE_START
 
-## 0. Document status
+Document role:
+This file is the first compact validation example pack for the Auto Repair layer inside the Atlas Fixes package.
 
-This document defines the first tiny validation example pack for Atlas-based Auto Repair.
+How to use this file:
+1. Read this page when you want small concrete examples of how Atlas-based repair should be validated after a local action.
+2. Use this page together with:
+   - [Auto Repair v1 README](./README.md)
+   - [Auto Repair Architecture v1](./auto-repair-architecture-v1.md)
+   - [Repair Action Schema v1](./repair-action-schema-v1.md)
+   - [Repair Validation Loop v1](./repair-validation-loop-v1.md)
+   - [Rollback Policy v1](./rollback-policy-v1.md)
+   - [Auto Repair Roadmap v1](./auto-repair-roadmap-v1.md)
+   - [Repair Planner Spec v1](./repair-planner-spec-v1.md)
+   - [Repair Planner Prompt v1](./repair-planner-prompt-v1.md)
+   - [Repair Plan Schema v1](./repair-plan-schema-v1.json)
+   - [Semi Auto Repair Scope v1](./semi-auto-repair-scope-v1.md)
+   - [Safe Early Action Catalog v1](./safe-early-action-catalog-v1.md)
+3. Use this page for onboarding, planner calibration, demo support, and future validator-oriented review.
+
+What this file is:
+- A compact validation example pack
+- A small evidence layer for before-and-after repair validation
+- A practical bridge between validation rules and visible validation behavior
+
+What this file is not:
+- Not a full benchmark set
+- Not automated validator code
+- Not a full repair benchmark corpus
+- Not proof that every repair action is already validated at scale
+
+Reading discipline for AI:
+- Treat these examples as local validation references, not as universal templates for all repair cases.
+- Keep target action, validation target, before state, after state, verdict, and rationale visible.
+- Prefer concrete before-and-after reasoning over vague success language.
+- Distinguish clearly between accept-style and revise-style validation outcomes.
+
+AI_NOTE_END
+-->
+
+# Tiny Validation Examples Pack v1 🔍
+
+## The first compact before-and-after validation reference pack for Atlas-based repair
+
+Quick links:
+
+- [Back to Auto Repair v1 README](./README.md)
+- [Back to Fixes Hub](../README.md)
+- [Back to Official Fixes](../official/README.md)
+- [Back to Atlas landing page](../../../wfgy-ai-problem-map-troubleshooting-atlas.md)
+- [Back to AI Eval Evidence](../../ai-eval-evidence.md)
+- [Back to Atlas Hub](../../README.md)
+- [Get the Atlas Router TXT](../../troubleshooting-atlas-router-v1.txt)
+- [Open Auto Repair Architecture v1](./auto-repair-architecture-v1.md)
+- [Open Repair Action Schema v1](./repair-action-schema-v1.md)
+- [Open Repair Validation Loop v1](./repair-validation-loop-v1.md)
+- [Open Rollback Policy v1](./rollback-policy-v1.md)
+- [Open Auto Repair Roadmap v1](./auto-repair-roadmap-v1.md)
+- [Open Repair Planner Spec v1](./repair-planner-spec-v1.md)
+- [Open Repair Planner Prompt v1](./repair-planner-prompt-v1.md)
+- [Open Repair Plan Schema v1](./repair-plan-schema-v1.json)
+- [Open Semi Auto Repair Scope v1](./semi-auto-repair-scope-v1.md)
+- [Open Safe Early Action Catalog v1](./safe-early-action-catalog-v1.md)
+- [Open Tiny Rollback Examples Pack v1](./tiny-rollback-examples-pack-v1.md)
+- [Open Planner Test Note v1](./planner-test-note-v1.md)
+- [Open Tiny Semi-Auto Demo Spec v1](./tiny-semi-auto-demo-spec-v1.md)
+- [Open Tiny Semi-Auto Demo Pack v1](./tiny-semi-auto-demo-pack-v1.md)
+
+---
+
+If the validation loop explains **how repair should be judged**, this pack shows **what a few compact validation judgments should actually look like in practice**. 🧭
 
 Its purpose is simple:
 
-> show a few minimal before/after validation examples
-> so the Auto Repair layer can move from abstract rules
-> to concrete, inspectable validation behavior.
+> show a few minimal before/after validation examples  
+> so the Auto Repair layer can move from abstract rules  
+> to concrete, inspectable validation behavior
 
 This file does **not** claim to be a full benchmark set.
 
 It claims something smaller and more useful:
 
-> the project now has a first set of tiny validation examples
-> for safe early repair actions in F1, F4, and F7.
+> the project now has a first set of tiny validation examples  
+> for safe early repair actions in F1, F4, F7, and one cautious F7 revise case
 
-This document should be read together with:
+---
 
-- `README.md`
-- `auto-repair-architecture-v1.md`
-- `repair-action-schema-v1.md`
-- `repair-validation-loop-v1.md`
-- `rollback-policy-v1.md`
-- `auto-repair-roadmap-v1.md`
-- `repair-planner-spec-v1.md`
-- `repair-planner-prompt-v1.md`
-- `repair-plan-schema-v1.json`
-- `semi-auto-repair-scope-v1.md`
-- `safe-early-action-catalog-v1.md`
+## Quick start 🚀
+
+### I want the shortest validation reading
+
+Use this path:
+
+1. read one example ID
+2. inspect the target action and validation target
+3. compare the before state and after state
+4. inspect the validation verdict
+5. read why the verdict is correct
+
+### I want the stronger validation reading
+
+Use this page together with:
+
+1. [Repair Validation Loop v1](./repair-validation-loop-v1.md)
+2. [Repair Action Schema v1](./repair-action-schema-v1.md)
+3. [Safe Early Action Catalog v1](./safe-early-action-catalog-v1.md)
+4. [Tiny Rollback Examples Pack v1](./tiny-rollback-examples-pack-v1.md)
+
+Short version:
+
+> check what action was tried  
+> check what changed  
+> check what the verdict is  
+> check why that verdict makes sense ✨
 
 ---
 
@@ -59,7 +143,7 @@ It provides a few small examples that show:
 
 In short:
 
-> this pack is the first small evidence layer for Auto Repair validation.
+> this pack is the first small evidence layer for Auto Repair validation
 
 ---
 
@@ -77,7 +161,7 @@ They are meant to prove something narrower:
 
 1. a small repair action can be selected cleanly
 2. a clear validation target can be named
-3. before/after states can be compared
+3. before and after states can be compared
 4. the system can produce a usable verdict
 5. the repair logic can be explained without ambiguity
 
@@ -85,13 +169,27 @@ That is already very valuable.
 
 ---
 
-## 3. Pack scope
+## 3. Validation examples quick map 🗂️
 
-This v1 pack includes three tiny examples:
+| Example | Main teaching focus |
+|---|---|
+| F1 example | grounding repair should be judged by anchor alignment |
+| F4 example | execution repair should be judged by closure correctness |
+| F7 accept-style example | structure repair can earn accept when local container fidelity clearly improves |
+| F7 revise-style example | cleaner structure does not always justify full accept |
+
+This page is the right place when the question is **what small good validation examples should look like**, not whether the whole repair layer is already benchmarked.
+
+---
+
+## 4. Pack scope
+
+This v1 pack includes four tiny examples:
 
 - one F1 example
 - one F4 example
-- one F7 example
+- one F7 accept-style example
+- one F7 revise-style example
 
 These were chosen because they are the best early families for:
 
@@ -101,11 +199,12 @@ These were chosen because they are the best early families for:
 - reversible repair moves
 
 This pack intentionally does **not** include F6-heavy examples.
+
 Those remain too risky for early tiny validation samples.
 
 ---
 
-## 4. Standard tiny example format
+## 5. Standard tiny example format
 
 Each tiny validation example uses the following structure:
 
@@ -123,28 +222,26 @@ This format is intentionally small and reusable.
 
 ---
 
-# Example 1
+## Example 1 · F1 Tiny Validation Example
 
-# F1 Tiny Validation Example
-
-## Example ID
+### Example ID
 
 `TVE_F1_001`
 
-## Family
+### Family
 
-F1 · Grounding & Evidence Integrity
+F1 · Grounding and Evidence Integrity
 
-## Target action
+### Target action
 
 `F1_RG_001`  
 Re-ground evidence set
 
-## Validation target
+### Validation target
 
 anchor alignment
 
-## Before state
+### Before state
 
 The answer is fluent and plausible, but it is grounded in a semantically adjacent source chunk rather than the intended source.
 
@@ -154,7 +251,7 @@ The local failure looks like:
 - wording looks reasonable
 - source alignment is wrong
 
-## After state
+### After state
 
 The evidence set is replaced with a better-aligned source group.
 
@@ -166,11 +263,11 @@ The local state now looks like:
 - source alignment improves
 - answer is more tightly attached to the right support
 
-## Validation verdict
+### Validation verdict
 
 `accept`
 
-## Why this verdict is correct
+### Why this verdict is correct
 
 The target invariant improved:
 
@@ -178,34 +275,32 @@ The target invariant improved:
 - no meaningful collateral damage is visible
 - the action remained local and reversible
 
-## Main teaching point
+### Main teaching point
 
 A grounding repair should be judged by **anchor alignment**, not by style or fluency alone.
 
 ---
 
-# Example 2
+## Example 2 · F4 Tiny Validation Example
 
-# F4 Tiny Validation Example
-
-## Example ID
+### Example ID
 
 `TVE_F4_001`
 
-## Family
+### Family
 
-F4 · Execution & Contract Integrity
+F4 · Execution and Contract Integrity
 
-## Target action
+### Target action
 
 `F4_GT_001`  
 Insert readiness gate
 
-## Validation target
+### Validation target
 
 readiness state
 
-## Before state
+### Before state
 
 A downstream action is available and is executed before upstream readiness is complete.
 
@@ -215,7 +310,7 @@ The local failure looks like:
 - approval is incomplete
 - execution still moves forward
 
-## After state
+### After state
 
 A local readiness gate is inserted.
 
@@ -227,11 +322,11 @@ The local state now looks like:
 - the workflow respects readiness order
 - closure becomes more stable
 
-## Validation verdict
+### Validation verdict
 
 `accept`
 
-## Why this verdict is correct
+### Why this verdict is correct
 
 The target invariant improved:
 
@@ -239,34 +334,32 @@ The target invariant improved:
 - premature execution is prevented
 - rollback remains clear because the gate can be removed if needed
 
-## Main teaching point
+### Main teaching point
 
 Execution repair should be judged by **closure correctness**, not by whether the system appears more active.
 
 ---
 
-# Example 3
+## Example 3 · F7 Tiny Validation Example
 
-# F7 Tiny Validation Example
-
-## Example ID
+### Example ID
 
 `TVE_F7_001`
 
-## Family
+### Family
 
-F7 · Representation & Localization Integrity
+F7 · Representation and Localization Integrity
 
-## Target action
+### Target action
 
 `F7_SC_001`  
 Tighten output schema
 
-## Validation target
+### Validation target
 
 schema validity
 
-## Before state
+### Before state
 
 The content is partly correct, but the structured shell is broken.
 
@@ -276,7 +369,7 @@ The local failure looks like:
 - object shape is invalid
 - output cannot be reliably consumed downstream
 
-## After state
+### After state
 
 The schema shell is tightened and the output boundary is restored.
 
@@ -286,11 +379,11 @@ The local state now looks like:
 - field boundaries hold
 - downstream consumption becomes possible
 
-## Validation verdict
+### Validation verdict
 
 `accept`
 
-## Why this verdict is correct
+### Why this verdict is correct
 
 The target invariant improved:
 
@@ -298,58 +391,48 @@ The target invariant improved:
 - the repaired structure is clearly more usable
 - the change is inspectable and reversible
 
-## Main teaching point
+### Main teaching point
 
 A container repair should be judged by **structural validity**, not by content plausibility alone.
 
 ---
 
-## 5. Optional partial or revise-style example
+## Example 4 · F7 Partial Validation Example
 
-The pack should also show that not every repair becomes an immediate accept.
-
-This small example is useful for teaching cautious validation.
-
----
-
-# Example 4
-
-# F7 Partial Validation Example
-
-## Example ID
+### Example ID
 
 `TVE_F7_002`
 
-## Family
+### Family
 
-F7 · Representation & Localization Integrity
+F7 · Representation and Localization Integrity
 
-## Target action
+### Target action
 
 `F7_DR_001`  
 Repair descriptor shell
 
-## Validation target
+### Validation target
 
 descriptor fidelity
 
-## Before state
+### Before state
 
 The output task descriptor is weak and under-specified.
 
 This causes unstable structured output.
 
-## After state
+### After state
 
 The descriptor becomes stricter and the structure becomes cleaner.
 
 However, the semantic fit to the original task appears weaker.
 
-## Validation verdict
+### Validation verdict
 
 `revise`
 
-## Why this verdict is correct
+### Why this verdict is correct
 
 The repair improved one dimension:
 
@@ -361,9 +444,9 @@ But it also introduced possible collateral damage:
 
 So the right early verdict is not full accept.
 
-It is revise.
+It is `revise`.
 
-## Main teaching point
+### Main teaching point
 
 A cleaner container is not always a fully successful repair if semantic fit drops.
 
@@ -401,7 +484,7 @@ They help test whether a repair planner is choosing actions that can actually be
 
 ### B. Validation support
 
-They show what before/after validation is supposed to look like.
+They show what before and after validation is supposed to look like.
 
 ### C. Demo support
 
@@ -422,7 +505,7 @@ Tiny Validation Examples Pack v1 does **not** yet include:
 - F6-heavy intervention examples
 - benchmark-scale scoring
 - automated validator code
-- rollback case examples as a separate pack
+- full rollback examples in the same file
 
 Those can come later.
 
@@ -434,9 +517,9 @@ This pack is intentionally minimal.
 
 Once this pack exists, the next useful follow-up is one of these:
 
-1. create a tiny rollback examples pack
-2. create a planner test note using these examples
-3. create one tiny semi-auto demo spec that consumes these examples
+1. create [Tiny Rollback Examples Pack v1](./tiny-rollback-examples-pack-v1.md)
+2. create [Planner Test Note v1](./planner-test-note-v1.md) using these examples
+3. create [Tiny Semi-Auto Demo Spec v1](./tiny-semi-auto-demo-spec-v1.md) that consumes these examples
 
 The strongest immediate next step is probably:
 
@@ -446,6 +529,25 @@ because validation and rollback naturally belong close together.
 
 ---
 
-## 10. One-line summary
+## 10. Next steps ✨
 
-**Tiny Validation Examples Pack v1 provides the first small before/after validation examples for safe early Atlas-based repair actions in F1, F4, and F7.**
+After this page, most readers continue with:
+
+1. [Open Tiny Rollback Examples Pack v1](./tiny-rollback-examples-pack-v1.md)
+2. [Open Planner Test Note v1](./planner-test-note-v1.md)
+3. [Open Tiny Semi-Auto Demo Spec v1](./tiny-semi-auto-demo-spec-v1.md)
+4. [Open Tiny Semi-Auto Demo Pack v1](./tiny-semi-auto-demo-pack-v1.md)
+
+If you want the broader product surface:
+
+- [Back to Auto Repair v1 README](./README.md)
+- [Back to Fixes Hub](../README.md)
+- [Back to Atlas landing page](../../../wfgy-ai-problem-map-troubleshooting-atlas.md)
+- [Back to Atlas Hub](../../README.md)
+
+---
+
+## 11. One-line summary 🌍
+
+**Tiny Validation Examples Pack v1 provides the first small before-and-after validation examples for safe early Atlas-based repair actions in F1, F4, and F7.**
+

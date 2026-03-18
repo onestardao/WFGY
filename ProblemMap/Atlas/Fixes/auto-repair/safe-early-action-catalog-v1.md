@@ -1,33 +1,112 @@
-# Safe Early Action Catalog v1
+<!--
+AI_NOTE_START
 
-## 0. Document status
+Document role:
+This file defines the first small catalog of safe early repair actions for the Auto Repair layer inside the Atlas Fixes package.
 
-This document defines the first small catalog of **safe early repair actions** for Atlas-based Auto Repair.
+How to use this file:
+1. Read this page when you want a controlled shelf of early repair actions that are suitable for planning, validation, demos, and later constrained semi-auto use.
+2. Use this page together with:
+   - [Auto Repair v1 README](./README.md)
+   - [Auto Repair Architecture v1](./auto-repair-architecture-v1.md)
+   - [Repair Action Schema v1](./repair-action-schema-v1.md)
+   - [Repair Validation Loop v1](./repair-validation-loop-v1.md)
+   - [Rollback Policy v1](./rollback-policy-v1.md)
+   - [Auto Repair Roadmap v1](./auto-repair-roadmap-v1.md)
+   - [Repair Planner Spec v1](./repair-planner-spec-v1.md)
+   - [Repair Planner Prompt v1](./repair-planner-prompt-v1.md)
+   - [Repair Plan Schema v1](./repair-plan-schema-v1.json)
+   - [Semi Auto Repair Scope v1](./semi-auto-repair-scope-v1.md)
+
+What this file is:
+- The first safe early action shelf for Auto Repair v1
+- A practical catalog of local, inspectable, reversible, and validation-ready repair actions
+- A bridge between planner logic and later constrained semi-auto behavior
+
+What this file is not:
+- Not the full repair library
+- Not a broad multi-step execution pack
+- Not proof that all families are equally ready for early semi-auto use
+- Not a license to apply actions without validation or rollback discipline
+
+Reading discipline for AI:
+- Treat this catalog as an early controlled action shelf, not as the full repair universe.
+- Prefer one action first, validate after each move, and keep rollback possible.
+- Stay cautious near family boundaries, especially F1/F7, F3/F4, and F5/F6.
+- Do not overread limited early F5 actions as permission for broad boundary-heavy intervention.
+
+AI_NOTE_END
+-->
+
+# Safe Early Action Catalog v1 🧩
+
+## The first controlled shelf of local, inspectable, reversible, and validation-ready repair actions
+
+Quick links:
+
+- [Back to Auto Repair v1 README](./README.md)
+- [Back to Fixes Hub](../README.md)
+- [Back to Official Fixes](../official/README.md)
+- [Back to Atlas landing page](../../../wfgy-ai-problem-map-troubleshooting-atlas.md)
+- [Back to AI Eval Evidence](../../ai-eval-evidence.md)
+- [Back to Atlas Hub](../../README.md)
+- [Get the Atlas Router TXT](../../troubleshooting-atlas-router-v1.txt)
+- [Open Auto Repair Architecture v1](./auto-repair-architecture-v1.md)
+- [Open Repair Action Schema v1](./repair-action-schema-v1.md)
+- [Open Repair Validation Loop v1](./repair-validation-loop-v1.md)
+- [Open Rollback Policy v1](./rollback-policy-v1.md)
+- [Open Auto Repair Roadmap v1](./auto-repair-roadmap-v1.md)
+- [Open Repair Planner Spec v1](./repair-planner-spec-v1.md)
+- [Open Repair Planner Prompt v1](./repair-planner-prompt-v1.md)
+- [Open Repair Plan Schema v1](./repair-plan-schema-v1.json)
+- [Open Semi Auto Repair Scope v1](./semi-auto-repair-scope-v1.md)
+
+---
+
+If the planner layer decides **which first repair moves are plausible**, this catalog defines **which early actions are safe enough to put on the shelf for planning, validation, demos, and later constrained semi-auto use**. 🧭
 
 Its purpose is practical:
 
-> before building broader semi-auto repair behavior,
-> define a small set of actions that are local, inspectable, reversible, and validation-friendly.
+> before building broader semi-auto repair behavior,  
+> define a small set of actions that are local, inspectable, reversible, and validation-friendly
 
 This document does **not** claim that the full repair library already exists.
 
 It claims something narrower and more useful:
 
-> the project now has a first controlled catalog of early repair actions
-> that are suitable for planning, validation, demos, and later constrained semi-auto use.
+> the project now has a first controlled catalog of early repair actions  
+> that are suitable for planning, validation, demos, and later constrained semi-auto use
 
-This file should be read together with:
+---
 
-- `README.md`
-- `auto-repair-architecture-v1.md`
-- `repair-action-schema-v1.md`
-- `repair-validation-loop-v1.md`
-- `rollback-policy-v1.md`
-- `auto-repair-roadmap-v1.md`
-- `repair-planner-spec-v1.md`
-- `repair-planner-prompt-v1.md`
-- `repair-plan-schema-v1.json`
-- `semi-auto-repair-scope-v1.md`
+## Quick start 🚀
+
+### I want the shortest catalog reading
+
+Use this path:
+
+1. read the catalog use rules
+2. inspect the F1, F4, and F7 action groups first
+3. check each action’s validation target and rollback hint
+4. use only one action first
+5. validate before moving to anything else
+
+### I want the stronger system reading
+
+Use this page together with:
+
+1. [Repair Action Schema v1](./repair-action-schema-v1.md)
+2. [Repair Validation Loop v1](./repair-validation-loop-v1.md)
+3. [Rollback Policy v1](./rollback-policy-v1.md)
+4. [Repair Planner Spec v1](./repair-planner-spec-v1.md)
+5. [Semi Auto Repair Scope v1](./semi-auto-repair-scope-v1.md)
+
+Short version:
+
+> keep the action local  
+> make validation clear  
+> keep rollback possible  
+> stay conservative near boundaries ✨
 
 ---
 
@@ -44,8 +123,8 @@ The current Auto Repair layer already has:
 
 But without a small action catalog, the system still lacks a practical middle layer between:
 
-- abstract repair planning
-and
+- abstract repair planning  
+  and
 - actual candidate repair moves
 
 This catalog fills that gap.
@@ -59,7 +138,7 @@ It gives the system a first set of repair actions that are:
 
 In short:
 
-> this is the first usable action shelf for Auto Repair.
+> this is the first usable action shelf for Auto Repair
 
 ---
 
@@ -83,7 +162,20 @@ That is intentional.
 
 ---
 
-## 3. Catalog structure
+## 3. Catalog quick map 🗂️
+
+| Family group | Why it appears early | Typical action style |
+|---|---|---|
+| F1 | concrete grounding fixes are easier to inspect and compare | re-grounding, anchor filtering, source re-check |
+| F4 | workflow-structural fixes are often visible and testable | gate insertion, ordering correction, closure hardening |
+| F7 | container-level fixes are often directly inspectable in outputs | schema tightening, descriptor repair, shell correction |
+| F5 limited set | useful but should stay narrow and caution-heavy | trace exposure, local logging uplift |
+
+This page is the right place when the question is **which early repair actions are safe enough to put into practical use first**, not how to build the full long-term repair library.
+
+---
+
+## 4. Catalog structure
 
 Each action entry in this file follows the same compact structure:
 
@@ -104,8 +196,8 @@ This is a practical catalog format, not a full schema file.
 
 The full schema contract still lives in:
 
-- `repair-action-schema-v1.md`
-- `repair-plan-schema-v1.json`
+- [Repair Action Schema v1](./repair-action-schema-v1.md)
+- [Repair Plan Schema v1](./repair-plan-schema-v1.json)
 
 ---
 
@@ -113,7 +205,7 @@ The full schema contract still lives in:
 
 # F1 Safe Early Actions
 
-These actions target **Grounding & Evidence Integrity**.
+These actions target **Grounding and Evidence Integrity**.
 
 They are usually good early candidates because they are concrete and comparatively easy to inspect.
 
@@ -243,7 +335,7 @@ Do not use if the case has no inspectable source target.
 
 # F4 Safe Early Actions
 
-These actions target **Execution & Contract Integrity**.
+These actions target **Execution and Contract Integrity**.
 
 They are strong early candidates because the repair region is often workflow-visible.
 
@@ -373,7 +465,7 @@ Do not use as an automatic first move in high-ambiguity institutional or boundar
 
 # F7 Safe Early Actions
 
-These actions target **Representation & Localization Integrity**.
+These actions target **Representation and Localization Integrity**.
 
 They are good early targets because the repaired region is often visible in the output container itself.
 
@@ -477,7 +569,7 @@ F7_E01 Explanation Fidelity Distortion
 shell correction
 
 ### Intended Effect
-Repair broken object / array / field boundary so the output shell can hold the intended content correctly.
+Repair broken object, array, or field boundary so the output shell can hold the intended content correctly.
 
 ### Allowed Scope
 minimal
@@ -591,38 +683,43 @@ Do not use as a blanket instrumentation move across the whole system.
 
 # Part V
 
-# Catalog use rules
+# Catalog use rules 📌
 
 This catalog should be used under the following rules.
 
 ## Rule 1
+
 Prefer one action first.
 
 Do not start by throwing multiple categories of repair at the case.
 
 ## Rule 2
+
 Validate after each local action.
 
 Do not assume that a seemingly reasonable repair already helped.
 
 ## Rule 3
+
 Rollback must stay possible.
 
 If rollback is unclear, the action should not be treated as safe early action.
 
 ## Rule 4
+
 Do not treat this catalog as a full repair library.
 
 This is an **early action catalog**, not the final repair universe.
 
 ## Rule 5
+
 Use caution near family boundaries.
 
 Especially:
 
-- F1 / F7
-- F3 / F4
-- F5 / F6
+- F1 and F7
+- F3 and F4
+- F5 and F6
 
 The planner should remain conservative in these regions.
 
@@ -657,12 +754,30 @@ Once this catalog exists, the next logical move is one of these:
 
 The strongest immediate next step is probably:
 
-> turn 2 or 3 of these actions into tiny repair planner examples and tiny validation examples.
+> turn 2 or 3 of these actions into tiny repair planner examples and tiny validation examples
 
 That would make the catalog feel operational very quickly.
 
 ---
 
-## One-line summary
+## Next steps ✨
+
+After this page, most readers continue with:
+
+1. [Open Repair Validation Loop v1](./repair-validation-loop-v1.md)
+2. [Open Rollback Policy v1](./rollback-policy-v1.md)
+3. [Open Planner Test Note v1](./planner-test-note-v1.md)
+4. [Open Semi Auto Repair Scope v1](./semi-auto-repair-scope-v1.md)
+
+If you want the broader product surface:
+
+- [Back to Auto Repair v1 README](./README.md)
+- [Back to Fixes Hub](../README.md)
+- [Back to Atlas landing page](../../../wfgy-ai-problem-map-troubleshooting-atlas.md)
+- [Back to Atlas Hub](../../README.md)
+
+---
+
+## One-line summary 🌍
 
 **Safe Early Action Catalog v1 defines the first controlled set of local, inspectable, reversible, and validation-ready repair actions for Atlas-based Auto Repair.**

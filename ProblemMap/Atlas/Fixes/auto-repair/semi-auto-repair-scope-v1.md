@@ -1,31 +1,110 @@
-# Semi-Auto Repair Scope v1
+<!--
+AI_NOTE_START
 
-## 0. Document status
+Document role:
+This file defines the first formal scope boundary for semi-auto repair inside the Auto Repair layer of the Atlas Fixes package.
 
-This document defines the first formal scope boundary for **semi-auto repair** inside the Atlas Auto Repair layer.
+How to use this file:
+1. Read this page when deciding whether a repair action is safe enough for early constrained semi-auto use.
+2. Use this page together with:
+   - [Auto Repair v1 README](./README.md)
+   - [Auto Repair Architecture v1](./auto-repair-architecture-v1.md)
+   - [Repair Action Schema v1](./repair-action-schema-v1.md)
+   - [Repair Validation Loop v1](./repair-validation-loop-v1.md)
+   - [Rollback Policy v1](./rollback-policy-v1.md)
+   - [Auto Repair Roadmap v1](./auto-repair-roadmap-v1.md)
+   - [Repair Planner Spec v1](./repair-planner-spec-v1.md)
+   - [Repair Planner Prompt v1](./repair-planner-prompt-v1.md)
+   - [Repair Plan Schema v1](./repair-plan-schema-v1.json)
+
+What this file is:
+- The scope boundary page for early semi-auto repair
+- A safety contract for deciding which actions may enter constrained semi-auto use
+- A bridge between planner-only behavior and later bounded apply-and-check behavior
+
+What this file is not:
+- Not proof that broad autonomous repair is already available
+- Not a permission slip for unrestricted repair execution
+- Not a replacement for validation, rollback, or planner discipline
+- Not the full long-term execution policy for all repair families
+
+Reading discipline for AI:
+- Treat this file as a boundary contract, not as a maturity claim about broad automation.
+- Keep local scope, inspectability, reversibility, and validation-readiness visible.
+- Prefer planner-only or review-bound handling when evidence is weak or family pressure is ambiguous.
+- Stay especially cautious in F6-heavy, multi-family, or broad-mutation cases.
+
+AI_NOTE_END
+-->
+
+# Semi-Auto Repair Scope v1 🛡️
+
+## The first formal boundary for early constrained semi-auto repair
+
+Quick links:
+
+- [Back to Auto Repair v1 README](./README.md)
+- [Back to Fixes Hub](../README.md)
+- [Back to Official Fixes](../official/README.md)
+- [Back to Atlas landing page](../../../wfgy-ai-problem-map-troubleshooting-atlas.md)
+- [Back to AI Eval Evidence](../../ai-eval-evidence.md)
+- [Back to Atlas Hub](../../README.md)
+- [Get the Atlas Router TXT](../../troubleshooting-atlas-router-v1.txt)
+- [Open Auto Repair Architecture v1](./auto-repair-architecture-v1.md)
+- [Open Repair Action Schema v1](./repair-action-schema-v1.md)
+- [Open Repair Validation Loop v1](./repair-validation-loop-v1.md)
+- [Open Rollback Policy v1](./rollback-policy-v1.md)
+- [Open Auto Repair Roadmap v1](./auto-repair-roadmap-v1.md)
+- [Open Repair Planner Spec v1](./repair-planner-spec-v1.md)
+- [Open Repair Planner Prompt v1](./repair-planner-prompt-v1.md)
+- [Open Repair Plan Schema v1](./repair-plan-schema-v1.json)
+- [Open Safe Early Action Catalog v1](./safe-early-action-catalog-v1.md)
+
+---
+
+If the planner layer decides **which repair move is plausible**, this scope document decides **which kinds of repair moves are safe enough to enter early semi-auto use**. 🧭
 
 Its purpose is to answer one practical question:
 
-> which repair actions are safe enough to be partially automated in early phases,
+> which repair actions are safe enough to be partially automated in early phases,  
 > and which repair actions should remain planner-only, review-bound, or explicitly delayed?
 
 This document does **not** claim that broad autonomous repair is already available.
 
 It defines something narrower and safer:
 
-> the first controlled scope for limited, auditable, reversible semi-auto repair.
+> the first controlled scope for limited, auditable, reversible semi-auto repair
 
-This file should be read together with:
+---
 
-- `README.md`
-- `auto-repair-architecture-v1.md`
-- `repair-action-schema-v1.md`
-- `repair-validation-loop-v1.md`
-- `rollback-policy-v1.md`
-- `auto-repair-roadmap-v1.md`
-- `repair-planner-spec-v1.md`
-- `repair-planner-prompt-v1.md`
-- `repair-plan-schema-v1.json`
+## Quick start 🚀
+
+### I want the shortest scope reading
+
+Use this path:
+
+1. check whether the case is already routed
+2. check whether the action is local, inspectable, reversible, and validation-ready
+3. check whether the action belongs to an allowed early category
+4. check whether any stop condition is present
+5. only then allow semi-auto apply-and-check behavior
+
+### I want the stronger system reading
+
+Use this page together with:
+
+1. [Repair Planner Spec v1](./repair-planner-spec-v1.md)
+2. [Repair Validation Loop v1](./repair-validation-loop-v1.md)
+3. [Rollback Policy v1](./rollback-policy-v1.md)
+4. [Safe Early Action Catalog v1](./safe-early-action-catalog-v1.md)
+
+Short version:
+
+> route first  
+> keep the action small  
+> make validation explicit  
+> keep rollback possible  
+> stop early when boundary risk is high
 
 ---
 
@@ -35,8 +114,8 @@ Semi-auto repair does **not** mean unrestricted self-directed repair.
 
 It means:
 
-> the system may generate, apply, or suggest a narrowly bounded repair action
-> when the action is local, inspectable, reversible, and validation-ready.
+> the system may generate, apply, or suggest a narrowly bounded repair action  
+> when the action is local, inspectable, reversible, and validation-ready
 
 This is an intentionally limited concept.
 
@@ -91,8 +170,8 @@ So this document exists to keep growth disciplined.
 
 The scope rule is simple:
 
-> only actions that are local, inspectable, reversible, and validation-ready
-> may enter early semi-auto repair.
+> only actions that are local, inspectable, reversible, and validation-ready  
+> may enter early semi-auto repair
 
 If an action fails one or more of those tests, it should remain:
 
@@ -105,7 +184,23 @@ This is the main protective rule for v1.
 
 ---
 
-## 4. Semi-auto repair tiers
+## 4. Scope quick map 🗂️
+
+| Tier or region | Early reading |
+|---|---|
+| Tier 1 suggest-only | safest starting point |
+| Tier 2 controlled apply-and-check | main early semi-auto target |
+| Tier 3 bounded iterative repair | possible later, do not rush |
+| F1 / F4 / F7 | best early family targets |
+| F5 | limited and caution-heavy |
+| F3 | possible but more subtle |
+| F6-heavy cases | planner-only or review-bound |
+
+This page is the right place when the question is **what may safely enter constrained semi-auto use now**, not whether the whole repair stack is ready for broad automation.
+
+---
+
+## 5. Semi-auto repair tiers
 
 Semi-auto repair should be understood in three operational tiers.
 
@@ -144,7 +239,7 @@ It requires stronger validation and rollback discipline.
 
 ---
 
-## 5. What qualifies as in-scope for v1
+## 6. What qualifies as in-scope for v1
 
 A repair action is in scope for early semi-auto use when all of the following are true.
 
@@ -176,7 +271,7 @@ The action must not require broad undefined system mutation.
 
 ### Condition 3 · Action is inspectable
 
-The before/after difference must be understandable.
+The before and after difference must be understandable.
 
 If nobody can tell what changed, the action is too loose for early semi-auto use.
 
@@ -201,11 +296,11 @@ If the validation target is vague, the action is too immature.
 
 ---
 
-## 6. Best early family targets
+## 7. Best early family targets
 
 Not all families are equally suitable for early semi-auto work.
 
-### F1 · Grounding & Evidence Integrity
+### F1 · Grounding and Evidence Integrity
 
 This is one of the best early targets.
 
@@ -234,9 +329,7 @@ Good early rollback targets:
 - restore previous evidence selection
 - restore previous candidate set
 
----
-
-### F4 · Execution & Contract Integrity
+### F4 · Execution and Contract Integrity
 
 This is also a strong early target.
 
@@ -244,7 +337,7 @@ Why:
 
 - workflow errors are often structurally visible
 - gates and ordering logic can often be stated clearly
-- before/after comparison is practical
+- before and after comparison is practical
 
 Good early examples:
 
@@ -265,9 +358,7 @@ Good early rollback targets:
 - remove inserted gate
 - restore previous ordering rule
 
----
-
-### F7 · Representation & Localization Integrity
+### F7 · Representation and Localization Integrity
 
 This is another excellent early target.
 
@@ -282,7 +373,7 @@ Good early examples:
 
 - tighten JSON schema
 - correct field shell shape
-- restore array/object boundary
+- restore array or object boundary
 - strengthen formal descriptor wording
 
 Good early validation targets:
@@ -299,11 +390,11 @@ Good early rollback targets:
 
 ---
 
-## 7. Medium-scope families
+## 8. Medium-scope families
 
 Some families can support semi-auto work, but only carefully.
 
-### F5 · Observability & Diagnosability Integrity
+### F5 · Observability and Diagnosability Integrity
 
 Possible early actions:
 
@@ -328,9 +419,7 @@ Bad use mode:
 
 - broad instrumentation without a narrow probe target
 
----
-
-### F3 · State & Continuity Integrity
+### F3 · State and Continuity Integrity
 
 Possible early actions:
 
@@ -357,7 +446,7 @@ Bad use mode:
 
 ---
 
-## 8. Out of scope for early semi-auto use
+## 9. Out of scope for early semi-auto use
 
 The following areas should remain out of scope for v1 semi-auto execution.
 
@@ -386,17 +475,15 @@ Not allowed early use:
 - legitimacy or incentive restructuring
 - unsafe autonomous boundary action
 
----
-
 ### Multi-family ambiguity under weak evidence
 
 If the case is sitting in strong ambiguity, semi-auto execution should not proceed.
 
 Examples:
 
-- F1/F7 ambiguity under synthetic structure pressure
-- F3/F4 ambiguity under workflow-memory interaction
-- F5/F6 ambiguity under abstract governance pressure
+- F1 and F7 ambiguity under synthetic structure pressure
+- F3 and F4 ambiguity under workflow-memory interaction
+- F5 and F6 ambiguity under abstract governance pressure
 
 In such cases, the correct move is:
 
@@ -404,8 +491,6 @@ In such cases, the correct move is:
 - reduce scope
 - escalate
 - stop and wait
-
----
 
 ### Broad system mutation
 
@@ -422,11 +507,12 @@ These are too large for early semi-auto discipline.
 
 ---
 
-## 9. Allowed early action categories
+## 10. Allowed early action categories
 
 The following action categories are good early semi-auto candidates.
 
 ### Category A · Evidence-local actions
+
 Examples:
 
 - re-ground evidence set
@@ -435,6 +521,7 @@ Examples:
 - narrow candidate evidence range
 
 ### Category B · Gate-local actions
+
 Examples:
 
 - insert readiness gate
@@ -443,6 +530,7 @@ Examples:
 - restore local ordering check
 
 ### Category C · Schema-local actions
+
 Examples:
 
 - tighten schema shell
@@ -451,6 +539,7 @@ Examples:
 - constrain a field structure
 
 ### Category D · Probe-local actions
+
 Examples:
 
 - add a local trace probe
@@ -462,25 +551,29 @@ This category should remain more cautious than A, B, and C.
 
 ---
 
-## 10. Disallowed early action categories
+## 11. Disallowed early action categories
 
 The following should remain outside early semi-auto scope.
 
 ### Category X · Full workflow redesign
+
 Too broad.
 
 ### Category Y · High-abstraction policy intervention
+
 Too risky.
 
 ### Category Z · Multi-step repair chains without checkpoints
+
 Too hard to validate and rollback.
 
 ### Category W · Boundary-heavy autonomous intervention
+
 Too dangerous for early phases.
 
 ---
 
-## 11. Required safety checks before semi-auto apply
+## 12. Required safety checks before semi-auto apply
 
 Before any in-scope action is applied, the system should confirm:
 
@@ -503,7 +596,7 @@ It should revert to:
 
 ---
 
-## 12. Required stop conditions
+## 13. Required stop conditions
 
 Semi-auto repair should stop immediately when:
 
@@ -517,18 +610,19 @@ Semi-auto repair should stop immediately when:
 - the planner cannot distinguish between local gain and likely collateral damage
 
 These conditions are not edge cases.
+
 They are core protections.
 
 ---
 
-## 13. Example in-scope actions
+## 14. Example in-scope actions
 
 ### Example A · F1 local semi-auto action
 
-Case:
+Case:  
 retrieval anchor drift in a replayable benchmark case
 
-Action:
+Action:  
 replace evidence subset with a better-aligned subset
 
 Why in scope:
@@ -542,20 +636,18 @@ Recommended tier:
 
 - Tier 2
 
----
-
 ### Example B · F4 local semi-auto action
 
-Case:
+Case:  
 downstream send step executes before upstream readiness is complete
 
-Action:
+Action:  
 insert a local readiness gate in the replay workflow
 
 Why in scope:
 
 - narrow workflow change
-- visible before/after
+- visible before and after
 - rollback is clear
 - validation target is explicit
 
@@ -563,14 +655,12 @@ Recommended tier:
 
 - Tier 2
 
----
-
 ### Example C · F7 local semi-auto action
 
-Case:
+Case:  
 output content is partially correct but the JSON shell is invalid
 
-Action:
+Action:  
 tighten schema shell and restore object boundary
 
 Why in scope:
@@ -586,14 +676,14 @@ Recommended tier:
 
 ---
 
-## 14. Example out-of-scope actions
+## 15. Example out-of-scope actions
 
 ### Example A · F6 boundary intervention
 
-Case:
+Case:  
 high-pressure alignment and legitimacy ambiguity
 
-Action:
+Action:  
 apply a strong autonomous stabilization rule
 
 Why out of scope:
@@ -602,14 +692,12 @@ Why out of scope:
 - low tolerance for false confidence
 - review and escalation are safer
 
----
-
 ### Example B · broad workflow rewrite
 
-Case:
+Case:  
 multi-step workflow occasionally fails under mixed memory and closure pressure
 
-Action:
+Action:  
 rewrite the whole workflow plan automatically
 
 Why out of scope:
@@ -618,14 +706,12 @@ Why out of scope:
 - too hard to validate locally
 - rollback would be unstable
 
----
-
 ### Example C · abstract coherence intervention
 
-Case:
-value / knowledge / probability coherence case under F5/F6 boundary pressure
+Case:  
+value, knowledge, or probability coherence case under F5 and F6 boundary pressure
 
-Action:
+Action:  
 apply a strong abstract corrective rewrite
 
 Why out of scope:
@@ -636,7 +722,7 @@ Why out of scope:
 
 ---
 
-## 15. Semi-auto success condition
+## 16. Semi-auto success condition
 
 Early semi-auto repair should be considered successful only when:
 
@@ -657,12 +743,12 @@ Not:
 
 ---
 
-## 16. Relationship to future phases
+## 17. Relationship to future phases
 
 This scope document is mainly for the transition between:
 
-- Stage 1 · Repair planner
-and
+- Stage 1 · Repair planner  
+  and
 - Stage 2 · Constrained semi-auto repair
 
 It should remain conservative until:
@@ -678,11 +764,11 @@ It is the safe doorway into the next phase.
 
 ---
 
-## 17. Recommended immediate next step
+## 18. Recommended immediate next step
 
 Once this file exists, the next useful step is likely one of these:
 
-- create a small action catalog for F1 / F4 / F7
+- create a small action catalog for F1, F4, and F7
 - create one minimal semi-auto demo spec
 - create one validator example pack for semi-auto cases
 
@@ -694,6 +780,24 @@ That would make the semi-auto layer much more concrete.
 
 ---
 
-## 18. One-line scope summary
+## 19. Next steps ✨
+
+After this page, most readers continue with:
+
+1. [Open Safe Early Action Catalog v1](./safe-early-action-catalog-v1.md)
+2. [Open Repair Validation Loop v1](./repair-validation-loop-v1.md)
+3. [Open Rollback Policy v1](./rollback-policy-v1.md)
+4. [Open Auto Repair Roadmap v1](./auto-repair-roadmap-v1.md)
+
+If you want the broader product surface:
+
+- [Back to Auto Repair v1 README](./README.md)
+- [Back to Fixes Hub](../README.md)
+- [Back to Atlas landing page](../../../wfgy-ai-problem-map-troubleshooting-atlas.md)
+- [Back to Atlas Hub](../../README.md)
+
+---
+
+## 20. One-line scope summary 🌍
 
 **Semi-Auto Repair Scope v1 defines which Atlas-based repair actions are safe enough for early constrained semi-auto use, and which actions must remain planner-only, review-bound, or delayed.**

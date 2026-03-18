@@ -1,6 +1,62 @@
-# Repair Validation Loop v1
+<!--
+AI_NOTE_START
 
-🔍 **Repair Validation Loop v1** defines how Atlas-based repair should be checked after a repair action is proposed or applied.
+Document role:
+This file defines the first formal validation logic for the Auto Repair layer inside the Atlas Fixes package.
+
+How to use this file:
+1. Read this page when you need to judge whether a proposed or applied repair actually improved the case.
+2. Use this page together with:
+   - [Auto Repair v1 README](./README.md)
+   - [Auto Repair Architecture v1](./auto-repair-architecture-v1.md)
+   - [Repair Action Schema v1](./repair-action-schema-v1.md)
+   - [Repair Planner Spec v1](./repair-planner-spec-v1.md)
+   - [Rollback Policy v1](./rollback-policy-v1.md)
+3. Use this page as the validation logic contract for accept, revise, rollback, or escalate decisions.
+
+What this file is:
+- The validation logic page for Auto Repair v1
+- A contract for judging repair outcomes after an action is proposed or applied
+- A decision layer between repair attempt and next-step outcome
+
+What this file is not:
+- Not a full autonomous validation engine
+- Not a benchmark scoring system
+- Not a deployment-grade validator implementation
+- Not proof that one plausible repair action is automatically a successful repair
+
+Reading discipline for AI:
+- Judge the outcome, not the intention alone.
+- Keep target invariant, before and after state, collateral damage, and next-step decision visible.
+- Treat validation as part of the repair architecture, not as an optional add-on.
+- Prefer explicit uncertainty over fake certainty when evidence is weak.
+
+AI_NOTE_END
+-->
+
+# Repair Validation Loop v1 🔍
+
+## How Atlas-based repair should be judged after a repair action is proposed or applied
+
+Quick links:
+
+- [Back to Auto Repair v1 README](./README.md)
+- [Back to Fixes Hub](../README.md)
+- [Back to Official Fixes](../official/README.md)
+- [Back to Atlas landing page](../../../wfgy-ai-problem-map-troubleshooting-atlas.md)
+- [Back to AI Eval Evidence](../../ai-eval-evidence.md)
+- [Back to Atlas Hub](../../README.md)
+- [Get the Atlas Router TXT](../../troubleshooting-atlas-router-v1.txt)
+- [Open Auto Repair Architecture v1](./auto-repair-architecture-v1.md)
+- [Open Repair Action Schema v1](./repair-action-schema-v1.md)
+- [Open Repair Planner Spec v1](./repair-planner-spec-v1.md)
+- [Open Rollback Policy v1](./rollback-policy-v1.md)
+- [Open Planner Review Checklist v1](./planner-review-checklist-v1.md)
+- [Open Planner Test Note v1](./planner-test-note-v1.md)
+
+---
+
+If the repair planner decides **what first move should be tried**, this validation loop decides **whether that move actually helped enough to keep**. 🧭
 
 This document does **not** claim that a full autonomous validation engine already exists.
 
@@ -12,6 +68,35 @@ Instead, it defines the first formal logic for answering a simple but critical q
 That question is the center of trustworthy repair.
 
 Without a validation loop, repair remains guesswork.
+
+---
+
+## Quick start 🚀
+
+### I want the shortest validation reading
+
+Use this path:
+
+1. identify the repair action being validated
+2. identify the target broken invariant
+3. compare before and after state
+4. check for collateral damage
+5. choose `accept`, `revise`, `rollback`, or `escalate`
+
+### I want the stronger validation reading
+
+Use this page together with:
+
+1. [Repair Action Schema v1](./repair-action-schema-v1.md)
+2. [Repair Planner Spec v1](./repair-planner-spec-v1.md)
+3. [Rollback Policy v1](./rollback-policy-v1.md)
+
+Short version:
+
+> check the target  
+> compare before and after  
+> check for damage  
+> decide the next safe move ✨
 
 ---
 
@@ -29,9 +114,9 @@ Its purpose is to explain:
 
 This document is meant to work together with:
 
-- `README.md`
-- `auto-repair-architecture-v1.md`
-- `repair-action-schema-v1.md`
+- [README](./README.md)
+- [Auto Repair Architecture v1](./auto-repair-architecture-v1.md)
+- [Repair Action Schema v1](./repair-action-schema-v1.md)
 
 Together, those files define:
 
@@ -63,7 +148,7 @@ It is part of the repair architecture.
 
 ---
 
-## 3. Placement in the full workflow
+## 3. Placement in the full workflow 🧩
 
 The intended repair workflow is:
 
@@ -82,13 +167,28 @@ but **before** the system treats the repair as successful.
 
 This means validation is the gate between:
 
-* "a repair was proposed"
+* a repair was proposed
   and
-* "a repair actually helped"
+* a repair actually helped
 
 ---
 
-## 4. Core validation principle
+## 4. Validation quick map 🗂️
+
+| Validation concern          | Main question                                   |
+| --------------------------- | ----------------------------------------------- |
+| target check                | what action or invariant are we validating      |
+| before and after comparison | what changed locally                            |
+| improvement check           | did the targeted invariant improve              |
+| usefulness check            | did the case become more usable or more correct |
+| collateral damage check     | did the repair create new problems              |
+| outcome decision            | should we accept, revise, rollback, or escalate |
+
+This page is the right place when the question is **how to judge a repair outcome**, not how to design the planner or how to implement a full validator engine.
+
+---
+
+## 5. Core validation principle
 
 The validation loop must always ask:
 
@@ -109,7 +209,7 @@ It is also:
 
 ---
 
-## 5. Minimal validation contract
+## 6. Minimal validation contract
 
 Every repair validation attempt in v1 should aim to produce these outputs:
 
@@ -137,7 +237,7 @@ This creates a reusable validation object, even before automation becomes deep.
 
 ---
 
-## 6. Field definitions
+## 7. Field definitions
 
 ### `validation_target`
 
@@ -151,8 +251,6 @@ Examples:
 
 This field ties validation back to the repair action schema.
 
----
-
 ### `target_invariant`
 
 The broken invariant the repair was supposed to improve.
@@ -164,8 +262,6 @@ Examples:
 * `formal descriptor fidelity broken`
 
 Validation should always remain linked to a declared invariant.
-
----
 
 ### `before_state_summary`
 
@@ -180,8 +276,6 @@ Examples:
 This field is not meant to capture everything.
 It captures the specific part the repair claimed to improve.
 
----
-
 ### `after_state_summary`
 
 A short structured description of the case state after the repair.
@@ -194,8 +288,6 @@ Examples:
 
 This field should remain focused and local.
 
----
-
 ### `improvement_detected`
 
 A boolean or controlled verdict indicating whether the target improved.
@@ -207,8 +299,6 @@ Suggested values:
 * `partial`
 
 Using `partial` is often better than forcing a fake binary answer.
-
----
 
 ### `collateral_damage_detected`
 
@@ -226,8 +316,6 @@ Suggested values:
 * `false`
 * `unknown`
 
----
-
 ### `validation_confidence`
 
 How strongly the system trusts the validation judgment.
@@ -239,8 +327,6 @@ Suggested values:
 * `high`
 
 This should depend on evidence quality, not on rhetorical confidence.
-
----
 
 ### `recommended_outcome`
 
@@ -257,9 +343,9 @@ This is the most important decision output of the loop.
 
 ---
 
-## 7. Validation levels
+## 8. Validation levels
 
-Repair Validation Loop v1 should not treat validation as one giant yes/no question.
+Repair Validation Loop v1 should not treat validation as one giant yes or no question.
 
 A strong validation pass is usually layered.
 
@@ -278,8 +364,6 @@ Examples:
 
 This is the weakest layer, but still useful.
 
----
-
 ### Level 2 · Invariant improvement
 
 Check whether the declared broken invariant improved.
@@ -293,8 +377,6 @@ Examples:
 
 This is more important than surface validity.
 
----
-
 ### Level 3 · Functional usefulness
 
 Check whether the repaired system is actually more usable or more correct in practice.
@@ -307,8 +389,6 @@ Examples:
 * diagnostic trace now helps identify the real failure path
 
 This layer prevents shallow cosmetic fixes from being mistaken for real repairs.
-
----
 
 ### Level 4 · Collateral damage review
 
@@ -327,7 +407,7 @@ A repair that improves one layer but harms another must not be treated as a clea
 
 ---
 
-## 8. Recommended validation sequence
+## 9. Recommended validation sequence
 
 The default sequence should be:
 
@@ -335,13 +415,13 @@ The default sequence should be:
 2. check target invariant improvement
 3. check practical usefulness
 4. check collateral damage
-5. decide accept / revise / rollback / escalate
+5. decide accept, revise, rollback, or escalate
 
 This sequence is simple enough to reuse and strong enough for early trust.
 
 ---
 
-## 9. Recommended verdict logic
+## 10. Recommended verdict logic
 
 ### Accept
 
@@ -381,11 +461,11 @@ These four outcomes are enough for v1.
 
 ---
 
-## 10. Family-specific validation examples
+## 11. Family-specific validation examples
 
 Different families often need different validation focus.
 
-### F1 · Grounding & Evidence Integrity
+### F1 · Grounding and Evidence Integrity
 
 Best early validation checks:
 
@@ -401,9 +481,7 @@ Typical false success risk:
 
 * output looks cleaner but is still grounded to the wrong anchor
 
----
-
-### F4 · Execution & Contract Integrity
+### F4 · Execution and Contract Integrity
 
 Best early validation checks:
 
@@ -420,9 +498,7 @@ Typical false success risk:
 
 * the system blocks everything, including valid execution
 
----
-
-### F7 · Representation & Localization Integrity
+### F7 · Representation and Localization Integrity
 
 Best early validation checks:
 
@@ -438,9 +514,7 @@ Typical false success risk:
 
 * structure improves while semantic alignment quietly degrades
 
----
-
-### F5 · Observability & Diagnosability Integrity
+### F5 · Observability and Diagnosability Integrity
 
 Best early validation checks:
 
@@ -458,7 +532,7 @@ Typical false success risk:
 
 ---
 
-## 11. Misrepair signals
+## 12. Misrepair signals
 
 The validation loop should be able to flag common misrepair patterns.
 
@@ -475,29 +549,29 @@ but they should strongly bias the loop toward `revise` or `escalate`.
 
 ---
 
-## 12. Validation and confidence discipline
+## 13. Validation and confidence discipline
 
 Validation confidence must never be treated as decoration.
 
 Confidence should go down when:
 
 * evidence is thin
-* before / after comparison is ambiguous
+* before and after comparison is ambiguous
 * multiple families remain plausible
 * the repair target was not narrowly defined
 * the case crosses into high-risk boundary-heavy territory
 
 This is especially important in:
 
-* F5 / F6 edges
-* F3 / F4 edges
-* F1 / F7 synthetic boundary cases
+* F5 and F6 edges
+* F3 and F4 edges
+* F1 and F7 synthetic boundary cases
 
 A weak validation with a high confidence label is worse than an explicit uncertain result.
 
 ---
 
-## 13. Relationship to rollback
+## 14. Relationship to rollback
 
 Validation and rollback are closely connected.
 
@@ -515,7 +589,7 @@ not as a special embarrassment case.
 
 ---
 
-## 14. Relationship to escalation
+## 15. Relationship to escalation
 
 Validation should also know when to stop pretending that the current layer is enough.
 
@@ -530,13 +604,13 @@ Escalation becomes the right output when:
 This is especially relevant for:
 
 * F6-heavy cases
-* difficult F3 / F4 / F6 interactions
+* difficult F3, F4, and F6 interactions
 * high-abstract coherence and legitimacy problems
 * multi-layer synthetic truth and representation mixtures
 
 ---
 
-## 15. Example validation objects
+## 16. Example validation objects
 
 ### Example A · F1 validation
 
@@ -585,7 +659,7 @@ This is especially relevant for:
 
 ---
 
-## 16. What this loop does not yet include
+## 17. What this loop does not yet include
 
 Repair Validation Loop v1 does **not** yet include:
 
@@ -602,11 +676,11 @@ v1 only aims to define the validation logic clearly enough for later implementat
 
 ---
 
-## 17. Recommended next step
+## 18. Recommended next step
 
 Once this file exists, the next logical file is:
 
-* `rollback-policy-v1.md`
+* [Rollback Policy v1](./rollback-policy-v1.md)
 
 because the validation loop now defines when rollback is needed,
 but the system still needs a formal statement of how rollback should be framed and governed.
@@ -622,6 +696,24 @@ which is a very strong first-phase foundation.
 
 ---
 
-## 18. One-line validation summary
+## 19. Next steps ✨
+
+After this page, most readers continue with:
+
+1. [Open Rollback Policy v1](./rollback-policy-v1.md)
+2. [Open Repair Planner Spec v1](./repair-planner-spec-v1.md)
+3. [Open Planner Review Checklist v1](./planner-review-checklist-v1.md)
+4. [Open Planner Test Note v1](./planner-test-note-v1.md)
+
+If you want the broader product surface:
+
+* [Back to Auto Repair v1 README](./README.md)
+* [Back to Fixes Hub](../README.md)
+* [Back to Atlas landing page](../../../wfgy-ai-problem-map-troubleshooting-atlas.md)
+* [Back to Atlas Hub](../../README.md)
+
+---
+
+## 20. One-line validation summary 🌍
 
 **Repair Validation Loop v1 defines how Atlas-based repair should be judged, accepted, revised, rolled back, or escalated after a repair action is proposed or applied.**

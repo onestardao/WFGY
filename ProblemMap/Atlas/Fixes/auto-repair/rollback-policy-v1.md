@@ -1,6 +1,61 @@
-# Rollback Policy v1
+<!--
+AI_NOTE_START
 
-↩️ **Rollback Policy v1** defines when and how Atlas-based repair should back out of a proposed or applied repair action.
+Document role:
+This file defines the first formal rollback policy for the Auto Repair layer inside the Atlas Fixes package.
+
+How to use this file:
+1. Read this page when a proposed or applied repair may need to be backed out.
+2. Use this page together with:
+   - [Auto Repair v1 README](./README.md)
+   - [Auto Repair Architecture v1](./auto-repair-architecture-v1.md)
+   - [Repair Action Schema v1](./repair-action-schema-v1.md)
+   - [Repair Validation Loop v1](./repair-validation-loop-v1.md)
+   - [Auto Repair Roadmap v1](./auto-repair-roadmap-v1.md)
+3. Use this page as the rollback policy contract for deciding what should be restored, how far rollback should go, and what the next safe step should be.
+
+What this file is:
+- The rollback policy page for Auto Repair v1
+- A contract for backing out of harmful or unhelpful repair actions
+- A stability-preserving decision layer after failed validation
+
+What this file is not:
+- Not full rollback automation
+- Not a deployment-grade restoration engine
+- Not proof that every rollback can be executed automatically
+- Not a replacement for planner or validation logic
+
+Reading discipline for AI:
+- Treat rollback as a normal branch of the repair workflow, not as an embarrassment case.
+- Keep rollback target, rollback reason, restore point, and next step visible.
+- Prefer explicit safety and stability over rhetorical confidence.
+- Distinguish clearly between rollback and escalation.
+
+AI_NOTE_END
+-->
+
+# Rollback Policy v1 ↩️
+
+## How Atlas-based repair should back out safely after harmful or unhelpful repair moves
+
+Quick links:
+
+- [Back to Auto Repair v1 README](./README.md)
+- [Back to Fixes Hub](../README.md)
+- [Back to Official Fixes](../official/README.md)
+- [Back to Atlas landing page](../../../wfgy-ai-problem-map-troubleshooting-atlas.md)
+- [Back to AI Eval Evidence](../../ai-eval-evidence.md)
+- [Back to Atlas Hub](../../README.md)
+- [Get the Atlas Router TXT](../../troubleshooting-atlas-router-v1.txt)
+- [Open Auto Repair Architecture v1](./auto-repair-architecture-v1.md)
+- [Open Repair Action Schema v1](./repair-action-schema-v1.md)
+- [Open Repair Validation Loop v1](./repair-validation-loop-v1.md)
+- [Open Repair Planner Spec v1](./repair-planner-spec-v1.md)
+- [Open Auto Repair Roadmap v1](./auto-repair-roadmap-v1.md)
+
+---
+
+If the validation loop decides **whether a repair helped enough to keep**, this rollback policy defines **what should happen when the repair should not be kept**.
 
 This document does **not** claim that full rollback automation already exists.
 
@@ -9,9 +64,37 @@ Instead, it defines the first formal policy for a simple but critical requiremen
 > if a repair makes the case worse,  
 > or repairs the wrong layer,  
 > or creates stronger collateral damage,  
-> the system must be able to stop, back out, and recover safely.
+> the system must be able to stop, back out, and recover safely
 
 Without rollback policy, Auto Repair becomes too fragile to trust.
+
+---
+
+## Quick start
+
+### I want the shortest rollback reading
+
+Use this path:
+
+1. identify the failed or harmful repair action
+2. identify the rollback reason
+3. identify the restore point
+4. choose rollback scope
+5. decide the next step after rollback
+
+### I want the stronger workflow reading
+
+Use this page together with:
+
+1. [Repair Validation Loop v1](./repair-validation-loop-v1.md)
+2. [Repair Action Schema v1](./repair-action-schema-v1.md)
+3. [Repair Planner Spec v1](./repair-planner-spec-v1.md)
+
+Short version:
+
+> detect the harm  
+> restore the safer prior state  
+> then revise or escalate
 
 ---
 
@@ -29,10 +112,10 @@ Its purpose is to explain:
 
 This document should be read together with:
 
-- `README.md`
-- `auto-repair-architecture-v1.md`
-- `repair-action-schema-v1.md`
-- `repair-validation-loop-v1.md`
+- [README](./README.md)
+- [Auto Repair Architecture v1](./auto-repair-architecture-v1.md)
+- [Repair Action Schema v1](./repair-action-schema-v1.md)
+- [Repair Validation Loop v1](./repair-validation-loop-v1.md)
 
 Together, those files define:
 
@@ -89,7 +172,22 @@ This means:
 
 ---
 
-## 4. Core rollback principle
+## 4. Rollback quick map
+
+| Rollback concern     | Main question                                   |
+| -------------------- | ----------------------------------------------- |
+| rollback target      | what action or patch are we reversing           |
+| rollback reason      | why is rollback necessary                       |
+| rollback scope       | how much of the change should be reversed       |
+| restore point        | what prior state should we return to            |
+| post-rollback status | what state should exist after rollback          |
+| next step            | what should happen after the rollback completes |
+
+This page is the right place when the question is **how to back out safely from a bad repair move**, not how to validate the repair in the first place.
+
+---
+
+## 5. Core rollback principle
 
 Rollback should answer one question clearly:
 
@@ -108,7 +206,7 @@ Rollback is therefore a **stability-preserving operation**, not a victory condit
 
 ---
 
-## 5. Minimal rollback contract
+## 6. Minimal rollback contract
 
 Every rollback decision in v1 should aim to produce these outputs.
 
@@ -133,7 +231,7 @@ This creates a reusable rollback object for later planner and validator integrat
 
 ---
 
-## 6. Field definitions
+## 7. Field definitions
 
 ### `rollback_target`
 
@@ -147,8 +245,6 @@ Examples:
 
 This field ties rollback back to the repair action identity.
 
----
-
 ### `rollback_reason`
 
 A short statement of why rollback is necessary.
@@ -161,8 +257,6 @@ Examples:
 * `repair targeted the wrong family layer`
 
 This field should be explicit and local.
-
----
 
 ### `rollback_scope`
 
@@ -182,8 +276,6 @@ Examples:
 * `last-step-only` when a multi-part repair should back out only its final move
 * `planner-level-only` when the system should cancel the proposed action before execution
 
----
-
 ### `restore_point`
 
 The state the rollback should attempt to return to.
@@ -196,8 +288,6 @@ Examples:
 * `pre-observability patch state`
 
 This field is essential because rollback without a restore point becomes vague.
-
----
 
 ### `post_rollback_status`
 
@@ -212,8 +302,6 @@ Examples:
 
 This field should describe the recovery target, not the entire system.
 
----
-
 ### `next_step`
 
 What the system should do after rollback.
@@ -227,11 +315,12 @@ Suggested values:
 * `human review`
 
 Rollback should never end in silence.
+
 It should always lead to a clear next step.
 
 ---
 
-## 7. When rollback should be considered
+## 8. When rollback should be considered
 
 Rollback should be considered whenever validation shows one or more of the following:
 
@@ -246,7 +335,7 @@ These do not always force rollback, but they should trigger serious review.
 
 ---
 
-## 8. When rollback should be required
+## 9. When rollback should be required
 
 Rollback should be treated as required in v1 when:
 
@@ -287,12 +376,12 @@ The action enters a higher-risk region without sufficient justification or revie
 This is especially important for:
 
 * F6-heavy cases
-* F5 / F6 edge cases
+* F5 and F6 edge cases
 * complex multi-family cases with weak evidence
 
 ---
 
-## 9. Rollback is not failure by embarrassment
+## 10. Rollback is not failure by embarrassment
 
 Rollback must be treated as a normal and legitimate branch of the repair workflow.
 
@@ -306,13 +395,13 @@ It does **not** mean:
 It means:
 
 > the proposed repair did not hold under validation,
-> so the system preserved stability by backing out safely.
+> so the system preserved stability by backing out safely
 
 That is healthy behavior.
 
 ---
 
-## 10. Relationship to validation
+## 11. Relationship to validation
 
 Validation and rollback are tightly linked.
 
@@ -327,6 +416,7 @@ Rollback responds when the recommended outcome is:
 * `rollback`
 
 This means rollback is not an emotional judgment.
+
 It is a policy response to failed or harmful repair validation.
 
 In practical terms:
@@ -337,7 +427,7 @@ In practical terms:
 
 ---
 
-## 11. Relationship to escalation
+## 12. Relationship to escalation
 
 Rollback and escalation are different.
 
@@ -363,7 +453,7 @@ This is common when the system learns that the current repair layer is not suffi
 
 ---
 
-## 12. Recommended rollback sequence
+## 13. Recommended rollback sequence
 
 The recommended early rollback sequence is:
 
@@ -378,11 +468,11 @@ This keeps rollback auditable and reusable.
 
 ---
 
-## 13. Family-specific rollback examples
+## 14. Family-specific rollback examples
 
 Different families often need different rollback logic.
 
-### F1 · Grounding & Evidence Integrity
+### F1 · Grounding and Evidence Integrity
 
 Common rollback targets:
 
@@ -399,9 +489,7 @@ Typical next step:
 * retry alternate grounding action
 * re-check F1 versus F7 boundary
 
----
-
-### F4 · Execution & Contract Integrity
+### F4 · Execution and Contract Integrity
 
 Common rollback targets:
 
@@ -419,9 +507,7 @@ Typical next step:
 * re-check F3 versus F4 cut
 * escalate if workflow state is ambiguous
 
----
-
-### F7 · Representation & Localization Integrity
+### F7 · Representation and Localization Integrity
 
 Common rollback targets:
 
@@ -438,9 +524,7 @@ Typical next step:
 * revise schema
 * re-check F7 versus F1 or F2 boundary
 
----
-
-### F5 · Observability & Diagnosability Integrity
+### F5 · Observability and Diagnosability Integrity
 
 Common rollback targets:
 
@@ -457,9 +541,7 @@ Typical next step:
 * redesign observability uplift
 * narrow the probe target
 
----
-
-### F6 · Boundary & Safety Integrity
+### F6 · Boundary and Safety Integrity
 
 Early rollback in F6 should be highly cautious.
 
@@ -482,13 +564,13 @@ Typical next step:
 
 ---
 
-## 14. Rollback and confidence discipline
+## 15. Rollback and confidence discipline
 
 Rollback decisions should also carry confidence discipline.
 
 Confidence should be lower when:
 
-* before / after comparison is weak
+* before and after comparison is weak
 * multiple families remain plausible
 * restore point is unclear
 * collateral damage is suspected but not well measured
@@ -499,7 +581,7 @@ but the system should say so with appropriate caution.
 
 ---
 
-## 15. Example rollback objects
+## 16. Example rollback objects
 
 ### Example A · F1 rollback
 
@@ -542,7 +624,7 @@ but the system should say so with appropriate caution.
 
 ---
 
-## 16. What v1 does not yet include
+## 17. What v1 does not yet include
 
 Rollback Policy v1 does **not** yet include:
 
@@ -559,11 +641,11 @@ v1 only aims to define the rollback logic clearly enough for safe staged growth.
 
 ---
 
-## 17. Recommended next step
+## 18. Recommended next step
 
 Once this file exists, the next logical file is:
 
-* `auto-repair-roadmap-v1.md`
+* [Auto Repair Roadmap v1](./auto-repair-roadmap-v1.md)
 
 because the folder will then already contain:
 
@@ -584,6 +666,24 @@ That roadmap will make the folder feel complete as a first-stage system.
 
 ---
 
-## 18. One-line rollback summary
+## 19. Next steps
+
+After this page, most readers continue with:
+
+1. [Open Auto Repair Roadmap v1](./auto-repair-roadmap-v1.md)
+2. [Open Repair Validation Loop v1](./repair-validation-loop-v1.md)
+3. [Open Repair Planner Spec v1](./repair-planner-spec-v1.md)
+4. [Back to Auto Repair Architecture v1](./auto-repair-architecture-v1.md)
+
+If you want the broader product surface:
+
+* [Back to Auto Repair v1 README](./README.md)
+* [Back to Fixes Hub](../README.md)
+* [Back to Atlas landing page](../../../wfgy-ai-problem-map-troubleshooting-atlas.md)
+* [Back to Atlas Hub](../../README.md)
+
+---
+
+## 20. One-line rollback summary
 
 **Rollback Policy v1 defines when Atlas-based repair should back out, what should be restored, and how the system should safely continue through revision or escalation.**

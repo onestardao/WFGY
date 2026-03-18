@@ -1,40 +1,131 @@
-# Tiny Semi-Auto Demo Spec v1
+<!--
+AI_NOTE_START
 
-## 0. Document status
+Document role:
+This file defines the first formal tiny semi-auto demo specification for the Auto Repair layer inside the Atlas Fixes package.
 
-This document defines the first tiny semi-auto demo specification for the Atlas Auto Repair layer.
+How to use this file:
+1. Read this page when you want to design a small, bounded, demo-ready semi-auto repair flow.
+2. Use this page together with:
+   - [Auto Repair v1 README](./README.md)
+   - [Auto Repair Architecture v1](./auto-repair-architecture-v1.md)
+   - [Repair Action Schema v1](./repair-action-schema-v1.md)
+   - [Repair Validation Loop v1](./repair-validation-loop-v1.md)
+   - [Rollback Policy v1](./rollback-policy-v1.md)
+   - [Auto Repair Roadmap v1](./auto-repair-roadmap-v1.md)
+   - [Repair Planner Spec v1](./repair-planner-spec-v1.md)
+   - [Repair Planner Prompt v1](./repair-planner-prompt-v1.md)
+   - [Repair Plan Schema v1](./repair-plan-schema-v1.json)
+   - [Semi Auto Repair Scope v1](./semi-auto-repair-scope-v1.md)
+   - [Safe Early Action Catalog v1](./safe-early-action-catalog-v1.md)
+   - [Tiny Validation Examples Pack v1](./tiny-validation-examples-pack-v1.md)
+   - [Tiny Rollback Examples Pack v1](./tiny-rollback-examples-pack-v1.md)
+   - [Planner Test Note v1](./planner-test-note-v1.md)
+   - [Planner Review Checklist v1](./planner-review-checklist-v1.md)
+   - [Tiny Planner Output Examples Pack v1](./tiny-planner-output-examples-pack-v1.md)
+   - [Atlas Auto Repair to WFGY Bridge v1](./atlas-auto-repair-to-wfgy-bridge-v1.md)
+3. Use this page as the structure contract for tiny semi-auto demos, not as proof of a production repair engine.
+
+What this file is:
+- The first demo specification for tiny semi-auto repair
+- A structure contract for bounded local repair demos
+- A bridge between planner output, local action, validation, rollback readiness, and deeper continuation
+
+What this file is not:
+- Not a production repair engine
+- Not a full replay or notebook implementation
+- Not a benchmark orchestration spec
+- Not proof that broad autonomous repair already exists
+
+Reading discipline for AI:
+- Keep the demo local, visible, validation-aware, rollback-aware, and explicit about final outcome.
+- Do not hide broad mutation behind small demo language.
+- Do not claim full closure when the correct outcome is revise, rollback, or escalate.
+- If deeper WFGY continuation is needed, say so explicitly and briefly explain why.
+
+AI_NOTE_END
+-->
+
+# Tiny Semi-Auto Demo Spec v1 🧪
+
+## How a small, bounded, validation-aware semi-auto repair demo should be structured
+
+Quick links:
+
+- [Back to Auto Repair v1 README](./README.md)
+- [Back to Fixes Hub](../README.md)
+- [Back to Official Fixes](../official/README.md)
+- [Back to Atlas landing page](../../../wfgy-ai-problem-map-troubleshooting-atlas.md)
+- [Back to AI Eval Evidence](../../ai-eval-evidence.md)
+- [Back to Atlas Hub](../../README.md)
+- [Get the Atlas Router TXT](../../troubleshooting-atlas-router-v1.txt)
+- [Open Auto Repair Architecture v1](./auto-repair-architecture-v1.md)
+- [Open Repair Action Schema v1](./repair-action-schema-v1.md)
+- [Open Repair Validation Loop v1](./repair-validation-loop-v1.md)
+- [Open Rollback Policy v1](./rollback-policy-v1.md)
+- [Open Auto Repair Roadmap v1](./auto-repair-roadmap-v1.md)
+- [Open Repair Planner Spec v1](./repair-planner-spec-v1.md)
+- [Open Repair Planner Prompt v1](./repair-planner-prompt-v1.md)
+- [Open Repair Plan Schema v1](./repair-plan-schema-v1.json)
+- [Open Semi Auto Repair Scope v1](./semi-auto-repair-scope-v1.md)
+- [Open Safe Early Action Catalog v1](./safe-early-action-catalog-v1.md)
+- [Open Tiny Validation Examples Pack v1](./tiny-validation-examples-pack-v1.md)
+- [Open Tiny Rollback Examples Pack v1](./tiny-rollback-examples-pack-v1.md)
+- [Open Planner Test Note v1](./planner-test-note-v1.md)
+- [Open Planner Review Checklist v1](./planner-review-checklist-v1.md)
+- [Open Tiny Planner Output Examples Pack v1](./tiny-planner-output-examples-pack-v1.md)
+- [Open Tiny Semi-Auto Demo Pack v1](./tiny-semi-auto-demo-pack-v1.md)
+- [Open Atlas Auto Repair to WFGY Bridge v1](./atlas-auto-repair-to-wfgy-bridge-v1.md)
+
+---
+
+If the planner spec explains **how a routed case becomes a first repair plan**, this file explains **how that plan should be shown as a small visible semi-auto demo**.
 
 Its purpose is practical:
 
 > show how a very small, controlled, semi-auto repair flow should work  
-> without pretending that full autonomous repair already exists.
+> without pretending that full autonomous repair already exists
 
 This file does **not** define a production repair engine.
 
 It defines something much narrower and safer:
 
 > a first demo-ready specification for local, inspectable, reversible,  
-> validation-aware, rollback-aware semi-auto repair behavior.
+> validation-aware, rollback-aware semi-auto repair behavior
 
-This document should be read together with:
+---
 
-- `README.md`
-- `auto-repair-architecture-v1.md`
-- `repair-action-schema-v1.md`
-- `repair-validation-loop-v1.md`
-- `rollback-policy-v1.md`
-- `auto-repair-roadmap-v1.md`
-- `repair-planner-spec-v1.md`
-- `repair-planner-prompt-v1.md`
-- `repair-plan-schema-v1.json`
-- `semi-auto-repair-scope-v1.md`
-- `safe-early-action-catalog-v1.md`
-- `tiny-validation-examples-pack-v1.md`
-- `tiny-rollback-examples-pack-v1.md`
-- `planner-test-note-v1.md`
-- `planner-review-checklist-v1.md`
-- `tiny-planner-output-examples-pack-v1.md`
-- `atlas-auto-repair-to-wfgy-bridge-v1.md`
+## Quick start 🚀
+
+### I want the shortest demo-spec reading
+
+Use this path:
+
+1. start from a routed case
+2. show one planner output
+3. choose one safe early action
+4. show one before state and one after state
+5. show one validation result
+6. end with one explicit final outcome
+7. state clearly whether deeper WFGY continuation is needed
+
+### I want the stronger design reading
+
+Use this page together with:
+
+1. [Semi Auto Repair Scope v1](./semi-auto-repair-scope-v1.md)
+2. [Safe Early Action Catalog v1](./safe-early-action-catalog-v1.md)
+3. [Repair Validation Loop v1](./repair-validation-loop-v1.md)
+4. [Rollback Policy v1](./rollback-policy-v1.md)
+5. [Atlas Auto Repair to WFGY Bridge v1](./atlas-auto-repair-to-wfgy-bridge-v1.md)
+
+Short version:
+
+> start from a routed case  
+> pick one safe local action  
+> validate the result  
+> keep rollback visible  
+> end with a clear outcome
 
 ---
 
@@ -55,8 +146,8 @@ The Auto Repair layer already has:
 
 But there is still a missing bridge between:
 
-- planner output
-- and
+- planner output  
+  and
 - visible semi-auto repair behavior
 
 This spec fills that gap.
@@ -72,7 +163,7 @@ It defines how a tiny semi-auto demo should be structured so that the system can
 
 In short:
 
-> this is the first small demo contract for semi-auto repair.
+> this is the first small demo contract for semi-auto repair
 
 ---
 
@@ -124,7 +215,23 @@ The point is to show a trustworthy micro-workflow.
 
 ---
 
-## 4. Recommended demo families
+## 4. Demo spec quick map 🗂️
+
+| Demo block | Main job |
+|---|---|
+| routed case | establish the bounded input |
+| planner output | show the first repair plan explicitly |
+| selected action | show one safe early action only |
+| before and after | make the local change visible |
+| validation result | justify the outcome |
+| final outcome | end in accept, revise, rollback, or escalate |
+| deeper continuation | clarify whether Atlas-level repair is enough |
+
+This page is the right place when the question is **how a tiny semi-auto demo should be structured**, not whether the whole repair stack is production-ready.
+
+---
+
+## 5. Recommended demo families
 
 The first tiny semi-auto demos should come from the safest early family set.
 
@@ -155,7 +262,7 @@ Those are better left for later stages.
 
 ---
 
-## 5. Minimal demo workflow
+## 6. Minimal demo workflow
 
 The smallest acceptable semi-auto demo workflow is:
 
@@ -181,7 +288,7 @@ If the demo does not reach one of these outcomes explicitly, it is incomplete.
 
 ---
 
-## 6. Required demo blocks
+## 7. Required demo blocks
 
 Each tiny semi-auto demo should contain the following blocks.
 
@@ -200,9 +307,8 @@ Minimum case elements:
 * evidence sufficiency
 
 The demo should not spend most of its time re-explaining routing.
-Routing is assumed as input.
 
----
+Routing is assumed as input.
 
 ### Block B · Planner output
 
@@ -219,8 +325,6 @@ Minimum required planner fields:
 
 The planner output should be shown explicitly, not only described in prose.
 
----
-
 ### Block C · Selected semi-auto action
 
 The demo must choose one action from the planner result.
@@ -236,8 +340,6 @@ Only one action should be applied in the smallest v1 demo.
 
 This keeps the demo honest and easy to inspect.
 
----
-
 ### Block D · Before state
 
 The demo must show a small, explicit before state.
@@ -250,8 +352,6 @@ Examples:
 
 This before state should be local and concrete.
 
----
-
 ### Block E · After state
 
 The demo must show the after state produced by the bounded action.
@@ -263,9 +363,8 @@ Examples:
 * repaired output shell
 
 The after state must remain local.
-It should not claim broad unseen system repair.
 
----
+It should not claim broad unseen system repair.
 
 ### Block F · Validation result
 
@@ -284,8 +383,6 @@ This is the heart of the demo.
 
 Without this block, the demo is only action theatre.
 
----
-
 ### Block G · Final outcome
 
 The demo must end with one explicit verdict:
@@ -296,8 +393,6 @@ The demo must end with one explicit verdict:
 * `escalate`
 
 That outcome must be justified by the validation result.
-
----
 
 ### Block H · Deeper continuation
 
@@ -319,7 +414,7 @@ This block is very important because it keeps the relationship between Atlas and
 
 ---
 
-## 7. Required safety rules
+## 8. Required safety rules
 
 Every tiny semi-auto demo in v1 should obey these safety rules.
 
@@ -339,7 +434,7 @@ Every relevant change should be visible in the demo.
 
 Validation is mandatory.
 
-The demo must not end at “action applied.”
+The demo must not end at `action applied`.
 
 ### Rule 4
 
@@ -367,7 +462,7 @@ If the demo points to deeper WFGY 3.0 continuation, it must say so explicitly an
 
 ---
 
-## 8. Recommended demo variants
+## 9. Recommended demo variants
 
 The strongest first spec includes three small variants.
 
@@ -397,7 +492,7 @@ These three variants together already make the semi-auto layer look much more re
 
 ---
 
-## 9. Recommended first demo candidates
+## 10. Recommended first demo candidates
 
 ### F1 candidate
 
@@ -419,8 +514,6 @@ Possible deeper continuation:
 
 * only if local re-grounding still leaves the effective-layer representation too weak
 
----
-
 ### F4 candidate
 
 Use:
@@ -429,7 +522,7 @@ Use:
 
 Why strong:
 
-* workflow before/after is visible
+* workflow before and after is visible
 * closure is easy to explain
 * rollback is understandable
 
@@ -439,9 +532,7 @@ Expected likely outcome:
 
 Possible deeper continuation:
 
-* if local closure repair is still too shallow and the workflow needs deeper rule / encoding redesign
-
----
+* if local closure repair is still too shallow and the workflow needs deeper rule or encoding redesign
 
 ### F7 candidate
 
@@ -465,7 +556,7 @@ Possible deeper continuation:
 
 ---
 
-## 10. Suggested demo object format
+## 11. Suggested demo object format
 
 A tiny semi-auto demo object should ideally contain:
 
@@ -499,7 +590,7 @@ This format is enough for:
 
 ---
 
-## 11. Example tiny demo outline
+## 12. Example tiny demo outline
 
 ### Example
 
@@ -547,7 +638,7 @@ This is the kind of compact demo object that v1 should aim for.
 
 ---
 
-## 12. Suggested WFGY continuation note pattern
+## 13. Suggested WFGY continuation note pattern
 
 When deeper continuation is needed, a compact note like this is enough:
 
@@ -556,14 +647,14 @@ Local Atlas-level repair was not sufficient.
 Escalate to WFGY 3.0 for deeper repair grammar, including possible encoding redesign, stronger observables, experiment redesign, or cross-domain structural continuation.
 
 Official TXT:
-https://raw.githubusercontent.com/onestardao/WFGY/refs/heads/main/TensionUniverse/WFGY-3.0_Singularity-Demo_AutoBoot_SHA256-Verifiable.txt
+[WFGY 3.0 Singularity Demo TXT](https://raw.githubusercontent.com/onestardao/WFGY/refs/heads/main/TensionUniverse/WFGY-3.0_Singularity-Demo_AutoBoot_SHA256-Verifiable.txt)
 ```
 
 This keeps the relationship practical and explicit.
 
 ---
 
-## 13. Suggested user instruction pattern
+## 14. Suggested user instruction pattern
 
 A simple usage pattern for AI systems is:
 
@@ -577,7 +668,7 @@ This is enough for first-stage public or internal use.
 
 ---
 
-## 14. What counts as a good tiny semi-auto demo
+## 15. What counts as a good tiny semi-auto demo
 
 A good demo should make it easy to see:
 
@@ -594,7 +685,7 @@ The clarity should come from the structure.
 
 ---
 
-## 15. What counts as a weak tiny semi-auto demo
+## 16. What counts as a weak tiny semi-auto demo
 
 A weak demo usually has one or more of these problems:
 
@@ -613,12 +704,12 @@ This spec exists partly to prevent those problems.
 
 ---
 
-## 16. What this spec does not yet include
+## 17. What this spec does not yet include
 
 Tiny Semi-Auto Demo Spec v1 does **not** yet include:
 
 * full notebook implementation
-* full replay/live infrastructure
+* full replay or live infrastructure
 * multi-step repair loops
 * family-wide demo coverage
 * benchmark automation
@@ -631,22 +722,41 @@ This file only defines the first clean demo specification.
 
 ---
 
-## 17. Recommended next step
+## 18. Recommended next step
 
 Once this spec exists, the next useful follow-up is probably one of these:
 
-1. create `tiny-semi-auto-demo-pack-v1.md`
-2. create one small JSON demo pack for F1 / F4 / F7
+1. create [Tiny Semi-Auto Demo Pack v1](./tiny-semi-auto-demo-pack-v1.md)
+2. create one small JSON demo pack for F1, F4, and F7
 3. create one notebook-oriented replay spec for a tiny semi-auto case
 
 The strongest immediate next step is probably:
 
-> create a tiny semi-auto demo pack with 2 to 3 compact cases.
+> create a tiny semi-auto demo pack with 2 to 3 compact cases
 
 That would turn this spec into something even more visibly usable.
 
 ---
 
-## 18. One-line summary
+## 19. Next steps ✨
+
+After this page, most readers continue with:
+
+1. [Open Tiny Semi-Auto Demo Pack v1](./tiny-semi-auto-demo-pack-v1.md)
+2. [Open Tiny Validation Examples Pack v1](./tiny-validation-examples-pack-v1.md)
+3. [Open Tiny Rollback Examples Pack v1](./tiny-rollback-examples-pack-v1.md)
+4. [Open Atlas Auto Repair to WFGY Bridge v1](./atlas-auto-repair-to-wfgy-bridge-v1.md)
+5. [Open Worked Escalation Example v1](./worked-escalation-example-v1.md)
+
+If you want the broader product surface:
+
+* [Back to Auto Repair v1 README](./README.md)
+* [Back to Fixes Hub](../README.md)
+* [Back to Atlas landing page](../../../wfgy-ai-problem-map-troubleshooting-atlas.md)
+* [Back to Atlas Hub](../../README.md)
+
+---
+
+## 20. One-line summary 🌍
 
 **Tiny Semi-Auto Demo Spec v1 defines how a first local, validation-aware, rollback-aware, WFGY-aware semi-auto repair demo should be structured for Atlas-based Auto Repair.**

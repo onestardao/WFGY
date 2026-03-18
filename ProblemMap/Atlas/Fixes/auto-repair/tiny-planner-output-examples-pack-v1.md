@@ -1,31 +1,111 @@
-# Tiny Planner Output Examples Pack v1
+<!--
+AI_NOTE_START
 
-## 0. Document status
+Document role:
+This file is the first compact positive example pack for the Atlas Auto Repair planner layer.
 
-This document defines the first tiny output example pack for the Atlas Auto Repair planner layer.
+How to use this file:
+1. Read this page when you want concrete examples of what good planner output should look like after Atlas routing is already available.
+2. Use this page together with:
+   - [Repair Planner Spec v1](./repair-planner-spec-v1.md)
+   - [Repair Planner Prompt v1](./repair-planner-prompt-v1.md)
+   - [Repair Plan Schema v1](./repair-plan-schema-v1.json)
+   - [Planner Test Note v1](./planner-test-note-v1.md)
+   - [Planner Review Checklist v1](./planner-review-checklist-v1.md)
+   - [Safe Early Action Catalog v1](./safe-early-action-catalog-v1.md)
+   - [Tiny Validation Examples Pack v1](./tiny-validation-examples-pack-v1.md)
+   - [Tiny Rollback Examples Pack v1](./tiny-rollback-examples-pack-v1.md)
+3. Use this page for review calibration, onboarding, demo support, and future regression checks.
+
+What this file is:
+- A compact positive example pack for planner outputs
+- A reference set for v1 planner style and structure
+- A practical bridge between planner rules and visible sample outputs
+
+What this file is not:
+- Not a benchmark pack
+- Not a complete planner corpus
+- Not a failing-output pack
+- Not proof that the planner is already production-complete
+
+Reading discipline for AI:
+- Treat these examples as style and quality references for first repair planning.
+- Keep family alignment, action locality, validation target, misrepair warning, and next-step discipline visible.
+- Do not overread these examples as evidence of full repair closure.
+- Use them as small reusable references, not as universal templates for every case.
+
+AI_NOTE_END
+-->
+
+# Tiny Planner Output Examples Pack v1 🧪
+
+## The first compact positive reference pack for Atlas Auto Repair planner outputs
+
+Quick links:
+
+- [Back to Auto Repair v1 README](./README.md)
+- [Back to Fixes Hub](../README.md)
+- [Back to Official Fixes](../official/README.md)
+- [Back to Atlas landing page](../../../wfgy-ai-problem-map-troubleshooting-atlas.md)
+- [Back to AI Eval Evidence](../../ai-eval-evidence.md)
+- [Back to Atlas Hub](../../README.md)
+- [Get the Atlas Router TXT](../../troubleshooting-atlas-router-v1.txt)
+- [Open Repair Planner Spec v1](./repair-planner-spec-v1.md)
+- [Open Repair Planner Prompt v1](./repair-planner-prompt-v1.md)
+- [Open Repair Plan Schema v1](./repair-plan-schema-v1.json)
+- [Open Planner Test Note v1](./planner-test-note-v1.md)
+- [Open Planner Review Checklist v1](./planner-review-checklist-v1.md)
+- [Open Safe Early Action Catalog v1](./safe-early-action-catalog-v1.md)
+- [Open Tiny Validation Examples Pack v1](./tiny-validation-examples-pack-v1.md)
+- [Open Tiny Rollback Examples Pack v1](./tiny-rollback-examples-pack-v1.md)
+- [Open Tiny Semi Auto Demo Spec v1](./tiny-semi-auto-demo-spec-v1.md)
+
+---
+
+If the planner spec explains **what good planner behavior should be**, this pack shows **what that behavior should actually look like in compact output form**. 🧭
 
 Its purpose is practical:
 
-> show a few compact examples of what good planner output should look like
-> after Atlas routing is already available.
+> show a few compact examples of what good planner output should look like  
+> after Atlas routing is already available
 
 This file does **not** claim to be a benchmark pack or a complete planner corpus.
 
 It claims something smaller and more useful:
 
-> the project now has a first small set of concrete planner output examples
-> that can be reused for review, onboarding, demos, and future tuning.
+> the project now has a first small set of concrete planner output examples  
+> that can be reused for review, onboarding, demos, and future tuning
 
-This document should be read together with:
+---
 
-- `repair-planner-spec-v1.md`
-- `repair-planner-prompt-v1.md`
-- `repair-plan-schema-v1.json`
-- `planner-test-note-v1.md`
-- `planner-review-checklist-v1.md`
-- `safe-early-action-catalog-v1.md`
-- `tiny-validation-examples-pack-v1.md`
-- `tiny-rollback-examples-pack-v1.md`
+## Quick start 🚀
+
+### I want the shortest example reading
+
+Use this path:
+
+1. read one case summary
+2. inspect the planner output object
+3. read why it is a good example
+4. compare it against the review checklist
+5. use it as a reference, not as a universal script
+
+### I want the stronger review path
+
+Use this page together with:
+
+1. [Repair Planner Spec v1](./repair-planner-spec-v1.md)
+2. [Repair Planner Prompt v1](./repair-planner-prompt-v1.md)
+3. [Planner Review Checklist v1](./planner-review-checklist-v1.md)
+4. [Planner Test Note v1](./planner-test-note-v1.md)
+
+Short version:
+
+> keep the family  
+> keep the action set small  
+> name validation clearly  
+> warn about the wrong path  
+> end with a usable next step ✨
 
 ---
 
@@ -53,7 +133,7 @@ This pack fills that gap.
 
 In short:
 
-> this is the first tiny reference pack for planner output style and quality.
+> this is the first tiny reference pack for planner output style and quality
 
 ---
 
@@ -80,7 +160,20 @@ They are first reference samples.
 
 ---
 
-## 3. Pack scope
+## 3. Examples quick map 🗂️
+
+| Example | Main teaching focus |
+|---|---|
+| F1 example | grounding-first planning should stay concrete and local |
+| F4 example | workflow-first planning should stay on closure and ordering |
+| F7 example | container-first planning should repair structure before abstract pressure |
+| cautious F5 example | boundary-adjacent cases should narrow scope rather than overreach |
+
+This page is the right place when the question is **what good planner output should look like in practice**, not whether the planner has been comprehensively benchmarked.
+
+---
+
+## 4. Pack scope
 
 This v1 pack includes four tiny planner output examples:
 
@@ -100,7 +193,7 @@ This is enough for a strong first sample set.
 
 ---
 
-## 4. Standard output example format
+## 5. Standard output example format
 
 Each example follows the same shape:
 
@@ -114,15 +207,13 @@ This keeps the pack compact and reusable.
 
 ---
 
-# Example 1
+## Example 1 · F1 Planner Output Example
 
-# F1 Planner Output Example
-
-## Example ID
+### Example ID
 
 `TPO_F1_001`
 
-## Case summary
+### Case summary
 
 The case is already routed to F1.
 
@@ -133,9 +224,9 @@ The routed diagnosis indicates:
 - primary family: F1
 - broken invariant: evidence-anchor integrity broken
 - best current fit: Retrieval Anchor Drift
-- fix surface direction: re-grounding / anchor re-check
+- fix surface direction: re-grounding or anchor re-check
 
-## Planner output object
+### Planner output object
 
 ```json
 {
@@ -162,7 +253,7 @@ The routed diagnosis indicates:
 }
 ````
 
-## Why this is a good example
+### Why this is a good example
 
 This is a good example because:
 
@@ -172,21 +263,19 @@ This is a good example because:
 * the misrepair risk is real and relevant
 * the next step is operational rather than vague
 
-## Main teaching point
+### Main teaching point
 
 A good F1 planner output should feel concrete, local, and evidence-aware.
 
 ---
 
-# Example 2
+## Example 2 · F4 Planner Output Example
 
-# F4 Planner Output Example
-
-## Example ID
+### Example ID
 
 `TPO_F4_001`
 
-## Case summary
+### Case summary
 
 The case is already routed to F4.
 
@@ -198,9 +287,9 @@ The routed diagnosis indicates:
 * secondary family: F3
 * broken invariant: deployment liveness closure broken
 * best current fit: Pre-Readiness Execution Failure
-* fix surface direction: readiness audit / gate insertion
+* fix surface direction: readiness audit or gate insertion
 
-## Planner output object
+### Planner output object
 
 ```json
 {
@@ -228,7 +317,7 @@ The routed diagnosis indicates:
 }
 ```
 
-## Why this is a good example
+### Why this is a good example
 
 This is a good example because:
 
@@ -238,21 +327,19 @@ This is a good example because:
 * it defines a validation target that matches the failure
 * it gives a useful neighbor-family explanation
 
-## Main teaching point
+### Main teaching point
 
 A good F4 planner output should repair workflow structure first, not throw more reasoning or instructions at the case.
 
 ---
 
-# Example 3
+## Example 3 · F7 Planner Output Example
 
-# F7 Planner Output Example
-
-## Example ID
+### Example ID
 
 `TPO_F7_001`
 
-## Case summary
+### Case summary
 
 The case is already routed to F7.
 
@@ -263,9 +350,9 @@ The routed diagnosis indicates:
 * primary family: F7
 * broken invariant: container fidelity broken
 * best current fit: Symbolic Representation Fidelity Failure
-* fix surface direction: schema tightening / shell correction
+* fix surface direction: schema tightening or shell correction
 
-## Planner output object
+### Planner output object
 
 ```json
 {
@@ -292,7 +379,7 @@ The routed diagnosis indicates:
 }
 ```
 
-## Why this is a good example
+### Why this is a good example
 
 This is a good example because:
 
@@ -301,21 +388,19 @@ This is a good example because:
 * it defines a visible validation target
 * it includes a realistic warning about false success
 
-## Main teaching point
+### Main teaching point
 
 A good F7 planner output should repair the shell first and validate structure without pretending that structure alone guarantees truth.
 
 ---
 
-# Example 4
+## Example 4 · F5 Cautious Planner Output Example
 
-# F5 Cautious Planner Output Example
-
-## Example ID
+### Example ID
 
 `TPO_F5_001`
 
-## Case summary
+### Case summary
 
 The case is already routed to F5 with some neighboring F6 pressure.
 
@@ -327,9 +412,9 @@ The routed diagnosis indicates:
 * secondary family: F6
 * broken invariant: failure-path visibility broken
 * best current fit: Failure Path Opacity
-* fix surface direction: trace exposure / observability insertion
+* fix surface direction: trace exposure or observability insertion
 
-## Planner output object
+### Planner output object
 
 ```json
 {
@@ -354,7 +439,7 @@ The routed diagnosis indicates:
 }
 ```
 
-## Why this is a good example
+### Why this is a good example
 
 This is a good example because:
 
@@ -364,13 +449,13 @@ This is a good example because:
 * it explains why F6 is not first
 * it escalates rather than overreaching
 
-## Main teaching point
+### Main teaching point
 
 A good F5 planner output near F6 pressure should become more careful, not more aggressive.
 
 ---
 
-## 5. What these examples have in common
+## 6. What these examples have in common
 
 Across all four examples, good planner behavior shares the same core traits:
 
@@ -385,7 +470,7 @@ These traits matter more than stylistic polish.
 
 ---
 
-## 6. What bad examples would usually look like
+## 7. What bad examples would usually look like
 
 These examples also imply what weak planner output looks like.
 
@@ -403,7 +488,7 @@ This pack should be used partly as a positive reference set and partly as a nega
 
 ---
 
-## 7. How to use this pack
+## 8. How to use this pack
 
 This pack can be used in several practical ways.
 
@@ -425,7 +510,7 @@ When planner behavior changes later, these examples can serve as a tiny stabilit
 
 ---
 
-## 8. What this pack does not yet include
+## 9. What this pack does not yet include
 
 Tiny Planner Output Examples Pack v1 does **not** yet include:
 
@@ -442,7 +527,7 @@ This pack is intentionally compact.
 
 ---
 
-## 9. Recommended next step
+## 10. Recommended next step
 
 Once this pack exists, the next useful follow-up is one of these:
 
@@ -458,6 +543,26 @@ That would take the planner layer one step closer to visible repair workflow dem
 
 ---
 
-## 10. One-line summary
+## 11. Next steps ✨
+
+After this page, most readers continue with:
+
+1. [Open Planner Review Checklist v1](./planner-review-checklist-v1.md)
+2. [Open Planner Test Note v1](./planner-test-note-v1.md)
+3. [Open Tiny Semi Auto Demo Spec v1](./tiny-semi-auto-demo-spec-v1.md)
+4. [Open Tiny Validation Examples Pack v1](./tiny-validation-examples-pack-v1.md)
+5. [Open Tiny Rollback Examples Pack v1](./tiny-rollback-examples-pack-v1.md)
+
+If you want the broader product surface:
+
+* [Back to Auto Repair v1 README](./README.md)
+* [Back to Fixes Hub](../README.md)
+* [Back to Atlas landing page](../../../wfgy-ai-problem-map-troubleshooting-atlas.md)
+* [Back to Atlas Hub](../../README.md)
+
+---
+
+## 12. One-line summary 🌍
 
 **Tiny Planner Output Examples Pack v1 provides the first compact examples of what good Atlas Auto Repair planner output should look like across F1, F4, F7, and cautious F5 cases.**
+

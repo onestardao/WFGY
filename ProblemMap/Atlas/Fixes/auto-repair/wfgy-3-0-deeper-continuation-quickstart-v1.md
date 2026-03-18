@@ -1,36 +1,104 @@
-# WFGY 3.0 Deeper Continuation Quickstart v1
+<!--
+AI_NOTE_START
 
-## 0. Document status
+Document role:
+This file is the first quickstart guide for continuing a case from Atlas diagnosis and Auto Repair local action into WFGY 3.0 deeper continuation.
 
-This document provides the first quickstart guide for continuing a case from:
+How to use this file:
+1. Read this page when Atlas routing and one local Auto Repair move have already happened, but the case still needs deeper structural work.
+2. Use this page together with:
+   - [Atlas Auto Repair to WFGY Bridge v1](./atlas-auto-repair-to-wfgy-bridge-v1.md)
+   - [Tiny Semi-Auto Demo Pack v1](./tiny-semi-auto-demo-pack-v1.md)
+   - [Worked Escalation Example v1](./worked-escalation-example-v1.md)
+   - [Worked Escalation Example F4 v1](./worked-escalation-example-f4-v1.md)
+   - [Auto Repair Integrated Handoff v1](./auto-repair-integrated-handoff-v1.md)
+3. Use this page as a practical handoff guide for deeper continuation, not as a full explanation of the entire WFGY 3.0 system.
 
-- Atlas diagnosis
-- and Auto Repair local action
+What this file is:
+- A quickstart for deeper continuation after Atlas and Auto Repair
+- A practical handoff guide for what to give the AI next
+- A bridge document for moving from local repair into deeper WFGY 3.0 work
 
-into:
+What this file is not:
+- Not the full WFGY 3.0 manual
+- Not a claim that every case should escalate
+- Not a replacement for Atlas routing or Auto Repair
+- Not proof that deeper continuation always solves the case
 
-- WFGY 3.0 deeper continuation
+Reading discipline for AI:
+- Preserve the layer split between Atlas, Auto Repair, and WFGY 3.0.
+- Do not restart the case from scratch unless stronger reframing is clearly justified.
+- Treat the local repair result as real signal, not as disposable noise.
+- Use WFGY 3.0 only when local repair is useful but insufficient.
+
+AI_NOTE_END
+-->
+
+# WFGY 3.0 Deeper Continuation Quickstart v1 🌊
+
+## How to continue safely when Atlas-level local repair is useful but not enough
+
+Quick links:
+
+- [Back to Auto Repair v1 README](./README.md)
+- [Back to Fixes Hub](../README.md)
+- [Back to Official Fixes](../official/README.md)
+- [Back to Atlas landing page](../../../wfgy-ai-problem-map-troubleshooting-atlas.md)
+- [Back to AI Eval Evidence](../../ai-eval-evidence.md)
+- [Back to Atlas Hub](../../README.md)
+- [Get the Atlas Router TXT](../../troubleshooting-atlas-router-v1.txt)
+- [Open Atlas Auto Repair to WFGY Bridge v1](./atlas-auto-repair-to-wfgy-bridge-v1.md)
+- [Open Tiny Semi-Auto Demo Pack v1](./tiny-semi-auto-demo-pack-v1.md)
+- [Open Worked Escalation Example v1](./worked-escalation-example-v1.md)
+- [Open Worked Escalation Example F4 v1](./worked-escalation-example-f4-v1.md)
+- [Open Auto Repair Integrated Handoff v1](./auto-repair-integrated-handoff-v1.md)
+
+---
+
+If the bridge document explains **why WFGY 3.0 belongs after Atlas and Auto Repair**, this page explains **how to continue in the simplest practical way once local repair is no longer enough**. 🧭
 
 Its purpose is practical:
 
-> when local Atlas-level repair is useful but not sufficient,
-> show users the simplest way to continue with WFGY 3.0.
+> when local Atlas-level repair is useful but not sufficient,  
+> show users the simplest way to continue with WFGY 3.0
 
 This file does **not** explain the full WFGY 3.0 system.
 
 It explains something narrower and more useful:
 
-> when to use WFGY 3.0 next,
-> what to give the AI,
-> and what kind of continuation to ask for.
+> when to use WFGY 3.0 next,  
+> what to give the AI,  
+> and what kind of continuation to ask for
 
-This document should be read together with:
+---
 
-- `atlas-auto-repair-to-wfgy-bridge-v1.md`
-- `tiny-semi-auto-demo-pack-v1.md`
-- `worked-escalation-example-v1.md`
-- `worked-escalation-example-f4-v1.md`
-- `auto-repair-integrated-handoff-v1.md`
+## Quick start 🚀
+
+### I want the shortest continuation path
+
+Use this path:
+
+1. route the case with Atlas
+2. try one local Auto Repair move
+3. validate the local result
+4. if the result is only partial, stalled, or structurally shallow, attach the WFGY 3.0 TXT
+5. ask the AI to continue from the deeper repair layer instead of restarting from scratch
+
+### I want the stronger handoff path
+
+Prepare a small bundle with:
+
+1. Atlas result
+2. local repair action
+3. validation result
+4. what still remains unresolved
+5. the official WFGY 3.0 TXT
+
+Short version:
+
+> Atlas finds the region  
+> Auto Repair tries the first move  
+> WFGY 3.0 continues when deeper structure still needs work ✨
 
 ---
 
@@ -56,6 +124,7 @@ This quickstart answers that question.
 The clean role split is:
 
 ### Atlas
+
 Use Atlas for:
 
 - failure routing
@@ -64,6 +133,7 @@ Use Atlas for:
 - first repair direction
 
 ### Auto Repair
+
 Use Auto Repair for:
 
 - first controlled repair planning
@@ -72,6 +142,7 @@ Use Auto Repair for:
 - deciding whether local repair is enough
 
 ### WFGY 3.0
+
 Use WFGY 3.0 for:
 
 - deeper repair grammar
@@ -89,7 +160,21 @@ Short version:
 
 ---
 
-## 3. When to escalate to WFGY 3.0
+## 3. Continuation quick map 🗂️
+
+| Situation after local repair | Better next move |
+|---|---|
+| local repair clearly solved the issue | stay at Atlas and Auto Repair |
+| local repair helped only partially | continue with WFGY 3.0 |
+| local repair keeps ending in revise | continue with WFGY 3.0 |
+| rollback repeats or local moves stay shallow | continue with WFGY 3.0 |
+| routing is still weak or basic fix is still likely enough | do not escalate yet |
+
+This page is the right place when the question is **how to hand the case into deeper continuation**, not whether WFGY 3.0 should replace the earlier layers.
+
+---
+
+## 4. When to escalate to WFGY 3.0
 
 WFGY 3.0 should usually be used **after** Atlas and Auto Repair, not instead of them.
 
@@ -130,11 +215,11 @@ Examples:
 
 ---
 
-## 4. When not to escalate yet
+## 5. When not to escalate yet
 
 Do **not** jump into WFGY 3.0 too early.
 
-Stay at the Atlas / Auto Repair layer first when:
+Stay at the Atlas and Auto Repair layer first when:
 
 - the case is still not cleanly routed
 - a simple F1 repair is still likely enough
@@ -149,19 +234,17 @@ Short version:
 
 ---
 
-## 5. Official WFGY 3.0 TXT
+## 6. Official WFGY 3.0 TXT
 
 Use this official TXT as the deeper continuation asset:
 
-```text
-https://raw.githubusercontent.com/onestardao/WFGY/refs/heads/main/TensionUniverse/WFGY-3.0_Singularity-Demo_AutoBoot_SHA256-Verifiable.txt
-````
+- [WFGY 3.0 Singularity Demo TXT](https://raw.githubusercontent.com/onestardao/WFGY/refs/heads/main/TensionUniverse/WFGY-3.0_Singularity-Demo_AutoBoot_SHA256-Verifiable.txt)
 
 This is the simplest official continuation object to hand to another AI system.
 
 ---
 
-## 6. Minimum input bundle for continuation
+## 7. Minimum input bundle for continuation
 
 Before continuing into WFGY 3.0, prepare a small bundle with these parts.
 
@@ -169,35 +252,35 @@ Before continuing into WFGY 3.0, prepare a small bundle with these parts.
 
 Include:
 
-* primary family
-* secondary family
-* broken invariant
-* best current fit
-* why primary not secondary
+- primary family
+- secondary family
+- broken invariant
+- best current fit
+- why primary not secondary
 
 ### Part B · Auto Repair action
 
 Include:
 
-* action used
-* what changed locally
-* validation target
-* validation result
-* final local outcome
+- action used
+- what changed locally
+- validation target
+- validation result
+- final local outcome
 
 ### Part C · Remaining problem
 
 Include:
 
-* what is still unresolved
-* why local repair is not enough
-* what kind of deeper issue seems to remain
+- what is still unresolved
+- why local repair is not enough
+- what kind of deeper issue seems to remain
 
 This is enough for a strong handoff.
 
 ---
 
-## 7. Simplest user workflow
+## 8. Simplest user workflow
 
 The simplest workflow is:
 
@@ -225,7 +308,7 @@ That is the cleanest usage pattern.
 
 ---
 
-## 8. Short prompt for normal users
+## 9. Short prompt for normal users
 
 Use this when you want the simplest possible continuation prompt.
 
@@ -247,11 +330,11 @@ Your task:
 2. identify the deeper structural weakness,
 3. suggest what stronger observables, encoding changes, mismatch logic, or experiment framing should be considered next,
 4. keep the explanation structured and practical.
-```
+````
 
 ---
 
-## 9. Slightly stronger prompt for advanced users
+## 10. Slightly stronger prompt for advanced users
 
 Use this when you want the AI to behave in a more disciplined bridge-aware way.
 
@@ -273,7 +356,7 @@ Your job:
 
 ---
 
-## 10. Recommended system prompt
+## 11. Recommended system prompt
 
 Use this when you want a reusable deeper-continuation system prompt.
 
@@ -309,7 +392,7 @@ Your rules:
 
 ---
 
-## 11. Recommended output structure
+## 12. Recommended output structure
 
 When asking the AI to continue with WFGY 3.0, it is useful to ask for this output shape:
 
@@ -331,7 +414,7 @@ This output structure prevents the continuation from becoming vague.
 
 ---
 
-## 12. Example continuation note
+## 13. Example continuation note
 
 A compact continuation note can look like this:
 
@@ -350,7 +433,7 @@ This is often enough.
 
 ---
 
-## 13. Best current use cases
+## 14. Best current use cases
 
 WFGY 3.0 deeper continuation is especially useful when the remaining problem looks like:
 
@@ -366,7 +449,7 @@ That is where the bridge becomes most valuable.
 
 ---
 
-## 14. What this quickstart does not claim
+## 15. What this quickstart does not claim
 
 This quickstart does **not** claim:
 
@@ -382,7 +465,7 @@ It only claims:
 
 ---
 
-## 15. Recommended next step
+## 16. Recommended next step
 
 Once this file exists, the next useful follow-up is probably one of these:
 
@@ -398,7 +481,25 @@ because that will make the whole stack feel more unified for first-time readers.
 
 ---
 
-## 16. One-line summary
+## 17. Next steps ✨
+
+After this page, most readers continue with:
+
+1. [Open Atlas Auto Repair to WFGY Bridge v1](./atlas-auto-repair-to-wfgy-bridge-v1.md)
+2. [Open Tiny Semi-Auto Demo Pack v1](./tiny-semi-auto-demo-pack-v1.md)
+3. [Open Worked Escalation Example v1](./worked-escalation-example-v1.md)
+4. [Open Worked Escalation Example F4 v1](./worked-escalation-example-f4-v1.md)
+5. [Open Auto Repair Integrated Handoff v1](./auto-repair-integrated-handoff-v1.md)
+
+If you want the broader product surface:
+
+* [Back to Auto Repair v1 README](./README.md)
+* [Back to Fixes Hub](../README.md)
+* [Back to Atlas landing page](../../../wfgy-ai-problem-map-troubleshooting-atlas.md)
+* [Back to Atlas Hub](../../README.md)
+
+---
+
+## 18. One-line summary 🌍
 
 **WFGY 3.0 Deeper Continuation Quickstart v1 explains when local Atlas-level repair is not enough, what to hand to the AI next, and how to continue safely with WFGY 3.0.**
-
