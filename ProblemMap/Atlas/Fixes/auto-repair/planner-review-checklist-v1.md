@@ -1,26 +1,105 @@
-# Planner Review Checklist v1
+<!--
+AI_NOTE_START
 
-## 0. Document status
+Document role:
+This file is the compact review checklist for the Atlas Auto Repair planner layer.
 
-This document defines the first compact review checklist for the Atlas Auto Repair planner layer.
+How to use this file:
+1. Read this page when reviewing whether a planner output is disciplined enough for v1 use.
+2. Use this page together with:
+   - [Repair Planner Spec v1](./repair-planner-spec-v1.md)
+   - [Repair Planner Prompt v1](./repair-planner-prompt-v1.md)
+   - [Repair Plan Schema v1](./repair-plan-schema-v1.json)
+   - [Planner Test Note v1](./planner-test-note-v1.md)
+   - [Repair Validation Loop v1](./repair-validation-loop-v1.md)
+   - [Rollback Policy v1](./rollback-policy-v1.md)
+3. Use this page for manual review, prompt iteration, small tests, demo review, and future planner quality control.
+
+What this file is:
+- A compact planner review checklist
+- A reusable review sheet for first-stage repair planning
+- A practical quality-control page for v1 planner outputs
+
+What this file is not:
+- Not a public benchmark
+- Not an automated grader
+- Not proof that a case is fully solved
+- Not a replacement for planner design, validation, or rollback documents
+
+Reading discipline for AI:
+- Judge whether the planner produced a good first repair plan, not whether the whole case is solved.
+- Keep family alignment, action quality, validation, misrepair awareness, and escalation discipline visible.
+- Treat this page as a review aid, not as a performance marketing page.
+- Do not overclaim planner quality from one strong example.
+
+AI_NOTE_END
+-->
+
+# Planner Review Checklist v1 ✅
+
+## Compact review sheet for Atlas Auto Repair planner outputs
+
+Quick links:
+
+- [Back to Auto Repair v1 README](./README.md)
+- [Back to Fixes Hub](../README.md)
+- [Back to Official Fixes](../official/README.md)
+- [Back to Atlas landing page](../../../wfgy-ai-problem-map-troubleshooting-atlas.md)
+- [Back to AI Eval Evidence](../../ai-eval-evidence.md)
+- [Back to Atlas Hub](../../README.md)
+- [Get the Atlas Router TXT](../../troubleshooting-atlas-router-v1.txt)
+- [Open Repair Planner Spec v1](./repair-planner-spec-v1.md)
+- [Open Repair Planner Prompt v1](./repair-planner-prompt-v1.md)
+- [Open Repair Plan Schema v1](./repair-plan-schema-v1.json)
+- [Open Planner Test Note v1](./planner-test-note-v1.md)
+- [Open Repair Validation Loop v1](./repair-validation-loop-v1.md)
+- [Open Rollback Policy v1](./rollback-policy-v1.md)
+- [Open Tiny Planner Output Examples Pack v1](./tiny-planner-output-examples-pack-v1.md)
+
+---
+
+If the planner spec explains **how the planner should behave**, this checklist explains **how to review whether the planner output is actually behaving well enough in practice**. 🧭
 
 Its purpose is simple:
 
-> provide a short, reusable review sheet
-> for checking whether a repair planner output is disciplined enough
-> for first-stage Atlas-based repair planning.
+> provide a short, reusable review sheet  
+> for checking whether a repair planner output is disciplined enough  
+> for first-stage Atlas-based repair planning
 
 This file does **not** define a benchmark.
+
 It defines a practical review checklist.
 
-It should be read together with:
+---
 
-- `repair-planner-spec-v1.md`
-- `repair-planner-prompt-v1.md`
-- `repair-plan-schema-v1.json`
-- `planner-test-note-v1.md`
-- `repair-validation-loop-v1.md`
-- `rollback-policy-v1.md`
+## Quick start 🚀
+
+### I want the shortest review path
+
+Use this path:
+
+1. open the planner output
+2. read the checklist table
+3. mark each row as `pass`, `partial`, or `fail`
+4. check whether any high-priority fail condition is present
+5. write a short review summary
+
+### I want the stronger review path
+
+Use this page together with:
+
+1. [Repair Planner Spec v1](./repair-planner-spec-v1.md)
+2. [Repair Planner Prompt v1](./repair-planner-prompt-v1.md)
+3. [Repair Plan Schema v1](./repair-plan-schema-v1.json)
+4. [Repair Validation Loop v1](./repair-validation-loop-v1.md)
+5. [Rollback Policy v1](./rollback-policy-v1.md)
+
+Short version:
+
+> check family fit  
+> check action quality  
+> check validation target  
+> check misrepair and escalation ✨
 
 ---
 
@@ -66,7 +145,22 @@ This checklist is designed to catch those failures early.
 
 ---
 
-## 3. How to use this checklist
+## 3. Review quick map 🗂️
+
+| Review area | Main question |
+|---|---|
+| family fit | is the planner still aligned with the routed case |
+| action quality | are the proposed actions plausible, local, and limited |
+| scope discipline | is the plan scope appropriate for the case risk |
+| validation | is there a real first validation target |
+| misrepair awareness | does the planner name a realistic wrong-path risk |
+| escalation | does the planner know when to narrow, stop, or escalate |
+
+This page is the right place when the question is **whether the planner output is disciplined enough for v1 use**, not whether the case is globally solved.
+
+---
+
+## 4. How to use this checklist
 
 Review the planner output item by item.
 
@@ -88,7 +182,7 @@ Core areas include:
 
 ---
 
-## 4. Checklist
+## 5. Checklist
 
 | No. | Review Item | What to check | Verdict |
 |---|---|---|---|
@@ -107,7 +201,7 @@ Core areas include:
 
 ---
 
-## 5. Review item notes
+## 6. Review item notes
 
 ### 1. Family alignment
 
@@ -116,8 +210,6 @@ A good planner should remain anchored to the routed family unless there is expli
 Common failure:
 
 - planner drifts into a neighboring family without sufficient reason
-
----
 
 ### 2. Neighbor discipline
 
@@ -128,8 +220,6 @@ Common failure:
 - F1 case turns into F7-first repair too early
 - F4 case turns into F3-first repair too early
 - F5 case turns into F6 intervention too early
-
----
 
 ### 3. Action count discipline
 
@@ -144,8 +234,6 @@ Common failure:
 - 5 or more actions
 - mixed action bag with no real first move
 
----
-
 ### 4. Action locality
 
 A good planner should choose actions that are local and inspectable.
@@ -156,8 +244,6 @@ Common failure:
 - vague “improve everything” repair language
 - multi-step chain without checkpoints
 
----
-
 ### 5. Action plausibility
 
 A good planner should propose actions that actually match the routed family and fix surface.
@@ -167,8 +253,6 @@ Common failure:
 - schema tightening on a grounding-first case
 - reasoning pressure on an execution-first case
 - visibility uplift presented as if it were full repair
-
----
 
 ### 6. Scope discipline
 
@@ -183,8 +267,6 @@ Examples:
 Common failure:
 
 - broad scope under weak evidence
-
----
 
 ### 7. Validation target clarity
 
@@ -202,8 +284,6 @@ Common failure:
 - no validation target
 - vague validation like “check if better”
 
----
-
 ### 8. Misrepair awareness
 
 A good planner should identify the most likely wrong repair path.
@@ -214,8 +294,6 @@ Common failure:
 - generic warning that teaches nothing
 - missing obvious neighbor-family trap
 
----
-
 ### 9. Escalation discipline
 
 A good planner should know when not to force a repair plan.
@@ -224,8 +302,6 @@ Common failure:
 
 - planner keeps proposing aggressive actions under high ambiguity
 - planner avoids escalation even when the case is weakly defined
-
----
 
 ### 10. Confidence discipline
 
@@ -236,8 +312,6 @@ Common failure:
 - `high` planner confidence on weak routing
 - strong claims in boundary-heavy cases
 
----
-
 ### 11. Anti-fantasy discipline
 
 A good planner should plan the first move, not a heroic total cure.
@@ -246,8 +320,6 @@ Common failure:
 
 - repair story instead of repair plan
 - pretending full closure from one local action
-
----
 
 ### 12. Operational usefulness
 
@@ -260,7 +332,7 @@ Common failure:
 
 ---
 
-## 6. Quick scoring suggestion
+## 7. Quick scoring suggestion
 
 A lightweight scoring approach for internal review:
 
@@ -274,12 +346,12 @@ Suggested rough reading:
 - `14 to 19` = usable but needs refinement
 - `0 to 13` = weak planner output
 
-This is only a rough internal guide.
+This is only a rough internal guide.  
 It is not a public benchmark claim.
 
 ---
 
-## 7. High-priority fail conditions
+## 8. High-priority fail conditions 🚨
 
 Even if the total score is not terrible, the planner should still be treated as weak if it fails in one or more of these core areas:
 
@@ -293,7 +365,7 @@ These are the most important v1 planner review items.
 
 ---
 
-## 8. Short review template
+## 9. Short review template
 
 Use this compact template for fast review:
 
@@ -321,7 +393,7 @@ Final reading:
 
 ---
 
-## 9. Example quick review
+## 10. Example quick review
 
 ### Example
 
@@ -352,7 +424,7 @@ This is the kind of compact review the checklist is meant to support.
 
 ---
 
-## 10. What this checklist does not yet include
+## 11. What this checklist does not yet include
 
 Planner Review Checklist v1 does **not** yet include:
 
@@ -368,21 +440,39 @@ For now, the point is to make planner review fast, structured, and reusable.
 
 ---
 
-## 11. Recommended next step
+## 12. Recommended next step
 
 Once this checklist exists, the next useful follow-up is probably:
 
-* `tiny-planner-output-examples-pack-v1.md`
+* [Tiny Planner Output Examples Pack v1](./tiny-planner-output-examples-pack-v1.md)
 
 That would pair well with:
 
-* planner test note
-* planner review checklist
+* [Planner Test Note v1](./planner-test-note-v1.md)
+* this review checklist
 
 and give the planner layer a stronger small evidence set.
 
 ---
 
-## 12. One-line summary
+## 13. Next steps ✨
+
+After this page, most readers continue with:
+
+1. [Open Planner Test Note v1](./planner-test-note-v1.md)
+2. [Open Tiny Planner Output Examples Pack v1](./tiny-planner-output-examples-pack-v1.md)
+3. [Open Repair Planner Spec v1](./repair-planner-spec-v1.md)
+4. [Open Repair Validation Loop v1](./repair-validation-loop-v1.md)
+
+If you want the broader product surface:
+
+* [Back to Auto Repair v1 README](./README.md)
+* [Back to Fixes Hub](../README.md)
+* [Back to Atlas landing page](../../../wfgy-ai-problem-map-troubleshooting-atlas.md)
+* [Back to Atlas Hub](../../README.md)
+
+---
+
+## 14. One-line summary 🌍
 
 **Planner Review Checklist v1 provides a compact way to judge whether the Atlas Auto Repair planner is family-aligned, conservative, validation-aware, and operationally useful.**
