@@ -53,14 +53,18 @@ AI_NOTE_END
 You do **not** need deep system knowledge to start.  
 This atlas is built for vibe coders, AI app builders, workflow builders, agent builders, and engineers working with complex AI systems.
 
-> **Install the TXT once. Build normally. Let AI start debugging from the right layer more often.**
+> **Load the TXT once. Keep building normally. Use it to improve the first diagnostic cut before repair drift compounds.**
 
 | Step | What to do |
 |------|------------|
 | 1 | Download the [Router TXT Pack](./Atlas/troubleshooting-atlas-router-v1.txt) |
-| 2 | Drop it into ChatGPT, Claude, Gemini, Cursor, Copilot, or your preferred AI workflow |
-| 3 | Keep building as usual |
-| 4 | Let AI make a better first cut during debugging |
+| 2 | Use it in ChatGPT, Claude, Gemini, Cursor, Copilot, or as a case-routing companion alongside Codex, OpenCode, and other coding CLI tools |
+| 3 | Paste a real case such as a bug report, issue thread, workflow failure, trace excerpt, or output mismatch |
+| 4 | Let the model classify the likely failure family, broken invariant, first repair direction, and likely misrepair risk |
+
+> Important:
+> The Router is a compact diagnosis and routing pack.  
+> It is **not** a long-running CLI runtime prompt, **not** an agent harness, and **not** a replacement for logs, traces, tests, or implementation work.
 
 For harder cases, logs, traces, outputs, or failure examples can still be added later for sharper routing.
 
@@ -122,7 +126,7 @@ If that pattern feels familiar, this is exactly the point where a route-first sy
 
 | Layer | What you get |
 |------|---------------|
-| Router TXT | A compact routing pack you can drop into an AI workflow today |
+| Router TXT | A compact diagnosis and routing pack for strong LLM use and real troubleshooting cases |
 | Usage Guide | The shortest practical entry if you want to test it in minutes |
 | AI Eval Evidence | Cross-model directional evidence for the route-first claim |
 | Official Demos | Concrete proof that different routes produce different first repair moves |
@@ -212,7 +216,7 @@ You do **not** need deep RAG expertise to start.
 
 ---
 
-## Use the atlas directly with AI 🤖
+## Use the atlas directly with AI and coding workflows 🤖
 
 Problem Map 3.0 is not only a document system.
 
@@ -234,7 +238,7 @@ Its purpose is simple:
 Short version:
 
 > **The Atlas is the map.**  
-> **The Router is the first compact executable surface of that map.**
+> **The Router is the first compact diagnosis surface built from that map.**
 
 If you want the practical entry points:
 
@@ -242,16 +246,36 @@ If you want the practical entry points:
 - [Router Usage Guide](./Atlas/troubleshooting-atlas-router-v1-usage.md)
 - [Router TXT Pack](./Atlas/troubleshooting-atlas-router-v1.txt)
 
-What the Router is **not**:
+### Healthy usage
+
+Use the Router when you already have a real case, for example:
+
+- a bug report
+- an issue thread
+- a failing workflow
+- a trace excerpt
+- a broken output
+- an expected vs actual mismatch
+
+This includes chat-based AI workflows and coding workflows that involve tools such as Codex, OpenCode, and other CLI-based assistants.
+
+### Important boundary
+
+The Router is a **case-routing and diagnosis companion**.
+
+It is **not**:
 
 - not the full Atlas
 - not the full Casebook
 - not a full auto-repair engine
 - not a claim of full diagnosis closure
+- not a long-running CLI runtime system prompt
+- not an autonomous agent harness
+- not a replacement for logs, traces, tests, or real implementation work
 
 What it does give you is something much more immediately useful:
 
-> **drop the TXT into an AI system, and make better first cuts before the wrong fix starts compounding**
+> **use the TXT to classify the case first, choose a better first repair direction, and reduce wrong-first-fix drift before it compounds**
 
 ---
 
@@ -352,7 +376,7 @@ The map of failure space.
 
 ### Router 🚦
 
-The compact executable entry that helps AI systems route failures first.
+The compact diagnosis entry that helps AI systems route failures first.
 
 ### Casebook 📚
 
@@ -592,6 +616,43 @@ The safer and more accurate claim is:
 > **the first compact executable surface of the Atlas**
 >
 > It is not the whole Atlas and not a full repair engine.
+
+</details>
+
+<details>
+<summary><strong>Can I use the Router with Codex, OpenCode, or other coding CLI tools? 🧰</strong></summary>
+
+<br>
+
+> Yes, but the correct usage is important.
+>
+> The Router can be used **alongside** Codex, OpenCode, and other coding CLI workflows as a case-routing companion.
+>
+> Good use cases include:
+>
+> - a bug report
+> - a failing task
+> - a broken trace
+> - a suspicious issue thread
+> - an expected vs actual mismatch
+> - a workflow that keeps drifting into the wrong repair direction
+>
+> In those cases, the Router helps the model:
+>
+> - classify the likely failure family
+> - identify the broken invariant
+> - choose a better first repair direction
+> - warn against likely misrepair
+>
+> What it is **not** meant to be:
+>
+> - not a long-running CLI runtime system prompt
+> - not an autonomous agent harness
+> - not a replacement for logs, traces, tests, or real implementation work
+>
+> The safest reading is:
+>
+> **use it to diagnose the case before deeper repair, not to replace the execution layer of the CLI tool itself**
 
 </details>
 
