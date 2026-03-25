@@ -1,6 +1,6 @@
 # WFGY ProblemMap Scan
 
-Generated at: 2026-03-24 06:03:23 UTC
+Generated at: 2026-03-25 06:04:21 UTC
 
 ## ProblemMap files
 
@@ -689,23 +689,41 @@ ProblemMap/GrandmaClinic/images/no14.png
 ProblemMap/GrandmaClinic/images/no15.png
 ProblemMap/GrandmaClinic/images/no16.png
 ProblemMap/Infra_Boot_Problems.md
+ProblemMap/Inverse_Atlas/FAQ.md
 ProblemMap/Inverse_Atlas/README.md
+ProblemMap/Inverse_Atlas/colab.md
+ProblemMap/Inverse_Atlas/criticisms-and-non-goals.md
 ProblemMap/Inverse_Atlas/docs/.gitkeep
 ProblemMap/Inverse_Atlas/docs/inverse_atlas_experiment_report.html
 ProblemMap/Inverse_Atlas/dual-layer-positioning.md
 ProblemMap/Inverse_Atlas/experiments/README.md
+ProblemMap/Inverse_Atlas/experiments/case-design-and-rationale.md
+ProblemMap/Inverse_Atlas/experiments/evidence-snapshot.md
+ProblemMap/Inverse_Atlas/experiments/phase-overview.md
 ProblemMap/Inverse_Atlas/experiments/repro-60-seconds.md
+ProblemMap/Inverse_Atlas/experiments/results-and-current-findings.md
+ProblemMap/Inverse_Atlas/experiments/showcase-cases.md
 ProblemMap/Inverse_Atlas/figures/README.md
 ProblemMap/Inverse_Atlas/figures/fig1_default_vs_authorized_generation.png
 ProblemMap/Inverse_Atlas/figures/fig2_inverse_atlas_runtime_flow.png
 ProblemMap/Inverse_Atlas/figures/fig3_forward_inverse_dual_layer.png
 ProblemMap/Inverse_Atlas/figures/fig4_runtime_modes_failure_boundary.png
+ProblemMap/Inverse_Atlas/how-inverse-atlas-thinks.md
 ProblemMap/Inverse_Atlas/paper/README.md
 ProblemMap/Inverse_Atlas/paper/inverse-troubleshooting-atlas-pre-generative-governance-for-ai-legitimacy.pdf
 ProblemMap/Inverse_Atlas/quickstart.md
 ProblemMap/Inverse_Atlas/runtime-guide.md
 ProblemMap/Inverse_Atlas/runtime/README.md
+ProblemMap/Inverse_Atlas/runtime/inverse-advanced.txt
+ProblemMap/Inverse_Atlas/runtime/inverse-basic.txt
+ProblemMap/Inverse_Atlas/runtime/inverse-cases.txt
+ProblemMap/Inverse_Atlas/runtime/inverse-demo.txt
+ProblemMap/Inverse_Atlas/runtime/inverse-eval.txt
+ProblemMap/Inverse_Atlas/runtime/inverse-runtime.txt
+ProblemMap/Inverse_Atlas/runtime/inverse-strict.txt
+ProblemMap/Inverse_Atlas/start-here.md
 ProblemMap/Inverse_Atlas/status-and-boundaries.md
+ProblemMap/Inverse_Atlas/use-cases-and-deployment.md
 ProblemMap/Inverse_Atlas/versions.md
 ProblemMap/LLM.md
 ProblemMap/LongContext_Problems.md
@@ -803,4 +821,4 @@ ProblemMap/wfgy-metrics.md
 ProblemMap/wfgy-rag-16-problem-map-global-debug-card.md
 
 Total ProblemMap docs:
-797
+815
