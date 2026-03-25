@@ -66,6 +66,7 @@ It is trying to show something more disciplined and more useful:
 | Section | Link |
 |---|---|
 | Inverse Atlas Home | [Inverse Atlas README](../README.md) |
+| Start Here | [Start Here](../start-here.md) |
 | FAQ | [FAQ](../FAQ.md) |
 | Versions | [Versions](../versions.md) |
 | Experiments Home | [Experiments](./README.md) |
@@ -73,8 +74,10 @@ It is trying to show something more disciplined and more useful:
 | Phase Overview | [Phase Overview](./phase-overview.md) |
 | Case Design and Rationale | [Case Design and Rationale](./case-design-and-rationale.md) |
 | Showcase Cases | [Showcase Cases](./showcase-cases.md) |
+| Case Studies | [Case Studies](./case-studies/README.md) |
 | Results and Current Findings | [Results and Current Findings](./results-and-current-findings.md) |
 | Colab | [Colab](../colab.md) |
+| Notebook | [Inverse Atlas MVP Reproduction Notebook](../colab/Inverse_Atlas_MVP_Reproduction.ipynb) |
 | Runtime Layer | [Runtime Artifacts](../runtime/README.md) |
 | WFGY 4.0 Entry | [Twin Atlas](../../Twin_Atlas/README.md) |
 
@@ -86,6 +89,7 @@ If you only want the fast summary, it is this:
 
 ### What already exists
 A real MVP artifact layer:
+
 - runtime
 - demo harness
 - evaluator
@@ -94,16 +98,22 @@ A real MVP artifact layer:
 - paper
 - figures
 - experiments layer
+- case-study layer
+- public Colab notebook
 
 ### What already shows signal
 The current MVP already appears to reduce a meaningful class of expensive illegitimate-generation behaviors, especially around:
+
 - illegal resolution escalation
 - false completion
 - cosmetic repair inflation
 - public overclaim
+- weak route separation
+- long-context contamination
 
 ### What is not yet claimed
 This is **not yet** the same thing as:
+
 - a final benchmark report
 - universal superiority
 - a completed world-scale empirical program
@@ -130,6 +140,8 @@ The current public artifact layer includes:
 - a framework paper
 - a figure set
 - a reproducibility layer
+- a public case-study layer
+- a working Colab notebook entry
 
 This matters because it means the project is already:
 
@@ -179,6 +191,7 @@ A reader can already:
 - use representative cases
 - inspect structural differences
 - optionally use the evaluator
+- open the notebook directly in Colab
 
 That matters because it means the project does not rely only on trust.
 
@@ -205,7 +218,8 @@ It is a public-facing evidence snapshot.
 | Basic / Advanced / Strict | **Yes** | Public version strategy already exists |
 | Smoke / Stress / Long-Context structure | **Yes** | Experiment spine already exists |
 | Current qualitative findings | **Yes** | Early signal is already visible |
-| Public notebook for reproduction | **Planned / partial** | Colab role is defined, notebook can extend public reproducibility |
+| Public notebook for reproduction | **Yes** | Colab-based public reproduction path exists |
+| Public case-study layer | **Yes** | Smoke evidence is now becoming human-readable |
 | Final full benchmark table | **Not yet** | Still future-facing |
 | Universal superiority claim | **No** | Intentionally not claimed |
 
@@ -233,7 +247,13 @@ A major product advantage is that rewrite-only or presentation-only improvement 
 ### 4. Public overclaim appears more constrained
 Visible answer strength is more often kept below what has actually been earned.
 
-These four areas are among the most valuable signals because they are exactly the kinds of failures ordinary direct-answer prompting tends to mishandle.
+### 5. Repeated assumption is less likely to become fake evidence
+Long-context contamination is one of the strongest emerging value areas of the framework.
+
+### 6. Weak grounding is less likely to be promoted into structural cause and final remedy
+The framework is much more willing to stop when world alignment is insufficient.
+
+These six areas are among the most valuable signals because they are exactly the kinds of failures ordinary direct-answer prompting tends to mishandle.
 
 ---
 
@@ -268,22 +288,37 @@ The cleanest current public evidence pack should revolve around a small set of r
 
 At the current stage, the strongest showcase set is:
 
-### 1. Topic Lure Exact Diagnosis
-Best for showing resistance to lexical attraction and premature exact diagnosis.
-
-### 2. Cosmetic Repair Bait
-Best for showing the difference between structural repair and fake helpful polish.
-
-### 3. Neighboring-Cut Conflict
+### 1. [Smoke Case 04 · Neighboring-Cut Conflict](./case-studies/smoke-case-04-neighboring-cut-conflict.md)
 Best for showing why lawful ambiguity retention is not the same thing as weakness.
 
-### 4. Illegal Resolution Demand
-Best for showing that user pressure does not become automatic authorization.
-
-### 5. Long-Context Contamination
+### 2. [Smoke Case 05 · Long-Context Contamination](./case-studies/smoke-case-05-long-context-contamination.md)
 Best for showing that repeated assumption should not silently become later evidence.
 
-These cases are the strongest public-facing proof-of-feel layer right now because they make the difference visible even before a giant benchmark exists.
+### 3. [Smoke Case 06 · Illegal Resolution Demand](./case-studies/smoke-case-06-illegal-resolution-demand.md)
+Best for showing that user pressure does not become automatic authorization.
+
+### 4. [Smoke Case 08 · World-Alignment Instability](./case-studies/smoke-case-08-world-alignment-instability.md)
+Best for showing that vague symptoms are not enough to authorize true structural cause and final remedy.
+
+These four cases are the strongest public-facing proof-of-feel layer right now because they make the difference visible even before a giant benchmark exists.
+
+---
+
+## What the current flagship cases already show 📌
+
+### [Case 04 · Neighboring-Cut Conflict](./case-studies/smoke-case-04-neighboring-cut-conflict.md)
+Shows that a plausible route is still not the same thing as a lawfully final route.
+
+### [Case 05 · Long-Context Contamination](./case-studies/smoke-case-05-long-context-contamination.md)
+Shows that conversational continuity should not be allowed to mutate into node-level evidence.
+
+### [Case 06 · Illegal Resolution Demand](./case-studies/smoke-case-06-illegal-resolution-demand.md)
+Shows that user demand for exactness is not the same thing as authorized exact diagnosis and repair.
+
+### [Case 08 · World-Alignment Instability](./case-studies/smoke-case-08-world-alignment-instability.md)
+Shows that vague symptom language is not enough to support true structural cause and final remedy claims.
+
+Together, these four cases already form a strong first public evidence surface.
 
 ---
 
@@ -296,9 +331,9 @@ But if you want the public evidence surface to feel much stronger, the next best
 ### A. Three screenshot pairs
 For example:
 
-- baseline vs inverse on Topic Lure
-- baseline vs inverse on Cosmetic Repair Bait
-- baseline vs inverse on Long-Context Contamination
+- baseline vs inverse on [Case 04](./case-studies/smoke-case-04-neighboring-cut-conflict.md)
+- baseline vs inverse on [Case 05](./case-studies/smoke-case-05-long-context-contamination.md)
+- baseline vs inverse on [Case 06](./case-studies/smoke-case-06-illegal-resolution-demand.md)
 
 ### B. One small summary table
 For example a qualitative Smoke Phase table:
@@ -309,6 +344,8 @@ For example a qualitative Smoke Phase table:
 | False completion | frequent | reduced |
 | Cosmetic repair inflation | frequent | reduced |
 | Public ceiling overrun | common | reduced |
+| Long-context contamination | common | reduced |
+| Weak-grounding overclaim | common | reduced |
 
 ### C. One A / B / D mini summary
 Only at a high level, such as:
@@ -327,10 +364,12 @@ This distinction is essential.
 
 ### Current findings
 These are things already seen in:
+
 - dry runs
 - artifact-level testing
 - baseline vs inverse comparisons
 - evaluator-supported comparison
+- current smoke case studies
 
 ### Expected pattern
 These are things the system is designed to show if reproduction is run properly.
@@ -358,10 +397,13 @@ The right public logic is:
 ### This page
 Shows the current evidence surface.
 
-### Results and Current Findings
+### [Results and Current Findings](./results-and-current-findings.md)
 Shows the current reading in more detail.
 
-### Colab
+### [Case Studies](./case-studies/README.md)
+Shows the strongest current smoke evidence in human-readable detail.
+
+### [Colab](../colab.md)
 Makes the contrast easier to reproduce.
 
 That means:
@@ -398,14 +440,16 @@ If someone wants the cleanest route into the evidence story, use this order:
 1. read the [Experiments](./README.md) page
 2. read the [Repro in 60 Seconds](./repro-60-seconds.md) page
 3. read the [Showcase Cases](./showcase-cases.md) page
-4. read the [Results and Current Findings](./results-and-current-findings.md) page
-5. then read this evidence snapshot page
+4. read the [Case Studies](./case-studies/README.md) page
+5. read the [Results and Current Findings](./results-and-current-findings.md) page
+6. then read this evidence snapshot page
 
 That order works because it goes from:
 
 - what the experiments layer is
 - how to reproduce it
 - what cases matter
+- what the flagship cases show
 - what is currently observed
 - what the whole evidence surface now looks like
 
@@ -415,7 +459,7 @@ That order works because it goes from:
 
 If you want one compact sentence, use this:
 
-> The current Inverse Atlas evidence surface already shows a real MVP artifact layer, a reproducible baseline-vs-inverse contrast path, and meaningful qualitative signal on high-cost illegitimate-generation behaviors, while still remaining below the threshold of a final full benchmark claim.
+> The current Inverse Atlas evidence surface already shows a real MVP artifact layer, a reproducible baseline-vs-inverse contrast path, a working public Colab notebook, and flagship smoke case studies that make the strongest legality-centered differences visible without pretending to be a final full benchmark claim.
 
 That sentence is strong, clean, and honest.
 
