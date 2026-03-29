@@ -6,76 +6,78 @@ This page is the entry point for the demo layer inside WFGY 4.0 Twin Atlas Engin
 
 What this page is for:
 1. Explain why demos matter for Twin Atlas.
-2. Show what kinds of contrasts the demo folder is designed to reveal.
-3. Help readers navigate from demo philosophy to concrete cases.
-4. Make it clear that the demo layer is not decoration, but part of the product proof surface.
+2. Show what kinds of differences the demo layer is designed to make visible.
+3. Help readers navigate from demo philosophy into concrete public-facing cases.
+4. Clarify that the demo layer is part of the product proof surface, not decoration.
 
-How to use this page:
-1. Read this page after Twin Atlas README and Bridge README.
-2. Use it as the first stop before reading any individual demo case.
-3. Use it to understand the logic behind the demo sequence.
-4. Use it to navigate into the killer demo spec, case files, comparison tables, and evaluator notes.
+What this page is not:
+1. It is not the flagship landing page.
+2. It is not the full runtime constitution.
+3. It is not the full governance stress protocol page.
+4. It is not a benchmark leaderboard.
+5. It is not proof that every future runtime detail is already complete.
+
+Reading order:
+1. Read the Twin Atlas README first.
+2. Read the Bridge README and Runtime README next if you want architecture before demos.
+3. Read this page when you want the public proof surface.
+4. Then move into Basic Repro Demo, Advanced Clean Protocol, Flagship Cases, or figure pages depending on your goal.
 
 Important boundary:
-This page defines the purpose and structure of the demo layer.
-It does not replace the formal contracts in the Bridge or Inverse Atlas documents.
-It also does not claim that every future runtime detail is already complete.
-The demo layer exists to make the reasoning difference visible, not to pretend the whole system is already universally solved.
-
-Recommended reading path:
-1. Twin Atlas
-2. Bridge README
-3. Bridge v1 Spec
-4. Bridge v1 Examples
-5. Killer Demo Spec
-6. This page
-7. Case files
-8. Comparison tables
-9. Evaluator notes
+This page defines the role and structure of the demo layer.
+It does not replace the formal contracts in Bridge, runtime, or Inverse governance pages.
+It also does not claim that the whole system is already universally solved.
+The demo layer exists to make the reasoning difference visible, not to pretend the universe is finished.
 
 AI_NOTE_END
 -->
 
 # 🎭 Demos
 
-> The visible proof surface for WFGY 4.0 Twin Atlas Engine.
+> The public proof surface of WFGY 4.0 Twin Atlas Engine.
 
 The demo layer exists for one simple reason:
 
 **if Twin Atlas really matters, people should be able to see the difference.**
 
 Not after a long lecture.  
-Not after a philosophical defense.  
-Not after ten paragraphs of explanation.
+Not after a theory-heavy debate.  
+Not only after reading the whole architecture stack.
 
 They should be able to see it in a realistic case.
 
 That is what this folder is for.
 
 Twin Atlas is not trying to win by sounding more dramatic.  
-It is trying to show a better reasoning discipline under structural ambiguity.
+It is trying to show a better reasoning discipline under structural ambiguity, thin evidence, and premature pressure.
 
-So the demo layer is not a side ornament.
+So the demo layer is not decoration.
 
-It is where the architecture becomes visible.
+It is where the architecture becomes human-visible.
 
 ---
 
-## 🔎 Quick Links
+## 🌍 What the demo layer is really for
 
-| Section | Link |
-|---|---|
-| Twin Atlas Home | [Twin Atlas](../README.md) |
-| Bridge Home | [Bridge README](../Bridge/README.md) |
-| Bridge v1 Spec | [Bridge v1 Spec](../Bridge/bridge-v1-spec.md) |
-| Bridge v1 Examples | [Bridge v1 Examples](../Bridge/bridge-v1-examples.md) |
-| Bridge Eval Notes | [Bridge v1 Eval Notes](../Bridge/bridge-v1-eval-notes.md) |
-| Killer Demo Spec | [Killer Demo Spec](./killer-demo-spec.md) |
-| Case 01 | [Case 01 · Thin Evidence F5 vs F6](./case-01-thin-evidence-f5-vs-f6.md) |
-| Comparison Table | [Baseline vs Twin Atlas Table](./baseline-vs-twin-atlas-table.md) |
-| Evaluator Notes | [Evaluator Notes](./evaluator-notes.md) |
-| Forward Atlas | [Problem Map 3.0 Troubleshooting Atlas](../../wfgy-ai-problem-map-troubleshooting-atlas.md) |
-| Inverse Atlas Home | [Inverse Atlas README](../../Inverse_Atlas/README.md) |
+The demo layer exists to answer a very practical question:
+
+**What does WFGY 4.0 look like when it is actually put under pressure?**
+
+That matters because a lot of systems can sound smart in abstract explanation.
+
+Far fewer systems can show a visible difference when the case becomes uncomfortable.
+
+The demo layer is here to make that difference legible.
+
+In practice, that usually means showing things like:
+
+- the baseline locks too early
+- the baseline sounds more final than the evidence allows
+- the baseline proposes a stronger repair than it has earned
+- Twin Atlas preserves ambiguity more honestly
+- Twin Atlas downgrades to the strongest lawful output instead of faking completion
+
+That is the contrast this layer exists to show.
 
 ---
 
@@ -83,15 +85,15 @@ It is where the architecture becomes visible.
 
 If you only remember one thing, remember this:
 
-**the demos are here to show why route-first mapping and legitimacy-first governance need to work together.**
+**the demos are here to show why route-first mapping and legitimacy-first governance need to work together inside one engine.**
 
-A baseline may sound smart.  
 A baseline may sound active.  
-A baseline may even sound confident.
+A baseline may sound coherent.  
+A baseline may sound confident.
 
-That is not enough.
+That is still not enough.
 
-The question is:
+The real question is:
 
 - did it lock the wrong route too early
 - did it speak too strongly before lawful support existed
@@ -99,15 +101,15 @@ The question is:
 
 Twin Atlas is designed to reduce exactly those failures.
 
-The demo layer exists to make that visible.
+The demo layer exists to make that visible fast.
 
 ---
 
-## 🧠 What the demos are trying to prove
+## 🧠 What a good Twin Atlas demo should prove
 
-A good Twin Atlas demo should prove more than "one answer looks better."
+A good demo should prove more than “one answer looks nicer.”
 
-It should prove at least three deeper things:
+It should make at least three deeper things visible:
 
 ### 1. Better route discipline
 Twin Atlas should avoid locking the wrong dominant route too early.
@@ -118,78 +120,101 @@ Twin Atlas should avoid illegal detail, unsupported certainty, and fake closure 
 ### 3. Better repair discipline
 Twin Atlas should avoid presenting a first move as a structural repair verdict before broken-invariant contact is actually established.
 
-If a demo only makes Twin Atlas look more cautious, that is not enough.
+If a demo only makes Twin Atlas look softer, that is not enough.
 
 The contrast should be:
 
-**not just softer vs louder**  
-**but lawful vs premature**
+**not softer vs louder**  
+**but more lawful vs more premature**
+
+---
+
+## 🧪 The two demo tracks
+
+The public demo layer is best understood through two complementary tracks.
+
+### 🟢 Basic Repro Demo
+This is the fast path.
+
+It is designed for:
+- first contact
+- quick screenshots
+- README visibility
+- social sharing
+- easy reruns
+- fast intuition
+
+The goal here is not maximum protocol purity.
+
+The goal is to make the before / after governance shift visible in the shortest reproducible form.
+
+### 🔵 Advanced Clean Protocol
+This is the cleaner path.
+
+It is designed for:
+- stronger separation between runs
+- lower contamination criticism
+- harder-to-dismiss evaluation posture
+- more serious reviewer confidence
+- better blackhat resistance
+
+These two tracks are not duplicates.
+
+Basic helps people see the shift.  
+Advanced helps serious readers trust that the shift is not only an artifact of presentation.
 
 ---
 
 ## 🗂️ What is inside this folder
 
-This folder is organized around a simple progression:
+This folder should function as a proof ladder.
 
-### 1. The logic of the demo
-Start with the general design of the contrast.
+### 1. Demo entry and orientation
+This page explains why demos matter and how to read them.
 
-File:
-- [Killer Demo Spec](./killer-demo-spec.md)
+### 2. Fast public demo path
+Use **Basic Repro Demo** if you want the shortest reproducible contrast.
 
-### 2. The first concrete case
-Move into an actual case where the contrast becomes visible.
+### 3. Cleaner evaluation path
+Use **Advanced Clean Protocol** if you want the stricter comparison posture.
 
-File:
-- [Case 01 · Thin Evidence F5 vs F6](./case-01-thin-evidence-f5-vs-f6.md)
+### 4. Strong public examples
+Use **Flagship Cases** if you want the most legible high-risk examples.
 
-### 3. The direct comparison view
-See the difference side by side.
-
-File:
-- [Baseline vs Twin Atlas Table](./baseline-vs-twin-atlas-table.md)
-
-### 4. The evaluator mindset
-Learn how to judge whether the contrast is actually meaningful.
-
-File:
-- [Evaluator Notes](./evaluator-notes.md)
+### 5. Visual proof support
+Use the figure layer if you want one-screen contrast, case cards, and scoreboard visuals.
 
 That sequence matters.
 
-It moves from:
-- demo philosophy
-- to actual case
-- to visible contrast
-- to review discipline
+It keeps the demo folder from becoming a random collection of cool examples.
 
 ---
 
 ## 🧭 How to read the demos correctly
 
-The demo folder should not be read like a collection of random cool examples.
+The demo layer should not be read as “which answer sounds cooler.”
 
-It should be read as a proof ladder.
+It should be read as:
 
 ### Step 1
-Understand the logic of the contrast.
+What pressure is the case applying?
 
 ### Step 2
-Read the concrete case.
+Where does the baseline overreach?
 
 ### Step 3
-Compare the baseline output with the Twin Atlas output.
+How does WFGY 4.0 change the release discipline?
 
 ### Step 4
-Check whether the observed difference is real, structural, and operationally relevant.
+Is the difference structural, or only stylistic?
 
 In other words:
 
 do not ask only  
-"which one sounds nicer"
+**“which answer do I like more?”**
 
 ask  
-"which one stayed more lawful under uncertainty"
+**“which answer stayed more lawful under uncertainty?”**
 
 That is the right reading posture.
 
@@ -197,7 +222,7 @@ That is the right reading posture.
 
 ## 🎯 What a successful demo looks like
 
-A successful Twin Atlas demo should make the audience see all of the following quickly:
+A successful Twin Atlas demo should make readers see all of the following quickly:
 
 ### A. The baseline locked too early
 The route looked neat, but the certainty was not earned.
@@ -206,36 +231,15 @@ The route looked neat, but the certainty was not earned.
 The answer went too specific before neighboring-route pressure had been lawfully separated.
 
 ### C. The baseline proposed a riskier first move
-The proposed repair sounded strong, but it was not actually grounded in the broken invariant.
+The repair sounded stronger than its actual structural grounding.
 
 ### D. Twin Atlas preserved lawful ambiguity
 It did not erase uncertainty just to sound cleaner.
 
 ### E. Twin Atlas gave a safer next move
-Not because it was timid, but because the next move was more structurally grounded.
+Not because it was timid, but because the move stayed inside lawful support.
 
 That is the real contrast.
-
----
-
-## 🧪 The current MVP demo direction
-
-For the current MVP, the demo layer is centered around one primary contrast pattern:
-
-### Demo 01
-**Thin evidence with live F5 vs F6 pressure**
-
-This is the best first killer demo because it does several useful things at once:
-
-- it feels realistic
-- it tempts the baseline into dramatic over-interpretation
-- it keeps neighboring ambiguity alive
-- it creates a tempting wrong-first-fix path
-- it lets Twin Atlas show both route discipline and authorization discipline at the same time
-
-This is not an arbitrary choice.
-
-It is the cleanest way to make the Twin Atlas difference legible in one screen.
 
 ---
 
@@ -248,16 +252,19 @@ Twin Atlas brings together:
 - Forward Atlas
 - Bridge
 - Inverse Atlas
+- governed public output
 
-That means the architecture claims a stronger reasoning discipline than a route-only or style-only approach.
+That means the architecture is making a real claim:
 
-If that claim matters, then the contrast must become visible somewhere.
+**it should behave differently under pressure**
+
+If that claim matters, then the difference has to become visible somewhere.
 
 That visible place is this folder.
 
-So the demos are not marketing garnish.
+So the demo layer is not marketing garnish.
 
-They are the first practical proof surface of the engine direction.
+It is one of the first practical proof surfaces of the whole engine direction.
 
 ---
 
@@ -271,69 +278,47 @@ Why:
 - Bridge carries that value as weak priors
 - the inverse side decides whether strong visible output is actually lawful
 
-That means the demos are not only comparing two answer styles.
+That means the demos are not merely comparing two answer styles.
 
-They are comparing two internal disciplines:
+They are comparing two internal disciplines.
 
-### Baseline
-Often:
+### Baseline often shows
 - route lock too early
 - hidden confidence inflation
 - fake closure
 - premature repair confidence
 
-### Twin Atlas
-Designed to:
-- preserve route pressure honestly
-- preserve ambiguity when lawful
-- block unauthorized escalation
-- keep repair as candidate until legality is established
+### Twin Atlas is designed to show
+- honest route pressure
+- preserved ambiguity where still lawful
+- blocked unauthorized escalation
+- repair held at candidate level until legality is earned
 
-The demo layer is where that difference becomes human-visible.
-
----
-
-## 📘 Recommended reading order inside this folder
-
-If someone lands here fresh, this is the best order:
-
-1. [Killer Demo Spec](./killer-demo-spec.md)
-2. [Case 01 · Thin Evidence F5 vs F6](./case-01-thin-evidence-f5-vs-f6.md)
-3. [Baseline vs Twin Atlas Table](./baseline-vs-twin-atlas-table.md)
-4. [Evaluator Notes](./evaluator-notes.md)
-
-Why this order works:
-
-- the spec explains what the demo is trying to prove
-- the case shows the setup
-- the table shows the contrast
-- the evaluator notes explain how to judge the result
-
-That makes the folder readable even for first-time readers.
+The demo layer is where that internal difference becomes public-facing.
 
 ---
 
 ## 🚫 What this folder is not
 
-To keep expectations honest, this folder should not be misunderstood as any of the following:
+To keep expectations honest, the demo layer should not be misunderstood as any of the following.
 
 ### Not a random example dump
-The demos are structured, not decorative.
+The demos should be structured and cumulative.
 
-### Not a benchmark by itself
-The demo layer is proof-oriented, not a universal leaderboard.
+### Not the whole benchmark
+The demo layer is proof-facing, not a universal leaderboard.
 
-### Not a substitute for formal contracts
-The demos do not replace the forward, bridge, or inverse specifications.
+### Not a replacement for architecture docs
+The demos do not replace Bridge, runtime, or governance contracts.
 
-### Not proof that every runtime detail is already finished
-The demo layer can be strong even while the full operating layer is still evolving.
+### Not proof that every runtime branch is already complete
+The demos can be strong even while the deeper engine continues to expand.
 
-### Not just about humility style
-The demos are not about sounding softer.
-They are about being more lawful under pressure.
+### Not just about softer tone
+The point is not tone.  
+The point is lawful release discipline under pressure.
 
-That distinction matters.
+That distinction matters a lot.
 
 ---
 
@@ -342,13 +327,14 @@ That distinction matters.
 At the current stage, these statements are fair:
 
 - the demo layer already has a clear purpose
-- the killer demo direction is already defined
-- the MVP contrast is already structurally meaningful
+- the dual-track structure is already meaningful
 - the demo folder already serves as a visible proof surface for Twin Atlas
-- the first case direction is already strong enough to support public explanation
-- the demos already help translate Twin Atlas from concept into visible behavior
+- the contrast logic is already strong enough to support public explanation
+- the demo layer already helps translate Twin Atlas from concept into visible behavior
 
-These are strong statements, but still honest.
+These are strong statements.
+
+They are also honest statements.
 
 ---
 
@@ -359,60 +345,81 @@ This folder should not be used to claim that:
 - every future demo case is already complete
 - every runtime behavior is already benchmarked
 - the current demo set proves universal superiority in every environment
-- a single visual contrast is the same thing as full engine completion
-- the presence of a demo folder means the whole closed-loop system is already done
+- a single visible contrast is the same thing as total engine completion
+- the presence of a demo folder means the whole closed-loop runtime is already finished in every sense
 
 The point of this folder is visibility, not exaggeration.
 
 ---
 
-## 🛠️ Suggested file roles
+## 🧡 A beginner-friendly mental model
 
-Here is the current intended role of each file in this folder.
-
-| File | Role |
-|---|---|
-| `README.md` | Demo folder entry point |
-| `killer-demo-spec.md` | Core logic of the main contrast |
-| `case-01-thin-evidence-f5-vs-f6.md` | First concrete MVP case |
-| `baseline-vs-twin-atlas-table.md` | Side-by-side structural comparison |
-| `evaluator-notes.md` | How to review whether the contrast is actually meaningful |
-
-This makes the folder easy to understand at a glance.
-
----
-
-## 🧡 A vibe-coder-friendly mental model
-
-If you want a fast mental model, use this:
+If you want the fast mental model, use this:
 
 ### Baseline
-"looks like it knows"
+“looks like it knows”
 
 ### Twin Atlas
-"knows what it has actually earned"
+“knows what it has actually earned”
 
 That is not the whole architecture.  
 But it is a very good first intuition for the demo layer.
 
 ---
 
-## 🚀 Suggested next read
+## 🚀 Suggested next reads
 
-If you are here for the first time, go here next:
+If you are here for the first time, the best next page is:
 
-👉 [Killer Demo Spec](./killer-demo-spec.md)
+👉 [Basic Repro Demo](../evidence/basic-repro-demo.md)
 
-If you already know the contrast logic and just want the first concrete case, go here:
+If you want the cleaner, stricter path, go here:
 
-👉 [Case 01 · Thin Evidence F5 vs F6](./case-01-thin-evidence-f5-vs-f6.md)
+👉 [Advanced Clean Protocol](../evidence/advanced-clean-protocol.md)
 
-If you want the fastest visible comparison, go here:
+If you want the strongest public cases, go here:
 
-👉 [Baseline vs Twin Atlas Table](./baseline-vs-twin-atlas-table.md)
+👉 [Flagship Cases](../evidence/flagship-cases.md)
+
+If you want the visuals first, go here:
+
+👉 [Figures README](../figures/README.md)
 
 ---
 
 ## ✨ One-sentence takeaway
 
-> The demo layer exists to show that Twin Atlas is not just a different style of answer, but a more disciplined way of staying lawful under uncertainty.
+> The demo layer exists to show that Twin Atlas is not just a different answer style, but a more disciplined way of staying lawful under uncertainty.
+
+---
+
+## 🔗 Quick Links
+
+### 🏠 Main entry
+- [Twin Atlas README](../README.md)
+
+### 🧭 Orientation
+- [Quickstart](../quickstart.md)
+- [Related Documents](../related-documents.md)
+- [Status and Boundaries](../status-and-boundaries.md)
+
+### 🌉 Bridge and runtime
+- [Bridge README](../Bridge/README.md)
+- [Why Bridge Exists](../Bridge/why-bridge-exists.md)
+- [Runtime README](../runtime/README.md)
+
+### 🧪 Evidence surfaces
+- [Evidence Hub](../evidence/README.md)
+- [Results Summary](../evidence/results-summary.md)
+- [Governance Stress Suite](../evidence/governance-stress-suite.md)
+- [Basic Repro Demo](../evidence/basic-repro-demo.md)
+- [Advanced Clean Protocol](../evidence/advanced-clean-protocol.md)
+- [Flagship Cases](../evidence/flagship-cases.md)
+- [Methodology Boundary](../evidence/methodology-boundary.md)
+- [Raw Runs](../evidence/raw-runs/)
+
+### 🖼️ Visual layer
+- [Figures README](../figures/README.md)
+
+### 🗺️ Next recommended page
+- [Basic Repro Demo](../evidence/basic-repro-demo.md)
