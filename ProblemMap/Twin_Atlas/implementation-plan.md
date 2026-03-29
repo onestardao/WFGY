@@ -5,15 +5,15 @@ Document role:
 This page is the implementation plan for WFGY 4.0 Twin Atlas Engine.
 
 What this page is for:
-1. Turn the current Twin Atlas documentation stack into an actionable implementation plan.
-2. Define the near-term build order for public layer completion, coupling work, runtime behavior, and demo alignment.
+1. Turn the current Twin Atlas public stack into an actionable implementation plan.
+2. Define the near-term build order for public layer completion, coupling work, runtime behavior, evidence alignment, and demo alignment.
 3. Clarify what belongs to the public effective layer and what remains hidden as internal substrate.
 4. Provide a realistic implementation sequence that supports MVP progress without blocking on full formalization.
 
 How to use this page:
-1. Read this page after the roadmap, Bridge implementation notes, and coupling flow page.
+1. Read this page after the roadmap, Bridge pages, runtime pages, and evidence pages.
 2. Use it as the main implementation-facing planning surface for the next build phase.
-3. Use it to align docs work, runtime work, Bridge work, and demo work.
+3. Use it to align docs work, runtime work, Bridge work, evidence work, and demo work.
 4. Treat this page as a build plan, not as proof that all listed items are already complete.
 
 Important boundary:
@@ -23,13 +23,12 @@ It also does not claim that every future closed-loop runtime detail or formaliza
 
 Recommended reading path:
 1. Twin Atlas README
-2. FAQ
+2. Quickstart
 3. Roadmap
-4. Bridge Implementation Notes
-5. Twin Atlas Coupling Flow
-6. This page
-7. Runtime files
-8. Demo files
+4. Bridge README
+5. Runtime README
+6. Evidence Hub
+7. This page
 
 AI_NOTE_END
 -->
@@ -45,11 +44,12 @@ It is no longer only a concept cluster.
 It now has:
 
 - a public engine identity
-- a Bridge specification layer
-- a demo proof surface
-- a runtime surface
-- a coupling-flow definition
-- a growing documentation stack that already behaves like a real product skeleton
+- a runtime documentation spine
+- a Bridge clarification layer
+- an evidence surface
+- a demo surface
+- a figure surface
+- a growing public doc stack that already behaves like a real product skeleton
 
 That means the project now needs a real implementation plan.
 
@@ -66,18 +66,29 @@ This page defines that plan.
 | Section | Link |
 |---|---|
 | Twin Atlas Home | [Twin Atlas](./README.md) |
+| Quickstart | [Quickstart](./quickstart.md) |
 | FAQ | [FAQ](./faq.md) |
 | Roadmap | [Roadmap](./roadmap.md) |
 | Release Notes | [Release Notes](./release-notes.md) |
+| Related Documents | [Related Documents](./related-documents.md) |
+| Status and Boundaries | [Status and Boundaries](./status-and-boundaries.md) |
 | Bridge Home | [Bridge README](./Bridge/README.md) |
-| Bridge v1 Spec | [Bridge v1 Spec](./Bridge/bridge-v1-spec.md) |
+| Why Bridge Exists | [Why Bridge Exists](./Bridge/why-bridge-exists.md) |
 | Bridge Implementation Notes | [Bridge Implementation Notes](./Bridge/bridge-implementation-notes.md) |
-| Demos Home | [Demos README](./demos/README.md) |
 | Runtime Home | [Runtime README](./runtime/README.md) |
+| Runtime Constitution | [Twin Atlas Runtime Constitution](./runtime/twin-atlas-runtime-constitution.md) |
+| Inverse Governance Contract | [Inverse Governance Contract](./runtime/inverse-governance-contract.md) |
+| State Machine and Output | [State Machine and Output](./runtime/state-machine-and-output.md) |
+| Seal and Audit | [Seal and Audit](./runtime/seal-and-audit.md) |
 | Coupling Flow | [Twin Atlas Coupling Flow](./runtime/twin-atlas-coupling-flow.md) |
-| Basic Runtime | [Twin Atlas Basic](./runtime/twin-atlas-basic.txt) |
-| Advanced Runtime | [Twin Atlas Advanced](./runtime/twin-atlas-advanced.txt) |
-| Strict Runtime | [Twin Atlas Strict](./runtime/twin-atlas-strict.txt) |
+| Evidence Home | [Evidence Hub](./evidence/README.md) |
+| Results Summary | [Results Summary](./evidence/results-summary.md) |
+| Governance Stress Suite | [Governance Stress Suite](./evidence/governance-stress-suite.md) |
+| Basic Repro Demo | [Basic Repro Demo](./evidence/basic-repro-demo.md) |
+| Advanced Clean Protocol | [Advanced Clean Protocol](./evidence/advanced-clean-protocol.md) |
+| Flagship Cases | [Flagship Cases](./evidence/flagship-cases.md) |
+| Figures | [Figures README](./figures/README.md) |
+| Demos | [Demos README](./demos/README.md) |
 
 ---
 
@@ -91,10 +102,10 @@ the next phase is implementation convergence.**
 That means:
 
 1. finish and stabilize the public effective layer  
-2. align runtime behavior with the coupling flow  
-3. turn Bridge from design surface into real handoff behavior  
-4. use demo cases as implementation targets  
-5. continue deeper formalization without blocking MVP progress
+2. align runtime behavior with the coupling logic  
+3. turn Bridge from design surface into stronger operational handoff behavior  
+4. use evidence and demo cases as implementation targets  
+5. continue deeper formalization without blocking MVP progress  
 
 That is the implementation plan in one paragraph.
 
@@ -107,8 +118,8 @@ Twin Atlas should not be built in the wrong order.
 The wrong order would be:
 
 - chase full theoretical closure first
-- delay usable surfaces
-- delay demo surfaces
+- delay usable public surfaces
+- delay evidence and demo surfaces
 - delay runtime behavior
 - delay coupling targets
 - treat implementation as something that happens “after the real ideas”
@@ -120,7 +131,7 @@ The right order is:
 ### 1. stabilize the public effective layer
 ### 2. define a minimal healthy coupling loop
 ### 3. make runtime behavior reflect that loop
-### 4. use demo cases as implementation targets
+### 4. use evidence and demo cases as implementation targets
 ### 5. deepen formalization in parallel or after MVP stabilization
 
 This order protects momentum and prevents theoretical ambition from blocking usable progress.
@@ -132,15 +143,17 @@ This order protects momentum and prevents theoretical ambition from blocking usa
 Before the actual build sequence, the project boundary must stay clear.
 
 ## ✅ Public effective layer
-This is what the current Twin Atlas docs and runtime files define.
+This is what the current Twin Atlas docs and public runtime pages define.
 
 It includes:
 
 - Twin Atlas public architecture
-- Bridge public role and spec
+- Bridge public role and explanation surface
+- runtime-facing pages
+- evidence surfaces
 - demo surfaces
-- runtime entry files
-- coupling flow at the effective-layer level
+- figure surfaces
+- coupling logic at the public effective-layer level
 
 This is the layer that should become increasingly usable and inspectable.
 
@@ -156,8 +169,8 @@ That means the implementation plan should assume:
 - public behavior can get stronger
 - coupling can get deeper
 - runtime can get better
-- internal support can grow
-- hidden substrate details do not need to be exposed in the public docs
+- evidence can get sharper
+- hidden substrate details do not need to be exposed in public docs
 
 This boundary is not cosmetic.
 
@@ -169,22 +182,22 @@ It is part of the architecture discipline.
 
 Twin Atlas should now be built across five implementation tracks.
 
-## 1. 📘 Public layer track
-Stabilize the public-facing docs, entry pages, and navigation surfaces.
+## 1. 📘 Public stack track
+Stabilize the public-facing docs, entry pages, navigation surfaces, and boundary pages.
 
 ## 2. 🌉 Bridge track
-Turn Bridge from specification and examples into more operational handoff behavior.
+Turn Bridge from explanation and specification into more implementation-facing handoff behavior.
 
 ## 3. ⚙️ Runtime track
-Make Basic, Advanced, and Strict behave like real public runtime surfaces rather than static text assets only.
+Make the runtime surface behave like a real public engine spine rather than only a documentation shell.
 
-## 4. 🎭 Demo track
-Make the demo layer stronger, more legible, and more aligned with implementation targets.
+## 4. 🧪 Evidence and demo track
+Make the evidence and demo layers stronger, more legible, and more aligned with implementation targets.
 
 ## 5. 🧠 Formalization track
 Continue structural rigor and future mathematical packaging without blocking the practical build.
 
-These tracks are connected, but they should not be forced to complete at the same time.
+These tracks are connected, but they should not be forced to complete at the same speed.
 
 ---
 
@@ -194,32 +207,39 @@ The implementation plan should start from what is already real.
 
 ## Already done at the public layer
 
-### Core identity
+### Core identity and navigation
 - `README.md`
+- `quickstart.md`
+- `related-documents.md`
+- `status-and-boundaries.md`
 - `faq.md`
 - `roadmap.md`
 - `release-notes.md`
 
 ### Bridge
 - `Bridge/README.md`
-- `Bridge/bridge-v1-spec.md`
-- `Bridge/bridge-v1-examples.md`
-- `Bridge/bridge-v1-eval-notes.md`
-- `Bridge/bridge-implementation-notes.md`
-
-### Demos
-- `demos/README.md`
-- `demos/killer-demo-spec.md`
-- `demos/case-01-thin-evidence-f5-vs-f6.md`
-- `demos/baseline-vs-twin-atlas-table.md`
-- `demos/evaluator-notes.md`
+- `Bridge/why-bridge-exists.md`
 
 ### Runtime
 - `runtime/README.md`
-- `runtime/twin-atlas-basic.txt`
-- `runtime/twin-atlas-advanced.txt`
-- `runtime/twin-atlas-strict.txt`
-- `runtime/twin-atlas-coupling-flow.md`
+- `runtime/twin-atlas-runtime-constitution.md`
+- `runtime/inverse-governance-contract.md`
+- `runtime/state-machine-and-output.md`
+- `runtime/seal-and-audit.md`
+
+### Evidence
+- `evidence/README.md`
+- `evidence/results-summary.md`
+- `evidence/methodology-boundary.md`
+- `evidence/governance-stress-suite.md`
+- `evidence/flagship-cases.md`
+- `evidence/basic-repro-demo.md`
+- `evidence/advanced-clean-protocol.md`
+- `evidence/raw-runs/`
+
+### Demo and figures
+- `demos/README.md`
+- `figures/README.md`
 
 This means the project is already in implementation territory.
 
@@ -246,14 +266,14 @@ A serious reader can understand the engine and navigate it cleanly.
 ### B. A coherent minimal coupling flow
 Forward, Bridge, Inverse, and visible output are connected by a stable implementation logic.
 
-### C. A usable runtime ladder
-Basic, Advanced, and Strict can be used as meaningful public runtime surfaces.
+### C. A usable runtime spine
+The runtime pages describe a real engine posture instead of a vague prompt mood.
 
 ### D. A visible proof surface
-The demo layer makes the Twin Atlas difference visible and reviewable.
+The evidence and demo layers make the Twin Atlas difference visible and reviewable.
 
 ### E. A viable next-step development platform
-The docs, specs, demos, and runtime surfaces are strong enough to support actual coupling work.
+The docs, runtime pages, evidence pages, and demo surfaces are strong enough to support actual coupling work.
 
 That is the right MVP bar.
 
@@ -263,17 +283,18 @@ That is the right MVP bar.
 
 This is the recommended build order.
 
-## Phase 1 · Public layer stabilization ✅
+## Phase 1 · Public stack stabilization ✅
 Goal:
 finish the readable public layer and make the engine easy to understand.
 
 Main assets:
 - identity docs
-- FAQ
-- roadmap
-- release notes
-- navigation
-- folder entry pages
+- onboarding pages
+- boundary pages
+- Bridge pages
+- runtime pages
+- evidence pages
+- demo and figure entry pages
 
 Status:
 already strong and mostly in place
@@ -282,69 +303,69 @@ already strong and mostly in place
 
 ## Phase 2 · Bridge implementation convergence 🟡
 Goal:
-move Bridge from public design into more operational coupling behavior.
+move Bridge from public explanation into more implementation-facing coupling behavior.
 
 Main work:
-- finalize validation logic
-- finalize reject logic
+- finalize validation posture
+- finalize reject posture
 - finalize structural normalization posture
-- finalize packet shape assumptions
-- align Bridge behavior with demos
-- define implementation expectations for runtime handoff
+- define stronger packet-shape assumptions
+- align Bridge behavior with evidence and demo targets
+- define stronger implementation expectations for runtime handoff
 
 Deliverables:
 - stronger Bridge implementation notes
 - implementation-facing packet rules
-- implementation-facing logging and inspection strategy
-- demo-aligned Bridge targets
+- implementation-facing inspection strategy
+- evidence-aligned Bridge targets
 
 ---
 
 ## Phase 3 · Runtime alignment 🟡
 Goal:
-make the runtime surfaces behave like real mode variants rather than just documentation assets.
+make the runtime surface behave like a real engine spine rather than only a descriptive documentation shell.
 
 Main work:
-- sharpen the difference between Basic, Advanced, and Strict
-- define when each mode should be chosen
-- align runtime behavior with coupling flow
-- prevent drift between runtime files and actual architecture logic
+- add the missing route-first runtime-facing page
+- tighten the relation between runtime pages
+- align runtime behavior with coupling logic
+- prevent drift between runtime docs and actual architecture logic
 
 Deliverables:
-- runtime mode notes
-- coupling-aware runtime refinement
-- stronger runtime usage guidance
-- future runtime test surfaces
+- forward-route runtime page
+- stronger runtime sequencing
+- clearer runtime usage posture
+- tighter alignment with Bridge and Inverse governance
 
 ---
 
-## Phase 4 · Demo-to-implementation locking 🟡
+## Phase 4 · Evidence and demo locking 🟡
 Goal:
-treat demo cases as implementation targets.
+treat evidence and demo cases as implementation targets instead of only presentation assets.
 
 Main work:
-- make sure Case 01 can be supported honestly by the intended flow
-- add more demo cases across more family boundaries
-- use the evaluator notes as review rules
-- keep the comparison surface aligned with actual behavior
+- make sure flagship cases remain supportable by the intended flow
+- align Basic Repro Demo with the fast visible contrast goal
+- align Advanced Clean Protocol with the cleaner evaluation goal
+- keep the evidence surface structurally aligned with the architecture
 
 Deliverables:
-- demo-aligned implementation targets
-- more case coverage
-- stronger evaluator consistency
-- optional public proof pack
+- evidence-aligned implementation targets
+- clearer case coverage
+- stronger proof-pack structure
+- better launch-ready contrast assets
 
 ---
 
 ## Phase 5 · Deeper coupling maturation 🔜
 Goal:
-tighten how route value, ambiguity, authorization, and visible output strength interact.
+tighten how route value, ambiguity, authorization, repair language, and visible output strength interact.
 
 Main work:
 - define more explicit transition logic
-- define stronger downgrade / unresolved behavior
+- define stronger downgrade and unresolved behavior
 - define stronger candidate-vs-verdict rules
-- tighten the relationship between Bridge preservation and inverse-side strength control
+- tighten the relation between Bridge preservation and inverse-side strength control
 
 Deliverables:
 - stronger coupling notes
@@ -362,13 +383,14 @@ Main work:
 - state logic
 - visible-state logic
 - authorization logic
-- repair legality conditions
+- repair-legality conditions
 - stronger coupling laws
 - future mathematical packaging preparation
 
 Deliverables:
 - formalization notes
 - stronger state language
+- stronger legality language
 - future mathematical direction surface
 
 This is important, but it should not block the earlier phases.
@@ -426,85 +448,90 @@ This is where the Bridge track should focus first.
 
 # ⚙️ Section 8 · Runtime Implementation Plan
 
-The runtime plan should not try to turn all three runtime files into giant philosophical blocks.
+The runtime plan should not try to turn runtime into giant philosophical blocks.
 
-Instead, the goal is to make them behave as three meaningful intensities of the same engine.
+Instead, the goal is to make the runtime layer behave like one governed engine surface.
 
-## Basic
-Goal:
-lowest-friction entry form
+## Runtime priorities
 
-Focus:
-- easy adoption
-- visible Twin Atlas flavor
-- lower ritual overhead
+### Priority 1
+Make the runtime pages internally coherent
 
-## Advanced
-Goal:
-main working mode
+That means:
+- runtime entry
+- constitution
+- forward-route logic
+- inverse governance
+- state machine
+- seal and audit
 
-Focus:
-- stronger route discipline
-- stronger ambiguity preservation
-- stronger repair discipline
-- stronger practical usefulness
+should read as one spine, not scattered explanations.
 
-## Strict
-Goal:
-highest-governance public form
+### Priority 2
+Make runtime posture implementation-friendly
 
-Focus:
-- strongest evidence-boundary discipline
-- strongest anti-fake-closure behavior
-- strongest candidate-vs-verdict separation
-- strongest tolerance for lawful unresolvedness
+The runtime layer should become easier to translate into actual use and review behavior.
 
-Implementation priority here is not to make them different in style only.
+### Priority 3
+Keep runtime aligned with coupling logic
 
-Implementation priority is to make them different in **governance intensity**.
+Runtime should not drift into “tone variants.”  
+It should remain about governance, handoff, and lawful output strength.
 
-That distinction matters.
+### Priority 4
+Keep runtime aligned with evidence
+
+The behaviors claimed in evidence and demo pages should remain supportable by the runtime spine.
+
+The key implementation priority here is not style difference.
+
+It is **governance coherence**.
 
 ---
 
-# 🎭 Section 9 · Demo Implementation Plan
+# 🧪 Section 9 · Evidence and Demo Implementation Plan
 
-The demo layer should now be treated as a serious implementation partner.
+The evidence and demo layers should now be treated as serious implementation partners.
 
 ## Why
-Because demos are not just presentation.
+Because they are no longer just presentation surfaces.
 
 They are the clearest visible targets for whether the engine is behaving correctly.
 
 ## Main rule
-If the implementation-facing flow cannot support the intended Twin Atlas behavior shown in the demo cases, the implementation is drifting.
+If the implementation-facing flow cannot support the intended Twin Atlas behavior shown in the evidence and demo cases, the implementation is drifting.
 
-## Demo priorities
+## Evidence and demo priorities
 
 ### Priority 1
-Case 01 must remain supportable.
+Keep the fast contrast honest
 
 That means:
-- F5 remains primary
-- F6 remains live
-- evidence stays partial
-- fit stays family-level
-- repair stays candidate-like
-- visible output does not overrun support
+- Basic Repro Demo stays fast
+- the difference stays visible
+- the contrast does not drift into theater
 
 ### Priority 2
-Add more family boundary cases.
+Keep the cleaner protocol meaningful
 
-Recommended directions:
-- F3 vs F4
-- F1 vs F5
-- research interpretation ambiguity
-- mixed-route workflow cases
+That means:
+- Advanced Clean Protocol stays cleaner and more blackhat-resistant
+- separation remains real
+- protocol positioning remains honest
 
 ### Priority 3
-Keep one-screen legibility.
+Keep flagship cases supportable
 
-The more implementation gets deeper, the more important it is to keep visible contrast easy to understand.
+That means the public cases should remain aligned with the architecture and not become empty storytelling.
+
+### Priority 4
+Strengthen proof-pack readiness
+
+That means better:
+- screenshot readiness
+- figure readiness
+- README embedding value
+- external explainability
 
 ---
 
@@ -539,21 +566,21 @@ This alignment plan is what turns a docs stack into a stronger engine direction.
 
 The project should now aim for milestones that are concrete enough to track.
 
-## Milestone A · Public surface complete
+## Milestone A · Public stack complete
 Meaning:
-the main public pages, Bridge docs, demo docs, runtime docs, FAQ, roadmap, and release notes are stable enough for public reading.
+the main public pages, Bridge pages, runtime pages, evidence pages, FAQ, roadmap, release notes, demos, and figures are stable enough for public reading.
 
-## Milestone B · Bridge implementation-ready
+## Milestone B · Runtime spine complete
+Meaning:
+the runtime layer has all core public pages and reads like one coherent engine surface.
+
+## Milestone C · Bridge implementation-ready
 Meaning:
 Bridge has enough validation, preservation, reject, and inspection guidance to support implementation work.
 
-## Milestone C · Runtime ladder stable
+## Milestone D · Evidence target alignment
 Meaning:
-Basic, Advanced, and Strict behave like distinct and meaningful public runtime forms.
-
-## Milestone D · Demo target alignment
-Meaning:
-Case 01 and the main comparison surface are clearly supportable by the intended coupling flow.
+the main evidence and flagship cases are clearly supportable by the intended coupling logic.
 
 ## Milestone E · Coupling maturation
 Meaning:
@@ -572,16 +599,16 @@ These milestones are easier to build against than vague “future progress.”
 The project should avoid these implementation mistakes:
 
 ## Mistake 1
-Trying to fully formalize everything before making the runtime and demos operationally meaningful.
+Trying to fully formalize everything before making the runtime and evidence surfaces operationally meaningful.
 
 ## Mistake 2
 Letting Bridge become a secret third judge.
 
 ## Mistake 3
-Letting runtime files drift into tone variants instead of governance variants.
+Letting runtime drift into tone variants instead of governance variants.
 
 ## Mistake 4
-Letting demo pages drift into marketing theater instead of implementation targets.
+Letting evidence and demo pages drift into marketing theater instead of implementation targets.
 
 ## Mistake 5
 Exposing hidden internal substrate details just because implementation is deepening.
@@ -604,6 +631,7 @@ That means:
 - public behavior can mature
 - coupling can get deeper
 - runtime can get stronger
+- evidence can get sharper
 - demo support can improve
 - formalization can progress
 
@@ -620,8 +648,8 @@ The public engine does not need to spill its internal skeleton in order to becom
 At the current stage, a good implementation step should count as successful if it does at least one of the following:
 
 - makes Bridge more implementable without making it dirtier
-- makes runtime more usable without making it shallower
-- makes demos more legible without making them less honest
+- makes runtime more coherent without making it shallower
+- makes evidence and demos more legible without making them less honest
 - makes coupling clearer without overclaiming closure
 - makes the project more buildable without exposing hidden substrate details
 
@@ -629,18 +657,18 @@ That is the right success test.
 
 ---
 
-# 🧡 Section 15 · A vibe-coder-friendly summary
+# 🧡 Section 15 · A beginner-friendly summary
 
 If you want the fast builder version:
 
 ### Right now
-The project already looks like a real engine.
+The project already looks like a real engine stack.
 
 ### Next
-Make Bridge and runtime behave more like the engine they already describe.
+Finish the last missing runtime-facing and implementation-facing support pages.
 
 ### After that
-Use demo cases as hard targets and tighten the coupling loop.
+Make Bridge and runtime behave more like the engine they already describe.
 
 ### Long-term
 Keep deepening the structure, and only then push harder formalization.
@@ -653,16 +681,16 @@ That is the build logic.
 
 After this page, the most useful next files are:
 
-1. [Bridge Implementation Notes](./Bridge/bridge-implementation-notes.md)
-2. [Twin Atlas Coupling Flow](./runtime/twin-atlas-coupling-flow.md)
-3. [Twin Atlas Advanced](./runtime/twin-atlas-advanced.txt)
-4. [Twin Atlas Strict](./runtime/twin-atlas-strict.txt)
-5. [Case 01 · Thin Evidence F5 vs F6](./demos/case-01-thin-evidence-f5-vs-f6.md)
+1. [Runtime README](./runtime/README.md)
+2. [Twin Atlas Runtime Constitution](./runtime/twin-atlas-runtime-constitution.md)
+3. [Inverse Governance Contract](./runtime/inverse-governance-contract.md)
+4. [Bridge README](./Bridge/README.md)
+5. [Governance Stress Suite](./evidence/governance-stress-suite.md)
 
-That sequence moves from implementation plan to coupling logic to public runtime to visible targets.
+That sequence moves from build plan to runtime spine to coupling relation to visible targets.
 
 ---
 
 # ✨ One-sentence takeaway
 
-> The implementation plan for Twin Atlas is now simple in principle: stabilize the public engine surface, tighten Bridge and runtime behavior, use demos as implementation targets, and deepen formalization only after the engine loop becomes more operationally real.
+> The implementation plan for Twin Atlas is now simple in principle: stabilize the public engine stack, tighten Bridge and runtime behavior, use evidence and demos as implementation targets, and deepen formalization only after the engine loop becomes more operationally real.
