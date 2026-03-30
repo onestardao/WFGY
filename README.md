@@ -81,6 +81,18 @@ Suggested position: directly under the three CTA lines above.
   </a>
 </p>
 
+---
+
+## Trusted open-source support
+
+> Supported through selected open-source programs, sponsored plans, and infrastructure credits.
+
+<p align="center">
+  <a href="./ADOPTERS.md">
+    <img width="1536" alt="WFGY Trust Wall" src="https://github.com/user-attachments/assets/28e47e15-e287-4e7b-b0f5-4f3b4dfed178" />
+  </a>
+</p>
+
 
 ---
 
