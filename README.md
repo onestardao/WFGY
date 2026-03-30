@@ -61,31 +61,16 @@ PSBigBig x MiniPS: big big welcome, mini singularities.
 
 ---
 
-## 🆕 Temporary entry · WFGY 4.0
+## 🆕 WFGY 4.0 temporary entry
 
-> WFGY 4.0 is now publicly available as a temporary release surface.  
-> This section is a short-lived entry block and will be replaced by a larger homepage update soon.
+> WFGY 4.0 is now live as a temporary release surface.  
+> A larger homepage update is coming soon.
 
-### WFGY 4.0 entry
-* ⭐️ **[WFGY 4.0 Twin Atlas](./ProblemMap/Twin_Atlas/README.md)** : flagship engine view for route discovery, Bridge handoff, and legitimacy-first release control.
-* ⭐️ **[WFGY 4.0 Inverse Atlas](./ProblemMap/Inverse_Atlas/README.md)** : pre-generative governance surface for deciding whether stronger resolution is lawfully earned.
-
-### Quick proof paths
-* ⭐️ **[AI Eval](./ProblemMap/Twin_Atlas/demos/ai-eval.md)** : screenshot-first public proof surface for the current WFGY 4.0 release.
-* ⭐️ **[Reproduce in 60 Seconds](./ProblemMap/Twin_Atlas/demos/reproduce-in-60-seconds.md)** : shortest public rerun path using the current TXT files.
-* ⭐️ **[Results Summary](./ProblemMap/Twin_Atlas/evidence/results-summary.md)** : aggregate public read of the current WFGY 4.0 evidence surface.
-
-<details>
-<summary><strong> More WFGY 4.0 surfaces </strong></summary>
-
-<br/>
-
-* ⭐️ **[Flagship Cases](./ProblemMap/Twin_Atlas/evidence/flagship-cases.md)** : representative public case layer for the current release.
-* ⭐️ **[Raw Runs](./ProblemMap/Twin_Atlas/evidence/raw-runs/README.md)** : original model-specific outputs behind the public proof surface.
-* ⭐️ **[Twin Atlas Runtime TXT](./ProblemMap/Twin_Atlas/demos/prompts/wfgy-4_0-twin-atlas-runtime.txt)** : public runtime file.
-* ⭐️ **[Governance Stress Suite TXT](./ProblemMap/Twin_Atlas/demos/prompts/wfgy-4_0-governance-stress-suite.txt)** : public stress-suite file.
-
-</details>
+* ⭐️ **[Twin Atlas](./ProblemMap/Twin_Atlas/README.md)**
+* ⭐️ **[Inverse Atlas](./ProblemMap/Inverse_Atlas/README.md)**
+* ⭐️ **[AI Eval](./ProblemMap/Twin_Atlas/demos/ai-eval.md)**
+* ⭐️ **[Reproduce in 60 Seconds](./ProblemMap/Twin_Atlas/demos/reproduce-in-60-seconds.md)**
+* ⭐️ **[Results Summary](./ProblemMap/Twin_Atlas/evidence/results-summary.md)**
 
 ---
 
