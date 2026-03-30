@@ -35,7 +35,7 @@ Important:
 
 | Layer | Page | What it’s for |
 |------|------|---------------|
-| ⭐ Proof | [WFGY Recognition Map](https://github.com/onestardao/WFGY/blob/main/recognition/README.md) | External citations, integrations, and ecosystem proof  — **🔴 YOU ARE HERE 🔴** |
+| ⭐ Proof | [WFGY Recognition Map](https://github.com/onestardao/WFGY/blob/main/recognition/README.md) | External citations, integrations, and ecosystem proof · **🔴 YOU ARE HERE 🔴** |
 | ⚙️ Engine | [WFGY 1.0](https://github.com/onestardao/WFGY/blob/main/legacy/README.md) | Original PDF tension engine and early logic sketch |
 | ⚙️ Engine | [WFGY 2.0](https://github.com/onestardao/WFGY/blob/main/core/README.md) | Production tension kernel for RAG and agent systems |
 | ⚙️ Engine | [WFGY 3.0](https://github.com/onestardao/WFGY/blob/main/TensionUniverse/EventHorizon/README.md) | TXT-based Singularity tension engine (131 S-class set) |
@@ -50,46 +50,52 @@ Important:
 ---
 </details>
 
-## WFGY Recognition Map · RAG & Agent Ecosystem
+## WFGY Recognition Map · RAG and Agent Ecosystem
 
 Canonical public record of integrations, citations, mentions, and ecosystem proof around WFGY.  
 > Last updated: 2026-03-28 · Manually maintained.
 
 Short summary pages:
-- [ADOPTERS.md](../ADOPTERS.md) · concise public adoption summary for evaluators and potential collaborators
-- [WORK_WITH_WFGY.md](../WORK_WITH_WFGY.md) · collaboration paths, sponsorship, and contributor entry points
+* [ADOPTERS.md](../ADOPTERS.md) · concise public adoption summary for evaluators and potential collaborators
+* [WORK_WITH_WFGY.md](../WORK_WITH_WFGY.md) · collaboration paths, sponsorship, and contributor entry points
+
+> Read this page in three layers:
+> 1. strongest public integrations first
+> 2. broader curated-list and ecosystem recognition second
+> 3. open-source support surface and long-tail mentions after that
 
 <details>
 <summary>About this recognition list</summary>
 
 >
-> This page is the **canonical public record** of third-party integrations, citations, mentions, and curated-list inclusions related to WFGY.  
->  
+> This page is the **canonical public record** of third-party integrations, citations, mentions, and curated-list inclusions related to WFGY.
+>
 > If you want the **short version** for fast evaluation, see [ADOPTERS.md](../ADOPTERS.md).  
-> If you want the **full ecosystem log**, stay on this page.  
->  
-> At the current stage, most external recognition is tied to the **WFGY ProblemMap line**, especially the **RAG 16 Problem Map / 16-problem failure checklist**. That is the part most commonly adopted, cited, or adapted by other repositories, docs, and discussions.  
->  
-> This does **not** mean that every external project on this page is using the full WFGY ecosystem, or every WFGY module equally. In most cases, the recognized entry point is the **ProblemMap-style diagnostic framework** for RAG, LLM robustness, and reliability workflows.  
->  
-> A smaller portion of entries also references **WFGY 3.0 / Singularity Demo** and related stress-test material. Since this is still a transition period, they are kept together in one list for simplicity.  
->  
-> This page exists to keep ecosystem recognition in one place, reduce duplication across other docs, and make future updates easier to maintain.  
->  
+> If you want the **full ecosystem log**, stay on this page.
+>
+> At the current stage, most external recognition is tied to the **WFGY ProblemMap line**, especially the **RAG 16 Problem Map / 16-problem failure checklist**. That is the part most commonly adopted, cited, or adapted by other repositories, docs, and discussions.
+>
+> This does **not** mean that every external project on this page is using the full WFGY ecosystem, or every WFGY module equally. In most cases, the recognized entry point is the **ProblemMap-style diagnostic framework** for RAG, LLM robustness, and reliability workflows.
+>
+> A smaller portion of entries also references **WFGY 3.0 / Singularity Demo** and related stress-test material. Since this is still a transition period, they are kept together in one list for simplicity.
+>
+> This page exists to keep ecosystem recognition in one place, reduce duplication across other docs, and make future updates easier to maintain.
+>
 > If your repository, article, benchmark, documentation page, or discussion has included WFGY, you are welcome to:
-> - open a PR
-> - open an issue
-> - fork and reference this list
-> - suggest missing entries or proof links
->  
-> Contributions are welcome. If you have cited, integrated, adapted, or discussed WFGY in a public resource, feel free to add it here.  
->  
+> * open a PR
+> * open an issue
+> * fork and reference this list
+> * suggest missing entries or proof links
+>
+> Contributions are welcome. If you have cited, integrated, adapted, or discussed WFGY in a public resource, feel free to add it here.
+>
 > ### Scope note
 > For accuracy and transparency:
-> - the majority of entries below are about the **WFGY ProblemMap / RAG 16 Problem Map** line
-> - some entries mention broader **WFGY 3.0** materials
-> - this list should be read as a **recognition log and ecosystem proof record**, not as a claim that all listed projects adopted the full WFGY ecosystem
-> - this page is the **source-of-truth ledger**, while [ADOPTERS.md](../ADOPTERS.md) is the shorter summary layer
+> * the majority of entries below are about the **WFGY ProblemMap / RAG 16 Problem Map** line
+> * some entries mention broader **WFGY 3.0** materials
+> * this list should be read as a **recognition log and ecosystem proof record**, not as a claim that all listed projects adopted the full WFGY ecosystem
+> * this page is the **source-of-truth ledger**, while [ADOPTERS.md](../ADOPTERS.md) is the shorter summary layer
+> * open-source program support is a **parallel trust signal**, not the same thing as public adoption
 
 </details>
 
@@ -106,9 +112,6 @@ Short summary pages:
 | [Multimodal RAG Survey (QCRI LLM Lab)](https://github.com/llm-lab-org/Multimodal-RAG-Survey) | [![GitHub Repo stars](https://img.shields.io/github/stars/llm-lab-org/Multimodal-RAG-Survey?style=social)](https://github.com/llm-lab-org/Multimodal-RAG-Survey) | Academic lab / survey | Cites WFGY as a practical diagnostic resource for multimodal RAG. | [PR #4](https://github.com/llm-lab-org/Multimodal-RAG-Survey/pull/4) |
 | [LightAgent](https://github.com/wanxingai/LightAgent) | [![GitHub Repo stars](https://img.shields.io/github/stars/wanxingai/LightAgent?style=social)](https://github.com/wanxingai/LightAgent) | Agent framework | Incorporates WFGY ProblemMap concepts into its documentation via a **Multi-agent troubleshooting (failure map)** section, providing a structured symptom → failure-mode → debugging checklist for diagnosing role drift, cross-agent memory issues, and coordination failures in multi-agent systems. | [PR #24](https://github.com/wanxingai/LightAgent/pull/24#event-23265428525) |
 | [OmniRoute](https://github.com/diegosouzapw/OmniRoute) | ![GitHub Repo stars](https://img.shields.io/github/stars/diegosouzapw/OmniRoute?style=social) | Gateway / routing infra | Adds an optional WFGY 16-problem RAG / LLM failure taxonomy to its official troubleshooting documentation, allowing teams to classify downstream RAG and agent failures with `No.1` to `No.16` alongside OmniRoute logs when the gateway itself appears healthy. | [PR #164](https://github.com/diegosouzapw/OmniRoute/pull/164) |
-
-
-
 
 ### 2. High-impact curated lists, benchmarks, and ecosystem discussions
 
@@ -127,12 +130,24 @@ Short summary pages:
 | [Awesome AI Books](https://github.com/zslucky/awesome-ai-books) | [![GitHub Repo stars](https://img.shields.io/github/stars/zslucky/awesome-ai-books?style=social)](https://github.com/zslucky/awesome-ai-books) | Mentions the WFGY TXT and PDF packs in the LLM reading list. | [PR #14](https://github.com/zslucky/awesome-AI-books/pull/14) |
 | [Awesome Explainable AI](https://github.com/wangyongjie-ntu/Awesome-explainable-AI) | [![GitHub Repo stars](https://img.shields.io/github/stars/wangyongjie-ntu/Awesome-explainable-AI?style=social)](https://github.com/wangyongjie-ntu/Awesome-explainable-AI) | Lists **WFGY** among explainable AI tools and resources, referencing it as an open-source framework for analyzing reasoning failures and debugging LLM/RAG systems through structured problem mapping. | [Issue #39](https://github.com/wangyongjie-ntu/Awesome-explainable-AI/issues/39#issuecomment-4016288198) |
 | [awesome-ai-ml-dl](https://github.com/neomatrix369/awesome-ai-ml-dl) | [![GitHub Repo stars](https://img.shields.io/github/stars/neomatrix369/awesome-ai-ml-dl?style=social)](https://github.com/neomatrix369/awesome-ai-ml-dl) | Lists **WFGY Problem Map** as a structured 16-problem checklist for diagnosing common RAG and LLM failure modes within its curated AI and machine learning resource collection. | [PR #163](https://github.com/neomatrix369/awesome-ai-ml-dl/pull/163) |
-| [Awesome-LLM-RAG-Application](https://github.com/lizhe2004/Awesome-LLM-RAG-Application) | [![GitHub Repo stars](https://img.shields.io/github/stars/lizhe2004/Awesome-LLM-RAG-Application?style=social)](https://github.com/lizhe2004/Awesome-LLM-RAG-Application) | Includes **WFGY 16 Problem Map** as a structured guide for diagnosing retrieval and pipeline failures in RAG applications within its curated list of LLM RAG frameworks and tools. | [PR #9](https://github.com/lizhe2004/Awesome-LLM-RAG-Application/pull/9) ||
+| [Awesome-LLM-RAG-Application](https://github.com/lizhe2004/Awesome-LLM-RAG-Application) | [![GitHub Repo stars](https://img.shields.io/github/stars/lizhe2004/Awesome-LLM-RAG-Application?style=social)](https://github.com/lizhe2004/Awesome-LLM-RAG-Application) | Includes **WFGY 16 Problem Map** as a structured guide for diagnosing retrieval and pipeline failures in RAG applications within its curated list of LLM RAG frameworks and tools. | [PR #9](https://github.com/lizhe2004/Awesome-LLM-RAG-Application/pull/9) |
 | [awesome_ai_agents](https://github.com/jim-schwoebel/awesome_ai_agents) | [![GitHub Repo stars](https://img.shields.io/github/stars/jim-schwoebel/awesome_ai_agents?style=social)](https://github.com/jim-schwoebel/awesome_ai_agents) | Lists **WFGY** as an open-source framework for debugging and stress testing LLMs under long-horizon, high-tension text scenarios, including a TXT-based debugging app for structured sequences to identify where reasoning breaks and retrieval fails. | [PR #143](https://github.com/jim-schwoebel/awesome_ai_agents/pull/143) |
 | [Awesome AI Web Search (discussion 15)](https://github.com/felladrin/awesome-ai-web-search/discussions/15) | [![GitHub Repo stars](https://img.shields.io/github/stars/felladrin/awesome-ai-web-search?style=social)](https://github.com/felladrin/awesome-ai-web-search) | Discusses the 16 mode map as a candidate taxonomy for RAG failure modes in web search agents. | [Issue #49](https://github.com/felladrin/awesome-ai-web-search/issues/49) |
-| [Awesome-AI-Agents](https://github.com/Jenqyang/Awesome-AI-Agents) | [![GitHub Repo stars](https://img.shields.io/github/stars/Jenqyang/Awesome-AI-Agents?style=social)](https://github.com/Jenqyang/Awesome-AI-Agents) | Lists **WFGY 16 Problem Map** as a framework-agnostic debugging and evaluation checklist for LLM agents and RAG systems, covering common failure modes across retrieval, vector stores, prompts, tools, and deployment workflows. | [PR #68](https://github.com/Jenqyang/Awesome-AI-Agents/pull/68#event-23251915496) 
+| [Awesome-AI-Agents](https://github.com/Jenqyang/Awesome-AI-Agents) | [![GitHub Repo stars](https://img.shields.io/github/stars/Jenqyang/Awesome-AI-Agents?style=social)](https://github.com/Jenqyang/Awesome-AI-Agents) | Lists **WFGY 16 Problem Map** as a framework-agnostic debugging and evaluation checklist for LLM agents and RAG systems, covering common failure modes across retrieval, vector stores, prompts, tools, and deployment workflows. | [PR #68](https://github.com/Jenqyang/Awesome-AI-Agents/pull/68#event-23251915496) |
 
-### 3. Other public mentions
+### 3. Open-source support surface
+
+> This support surface is shown lower on purpose.  
+> It is a **parallel trust signal**, not the same thing as public adoption evidence.
+
+<p align="center">
+  <img width="1536" alt="WFGY Trust Wall" src="https://github.com/user-attachments/assets/28e47e15-e287-4e7b-b0f5-4f3b4dfed178" />
+</p>
+
+> Read this section as ecosystem support, sponsorship, and infrastructure backing.  
+> Do **not** read it as a claim that these logos are the same thing as adoption, deployment, or product integration.
+
+### 4. Other public mentions
 
 | Project | Stars | How it uses WFGY ProblemMap |
 | --- | --- | --- |
@@ -151,11 +166,9 @@ Short summary pages:
 | [Awesome-Prompt-Engineering](https://github.com/natnew/Awesome-Prompt-Engineering) | [![GitHub Repo stars](https://img.shields.io/github/stars/natnew/Awesome-Prompt-Engineering?style=social)](https://github.com/natnew/Awesome-Prompt-Engineering) | Lists **“WFGY 16 Problem Map”** in the Key Reading section as a troubleshooting guide for RAG and LLM pipelines. |
 | [Awesome-LLM-based-Evaluators](https://github.com/dependentsign/Awesome-LLM-based-Evaluators) | [![GitHub Repo stars](https://img.shields.io/github/stars/dependentsign/Awesome-LLM-based-Evaluators?style=social)](https://github.com/dependentsign/Awesome-LLM-based-Evaluators) | Lists **WFGY 3.0 · Singularity Demo** and the **WFGY ProblemMap** in its “Robustness and stress-test resources” section as a TXT-based long-horizon tension reasoning benchmark and failure map for RAG and LLM robustness evaluation. |
 
-
-
 ---
 
-### ⭐ Star-powered Proof
+### 5. Star-powered Proof
 
 The WFGY project has been starred by a diverse group of developers, maintainers, and ecosystem contributors.  
 Stars are not the same as technical integrations or formal citations, but they show who cared enough to follow WFGY and keep an eye on its work.
@@ -166,21 +179,20 @@ Explore the full list of notable supporters:
 
 👉 [Star Gators · notable stargazers](https://github.com/onestardao/WFGY/blob/main/stargazers/README.md)
 
-
 ---
 
-## 4. Community Works (open PRs)
+### 6. Community Works (open PRs)
 
-This is a community showcase for projects, demos, websites, tutorials, translations, and integrations built with WFGY ideas.
+This is a community showcase for projects, demos, websites, tutorials, translations, and integrations built with WFGY ideas.  
 Small projects are welcome. There is no star requirement.
 
 Submission requirements:
-1) Public link
-2) One sentence explaining which WFGY part you used
-3) A proof link or a verifiable reference
-4) Language tag (EN / ZH / Bilingual / others)
+1. Public link
+2. One sentence explaining which WFGY part you used
+3. A proof link or a verifiable reference
+4. Language tag (EN / ZH / Bilingual / others)
 
-Disclaimer:
+Disclaimer:  
 Entries here are community submissions and do not imply endorsement.
 
 | Project | Type | Language | Link | What it does with WFGY | Proof | Credit |
@@ -188,17 +200,16 @@ Entries here are community submissions and do not imply endorsement.
 | WFGY 3.0 UI (S131 Problem Browser) | website | ZH | [scyprodigy.github.io/wfgy-scy](https://scyprodigy.github.io/wfgy-scy/) | A Traditional Chinese UI prototype that visualizes and lets users browse the WFGY 3.0 "131 S-Class Problems" set (work in progress). | [live demo](https://scyprodigy.github.io/wfgy-scy/) | scyprodigy |
 | Dungeon Master OS | project | EN | [github.com/djnightmare9909/Dungeon-master-OS-](https://github.com/djnightmare9909/Dungeon-master-OS-WFGY) | An experimental system exploring WFGY-style structured reasoning for worldbuilding, scenario design, and interactive narrative workflows. | [repo](https://github.com/djnightmare9909/Dungeon-master-OS-WFGY) | djnightmare9909 |
 
-
 ### 🤝 Contributing
 
 If you find a public repository, benchmark, article, doc page, course page, or discussion that includes WFGY, you are welcome to help keep this list accurate.
 
 You can contribute by:
 
-- adding a missing entry  
-- updating an outdated description  
-- attaching a better proof link  
-- correcting categorization  
-- submitting a PR with a new citation or integration  
+* adding a missing entry
+* updating an outdated description
+* attaching a better proof link
+* correcting categorization
+* submitting a PR with a new citation or integration
 
 Forks and PRs are welcome. If your project includes WFGY in any public form, feel free to add it to this recognition list with a short description and a verifiable link.
