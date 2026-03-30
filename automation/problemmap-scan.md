@@ -1,6 +1,6 @@
 # WFGY ProblemMap Scan
 
-Generated at: 2026-03-29 06:12:58 UTC
+Generated at: 2026-03-30 06:54:35 UTC
 
 ## ProblemMap files
 
@@ -752,25 +752,67 @@ ProblemMap/SemanticClinicIndex.md
 ProblemMap/Symbolic_Logic_Problems.md
 ProblemMap/Twin_Atlas/Bridge/README.md
 ProblemMap/Twin_Atlas/Bridge/bridge-implementation-notes.md
+ProblemMap/Twin_Atlas/Bridge/bridge-packet-inspection-guide.md
 ProblemMap/Twin_Atlas/Bridge/bridge-v1-eval-notes.md
 ProblemMap/Twin_Atlas/Bridge/bridge-v1-examples.md
 ProblemMap/Twin_Atlas/Bridge/twin-atlas-bridge-v1.md
 ProblemMap/Twin_Atlas/Bridge/twin-atlas-coupling-flow.md
+ProblemMap/Twin_Atlas/Bridge/twin-atlas-coupling-guide.md
+ProblemMap/Twin_Atlas/Bridge/why-bridge-exists.md
 ProblemMap/Twin_Atlas/README.md
 ProblemMap/Twin_Atlas/demos/README.md
 ProblemMap/Twin_Atlas/demos/baseline-vs-twin-atlas-table.md
 ProblemMap/Twin_Atlas/demos/case-01-thin-evidence-f5-vs-f6.md
 ProblemMap/Twin_Atlas/demos/evaluator-notes.md
+ProblemMap/Twin_Atlas/demos/prompts/.gitkeep
+ProblemMap/Twin_Atlas/demos/prompts/wfgy-4_0-governance-stress-suite.txt
+ProblemMap/Twin_Atlas/demos/prompts/wfgy-4_0-twin-atlas-runtime.txt
+ProblemMap/Twin_Atlas/demos/screenshots/.gitkeep
+ProblemMap/Twin_Atlas/demos/screenshots/chatgpt_before-after.png
+ProblemMap/Twin_Atlas/demos/screenshots/claude_before-after.png
+ProblemMap/Twin_Atlas/demos/screenshots/deepseek_before-after.png
+ProblemMap/Twin_Atlas/demos/screenshots/gemini_before-after.png
+ProblemMap/Twin_Atlas/demos/screenshots/grok_before-after.png
+ProblemMap/Twin_Atlas/demos/screenshots/kimi_before-after.png
+ProblemMap/Twin_Atlas/demos/screenshots/mistral_before-after.png
+ProblemMap/Twin_Atlas/demos/screenshots/perplexity_before-after.png
+ProblemMap/Twin_Atlas/demos/screenshots/qwen_before-after.png
+ProblemMap/Twin_Atlas/evidence/README.md
+ProblemMap/Twin_Atlas/evidence/advanced-clean-protocol.md
+ProblemMap/Twin_Atlas/evidence/basic-repro-demo.md
+ProblemMap/Twin_Atlas/evidence/flagship-cases.md
+ProblemMap/Twin_Atlas/evidence/governance-stress-suite.md
+ProblemMap/Twin_Atlas/evidence/methodology-boundary.md
+ProblemMap/Twin_Atlas/evidence/raw-runs/.gitkeep
+ProblemMap/Twin_Atlas/evidence/raw-runs/chatgpt.txt
+ProblemMap/Twin_Atlas/evidence/raw-runs/claude.txt
+ProblemMap/Twin_Atlas/evidence/raw-runs/deepseek.txt
+ProblemMap/Twin_Atlas/evidence/raw-runs/gemini.txt
+ProblemMap/Twin_Atlas/evidence/raw-runs/grok.txt
+ProblemMap/Twin_Atlas/evidence/raw-runs/kimi.txt
+ProblemMap/Twin_Atlas/evidence/raw-runs/mistral.txt
+ProblemMap/Twin_Atlas/evidence/raw-runs/perplexity.txt
+ProblemMap/Twin_Atlas/evidence/raw-runs/qwen.txt
+ProblemMap/Twin_Atlas/evidence/results-summary.md
 ProblemMap/Twin_Atlas/faq.md
 ProblemMap/Twin_Atlas/figures/README.md
 ProblemMap/Twin_Atlas/implementation-plan.md
+ProblemMap/Twin_Atlas/launch-summary.md
+ProblemMap/Twin_Atlas/quickstart.md
+ProblemMap/Twin_Atlas/related-documents.md
 ProblemMap/Twin_Atlas/release-notes.md
 ProblemMap/Twin_Atlas/roadmap.md
 ProblemMap/Twin_Atlas/runtime/README.md
+ProblemMap/Twin_Atlas/runtime/forward-route-contract.md
+ProblemMap/Twin_Atlas/runtime/inverse-governance-contract.md
 ProblemMap/Twin_Atlas/runtime/runtime-mode-notes.md
+ProblemMap/Twin_Atlas/runtime/seal-and-audit.md
+ProblemMap/Twin_Atlas/runtime/state-machine-and-output.md
 ProblemMap/Twin_Atlas/runtime/twin-atlas-advanced.txt
 ProblemMap/Twin_Atlas/runtime/twin-atlas-basic.txt
+ProblemMap/Twin_Atlas/runtime/twin-atlas-runtime-constitution.md
 ProblemMap/Twin_Atlas/runtime/twin-atlas-strict.txt
+ProblemMap/Twin_Atlas/status-and-boundaries.md
 ProblemMap/WFGY_RAG_16_Problem_Map_Global_Debug_Card.jpeg
 ProblemMap/agent-boundary-design.md
 ProblemMap/agent-consensus-protocols.md
@@ -856,4 +898,4 @@ ProblemMap/wfgy-metrics.md
 ProblemMap/wfgy-rag-16-problem-map-global-debug-card.md
 
 Total ProblemMap docs:
-850
+892
