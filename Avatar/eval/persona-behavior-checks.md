@@ -441,3 +441,142 @@ Here is a simple way to review a route after a run.
 
 ### Notes
 <short honest explanation>
+````
+
+This is not the final universal standard.
+
+It is just a clean practical review shape.
+
+---
+
+## 🌍 Why This Matters for Multilingual Work Too
+
+These checks become even more important across languages.
+
+A route may seem stable in one language and drift badly in another.
+
+For example, it may become:
+
+* more formal
+* more soft
+* more vague
+* more over-polite
+* less grounded
+* less emotionally accurate
+* more generic
+
+That is why multilingual work should still return to behavior checks like:
+
+* route recognizability
+* grounding
+* emotional shape
+* reusability
+* branch identity
+
+Language changes do not erase the need for route inspection.
+
+They make it more necessary.
+
+---
+
+## 🪓 Why This Connects to Blackfan Testing
+
+This page is for cleaner behavior inspection.
+
+Blackfan testing is a more aggressive pressure surface.
+
+These two layers are related, but not identical.
+
+A route may pass a basic behavior check and still fail under harsher hostile reading.
+
+That is why this page should be used alongside, not instead of, later blackfan evaluation.
+
+This page asks:
+
+* what is the route doing
+
+Blackfan testing asks:
+
+* what breaks when the route is attacked
+
+Both matter.
+
+---
+
+## ⚠️ What This Page Does Not Guarantee
+
+These checks are useful, but they do not guarantee:
+
+* perfect evaluation
+* finished route maturity
+* universal comparability
+* automatic good judgment
+* permanent route stability
+* complete immunity to drift later
+
+This page helps you see more clearly.
+
+It does not remove the need for real judgment.
+
+That is fine.
+
+The goal is better inspection, not fake certainty.
+
+---
+
+## 🚀 Why This Page Matters
+
+Avatar gets much stronger the moment users can do more than say:
+
+* I like this output
+* I do not like that output
+
+A route becomes more real when users can say:
+
+* it is drifting
+* it is more generic now
+* it is too polished
+* the grounding got weaker
+* the emotional shape is off
+* this branch is actually worth keeping
+* this variant does not deserve a name yet
+
+That kind of language makes the whole system more legible.
+
+And that is one of the main reasons this page matters.
+
+---
+
+## 🧭 Where To Go Next
+
+### If you want the eval hub
+
+Go to [📊 Eval Hub](./README.md)
+
+### If you want multilingual status
+
+Go to [🌍 Multilingual Status](./multilingual-status.md)
+
+### If you want blackfan pressure testing
+
+Go to [🪓 Blackfan Testing](./blackfan-testing.md)
+
+### If you want the workflow path
+
+Go to [🧭 Avatar Tuning Workflow](../docs/avatar-tuning-workflow.md)
+
+### If you want the highlights map
+
+Go to [✨ Highlights Index](../highlights/README.md)
+
+---
+
+## 🔗 Quick Links
+
+* [🏠 Avatar Home](../README.md)
+* [📊 Eval Hub](./README.md)
+* [🌍 Multilingual Status](./multilingual-status.md)
+* [🪓 Blackfan Testing](./blackfan-testing.md)
+* [🧭 Avatar Tuning Workflow](../docs/avatar-tuning-workflow.md)
+* [✨ Highlights Index](../highlights/README.md)
+* [⬆️ Back to WFGY Root](../../README.md)
