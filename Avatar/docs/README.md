@@ -5,11 +5,11 @@ Document role:
 This page is the main hub for the WFGY 5.0 Avatar docs layer.
 
 Primary mission:
-1. Present docs as the operational layer of Avatar.
+1. Present Docs as the operational layer of Avatar.
 2. Make startup, reading, tuning, and recovery guidance easy to find without forcing readers into the heaviest theory first.
-3. Keep docs practical, route-aware, and GitHub-readable.
-4. Show clear next steps for different user intents without replacing research or eval.
-5. Prevent docs from becoming either a shallow product clone or a fake theory substitute.
+3. Keep Docs practical, route-aware, and GitHub-readable.
+4. Show clear next steps for different reader intents without replacing Research or Eval.
+5. Prevent Docs from becoming either a shallow product clone or a fake theory substitute.
 
 Reader intent routing:
 1. If the reader wants to start quickly, route to Quickstart and Boot Commands.
@@ -24,7 +24,7 @@ Reading priority:
 2. Read Quickstart and Boot Commands first for first-time use.
 3. Read How to Read the Avatar Master File before deep packed-master reading.
 4. Read tuning and recovery pages only after startup grammar is understood.
-5. Treat research and eval links as downstream branches, not replacements for docs.
+5. Treat Research and Eval links as downstream branches, not replacements for Docs.
 
 Allowed use:
 1. Startup routing
@@ -35,8 +35,8 @@ Allowed use:
 
 Do not do:
 1. Do not treat this hub as the packed master body.
-2. Do not turn docs into a research index.
-3. Do not use docs pages to overclaim engine completion.
+2. Do not turn Docs into a research index.
+3. Do not use Docs pages to overclaim engine completion.
 4. Do not assume operational clarity replaces deeper structural reading.
 5. Do not let docs sprawl become a fake completeness signal.
 
@@ -47,11 +47,11 @@ Layer relation:
 4. Eval tests what survives pressure.
 
 Boundary honesty:
-1. This hub reflects the current public docs layer of Avatar.
+1. This hub reflects the current public Docs layer of Avatar.
 2. It is strong enough for startup, reading, tuning, and recovery routing.
-3. It does not claim every future docs surface is already complete.
+3. It does not claim every future Docs surface is already complete.
 4. It does not claim theorem-grade universal closure.
-5. It does not claim that docs pages replace research or eval.
+5. It does not claim that Docs pages replace Research or Eval.
 
 Next-page routing:
 1. For startup, go to Quickstart and Boot Commands.
@@ -79,9 +79,9 @@ People also need to know:
 5. how to recover after drift
 6. how to move from first use into deeper branch work
 
-That is what this docs layer is for.
+That is what this Docs layer is for.
 
-The docs layer exists so the project can stay usable without forcing every reader to begin from the deepest research page or the heaviest packed-master section.
+The Docs layer exists so the project can stay usable without forcing every reader to begin from the deepest research page or the heaviest packed-master section.
 
 It is the operational entry layer of the Avatar branch.
 
@@ -89,7 +89,7 @@ It is the operational entry layer of the Avatar branch.
 
 ## ✨ Why this layer exists
 
-The **docs** layer answers practical questions like:
+The **Docs** layer answers practical questions like:
 
 1. how do I enter Avatar
 2. which commands should I use
@@ -100,7 +100,7 @@ The **docs** layer answers practical questions like:
 
 That is different from what the other layers do.
 
-The **research** layer answers deeper structural questions like:
+The **Research** layer answers deeper structural questions like:
 
 1. what counts as execution
 2. what counts as route law
@@ -109,16 +109,16 @@ The **research** layer answers deeper structural questions like:
 5. what happens before public emission
 6. how matrix accountability and audit burden work
 
-The **eval** layer answers pressure questions like:
+The **Eval** layer answers pressure questions like:
 
 1. what breaks under hostile reading
 2. what remains stable under real use
 3. what behavior should or should not receive credit
 4. how multilingual status is being stated honestly
 
-So the docs layer is where operation becomes legible.
+So the Docs layer is where operation becomes legible.
 
-It does not replace the deeper body.
+It does not replace the deeper body.  
 It makes the deeper body usable.
 
 ---
@@ -197,7 +197,7 @@ This is the best route when continuity weakened after article, analysis, rewrite
 
 ---
 
-### 5. I want to go deeper after docs
+### 5. I want to go deeper after Docs
 
 Start here if your main question is no longer “how do I use it,” but instead:
 
@@ -212,16 +212,16 @@ Go to:
 1. [🔬 Research Hub](../research/README.md)
 2. [🧪 Eval Hub](../eval/README.md)
 
-Docs gets you into the branch.
-Research and eval tell you what that branch is actually doing and whether it survives pressure.
+Docs gets you into the branch.  
+Research and Eval tell you what that branch is actually doing and whether it survives pressure.
 
 ---
 
-## 🧱 What belongs in the docs layer
+## 🧱 What belongs in the Docs layer
 
-The docs layer is where operational guidance lives.
+The Docs layer is where operational guidance lives.
 
-Typical docs-layer questions include:
+Typical Docs-layer questions include:
 
 1. how do I start
 2. how do I boot a persona
@@ -233,17 +233,17 @@ Typical docs-layer questions include:
 
 This layer should stay clear, practical, and route-aware.
 
-It should not try to restate the entire research body.
-It should not try to replace evaluation pressure.
+It should not try to restate the entire research body.  
+It should not try to replace evaluation pressure.  
 It should not pretend a few instructions equal the whole system.
 
-That restraint is what keeps docs useful.
+That restraint is what keeps Docs useful.
 
 ---
 
 ## 🧠 Current docs surfaces
 
-The current docs layer is organized into five major surfaces.
+The current Docs layer is organized into five major surfaces.
 
 ### 1. Startup surface
 
@@ -315,9 +315,9 @@ This hub itself is part of the operational routing layer.
 
 Use this when the question is:
 
-1. what docs page should I open next
+1. what Docs page should I open next
 2. where should I go after startup
-3. when should I jump from docs into research or eval
+3. when should I jump from Docs into Research or Eval
 
 ---
 
@@ -373,7 +373,7 @@ This path gives you:
 
 ### Path D: docs to research path
 
-Use this if docs answered the operational layer and you now want deeper understanding.
+Use this if Docs answered the operational layer and you now want deeper understanding.
 
 1. [📖 How to Read the Avatar Master File](./how-to-read-the-avatar-master-file.md)
 2. [🔬 Research Hub](../research/README.md)
@@ -386,7 +386,7 @@ This path is best when you want to move from usage to structure.
 
 ### Path E: docs to eval path
 
-Use this if docs helped you operate the branch, but now you want to inspect whether it actually held under pressure.
+Use this if Docs helped you operate the branch, but now you want to inspect whether it actually held under pressure.
 
 1. [📖 How to Read the Avatar Master File](./how-to-read-the-avatar-master-file.md)
 2. [🧪 Eval Hub](../eval/README.md)
@@ -401,14 +401,14 @@ This path is best when you want to move from operation to inspection.
 
 This distinction matters.
 
-The **docs** layer answers:
+The **Docs** layer answers:
 
 1. how to start
 2. how to read
 3. how to tune
 4. how to recover
 
-The **research** layer answers:
+The **Research** layer answers:
 
 1. what the packed master is
 2. what counts as execution
@@ -419,10 +419,10 @@ The **research** layer answers:
 
 So:
 
-1. docs tell you how to operate
-2. research tells you how to understand
+1. Docs tell you how to operate
+2. Research tells you how to understand
 
-Both matter.
+Both matter.  
 They are not the same thing.
 
 ---
@@ -431,25 +431,25 @@ They are not the same thing.
 
 This distinction matters too.
 
-The **docs** layer helps you do things.
+The **Docs** layer helps you do things.
 
-The **eval** layer helps you judge whether the current branch held up under pressure.
+The **Eval** layer helps you judge whether the current branch held up under pressure.
 
 For example:
 
-1. docs explain how to recover
-2. eval checks whether recovery actually deserves credit
+1. Docs explain how to recover
+2. Eval checks whether recovery actually deserves credit
 
-1. docs explain how to tune
-2. eval checks whether tuning made the branch stronger or only prettier
+1. Docs explain how to tune
+2. Eval checks whether tuning made the branch stronger or only prettier
 
-1. docs explain how to start
-2. eval checks whether startup clarity survives real branch use
+1. Docs explain how to start
+2. Eval checks whether startup clarity survives real branch use
 
 So:
 
-1. docs are operational
-2. eval is inspectable pressure
+1. Docs are operational
+2. Eval is inspectable pressure
 
 That separation keeps the branch honest.
 
@@ -457,23 +457,23 @@ That separation keeps the branch honest.
 
 ## 🌱 What this layer should become over time
 
-As Avatar grows, docs will likely need to keep getting clearer, not just longer.
+As Avatar grows, Docs will likely need to keep getting clearer, not just longer.
 
-A good docs layer should continue to do three things well:
+A good Docs layer should continue to do three things well:
 
 1. reduce startup friction
 2. reduce misreading
 3. reduce bad tuning and bad recovery habits
 
-That means future docs growth should stay disciplined.
+That means future Docs growth should stay disciplined.
 
-New docs pages should exist because they solve a real operational problem, not because more pages feel more complete.
+New Docs pages should exist because they solve a real operational problem, not because more pages feel more complete.
 
 This is important.
 
 A branch can become unreadable through documentation sprawl just as easily as it can through theory sprawl.
 
-So docs growth should remain task-driven.
+So Docs growth should remain task-driven.
 
 ---
 
@@ -481,12 +481,12 @@ So docs growth should remain task-driven.
 
 This hub does **not** claim:
 
-1. that all future docs pages already exist
-2. that docs alone are enough to understand the whole project
-3. that current docs already replace the packed master
-4. that current docs already cover every future branch workflow
+1. that all future Docs pages already exist
+2. that Docs alone are enough to understand the whole project
+3. that current Docs already replace the packed master
+4. that current Docs already cover every future branch workflow
 5. that current branch ergonomics are universally final
-6. that docs pages remove the need for research or eval
+6. that Docs pages remove the need for Research or Eval
 
 This hub is a bounded operational center.
 
@@ -522,7 +522,7 @@ Go to [🧪 Eval Hub](../eval/README.md)
 
 ---
 
-## 🔗 Quick links
+## 🔗 Quick Links
 
 ### Docs core
 - [⚡ Quickstart](./quickstart.md)
