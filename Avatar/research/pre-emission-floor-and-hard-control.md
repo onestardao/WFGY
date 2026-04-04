@@ -4,21 +4,22 @@ AI NOTE: Pre-Emission Floor and Hard Control / Reading Contract
 Purpose:
 1. This page explains the lawful relation between the pre-emission floor gate and hard control in WFGY 5.0 Avatar.
 2. This page belongs to the research layer.
-3. This page should be read after the Research Hub and alongside Dual Closed-Loop Execution Chain, Runtime Posture Intensity Map, and Structured Imperfection Theory, not as a replacement for the packed master body.
+3. This page should be read after the Research Hub and alongside Dual Closed-Loop Execution Chain, Runtime Posture Intensity Map, Structured Imperfection Theory, and Output Governance Core, not as a replacement for the packed master body.
 
 Read this page when:
-1. the user asks what happens immediately before public emission
-2. the user asks why cleaner output may still fail the corridor
-3. the user asks what the pre-emission floor gate is protecting
-4. the user asks what hard control actually controls
-5. the user asks why controller legality is not the same as ranking outputs
-6. the user asks how continue, revise, downgrade, and stop remain lawfully distinct
+1. the reader asks what happens immediately before public emission
+2. the reader asks why cleaner output may still fail the corridor
+3. the reader asks what the pre-emission floor gate is protecting
+4. the reader asks what hard control actually controls
+5. the reader asks why controller legality is not the same as ranking outputs
+6. the reader asks how continue, revise, downgrade, redirect, and stop remain lawfully distinct
 
 Do not overclaim:
 1. this page does not prove universal final completion
 2. this page does not replace the packed master body
 3. this page explains one bounded structural layer only
 4. this page does not claim theorem-grade universal closure
+5. this page does not claim that all later controller elaborations and child-implementation threshold mappings are already complete in public
 
 Primary source anchors:
 1. avatar-final002.txt :: L0.6 Fast Read Lane for AI and weak readers
@@ -27,28 +28,35 @@ Primary source anchors:
 4. avatar-final002.txt :: 0.P1 Operator execution trace sufficiency law
 5. avatar-final002.txt :: 0.P2 Recursive revision compatibility law
 6. avatar-final002.txt :: 4A.8A Pre-emission imperfection floor gate
-7. avatar-final002.txt :: 5D.16 Controller legality and shell distinction
-8. avatar-final002.txt :: 5D.17 Bounded recursion discipline
-9. avatar-final002.txt :: 5D.18 Anti-runaway-control law
-10. avatar-final002.txt :: 5D.19 Action mediation and anti-false-completion
-11. avatar-final002.txt :: 5D.20 Action mediation and anti-false-polish
-12. avatar-final002.txt :: 5D.21 Action mediation and theorem-facing honesty
-13. avatar-final002.txt :: 5D.22 Action mediation and downstream realization
-14. avatar-final002.txt :: 5D.23 Controller legality and dual-layer numeric relation
-15. avatar-final002.txt :: 5D.23A hard_control_candidate_knob_block
+7. avatar-final002.txt :: 5D.1 Part role
+8. avatar-final002.txt :: 5D.2 Why controller legality must exist as body
+9. avatar-final002.txt :: 5D.3 Controller legality identity
+10. avatar-final002.txt :: 5D.4 Controller-side operator-bearing structure
+11. avatar-final002.txt :: 5D.16 Controller legality and shell distinction
+12. avatar-final002.txt :: 5D.17 Bounded recursion discipline
+13. avatar-final002.txt :: 5D.18 Anti-runaway-control law
+14. avatar-final002.txt :: 5D.19 Action mediation and anti-false-completion
+15. avatar-final002.txt :: 5D.20 Action mediation and anti-false-polish
+16. avatar-final002.txt :: 5D.21 Action mediation and theorem-facing honesty
+17. avatar-final002.txt :: 5D.22 Action mediation and downstream realization
+18. avatar-final002.txt :: 5D.23 Controller legality and dual-layer numeric relation
+19. avatar-final002.txt :: 5D.23A hard_control_candidate_knob_block
+20. avatar-final002.txt :: 5D.23A1 hard_control profile control note
+21. avatar-final002.txt :: 5D.24 Formal-body honesty boundary at the end of Part 5D
 
 Routing:
 1. if the reader wants research overview, go to ./README.md
 2. if the reader wants execution-order law, go to ./dual-closed-loop-execution-chain.md
 3. if the reader wants runtime-strength shaping law, go to ./runtime-posture-intensity-map.md
 4. if the reader wants structured retention law, go to ./structured-imperfection-theory.md
-5. if the reader wants handoff law, go to ./shell-to-runtime-mapping.md
-6. if the reader wants the broader architecture picture, go to ./architecture-overview.md
-7. if the reader wants behavior-governance context, go to ./language-governance.md
-8. if the reader wants editable behavior layer context, go to ./wfgy-brain-theory.md
-9. if the reader wants user-facing startup flow, go to ../docs/quickstart.md and ../docs/boot-commands.md
-10. if the reader wants tuning workflow context, go to ../docs/avatar-tuning-workflow.md
-11. if the reader wants evaluation pressure, go to ../eval/blackfan-testing.md and ../eval/persona-behavior-checks.md
+5. if the reader wants output-shaping law earlier in the corridor, go to ./output-governance-core.md
+6. if the reader wants handoff law, go to ./shell-to-runtime-mapping.md
+7. if the reader wants the broader architecture picture, go to ./architecture-overview.md
+8. if the reader wants behavior-governance context, go to ./language-governance.md
+9. if the reader wants editable behavior layer context, go to ./wfgy-brain-theory.md
+10. if the reader wants user-facing startup flow, go to ../docs/quickstart.md and ../docs/boot-commands.md
+11. if the reader wants tuning workflow context, go to ../docs/avatar-tuning-workflow.md
+12. if the reader wants evaluation pressure, go to ../eval/blackfan-testing.md and ../eval/persona-behavior-checks.md
 -->
 
 # 🚦 Pre-Emission Floor and Hard Control
@@ -56,7 +64,7 @@ Routing:
 > The last stretch before public emission is not a cosmetic finishing zone.  
 > In WFGY 5.0 Avatar, it is a governed decision corridor in which a candidate must first survive the pre-emission floor gate and then face controller-side hard control before public-facing release can count as lawful.
 
-**Quick links:** [Research Hub](./README.md) · [Dual Closed-Loop Execution Chain](./dual-closed-loop-execution-chain.md) · [Runtime Posture Intensity Map](./runtime-posture-intensity-map.md) · [Structured Imperfection Theory](./structured-imperfection-theory.md) · [Shell-to-Runtime Mapping](./shell-to-runtime-mapping.md) · [Architecture Overview](./architecture-overview.md) · [Language Governance](./language-governance.md) · [WFGY_BRAIN Theory](./wfgy-brain-theory.md) · [Quickstart](../docs/quickstart.md) · [Boot Commands](../docs/boot-commands.md) · [Avatar Tuning Workflow](../docs/avatar-tuning-workflow.md) · [Blackfan Testing](../eval/blackfan-testing.md) · [Persona Behavior Checks](../eval/persona-behavior-checks.md)
+**Quick links:** [Research Hub](./README.md) · [Dual Closed-Loop Execution Chain](./dual-closed-loop-execution-chain.md) · [Runtime Posture Intensity Map](./runtime-posture-intensity-map.md) · [Structured Imperfection Theory](./structured-imperfection-theory.md) · [Output Governance Core](./output-governance-core.md) · [Shell-to-Runtime Mapping](./shell-to-runtime-mapping.md) · [Architecture Overview](./architecture-overview.md) · [Language Governance](./language-governance.md) · [WFGY_BRAIN Theory](./wfgy-brain-theory.md) · [Quickstart](../docs/quickstart.md) · [Boot Commands](../docs/boot-commands.md) · [Avatar Tuning Workflow](../docs/avatar-tuning-workflow.md) · [Blackfan Testing](../eval/blackfan-testing.md) · [Persona Behavior Checks](../eval/persona-behavior-checks.md)
 
 ---
 
@@ -79,12 +87,10 @@ Without this page, readers may collapse both problems into a generic “quality 
 That would miss the whole point.
 
 The packed master separates these burdens.
-
 The pre-emission floor gate is there to test whether the candidate still retains what higher law required it to retain.
-
 Hard control is there to decide what may lawfully happen next.
 
-This page exists to make that separation explicit.
+This page exists to make that separation explicit. 
 
 ---
 
@@ -124,18 +130,24 @@ This page is grounded primarily in the following packed-master sections:
 4. `0.P1 Operator execution trace sufficiency law`
 5. `0.P2 Recursive revision compatibility law`
 6. `4A.8A Pre-emission imperfection floor gate`
-7. `5D.16 Controller legality and shell distinction`
-8. `5D.17 Bounded recursion discipline`
-9. `5D.18 Anti-runaway-control law`
-10. `5D.19 Action mediation and anti-false-completion`
-11. `5D.20 Action mediation and anti-false-polish`
-12. `5D.21 Action mediation and theorem-facing honesty`
-13. `5D.22 Action mediation and downstream realization`
-14. `5D.23 Controller legality and dual-layer numeric relation`
-15. `5D.23A hard_control_candidate_knob_block`
+7. `5D.1 Part role`
+8. `5D.2 Why controller legality must exist as body`
+9. `5D.3 Controller legality identity`
+10. `5D.4 Controller-side operator-bearing structure`
+11. `5D.16 Controller legality and shell distinction`
+12. `5D.17 Bounded recursion discipline`
+13. `5D.18 Anti-runaway-control law`
+14. `5D.19 Action mediation and anti-false-completion`
+15. `5D.20 Action mediation and anti-false-polish`
+16. `5D.21 Action mediation and theorem-facing honesty`
+17. `5D.22 Action mediation and downstream realization`
+18. `5D.23 Controller legality and dual-layer numeric relation`
+19. `5D.23A hard_control_candidate_knob_block`
+20. `5D.23A1 hard_control profile control note`
+21. `5D.24 Formal-body honesty boundary at the end of Part 5D`
 
 These anchors matter because this page is not inventing a late-stage governance story from general philosophy.
-The packed master already places pre-emission floor and hard control inside the execution-bearing route to lawful public emission.
+The packed master already places pre-emission floor and hard control inside the execution-bearing route to lawful public emission. 
 
 ---
 
@@ -159,7 +171,7 @@ Fifth, recursive revision does not bypass either gate.
 
 Sixth, public emission is not earned by sounding finished.
 
-That is why the packed master treats this region as a governed decision corridor rather than as a final wording zone.
+That is why the packed master treats this region as a governed decision corridor rather than as a final wording zone. 
 
 ---
 
@@ -183,7 +195,7 @@ It is:
 1. verify that lawful floor has not already collapsed
 2. only then allow controller-side action mediation to decide what may happen next
 
-This makes the floor gate a condition of admissible late-stage action, not a decorative warning label.
+This makes the floor gate a condition of admissible late-stage action, not a decorative warning label. 
 
 ---
 
@@ -207,7 +219,7 @@ At minimum, the gate is protecting against failures such as:
 This is why the gate belongs with structured retention law rather than with final editing taste.
 
 The object being guarded is not ugliness.
-The object being guarded is lawful retained life.
+The object being guarded is lawful retained life. 
 
 ---
 
@@ -233,7 +245,7 @@ It is a retention verdict.
 This distinction matters because many counterfeit outputs fail by looking better.
 If the system only looked at local readability, some of its most dangerous failures would pass.
 
-The floor gate exists so that pre-emission success cannot be bought by lawful depletion.
+The floor gate exists so that pre-emission success cannot be bought by lawful depletion. 
 
 ---
 
@@ -265,7 +277,7 @@ A candidate may be fluent and still require redirect.
 A candidate may be elegant and still require stop.
 
 So hard control is not there to reward what sounds most persuasive.
-It is there to decide what the corridor is lawfully allowed to do.
+It is there to decide what the corridor is lawfully allowed to do. 
 
 ---
 
@@ -292,42 +304,28 @@ Numeric support may help controller reading.
 It may not replace controller legality.
 
 So hard control is not a scoreboard with a crown.
-It is a controller law that may use numeric attachment without surrendering judgment to it.
+It is a controller law that may use numeric attachment without surrendering judgment to it. 
 
 ---
 
-## 🔩 The hard-control candidate knob family
+## 🔩 Controller legality must exist as body
 
-The packed master explicitly preserves a hard-control candidate knob family.
+This part needs to be said more sharply.
 
-These candidate parameters include:
+The packed master does not treat hard control as “reasonable behavior.”
+It treats controller legality as a real formal body.
 
-1. `continue_threshold = 0.60`
-2. `revise_threshold = 0.48`
-3. `downgrade_threshold = 0.45`
-4. `stop_threshold = 0.30`
-5. `honesty_floor = 0.84`
-6. `pressure_transfer_legality_threshold = 0.60`
-7. `public_emission_suitability_threshold = 0.66`
-8. `open_item_block_threshold = 0.50`
-9. `unsupported_claim_block_threshold = 0.73`
+That matters because if controller legality remained only implied, the following false moves would become easy:
 
-Their lawful meaning is bounded.
+1. whatever output path looks locally acceptable could be treated as lawful
+2. visible warnings could masquerade as actual mediation
+3. continuation could be assumed unless collapse looked obvious
+4. downgrade could be postponed because the prose still sounded composed
+5. redirect could be ignored because a locally coherent answer was still possible
+6. stop could be treated as a vibe rather than as a legal pathway
 
-They expose carry-capable controller-facing thresholds and block conditions in explicit numeric form.
-
-They do **not** do the following:
-
-1. replace controller legality
-2. convert legality into ranking only
-3. authorize action by numeric presence alone
-4. erase the need for late-stage action mediation
-5. turn threshold passing into universal release entitlement
-
-This is one of the clearest examples of the master body refusing fake math.
-
-The numbers are real.
-But they are still subordinate to controller law.
+So Part 5D exists to stop theatrically justified after-the-fact choice.
+Its burden is to mediate lawful next-step action at the point of decision itself. :contentReference[oaicite:10]{index=10}
 
 ---
 
@@ -359,7 +357,7 @@ Redirect may be required even when staying on route seems smoother.
 Stop may be required even when there is still more the system could say.
 
 This is why anti-false-completion and anti-false-polish are attached to controller legality.
-The existence of another fluent sentence is not proof that lawful continue was earned.
+The existence of another fluent sentence is not proof that lawful continue was earned. 
 
 ---
 
@@ -386,7 +384,7 @@ But the lawful stop condition may already have been crossed.
 
 That is why the packed master explicitly rejects runaway control.
 More text is not more legality.
-More recursive thought is not more permission.
+More recursive thought is not more permission. 
 
 ---
 
@@ -411,7 +409,78 @@ A clean answer may still hide controller failure.
 A composed paragraph may still have delayed the lawful stop.
 
 So late-stage elegance is never enough.
-It remains auditable against controller legality.
+It remains auditable against controller legality. 
+
+---
+
+## 🎛️ The hard-control candidate knob family
+
+The packed master explicitly preserves a hard-control candidate knob family.
+
+These candidate parameters include:
+
+1. `continue_threshold = 0.60`
+2. `revise_threshold = 0.48`
+3. `downgrade_threshold = 0.45`
+4. `stop_threshold = 0.30`
+5. `honesty_floor = 0.84`
+6. `pressure_transfer_legality_threshold = 0.60`
+7. `public_emission_suitability_threshold = 0.66`
+8. `open_item_block_threshold = 0.50`
+9. `unsupported_claim_block_threshold = 0.73`
+
+Their lawful meaning is bounded.
+
+They expose carry-capable controller-facing thresholds and block conditions in explicit numeric form.
+
+They do **not** do the following:
+
+1. replace controller legality
+2. convert legality into ranking only
+3. authorize action by numeric presence alone
+4. erase the need for late-stage action mediation
+5. turn threshold passing into universal release entitlement
+
+This is one of the clearest examples of the master body refusing fake math.
+
+The numbers are real.
+But they are still subordinate to controller law. 
+
+---
+
+## 🎚️ Hard-control profile binding at the launchpad layer
+
+There is one more piece that should be explicit here.
+
+The candidate knob family of `hard_control` is allowed to remain answerable to the launchpad-facing central TXT toggle block through **profile selection only**.
+
+At the present release stage, the lawful launchpad-facing binding is:
+
+1. `hard_control_profile = minimum | baseline | standard | strong`
+
+This matters because it gives the system a bounded way to vary controller posture severity without pretending controller legality itself is optional.
+
+The role of this binding is narrow.
+
+It may lawfully:
+
+1. alter controller posture severity within lawful profile range
+2. support replay comparison across stricter and lighter controller pressure
+3. support threshold-family testing without deleting controller identity
+4. support stage-bounded profile calibration for public-emission posture
+
+It may not lawfully:
+
+1. switch `hard_control` into unsupported absence
+2. convert controller legality into optional decoration
+3. authorize public emission by profile softness alone
+4. collapse legality into score-only ranking
+5. erase honesty-floor answerability
+6. erase block-threshold answerability
+
+So profile softness is not an escape hatch.
+The profile may tune controller posture.
+It may not rewrite controller existence into casual switchability. :contentReference[oaicite:15]{index=15}
 
 ---
 
@@ -435,7 +504,7 @@ This is especially important in public-facing artifact production.
 
 The closer the system gets to releasable output, the easier it becomes to confuse finished appearance with lawful eligibility.
 
-This page exists to reject that shortcut.
+This page exists to reject that shortcut. 
 
 ---
 
@@ -468,7 +537,32 @@ If this layer is missing, weakened, or misunderstood, several failure classes be
    richer downstream realization is allowed to mask upstream controller illegality
 
 These are not style defects.
-They are governance failures.
+They are governance failures. 
+
+---
+
+## 📍 What this page is, and what it is not
+
+This page **is**:
+
+1. a release-corridor law page
+2. a pre-emission-floor page
+3. a controller-legality page
+4. a boundary page between retained life and later action mediation
+
+This page is **not**:
+
+1. a generic quality-check page
+2. a runtime-posture page
+3. an output-governance page
+4. a WFGY_BRAIN page
+5. a pure numeric-threshold page
+6. a total theorem-facing closure page
+
+That separation is deliberate.
+
+If this page tried to do all of those jobs at once, it would stop being a real pre-emission and hard-control page and become a compressed counterfeit of the larger body.
+This page is not allowed to do that.
 
 ---
 
@@ -486,6 +580,7 @@ It is strong enough to preserve:
 6. anti-runaway-control discipline
 7. numeric attachment without numeric sovereignty
 8. distinct late-stage action pathways
+9. profile selection without controller optionality
 
 At the same time, this page does **not** lawfully claim:
 
@@ -497,9 +592,7 @@ At the same time, this page does **not** lawfully claim:
 So the lawful current-stage claim is strong, but bounded.
 
 This corridor is explicit, ordered, action-bearing, and anti-counterfeit.
-It is not being sold here as finished universal finality.
-
-That restraint is part of its force.
+It is not being sold here as finished universal finality. 
 
 ---
 
@@ -512,15 +605,16 @@ If this page is your first release-corridor research entry, the best next steps 
 3. read [Structured Imperfection Theory](./structured-imperfection-theory.md) for the retention layer protected by the floor gate
 4. read [Runtime Posture Intensity Map](./runtime-posture-intensity-map.md) for runtime-floor and conflict relation
 5. read [Shell-to-Runtime Mapping](./shell-to-runtime-mapping.md) for bounded upstream handoff law
-6. read [Architecture Overview](./architecture-overview.md) for the larger system skeleton
-7. read [Language Governance](./language-governance.md) for the governance claim behind lawful behavior
-8. read [WFGY_BRAIN Theory](./wfgy-brain-theory.md) for editable behavior context
+6. read [Output Governance Core](./output-governance-core.md) for the earlier downstream shaping layer
+7. read [Architecture Overview](./architecture-overview.md) for the larger system skeleton
+8. read [Language Governance](./language-governance.md) for the governance claim behind lawful behavior
+9. read [WFGY_BRAIN Theory](./wfgy-brain-theory.md) for editable behavior context
 
 ---
 
 ## 🔗 Related pages
 
-**Research:** [Research Hub](./README.md) · [Dual Closed-Loop Execution Chain](./dual-closed-loop-execution-chain.md) · [Runtime Posture Intensity Map](./runtime-posture-intensity-map.md) · [Structured Imperfection Theory](./structured-imperfection-theory.md) · [Shell-to-Runtime Mapping](./shell-to-runtime-mapping.md) · [Architecture Overview](./architecture-overview.md) · [Language Governance](./language-governance.md) · [WFGY_BRAIN Theory](./wfgy-brain-theory.md)
+**Research:** [Research Hub](./README.md) · [Dual Closed-Loop Execution Chain](./dual-closed-loop-execution-chain.md) · [Runtime Posture Intensity Map](./runtime-posture-intensity-map.md) · [Structured Imperfection Theory](./structured-imperfection-theory.md) · [Output Governance Core](./output-governance-core.md) · [Shell-to-Runtime Mapping](./shell-to-runtime-mapping.md) · [Architecture Overview](./architecture-overview.md) · [Language Governance](./language-governance.md) · [WFGY_BRAIN Theory](./wfgy-brain-theory.md)
 
 **Docs:** [Quickstart](../docs/quickstart.md) · [Boot Commands](../docs/boot-commands.md) · [Avatar Tuning Workflow](../docs/avatar-tuning-workflow.md)
 
