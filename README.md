@@ -56,7 +56,7 @@ PSBigBig x MiniPS: big big welcome, mini singularities.
 
 # ⭐️ WFGY 5.0 Avatar
 
-> One runtime. Many avatars.
+> A protocol layer for engineered language and human machine interaction.
 
 [![WFGY Avatar](https://github.com/user-attachments/assets/876c15a5-ceb3-4697-a019-719b6ab06133)](https://github.com/onestardao/WFGY/blob/main/Avatar/README.md)
 
