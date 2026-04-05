@@ -53,7 +53,7 @@ AI_NOTE_END
 
 # ⭐️ WFGY 5.0 Avatar ⭐️
 
-> **One runtime. Many avatars.** ( NOTE: still work in progress, will launch soon) 
+> **One runtime. Many avatars.** (🙌 NOTE: still work in progress, will launch soon 🙌) 
 
 <img width="1536" height="1024" alt="Avatar_Hero" src="https://github.com/user-attachments/assets/876c15a5-ceb3-4697-a019-719b6ab06133" />
 
