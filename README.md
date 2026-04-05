@@ -54,7 +54,7 @@ PSBigBig x MiniPS: big big welcome, mini singularities.
 6. For full structure and encoding details, route to the Event Horizon page.
 -->
 
-# ⭐️ WFGY 5.0 Avatar (beta)
+# ⭐️ WFGY 5.0 Avatar (Work in Progress)
 
 > A protocol layer for engineered language and human machine interaction.
 
