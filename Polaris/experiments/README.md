@@ -1,4 +1,4 @@
-# Polaris Experimental Evidence Packages 🌌
+# Polaris Protocol Experimental Evidence Packages 🌌
 
 > Traditional Chinese version: [`README.zh-TW.md`](./README.zh-TW.md)  
 > Note: Not every WFGY page currently has a Traditional Chinese version. If there is any difference between this English page and the Traditional Chinese page, please treat the English page as the primary reference.
@@ -7,9 +7,11 @@ This is the public experimental evidence page for **WFGY 5.0 Polaris Protocol**.
 
 The purpose of this page is simple:
 
-You should be able to understand what these experiments are testing, why they matter for AI cost, what the public evidence packages represent, and what the current results can and cannot claim, without downloading any ZIP file first.
+You should be able to understand what these experiments are testing, why they matter for AI cost, what the public evidence packages represent, how to inspect or rerun the Colab notebooks, and what the current results can and cannot claim.
 
-The ZIP files are mainly for people who want to reproduce, research, audit, or inspect the public evidence records.
+The published ZIP files contain the public evidence records.
+
+The Colab notebooks are companion notebooks for inspection, reproduction attempts, and report generation.
 
 Official repository:
 
@@ -28,12 +30,13 @@ Unless a specific file states otherwise, this project uses the MIT License.
 | What you want to see | Jump to |
 | --- | --- |
 | Understand the experiment first | [3-minute overview](#quick-start) |
+| Open the Colab notebooks | [Run / inspect with Colab](#colab) |
 | What the packages mean | [Seven public evidence packages](#evidence-packs) |
 | Why PP02D was added | [Community follow-up supplement](#community-follow-up) |
 | Core numbers | [Core results overview](#results) |
 | Whether the tasks were too easy | [Task design and rigor](#rigor) |
 | How skeptic questions are answered | [FAQ and skeptic attacks](#faq) |
-| Download or reproduce | [Downloads and file verification](#downloads) |
+| Download evidence ZIP files | [Downloads and file verification](#downloads) |
 | What this does not claim | [Claim boundary](#claim-ceiling) |
 
 ---
@@ -46,15 +49,15 @@ AI cost is rising, not only because models are getting larger, but also because 
 
 The more tokens a model has to read, the higher the inference cost becomes.
 
-The Polaris experiment asks:
+The Polaris Protocol experiment asks:
 
 > Instead of giving the model the entire instruction book every time, what if we first organize the task into a more stable structure, then ask the model to produce the output? Can we use far fewer tokens while still preserving inspectable output quality?
 
 This is not simply shortening a prompt.
 
-If you only shorten a prompt, you may also remove important constraints, boundaries, scoring conditions, and error checks. Polaris is not about aggressively deleting text. It is about extracting the important relationships inside the task.
+If you only shorten a prompt, you may also remove important constraints, boundaries, scoring conditions, and error checks. Polaris Protocol is not about aggressively deleting text. It is about extracting the important relationships inside the task.
 
-What it tries to preserve:
+What Polaris Protocol tries to preserve:
 
 | What should be preserved | Why it matters |
 | --- | --- |
@@ -69,7 +72,7 @@ In plain language:
 
 A traditional long-context approach is like handing the model an entire city encyclopedia every time.
 
-The Polaris approach is more like drawing a city map, including roads, relations, danger zones, destinations, and checkpoints.
+The Polaris Protocol approach is more like drawing a city map, including roads, relations, danger zones, destinations, and checkpoints.
 
 The point is not to make the information smaller.
 
@@ -77,7 +80,7 @@ The point is to make the information clearer.
 
 One sentence summary:
 
-> Polaris does not make the task smaller. It makes the task clearer. 🧠
+> Polaris Protocol does not make the task smaller. It makes the task clearer. 🧠
 
 <details>
 <summary>Expand: What does this have to do with GPU cost?</summary>
@@ -92,7 +95,7 @@ If every task requires a large block of background text, the model must repeated
 
 That becomes cost.
 
-The Polaris idea is:
+The Polaris Protocol idea is:
 
 Besides pursuing larger models, stronger GPUs, and longer context windows, we can also ask another question:
 
@@ -100,7 +103,7 @@ Can the task itself be represented in a smarter way first?
 
 If a task can be organized into a more stable structure, the model may not need to reread an entire library every time. It may only need to read a clearer task map.
 
-So Polaris is not saying that GPUs are unimportant.
+So Polaris Protocol is not saying that GPUs are unimportant.
 
 It is saying:
 
@@ -113,7 +116,7 @@ AI cost can be approached not only from the hardware side, but also from the tas
 
 If you only make the prompt shorter, you usually lose information, and output quality may drop.
 
-The key point of Polaris is not aggressive text deletion. It is reorganizing task content into a more stable structure.
+The key point of Polaris Protocol is not aggressive text deletion. It is reorganizing task content into a more stable structure.
 
 You can think of it like this:
 
@@ -139,6 +142,102 @@ So you can understand it as:
 First turn the task into structure, then let the model translate that structure into an answer.
 
 </details>
+
+[Back to quick navigation](#top)
+
+---
+
+<a id="colab"></a>
+
+## Run / inspect with Colab 🚀
+
+The published evidence packages already contain the experimental results, raw outputs, verdicts, audits, token records, and public-safe evidence files.
+
+The Colab notebooks are provided as companion notebooks for readers who want to inspect, reproduce, or adapt the experiments.
+
+You do **not** need to rerun the notebooks to understand the published results.
+
+The result snapshots are already summarized below.
+
+If you choose to rerun a notebook, token usage and cost may vary depending on:
+
+- selected model
+- current API pricing
+- API behavior at runtime
+- number of cases
+- retry behavior
+- output length
+- whether you run smoke, mini, or full mode
+
+These Colab notebooks are **not third-party certification**.
+
+They are public reproduction / inspection companions for the existing evidence packages.
+
+---
+
+### Colab notebooks
+
+| Package | Purpose | Published result snapshot | Colab |
+| --- | --- | --- | --- |
+| PP01 | Main cost battlefield | 320 cases; Group C total token ratio vs Group A = `0.1656`; overclaim count = `0`; critical wrong-source count = `0` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/onestardao/WFGY/blob/main/Polaris/experiments/downloads/PP01.ipynb) |
+| PP02A | Version evolution evidence | 120 cases; 240 final-run raw outputs; parse success rate = `1.0`; final result = `SEAL_PASS` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/onestardao/WFGY/blob/main/Polaris/experiments/downloads/PP02A.ipynb) |
+| PP02B | Math stress / structured evidence chain | 120 cases; 720 expected / actual outputs; Group C parse pass rate = `1.0`; main certificate result = `T4_MAIN_CERTIFICATE_PASS` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/onestardao/WFGY/blob/main/Polaris/experiments/downloads/PP02B.ipynb) |
+| PP02C | Code repair red-line evidence | 120 cases; 720 expected / actual outputs; hard red-line count = `0`; claim-boundary pass rate = `1.0` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/onestardao/WFGY/blob/main/Polaris/experiments/downloads/PP02C.ipynb) |
+| PP02D_A | API stability supplement | 216 fixtures; fixture pass = `216/216`; support closure checks = `2160/2160`; poison reject = `12/12` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/onestardao/WFGY/blob/main/Polaris/experiments/downloads/PP02D.ipynb) |
+| PP02D_B | Hardcase final-run gates | 216 API calls; certificate exact = `216/216`; parser rescue = `0`; semantic fallback = `0` | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/onestardao/WFGY/blob/main/Polaris/experiments/downloads/PP02D_B.ipynb) |
+| PP02D_C | Public QA compact-context evidence | 100 public QA cases; compact context preserves comparable answer F1 with lower token / cost load in the published scope | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/onestardao/WFGY/blob/main/Polaris/experiments/downloads/PP02D_C.ipynb) |
+
+---
+
+### What each Colab produces
+
+Each MVP Colab is designed to end with a compact report section.
+
+The goal is not to flood readers with raw tables.
+
+The goal is to make the experimental signal visible in a few simple outputs.
+
+Each notebook should produce:
+
+| Output | Purpose |
+| --- | --- |
+| `executive_report.md` | short human-readable summary |
+| `metrics_summary.csv` | compact metric table |
+| `chart_01_*.png` | main signal chart |
+| `chart_02_*.png` | safety / gate / comparison chart |
+| `chart_03_*.png` | token / cost / supporting chart |
+
+The report charts are meant to show the key signal of each experiment:
+
+| Package | Report focus |
+| --- | --- |
+| PP01 | token ratio, score retention, overclaim / wrong-source checks |
+| PP02A | final pass, domain coverage, weaker previous reference |
+| PP02B | compiler certificate, family verdicts, model stress separation |
+| PP02C | hard red-line counts, claim-boundary pass rate, false repair categories |
+| PP02D_A | fixture pass, support closure, poison rejection |
+| PP02D_B | certificate exactness, parser rescue = 0, semantic fallback = 0 |
+| PP02D_C | baseline vs compact answer F1, token reduction, estimated cost reduction |
+
+---
+
+### Colab claim boundary
+
+The Colab notebooks are public reproduction / inspection companions.
+
+They do not change the claim boundary of the experiments.
+
+| Do not interpret Colab as | Correct interpretation |
+| --- | --- |
+| Third-party official validation | Public reproduction / inspection notebook |
+| Universal proof | Scoped experimental companion |
+| Production seal | Runnable evidence-side artifact |
+| Guaranteed identical rerun | Rerun may vary depending on model, API, pricing, and settings |
+| Proof that all AI tasks are solved | Evidence within the published task scope |
+
+The published result summaries remain the primary reference.
+
+The Colab notebooks make the evidence easier to inspect, rerun, and adapt.
 
 [Back to quick navigation](#top)
 
@@ -210,7 +309,7 @@ It checks transport success, parse success, certificate exactness, arena valid-s
 
 This package focuses on public QA noninferiority under compact context.
 
-It uses 100 public QA cases and compares baseline raw context against Polaris compact context across two model levels. The purpose is not to claim global QA superiority. The purpose is to publish inspectable evidence that compact context can reduce token cost while preserving a comparable QA signal within this public test scope.
+It uses 100 public QA cases and compares baseline raw context against Polaris Protocol compact context across two model levels. The purpose is not to claim global QA superiority. The purpose is to publish inspectable evidence that compact context can reduce token cost while preserving a comparable QA signal within this public test scope.
 
 [Back to quick navigation](#top)
 
@@ -234,7 +333,7 @@ What PP02D adds:
 | --- | --- | --- |
 | PP02D_A | 216-fixture sharded API stability and preservation checks | Adds evidence that structured outputs, support checks, counterfactual checks, and poison-rejection checks can survive API-style sharding |
 | PP02D_B | 216-call hardcase final-run evidence | Adds evidence that hardcase gates can pass without parser rescue, semantic fallback, certificate mismatch, or valid-set mismatch |
-| PP02D_C | 100-case public QA noninferiority pilot | Adds a public QA comparison between baseline raw context and Polaris compact context, with token and cost reduction records |
+| PP02D_C | 100-case public QA noninferiority pilot | Adds a public QA comparison between baseline raw context and Polaris Protocol compact context, with token and cost reduction records |
 
 In plain language:
 
@@ -256,11 +355,14 @@ The PP02D supplement makes the evidence layer broader and more inspectable, but 
 
 The current public release is the first-layer experimental evidence for the pre-release stage of WFGY 5.0 Polaris Protocol.
 
-This layer focuses on publishing results, evidence chains, and auditable materials. It is not a full open-source execution package.
+This layer focuses on publishing results, evidence chains, auditable materials, and MVP Colab companion notebooks.
+
+It is not a full formal reproduction suite.
 
 | Item | Count or status |
 | --- | ---: |
 | Main public evidence packages | 7 |
+| Recommended MVP Colab companion notebooks | 7 |
 | Original PP01–PP02C main test cases | 680 |
 | Original PP01–PP02C main model outputs | 3600 |
 | PP02D_A fixtures | 216 |
@@ -268,11 +370,11 @@ This layer focuses on publishing results, evidence chains, and auditable materia
 | PP02D_C public QA cases | 100 |
 | PP02D_C model-arm output records | 400 |
 | Full core mathematics included | 0 |
-| Full Colab execution notebook included | 0 |
+| Full formal reproduction suite | Still expanding |
 
 What the current public version can support:
 
-> Within the currently published task scope, Polaris shows a signal worth paying attention to: if a task is first organized into a more stable structure, it may reduce token cost while preserving inspectable output quality.
+> Within the currently published task scope, Polaris Protocol shows a signal worth paying attention to: if a task is first organized into a more stable structure, it may reduce token cost while preserving inspectable output quality.
 
 What the current public version should not be interpreted as:
 
@@ -280,12 +382,12 @@ What the current public version should not be interpreted as:
 | --- | --- |
 | All AI tasks have been solved | The current scope only covers the specified public tasks |
 | Small models completely beat large models | The current evidence supports structured-task effects in specific tasks |
-| GPU scaling is no longer important | GPUs remain important; Polaris is a task-structure-side cost route |
+| GPU scaling is no longer important | GPUs remain important; Polaris Protocol is a task-structure-side cost route |
 | A third-party official benchmark | This is a self-built public experimental evidence chain |
 | Full core mathematics already released | The current release is an evidence package, not the full core |
-| Full Colab reproduction flow already released | Full reproduction materials will be added after the official open-source release |
+| Full formal reproduction suite already complete | The MVP Colab companion notebooks are now provided, but the full formal reproduction suite is still expanding |
 
-Full core mathematics, formal reproduction materials, and more release materials are expected to be added after the official open-source release.
+Full core mathematics, formal reproduction materials, and more release materials are expected to be added over time.
 
 <details>
 <summary>Expand: detailed result snapshots of the seven packages</summary>
@@ -426,7 +528,7 @@ PP02C also includes supporting checks such as sandbox runs, a global hard-veto m
 | --- | ---: |
 | Public QA cases | 100 |
 | Models | `gpt-4.1-mini`, `gpt-4.1` |
-| Arms | baseline raw context, Polaris compact context |
+| Arms | baseline raw context, Polaris Protocol compact context |
 | Model-arm output records | 400 |
 | Parse pass records | 400/400 |
 | Metadata leakage fail count | 0 |
@@ -441,7 +543,7 @@ PP02C also includes supporting checks such as sandbox runs, a global hard-veto m
 | Baseline wrong-source total, both models | 2 |
 | Compact-context wrong-source total, both models | 5 |
 | Baseline hallucinated-detail total, both models | 0 |
-| Compact-context hallucinated-detail total, both models | 1 |
+| Compact-context hallucinated-detail total | 1 |
 | Final result | `GREEN` |
 | Claim ceiling | `100_CASE_PUBLIC_HOTPOTQA_MODEL_LADDER_EVIDENCE_ONLY` |
 
@@ -453,6 +555,10 @@ Model-ladder detail:
 | `gpt-4.1` | `B_POLARIS_COMPACT_CONTEXT` | 0.7819761905 | 0.8403333333 | 3 | 1 | 0.342512 |
 | `gpt-4.1-mini` | `A_BASELINE_RAW_CONTEXT` | 0.7978095238 | 0.8906666667 | 1 | 0 | 0.099630 |
 | `gpt-4.1-mini` | `B_POLARIS_COMPACT_CONTEXT` | 0.8063095238 | 0.8503333333 | 2 | 0 | 0.068566 |
+
+Note:
+
+The recommended MVP Colab for PP02D_C may use the `Full100 Mini` runnable path for lower reproduction cost. The broader model-ladder summary remains part of the published evidence record.
 
 </details>
 
@@ -468,7 +574,7 @@ These experiments are not a few showcase questions used for performance theater.
 
 If we only selected a few questions the model happened to answer well, the page could look impressive, but the result would have little research value.
 
-The Polaris experiments use family-based design.
+The Polaris Protocol experiments use family-based design.
 
 This means:
 
@@ -559,7 +665,7 @@ So the task design is not “watering things down.”
 
 It is closer to:
 
-> Turn common model failure paths into a test field, then check whether Polaris can reduce those failures.
+> Turn common model failure paths into a test field, then check whether Polaris Protocol can reduce those failures.
 
 </details>
 
@@ -591,7 +697,8 @@ Token cost.
 Audit records.  
 Warning records.  
 Hard red lines.  
-File fingerprints.
+File fingerprints.  
+MVP Colab companion notebooks.
 
 So the position of this material is not:
 
@@ -620,15 +727,15 @@ No.
 
 A short prompt reduces words.
 
-Polaris organizes task structure.
+Polaris Protocol organizes task structure.
 
-If you only shorten text, you can easily remove constraints, boundaries, scoring conditions, and error checks. Polaris tries to preserve those key pieces of information, but organize them into a task map that is easier for the model to use.
+If you only shorten text, you can easily remove constraints, boundaries, scoring conditions, and error checks. Polaris Protocol tries to preserve those key pieces of information, but organize them into a task map that is easier for the model to use.
 
 In plain language:
 
 The traditional approach is like giving the model an entire encyclopedia every time.
 
-The Polaris approach is more like drawing a map first, then asking the model to complete the task by following the map.
+The Polaris Protocol approach is more like drawing a map first, then asking the model to complete the task by following the map.
 
 </details>
 
@@ -639,7 +746,7 @@ This is a self-built public experiment, not a third-party official benchmark.
 
 But it still has value because it does not only publish the final score.
 
-The material publishes an evidence chain, including raw model outputs, normalized results, per-case verdicts, token cost, audit records, warning records, hard red lines, and file fingerprints.
+The material publishes an evidence chain, including raw model outputs, normalized results, per-case verdicts, token cost, audit records, warning records, hard red lines, file fingerprints, and MVP Colab companion notebooks.
 
 So its position is not external ranking. It is inspectable public experimental evidence.
 
@@ -662,14 +769,14 @@ So this task design is not watered down.
 
 It is closer to:
 
-Turn common model failure paths into a test field, then check whether Polaris can reduce those failures.
+Turn common model failure paths into a test field, then check whether Polaris Protocol can reduce those failures.
 
 </details>
 
 <details>
 <summary>Q4. Did you leak answers or contaminate the tasks?</summary>
 
-The public packages do not only publish total scores. They also include leakage checks, raw outputs, normalized results, and audit records.
+The public packages do not only publish total scores. They also include leakage checks, raw outputs, normalized results, audit records, and MVP Colab companion notebooks.
 
 This does not mean future experiments can never make mistakes.
 
@@ -694,7 +801,7 @@ No.
 
 A more precise statement is:
 
-Within the currently published task scope, Polaris shows a signal that structured task representation can reduce token cost while preserving inspectable output quality.
+Within the currently published task scope, Polaris Protocol shows a signal that structured task representation can reduce token cost while preserving inspectable output quality.
 
 This should not be interpreted as all small models completely beating all large models.
 
@@ -713,7 +820,7 @@ No.
 
 GPUs remain important.
 
-Polaris focuses on reducing cost from another direction: improving the representation of the task itself, so the model does not have to reread large amounts of context every time.
+Polaris Protocol focuses on reducing cost from another direction: improving the representation of the task itself, so the model does not have to reread large amounts of context every time.
 
 In other words:
 
@@ -726,19 +833,19 @@ These experiments are not saying GPUs are unimportant. They are showing that AI 
 </details>
 
 <details>
-<summary>Q7. Why do the ZIP files not include the full core mathematics and full Colab yet?</summary>
+<summary>Q7. Why do the ZIP files not include the full core mathematics?</summary>
 
-Because this release is a pre-release evidence package, not a full execution package.
+Because this release is an experimental evidence package, not the full core mathematics release.
 
-The current goal is to let readers inspect raw model outputs, verdicts, cost, audits, warnings, red lines, and file fingerprints first.
+The current goal is to let readers inspect raw model outputs, verdicts, cost, audits, warnings, red lines, file fingerprints, and MVP Colab companion notebooks.
 
-Full core mathematics, formal reproduction materials, and more release materials will be added after the official open-source release.
+Full core mathematics and deeper formal materials will be added over time.
 
 In simple terms:
 
-This version publishes the evidence first.
+This version publishes the evidence and companion notebooks first.
 
-Deeper mathematical logic and reproduction materials will follow later.
+Deeper mathematical logic and implementation materials will follow later.
 
 </details>
 
@@ -749,9 +856,9 @@ The most important point is not that there are many ZIP files.
 
 The most important point is:
 
-Evidence is published first, before deeper mathematics and execution materials are released.
+Evidence is published first, before deeper mathematics and full implementation materials are released.
 
-This means readers do not have to rely only on screenshots or slogans. They can first inspect raw model outputs, normalized results, verdict tables, token cost, audit records, and file fingerprints.
+This means readers do not have to rely only on screenshots or slogans. They can first inspect raw model outputs, normalized results, verdict tables, token cost, audit records, file fingerprints, and Colab companion notebooks.
 
 In other words:
 
@@ -795,6 +902,19 @@ The public PP02D_C archive also normalizes the uploaded source label from `DD02C
 
 </details>
 
+<details>
+<summary>Q11. Do I have to run the Colab notebooks?</summary>
+
+No.
+
+The published results are already summarized on this page.
+
+The Colab notebooks are provided for readers who want to inspect, rerun, adapt, or generate compact reports.
+
+Running the notebooks may require API keys and may consume paid tokens depending on the notebook and selected settings.
+
+</details>
+
 [Back to quick navigation](#top)
 
 ---
@@ -831,22 +951,36 @@ Download links:
 | `wfgy5_polaris_protocol_pp02d_b_public_evidence_20260504.zip` | [Download](./downloads/wfgy5_polaris_protocol_pp02d_b_public_evidence_20260504.zip) |
 | `wfgy5_polaris_protocol_pp02d_c_public_evidence_20260504.zip` | [Download](./downloads/wfgy5_polaris_protocol_pp02d_c_public_evidence_20260504.zip) |
 
+Colab links:
+
+| Package | Colab |
+| --- | --- |
+| PP01 | [Open Colab](https://colab.research.google.com/github/onestardao/WFGY/blob/main/Polaris/experiments/downloads/PP01.ipynb) |
+| PP02A | [Open Colab](https://colab.research.google.com/github/onestardao/WFGY/blob/main/Polaris/experiments/downloads/PP02A.ipynb) |
+| PP02B | [Open Colab](https://colab.research.google.com/github/onestardao/WFGY/blob/main/Polaris/experiments/downloads/PP02B.ipynb) |
+| PP02C | [Open Colab](https://colab.research.google.com/github/onestardao/WFGY/blob/main/Polaris/experiments/downloads/PP02C.ipynb) |
+| PP02D_A | [Open Colab](https://colab.research.google.com/github/onestardao/WFGY/blob/main/Polaris/experiments/downloads/PP02D.ipynb) |
+| PP02D_B | [Open Colab](https://colab.research.google.com/github/onestardao/WFGY/blob/main/Polaris/experiments/downloads/PP02D_B.ipynb) |
+| PP02D_C | [Open Colab](https://colab.research.google.com/github/onestardao/WFGY/blob/main/Polaris/experiments/downloads/PP02D_C.ipynb) |
+
 The downloads folder may also contain earlier process files.
 
-First-time readers should use the seven official public evidence packages listed above as the main reference.
+First-time readers should use the seven official public evidence packages and seven recommended Colab notebooks listed above as the main reference.
 
 <details>
 <summary>Expand: suggested inspection order for engineers</summary>
 
 | Order | Suggested check | Why it matters |
 | --- | --- | --- |
-| 1 | Raw model outputs | Confirms that the run actually produced model responses |
-| 2 | Normalized outputs | Shows how outputs were converted into structured records |
-| 3 | Per-case or per-fixture verdicts | Shows how each case maps to a result |
-| 4 | Group or stage verdicts | Shows higher-level result patterns |
-| 5 | Token cost records | Checks cost and token efficiency behavior |
-| 6 | Audit records | Checks leakage, warnings, hard vetoes, or source quality checks |
-| 7 | SHA256 records | Checks file integrity |
+| 1 | Read this README | Understand scope and claim boundary first |
+| 2 | Open the Colab notebook | Inspect or rerun the companion workflow |
+| 3 | Raw model outputs | Confirms that the run actually produced model responses |
+| 4 | Normalized outputs | Shows how outputs were converted into structured records |
+| 5 | Per-case or per-fixture verdicts | Shows how each case maps to a result |
+| 6 | Group or stage verdicts | Shows higher-level result patterns |
+| 7 | Token cost records | Checks cost and token efficiency behavior |
+| 8 | Audit records | Checks leakage, warnings, hard vetoes, or source quality checks |
+| 9 | SHA256 records | Checks file integrity |
 
 </details>
 
@@ -881,10 +1015,11 @@ What this material can currently say:
 
 | Can say | Explanation |
 | --- | --- |
-| Polaris shows a token-cost reduction signal within the public task scope | Especially in the PP01 main cost experiment and the PP02D_C public QA pilot |
+| Polaris Protocol shows a token-cost reduction signal within the public task scope | Especially in the PP01 main cost experiment and the PP02D_C public QA pilot |
 | Structured task representation may preserve inspectable output quality | The evidence chain matters, not only whether the answer looks good |
 | The public packages cover different risk surfaces | Cost, version evolution, math-leaning tasks, code repair, API stability, hardcase gates, and public QA |
 | ZIP files allow researchers and skeptics to inspect backward | Includes raw outputs, verdicts, cost, audits, and file fingerprints |
+| Colab notebooks make inspection and rerun attempts easier | They are companion notebooks for the evidence packages |
 
 What this material currently cannot say:
 
@@ -892,10 +1027,11 @@ What this material currently cannot say:
 | --- | --- |
 | All AI tasks have been solved | The current scope only covers specified public tasks |
 | Small models completely beat large models | The current evidence supports structured effects in specific tasks |
-| GPU scaling is no longer important | GPUs remain important; Polaris is a task-structure-side cost route |
+| GPU scaling is no longer important | GPUs remain important; Polaris Protocol is a task-structure-side cost route |
 | This is a third-party official benchmark | This is a self-built public experimental evidence chain |
 | The ZIP files include full core mathematics | The current release is an evidence package, not the full core |
-| A full Colab reproduction flow is already provided | Full reproduction materials will be added after the official open-source release |
+| The MVP Colab notebooks are third-party certification | They are public companion notebooks, not external validation |
+| Reruns are guaranteed to be identical | API behavior, model versions, pricing, settings, and output length can vary |
 
 One-sentence summary:
 
@@ -907,7 +1043,7 @@ One-sentence summary:
 
 ## Suggested short description ✍️
 
-The public evidence layer for WFGY 5.0 Polaris Protocol, including raw model outputs, normalized outputs, verdict tables, token cost records, audit records, SHA256 file fingerprints, the original PP01–PP02C evidence layer, and the community-follow-up PP02D_A–PP02D_C supplementary evidence layer.
+The public evidence layer for WFGY 5.0 Polaris Protocol, including raw model outputs, normalized outputs, verdict tables, token cost records, audit records, SHA256 file fingerprints, MVP Colab companion notebooks, the original PP01–PP02C evidence layer, and the community-follow-up PP02D_A–PP02D_C supplementary evidence layer.
 
 ---
 
@@ -917,9 +1053,10 @@ The public evidence layer for WFGY 5.0 Polaris Protocol, including raw model out
 | --- | --- |
 | Project | WFGY 5.0 Polaris Protocol |
 | Folder role | Public experimental evidence layer |
-| Release type | First-layer public evidence |
+| Release type | First-layer public evidence + MVP Colab companion notebooks |
 | Public branches | PP01, PP02A, PP02B, PP02C, PP02D_A, PP02D_B, PP02D_C |
 | Main evidence packages | 7 |
+| Recommended Colab notebooks | 7 |
 | Original PP01–PP02C test cases | 680 |
 | Original PP01–PP02C model outputs | 3600 |
 | Additional PP02D_A fixtures | 216 |
@@ -932,9 +1069,9 @@ The public evidence layer for WFGY 5.0 Polaris Protocol, including raw model out
 | Audit files | Included |
 | Token cost records | Included where available |
 | SHA256 records | Included |
-| Execution notebook | Not included |
+| Colab notebooks | 7 recommended MVP companion notebooks |
 | Core mathematics | Not included in the first-layer public evidence |
-| Full implementation release | Expected after the official open-source release begins |
+| Full formal reproduction suite | Still expanding |
 | License | MIT License unless a specific file states otherwise |
 | Repository | https://github.com/onestardao/WFGY |
 
@@ -942,12 +1079,12 @@ The public evidence layer for WFGY 5.0 Polaris Protocol, including raw model out
 
 ## Final note 🌱
 
-The purpose of this folder is to make evidence visible before the full open-source release.
+The purpose of this folder is to make evidence visible before the full open-source release is complete.
 
 The current packages show the experimental trace:
 
-task design, raw model outputs, parsing, scoring, token cost, audits, result verdicts, and file integrity records.
+task design, raw model outputs, parsing, scoring, token cost, audits, result verdicts, file integrity records, and MVP Colab companion notebooks.
 
 The PP02D supplement adds community-requested pressure checks while preserving the same public-evidence boundary.
 
-The full mathematical logic and reproduction materials are expected to follow after the official open-source release begins.
+The full mathematical logic, deeper implementation details, and broader formal reproduction materials are expected to expand over time.
