@@ -3,8 +3,16 @@
 
 # Polaris Goal Compiler
 
-> **A human AI communication protocol under WFGY 5.0 Polaris Protocol.**  
+> A human AI communication protocol under WFGY 5.0 Polaris Protocol.
 > Compile first. Execute one active atom. Verify before unlock. Claim only what is supported.
+
+> [!IMPORTANT]
+> **Current teaser compatibility: ChatGPT only.**
+>
+> Polaris Goal Compiler is currently released as a ChatGPT-first public teaser component.
+> The protocol is designed to be portable over time, but this teaser release has only been validated for ChatGPT use.
+>
+> Other assistants, coding agents, IDE rule layers, workflow runners, and future skill systems are design directions, not official supported targets in this teaser release.
 
 <img width="1672" height="941" alt="polaris_goal_compiler" src="https://github.com/user-attachments/assets/3cda3157-de11-405e-a92a-ed28b630f19f" />
 
