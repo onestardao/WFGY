@@ -1,0 +1,116 @@
+# Polaris Millennium Challenge Archive
+
+> Public timestamp archive for selected Millennium Prize Problem challenge packages under the WFGY / Polaris research direction.
+
+This directory records the first public timestamp layer for three Polaris challenge packages prepared for future external review.
+
+The goal of this page is simple:
+
+**preserve the research trail, lock the package history, and provide a clean public entry point for later verification.**
+
+---
+
+## Archive Index
+
+| Problem | Package | Archive Role | Date |
+|---|---|---:|---:|
+| Yang-Mills Mass Gap | [ym_er_clay_release_20260520.zip](./ym_er_clay_release_20260520.zip) | External-review package | 2026-05-20 |
+| Hodge Conjecture | [hodge_er_clay_release_20260520.zip](./hodge_er_clay_release_20260520.zip) | External-review package | 2026-05-20 |
+| Poincare Conjecture | [poincare_er_clay_release_20260520.zip](./poincare_er_clay_release_20260520.zip) | External-review package | 2026-05-20 |
+
+---
+
+## 01. Yang-Mills Mass Gap
+
+**Package:** [ym_er_clay_release_20260520.zip](./ym_er_clay_release_20260520.zip)
+
+This package contains an external-review archive for the Yang-Mills Mass Gap challenge route.
+
+Included materials cover review notes, strict blocker elevation notes, hardening status, audit verdicts, claim-boundary notes, and a Lean interface file.
+
+**Internal package highlights:**
+
+- `00_ER_README.md`
+- `08_CLAIM_LIMITS_AND_BACKING.md`
+- `11_BLACKFAN_AUDIT_VERDICT.md`
+- `17_CLAY_STRICT_BLOCKER_ELEVATION_NOTE.md`
+- `18_MVP_HARDENING_STATUS_NOTE_20260520.md`
+- `YMTruthRealizabilityER.lean`
+- `YM_ER_STRICT_FINAL_20260520.md`
+- `YM_ER_ULTIMATE_BLACKFAN_AUDIT_20260520.md`
+
+---
+
+## 02. Hodge Conjecture
+
+**Package:** [hodge_er_clay_release_20260520.zip](./hodge_er_clay_release_20260520.zip)
+
+This package contains an external-review archive for the Hodge Conjecture challenge route.
+
+Included materials cover Clay-strict blocker deployment, MVP hardening, manifest-path mapping, phase closure notes, final audit materials, and reviewer-facing strict notes.
+
+**Internal package highlights:**
+
+- `HODGE_ClayStrict_Blocker佈署_第01輪_20260520.md`
+- `HODGE_MVP硬化完成_第02輪_20260520.md`
+- `HODGE_Phase3_MVP硬化收斂_第02輪_20260520.md`
+- `HODGE_Manifest路徑映射補丁_V3_20260520.md`
+- `HODGE_ER_STRICT_FINAL_20260520.md`
+- `HODGE_ER_ULTIMATE_BLACKFAN_AUDIT_20260520.md`
+
+---
+
+## 03. Poincare Conjecture
+
+**Package:** [poincare_er_clay_release_20260520.zip](./poincare_er_clay_release_20260520.zip)
+
+This package contains an external-review archive for the Poincare Conjecture challenge route.
+
+Included materials cover strict final notes, blocker patch lists, public clean heavy notes, blackfan audit materials, and Clay-strict speedrun convergence notes.
+
+**Internal package highlights:**
+
+- `Poincare_ClayStrict主Blocker_補丁清單_20260520.md`
+- `Poincare_ER100_V2_100_PUBLIC_CLEAN_HEAVY_20260520.md`
+- `Poincare_ER_STRICT_FINAL_20260520.md`
+- `Poincare_ER_ULTIMATE_BLACKFAN_AUDIT_20260520.md`
+- `Poincare_Round17_世界最狠黑粉終審_20260520.md`
+- `龐加萊_Round18_ClayStrict最大Blocker_Speedrun收斂_20260520.md`
+
+---
+
+## Purpose
+
+This archive is intended to serve as a public timestamp and research-history checkpoint.
+
+It records:
+
+- the package names,
+- the challenge targets,
+- the public archive date,
+- the review-package boundary,
+- and the first repository-level entry point for future verification.
+
+Future updates may add expanded manifests, reviewer notes, formalization status, verification logs, and additional challenge packages.
+
+---
+
+## Claim Boundary
+
+These files are preserved as research archives and external-review materials.
+
+This page does **not** represent official Clay Mathematics Institute acceptance, official prize validation, or final peer-reviewed publication.
+
+The current role of this directory is:
+
+**timestamp first, preserve the trail, invite later review.**
+
+---
+
+## Repository Context
+
+This archive belongs to the broader WFGY / Polaris research direction.
+
+Polaris studies structure-first reasoning, challenge decomposition, verification boundaries, and staged public evidence release.
+
+This directory is one timestamped checkpoint in that longer research path.
