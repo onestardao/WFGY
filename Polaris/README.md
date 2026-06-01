@@ -13,6 +13,8 @@
 
 ### Redefine the problem itself through the Polaris high-dimensional view.
 
+[![WFGY Polaris Protocol](https://github.com/user-attachments/assets/5f220659-8245-4cb0-8d13-6d287eacde70)](https://github.com/onestardao/WFGY/blob/main/Polaris/README.md)
+
 **Seven Millennium Problems.**  
 **Theorem-complete.**  
 **Native Lean no-sorry.**  
