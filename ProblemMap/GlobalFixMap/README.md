@@ -79,7 +79,7 @@ Choose **Grandma’s Clinic** if you want to understand the bug in plain words.
 > - if the state is unstable, it loops, resets, or redirects the path.  
 > - only a stable semantic state is allowed to generate output.  
 >
-> this is why every failure mode, once mapped, stays fixed.  
+> this is why each mapped failure family is typically stable again under the same semantic settings; if model/version/context shifts, we treat it as a new mapping and rerun the loop.  
 > you’re not firefighting after the fact — you’re installing a reasoning firewall at the entry point.  
 >
 > ---
@@ -90,28 +90,28 @@ Choose **Grandma’s Clinic** if you want to understand the bug in plain words.
 > |--------------|-----------------------------------------|---------------------------------------------------|
 > | **Flow**     | Output → detect bug → patch manually    | Inspect semantic field → only stable state generates |
 > | **Method**   | Add rerankers, regex, JSON repair, tool patches | ΔS, λ, coverage checked upfront; loop/reset if unstable |
-> | **Cost**     | High — every bug = new patch, risk of conflicts | Low — once mapped, bug sealed permanently |
-> | **Ceiling**  | 70–85% stability limit                  | 90–95%+ achievable, structural guarantee |
-> | **Experience** | Firefighting, “whack-a-mole” debugging | Structural firewall, “fix once, stays fixed” |
+> | **Cost**     | High — every bug = new patch, risk of conflicts | Low — once mapped and revalidated, recurrence is usually reduced for the same family |
+> | **Ceiling**  | 70–85% stability limit                  | 90–95%+ observed on internal cohorts; setup-dependent and not a universal ceiling |
+> | **Experience** | Firefighting, “whack-a-mole” debugging | Structural firewall, “fix once under accepted targets, then monitor for drift” |
 > | **Complexity** | Growing patch jungle, fragile pipelines | Unified acceptance targets, one-page repair guide |
 >
 > ---
 >
 > ### ⚡ Performance impact
 > - **Traditional patching**: 70–85% stability ceiling. Each new patch adds complexity and potential regressions.  
-> - **WFGY firewall**: 90–95%+ achievable. Fix once → the same bug never resurfaces. Debug time cut by 60–80%.  
+> - **WFGY firewall**: around 90–95%+ stability in internal cohorts. A mapped fix is usually suppressed for that family under stable conditions, with drift requiring re-mapping. Debug time often drops by 60–80% under those conditions.  
 > - **Unified metrics**: every fix is measured (ΔS ≤ 0.45, coverage ≥ 0.70, λ convergent). No guesswork.  
 >
 > ### 🛑 Key notes
 > - This is **not a plugin or SDK** — it runs as plain text, zero infra changes.  
 > - You must **apply acceptance targets**: don’t just eyeball; log ΔS and λ to confirm.  
-> - Once acceptance holds, that path is sealed. If drift recurs, it means a *new* failure mode needs mapping, not a re-fix of the old one.  
+> - Once acceptance holds, that path is treated as stable for the same setting. If drift recurs, it means a *new* failure mode needs mapping, not merely a re-fix of the old one.  
 >
 > ---
 >
 > **Summary**:  
 > Others patch symptoms **AFTER** output. WFGY blocks unstable states **BEFORE** output.  
-> That is why it feels less like debugging, more like installing a **structural guarantee**.  
+That is why it feels less like debugging, more like installing **structural acceptance scaffolding** with guardrails rather than universal guarantees.  
 >
 > ---
 </details>
@@ -159,7 +159,7 @@ Choose **Grandma’s Clinic** if you want to understand the bug in plain words.
 
 > **What is the Global Fix Map?**  
 > A vendor-neutral panoramic index that consolidates **300+** topics, frameworks, and reproducible failure modes (RAG, embeddings, chunking, OCR/language, reasoning/memory, agents, serverless, eval/governance).  
-> **Purpose:** convert repeatable bugs into **verifiable structural repairs** — fix once, stays fixed.
+> **Purpose:** convert repeatable bugs into **verifiable structural repairs** — map the pattern, lock acceptance targets, and revalidate when context changes.
 
 **Principles**
 - **Zero-install:** boot with **TXT OS** / **WFGY PDF** as context.

@@ -368,7 +368,7 @@ This is the “double hallucination” trap. The first illusion hides the second
 | 3    | **E\_resonance** | “can we re-lock coherence?”     | apply stability modules (BBMC/BBPF/BBCR/BBAM) at the failing layer                | the **repair action**           |
 | 4    | **ProblemMap**   | “what page fixes this?”         | open the matched doc (e.g., `retrieval-collapse.md`)                              | the **concrete fix recipe**     |
 
-> 90% of cases end after steps 1–3. You only go deeper when a fix requires a structural change (schema, retriever, index).
+> In the current internal playbook, about 90% of cases tend to end after steps 1–3. We only go deeper when a fix requires a structural change (schema, retriever, index) under sustained failure signatures.
 
 ### Layer-specific Fix Index (one-click)
 

@@ -45,7 +45,7 @@ If the user has no clue where to start, direct them to Beginner Guide first, the
 Most people fix AI bugs **after** the model already spoke. You then add patches, rerankers, or regex. The same failure returns later in a different shape.
 
 **WFGY installs a semantic firewall *before* output.**
-It inspects the semantic field first. If the state is unstable, it loops, narrows, or resets. Only a stable state is allowed to speak. Once a failure mode is mapped, it stays fixed.
+It inspects the semantic field first. If the state is unstable, it loops, narrows, or resets. Only a stable state is allowed to speak. Once a failure mode is mapped, it is usually stable for that same condition. If the prompt, model, or schema context changes, treat it as a new family and re-map.
 
 **How to use this page in 30 seconds**
 
@@ -967,7 +967,7 @@ You do not patch forever. You set **acceptance targets** and keep them:
 * λ state convergent
 * Source present before final
 
-When a new bug appears, map it to a number, apply the fix once, and it stays fixed. That is the point of a semantic firewall.
+When a new bug appears, map it to a number, apply the fix for that same condition, and it is typically reduced in recurrence checks. If the context drifts, consider it a re-mapping case. That is the point of a semantic firewall.
 
 ---
 
@@ -993,7 +993,7 @@ No. WFGY is text-only. It works as a reasoning guard before output. Over time it
 
 **Q3. How do I know if the fix actually worked?**  
 Check the acceptance targets: ΔS ≤ 0.45, Coverage ≥ 0.70, λ convergent.  
-If these hold across 3 paraphrases, the bug is fixed.
+If these hold across 3 paraphrases, the bug is usually stable for the same pattern under current targets.
 
 **Q4. Is Grandma Clinic enough, or do I need the full Problem Map?**  
 The Clinic covers the 16 most common errors in simple language.  
