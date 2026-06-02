@@ -37,7 +37,7 @@ Same engine.
 
 | Package | Link |
 |---|---|
-| Frontier-50 Sample Pack | [Download ZIP](./downloads/frontier-50-sample-pack.zip) |
+| Frontier-50 Sample Pack | [Download ZIP](./downloads/WFGY_Frontier50_Unknown_ShootPack.zip) |
 | Frontier-50 Prompt Pack | [Open prompts](./prompts/) |
 | Frontier-50 Example Outputs | [Open examples](./examples/) |
 | Frontier-50 Evaluation Notes | [Open evaluation](./evaluation/) |
