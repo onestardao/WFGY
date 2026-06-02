@@ -26,7 +26,7 @@ A laptop with 16 to 32 GB RAM is enough for a 300 to 800 page corpus using CPU e
 
 These map directly to common failures in the Problem Map.
 
-* Retrieval never returns context that crosses entity or constraint boundaries. This reduces No.1 Hallucination and Chunk Drift.
+* Retrieval is constrained to avoid returning context that crosses entity or constraint boundaries by default. Boundary leakage can still occur if constraints are incomplete, in which case we tighten extraction rules.
 * Generation must quote only the provided evidence. If not provable, it must say `not in context`.
 * Every answer writes a machine readable trace with query, chunk ids, and scores. This turns debugging from guesswork into data.
 * Optional rerank step promotes passages that match constraints, not only keywords.
@@ -63,7 +63,7 @@ if __name__ == "__main__":
 ```
 
 Chunk with a constraint aware strategy.
-Keep headings or definition lines attached to their paragraphs. Merge small lines, but never cross section boundaries like References or Footnotes.
+Keep headings or definition lines attached to their paragraphs. Merge small lines, but avoid crossing section boundaries like References or Footnotes unless section-level intent explicitly allows it.
 
 ```python
 # tools/chunk.py

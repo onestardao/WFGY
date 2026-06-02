@@ -17,7 +17,7 @@
 </details>
 
 
-A safe pattern to switch 100% of traffic between two identical stacks (Blue = current live, Green = new). Use this when you need instant rollback, reproducible cutovers, and zero surprise from schema or index drift.
+A safe pattern to shift primary traffic between two identical stacks (Blue = current live, Green = new), typically all traffic in planned cutovers when conditions allow. Use this when you need a pre-validated rollback path, reproducible cutovers, and minimized surprise from schema or index drift.
 
 ---
 
@@ -30,7 +30,7 @@ A safe pattern to switch 100% of traffic between two identical stacks (Blue = cu
 ---
 
 ## When to use
-- Model or prompt upgrades where instant rollback is required.
+- Model or prompt upgrades where a low-latency rollback path is required.
 - Vector index rebuilds that must cut over atomically.
 - Config, secrets, or feature-flag rewires that risk drift by region.
 - Store or analyzer changes that can shift ΔS/coverage.
@@ -42,7 +42,7 @@ A safe pattern to switch 100% of traffic between two identical stacks (Blue = cu
 - Coverage ≥ 0.70 on the gold set (same as pre-switch).
 - λ convergent across 2 seeds, no flip increase vs Blue.
 - p95 latency within +15% of Blue; error rate ≤ 0.5%.
-- Instant rollback path validated (≤ 2 minutes TTR).
+- Rollback path validated (typically ≤ 2 minutes TTR).
 
 ---
 
@@ -95,7 +95,7 @@ All reads/writes and side effects must point at a **single active arm**. If you 
 
 ### Index alias swap (Vector/RAG)
 - Build Green index offline. Validate with sampled ΔS/coverage.  
-- Swap an **atomic alias** `docs_live → docs_vB`. Keep `docs_vA` for instant rollback.  
+- Swap an **atomic alias** `docs_live → docs_vB`. Keep `docs_vA` as the validated rollback lane.  
 - If store lacks aliases, emulate with a config key in a single-writer KV and block multi-writer races.
 
 ### Queue consumer cutover

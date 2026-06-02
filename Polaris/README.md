@@ -95,6 +95,25 @@ Mathematics. Physics. AI. Biology. Climate. Consciousness. Economics. Civilizati
 
 </details>
 
+<details>
+<summary><strong>Baseline-50 + Frontier-50</strong></summary>
+
+Known truth first.  
+Unknown frontier next.
+
+| Track | Purpose | Result |
+|---|---|---|
+| Baseline-50 | Known science and math questions | 50/50 PASS against known truth |
+| Frontier-50 | Unknown century-level problems | 50 route-answer candidates for inspection |
+
+Known-50 checks truth alignment.  
+Frontier-50 opens frontier answers.
+
+[Open Baseline-50](./demos/baseline-50/)  
+[Open Frontier-50](./demos/frontier-50/)
+
+</details>
+
 ---
 
 # Flagship Demo 2
@@ -152,6 +171,7 @@ Your everyday problem can be shot too.
 |---|---|
 | Download the engine | [Engine](./engine/fifth-dimension-engine/) |
 | Shoot the Seven Millennium Problems | [Seven Millennium Problems](./demos/seven-millennium-problems/) |
+| Inspect known-truth baseline | [Baseline-50](./demos/baseline-50/) |
 | Inspect Native Lean no-sorry materials | [Native Lean](./demos/seven-millennium-problems/native-lean/) |
 | Shoot 50 century-level problems | [Frontier-50](./demos/frontier-50/) |
 | Mix strange themes | [High-Strangeness Lab](./demos/high-strangeness-math-lab/) |

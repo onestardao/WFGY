@@ -41,7 +41,7 @@ This page defines structural fixes to ensure **valid JSON**, **schema adherence*
 ---
 
 ## Core acceptance
-- Every tool call conforms to schema 100% (no free-text).  
+- Tool calls are expected to conform to schema under the active acceptance targets (no free-text). If a call misses the contract, we retry, escalate to recovery, or stop output according to the same policy.
 - No mixed narrative and JSON in one block.  
 - ΔS(question, retrieved) ≤ 0.45 for JSON-only probes.  
 - λ convergent across three paraphrases of the same JSON request.  

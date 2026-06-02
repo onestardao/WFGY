@@ -238,7 +238,7 @@ Be careful:
 > * if the state is unstable, it loops, resets, or redirects the path.
 > * only a stable semantic state is allowed to generate output.
 >
-> this is why, once a failure mode is clearly mapped and monitored under the same conditions, it tends to stay fixed for that configuration.  
+> this is why, once a failure mode is clearly mapped and monitored under the same conditions, it is usually stable for that configuration; if context changes, treat it as a re-mapping case.  
 > you’re not only firefighting after the fact — you’re installing a reasoning firewall at the entry point of that stack.
 >
 > ---
@@ -249,9 +249,9 @@ Be careful:
 > | -------------- | ----------------------------------------------- | --------------------------------------------------------------------- |
 > | **Flow**       | Output → detect bug → patch manually            | Inspect semantic field → only a stable state is allowed to generate   |
 > | **Method**     | Add rerankers, regex, JSON repair, tool patches | ΔS, λ, coverage checked upfront; loop/reset if unstable                |
-> | **Cost**       | High — every bug = new patch, risk of conflicts | Lower — once mapped, the bug usually stops recurring under the same assumptions |
+> | **Cost**       | High — every bug = new patch, risk of conflicts | Lower — once mapped, the bug is usually reduced under the same assumptions |
 > | **Ceiling**    | Often plateaus around 70–85% stability in practice | In internal tests, 90–95%+ stability observed on selected stacks; not a universal guarantee |
-> | **Experience** | Firefighting, “whack-a-mole” debugging          | Structural firewall, “fix once, tends to stay fixed for that setup”   |
+> | **Experience** | Firefighting, “whack-a-mole” debugging          | Structural firewall, “fix once for a mapped family, then monitor for context drift”   |
 > | **Complexity** | Growing patch jungle, fragile pipelines         | Unified acceptance targets, one-page repair guide                     |
 >
 > ---
@@ -299,7 +299,7 @@ You should:
 -->
 
 **16 reproducible failure modes, each with a clear fix (MIT).** *(e.g. rag drift, broken indexes)*
-**A semantic firewall you install once, and the same failure pattern tends to stay fixed under the same setup.**
+**A semantic firewall you install for a mapped family, and that pattern is typically stable under the same setup until conditions change.**
 
 > most readers found this map useful and left a ⭐ — if it helps you too, please star it so others can discover.
 
