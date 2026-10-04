@@ -698,6 +698,20 @@ Later waves are expected to:
 ## FAQ
 
 <details>
+<summary><b>What is the purpose of the Global Debug Card?</b></summary>
+
+<br>
+
+The Global Debug Card is a compact first-pass diagnostic tool for failing RAG and agent pipelines.
+It helps map a concrete failure to likely problem modes, identify where the pipeline is drifting, and pair each proposed fix with a verification test.
+
+It is a triage aid, not proof of a root cause or a replacement for logs, evaluation, and system-specific investigation.
+
+</details>
+
+---
+
+<details>
 <summary><b>Do I need all four objects `(Q, E, P, A)` to use the Global Debug Card?</b></summary>
 
 <br>
@@ -718,6 +732,20 @@ If one object is missing, the card can still be used for partial triage:
 - missing both `E` and `P` reduces accuracy, but the card can still help identify likely failure families
 
 In short: all four objects are ideal, but partial inputs can still be useful for first-pass diagnosis.
+
+</details>
+
+---
+
+<details>
+<summary><b>Does using the Global Debug Card require infrastructure changes?</b></summary>
+
+<br>
+
+No infrastructure change is required for first-pass use.
+You can upload the card to a capable LLM and provide the available parts of `(Q, E, P, A)` along with any useful logs or metrics.
+
+Automation, structured debug packets, or additional observability can improve repeatability later, but they are optional extensions rather than prerequisites.
 
 </details>
 
