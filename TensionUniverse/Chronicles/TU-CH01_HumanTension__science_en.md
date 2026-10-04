@@ -5,7 +5,7 @@
 > “Tension Universe” is a fictional framing device.  All stories are MIT licensed — remix and build freely.
 
 
-<img width="1536" height="1024" alt="TU002 (2)" src="https://github.com/user-attachments/assets/ec00470f-240a-4b99-8d99-f4cc0f467830" />
+<img width="1536" height="1024" alt="TU-CH01 Human Tension — Science Notes" src="./assets/TU-CH01_HumanTension_science_hero.png" />
 
 
 ## 1 | What this file is (and is not)
@@ -267,5 +267,4 @@ If they help you think more clearly about your own tension, or design better exp
 | [Experiments](https://github.com/onestardao/WFGY/blob/main/TensionUniverse/Experiments/README.md) | Reproducible MVP runs and observable tension patterns |
 | [Charters](https://github.com/onestardao/WFGY/tree/main/TensionUniverse/Charters) | Scope, guardrails, encoding limits and constraints |
 | [r/TensionUniverse](https://www.reddit.com/r/TensionUniverse/) | Community discussion and ongoing story threads |
-
 
