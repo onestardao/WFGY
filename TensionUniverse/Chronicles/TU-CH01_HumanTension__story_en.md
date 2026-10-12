@@ -3,7 +3,7 @@
 > This is speculative science fiction, not a proven physical theory.  
 > “Tension Universe” is a fictional framing device.  All stories are MIT licensed — remix and build freely.
 
-<img width="1536" height="1024" alt="TU002 (1)" src="https://github.com/user-attachments/assets/9f971660-6aa7-42ef-b693-334944fa1ca6" />
+<img width="1536" height="1024" alt="TU-CH01 Human Tension — Story" src="./assets/TU-CH01_HumanTension_story_hero.png" />
 
 
 ## 1 | Why a Tension Historian starts with crushes, not black holes
@@ -246,4 +246,3 @@ But it is a place to start.
 | [Experiments](https://github.com/onestardao/WFGY/blob/main/TensionUniverse/Experiments/README.md) | Reproducible MVP runs and observable tension patterns |
 | [Charters](https://github.com/onestardao/WFGY/tree/main/TensionUniverse/Charters) | Scope, guardrails, encoding limits and constraints |
 | [r/TensionUniverse](https://www.reddit.com/r/TensionUniverse/) | Community discussion and ongoing story threads |
-
