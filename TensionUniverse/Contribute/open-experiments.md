@@ -35,7 +35,7 @@ So the contribution logic is:
 
 ## Current published MVP set
 
-At the moment, **10 Tension Universe MVP experiments are already published**.
+At the moment, **13 Tension Universe MVP experiments are already published**.
 
 These are the currently visible completed experiment pages:
 
@@ -44,9 +44,12 @@ These are the currently visible completed experiment pages:
 - [TU Q101](../Experiments/Q101_MVP/README.md)
 - [TU Q105](../Experiments/Q105_MVP/README.md)
 - [TU Q106](../Experiments/Q106_MVP/README.md)
+- [TU Q107](../Experiments/Q107_MVP/README.md)
 - [TU Q108](../Experiments/Q108_MVP/README.md)
+- [TU Q109](../Experiments/Q109_MVP/README.md)
 - [TU Q121](../Experiments/Q121_MVP/README.md)
 - [TU Q124](../Experiments/Q124_MVP/README.md)
+- [TU Q125](../Experiments/Q125_MVP/README.md)
 - [TU Q127](../Experiments/Q127_MVP/README.md)
 - [TU Q130](../Experiments/Q130_MVP/README.md)
 
