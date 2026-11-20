@@ -1,6 +1,6 @@
 # WFGY Ecosystem Scan
 
-Generated at: Thu Nov 19 10:59:03 UTC 2026
+Generated at: Fri Nov 20 10:47:29 UTC 2026
 
 ## Repo snapshot
 
